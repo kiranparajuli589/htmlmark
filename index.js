@@ -56,6 +56,7 @@ const REGEX = {
     quote: /^>\s(?<quote>.*)/g
 }
 const PARAGRAPH_REGEX = /(\*\*)(?<bold>[^**]+)(\*\*)|`(?<code>[^`]+)`|(~~)(?<strike>[^~~]+)(~~)|\[(?<linkTitle>.*)]\((?<linkHref>.*)\)|(?<normal>[^`*[~]+)|\*(?<italic>[^**]+)\*/g
+const CODE_BLOCK_REGEX = /```(?<language>.*)\n(?<codeBlock>[\S\s]+)```/g
 
 // read content markdown at ./markdown.md
 const content = fs.readFileSync("./markdown.md", "utf8")
@@ -85,6 +86,27 @@ for(let i=0; i<lines.length; i++) {
         continue
     }
 
+    // check for the codeblock
+    if (lineToParse.startsWith("```")) {
+        // find the following "```"
+        let lineNumber = i + 1
+        while(lines[lineNumber] && !lines[lineNumber].startsWith("```")) {
+            lineNumber++
+        }
+        const codeBlock = lines.slice(i+1, lineNumber)
+            .map(line => line.replace("\r", ""))
+            .join("\n")
+        // calculate the codeblock tokens here
+        const codeLanguage = lineToParse.substring(3)
+        parsedContent.push({
+            type: "codeblock",
+            value: codeBlock,
+            languuage: codeLanguage
+        })
+        i = lineNumber
+        continue
+    }
+
     // look for the every regex in the REGEX object
     for (let key in REGEX) {
         const regex = REGEX[key]
@@ -108,6 +130,7 @@ for(let i=0; i<lines.length; i++) {
             raw: lines[i],
         })
     }
+
 }
 
 
@@ -117,7 +140,7 @@ for(let i=0; i<lines.length; i++) {
 for(let i=0; i<parsedContent.length; i++) {
     const line = parsedContent[i]
   
-    if (!["newline", "paragraph", "image", "comment", "quote"].includes(line.type)) {
+    if (!["newline", "paragraph", "image", "comment", "quote", "codeblock"].includes(line.type)) {
         line.tokens = findRegex(PARAGRAPH_REGEX, line.value)
         continue
     }

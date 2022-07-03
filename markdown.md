@@ -18,3 +18,27 @@ a paragraph of words `first code` normal text here `code body` *first italics* h
 > quote 1
 > > nested quote 2
 > > > nested quote 3 with *italics* and **bolds**
+
+
+```js
+const a = 1;
+const b = 1;
+const c = a + b;
+
+if (c === 2) {
+  console.log('success');
+} else {
+  console.log('failure');
+}
+```
+
+```js
+```
+
+some piece of normal paragraph
+
+```
+another code block is here
+```
+
+some random text

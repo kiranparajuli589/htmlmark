@@ -257,5 +257,55 @@
   },
   {
     "type": "newline"
+  },
+  {
+    "type": "codeblock",
+    "value": "const a = 1;\nconst b = 1;\nconst c = a + b;\n\nif (c === 2) {\n  console.log('success');\n} else {\n  console.log('failure');\n}",
+    "languuage": "js"
+  },
+  {
+    "type": "newline"
+  },
+  {
+    "type": "codeblock",
+    "value": "",
+    "languuage": "js"
+  },
+  {
+    "type": "newline"
+  },
+  {
+    "type": "paragraph",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "some piece of shit"
+      }
+    ],
+    "raw": "some piece of shit\r"
+  },
+  {
+    "type": "newline"
+  },
+  {
+    "type": "codeblock",
+    "value": "another code block is here",
+    "languuage": ""
+  },
+  {
+    "type": "newline"
+  },
+  {
+    "type": "paragraph",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "some random text"
+      }
+    ],
+    "raw": "some random text\r"
+  },
+  {
+    "type": "newline"
   }
 ]
