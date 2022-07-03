@@ -1,0 +1,249 @@
+[
+  {
+    "type": "comment",
+    "value": "https://regex101.com/r/C6SxZH/1",
+    "raw": "<!-- https://regex101.com/r/C6SxZH/1 -->\r"
+  },
+  {
+    "type": "newline"
+  },
+  {
+    "type": "heading1",
+    "value": "Heading One",
+    "raw": "# Heading One\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "Heading One"
+      }
+    ]
+  },
+  {
+    "type": "heading2",
+    "value": "Heading Two",
+    "raw": "## Heading Two\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "Heading Two"
+      }
+    ]
+  },
+  {
+    "type": "heading3",
+    "value": "Heading Three",
+    "raw": "### Heading Three\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "Heading Three"
+      }
+    ]
+  },
+  {
+    "type": "heading4",
+    "value": "Heading Four",
+    "raw": "#### Heading Four\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "Heading Four"
+      }
+    ]
+  },
+  {
+    "type": "heading5",
+    "value": "Heading Five",
+    "raw": "##### Heading Five\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "Heading Five"
+      }
+    ]
+  },
+  {
+    "type": "heading6",
+    "value": "Heading Six",
+    "raw": "###### Heading Six\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "Heading Six"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "a paragraph of words "
+      },
+      {
+        "type": "code",
+        "value": "first code"
+      },
+      {
+        "type": "text",
+        "value": " normal text here "
+      },
+      {
+        "type": "code",
+        "value": "code body"
+      },
+      {
+        "type": "text",
+        "value": " "
+      },
+      {
+        "type": "italic",
+        "value": "first italics"
+      },
+      {
+        "type": "text",
+        "value": " here me crying "
+      },
+      {
+        "type": "italic",
+        "value": "italic body"
+      },
+      {
+        "type": "text",
+        "value": " here me crying "
+      },
+      {
+        "type": "bold",
+        "value": "first bolds"
+      },
+      {
+        "type": "text",
+        "value": " some normal again "
+      },
+      {
+        "type": "bold",
+        "value": "bold body"
+      },
+      {
+        "type": "text",
+        "value": " "
+      },
+      {
+        "type": "link",
+        "value": "Kiran Parajuli",
+        "href": "https://kiranparajuli.com.np"
+      },
+      {
+        "type": "text",
+        "value": " "
+      },
+      {
+        "type": "strike",
+        "value": "strikes body"
+      },
+      {
+        "type": "text",
+        "value": " here some normal again at the last"
+      }
+    ],
+    "raw": "a paragraph of words `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last\r"
+  },
+  {
+    "type": "quote",
+    "value": "some quote",
+    "raw": "> some quote\r",
+    "depth": 0,
+    "tokens": [
+      {
+        "type": "text",
+        "value": "some quote"
+      }
+    ]
+  },
+  {
+    "type": "listItem",
+    "value": "list item 1",
+    "raw": "- list item 1\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "list item 1"
+      }
+    ]
+  },
+  {
+    "type": "listItem",
+    "value": "list item 2",
+    "raw": "- list item 2\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "list item 2"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "value": "checkbox empty",
+    "raw": "- [ ] checkbox empty\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "checkbox empty"
+      }
+    ]
+  },
+  {
+    "type": "checkboxChecked",
+    "value": "checkbox checked",
+    "raw": "- [x] checkbox checked\r",
+    "tokens": [
+      {
+        "type": "text",
+        "value": "checkbox checked"
+      }
+    ]
+  },
+  {
+    "type": "newline"
+  },
+  {
+    "type": "quote",
+    "value": "quote 1",
+    "raw": "> quote 1\r",
+    "depth": 0,
+    "tokens": [
+      {
+        "type": "text",
+        "value": "quote 1"
+      }
+    ]
+  },
+  {
+    "type": "quote",
+    "value": "> nested quote 2",
+    "raw": "> > nested quote 2\r",
+    "depth": 1,
+    "tokens": [
+      {
+        "type": "text",
+        "value": "nested quote 2"
+      }
+    ]
+  },
+  {
+    "type": "quote",
+    "value": "> > nested quote 3",
+    "raw": "> > > nested quote 3\r",
+    "depth": 2,
+    "tokens": [
+      {
+        "type": "text",
+        "value": "nested quote 3"
+      }
+    ]
+  },
+  {
+    "type": "newline"
+  }
+]
