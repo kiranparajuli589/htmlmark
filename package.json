@@ -1,0 +1,14 @@
+{
+  "name": "markdown-parser",
+  "version": "1.0.0",
+  "description": "Lightweight markdown parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "nodejs", "markdown", "parser"
+  ],
+  "author": "",
+  "license": "ISC"
+}
