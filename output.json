@@ -221,7 +221,7 @@
   },
   {
     "type": "quote",
-    "value": "> nested quote 2",
+    "value": "nested quote 2",
     "raw": "> > nested quote 2\r",
     "depth": 1,
     "tokens": [
@@ -233,13 +233,25 @@
   },
   {
     "type": "quote",
-    "value": "> > nested quote 3",
-    "raw": "> > > nested quote 3\r",
+    "value": "nested quote 3 with *italics* and **bolds**",
+    "raw": "> > > nested quote 3 with *italics* and **bolds**\r",
     "depth": 2,
     "tokens": [
       {
         "type": "text",
-        "value": "nested quote 3"
+        "value": "nested quote 3 with "
+      },
+      {
+        "type": "italic",
+        "value": "italics"
+      },
+      {
+        "type": "text",
+        "value": " and "
+      },
+      {
+        "type": "bold",
+        "value": "bolds"
       }
     ]
   },

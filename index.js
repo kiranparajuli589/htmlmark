@@ -139,6 +139,7 @@ for(let i=0; i<parsedContent.length; i++) {
     // now the quoteline is pure raw text
     // we can check it with the pqragraph regex
     line.depth = depth
+    line.value = quoteLine
     line.tokens = findRegex(PARAGRAPH_REGEX, quoteLine)
   }
 }
