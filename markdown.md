@@ -16,7 +16,7 @@ a paragraph of words `first code` normal text here `code body` *first italics* h
 
 
 > quote 1
-> > nested quote 2
+> > nested quote 2 [quote-link](quote-link-url)
 > > > nested quote 3 with *italics* and **bolds**
 
 
@@ -40,5 +40,7 @@ some piece of normal paragraph
 ```
 another code block is here
 ```
+
+![alt text](https://kiranparajuli.com.np/images/kiran.jpg)
 
 some random text
