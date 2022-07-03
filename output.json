@@ -279,10 +279,10 @@
     "tokens": [
       {
         "type": "text",
-        "value": "some piece of shit"
+        "value": "some piece of normal paragraph"
       }
     ],
-    "raw": "some piece of shit\r"
+    "raw": "some piece of normal paragraph\r"
   },
   {
     "type": "newline"
