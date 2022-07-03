@@ -1,14 +1,25 @@
 {
   "name": "markdown-parser",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Lightweight markdown parser",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "lint": "eslint index.js",
+    "lint:fix": "eslint index.js --fix"
   },
   "keywords": [
-    "nodejs", "markdown", "parser"
+    "nodejs",
+    "markdown",
+    "parser"
   ],
-  "author": "",
-  "license": "ISC"
+  "author": "Kiran Parajuli",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=14.0.0",
+    "pnpm": ">=3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
+  }
 }

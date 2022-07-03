@@ -1,1 +1,8 @@
+# pnpm
 .pnpm-debug.log
+node_modules
+
+# editors
+.DS_Store
+.vscode
+.idea
