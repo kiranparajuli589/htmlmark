@@ -38,7 +38,6 @@ const findRegex = (regex, text) => {
     }
 
 
-
   } while((match = regex.exec(text)) !== null);
   return matches
 }
@@ -95,8 +94,8 @@ for(let i=0; i<lines.length; i++) {
     if (match) {
       match = regex.exec(lineToParse);
       parsedContent.push({
-        token: key,
-        text: match[1],
+        type: key,
+        value: match[1],
         raw: lines[i],
       })
       break
@@ -104,11 +103,46 @@ for(let i=0; i<lines.length; i++) {
   }
   // if noting was found, we parse the line with the PARAGRAPH_REGEX
   if (beforeCompare === parsedContent.length) {
+    const tokens = findRegex(PARAGRAPH_REGEX, lineToParse)
     parsedContent.push({
-      token: 'paragraph',
-      tokens: findRegex(PARAGRAPH_REGEX, lineToParse),
+      type: 'paragraph',
+      tokens,
       raw: lines[i],
     })
   }
 }
-console.log(JSON.stringify(parsedContent, undefined, 2))
+
+
+// check for every paresed line for inner tokens
+// if only type is not newline, paragraph, image, comment
+// we add the inner tokens to the parsed line
+for(let i=0; i<parsedContent.length; i++) {
+  const line = parsedContent[i];
+  
+  if (!['newline', 'paragraph', 'image', 'comment', 'quote'].includes(line.type)) {
+    line.tokens = findRegex(PARAGRAPH_REGEX, line.value);
+    continue
+  }
+  // TODO: if quote type handle separately.
+  // if quote type, first we need to find the quote depth
+  // then we need to find the inner tokens
+  // then we need to add the quote depth to the inner tokens
+  // then we need to add the inner tokens to the parsed line
+  if (line.type === 'quote') {
+    let depth = 0
+    const qTokens = []
+    let quoteLine = line.value
+    while(quoteLine.startsWith('>')) {
+      depth++
+      quoteLine = quoteLine.substring(1).trim()
+    }
+    // now the quoteline is pure raw text
+    // we can check it with the pqragraph regex
+    line.depth = depth
+    line.tokens = findRegex(PARAGRAPH_REGEX, quoteLine)
+  }
+}
+
+// write parsed content to the output.json
+fs.rmSync('./output.json');
+fs.writeFileSync('./output.json', JSON.stringify(parsedContent, undefined, 2))
