@@ -17,4 +17,4 @@ a paragraph of words `first code` normal text here `code body` *first italics* h
 
 > quote 1
 > > nested quote 2
-> > > nested quote 3
+> > > nested quote 3 with *italics* and **bolds**
