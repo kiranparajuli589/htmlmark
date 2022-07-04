@@ -1,335 +1,343 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tokenization should tokenize a markdown content 1`] = `
-"[
-  {
-    \\"type\\": \\"comment\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": {
-      \\"value\\": \\"https://regex101.com/r/C6SxZH/1\\"
+Array [
+  Object {
+    "indent": "",
+    "raw": "<!-- https://regex101.com/r/C6SxZH/1 -->",
+    "tokens": Object {
+      "value": "https://regex101.com/r/C6SxZH/1",
     },
-    \\"raw\\": \\"<!-- https://regex101.com/r/C6SxZH/1 -->\\"
+    "type": "comment",
   },
-  {
-    \\"type\\": \\"newline\\"
+  Object {
+    "type": "newline",
   },
-  {
-    \\"type\\": \\"heading1\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"Heading One\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "# Heading One",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading One",
+      },
     ],
-    \\"raw\\": \\"# Heading One\\"
+    "type": "heading1",
   },
-  {
-    \\"type\\": \\"heading2\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"Heading Two\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "## Heading Two",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Two",
+      },
     ],
-    \\"raw\\": \\"## Heading Two\\"
+    "type": "heading2",
   },
-  {
-    \\"type\\": \\"heading3\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"Heading Three\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "### Heading Three",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Three",
+      },
     ],
-    \\"raw\\": \\"### Heading Three\\"
+    "type": "heading3",
   },
-  {
-    \\"type\\": \\"heading4\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"Heading Four\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "#### Heading Four",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Four",
+      },
     ],
-    \\"raw\\": \\"#### Heading Four\\"
+    "type": "heading4",
   },
-  {
-    \\"type\\": \\"heading5\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"Heading Five\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "##### Heading Five",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Five",
+      },
     ],
-    \\"raw\\": \\"##### Heading Five\\"
+    "type": "heading5",
   },
-  {
-    \\"type\\": \\"heading6\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"Heading Six\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "###### Heading Six",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Six",
+      },
     ],
-    \\"raw\\": \\"###### Heading Six\\"
+    "type": "heading6",
   },
-  {
-    \\"type\\": \\"paragraph\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"a paragraph of words \\"
+  Object {
+    "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "a paragraph of words ",
       },
-      {
-        \\"type\\": \\"code\\",
-        \\"value\\": \\"first code\\"
+      Object {
+        "type": "code",
+        "value": "first code",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" normal text here \\"
+      Object {
+        "type": "text",
+        "value": " normal text here ",
       },
-      {
-        \\"type\\": \\"code\\",
-        \\"value\\": \\"code body\\"
+      Object {
+        "type": "code",
+        "value": "code body",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" \\"
+      Object {
+        "type": "text",
+        "value": " ",
       },
-      {
-        \\"type\\": \\"italic\\",
-        \\"value\\": \\"first italics\\"
+      Object {
+        "type": "italic",
+        "value": "first italics",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" here me crying \\"
+      Object {
+        "type": "text",
+        "value": " here me crying ",
       },
-      {
-        \\"type\\": \\"italic\\",
-        \\"value\\": \\"italic body\\"
+      Object {
+        "type": "italic",
+        "value": "italic body",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" here me crying \\"
+      Object {
+        "type": "text",
+        "value": " here me crying ",
       },
-      {
-        \\"type\\": \\"bold\\",
-        \\"value\\": \\"first bolds\\"
+      Object {
+        "type": "bold",
+        "value": "first bolds",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" some normal again \\"
+      Object {
+        "type": "text",
+        "value": " some normal again ",
       },
-      {
-        \\"type\\": \\"bold\\",
-        \\"value\\": \\"bold body\\"
+      Object {
+        "type": "bold",
+        "value": "bold body",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" \\"
+      Object {
+        "type": "text",
+        "value": " ",
       },
-      {
-        \\"type\\": \\"link\\",
-        \\"value\\": \\"Kiran Parajuli\\",
-        \\"href\\": \\"https://kiranparajuli.com.np\\"
+      Object {
+        "href": "https://kiranparajuli.com.np",
+        "type": "link",
+        "value": "Kiran Parajuli",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" \\"
+      Object {
+        "type": "text",
+        "value": " ",
       },
-      {
-        \\"type\\": \\"strike\\",
-        \\"value\\": \\"strikes body\\"
+      Object {
+        "type": "strike",
+        "value": "strikes body",
       },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" here some normal again at the last\\"
-      }
+      Object {
+        "type": "text",
+        "value": " here some normal again at the last",
+      },
     ],
-    \\"raw\\": \\"a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last\\\\r\\"
+    "type": "paragraph",
   },
-  {
-    \\"type\\": \\"quote\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"some quote\\"
-      }
-    ],
-    \\"raw\\": \\"> some quote\\",
-    \\"depth\\": 0
-  },
-  {
-    \\"type\\": \\"listItem\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"list item 1\\"
-      }
-    ],
-    \\"raw\\": \\"- list item 1\\"
-  },
-  {
-    \\"type\\": \\"listItem\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"list item 2\\"
-      }
-    ],
-    \\"raw\\": \\"- list item 2\\"
-  },
-  {
-    \\"type\\": \\"checkbox\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"checkbox empty\\"
-      }
-    ],
-    \\"raw\\": \\"- [ ] checkbox empty\\"
-  },
-  {
-    \\"type\\": \\"checkboxChecked\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"checkbox checked\\"
-      }
-    ],
-    \\"raw\\": \\"- [x] checkbox checked\\"
-  },
-  {
-    \\"type\\": \\"newline\\"
-  },
-  {
-    \\"type\\": \\"quote\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"quote 1\\"
-      }
-    ],
-    \\"raw\\": \\"> quote 1\\",
-    \\"depth\\": 0
-  },
-  {
-    \\"type\\": \\"quote\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"nested quote 2 \\"
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> some quote",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some quote",
       },
-      {
-        \\"type\\": \\"link\\",
-        \\"value\\": \\"quote-link\\",
-        \\"href\\": \\"quote-link-url\\"
-      }
     ],
-    \\"raw\\": \\"> > nested quote 2 [quote-link](quote-link-url)\\",
-    \\"depth\\": 1
+    "type": "quote",
   },
-  {
-    \\"type\\": \\"quote\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"nested quote 3 with \\"
+  Object {
+    "indent": "",
+    "raw": "- list item 1",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "list item 1",
       },
-      {
-        \\"type\\": \\"italic\\",
-        \\"value\\": \\"italics\\"
-      },
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\" and \\"
-      },
-      {
-        \\"type\\": \\"bold\\",
-        \\"value\\": \\"bolds\\"
-      }
     ],
-    \\"raw\\": \\"> > > nested quote 3 with *italics* and **bolds**\\",
-    \\"depth\\": 2
+    "type": "listItem",
   },
-  {
-    \\"type\\": \\"newline\\"
-  },
-  {
-    \\"type\\": \\"codeblock\\",
-    \\"value\\": \\"const a = 1;\\\\nconst b = 1;\\\\nconst c = a + b;\\\\n\\\\nif (c === 2) {\\\\n  console.log('success');\\\\n} else {\\\\n  console.log('failure');\\\\n}\\",
-    \\"language\\": \\"js\\"
-  },
-  {
-    \\"type\\": \\"newline\\"
-  },
-  {
-    \\"type\\": \\"codeblock\\",
-    \\"value\\": \\"\\",
-    \\"language\\": \\"js\\"
-  },
-  {
-    \\"type\\": \\"newline\\"
-  },
-  {
-    \\"type\\": \\"paragraph\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"some piece of normal paragraph\\"
-      }
+  Object {
+    "indent": "",
+    "raw": "- list item 2",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "list item 2",
+      },
     ],
-    \\"raw\\": \\"some piece of normal paragraph\\\\r\\"
+    "type": "listItem",
   },
-  {
-    \\"type\\": \\"newline\\"
+  Object {
+    "indent": "",
+    "raw": "- [ ] checkbox empty",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "checkbox empty",
+      },
+    ],
+    "type": "checkbox",
   },
-  {
-    \\"type\\": \\"codeblock\\",
-    \\"value\\": \\"another code block is here\\",
-    \\"language\\": null
+  Object {
+    "indent": "",
+    "raw": "- [x] checkbox checked",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "checkbox checked",
+      },
+    ],
+    "type": "checkboxChecked",
   },
-  {
-    \\"type\\": \\"newline\\"
+  Object {
+    "type": "newline",
   },
-  {
-    \\"type\\": \\"image\\",
-    \\"indent\\": \\"\\",
-    \\"tokens\\": {
-      \\"alt\\": \\"alt text\\",
-      \\"url\\": \\"https://kiranparajuli.com.np/images/kiran.jpg\\"
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> quote 1",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote 1",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "depth": 1,
+    "indent": "",
+    "raw": "> > nested quote 2 [quote-link](quote-link-url)",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "nested quote 2 ",
+      },
+      Object {
+        "href": "quote-link-url",
+        "type": "link",
+        "value": "quote-link",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "depth": 2,
+    "indent": "",
+    "raw": "> > > nested quote 3 with *italics* and **bolds**",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "nested quote 3 with ",
+      },
+      Object {
+        "type": "italic",
+        "value": "italics",
+      },
+      Object {
+        "type": "text",
+        "value": " and ",
+      },
+      Object {
+        "type": "bold",
+        "value": "bolds",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "type": "newline",
+  },
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "const a = 1;
+const b = 1;
+const c = a + b;
+
+if (c === 2) {
+  console.log('success');
+} else {
+  console.log('failure');
+}",
+  },
+  Object {
+    "type": "newline",
+  },
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "",
+  },
+  Object {
+    "type": "newline",
+  },
+  Object {
+    "raw": "some piece of normal paragraph",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some piece of normal paragraph",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "newline",
+  },
+  Object {
+    "language": null,
+    "type": "codeblock",
+    "value": "another code block is here",
+  },
+  Object {
+    "type": "newline",
+  },
+  Object {
+    "indent": "",
+    "raw": "![alt text](https://kiranparajuli.com.np/images/kiran.jpg)",
+    "tokens": Object {
+      "alt": "alt text",
+      "url": "https://kiranparajuli.com.np/images/kiran.jpg",
     },
-    \\"raw\\": \\"![alt text](https://kiranparajuli.com.np/images/kiran.jpg)\\"
+    "type": "image",
   },
-  {
-    \\"type\\": \\"newline\\"
+  Object {
+    "type": "newline",
   },
-  {
-    \\"type\\": \\"paragraph\\",
-    \\"tokens\\": [
-      {
-        \\"type\\": \\"text\\",
-        \\"value\\": \\"some random text\\"
-      }
+  Object {
+    "raw": "some random text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some random text",
+      },
     ],
-    \\"raw\\": \\"some random text\\\\r\\"
+    "type": "paragraph",
   },
-  {
-    \\"type\\": \\"newline\\"
-  }
-]"
+  Object {
+    "type": "newline",
+  },
+]
 `;
