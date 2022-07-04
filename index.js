@@ -1,5 +1,5 @@
 const fs = require("fs")
-const { tokenize, deepTokenizer } = require("./lib/tokenizer")
+const { tokenize, deepTokenizer } = require("./lib/tokenizer/outerTokenizer")
 
 
 // read content markdown at ./markdown.md

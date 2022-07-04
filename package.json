@@ -4,7 +4,8 @@
   "description": "Lightweight markdown parser",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
+    "test:unit": "jest --silent",
+    "test:unit:watch": "jest --watch --no-coverage",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint **/*.js --fix"
   },
@@ -20,6 +21,7 @@
     "pnpm": ">=3.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.19.0"
+    "eslint": "^8.19.0",
+    "jest": "^28.1.2"
   }
 }

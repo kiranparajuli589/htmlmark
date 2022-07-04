@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`outer tokenizer codeblock should parse multiple consequetive codeblocks 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "const a = 1",
+  },
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "const b = 2",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "const a = 1",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock with multiple lines 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "const a = 1
+const b = 2",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock with multiple lines and a newline 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "type": "codeblock",
+    "value": "const a = 1
+const b = 2
+
+const c = 3",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock without the language 1`] = `
+Array [
+  Object {
+    "language": null,
+    "type": "codeblock",
+    "value": "const a = 1",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 1`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "# Heading One Text",
+    "tokens": Object {
+      "value": "Heading One Text",
+    },
+    "type": "heading1",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 2`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "## Heading Two Text",
+    "tokens": Object {
+      "value": "Heading Two Text",
+    },
+    "type": "heading2",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 3`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "### Heading Three Text",
+    "tokens": Object {
+      "value": "Heading Three Text",
+    },
+    "type": "heading3",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 4`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "#### Heading Four Text",
+    "tokens": Object {
+      "value": "Heading Four Text",
+    },
+    "type": "heading4",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 5`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "##### Heading Five Text",
+    "tokens": Object {
+      "value": "Heading Five Text",
+    },
+    "type": "heading5",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 6`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "###### Heading Six Text",
+    "tokens": Object {
+      "value": "Heading Six Text",
+    },
+    "type": "heading6",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 7`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "- list item text",
+    "tokens": Object {
+      "value": "list item text",
+    },
+    "type": "listItem",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 8`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "1. count item text",
+    "tokens": Object {
+      "value": "count item text",
+    },
+    "type": "countItem",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 9`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "<!-- comment item text -->",
+    "tokens": Object {
+      "value": "comment item text",
+    },
+    "type": "comment",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 10`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "- [ ] checkbox item text",
+    "tokens": Object {
+      "value": "checkbox item text",
+    },
+    "type": "checkbox",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 11`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "- [x] checked checkbox item text",
+    "tokens": Object {
+      "value": "checked checkbox item text",
+    },
+    "type": "checkboxChecked",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 12`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "> quote item text",
+    "tokens": Object {
+      "value": "quote item text",
+    },
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 13`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "> > quote item text",
+    "tokens": Object {
+      "value": "> quote item text",
+    },
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 14`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "![alt text](image.png)",
+    "tokens": Object {
+      "alt": "alt text",
+      "url": "image.png",
+    },
+    "type": "image",
+  },
+]
+`;
+
+exports[`outer tokenizer paragraph should parse a paragarph as it is 1`] = `
+Array [
+  Object {
+    "raw": "some plain text",
+    "type": "paragraph",
+    "value": "some plain text",
+  },
+]
+`;
