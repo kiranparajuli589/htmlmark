@@ -8,7 +8,16 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": "latest"
   },
+  "overrides": [{
+    "files": [
+      "**/*.spec.js",
+    ],
+    "env": {
+      "jest": true
+    }
+  }],
   "rules": {
+    "no-console": ["error", { "allow": ["debug", "info", "error"] }],
     "indent": [
       "error",
       2
