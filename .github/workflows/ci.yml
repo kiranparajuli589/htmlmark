@@ -43,11 +43,11 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           lcov-file: ./outputs/coverage/lcov.info
           delete-old-comments: true
-          title: "JS Code Coverage"
+          title: JS Code Coverage
       
       - name: JS coverage check
         if: ${{ github.event_name == 'pull_request' }}
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
-          min_coverage: '70'
-          path: './coverage/jest/lcov.info'
+          min_coverage: 70
+          path: ./outputs/coverage/lcov.info
