@@ -246,8 +246,10 @@ exports[`outer tokenizer paragraph should parse a paragarph as it is 1`] = `
 Array [
   Object {
     "raw": "some plain text",
+    "tokens": Object {
+      "value": "some plain text",
+    },
     "type": "paragraph",
-    "value": "some plain text",
   },
 ]
 `;

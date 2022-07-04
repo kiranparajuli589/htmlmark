@@ -19,7 +19,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "Heading One",
       },
     ],
     "type": "heading1",
@@ -30,7 +30,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "Heading Two",
       },
     ],
     "type": "heading2",
@@ -41,7 +41,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "Heading Three",
       },
     ],
     "type": "heading3",
@@ -52,7 +52,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "Heading Four",
       },
     ],
     "type": "heading4",
@@ -63,7 +63,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "Heading Five",
       },
     ],
     "type": "heading5",
@@ -74,7 +74,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "Heading Six",
       },
     ],
     "type": "heading6",
@@ -154,7 +154,6 @@ Array [
       },
     ],
     "type": "paragraph",
-    "value": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
   },
   Object {
     "depth": 0,
@@ -174,7 +173,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "list item 1",
       },
     ],
     "type": "listItem",
@@ -185,7 +184,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "list item 2",
       },
     ],
     "type": "listItem",
@@ -196,7 +195,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "checkbox empty",
       },
     ],
     "type": "checkbox",
@@ -207,7 +206,7 @@ Array [
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "undefined",
+        "value": "checkbox checked",
       },
     ],
     "type": "checkboxChecked",
@@ -305,7 +304,6 @@ if (c === 2) {
       },
     ],
     "type": "paragraph",
-    "value": "some piece of normal paragraph",
   },
   Object {
     "type": "newline",
@@ -340,7 +338,6 @@ if (c === 2) {
       },
     ],
     "type": "paragraph",
-    "value": "some random text",
   },
   Object {
     "type": "newline",
