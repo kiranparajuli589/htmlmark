@@ -34,8 +34,6 @@ jobs:
         run: pnpm lint
       
       - name: Unit tests
-        env:
-          CI: true
         run: pnpm test:unit
       
       - name: JS Code Coverage Summary Report
