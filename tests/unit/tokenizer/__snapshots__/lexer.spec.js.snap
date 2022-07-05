@@ -1,0 +1,989 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`outer tokenizer codeblock should parse multiple consequetive codeblocks 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const a = 1",
+      },
+    ],
+    "type": "code-block",
+  },
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const b = 2",
+      },
+    ],
+    "type": "code-block",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const a = 1",
+      },
+    ],
+    "type": "code-block",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock with multiple lines 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const a = 1
+const b = 2",
+      },
+    ],
+    "type": "code-block",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock with multiple lines and a newline 1`] = `
+Array [
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const a = 1
+const b = 2
+
+const c = 3",
+      },
+    ],
+    "type": "code-block",
+  },
+]
+`;
+
+exports[`outer tokenizer codeblock should parse the codeblock without the language 1`] = `
+Array [
+  Object {
+    "language": null,
+    "tokens": Array [
+      Object {
+        "value": "const a = 1",
+      },
+    ],
+    "type": "code-block",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 1`] = `
+Array [
+  Object {
+    "indent": "",
+    "level": 1,
+    "raw": "# Heading One Text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading One Text",
+      },
+    ],
+    "type": "heading",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 2`] = `
+Array [
+  Object {
+    "indent": "",
+    "level": 2,
+    "raw": "## Heading Two Text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Two Text",
+      },
+    ],
+    "type": "heading",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 3`] = `
+Array [
+  Object {
+    "indent": "",
+    "level": 3,
+    "raw": "### Heading Three Text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Three Text",
+      },
+    ],
+    "type": "heading",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 4`] = `
+Array [
+  Object {
+    "indent": "",
+    "level": 4,
+    "raw": "#### Heading Four Text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Four Text",
+      },
+    ],
+    "type": "heading",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 5`] = `
+Array [
+  Object {
+    "indent": "",
+    "level": 5,
+    "raw": "##### Heading Five Text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Five Text",
+      },
+    ],
+    "type": "heading",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 6`] = `
+Array [
+  Object {
+    "indent": "",
+    "level": 6,
+    "raw": "###### Heading Six Text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Six Text",
+      },
+    ],
+    "type": "heading",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 7`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "- list item text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "list item text",
+      },
+    ],
+    "type": "list-item",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 8`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "1. count item text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "count item text",
+      },
+    ],
+    "type": "count-item",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 9`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "<!-- comment item text -->",
+    "tokens": Object {
+      "value": "comment item text",
+    },
+    "type": "comment",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 10`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "- [ ] checkbox item text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "checkbox item text",
+      },
+    ],
+    "type": "check-box",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 11`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "- [x] checked checkbox item text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "checked checkbox item text",
+      },
+    ],
+    "type": "check-box-checked",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 12`] = `
+Array [
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> quote item text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote item text",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 13`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": "",
+    "raw": "> > quote item text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote item text",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer common tokens should parse the common tokens 14`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "![alt text](image.png)",
+    "tokens": Object {
+      "alt": "alt text",
+      "url": "image.png",
+    },
+    "type": "image",
+  },
+]
+`;
+
+exports[`outer tokenizer paragraph should be deep tokenized 1`] = `
+Array [
+  Object {
+    "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "a paragraph of words ",
+      },
+      Object {
+        "type": "code",
+        "value": "first code",
+      },
+      Object {
+        "type": "text",
+        "value": " normal text here ",
+      },
+      Object {
+        "type": "code",
+        "value": "code body",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "italic",
+        "value": "first italics",
+      },
+      Object {
+        "type": "text",
+        "value": " here me crying ",
+      },
+      Object {
+        "type": "italic",
+        "value": "italic body",
+      },
+      Object {
+        "type": "text",
+        "value": " here me crying ",
+      },
+      Object {
+        "type": "bold",
+        "value": "first bolds",
+      },
+      Object {
+        "type": "text",
+        "value": " some normal again ",
+      },
+      Object {
+        "type": "bold",
+        "value": "bold body",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "href": "https://kiranparajuli.com.np",
+        "type": "link",
+        "value": "Kiran Parajuli",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "strike-through",
+        "value": "strikes body",
+      },
+      Object {
+        "type": "text",
+        "value": " here some",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`outer tokenizer quote should deep tokenize quote with multiple depth 1`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": "",
+    "raw": "> > quote **one** with *two*",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote ",
+      },
+      Object {
+        "type": "bold",
+        "value": "one",
+      },
+      Object {
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "type": "italic",
+        "value": "two",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer quote should deep tokenize quote with multiple depth 2`] = `
+Array [
+  Object {
+    "depth": 2,
+    "indent": "  ",
+    "raw": "  > > > quote \`four\` with ~~five~~",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote ",
+      },
+      Object {
+        "type": "code",
+        "value": "four",
+      },
+      Object {
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "type": "strike-through",
+        "value": "five",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer quote should deep tokenize quote with multiple depth 3`] = `
+Array [
+  Object {
+    "depth": 3,
+    "indent": "",
+    "raw": "> > > > quote [link-title](link-url) with *two*",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote ",
+      },
+      Object {
+        "href": "link-url",
+        "type": "link",
+        "value": "link-title",
+      },
+      Object {
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "type": "italic",
+        "value": "two",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer quote should deep tokenize quote with zero depth 1`] = `
+Array [
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> quote **one** with *two*",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote ",
+      },
+      Object {
+        "type": "bold",
+        "value": "one",
+      },
+      Object {
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "type": "italic",
+        "value": "two",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer quote should deep tokenize quote with zero depth 2`] = `
+Array [
+  Object {
+    "depth": 0,
+    "indent": "  ",
+    "raw": "  > quote \`four\` with ~~five~~",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote ",
+      },
+      Object {
+        "type": "code",
+        "value": "four",
+      },
+      Object {
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "type": "strike-through",
+        "value": "five",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer quote should deep tokenize quote with zero depth 3`] = `
+Array [
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> quote [link-title](link-url) with *two*",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote ",
+      },
+      Object {
+        "href": "link-url",
+        "type": "link",
+        "value": "link-title",
+      },
+      Object {
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "type": "italic",
+        "value": "two",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`outer tokenizer should tokenize a markdown content 1`] = `
+Array [
+  Object {
+    "indent": "",
+    "raw": "<!-- https://regex101.com/r/C6SxZH/1 -->",
+    "tokens": Object {
+      "value": "https://regex101.com/r/C6SxZH/1",
+    },
+    "type": "comment",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": "",
+    "level": 1,
+    "raw": "# Heading One",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading One",
+      },
+    ],
+    "type": "heading",
+  },
+  Object {
+    "indent": "",
+    "level": 2,
+    "raw": "## Heading Two",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Two",
+      },
+    ],
+    "type": "heading",
+  },
+  Object {
+    "indent": "",
+    "level": 3,
+    "raw": "### Heading Three",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Three",
+      },
+    ],
+    "type": "heading",
+  },
+  Object {
+    "indent": "",
+    "level": 4,
+    "raw": "#### Heading Four",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Four",
+      },
+    ],
+    "type": "heading",
+  },
+  Object {
+    "indent": "",
+    "level": 5,
+    "raw": "##### Heading Five",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Five",
+      },
+    ],
+    "type": "heading",
+  },
+  Object {
+    "indent": "",
+    "level": 6,
+    "raw": "###### Heading Six",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "Heading Six",
+      },
+    ],
+    "type": "heading",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "a paragraph of words ",
+      },
+      Object {
+        "type": "code",
+        "value": "first code",
+      },
+      Object {
+        "type": "text",
+        "value": " normal text here ",
+      },
+      Object {
+        "type": "code",
+        "value": "code body",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "italic",
+        "value": "first italics",
+      },
+      Object {
+        "type": "text",
+        "value": " here me crying ",
+      },
+      Object {
+        "type": "italic",
+        "value": "italic body",
+      },
+      Object {
+        "type": "text",
+        "value": " here me crying ",
+      },
+      Object {
+        "type": "bold",
+        "value": "first bolds",
+      },
+      Object {
+        "type": "text",
+        "value": " some normal again ",
+      },
+      Object {
+        "type": "bold",
+        "value": "bold body",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "href": "https://kiranparajuli.com.np",
+        "type": "link",
+        "value": "Kiran Parajuli",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "strike-through",
+        "value": "strikes body",
+      },
+      Object {
+        "type": "text",
+        "value": " here some normal again at the last",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> some quote",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some quote",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": "",
+    "raw": "- list item 1",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "list item 1",
+      },
+    ],
+    "type": "list-item",
+  },
+  Object {
+    "indent": "",
+    "raw": "- list item 2",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "list item 2",
+      },
+    ],
+    "type": "list-item",
+  },
+  Object {
+    "indent": "",
+    "raw": "- [ ] checkbox empty",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "checkbox empty",
+      },
+    ],
+    "type": "check-box",
+  },
+  Object {
+    "indent": "",
+    "raw": "- [x] checkbox checked",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "checkbox checked",
+      },
+    ],
+    "type": "check-box-checked",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "depth": 0,
+    "indent": "",
+    "raw": "> quote 1",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "quote 1",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "depth": 1,
+    "indent": "",
+    "raw": "> > nested quote 2 [quote-link](quote-link-url)",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "nested quote 2 ",
+      },
+      Object {
+        "href": "quote-link-url",
+        "type": "link",
+        "value": "quote-link",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "depth": 2,
+    "indent": "",
+    "raw": "> > > nested quote 3 with *italics* and **bolds**",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "nested quote 3 with ",
+      },
+      Object {
+        "type": "italic",
+        "value": "italics",
+      },
+      Object {
+        "type": "text",
+        "value": " and ",
+      },
+      Object {
+        "type": "bold",
+        "value": "bolds",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const a = 1;
+const b = 1;
+const c = a + b;
+
+if (c === 2) {
+  console.log('success');
+} else {
+  console.log('failure');
+}",
+      },
+    ],
+    "type": "code-block",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "",
+      },
+    ],
+    "type": "code-block",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "raw": "some piece of normal paragraph",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some piece of normal paragraph",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "language": null,
+    "tokens": Array [
+      Object {
+        "value": "another code block is here",
+      },
+    ],
+    "type": "code-block",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": "",
+    "raw": "![Kiran Parajuli](https://avatars.githubusercontent.com/u/39373750?v=4)",
+    "tokens": Object {
+      "alt": "Kiran Parajuli",
+      "url": "https://avatars.githubusercontent.com/u/39373750?v=4",
+    },
+    "type": "image",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "raw": "some random text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some random text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "raw": "| column 1 | column 2 | column 3 |",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 | column 3 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "raw": "| -------- | -------- | -------- |",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| -------- | -------- | -------- |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "raw": "| text     | text     | text     |",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| text     | text     | text     |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "raw": "| text     | text     | text     |",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| text     | text     | text     |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "raw": "| text     | text     | text     |",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| text     | text     | text     |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+]
+`;

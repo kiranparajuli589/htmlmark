@@ -46,6 +46,14 @@ some piece of normal paragraph
 another code block is here
 ```
 
-![alt text](https://kiranparajuli.com.np/images/kiran.jpg)
+![Kiran Parajuli](https://avatars.githubusercontent.com/u/39373750?v=4)
 
 some random text
+
+| column 1 | column 2 | column 3 |
+| -------- | -------- | -------- |
+| text     | text     | text     |
+| text     | text     | text     |
+| text     | text     | text     |
+
+
