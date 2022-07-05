@@ -1,5 +1,5 @@
 const path = require("path")
-const { read } = require('../../../lib/file')
+const { read } = require("../../../lib/file")
 const lexer = require("../../../lib/tokenizer/lexer")
 const TOKENS = require("../../../lib/tokenizer/tokens")
 
