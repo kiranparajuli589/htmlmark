@@ -1,4 +1,6 @@
-const tokenizer = require("../../../lib/tokenizer/outerTokenizer")
+const path = require("path")
+const { read } = require('../../../lib/file')
+const lexer = require("../../../lib/tokenizer/lexer")
 const TOKENS = require("../../../lib/tokenizer/tokens")
 
 
@@ -27,7 +29,7 @@ describe("outer tokenizer", () => {
       ["", "\n"],
 
     ])("should not include the top empty lines", (lines) => {
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toEqual([])
     })
     it.each(["", "\n"])("should include the empty line after some content", (eLine) => {
@@ -35,7 +37,7 @@ describe("outer tokenizer", () => {
         "some plain text",
         eLine,
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens.length).toBe(2)
       expect(tokens[1].type).toBe(TOKENS.newLine)
     })
@@ -46,7 +48,7 @@ describe("outer tokenizer", () => {
         "",
         "some more plain text",
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens.length).toBe(3)
       expect(tokens[1].type).toBe(TOKENS.newLine)
     })
@@ -59,7 +61,7 @@ describe("outer tokenizer", () => {
         "const a = 1",
         "```",
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
     it("should parse the codeblock without the language", () => {
@@ -68,7 +70,7 @@ describe("outer tokenizer", () => {
         "const a = 1",
         "```",
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
     it("should parse the codeblock with multiple lines", () => {
@@ -78,7 +80,7 @@ describe("outer tokenizer", () => {
         "const b = 2",
         "```",
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
     it("should parse the codeblock with multiple lines and a newline", () => {
@@ -90,7 +92,7 @@ describe("outer tokenizer", () => {
         "const c = 3",
         "```",
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
     it("should parse multiple consequetive codeblocks", () => {
@@ -102,7 +104,7 @@ describe("outer tokenizer", () => {
         "const b = 2",
         "```",
       ]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
   })
@@ -110,23 +112,56 @@ describe("outer tokenizer", () => {
   describe("common tokens", () => {
     it.each(commonTokensList)("should parse the common tokens", (line) => { 
       const lines = [line]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
     it.each(commonTokensList)("should parse the common tokens with some space before", (line) => {
       const indent = "  "
       const lines = [indent + line]
-      const tokens = tokenizer(lines)
+      const tokens = lexer(lines)
       expect(tokens[0].indent).toBe(indent)
     })
   })
   describe("paragraph", () => {
-    it("should parse a paragarph as it is", () => {
+    it("should be deep tokenized", () => {
       const lines = [
-        "some plain text",
+        "a paragraph of words `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some"
       ]
-      const tokens = tokenizer(lines)
-      expect(tokens).toMatchSnapshot()
+      const lexerData = lexer(lines)
+      expect(lexerData).toMatchSnapshot()
     })
+  })
+  describe("quote", () => {
+    it.each([
+      {quote: "> quote 1", expectedDepth: 0},
+      {quote: "> > quote 2", expectedDepth: 1},
+      {quote: "> > > quote 3", expectedDepth: 2},
+      {quote: "> > > > quote 4", expectedDepth: 3},
+      {quote: "> > > > > quote 5", expectedDepth: 4},
+    ])("should detect the quote depth", ({quote, expectedDepth}) => {
+      const tokenizedContent = lexer([quote])
+      expect(tokenizedContent[0].depth).toEqual(expectedDepth)
+    })
+    it.each([
+      "> quote **one** with *two*",
+      "  > quote `four` with ~~five~~",
+      "> quote [link-title](link-url) with *two*",
+    ])("should deep tokenize quote with zero depth", (line) => {
+      const tokenizedContent = lexer([line])
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it.each([
+      "> > quote **one** with *two*",
+      "  > > > quote `four` with ~~five~~",
+      "> > > > quote [link-title](link-url) with *two*",
+    ])("should deep tokenize quote with multiple depth", (line) => {
+      const tokenizedContent = lexer([line])
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+  })
+  it("should tokenize a markdown content", () => {
+    // eslint-disable-next-line no-undef
+    const fileContent = read(path.join(__dirname, "..", "..", "fixtures", "markdown.md")).split("\n")
+    expect(lexer(fileContent)).toMatchSnapshot()
   })
 })
