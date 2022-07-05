@@ -4,13 +4,17 @@ exports[`outer tokenizer codeblock should parse multiple consequetive codeblocks
 Array [
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "const a = 1",
+    "tokens": Object {
+      "value": "const a = 1",
+    },
+    "type": "code-block",
   },
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "const b = 2",
+    "tokens": Object {
+      "value": "const b = 2",
+    },
+    "type": "code-block",
   },
 ]
 `;
@@ -19,8 +23,10 @@ exports[`outer tokenizer codeblock should parse the codeblock 1`] = `
 Array [
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "const a = 1",
+    "tokens": Object {
+      "value": "const a = 1",
+    },
+    "type": "code-block",
   },
 ]
 `;
@@ -29,9 +35,11 @@ exports[`outer tokenizer codeblock should parse the codeblock with multiple line
 Array [
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "const a = 1
+    "tokens": Object {
+      "value": "const a = 1
 const b = 2",
+    },
+    "type": "code-block",
   },
 ]
 `;
@@ -40,11 +48,13 @@ exports[`outer tokenizer codeblock should parse the codeblock with multiple line
 Array [
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "const a = 1
+    "tokens": Object {
+      "value": "const a = 1
 const b = 2
 
 const c = 3",
+    },
+    "type": "code-block",
   },
 ]
 `;
@@ -53,8 +63,10 @@ exports[`outer tokenizer codeblock should parse the codeblock without the langua
 Array [
   Object {
     "language": null,
-    "type": "codeblock",
-    "value": "const a = 1",
+    "tokens": Object {
+      "value": "const a = 1",
+    },
+    "type": "code-block",
   },
 ]
 `;
@@ -65,9 +77,10 @@ Array [
     "indent": "",
     "raw": "# Heading One Text",
     "tokens": Object {
+      "level": "#",
       "value": "Heading One Text",
     },
-    "type": "heading1",
+    "type": "heading",
   },
 ]
 `;
@@ -78,9 +91,10 @@ Array [
     "indent": "",
     "raw": "## Heading Two Text",
     "tokens": Object {
+      "level": "##",
       "value": "Heading Two Text",
     },
-    "type": "heading2",
+    "type": "heading",
   },
 ]
 `;
@@ -91,9 +105,10 @@ Array [
     "indent": "",
     "raw": "### Heading Three Text",
     "tokens": Object {
+      "level": "###",
       "value": "Heading Three Text",
     },
-    "type": "heading3",
+    "type": "heading",
   },
 ]
 `;
@@ -104,9 +119,10 @@ Array [
     "indent": "",
     "raw": "#### Heading Four Text",
     "tokens": Object {
+      "level": "####",
       "value": "Heading Four Text",
     },
-    "type": "heading4",
+    "type": "heading",
   },
 ]
 `;
@@ -117,9 +133,10 @@ Array [
     "indent": "",
     "raw": "##### Heading Five Text",
     "tokens": Object {
+      "level": "#####",
       "value": "Heading Five Text",
     },
-    "type": "heading5",
+    "type": "heading",
   },
 ]
 `;
@@ -130,9 +147,10 @@ Array [
     "indent": "",
     "raw": "###### Heading Six Text",
     "tokens": Object {
+      "level": "######",
       "value": "Heading Six Text",
     },
-    "type": "heading6",
+    "type": "heading",
   },
 ]
 `;
@@ -145,7 +163,7 @@ Array [
     "tokens": Object {
       "value": "list item text",
     },
-    "type": "listItem",
+    "type": "list-item",
   },
 ]
 `;
@@ -158,7 +176,7 @@ Array [
     "tokens": Object {
       "value": "count item text",
     },
-    "type": "countItem",
+    "type": "count-item",
   },
 ]
 `;
@@ -184,7 +202,7 @@ Array [
     "tokens": Object {
       "value": "checkbox item text",
     },
-    "type": "checkbox",
+    "type": "check-box",
   },
 ]
 `;
@@ -197,7 +215,7 @@ Array [
     "tokens": Object {
       "value": "checked checkbox item text",
     },
-    "type": "checkboxChecked",
+    "type": "check-box-checked",
   },
 ]
 `;

@@ -1,4 +1,5 @@
 const tokenizer = require("../../../lib/tokenizer/outerTokenizer")
+const TOKENS = require("../../../lib/tokenizer/tokens")
 
 
 const commonTokensList = [
@@ -36,7 +37,7 @@ describe("outer tokenizer", () => {
       ]
       const tokens = tokenizer(lines)
       expect(tokens.length).toBe(2)
-      expect(tokens[1].type).toBe("newline")
+      expect(tokens[1].type).toBe(TOKENS.newLine)
     })
     it("should combine multiple consequest new lines to a single one", () => {
       const lines = [
@@ -47,7 +48,7 @@ describe("outer tokenizer", () => {
       ]
       const tokens = tokenizer(lines)
       expect(tokens.length).toBe(3)
-      expect(tokens[1].type).toBe("newline")
+      expect(tokens[1].type).toBe(TOKENS.newLine)
     })
   })
 

@@ -11,10 +11,11 @@ Array [
     "type": "comment",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "indent": "",
+    "level": 1,
     "raw": "# Heading One",
     "tokens": Array [
       Object {
@@ -22,10 +23,11 @@ Array [
         "value": "Heading One",
       },
     ],
-    "type": "heading1",
+    "type": "heading",
   },
   Object {
     "indent": "",
+    "level": 2,
     "raw": "## Heading Two",
     "tokens": Array [
       Object {
@@ -33,10 +35,11 @@ Array [
         "value": "Heading Two",
       },
     ],
-    "type": "heading2",
+    "type": "heading",
   },
   Object {
     "indent": "",
+    "level": 3,
     "raw": "### Heading Three",
     "tokens": Array [
       Object {
@@ -44,10 +47,11 @@ Array [
         "value": "Heading Three",
       },
     ],
-    "type": "heading3",
+    "type": "heading",
   },
   Object {
     "indent": "",
+    "level": 4,
     "raw": "#### Heading Four",
     "tokens": Array [
       Object {
@@ -55,10 +59,11 @@ Array [
         "value": "Heading Four",
       },
     ],
-    "type": "heading4",
+    "type": "heading",
   },
   Object {
     "indent": "",
+    "level": 5,
     "raw": "##### Heading Five",
     "tokens": Array [
       Object {
@@ -66,10 +71,11 @@ Array [
         "value": "Heading Five",
       },
     ],
-    "type": "heading5",
+    "type": "heading",
   },
   Object {
     "indent": "",
+    "level": 6,
     "raw": "###### Heading Six",
     "tokens": Array [
       Object {
@@ -77,7 +83,10 @@ Array [
         "value": "Heading Six",
       },
     ],
-    "type": "heading6",
+    "type": "heading",
+  },
+  Object {
+    "type": "new-line",
   },
   Object {
     "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
@@ -144,7 +153,7 @@ Array [
         "value": " ",
       },
       Object {
-        "type": "strike",
+        "type": "strike-through",
         "value": "strikes body",
       },
       Object {
@@ -153,6 +162,9 @@ Array [
       },
     ],
     "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
   },
   Object {
     "depth": 0,
@@ -167,6 +179,9 @@ Array [
     "type": "quote",
   },
   Object {
+    "type": "new-line",
+  },
+  Object {
     "indent": "",
     "raw": "- list item 1",
     "tokens": Array [
@@ -175,7 +190,7 @@ Array [
         "value": "list item 1",
       },
     ],
-    "type": "listItem",
+    "type": "list-item",
   },
   Object {
     "indent": "",
@@ -186,7 +201,7 @@ Array [
         "value": "list item 2",
       },
     ],
-    "type": "listItem",
+    "type": "list-item",
   },
   Object {
     "indent": "",
@@ -197,7 +212,7 @@ Array [
         "value": "checkbox empty",
       },
     ],
-    "type": "checkbox",
+    "type": "check-box",
   },
   Object {
     "indent": "",
@@ -208,10 +223,10 @@ Array [
         "value": "checkbox checked",
       },
     ],
-    "type": "checkboxChecked",
+    "type": "check-box-checked",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "depth": 0,
@@ -267,12 +282,14 @@ Array [
     "type": "quote",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "const a = 1;
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "const a = 1;
 const b = 1;
 const c = a + b;
 
@@ -281,17 +298,25 @@ if (c === 2) {
 } else {
   console.log('failure');
 }",
+      },
+    ],
+    "type": "code-block",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "language": "js",
-    "type": "codeblock",
-    "value": "",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": null,
+      },
+    ],
+    "type": "code-block",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "raw": "some piece of normal paragraph",
@@ -304,15 +329,20 @@ if (c === 2) {
     "type": "paragraph",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "language": null,
-    "type": "codeblock",
-    "value": "another code block is here",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "another code block is here",
+      },
+    ],
+    "type": "code-block",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "indent": "",
@@ -324,7 +354,7 @@ if (c === 2) {
     "type": "image",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
   Object {
     "raw": "some random text",
@@ -337,7 +367,7 @@ if (c === 2) {
     "type": "paragraph",
   },
   Object {
-    "type": "newline",
+    "type": "new-line",
   },
 ]
 `;
