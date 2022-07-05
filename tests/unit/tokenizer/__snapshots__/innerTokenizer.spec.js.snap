@@ -67,7 +67,7 @@ Array [
         "value": " ",
       },
       Object {
-        "type": "strike",
+        "type": "strike-through",
         "value": "strikes body",
       },
       Object {
@@ -129,7 +129,7 @@ Array [
         "value": " with ",
       },
       Object {
-        "type": "strike",
+        "type": "strike-through",
         "value": "five",
       },
     ],
@@ -217,7 +217,7 @@ Array [
         "value": " with ",
       },
       Object {
-        "type": "strike",
+        "type": "strike-through",
         "value": "five",
       },
     ],
