@@ -1,0 +1,11 @@
+version: 2
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  # https://github.com/dependabot/dependabot-core/issues/1736
+  #- package-ecosystem: "pnpm"
+  #  directory: "/"
+  #  schedule:
+  #    interval: "daily"
