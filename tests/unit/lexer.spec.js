@@ -1,7 +1,7 @@
 const path = require("path")
-const { read } = require("../../../lib/file")
-const lexer = require("../../../lib/tokenizer/lexer")
-const TOKENS = require("../../../lib/tokenizer/tokens")
+const { read } = require("../../lib/file")
+const lexer = require("../../lib/lexer")
+const TOKENS = require("../../lib/tokens")
 
 
 const commonTokensList = [
@@ -39,7 +39,7 @@ describe("outer tokenizer", () => {
       ]
       const tokens = lexer(lines)
       expect(tokens.length).toBe(2)
-      expect(tokens[1].type).toBe(TOKENS.newLine)
+      expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
     it("should combine multiple consequest new lines to a single one", () => {
       const lines = [
@@ -50,7 +50,7 @@ describe("outer tokenizer", () => {
       ]
       const tokens = lexer(lines)
       expect(tokens.length).toBe(3)
-      expect(tokens[1].type).toBe(TOKENS.newLine)
+      expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
   })
 
@@ -161,7 +161,7 @@ describe("outer tokenizer", () => {
   })
   it("should tokenize a markdown content", () => {
     // eslint-disable-next-line no-undef
-    const fileContent = read(path.join(__dirname, "..", "..", "fixtures", "markdown.md")).split("\n")
+    const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
     expect(lexer(fileContent)).toMatchSnapshot()
   })
 })
