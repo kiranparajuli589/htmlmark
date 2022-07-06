@@ -1,10 +1,54 @@
 # Markdown Parser
 
-> Under HIGH DEVELOPMENT
+## ⚠️ Under HIGH DEVELOPMENT ⚠️
 
 A very lightweight markdown parser powered by Regex
 
 ## Key points
 - no use of external dependencies
-- tokenizer: to produce markdown tokens
+- lexer: to produce markdown tokens
 - parser: to produce the HTML code
+
+## Roadmap
+
+### Comment
+✔️: is included in the lexer data but not in the parsed HTML output
+
+### Heading
+| level | bold | italic | strike | underline | link | code | indent |
+| ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
+| ✔️ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+
+### List Item (ordered/unordered)
+| level | bold | italic | strike | underline | link | code | indent |
+| ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
+| ❌ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+
+### Checkbox
+| check status | level | bold | italic | strike | underline | link | code | indent |
+| ------ | ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
+| ✔️ | ❌ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+
+### Image
+| src | alt | title | height | width | align | indent |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+### Quote
+| depth | bold | italic | strike | underline | link | code | indent |
+| ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
+| ✔️ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+
+### Paragraph
+| bold | italic | strike | underline | link | code | indent |
+| ---- | ------ | ----- | -------- | ---- | ---- | ---- |
+| ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+
+### Table
+❌
+
+### Horizontal line
+❌
+
+> ❌: not implemented
+> ✔️: implemented
