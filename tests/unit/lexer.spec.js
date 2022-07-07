@@ -1,7 +1,7 @@
 const path = require("path")
-const { read } = require("../../lib/file")
+const { read } = require("../../lib/util/file")
 const lexer = require("../../lib/lexer")
-const TOKENS = require("../../lib/tokens")
+const TOKENS = require("../../lib/util/tokens")
 
 
 const commonTokensList = [
@@ -157,6 +157,25 @@ describe("outer tokenizer", () => {
     ])("should deep tokenize quote with multiple depth", (line) => {
       const tokenizedContent = lexer([line])
       expect(tokenizedContent).toMatchSnapshot()
+    })
+  })
+  describe("hr line", () => {
+    it("should parse the hr line", () => {
+      const lines = [
+        "---",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+      expect(tokens[0].type).toBe(TOKENS.HR_LINE)
+    })
+    it("should not allow multiple consecutive hr lines", () => {
+      const lines = [
+        "---",
+        "---",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens.length).toBe(1)
+      expect(tokens[0].type).toBe(TOKENS.HR_LINE)
     })
   })
   it("should tokenize a markdown content", () => {

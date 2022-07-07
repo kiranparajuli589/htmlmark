@@ -1,4 +1,5 @@
 const parser = require("../../lib/parser")
+const TOKENS = require("../../lib/util/tokens")
 
 describe("parser", () => {
   it("should parse the empty line to br", () => {
@@ -281,5 +282,12 @@ describe("parser", () => {
     ]
     const parsedData = parser(lexedData)
     expect(parsedData).toBe("")
+  })
+  it("should parse the hr line", () => {
+    const lexedData = [{
+      type: TOKENS.HR_LINE
+    }]
+    const parsedData = parser(lexedData)
+    expect(parsedData).toBe("<hr>")
   })
 })
