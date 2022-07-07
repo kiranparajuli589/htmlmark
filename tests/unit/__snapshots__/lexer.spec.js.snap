@@ -310,6 +310,14 @@ Array [
 ]
 `;
 
+exports[`outer tokenizer hr line should parse the hr line 1`] = `
+Array [
+  Object {
+    "type": "hr-line",
+  },
+]
+`;
+
 exports[`outer tokenizer paragraph should be deep tokenized 1`] = `
 Array [
   Object {
