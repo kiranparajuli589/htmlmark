@@ -178,11 +178,6 @@ describe("lexer", () => {
       expect(tokens[0].type).toBe(TOKENS.HR_LINE)
     })
   })
-  it("should tokenize a markdown content", () => {
-    // eslint-disable-next-line no-undef
-    const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
-    expect(lexer(fileContent)).toMatchSnapshot()
-  })
   describe("table", () => {
     describe("is not a table", () => {
       it("only header", () => {
@@ -288,7 +283,7 @@ describe("lexer", () => {
       it.each([
         "|-------|-------|",
         "|:-------:|:---------:|",
-      ])("should parse a table 1", (line) => {
+      ])("should parse a table", (line) => {
         const tokens = lexer([
           "| column 1 | column 2 |",
           line,
@@ -298,5 +293,10 @@ describe("lexer", () => {
         expect(tokens).toMatchSnapshot()
       })
     })
+  })
+  it.only("should tokenize a markdown content", () => {
+    // eslint-disable-next-line no-undef
+    const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
+    expect(lexer(fileContent)).toMatchSnapshot()
   })
 })

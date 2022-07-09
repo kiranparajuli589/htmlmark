@@ -51,9 +51,11 @@ another code block is here
 some random text
 
 | column 1 | column 2 | column 3 |
-| -------- | -------- | -------- |
-| text     | text     | text     |
-| text     | text     | text     |
-| text     | text     | text     |
+|----------|----------|----------|
+| r1 text c1 | r1 text c2 | r1 text c3 |
+| r2 text c1 | r2 text c2 | r2 text c3 |
+| r3 text c1 | r3 text c2 | r3 text c3 |
+| r4 text c1 | r4 text c2 | r5 text c3 |
+| r6 text c1 | r6 text c2 | r6 text c3 |
 
-
+some random text again

@@ -942,50 +942,193 @@ if (c === 2) {
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2 | column 3 |",
-      },
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 3",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " r1 text c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r1 text c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " r1 text c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r1 text c2",
+            },
+          ],
+        },
+        Object {
+          "raw": " r1 text c3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r1 text c3",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " r2 text c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r2 text c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " r2 text c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r2 text c2",
+            },
+          ],
+        },
+        Object {
+          "raw": " r2 text c3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r2 text c3",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " r3 text c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r3 text c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " r3 text c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r3 text c2",
+            },
+          ],
+        },
+        Object {
+          "raw": " r3 text c3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r3 text c3",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " r4 text c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r4 text c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " r4 text c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r4 text c2",
+            },
+          ],
+        },
+        Object {
+          "raw": " r5 text c3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r5 text c3",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " r6 text c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r6 text c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " r6 text c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r6 text c2",
+            },
+          ],
+        },
+        Object {
+          "raw": " r6 text c3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r6 text c3",
+            },
+          ],
+        },
+      ],
     ],
-    "type": "paragraph",
+    "type": "table",
   },
   Object {
-    "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| -------- | -------- | -------- |",
-      },
-    ],
-    "type": "paragraph",
+    "type": "new-line",
   },
   Object {
-    "indent": 0,
+    "raw": "some random text again",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "| text     | text     | text     |",
-      },
-    ],
-    "type": "paragraph",
-  },
-  Object {
-    "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| text     | text     | text     |",
-      },
-    ],
-    "type": "paragraph",
-  },
-  Object {
-    "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| text     | text     | text     |",
+        "value": "some random text again",
       },
     ],
     "type": "paragraph",
@@ -1150,53 +1293,48 @@ Array [
 exports[`lexer table is not a table other tokens in between 3 1`] = `
 Array [
   Object {
+    "indent": 0,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },
@@ -1216,158 +1354,142 @@ Array [
 ]
 `;
 
-exports[`lexer table table heading-body separator should parse a table 1 1`] = `
+exports[`lexer table table heading-body separator should parse a table 1`] = `
 Array [
   Object {
+    "indent": 0,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 2 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 2 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 2 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 2 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 2 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 2 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 2 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 2 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },
 ]
 `;
 
-exports[`lexer table table heading-body separator should parse a table 1 2`] = `
+exports[`lexer table table heading-body separator should parse a table 2`] = `
 Array [
   Object {
+    "indent": 0,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 2 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 2 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 2 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 2 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 2 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 2 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 2 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 2 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },
@@ -1447,53 +1569,48 @@ Array [
 exports[`lexer table table indent indent should break the table 1 1`] = `
 Array [
   Object {
+    "indent": 2,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "  ",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "  ",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },
@@ -1513,104 +1630,94 @@ Array [
 exports[`lexer table table indent indent should break the table 2 1`] = `
 Array [
   Object {
+    "indent": 2,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "  ",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "  ",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },
   Object {
+    "indent": 0,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },
@@ -1620,53 +1727,48 @@ Array [
 exports[`lexer table table indent the indented table 1`] = `
 Array [
   Object {
+    "indent": 2,
     "rows": Array [
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " column 1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 1",
-              },
-            ],
-          },
-          Object {
-            "raw": " column 2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "column 2",
-              },
-            ],
-          },
-        ],
-        "indent": "  ",
-      },
-      Object {
-        "cell": Array [
-          Object {
-            "raw": " row 1 c1 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c1",
-              },
-            ],
-          },
-          Object {
-            "raw": " row 1 c2 ",
-            "tokens": Array [
-              Object {
-                "type": "text",
-                "value": "row 1 c2",
-              },
-            ],
-          },
-        ],
-        "indent": "  ",
-      },
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
     ],
     "type": "table",
   },

@@ -45,7 +45,9 @@ A very lightweight markdown parser powered by Regex
 | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
 
 ### Table
-❌
+| indent | cell count | tokenizing | parsing |
+|---|---|---|---|
+| ❌ | ❌ | ✔️ | ✔️ |
 
 ### Horizontal line
 ✔️
