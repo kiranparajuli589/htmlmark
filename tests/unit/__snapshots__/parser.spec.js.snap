@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parser table should parse the table lexer 1`] = `
+"<table>
+  <thead>
+    <tr><th>column 1</th><th>column 2</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
+  </tbody>
+  </table>"
+`;
