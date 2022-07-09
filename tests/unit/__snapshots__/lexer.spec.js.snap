@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`outer tokenizer codeblock should parse multiple consequetive codeblocks 1`] = `
+exports[`lexer codeblock should parse multiple consequetive codeblocks 1`] = `
 Array [
   Object {
     "language": "js",
@@ -23,7 +23,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer codeblock should parse the codeblock 1`] = `
+exports[`lexer codeblock should parse the codeblock 1`] = `
 Array [
   Object {
     "language": "js",
@@ -37,7 +37,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer codeblock should parse the codeblock with multiple lines 1`] = `
+exports[`lexer codeblock should parse the codeblock with multiple lines 1`] = `
 Array [
   Object {
     "language": "js",
@@ -52,7 +52,7 @@ const b = 2",
 ]
 `;
 
-exports[`outer tokenizer codeblock should parse the codeblock with multiple lines and a newline 1`] = `
+exports[`lexer codeblock should parse the codeblock with multiple lines and a newline 1`] = `
 Array [
   Object {
     "language": "js",
@@ -69,7 +69,7 @@ const c = 3",
 ]
 `;
 
-exports[`outer tokenizer codeblock should parse the codeblock without the language 1`] = `
+exports[`lexer codeblock should parse the codeblock without the language 1`] = `
 Array [
   Object {
     "language": null,
@@ -83,7 +83,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 1`] = `
+exports[`lexer common tokens should parse the common tokens 1`] = `
 Array [
   Object {
     "indent": "",
@@ -100,7 +100,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 2`] = `
+exports[`lexer common tokens should parse the common tokens 2`] = `
 Array [
   Object {
     "indent": "",
@@ -117,7 +117,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 3`] = `
+exports[`lexer common tokens should parse the common tokens 3`] = `
 Array [
   Object {
     "indent": "",
@@ -134,7 +134,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 4`] = `
+exports[`lexer common tokens should parse the common tokens 4`] = `
 Array [
   Object {
     "indent": "",
@@ -151,7 +151,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 5`] = `
+exports[`lexer common tokens should parse the common tokens 5`] = `
 Array [
   Object {
     "indent": "",
@@ -168,7 +168,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 6`] = `
+exports[`lexer common tokens should parse the common tokens 6`] = `
 Array [
   Object {
     "indent": "",
@@ -185,7 +185,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 7`] = `
+exports[`lexer common tokens should parse the common tokens 7`] = `
 Array [
   Object {
     "indent": "",
@@ -201,7 +201,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 8`] = `
+exports[`lexer common tokens should parse the common tokens 8`] = `
 Array [
   Object {
     "indent": "",
@@ -217,7 +217,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 9`] = `
+exports[`lexer common tokens should parse the common tokens 9`] = `
 Array [
   Object {
     "indent": "",
@@ -230,7 +230,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 10`] = `
+exports[`lexer common tokens should parse the common tokens 10`] = `
 Array [
   Object {
     "indent": "",
@@ -246,7 +246,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 11`] = `
+exports[`lexer common tokens should parse the common tokens 11`] = `
 Array [
   Object {
     "indent": "",
@@ -262,7 +262,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 12`] = `
+exports[`lexer common tokens should parse the common tokens 12`] = `
 Array [
   Object {
     "depth": 0,
@@ -279,7 +279,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 13`] = `
+exports[`lexer common tokens should parse the common tokens 13`] = `
 Array [
   Object {
     "depth": 1,
@@ -296,7 +296,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer common tokens should parse the common tokens 14`] = `
+exports[`lexer common tokens should parse the common tokens 14`] = `
 Array [
   Object {
     "indent": "",
@@ -310,7 +310,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer hr line should parse the hr line 1`] = `
+exports[`lexer hr line should parse the hr line 1`] = `
 Array [
   Object {
     "type": "hr-line",
@@ -318,7 +318,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer paragraph should be deep tokenized 1`] = `
+exports[`lexer paragraph should be deep tokenized 1`] = `
 Array [
   Object {
     "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
@@ -398,7 +398,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer quote should deep tokenize quote with multiple depth 1`] = `
+exports[`lexer quote should deep tokenize quote with multiple depth 1`] = `
 Array [
   Object {
     "depth": 1,
@@ -427,7 +427,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer quote should deep tokenize quote with multiple depth 2`] = `
+exports[`lexer quote should deep tokenize quote with multiple depth 2`] = `
 Array [
   Object {
     "depth": 2,
@@ -456,7 +456,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer quote should deep tokenize quote with multiple depth 3`] = `
+exports[`lexer quote should deep tokenize quote with multiple depth 3`] = `
 Array [
   Object {
     "depth": 3,
@@ -486,7 +486,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer quote should deep tokenize quote with zero depth 1`] = `
+exports[`lexer quote should deep tokenize quote with zero depth 1`] = `
 Array [
   Object {
     "depth": 0,
@@ -515,7 +515,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer quote should deep tokenize quote with zero depth 2`] = `
+exports[`lexer quote should deep tokenize quote with zero depth 2`] = `
 Array [
   Object {
     "depth": 0,
@@ -544,7 +544,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer quote should deep tokenize quote with zero depth 3`] = `
+exports[`lexer quote should deep tokenize quote with zero depth 3`] = `
 Array [
   Object {
     "depth": 0,
@@ -574,7 +574,7 @@ Array [
 ]
 `;
 
-exports[`outer tokenizer should tokenize a markdown content 1`] = `
+exports[`lexer should tokenize a markdown content 1`] = `
 Array [
   Object {
     "indent": "",
@@ -941,7 +941,7 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
-    "raw": "| column 1 | column 2 | column 3 |",
+    "indent": 0,
     "tokens": Array [
       Object {
         "type": "text",
@@ -951,7 +951,7 @@ if (c === 2) {
     "type": "paragraph",
   },
   Object {
-    "raw": "| -------- | -------- | -------- |",
+    "indent": 0,
     "tokens": Array [
       Object {
         "type": "text",
@@ -961,7 +961,7 @@ if (c === 2) {
     "type": "paragraph",
   },
   Object {
-    "raw": "| text     | text     | text     |",
+    "indent": 0,
     "tokens": Array [
       Object {
         "type": "text",
@@ -971,7 +971,7 @@ if (c === 2) {
     "type": "paragraph",
   },
   Object {
-    "raw": "| text     | text     | text     |",
+    "indent": 0,
     "tokens": Array [
       Object {
         "type": "text",
@@ -981,7 +981,7 @@ if (c === 2) {
     "type": "paragraph",
   },
   Object {
-    "raw": "| text     | text     | text     |",
+    "indent": 0,
     "tokens": Array [
       Object {
         "type": "text",
@@ -992,6 +992,164 @@ if (c === 2) {
   },
   Object {
     "type": "new-line",
+  },
+]
+`;
+
+exports[`lexer table table heading-body separator should parse a table 1 1`] = `
+Array [
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 2 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 2 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 2 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 2 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table table heading-body separator should parse a table 1 2`] = `
+Array [
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 2 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 2 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 2 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 2 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+    ],
+    "type": "table",
   },
 ]
 `;

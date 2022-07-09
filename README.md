@@ -48,7 +48,7 @@ A very lightweight markdown parser powered by Regex
 ❌
 
 ### Horizontal line
-❌
+✔️
 
 > ❌: not implemented yet
 >

@@ -21,7 +21,7 @@ const commonTokensList = [
   "![alt text](image.png)",
 ]
 
-describe("outer tokenizer", () => {
+describe("lexer", () => {
   describe("newline", () => {
     it.each([
       [""],
@@ -182,5 +182,21 @@ describe("outer tokenizer", () => {
     // eslint-disable-next-line no-undef
     const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
     expect(lexer(fileContent)).toMatchSnapshot()
+  })
+  describe.only("table", () => {
+    describe("table heading-body separator", () => {
+      it.each([
+          "|-------|-------|",
+          "|:-------:|:---------:|",
+      ])("should parse a table 1", (line) => {
+        const tokens = lexer([
+            "| column 1 | column 2 |",
+            line,
+            "| row 1 c1 | row 1 c2 |",
+            "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+    })
   })
 })
