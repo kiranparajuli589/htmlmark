@@ -996,6 +996,226 @@ if (c === 2) {
 ]
 `;
 
+exports[`lexer table is not a table false separator 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| --- | --- |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table is not a table only header 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table is not a table only header and separator 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "|---|---|",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table is not a table other tokens in between 1 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "|---|---|",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table is not a table other tokens in between 2 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "|---|---|",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table is not a table other tokens in between 3 1`] = `
+Array [
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+    ],
+    "type": "table",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 2 c1 | row 2 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`lexer table table heading-body separator should parse a table 1 1`] = `
 Array [
   Object {
@@ -1147,6 +1367,305 @@ Array [
           },
         ],
         "indent": "",
+      },
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table table indent different indent header -> separator 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 2,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "  |---|---|",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table table indent different indent header, separator -> body row 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "  | column 1 | column 2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 2,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "  |---|---|",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table table indent indent should break the table 1 1`] = `
+Array [
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "  ",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "  ",
+      },
+    ],
+    "type": "table",
+  },
+  Object {
+    "indent": 0,
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "| row 2 c1 | row 2 c2 |",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer table table indent indent should break the table 2 1`] = `
+Array [
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "  ",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "  ",
+      },
+    ],
+    "type": "table",
+  },
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "",
+      },
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table table indent the indented table 1`] = `
+Array [
+  Object {
+    "rows": Array [
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " column 1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 1",
+              },
+            ],
+          },
+          Object {
+            "raw": " column 2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "column 2",
+              },
+            ],
+          },
+        ],
+        "indent": "  ",
+      },
+      Object {
+        "cell": Array [
+          Object {
+            "raw": " row 1 c1 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c1",
+              },
+            ],
+          },
+          Object {
+            "raw": " row 1 c2 ",
+            "tokens": Array [
+              Object {
+                "type": "text",
+                "value": "row 1 c2",
+              },
+            ],
+          },
+        ],
+        "indent": "  ",
       },
     ],
     "type": "table",
