@@ -21,7 +21,7 @@ const commonTokensList = [
   "![alt text](image.png)",
 ]
 
-describe("outer tokenizer", () => {
+describe("lexer", () => {
   describe("newline", () => {
     it.each([
       [""],
@@ -182,5 +182,121 @@ describe("outer tokenizer", () => {
     // eslint-disable-next-line no-undef
     const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
     expect(lexer(fileContent)).toMatchSnapshot()
+  })
+  describe("table", () => {
+    describe("is not a table", () => {
+      it("only header", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("only header and separator", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "|---|---|",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("false separator", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "| --- | --- |",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("other tokens in between 1", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("other tokens in between 2", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("other tokens in between 3", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+          "",
+          "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+    })
+    describe("table indent", () => {
+      it("different indent header -> separator", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "  |---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+
+      it("different indent header, separator -> body row", () => {
+        const tokens = lexer([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+
+      it("the indented table", () => {
+        const tokens = lexer([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "  | row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+
+      it("indent should break the table 1", () => {
+        const tokens = lexer([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "  | row 1 c1 | row 1 c2 |",
+          "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("indent should break the table 2", () => {
+        const tokens = lexer([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "  | row 1 c1 | row 1 c2 |",
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+    })
+    describe("table heading-body separator", () => {
+      it.each([
+        "|-------|-------|",
+        "|:-------:|:---------:|",
+      ])("should parse a table 1", (line) => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          line,
+          "| row 1 c1 | row 1 c2 |",
+          "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+    })
   })
 })
