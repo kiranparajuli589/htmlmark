@@ -36,6 +36,7 @@ if (c === 2) {
   console.log('failure');
 }
 ```
+  some line with small space ahead
 
 ```js
 ```

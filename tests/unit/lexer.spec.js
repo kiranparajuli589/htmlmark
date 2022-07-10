@@ -119,7 +119,7 @@ describe("lexer", () => {
       const indent = "  "
       const lines = [indent + line]
       const tokens = lexer(lines)
-      expect(tokens[0].indent).toBe(indent)
+      expect(tokens[0].indent).toBe(2)
     })
   })
   describe("paragraph", () => {
@@ -294,7 +294,7 @@ describe("lexer", () => {
       })
     })
   })
-  it.only("should tokenize a markdown content", () => {
+  it("should tokenize a markdown content", () => {
     // eslint-disable-next-line no-undef
     const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
     expect(lexer(fileContent)).toMatchSnapshot()

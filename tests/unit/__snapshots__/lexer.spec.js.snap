@@ -3,6 +3,7 @@
 exports[`lexer codeblock should parse multiple consequetive codeblocks 1`] = `
 Array [
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -12,6 +13,7 @@ Array [
     "type": "code-block",
   },
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -26,6 +28,7 @@ Array [
 exports[`lexer codeblock should parse the codeblock 1`] = `
 Array [
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -40,6 +43,7 @@ Array [
 exports[`lexer codeblock should parse the codeblock with multiple lines 1`] = `
 Array [
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -55,6 +59,7 @@ const b = 2",
 exports[`lexer codeblock should parse the codeblock with multiple lines and a newline 1`] = `
 Array [
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -72,6 +77,7 @@ const c = 3",
 exports[`lexer codeblock should parse the codeblock without the language 1`] = `
 Array [
   Object {
+    "indent": 0,
     "language": null,
     "tokens": Array [
       Object {
@@ -86,7 +92,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 1`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 1,
     "raw": "# Heading One Text",
     "tokens": Array [
@@ -103,7 +109,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 2`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 2,
     "raw": "## Heading Two Text",
     "tokens": Array [
@@ -120,7 +126,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 3`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 3,
     "raw": "### Heading Three Text",
     "tokens": Array [
@@ -137,7 +143,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 4`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 4,
     "raw": "#### Heading Four Text",
     "tokens": Array [
@@ -154,7 +160,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 5`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 5,
     "raw": "##### Heading Five Text",
     "tokens": Array [
@@ -171,7 +177,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 6`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 6,
     "raw": "###### Heading Six Text",
     "tokens": Array [
@@ -188,7 +194,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 7`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- list item text",
     "tokens": Array [
       Object {
@@ -204,7 +210,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 8`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "1. count item text",
     "tokens": Array [
       Object {
@@ -220,7 +226,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 9`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "<!-- comment item text -->",
     "tokens": Object {
       "value": "comment item text",
@@ -233,7 +239,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 10`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- [ ] checkbox item text",
     "tokens": Array [
       Object {
@@ -249,7 +255,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 11`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- [x] checked checkbox item text",
     "tokens": Array [
       Object {
@@ -257,7 +263,7 @@ Array [
         "value": "checked checkbox item text",
       },
     ],
-    "type": "check-box-checked",
+    "type": "check-box",
   },
 ]
 `;
@@ -266,7 +272,7 @@ exports[`lexer common tokens should parse the common tokens 12`] = `
 Array [
   Object {
     "depth": 0,
-    "indent": "",
+    "indent": 0,
     "raw": "> quote item text",
     "tokens": Array [
       Object {
@@ -283,7 +289,7 @@ exports[`lexer common tokens should parse the common tokens 13`] = `
 Array [
   Object {
     "depth": 1,
-    "indent": "",
+    "indent": 0,
     "raw": "> > quote item text",
     "tokens": Array [
       Object {
@@ -299,7 +305,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 14`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "![alt text](image.png)",
     "tokens": Object {
       "alt": "alt text",
@@ -321,6 +327,7 @@ Array [
 exports[`lexer paragraph should be deep tokenized 1`] = `
 Array [
   Object {
+    "indent": 0,
     "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
     "tokens": Array [
       Object {
@@ -402,7 +409,7 @@ exports[`lexer quote should deep tokenize quote with multiple depth 1`] = `
 Array [
   Object {
     "depth": 1,
-    "indent": "",
+    "indent": 0,
     "raw": "> > quote **one** with *two*",
     "tokens": Array [
       Object {
@@ -431,7 +438,7 @@ exports[`lexer quote should deep tokenize quote with multiple depth 2`] = `
 Array [
   Object {
     "depth": 2,
-    "indent": "  ",
+    "indent": 2,
     "raw": "  > > > quote \`four\` with ~~five~~",
     "tokens": Array [
       Object {
@@ -460,7 +467,7 @@ exports[`lexer quote should deep tokenize quote with multiple depth 3`] = `
 Array [
   Object {
     "depth": 3,
-    "indent": "",
+    "indent": 0,
     "raw": "> > > > quote [link-title](link-url) with *two*",
     "tokens": Array [
       Object {
@@ -490,7 +497,7 @@ exports[`lexer quote should deep tokenize quote with zero depth 1`] = `
 Array [
   Object {
     "depth": 0,
-    "indent": "",
+    "indent": 0,
     "raw": "> quote **one** with *two*",
     "tokens": Array [
       Object {
@@ -519,7 +526,7 @@ exports[`lexer quote should deep tokenize quote with zero depth 2`] = `
 Array [
   Object {
     "depth": 0,
-    "indent": "  ",
+    "indent": 2,
     "raw": "  > quote \`four\` with ~~five~~",
     "tokens": Array [
       Object {
@@ -548,7 +555,7 @@ exports[`lexer quote should deep tokenize quote with zero depth 3`] = `
 Array [
   Object {
     "depth": 0,
-    "indent": "",
+    "indent": 0,
     "raw": "> quote [link-title](link-url) with *two*",
     "tokens": Array [
       Object {
@@ -577,7 +584,7 @@ Array [
 exports[`lexer should tokenize a markdown content 1`] = `
 Array [
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "<!-- https://regex101.com/r/C6SxZH/1 -->",
     "tokens": Object {
       "value": "https://regex101.com/r/C6SxZH/1",
@@ -588,7 +595,7 @@ Array [
     "type": "new-line",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 1,
     "raw": "# Heading One",
     "tokens": Array [
@@ -600,7 +607,7 @@ Array [
     "type": "heading",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 2,
     "raw": "## Heading Two",
     "tokens": Array [
@@ -612,7 +619,7 @@ Array [
     "type": "heading",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 3,
     "raw": "### Heading Three",
     "tokens": Array [
@@ -624,7 +631,7 @@ Array [
     "type": "heading",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 4,
     "raw": "#### Heading Four",
     "tokens": Array [
@@ -636,7 +643,7 @@ Array [
     "type": "heading",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 5,
     "raw": "##### Heading Five",
     "tokens": Array [
@@ -648,7 +655,7 @@ Array [
     "type": "heading",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "level": 6,
     "raw": "###### Heading Six",
     "tokens": Array [
@@ -663,6 +670,7 @@ Array [
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
     "tokens": Array [
       Object {
@@ -742,7 +750,7 @@ Array [
   },
   Object {
     "depth": 0,
-    "indent": "",
+    "indent": 0,
     "raw": "> some quote",
     "tokens": Array [
       Object {
@@ -756,7 +764,7 @@ Array [
     "type": "new-line",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- list item 1",
     "tokens": Array [
       Object {
@@ -767,7 +775,7 @@ Array [
     "type": "list-item",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- list item 2",
     "tokens": Array [
       Object {
@@ -778,7 +786,7 @@ Array [
     "type": "list-item",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- [ ] checkbox empty",
     "tokens": Array [
       Object {
@@ -789,7 +797,7 @@ Array [
     "type": "check-box",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "- [x] checkbox checked",
     "tokens": Array [
       Object {
@@ -797,14 +805,14 @@ Array [
         "value": "checkbox checked",
       },
     ],
-    "type": "check-box-checked",
+    "type": "check-box",
   },
   Object {
     "type": "new-line",
   },
   Object {
     "depth": 0,
-    "indent": "",
+    "indent": 0,
     "raw": "> quote 1",
     "tokens": Array [
       Object {
@@ -816,7 +824,7 @@ Array [
   },
   Object {
     "depth": 1,
-    "indent": "",
+    "indent": 0,
     "raw": "> > nested quote 2 [quote-link](quote-link-url)",
     "tokens": Array [
       Object {
@@ -833,7 +841,7 @@ Array [
   },
   Object {
     "depth": 2,
-    "indent": "",
+    "indent": 0,
     "raw": "> > > nested quote 3 with *italics* and **bolds**",
     "tokens": Array [
       Object {
@@ -859,6 +867,7 @@ Array [
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -876,9 +885,21 @@ if (c === 2) {
     "type": "code-block",
   },
   Object {
+    "indent": 2,
+    "raw": "  some line with small space ahead",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some line with small space ahead",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "language": "js",
     "tokens": Array [
       Object {
@@ -891,6 +912,7 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "raw": "some piece of normal paragraph",
     "tokens": Array [
       Object {
@@ -904,6 +926,7 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "language": null,
     "tokens": Array [
       Object {
@@ -916,7 +939,7 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
-    "indent": "",
+    "indent": 0,
     "raw": "![Kiran Parajuli](https://avatars.githubusercontent.com/u/39373750?v=4)",
     "tokens": Object {
       "alt": "Kiran Parajuli",
@@ -928,6 +951,7 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "raw": "some random text",
     "tokens": Array [
       Object {
@@ -1124,6 +1148,7 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
+    "indent": 0,
     "raw": "some random text again",
     "tokens": Array [
       Object {

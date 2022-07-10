@@ -293,63 +293,63 @@ describe("parser", () => {
   describe("table", () => {
     it.only("should parse the table lexer", () => {
       const lexedData = [
-         {
+        {
           "indent": 0,
           "rows":  [
-             [
-               {
+            [
+              {
                 "raw": " column 1 ",
                 "tokens":  [
-                   {
+                  {
                     "type": "text",
                     "value": "column 1",
                   },
                 ],
               },
-               {
+              {
                 "raw": " column 2 ",
                 "tokens":  [
-                   {
+                  {
                     "type": "text",
                     "value": "column 2",
                   },
                 ],
               },
             ],
-             [
-               {
+            [
+              {
                 "raw": " row 1 c1 ",
                 "tokens":  [
-                   {
+                  {
                     "type": "text",
                     "value": "row 1 c1",
                   },
                 ],
               },
-               {
+              {
                 "raw": " row 1 c2 ",
                 "tokens":  [
-                   {
+                  {
                     "type": "text",
                     "value": "row 1 c2",
                   },
                 ],
               },
             ],
-             [
-               {
+            [
+              {
                 "raw": " row 2 c1 ",
                 "tokens":  [
-                   {
+                  {
                     "type": "text",
                     "value": "row 2 c1",
                   },
                 ],
               },
-               {
+              {
                 "raw": " row 2 c2 ",
                 "tokens":  [
-                   {
+                  {
                     "type": "text",
                     "value": "row 2 c2",
                   },
