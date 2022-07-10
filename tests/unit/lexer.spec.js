@@ -16,8 +16,6 @@ const commonTokensList = [
   "<!-- comment item text -->",
   "- [ ] checkbox item text",
   "- [x] checked checkbox item text",
-  "> quote item text",
-  "> > quote item text",
   "![alt text](image.png)",
 ]
 

@@ -218,7 +218,7 @@ Array [
         "value": "count item text",
       },
     ],
-    "type": "count-item",
+    "type": "list-item",
   },
 ]
 `;
@@ -239,6 +239,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 10`] = `
 Array [
   Object {
+    "checked": false,
     "indent": 0,
     "raw": "- [ ] checkbox item text",
     "tokens": Array [
@@ -255,6 +256,7 @@ Array [
 exports[`lexer common tokens should parse the common tokens 11`] = `
 Array [
   Object {
+    "checked": true,
     "indent": 0,
     "raw": "- [x] checked checkbox item text",
     "tokens": Array [
@@ -269,40 +271,6 @@ Array [
 `;
 
 exports[`lexer common tokens should parse the common tokens 12`] = `
-Array [
-  Object {
-    "depth": 0,
-    "indent": 0,
-    "raw": "> quote item text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote item text",
-      },
-    ],
-    "type": "quote",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 13`] = `
-Array [
-  Object {
-    "depth": 1,
-    "indent": 0,
-    "raw": "> > quote item text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote item text",
-      },
-    ],
-    "type": "quote",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 14`] = `
 Array [
   Object {
     "indent": 0,
@@ -786,6 +754,7 @@ Array [
     "type": "list-item",
   },
   Object {
+    "checked": false,
     "indent": 0,
     "raw": "- [ ] checkbox empty",
     "tokens": Array [
@@ -797,6 +766,7 @@ Array [
     "type": "check-box",
   },
   Object {
+    "checked": true,
     "indent": 0,
     "raw": "- [x] checkbox checked",
     "tokens": Array [
