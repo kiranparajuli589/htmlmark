@@ -79,75 +79,235 @@ describe("parser", () => {
   })
 
   it("should parse unordered list", () => {
+    const lexedData = [{
+      "checkList": false,
+      "indent": 0,
+      "items":  [
+         {
+          "countText": "-",
+          "raw": "- list item 1",
+          "tokens":  [
+             {
+              "type": "text",
+              "value": "list item 1",
+            },
+          ],
+          "type": "count-item",
+        },
+         {
+          "countText": "-",
+          "raw": "- list item 2",
+          "tokens":  [
+             {
+              "type": "text",
+              "value": "list item 2",
+            },
+          ],
+          "type": "count-item",
+        },
+      ],
+      "ordered": false,
+      "type": "list",
+    }]
+    const parsedData = parser(lexedData)
+    expect(parsedData).toBe("<ul><li>list item 1</li><li>list item 2</li></ul>")
+  })
+
+  it("should parse ordered list", () => {
+    const lexedData = [{
+      "checkList": false,
+      "indent": 0,
+      "items":  [
+         {
+          "countText": "-",
+          "raw": "- list item 1",
+          "tokens":  [
+             {
+              "type": "text",
+              "value": "list item 1",
+            },
+          ],
+          "type": "count-item",
+        },
+         {
+          "countText": "-",
+          "raw": "- list item 2",
+          "tokens":  [
+             {
+              "type": "text",
+              "value": "list item 2",
+            },
+          ],
+          "type": "count-item",
+        },
+      ],
+      "ordered": true,
+      "type": "list",
+    }]
+    const parsedData = parser(lexedData)
+    expect(parsedData).toBe("<ol><li>list item 1</li><li>list item 2</li></ol>")
+  })
+
+  it("should parse the checkbox list", () => {
     const lexedData = [
-      {
+       {
+        "checkList": true,
         "indent": 0,
         "items":  [
-          {
+           {
+            "checked": false,
             "countText": "-",
-            "raw": "- list item 1",
+            "raw": "- [ ] checkbox empty",
             "tokens":  [
-              {
+               {
                 "type": "text",
-                "value": "list item 1",
+                "value": "checkbox empty",
               },
             ],
-            "type": "list-item",
+            "type": "check-item",
+          },
+           {
+            "checked": true,
+            "countText": "-",
+            "raw": "- [x] checkbox checked",
+            "tokens":  [
+               {
+                "type": "text",
+                "value": "checkbox checked",
+              },
+            ],
+            "type": "check-item",
+          },
+        ],
+        "ordered": false,
+        "type": "list",
+      }
+    ]
+    const parsedData = parser(lexedData)
+    expect(parsedData).toBe("<ul><li><input type=\"checkbox\">checkbox empty</li><li><input type=\"checkbox\" checked>checkbox checked</li></ul>")
+  })
+
+  it("should parse the combination of list", () => {
+    const lexedData =  [
+       {
+        "checkList": false,
+        "indent": 0,
+        "items":  [
+           {
+            "countText": "-",
+            "raw": "- one",
+            "tokens":  [
+               {
+                "type": "text",
+                "value": "one",
+              },
+            ],
+            "type": "count-item",
+          },
+           {
+            "countText": "-",
+            "raw": "- two",
+            "tokens":  [
+               {
+                "type": "text",
+                "value": "two",
+              },
+            ],
+            "type": "count-item",
           },
         ],
         "ordered": false,
         "type": "list",
       },
-    ]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ul><li>list item 1</li></ul>")
-  })
-
-  it("should parse ordered list", () => {
-    const lexedData =  [
-      {
+       {
+        "checkList": false,
         "indent": 0,
         "items":  [
-          {
+           {
             "countText": "1.",
-            "raw": "1. item **1**",
+            "raw": "1. one",
             "tokens":  [
-              {
+               {
                 "type": "text",
-                "value": "item ",
-              },
-              {
-                "type": "bold",
-                "value": "1",
+                "value": "one",
               },
             ],
-            "type": "list-item",
+            "type": "count-item",
           },
-          {
-            "countText": "1.",
-            "raw": "1. item [link](link-url)",
+           {
+            "countText": "2.",
+            "raw": "2. two",
             "tokens":  [
-              {
+               {
                 "type": "text",
-                "value": "item ",
+                "value": "two",
               },
             ],
-            "type": "list-item",
+            "type": "count-item",
           },
-          {
-            "countText": "1.",
-            "raw": "1. item 3 \`code item\`",
+        ],
+        "ordered": true,
+        "type": "list",
+      },
+       {
+        "checkList": true,
+        "indent": 0,
+        "items":  [
+           {
+            "checked": false,
+            "countText": "-",
+            "raw": "- [ ] c empty",
             "tokens":  [
-              {
+               {
                 "type": "text",
-                "value": "item 3 ",
-              },
-              {
-                "type": "code",
-                "value": "code item",
+                "value": "c empty",
               },
             ],
-            "type": "list-item",
+            "type": "check-item",
+          },
+           {
+            "checked": true,
+            "countText": "-",
+            "raw": "- [x] c checked",
+            "tokens":  [
+               {
+                "type": "text",
+                "value": "c checked",
+              },
+            ],
+            "type": "check-item",
+          },
+        ],
+        "ordered": false,
+        "type": "list",
+      },
+       {
+        "checkList": true,
+        "indent": 0,
+        "items":  [
+           {
+            "checked": false,
+            "countText": "1.",
+            "raw": "1. [ ] c empty",
+            "tokens":  [
+               {
+                "type": "text",
+                "value": "c empty",
+              },
+            ],
+            "type": "check-item",
+          },
+           {
+            "checked": true,
+            "countText": "1.",
+            "raw": "1. [x] c checked",
+            "tokens":  [
+               {
+                "type": "text",
+                "value": "c checked",
+              },
+            ],
+            "type": "check-item",
           },
         ],
         "ordered": true,
@@ -156,40 +316,6 @@ describe("parser", () => {
     ]
     const parsedData = parser(lexedData)
     expect(parsedData).toMatchSnapshot()
-  })
-
-  it("should parse the checkbox unchecked", () => {
-    const lexedData = [{
-      "checked": false,
-      "indent": 0,
-      "raw": "- [ ] checkbox empty",
-      "tokens": [
-        {
-          "type": "text",
-          "value": "checkbox empty",
-        },
-      ],
-      "type": "check-box",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ul><li><input type=\"checkbox\">checkbox empty</li></ul>")
-  })
-
-  it("should parse the checkbox checked", () => {
-    const lexedData = [{
-      "checked": true,
-      "indent": 0,
-      "raw": "- [x] checkbox full",
-      "tokens": [
-        {
-          "type": "text",
-          "value": "checkbox full",
-        },
-      ],
-      "type": "check-box",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ul><li><input type=\"checkbox\" checked>checkbox full</li></ul>")
   })
 
   it("should parse the image", () => {
