@@ -11,13 +11,7 @@ const commonTokensList = [
   "#### Heading Four Text",
   "##### Heading Five Text",
   "###### Heading Six Text",
-  "- list item text",
-  "1. count item text",
   "<!-- comment item text -->",
-  "- [ ] checkbox item text",
-  "- [x] checked checkbox item text",
-  "> quote item text",
-  "> > quote item text",
   "![alt text](image.png)",
 ]
 
@@ -107,6 +101,16 @@ describe("lexer", () => {
       const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
+    it("should cope with multiple items", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "```",
+        "some people are funny",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
   })
 
   describe("common tokens", () => {
@@ -119,7 +123,7 @@ describe("lexer", () => {
       const indent = "  "
       const lines = [indent + line]
       const tokens = lexer(lines)
-      expect(tokens[0].indent).toBe(indent)
+      expect(tokens[0].indent).toBe(2)
     })
   })
   describe("paragraph", () => {
@@ -156,6 +160,45 @@ describe("lexer", () => {
       "> > > > quote [link-title](link-url) with *two*",
     ])("should deep tokenize quote with multiple depth", (line) => {
       const tokenizedContent = lexer([line])
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+  })
+  describe("list", () => {
+    it("should tokenize a valid ordered list", () => {
+      const lines = [
+        "1. item **1**",
+        "1. item [link](link-url)",
+        "1. item 3 `code item`",
+      ]
+      const tokenizedContent = lexer(lines)
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it("should tokenize a valid un-ordered list", () => {
+      const lines = [
+        "- item **1**",
+        "- item [link](link-url)",
+        "- item 3 `code item`",
+      ]
+      const tokenizedContent = lexer(lines)
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it("should detech list indent", () => {
+      const lines = [
+        "  - item **1**",
+        "  - item [link](link-url)",
+        "  - item 3 `code item`",
+      ]
+      const tokenizedContent = lexer(lines)
+      expect(tokenizedContent[0].indent).toEqual(2)
+    })
+    it("indent should break the list", () => {
+      const lines = [
+        "  - item **1**",
+        "  - item [link](link-url)",
+        "- item 3 `code item`",
+        "- item 4",
+      ]
+      const tokenizedContent = lexer(lines)
       expect(tokenizedContent).toMatchSnapshot()
     })
   })
@@ -294,7 +337,21 @@ describe("lexer", () => {
       })
     })
   })
-  it.only("should tokenize a markdown content", () => {
+  it("should tokenize list combination", () => {
+    const lines = [
+      "- one",
+      "- two",
+      "1. one",
+      "2. two",
+      "- [ ] c empty",
+      "- [x] c checked",
+      "1. [ ] c empty",
+      "1. [x] c checked"
+    ]
+    const tokens = lexer(lines)
+    expect(tokens).toMatchSnapshot()
+  })
+  it("should tokenize a markdown content", () => {
     // eslint-disable-next-line no-undef
     const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
     expect(lexer(fileContent)).toMatchSnapshot()

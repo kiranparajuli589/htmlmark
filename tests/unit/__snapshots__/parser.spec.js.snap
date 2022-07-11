@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parser should parse the combination of list 1`] = `"<ul><li>one</li><li>two</li></ul><ol><li>one</li><li>two</li></ol><ul><li><input type=\\"checkbox\\">c empty</li><li><input type=\\"checkbox\\" checked>c checked</li></ul><ol><li><input type=\\"checkbox\\">c empty</li><li><input type=\\"checkbox\\" checked>c checked</li></ol>"`;
+
 exports[`parser table should parse the table lexer 1`] = `
 "<table>
   <thead>

@@ -15,8 +15,7 @@ a paragraph of words `first code` normal text here `code body` *first italics* h
 - list item 2
 - [ ] checkbox empty
 - [x] checkbox checked
-
-
+    paragraph just below hmm, but with some indentation
 
 > quote 1
 > > nested quote 2 [quote-link](quote-link-url)
@@ -36,6 +35,7 @@ if (c === 2) {
   console.log('failure');
 }
 ```
+  some line with small space ahead
 
 ```js
 ```
@@ -57,5 +57,4 @@ some random text
 | r3 text c1 | r3 text c2 | r3 text c3 |
 | r4 text c1 | r4 text c2 | r5 text c3 |
 | r6 text c1 | r6 text c2 | r6 text c3 |
-
-some random text again
+some random text again just below table
