@@ -195,38 +195,6 @@ exports[`lexer common tokens should parse the common tokens 7`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "- list item text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "list item text",
-      },
-    ],
-    "type": "list-item",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 8`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "1. count item text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "count item text",
-      },
-    ],
-    "type": "list-item",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 9`] = `
-Array [
-  Object {
-    "indent": 0,
     "raw": "<!-- comment item text -->",
     "tokens": Object {
       "value": "comment item text",
@@ -236,41 +204,7 @@ Array [
 ]
 `;
 
-exports[`lexer common tokens should parse the common tokens 10`] = `
-Array [
-  Object {
-    "checked": false,
-    "indent": 0,
-    "raw": "- [ ] checkbox item text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "checkbox item text",
-      },
-    ],
-    "type": "check-box",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 11`] = `
-Array [
-  Object {
-    "checked": true,
-    "indent": 0,
-    "raw": "- [x] checked checkbox item text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "checked checkbox item text",
-      },
-    ],
-    "type": "check-box",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 12`] = `
+exports[`lexer common tokens should parse the common tokens 8`] = `
 Array [
   Object {
     "indent": 0,
@@ -288,6 +222,168 @@ exports[`lexer hr line should parse the hr line 1`] = `
 Array [
   Object {
     "type": "hr-line",
+  },
+]
+`;
+
+exports[`lexer list indent should break the list 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "items": Array [
+      Object {
+        "countText": "-",
+        "raw": "  - item **1**",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item ",
+          },
+          Object {
+            "type": "bold",
+            "value": "1",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "countText": "-",
+        "raw": "  - item [link](link-url)",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item ",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
+  },
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "-",
+        "raw": "- item 4",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item 4",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer list should tokenize a valid ordered list 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "1.",
+        "raw": "1. item **1**",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item ",
+          },
+          Object {
+            "type": "bold",
+            "value": "1",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "countText": "1.",
+        "raw": "1. item [link](link-url)",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item ",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "countText": "1.",
+        "raw": "1. item 3 \`code item\`",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item 3 ",
+          },
+          Object {
+            "type": "code",
+            "value": "code item",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "ordered": true,
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer list should tokenize a valid un-ordered list 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "-",
+        "raw": "- item **1**",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item ",
+          },
+          Object {
+            "type": "bold",
+            "value": "1",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "countText": "-",
+        "raw": "- item [link](link-url)",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item ",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "countText": "-",
+        "raw": "- item 3 \`code item\`",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item 3 ",
+          },
+          Object {
+            "type": "code",
+            "value": "code item",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
   },
 ]
 `;
@@ -733,37 +829,33 @@ Array [
   },
   Object {
     "indent": 0,
-    "raw": "- list item 1",
-    "tokens": Array [
+    "items": Array [
       Object {
-        "type": "text",
-        "value": "list item 1",
+        "countText": "-",
+        "raw": "- list item 1",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "list item 1",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "countText": "-",
+        "raw": "- list item 2
+",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "list item 2",
+          },
+        ],
+        "type": "list-item",
       },
     ],
-    "type": "list-item",
-  },
-  Object {
-    "indent": 0,
-    "raw": "- list item 2",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "list item 2",
-      },
-    ],
-    "type": "list-item",
-  },
-  Object {
-    "checked": false,
-    "indent": 0,
-    "raw": "- [ ] checkbox empty",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "checkbox empty",
-      },
-    ],
-    "type": "check-box",
+    "ordered": false,
+    "type": "list",
   },
   Object {
     "checked": true,
@@ -776,6 +868,17 @@ Array [
       },
     ],
     "type": "check-box",
+  },
+  Object {
+    "indent": 4,
+    "raw": "    paragraph just below hmm, but with some indentation",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "paragraph just below hmm, but with some indentation",
+      },
+    ],
+    "type": "paragraph",
   },
   Object {
     "type": "new-line",
@@ -1115,15 +1218,12 @@ if (c === 2) {
     "type": "table",
   },
   Object {
-    "type": "new-line",
-  },
-  Object {
     "indent": 0,
-    "raw": "some random text again",
+    "raw": "some random text again just below table",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "some random text again",
+        "value": "some random text again just below table",
       },
     ],
     "type": "paragraph",
