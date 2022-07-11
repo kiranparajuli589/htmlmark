@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lexer codeblock should cope with multiple items 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "tokens": Array [
+      Object {
+        "value": "const a = 1",
+      },
+    ],
+    "type": "code-block",
+  },
+  Object {
+    "indent": 0,
+    "raw": "some people are funny",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some people are funny",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`lexer codeblock should parse multiple consequetive codeblocks 1`] = `
 Array [
   Object {
@@ -229,6 +255,7 @@ Array [
 exports[`lexer list indent should break the list 1`] = `
 Array [
   Object {
+    "checkList": false,
     "indent": 2,
     "items": Array [
       Object {
@@ -244,7 +271,7 @@ Array [
             "value": "1",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
       Object {
         "countText": "-",
@@ -254,16 +281,37 @@ Array [
             "type": "text",
             "value": "item ",
           },
+          Object {
+            "href": "link-url",
+            "type": "link",
+            "value": "link",
+          },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
     ],
     "ordered": false,
     "type": "list",
   },
   Object {
+    "checkList": false,
     "indent": 0,
     "items": Array [
+      Object {
+        "countText": "-",
+        "raw": "- item 3 \`code item\`",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "item 3 ",
+          },
+          Object {
+            "type": "code",
+            "value": "code item",
+          },
+        ],
+        "type": "count-item",
+      },
       Object {
         "countText": "-",
         "raw": "- item 4",
@@ -273,7 +321,7 @@ Array [
             "value": "item 4",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
     ],
     "ordered": false,
@@ -285,6 +333,7 @@ Array [
 exports[`lexer list should tokenize a valid ordered list 1`] = `
 Array [
   Object {
+    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
@@ -300,7 +349,7 @@ Array [
             "value": "1",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
       Object {
         "countText": "1.",
@@ -310,8 +359,13 @@ Array [
             "type": "text",
             "value": "item ",
           },
+          Object {
+            "href": "link-url",
+            "type": "link",
+            "value": "link",
+          },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
       Object {
         "countText": "1.",
@@ -326,7 +380,7 @@ Array [
             "value": "code item",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
     ],
     "ordered": true,
@@ -338,6 +392,7 @@ Array [
 exports[`lexer list should tokenize a valid un-ordered list 1`] = `
 Array [
   Object {
+    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
@@ -353,7 +408,7 @@ Array [
             "value": "1",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
       Object {
         "countText": "-",
@@ -363,8 +418,13 @@ Array [
             "type": "text",
             "value": "item ",
           },
+          Object {
+            "href": "link-url",
+            "type": "link",
+            "value": "link",
+          },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
       Object {
         "countText": "-",
@@ -379,7 +439,7 @@ Array [
             "value": "code item",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
     ],
     "ordered": false,
@@ -828,6 +888,7 @@ Array [
     "type": "new-line",
   },
   Object {
+    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
@@ -839,7 +900,7 @@ Array [
             "value": "list item 1",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
       Object {
         "countText": "-",
@@ -851,23 +912,44 @@ Array [
             "value": "list item 2",
           },
         ],
-        "type": "list-item",
+        "type": "count-item",
       },
     ],
     "ordered": false,
     "type": "list",
   },
   Object {
-    "checked": true,
+    "checkList": true,
     "indent": 0,
-    "raw": "- [x] checkbox checked",
-    "tokens": Array [
+    "items": Array [
       Object {
-        "type": "text",
-        "value": "checkbox checked",
+        "checked": false,
+        "countText": "-",
+        "raw": "- [ ] checkbox empty",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "checkbox empty",
+          },
+        ],
+        "type": "check-item",
+      },
+      Object {
+        "checked": true,
+        "countText": "-",
+        "raw": "- [x] checkbox checked
+",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "checkbox checked",
+          },
+        ],
+        "type": "check-item",
       },
     ],
-    "type": "check-box",
+    "ordered": false,
+    "type": "list",
   },
   Object {
     "indent": 4,
@@ -1230,6 +1312,135 @@ if (c === 2) {
   },
   Object {
     "type": "new-line",
+  },
+]
+`;
+
+exports[`lexer should tokenize list combination 1`] = `
+Array [
+  Object {
+    "checkList": false,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "-",
+        "raw": "- one",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "one",
+          },
+        ],
+        "type": "count-item",
+      },
+      Object {
+        "countText": "-",
+        "raw": "- two",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
+        "type": "count-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
+  },
+  Object {
+    "checkList": false,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "1.",
+        "raw": "1. one",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "one",
+          },
+        ],
+        "type": "count-item",
+      },
+      Object {
+        "countText": "2.",
+        "raw": "2. two",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
+        "type": "count-item",
+      },
+    ],
+    "ordered": true,
+    "type": "list",
+  },
+  Object {
+    "checkList": true,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": false,
+        "countText": "-",
+        "raw": "- [ ] c empty",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c empty",
+          },
+        ],
+        "type": "check-item",
+      },
+      Object {
+        "checked": true,
+        "countText": "-",
+        "raw": "- [x] c checked",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c checked",
+          },
+        ],
+        "type": "check-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
+  },
+  Object {
+    "checkList": true,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": false,
+        "countText": "1.",
+        "raw": "1. [ ] c empty",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c empty",
+          },
+        ],
+        "type": "check-item",
+      },
+      Object {
+        "checked": true,
+        "countText": "1.",
+        "raw": "1. [x] c checked",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c checked",
+          },
+        ],
+        "type": "check-item",
+      },
+    ],
+    "ordered": true,
+    "type": "list",
   },
 ]
 `;

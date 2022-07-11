@@ -101,6 +101,16 @@ describe("lexer", () => {
       const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
+    it("should cope with multiple items", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "```",
+        "some people are funny",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
   })
 
   describe("common tokens", () => {
@@ -326,6 +336,20 @@ describe("lexer", () => {
         expect(tokens).toMatchSnapshot()
       })
     })
+  })
+  it("should tokenize list combination", () => {
+    const lines = [
+      "- one",
+      "- two",
+      "1. one",
+      "2. two",
+      "- [ ] c empty",
+      "- [x] c checked",
+      "1. [ ] c empty",
+      "1. [x] c checked"
+    ]
+    const tokens = lexer(lines)
+    expect(tokens).toMatchSnapshot()
   })
   it("should tokenize a markdown content", () => {
     // eslint-disable-next-line no-undef

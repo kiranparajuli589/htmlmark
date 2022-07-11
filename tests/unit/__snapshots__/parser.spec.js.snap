@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parser should parse ordered list 1`] = `"<ol><li>item <strong>1</strong></li><li>item </li><li>item 3 <code>code item</code></li></ol>"`;
+
 exports[`parser table should parse the table lexer 1`] = `
 "<table>
   <thead>

@@ -81,56 +81,87 @@ describe("parser", () => {
   it("should parse unordered list", () => {
     const lexedData = [
       {
-        "indent": "",
-        "raw": "- list item 1",
-        "tokens": [{
-          "type": "text",
-          "value": "list item 1",
-        }],
-        "type": "list-item",
+        "indent": 0,
+        "items":  [
+          {
+            "countText": "-",
+            "raw": "- list item 1",
+            "tokens":  [
+              {
+                "type": "text",
+                "value": "list item 1",
+              },
+            ],
+            "type": "list-item",
+          },
+        ],
+        "ordered": false,
+        "type": "list",
       },
-      {
-        "indent": "",
-        "raw": "- list item 2",
-        "tokens": [{
-          "type": "text",
-          "value": "list item 2",
-        }],
-        "type": "list-item",
-      }]
+    ]
     const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ul><li>list item 1</li><li>list item 2</li></ul>")
+    expect(parsedData).toBe("<ul><li>list item 1</li></ul>")
   })
 
-
-
   it("should parse ordered list", () => {
-    const lexedData = [
+    const lexedData =  [
       {
-        "indent": "",
-        "raw": "1. list item 1",
-        "tokens": [{
-          "type": "text",
-          "value": "list item 1",
-        }],
-        "type": "count-item",
+        "indent": 0,
+        "items":  [
+          {
+            "countText": "1.",
+            "raw": "1. item **1**",
+            "tokens":  [
+              {
+                "type": "text",
+                "value": "item ",
+              },
+              {
+                "type": "bold",
+                "value": "1",
+              },
+            ],
+            "type": "list-item",
+          },
+          {
+            "countText": "1.",
+            "raw": "1. item [link](link-url)",
+            "tokens":  [
+              {
+                "type": "text",
+                "value": "item ",
+              },
+            ],
+            "type": "list-item",
+          },
+          {
+            "countText": "1.",
+            "raw": "1. item 3 \`code item\`",
+            "tokens":  [
+              {
+                "type": "text",
+                "value": "item 3 ",
+              },
+              {
+                "type": "code",
+                "value": "code item",
+              },
+            ],
+            "type": "list-item",
+          },
+        ],
+        "ordered": true,
+        "type": "list",
       },
-      {
-        "indent": "",
-        "raw": "1. list item 2",
-        "tokens": [{
-          "type": "text",
-          "value": "list item 2",
-        }],
-        "type": "count-item",
-      }]
+    ]
     const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ol><li>list item 1</li><li>list item 2</li></ol>")
+    expect(parsedData).toMatchSnapshot()
   })
 
   it("should parse the checkbox unchecked", () => {
     const lexedData = [{
-      "indent": "",
+      "checked": false,
+      "indent": 0,
       "raw": "- [ ] checkbox empty",
       "tokens": [
         {
@@ -146,15 +177,16 @@ describe("parser", () => {
 
   it("should parse the checkbox checked", () => {
     const lexedData = [{
-      "indent": "",
-      "raw": "- [x] checkbox empty",
+      "checked": true,
+      "indent": 0,
+      "raw": "- [x] checkbox full",
       "tokens": [
         {
           "type": "text",
           "value": "checkbox full",
         },
       ],
-      "type": "check-box-checked",
+      "type": "check-box",
     }]
     const parsedData = parser(lexedData)
     expect(parsedData).toBe("<ul><li><input type=\"checkbox\" checked>checkbox full</li></ul>")
@@ -291,7 +323,7 @@ describe("parser", () => {
     expect(parsedData).toBe("<hr>")
   })
   describe("table", () => {
-    it.only("should parse the table lexer", () => {
+    it("should parse the table lexer", () => {
       const lexedData = [
         {
           "indent": 0,
