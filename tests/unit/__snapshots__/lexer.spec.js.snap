@@ -904,8 +904,7 @@ Array [
       },
       Object {
         "countText": "-",
-        "raw": "- list item 2
-",
+        "raw": "- list item 2",
         "tokens": Array [
           Object {
             "type": "text",
@@ -937,8 +936,7 @@ Array [
       Object {
         "checked": true,
         "countText": "-",
-        "raw": "- [x] checkbox checked
-",
+        "raw": "- [x] checkbox checked",
         "tokens": Array [
           Object {
             "type": "text",
