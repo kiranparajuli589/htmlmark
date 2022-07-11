@@ -83,22 +83,22 @@ describe("parser", () => {
       "checkList": false,
       "indent": 0,
       "items":  [
-         {
+        {
           "countText": "-",
           "raw": "- list item 1",
           "tokens":  [
-             {
+            {
               "type": "text",
               "value": "list item 1",
             },
           ],
           "type": "count-item",
         },
-         {
+        {
           "countText": "-",
           "raw": "- list item 2",
           "tokens":  [
-             {
+            {
               "type": "text",
               "value": "list item 2",
             },
@@ -118,22 +118,22 @@ describe("parser", () => {
       "checkList": false,
       "indent": 0,
       "items":  [
-         {
+        {
           "countText": "-",
           "raw": "- list item 1",
           "tokens":  [
-             {
+            {
               "type": "text",
               "value": "list item 1",
             },
           ],
           "type": "count-item",
         },
-         {
+        {
           "countText": "-",
           "raw": "- list item 2",
           "tokens":  [
-             {
+            {
               "type": "text",
               "value": "list item 2",
             },
@@ -150,28 +150,28 @@ describe("parser", () => {
 
   it("should parse the checkbox list", () => {
     const lexedData = [
-       {
+      {
         "checkList": true,
         "indent": 0,
         "items":  [
-           {
+          {
             "checked": false,
             "countText": "-",
             "raw": "- [ ] checkbox empty",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "checkbox empty",
               },
             ],
             "type": "check-item",
           },
-           {
+          {
             "checked": true,
             "countText": "-",
             "raw": "- [x] checkbox checked",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "checkbox checked",
               },
@@ -189,26 +189,26 @@ describe("parser", () => {
 
   it("should parse the combination of list", () => {
     const lexedData =  [
-       {
+      {
         "checkList": false,
         "indent": 0,
         "items":  [
-           {
+          {
             "countText": "-",
             "raw": "- one",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "one",
               },
             ],
             "type": "count-item",
           },
-           {
+          {
             "countText": "-",
             "raw": "- two",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "two",
               },
@@ -219,26 +219,26 @@ describe("parser", () => {
         "ordered": false,
         "type": "list",
       },
-       {
+      {
         "checkList": false,
         "indent": 0,
         "items":  [
-           {
+          {
             "countText": "1.",
             "raw": "1. one",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "one",
               },
             ],
             "type": "count-item",
           },
-           {
+          {
             "countText": "2.",
             "raw": "2. two",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "two",
               },
@@ -249,28 +249,28 @@ describe("parser", () => {
         "ordered": true,
         "type": "list",
       },
-       {
+      {
         "checkList": true,
         "indent": 0,
         "items":  [
-           {
+          {
             "checked": false,
             "countText": "-",
             "raw": "- [ ] c empty",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "c empty",
               },
             ],
             "type": "check-item",
           },
-           {
+          {
             "checked": true,
             "countText": "-",
             "raw": "- [x] c checked",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "c checked",
               },
@@ -281,28 +281,28 @@ describe("parser", () => {
         "ordered": false,
         "type": "list",
       },
-       {
+      {
         "checkList": true,
         "indent": 0,
         "items":  [
-           {
+          {
             "checked": false,
             "countText": "1.",
             "raw": "1. [ ] c empty",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "c empty",
               },
             ],
             "type": "check-item",
           },
-           {
+          {
             "checked": true,
             "countText": "1.",
             "raw": "1. [x] c checked",
             "tokens":  [
-               {
+              {
                 "type": "text",
                 "value": "c checked",
               },
