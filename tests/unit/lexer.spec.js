@@ -114,7 +114,7 @@ describe("lexer", () => {
   })
 
   describe("common tokens", () => {
-    it.each(commonTokensList)("should parse the common tokens", (line) => { 
+    it.each(commonTokensList)("should parse the common tokens", (line) => {
       const lines = [line]
       const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
@@ -244,6 +244,15 @@ describe("lexer", () => {
         ])
         expect(tokens).toMatchSnapshot()
       })
+      it("not consistent cell count", () => {
+        const lines = [
+          "| column 1 | column 2 |",
+          "| --- |",
+          "| row 1 c1 | row 1 c2 |",
+        ]
+        const tokens = lexer(lines)
+        expect(tokens.length).toBe(3)
+      })
       it("other tokens in between 1", () => {
         const tokens = lexer([
           "| column 1 | column 2 |",
@@ -318,6 +327,29 @@ describe("lexer", () => {
           "| column 1 | column 2 |",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+    })
+
+    describe("table cell count", () => {
+      it("cell count should break the table 1", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+          "| row 2 c1 |",
+        ])
+        expect(tokens).toMatchSnapshot()
+      })
+      it("cell count should break the table 2", () => {
+        const tokens = lexer([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+          "| column 1 |",
+          "|---|",
+          "| row 1 c1 |",
         ])
         expect(tokens).toMatchSnapshot()
       })
