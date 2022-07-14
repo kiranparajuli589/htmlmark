@@ -17,17 +17,17 @@ A very lightweight markdown parser powered by Regex
 ### Heading
 | level | bold | italic | strike | underline | link | code | indent |
 | ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+| ✔️ | ✔️| ✔️| ✔️| ️ | ✔️ | ✔️ | ❌ |
 
 ### List Item (ordered/unordered)
 | level | bold | italic | strike | underline | link | code | indent |
 | ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ❌ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+| ❌ | ✔️| ✔️| ✔️| ️ | ✔️ | ✔️ | ❌ |
 
 ### Checkbox
 | check status | level | bold | italic | strike | underline | link | code | indent |
 | ------ | ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️ | ❌ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+| ✔️ | ❌ | ✔️| ✔️| ✔️| ️ | ✔️ | ✔️ | ❌ |
 
 ### Image
 | src | alt | title | height | width | align | indent |
@@ -37,17 +37,17 @@ A very lightweight markdown parser powered by Regex
 ### Quote
 | depth | bold | italic | strike | underline | link | code | indent |
 | ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+| ✔️ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ✔️ |
 
 ### Paragraph
 | bold | italic | strike | underline | link | code | indent |
 | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ❌ |
+| ✔️| ✔️| ✔️| ✔️ | ✔️ | ✔️ | ❌ |
 
 ### Table
 | indent | cell count | tokenizing | parsing |
 |---|---|---|---|
-| ❌ | ❌ | ✔️ | ✔️ |
+| ✔ | ✔ | ✔️ | ✔️ |
 
 ### Horizontal line
 ✔️
