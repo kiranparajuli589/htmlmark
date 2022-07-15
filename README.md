@@ -16,41 +16,53 @@ A very lightweight markdown parser powered by Regex
 
 ### Heading
 | level | bold | italic | strike | underline | link | code | indent |
-| ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️ | ✔️| ✔️| ✔️| ️ | ✔️ | ✔️ | ❌ |
+|-------|------|--------|--------|-----------|------|------|--------|
+| ✔️  ️ | ✔️   | ✔️     | ✔️     | ✔️ ️      | ✔️   | ✔️   | ✔️     |
 
-### List Item (ordered/unordered)
+### List Item (ordered/unordered/checkbox)
 | level | bold | italic | strike | underline | link | code | indent |
-| ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ❌ | ✔️| ✔️| ✔️| ️ | ✔️ | ✔️ | ❌ |
-
-### Checkbox
-| check status | level | bold | italic | strike | underline | link | code | indent |
-| ------ | ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️ | ❌ | ✔️| ✔️| ✔️| ️ | ✔️ | ✔️ | ❌ |
+|-------|------|--------|--------|-----------|------|------|--------|
+| ❌     | ✔️   | ✔️     | ✔️     | ✔️️       | ✔️   | ✔️   | ✔️     |
 
 ### Image
 | src | alt | title | height | width | align | indent |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+|-----|-----|-------|--------|-------|-------|--------|
+| ✔️  | ✔️  | ❌     | ❌      | ❌     | ❌     | ❌      |  ❌ |
 
 ### Quote
 | depth | bold | italic | strike | underline | link | code | indent |
-| ------ | ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️ | ✔️| ✔️| ✔️| ❌ | ✔️ | ✔️ | ✔️ |
+|-------|------|--------|--------|-----------|------|------|--------|
+| ✔️    | ✔️   | ✔️     | ✔️     | ✔️        | ✔️️  | ✔️   | ✔️     |
 
 ### Paragraph
 | bold | italic | strike | underline | link | code | indent |
-| ---- | ------ | ----- | -------- | ---- | ---- | ---- |
-| ✔️| ✔️| ✔️| ✔️ | ✔️ | ✔️ | ❌ |
+|------|--------|--------|-----------|------|------|--------|
+| ✔️   | ✔️     | ✔️     | ✔️        | ✔️   | ✔️   | ✔️     |
 
 ### Table
 | indent | cell count | tokenizing | parsing |
-|---|---|---|---|
-| ✔ | ✔ | ✔️ | ✔️ |
+|--------|------------|------------|---------|
+| ✔️     | ✔️         | ✔️         | ✔️      |
 
 ### Horizontal line
 ✔️
+
+### Bold
+- [ ] Italics
+- [ ] Link
+- [ ] Code
+- [ ] Strike Through
+- [ ] Underline
+
+### Italics
+
+### Code
+
+### Strike Through
+
+### Underline
+
+### Link
 
 > ❌: not implemented yet
 >

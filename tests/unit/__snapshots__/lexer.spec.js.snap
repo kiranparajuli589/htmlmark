@@ -795,7 +795,7 @@ Array [
   },
   Object {
     "indent": 0,
-    "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some <u>normal again</u> at the last",
+    "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
     "tokens": Array [
       Object {
         "type": "text",
@@ -864,7 +864,7 @@ Array [
       },
       Object {
         "type": "text",
-        "value": " here some <u>normal again</u> at the last",
+        "value": " here some normal again at the last",
       },
     ],
     "type": "paragraph",
@@ -875,11 +875,11 @@ Array [
   Object {
     "depth": 0,
     "indent": 0,
-    "raw": "> some quote <u>with underline</u>",
+    "raw": "> some quote with <u>Underline</u>",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "some quote <u>with underline</u>",
+        "value": "some quote with <u>Underline</u>",
       },
     ],
     "type": "quote",
@@ -1066,11 +1066,11 @@ if (c === 2) {
   },
   Object {
     "indent": 0,
-    "raw": "some piece of normal paragraph",
+    "raw": "some piece of normal paragraph with <u>underlined text</u>",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "some piece of normal paragraph",
+        "value": "some piece of normal paragraph with <u>underlined text</u>",
       },
     ],
     "type": "paragraph",
@@ -1119,42 +1119,61 @@ if (c === 2) {
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2          | column 3 |",
-      },
-    ],
-    "type": "paragraph",
-  },
-  Object {
-    "indent": 0,
     "rows": Array [
       Array [
         Object {
-          "raw": "----------",
+          "raw": " column 1 ",
           "tokens": Array [
             Object {
               "type": "text",
-              "value": "----------",
+              "value": "column 1",
             },
           ],
         },
         Object {
-          "raw": "-------------------",
+          "raw": " column 2          ",
           "tokens": Array [
             Object {
               "type": "text",
-              "value": "-------------------",
+              "value": "column 2",
             },
           ],
         },
         Object {
-          "raw": "----------",
+          "raw": " column 3 ",
           "tokens": Array [
             Object {
               "type": "text",
-              "value": "----------",
+              "value": "column 3",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " r1 text c1 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r1 text c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " r1 <u>text</u> c2 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r1 <u>text</u> c2",
+            },
+          ],
+        },
+        Object {
+          "raw": " r1 text c3 ",
+          "tokens": Array [
+            Object {
+              "type": "text",
+              "value": "r1 text c3",
             },
           ],
         },
