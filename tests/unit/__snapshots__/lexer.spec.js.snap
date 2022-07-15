@@ -452,11 +452,11 @@ exports[`lexer paragraph should be deep tokenized 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
+    "raw": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "a paragraph of words ",
+        "value": "a paragraph of <u>words</u> ",
       },
       Object {
         "type": "code",
@@ -875,11 +875,11 @@ Array [
   Object {
     "depth": 0,
     "indent": 0,
-    "raw": "> some quote",
+    "raw": "> some quote with <u>Underline</u>",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "some quote",
+        "value": "some quote with <u>Underline</u>",
       },
     ],
     "type": "quote",
@@ -1066,11 +1066,11 @@ if (c === 2) {
   },
   Object {
     "indent": 0,
-    "raw": "some piece of normal paragraph",
+    "raw": "some piece of normal paragraph with <u>underlined text</u>",
     "tokens": Array [
       Object {
         "type": "text",
-        "value": "some piece of normal paragraph",
+        "value": "some piece of normal paragraph with <u>underlined text</u>",
       },
     ],
     "type": "paragraph",
@@ -1131,7 +1131,7 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " column 2 ",
+          "raw": " column 2          ",
           "tokens": Array [
             Object {
               "type": "text",
@@ -1160,11 +1160,11 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " r1 text c2 ",
+          "raw": " r1 <u>text</u> c2 ",
           "tokens": Array [
             Object {
               "type": "text",
-              "value": "r1 text c2",
+              "value": "r1 <u>text</u> c2",
             },
           ],
         },
@@ -1189,7 +1189,7 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " r2 text c2 ",
+          "raw": " r2 text c2        ",
           "tokens": Array [
             Object {
               "type": "text",
@@ -1218,7 +1218,7 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " r3 text c2 ",
+          "raw": " r3 text c2        ",
           "tokens": Array [
             Object {
               "type": "text",
@@ -1247,7 +1247,7 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " r4 text c2 ",
+          "raw": " r4 text c2        ",
           "tokens": Array [
             Object {
               "type": "text",
@@ -1276,7 +1276,7 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " r6 text c2 ",
+          "raw": " r6 text c2        ",
           "tokens": Array [
             Object {
               "type": "text",

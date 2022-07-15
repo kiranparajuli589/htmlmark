@@ -4,7 +4,7 @@
   "description": "Lightweight markdown parser",
   "main": "index.js",
   "scripts": {
-    "renderer": "node index.js",
+    "convert": "node index.js",
     "test:unit": "jest --silent",
     "test:unit:watch": "jest --watch --no-coverage",
     "lint": "eslint **/*.js",

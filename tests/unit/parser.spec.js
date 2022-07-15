@@ -347,6 +347,21 @@ describe("parser", () => {
     const parsedData = parser(lexedData)
     expect(parsedData).toBe("<p>paragraph</p>")
   })
+  it("should parse paragraph with underline", () => {
+    const lexedData = [{
+      "indent": "",
+      "raw": "paragraph",
+      "tokens": [
+        {
+          "type": "text",
+          "value": "paragraph <u>underlined</u> here again",
+        },
+      ],
+      "type": "paragraph",
+    }]
+    const parsedData = parser(lexedData)
+    expect(parsedData).toBe("<p>paragraph <u>underlined</u> here again</p>")
+  })
   it("should parse paragraph with magic", () => {
     const lexedData = [{
       "raw": "a paragraph of words `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
