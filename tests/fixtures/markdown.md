@@ -58,3 +58,9 @@ some random text
 | r4 text c1 | r4 text c2        | r5 text c3 |
 | r6 text c1 | r6 text c2        | r6 text c3 |
 some random text again just below table
+
+text text text **bold *with* `gems` [ruby](treasure-chest) ~~please~~** text text text
+text text text *italics `with` [gems](ruby) ~~please~~* text text text
+text text text ~~strikes *with* `gems` **ruby** [gold](no-sparkle)~~ text text text
+
+[*bold* and `gem`ss](ruby) and some text

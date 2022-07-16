@@ -421,7 +421,7 @@ describe("parser", () => {
         {
           "href": "https://kiranparajuli.com.np",
           "type": "link",
-          "value": "Kiran Parajuli",
+          "title": "Kiran Parajuli",
         },
         {
           "type": "text",
