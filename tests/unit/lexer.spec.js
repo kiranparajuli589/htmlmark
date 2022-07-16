@@ -47,7 +47,6 @@ describe("lexer", () => {
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
   })
-
   describe("codeblock", () => {
     it("should parse the codeblock", () => {
       const lines = [
@@ -112,7 +111,6 @@ describe("lexer", () => {
       expect(tokens).toMatchSnapshot()
     })
   })
-
   describe("common tokens", () => {
     it.each(commonTokensList)("should parse the common tokens", (line) => {
       const lines = [line]
@@ -124,15 +122,6 @@ describe("lexer", () => {
       const lines = [indent + line]
       const tokens = lexer(lines)
       expect(tokens[0].indent).toBe(2)
-    })
-  })
-  describe("paragraph", () => {
-    it("should be deep tokenized", () => {
-      const lines = [
-        "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
     })
   })
   describe("quote", () => {
@@ -200,6 +189,20 @@ describe("lexer", () => {
       ]
       const tokenizedContent = lexer(lines)
       expect(tokenizedContent).toMatchSnapshot()
+    })
+    it("should tokenize list combination", () => {
+      const lines = [
+        "- one",
+        "- two",
+        "1. one",
+        "2. two",
+        "- [ ] c empty",
+        "- [x] c checked",
+        "1. [ ] c empty",
+        "1. [x] c checked"
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
     })
   })
   describe("hr line", () => {
@@ -369,19 +372,30 @@ describe("lexer", () => {
       })
     })
   })
-  it("should tokenize list combination", () => {
-    const lines = [
-      "- one",
-      "- two",
-      "1. one",
-      "2. two",
-      "- [ ] c empty",
-      "- [x] c checked",
-      "1. [ ] c empty",
-      "1. [x] c checked"
-    ]
-    const tokens = lexer(lines)
-    expect(tokens).toMatchSnapshot()
+  describe("paragraph", () => {
+    it("should be deep tokenized", () => {
+      const lines = [
+        "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some"
+      ]
+      const lexerData = lexer(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  describe("bold", () => {
+    it("should catch multiple consecutive participants", () => {
+      const lines = [
+        "**first bold** **second bold** **third bold**"
+      ]
+      const lexerData = lexer(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be deep tokenized", () => {
+      const lines = [
+        "**bold with `code` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**"
+      ]
+      const lexerData = lexer(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
   })
   it("should tokenize a markdown content", () => {
     // eslint-disable-next-line no-undef

@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lexer bold should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
+    "tokens": Array [
+      Object {
+        "type": "italic",
+        "value": "bold with \`code\` and ",
+      },
+      Object {
+        "type": "text",
+        "value": "italics",
+      },
+      Object {
+        "type": "italic",
+        "value": " and ~~strikes~~ and [link](https://kiranparajuli.com.np)",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer bold should catch multiple consecutive participants 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "**first bold** **second bold** **third bold**",
+    "tokens": Array [
+      Object {
+        "type": "bold",
+        "value": "first bold",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "bold",
+        "value": "second bold",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "bold",
+        "value": "third bold",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`lexer codeblock should cope with multiple items 1`] = `
 Array [
   Object {
@@ -1310,135 +1366,6 @@ if (c === 2) {
   },
   Object {
     "type": "new-line",
-  },
-]
-`;
-
-exports[`lexer should tokenize list combination 1`] = `
-Array [
-  Object {
-    "checkList": false,
-    "indent": 0,
-    "items": Array [
-      Object {
-        "countText": "-",
-        "raw": "- one",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "one",
-          },
-        ],
-        "type": "count-item",
-      },
-      Object {
-        "countText": "-",
-        "raw": "- two",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
-        "type": "count-item",
-      },
-    ],
-    "ordered": false,
-    "type": "list",
-  },
-  Object {
-    "checkList": false,
-    "indent": 0,
-    "items": Array [
-      Object {
-        "countText": "1.",
-        "raw": "1. one",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "one",
-          },
-        ],
-        "type": "count-item",
-      },
-      Object {
-        "countText": "2.",
-        "raw": "2. two",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
-        "type": "count-item",
-      },
-    ],
-    "ordered": true,
-    "type": "list",
-  },
-  Object {
-    "checkList": true,
-    "indent": 0,
-    "items": Array [
-      Object {
-        "checked": false,
-        "countText": "-",
-        "raw": "- [ ] c empty",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c empty",
-          },
-        ],
-        "type": "check-item",
-      },
-      Object {
-        "checked": true,
-        "countText": "-",
-        "raw": "- [x] c checked",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c checked",
-          },
-        ],
-        "type": "check-item",
-      },
-    ],
-    "ordered": false,
-    "type": "list",
-  },
-  Object {
-    "checkList": true,
-    "indent": 0,
-    "items": Array [
-      Object {
-        "checked": false,
-        "countText": "1.",
-        "raw": "1. [ ] c empty",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c empty",
-          },
-        ],
-        "type": "check-item",
-      },
-      Object {
-        "checked": true,
-        "countText": "1.",
-        "raw": "1. [x] c checked",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c checked",
-          },
-        ],
-        "type": "check-item",
-      },
-    ],
-    "ordered": true,
-    "type": "list",
   },
 ]
 `;
