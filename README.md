@@ -48,22 +48,38 @@ A very lightweight markdown parser powered by Regex
 ✔️
 
 ### Bold
-- [ ] Italics
-- [ ] Link
-- [ ] Code
-- [ ] Strike Through
-- [ ] Underline
+- [x] Italics
+- [x] Link
+- [x] Code
+- [x] Strike Through
+- [x] Underline
 
 ### Italics
+- [ ] Bold
+- [x] Link
+- [x] Code
+- [x] Strike Through
+- [x] Underline
 
 ### Code
+- [x] no deep tokenization
 
 ### Strike Through
+- [x] Bold
+- [x] Italics
+- [x] Link
+- [x] Code
+- [x] Underline
 
 ### Underline
 
 ### Link
+- [x] Bold
+- [x] Italics
 
 > ❌: not implemented yet
 >
 > ✔️: implemented
+
+
+*italics **bold** italics* and **bold** here

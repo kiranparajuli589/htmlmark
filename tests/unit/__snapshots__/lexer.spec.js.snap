@@ -7,16 +7,43 @@ Array [
     "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
     "tokens": Array [
       Object {
-        "type": "italic",
-        "value": "bold with \`code\` and ",
-      },
-      Object {
-        "type": "text",
-        "value": "italics",
-      },
-      Object {
-        "type": "italic",
-        "value": " and ~~strikes~~ and [link](https://kiranparajuli.com.np)",
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "bold with ",
+          },
+          Object {
+            "type": "code",
+            "value": "code",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "italic",
+            "value": "italics",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "strike-through",
+            "value": "strikes",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "href": "https://kiranparajuli.com.np",
+            "title": "link",
+            "type": "link",
+          },
+        ],
+        "type": "bold",
+        "value": "bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)",
       },
     ],
     "type": "paragraph",
@@ -24,13 +51,19 @@ Array [
 ]
 `;
 
-exports[`lexer bold should catch multiple consecutive participants 1`] = `
+exports[`lexer bold should match the consecutive occurrences 1`] = `
 Array [
   Object {
     "indent": 0,
     "raw": "**first bold** **second bold** **third bold**",
     "tokens": Array [
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first bold",
+          },
+        ],
         "type": "bold",
         "value": "first bold",
       },
@@ -39,6 +72,12 @@ Array [
         "value": " ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "second bold",
+          },
+        ],
         "type": "bold",
         "value": "second bold",
       },
@@ -47,8 +86,62 @@ Array [
         "value": " ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "third bold",
+          },
+        ],
         "type": "bold",
         "value": "third bold",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer code should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "\`first code\` \`second code\` \`third code\`",
+    "tokens": Array [
+      Object {
+        "type": "code",
+        "value": "first code",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "code",
+        "value": "second code",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "type": "code",
+        "value": "third code",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer code should not be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
+    "tokens": Array [
+      Object {
+        "type": "code",
+        "value": "code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)",
       },
     ],
     "type": "paragraph",
@@ -308,6 +401,169 @@ Array [
 ]
 `;
 
+exports[`lexer italics should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
+    "tokens": Array [
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "italics with ",
+          },
+          Object {
+            "type": "code",
+            "value": "code",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "strike-through",
+            "value": "strikes",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "href": "https://kiranparajuli.com.np",
+            "title": "link",
+            "type": "link",
+          },
+        ],
+        "type": "italic",
+        "value": "italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer italics should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "*first italics* *second italics* *third italics*",
+    "tokens": Array [
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first italics",
+          },
+        ],
+        "type": "italic",
+        "value": "first italics",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "second italics",
+          },
+        ],
+        "type": "italic",
+        "value": "second italics",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "third italics",
+          },
+        ],
+        "type": "italic",
+        "value": "third italics",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer link should deep tokenized the link title 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
+    "tokens": Array [
+      Object {
+        "href": "https://kiranparajuli.com.np",
+        "tDeep": Array [
+          Object {
+            "type": "italic",
+            "value": "italic",
+          },
+          Object {
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "type": "bold",
+            "value": "bold",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "code",
+            "value": "code",
+          },
+        ],
+        "title": "*italic* with **bold** and \`code\`",
+        "type": "link",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer link should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
+    "tokens": Array [
+      Object {
+        "href": "https://kiranparajuli.com.np",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "link](https://kiranparajuli.com.np) ",
+          },
+          Object {
+            "type": "text",
+            "value": "[",
+          },
+          Object {
+            "type": "text",
+            "value": "link",
+          },
+        ],
+        "title": "link](https://kiranparajuli.com.np) [link",
+        "type": "link",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`lexer list indent should break the list 1`] = `
 Array [
   Object {
@@ -323,6 +579,12 @@ Array [
             "value": "item ",
           },
           Object {
+            "deep": Array [
+              Object {
+                "type": "text",
+                "value": "1",
+              },
+            ],
             "type": "bold",
             "value": "1",
           },
@@ -339,8 +601,14 @@ Array [
           },
           Object {
             "href": "link-url",
+            "tDeep": Array [
+              Object {
+                "type": "text",
+                "value": "link",
+              },
+            ],
+            "title": "link",
             "type": "link",
-            "value": "link",
           },
         ],
         "type": "count-item",
@@ -401,6 +669,12 @@ Array [
             "value": "item ",
           },
           Object {
+            "deep": Array [
+              Object {
+                "type": "text",
+                "value": "1",
+              },
+            ],
             "type": "bold",
             "value": "1",
           },
@@ -417,8 +691,14 @@ Array [
           },
           Object {
             "href": "link-url",
+            "tDeep": Array [
+              Object {
+                "type": "text",
+                "value": "link",
+              },
+            ],
+            "title": "link",
             "type": "link",
-            "value": "link",
           },
         ],
         "type": "count-item",
@@ -460,6 +740,12 @@ Array [
             "value": "item ",
           },
           Object {
+            "deep": Array [
+              Object {
+                "type": "text",
+                "value": "1",
+              },
+            ],
             "type": "bold",
             "value": "1",
           },
@@ -476,8 +762,14 @@ Array [
           },
           Object {
             "href": "link-url",
+            "tDeep": Array [
+              Object {
+                "type": "text",
+                "value": "link",
+              },
+            ],
+            "title": "link",
             "type": "link",
-            "value": "link",
           },
         ],
         "type": "count-item",
@@ -504,7 +796,255 @@ Array [
 ]
 `;
 
+exports[`lexer list should tokenize list combination 1`] = `
+Array [
+  Object {
+    "checkList": false,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "-",
+        "raw": "- one",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "one",
+          },
+        ],
+        "type": "count-item",
+      },
+      Object {
+        "countText": "-",
+        "raw": "- two",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
+        "type": "count-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
+  },
+  Object {
+    "checkList": false,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "countText": "1.",
+        "raw": "1. one",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "one",
+          },
+        ],
+        "type": "count-item",
+      },
+      Object {
+        "countText": "2.",
+        "raw": "2. two",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
+        "type": "count-item",
+      },
+    ],
+    "ordered": true,
+    "type": "list",
+  },
+  Object {
+    "checkList": true,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": false,
+        "countText": "-",
+        "raw": "- [ ] c empty",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c empty",
+          },
+        ],
+        "type": "check-item",
+      },
+      Object {
+        "checked": true,
+        "countText": "-",
+        "raw": "- [x] c checked",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c checked",
+          },
+        ],
+        "type": "check-item",
+      },
+    ],
+    "ordered": false,
+    "type": "list",
+  },
+  Object {
+    "checkList": true,
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": false,
+        "countText": "1.",
+        "raw": "1. [ ] c empty",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c empty",
+          },
+        ],
+        "type": "check-item",
+      },
+      Object {
+        "checked": true,
+        "countText": "1.",
+        "raw": "1. [x] c checked",
+        "tokens": Array [
+          Object {
+            "type": "text",
+            "value": "c checked",
+          },
+        ],
+        "type": "check-item",
+      },
+    ],
+    "ordered": true,
+    "type": "list",
+  },
+]
+`;
+
 exports[`lexer paragraph should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`[[[[[[[[[[[[[[[l]]]]int](href)[link](href)\`\`\`\`\`\`\`\`\`\`",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "some normal and ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "bold with ",
+          },
+          Object {
+            "type": "text",
+            "value": " gem",
+          },
+        ],
+        "type": "bold",
+        "value": "bold with * gem",
+      },
+      Object {
+        "type": "text",
+        "value": " but pure ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "italics",
+          },
+        ],
+        "type": "italic",
+        "value": "italics",
+      },
+      Object {
+        "type": "text",
+        "value": " is alos there baby now ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "coming",
+          },
+        ],
+        "type": "strike-through",
+        "value": "coming",
+      },
+      Object {
+        "type": "text",
+        "value": "hola amigons",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "strike",
+          },
+        ],
+        "type": "strike-through",
+        "value": "strike",
+      },
+      Object {
+        "type": "text",
+        "value": " wooo lala what about blazing ",
+      },
+      Object {
+        "type": "text",
+        "value": "*********",
+      },
+      Object {
+        "type": "text",
+        "value": "here baby ",
+      },
+      Object {
+        "type": "text",
+        "value": "~~~~~~~~~",
+      },
+      Object {
+        "type": "text",
+        "value": "baby ",
+      },
+      Object {
+        "type": "code",
+        "value": "baby",
+      },
+      Object {
+        "type": "text",
+        "value": "\`\`[[[[[[[[[[[[[[[",
+      },
+      Object {
+        "type": "text",
+        "value": "l]]]]int](href)",
+      },
+      Object {
+        "href": "href",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "link",
+          },
+        ],
+        "title": "link",
+        "type": "link",
+      },
+      Object {
+        "type": "text",
+        "value": "\`\`\`\`\`\`\`\`\`\`",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer paragraph should be deep tokenized 2`] = `
 Array [
   Object {
     "indent": 0,
@@ -531,6 +1071,12 @@ Array [
         "value": " ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first italics",
+          },
+        ],
         "type": "italic",
         "value": "first italics",
       },
@@ -539,6 +1085,12 @@ Array [
         "value": " here me crying ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "italic body",
+          },
+        ],
         "type": "italic",
         "value": "italic body",
       },
@@ -547,6 +1099,12 @@ Array [
         "value": " here me crying ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first bolds",
+          },
+        ],
         "type": "bold",
         "value": "first bolds",
       },
@@ -555,6 +1113,12 @@ Array [
         "value": " some normal again ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "bold body",
+          },
+        ],
         "type": "bold",
         "value": "bold body",
       },
@@ -564,14 +1128,26 @@ Array [
       },
       Object {
         "href": "https://kiranparajuli.com.np",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "Kiran Parajuli",
+          },
+        ],
+        "title": "Kiran Parajuli",
         "type": "link",
-        "value": "Kiran Parajuli",
       },
       Object {
         "type": "text",
         "value": " ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "strikes body",
+          },
+        ],
         "type": "strike-through",
         "value": "strikes body",
       },
@@ -597,6 +1173,12 @@ Array [
         "value": "quote ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "one",
+          },
+        ],
         "type": "bold",
         "value": "one",
       },
@@ -605,6 +1187,12 @@ Array [
         "value": " with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
         "type": "italic",
         "value": "two",
       },
@@ -634,6 +1222,12 @@ Array [
         "value": " with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "five",
+          },
+        ],
         "type": "strike-through",
         "value": "five",
       },
@@ -656,14 +1250,26 @@ Array [
       },
       Object {
         "href": "link-url",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "link-title",
+          },
+        ],
+        "title": "link-title",
         "type": "link",
-        "value": "link-title",
       },
       Object {
         "type": "text",
         "value": " with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
         "type": "italic",
         "value": "two",
       },
@@ -685,6 +1291,12 @@ Array [
         "value": "quote ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "one",
+          },
+        ],
         "type": "bold",
         "value": "one",
       },
@@ -693,6 +1305,12 @@ Array [
         "value": " with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
         "type": "italic",
         "value": "two",
       },
@@ -722,6 +1340,12 @@ Array [
         "value": " with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "five",
+          },
+        ],
         "type": "strike-through",
         "value": "five",
       },
@@ -744,14 +1368,26 @@ Array [
       },
       Object {
         "href": "link-url",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "link-title",
+          },
+        ],
+        "title": "link-title",
         "type": "link",
-        "value": "link-title",
       },
       Object {
         "type": "text",
         "value": " with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "two",
+          },
+        ],
         "type": "italic",
         "value": "two",
       },
@@ -874,6 +1510,12 @@ Array [
         "value": " ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first italics",
+          },
+        ],
         "type": "italic",
         "value": "first italics",
       },
@@ -882,6 +1524,12 @@ Array [
         "value": " here me crying ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "italic body",
+          },
+        ],
         "type": "italic",
         "value": "italic body",
       },
@@ -890,6 +1538,12 @@ Array [
         "value": " here me crying ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first bolds",
+          },
+        ],
         "type": "bold",
         "value": "first bolds",
       },
@@ -898,6 +1552,12 @@ Array [
         "value": " some normal again ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "bold body",
+          },
+        ],
         "type": "bold",
         "value": "bold body",
       },
@@ -907,14 +1567,26 @@ Array [
       },
       Object {
         "href": "https://kiranparajuli.com.np",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "Kiran Parajuli",
+          },
+        ],
+        "title": "Kiran Parajuli",
         "type": "link",
-        "value": "Kiran Parajuli",
       },
       Object {
         "type": "text",
         "value": " ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "strikes body",
+          },
+        ],
         "type": "strike-through",
         "value": "strikes body",
       },
@@ -1042,8 +1714,14 @@ Array [
       },
       Object {
         "href": "quote-link-url",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "quote-link",
+          },
+        ],
+        "title": "quote-link",
         "type": "link",
-        "value": "quote-link",
       },
     ],
     "type": "quote",
@@ -1058,6 +1736,12 @@ Array [
         "value": "nested quote 3 with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "italics",
+          },
+        ],
         "type": "italic",
         "value": "italics",
       },
@@ -1066,6 +1750,12 @@ Array [
         "value": " and ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "bolds",
+          },
+        ],
         "type": "bold",
         "value": "bolds",
       },
@@ -1366,6 +2056,309 @@ if (c === 2) {
   },
   Object {
     "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "text text text ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "bold ",
+          },
+          Object {
+            "type": "italic",
+            "value": "with",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "code",
+            "value": "gems",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "href": "treasure-chest",
+            "title": "ruby",
+            "type": "link",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "strike-through",
+            "value": "please",
+          },
+        ],
+        "type": "bold",
+        "value": "bold *with* \`gems\` [ruby](treasure-chest) ~~please~~",
+      },
+      Object {
+        "type": "text",
+        "value": " text text text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "raw": "text text text *italics \`with\` [gems](ruby) ~~please~~* text text text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "text text text ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "italics ",
+          },
+          Object {
+            "type": "code",
+            "value": "with",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "href": "ruby",
+            "title": "gems",
+            "type": "link",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "strike-through",
+            "value": "please",
+          },
+        ],
+        "type": "italic",
+        "value": "italics \`with\` [gems](ruby) ~~please~~",
+      },
+      Object {
+        "type": "text",
+        "value": " text text text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "raw": "text text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "text text text ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "strikes ",
+          },
+          Object {
+            "type": "italic",
+            "value": "with",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "code",
+            "value": "gems",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "bold",
+            "value": "ruby",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "href": "no-sparkle",
+            "title": "gold",
+            "type": "link",
+          },
+        ],
+        "type": "strike-through",
+        "value": "strikes *with* \`gems\` **ruby** [gold](no-sparkle)",
+      },
+      Object {
+        "type": "text",
+        "value": " text text text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "[*bold* and \`gem\`ss](ruby) and some text",
+    "tokens": Array [
+      Object {
+        "href": "ruby",
+        "tDeep": Array [
+          Object {
+            "type": "italic",
+            "value": "bold",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "code",
+            "value": "gem",
+          },
+          Object {
+            "type": "text",
+            "value": "ss",
+          },
+        ],
+        "title": "*bold* and \`gem\`ss",
+        "type": "link",
+      },
+      Object {
+        "type": "text",
+        "value": " and some text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "type": "new-line",
+  },
+]
+`;
+
+exports[`lexer strikes should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
+    "tokens": Array [
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "strikes with ",
+          },
+          Object {
+            "type": "text",
+            "value": "~",
+          },
+          Object {
+            "type": "text",
+            "value": " gem and ",
+          },
+          Object {
+            "type": "code",
+            "value": "code",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "bold",
+            "value": "bold",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "type": "italic",
+            "value": "italics",
+          },
+          Object {
+            "type": "text",
+            "value": " and ",
+          },
+          Object {
+            "href": "https://kiranparajuli.com.np",
+            "title": "link",
+            "type": "link",
+          },
+        ],
+        "type": "strike-through",
+        "value": "strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`lexer strikes should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
+    "tokens": Array [
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "first strikes",
+          },
+        ],
+        "type": "strike-through",
+        "value": "first strikes",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "second strikes",
+          },
+        ],
+        "type": "strike-through",
+        "value": "second strikes",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "third strikes",
+          },
+        ],
+        "type": "strike-through",
+        "value": "third strikes",
+      },
+    ],
+    "type": "paragraph",
   },
 ]
 `;
