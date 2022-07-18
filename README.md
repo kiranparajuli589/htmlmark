@@ -11,70 +11,47 @@ A very lightweight Markdown Parser powered by Regex
 
 ## Roadmap
 
-## Paragraphs
-### Comment
-✔️ included in the lexer data but not in the parsed HTML output
+### Paragraphs
+1. Heading:
+    - Levels: #{1, 6} Heading text
+2. Code block:
+    - Language: Optional
+    - Indentation: must be equal for starting and closing ```
+3. List:
+    - Ordered: {any digit}. Item 1
+    - Unordered: - Item 1
+    - Checklist: - [ ] Item 1
+    - Indentation: must be the same to be included in the same list
+4. Quote:
+    - Levels: 0 to infinity
+    - Indentation: must be the same to be included in the same quote
+5. Image:
+    - Link: Required
+    - Alt text: Optional
+    - Size: NOT IMPLEMENTED YET
+    - Align: NOT IMPLEMENTED YET
+    - Indentation: NOT IMPLEMENTED YET
+6. Comment
+    - Lexer contains it
+    - Parser ignores it
+    - Ex: <!-- This is a comment -->
+7. Line
+    - Defined by: `---`
+    - consecutive lines are merged into one
+8. Newline
+    - consecutive newlines are merged into one
+10. Paragraph
+    - anything else
 
-### Heading
-| level | bold | italic | strike | underline | link | code | indent |
-|-------|------|--------|--------|-----------|------|------|--------|
-| ✔️  ️ | ✔️   | ✔️     | ✔️     | ✔️ ️      | ✔️   | ✔️   | ❌      |
+### Emphasis
+Emphasis can be inside the content of any paragraph types.
 
-### List Item (ordered/unordered/checkbox)
-| level | bold | italic | strike | underline | link | code | indent |
-|-------|------|--------|--------|-----------|------|------|--------|
-| ❌     | ✔️   | ✔️     | ✔️     | ✔️️       | ✔️   | ✔️   | ❌      |
-
-### Image
-| src | alt | title | height | width | align | indent |
-|-----|-----|-------|--------|-------|-------|--------|
-| ✔️  | ✔️  | ❌     | ❌      | ❌     | ❌     | ❌      |  ❌ |
-
-### Quote
-| depth | bold | italic | strike | underline | link | code | indent |
-|-------|------|--------|--------|-----------|------|------|--------|
-| ✔️    | ✔️   | ✔️     | ✔️     | ✔️        | ✔️️  | ✔️   | ❌      |
-
-### Paragraph
-| bold | italic | strike | underline | link | code | indent |
-|------|--------|--------|-----------|------|------|--------|
-| ✔️   | ✔️     | ✔️     | ✔️        | ✔️   | ✔️   | ❌️     |
-
-### Table
-| indent | cell count | tokenizing | parsing |
-|--------|------------|------------|---------|
-| ❌️     | ✔️         | ✔️         | ✔️      |
-
-### Horizontal line
-✔️
-
-## Emphasis
-### Bold
-Supported inside: Italics, Link, Code, Strike Through, Underline
-Identifier: **
-
-### Italics
-Deep: Bold, Link, Code, Strike Through, Underline
-Identifier: *
-
-### Code
-no deep tokenization
-Identifier: `
-
-### Strike Through
-Deep: Bold, Italics, Link, Code, Underline
-Identifier: ~~
-
-### Underline
-Deep: Bold, Italics, Link, Code, Strike Through
-Identifier: ++
-
-### Link
-Has a title and a link part.
-Identifier: `[x](y)`
-Title can have deep tokenization.
-TDeep: Bold, Italics, Code, Strike Through, Underline
-
+1. Bold: **bold**
+2. Italic: *italic*
+3. Strike: ~~strike~~
+4. Underline: ++underline++
+5. Link: `[link](https://example.com)`
+6. Code: wrapped inside backticks
 
 ### Limitations of the emphasis identifiers 😤
 
@@ -94,5 +71,9 @@ Pros:
 - fast parsing
 - accurate parsing
 
-### Custom emphasis identifiers
-SHOULD THIS BE IMPLEMENTED 🤔 IF NOT, WHY? IF YES, HOW?
+### Custom emphasis identifiers 🤔
+SHOULD THIS BE IMPLEMENTED?
+
+
+### HTML Sanitization 👻
+**A BIG TODO**
