@@ -62,5 +62,6 @@ some random text again just below table
 text text text **bold *with* `gems` [ruby](treasure-chest) ~~please~~** text text text
 text text text *italics `with` [gems](ruby) ~~please~~* text text text
 text text text ~~strikes *with* `gems` **ruby** [gold](no-sparkle)~~ text text text
+text ++text **text** `text` *text* [te](xt) text++ text
 
 [*bold* and `gem`ss](ruby) and some text

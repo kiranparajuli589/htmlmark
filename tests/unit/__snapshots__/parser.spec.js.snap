@@ -94,7 +94,7 @@ exports[`lexer newline should not include the top empty lines 2`] = `""`;
 
 exports[`lexer newline should not include the top empty lines 3`] = `""`;
 
-exports[`lexer paragraph should be deep tokenized 1`] = `"<p>some normal and <strong>bold with * gem</strong> but pure <em>italics</em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong><strong>*</strong></strong>here baby <s><s>~</s></s>baby <code>baby\`\`</code>[[[[[[[[[[[[[[[l]]]]int](href)<a href=\\"href\\">link</a><code>\`\`\`\`\`\`\`\`</code></p>"`;
+exports[`lexer paragraph should be deep tokenized 1`] = `"<p>some normal and <strong>bold with * gem</strong> but pure <em>italics</em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong><strong>*</strong></strong>here baby <s><s>~</s></s>baby <code>baby\`\`</code><a href=\\"href\\">[[[[[[[[[[[[[[l]]]]int</a><a href=\\"href\\">link</a><code>\`\`\`\`\`\`\`\`</code></p>"`;
 
 exports[`lexer paragraph should be deep tokenized 2`] = `"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> <s>strikes body</s> here some</p>"`;
 
@@ -138,7 +138,7 @@ if (c === 2) {
   <tbody>
     <tr><td>r1 text c1</td><td>r1 <u>text</u> c2</td><td>r1 text c3</td></tr><tr><td>r2 text c1</td><td>r2 text c2</td><td>r2 text c3</td></tr><tr><td>r3 text c1</td><td>r3 text c2</td><td>r3 text c3</td></tr><tr><td>r4 text c1</td><td>r4 text c2</td><td>r5 text c3</td></tr><tr><td>r6 text c1</td><td>r6 text c2</td><td>r6 text c3</td></tr>
   </tbody>
-</table><p>some random text again just below table</p><br><p>text text text <strong>bold <em>with</em> <code>gems</code> <a href=\\"treasure-chest\\">ruby</a> <s>please</s></strong> text text text</p><p>text text text <em>italics <code>with</code> <a href=\\"ruby\\">gems</a> <s>please</s></em> text text text</p><p>text text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href=\\"no-sparkle\\">gold</a></s> text text text</p><br><p><a href=\\"ruby\\"><em>bold</em> and <code>gem</code>ss</a> and some text</p><br>"
+</table><p>some random text again just below table</p><br><p>text text text <strong>bold <em>with</em> <code>gems</code> <a href=\\"treasure-chest\\">ruby</a> <s>please</s></strong> text text text</p><p>text text text <em>italics <code>with</code> <a href=\\"ruby\\">gems</a> <s>please</s></em> text text text</p><p>text text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href=\\"no-sparkle\\">gold</a></s> text text text</p><p>text <u>text <strong>text</strong> <code>text</code> <em>text</em> <a href=\\"xt\\">te</a> text</u> text</p><br><p><a href=\\"ruby\\"><em>bold</em> and <code>gem</code>ss</a> and some text</p><br>"
 `;
 
 exports[`lexer strikes should be deep tokenized 1`] = `"<p><s>strikes with ~ gem and <code>code</code> and <strong>bold</strong> and <em>italics</em> and <a href=\\"https://kiranparajuli.com.np\\">link</a></s></p>"`;

@@ -1031,8 +1031,15 @@ Array [
         "value": "baby\`\`",
       },
       Object {
-        "type": "text",
-        "value": "[[[[[[[[[[[[[[[l]]]]int](href)",
+        "href": "href",
+        "tDeep": Array [
+          Object {
+            "type": "text",
+            "value": "[[[[[[[[[[[[[[l]]]]int",
+          },
+        ],
+        "title": "[[[[[[[[[[[[[[l]]]]int",
+        "type": "link",
       },
       Object {
         "href": "href",
@@ -1183,6 +1190,12 @@ Array [
         "value": "now with ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "underlined text",
+          },
+        ],
         "type": "underline",
         "value": "underlined text",
       },
@@ -1191,6 +1204,12 @@ Array [
         "value": " within some ",
       },
       Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "+underl+ined text+",
+          },
+        ],
         "type": "underline",
         "value": "+underl+ined text+",
       },
@@ -2246,6 +2265,64 @@ if (c === 2) {
       Object {
         "type": "text",
         "value": " text text text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "indent": 0,
+    "raw": "text ++text **text** \`text\` *text* [te](xt) text++ text",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "text ",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "type": "text",
+            "value": "text ",
+          },
+          Object {
+            "type": "bold",
+            "value": "text",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "code",
+            "value": "text",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "type": "italic",
+            "value": "text",
+          },
+          Object {
+            "type": "text",
+            "value": " ",
+          },
+          Object {
+            "href": "xt",
+            "title": "te",
+            "type": "link",
+          },
+          Object {
+            "type": "text",
+            "value": " text",
+          },
+        ],
+        "type": "underline",
+        "value": "text **text** \`text\` *text* [te](xt) text",
+      },
+      Object {
+        "type": "text",
+        "value": " text",
       },
     ],
     "type": "paragraph",

@@ -11,6 +11,7 @@ A very lightweight markdown parser powered by Regex
 
 ## Roadmap
 
+## Paragraphs
 ### Comment
 ✔️ included in the lexer data but not in the parsed HTML output
 
@@ -47,6 +48,7 @@ A very lightweight markdown parser powered by Regex
 ### Horizontal line
 ✔️
 
+## Emphasis
 ### Bold
 - [x] Italics
 - [x] Link
@@ -55,7 +57,7 @@ A very lightweight markdown parser powered by Regex
 - [x] Underline
 
 ### Italics
-- [ ] Bold
+- [x] Bold
 - [x] Link
 - [x] Code
 - [x] Strike Through
@@ -72,10 +74,18 @@ A very lightweight markdown parser powered by Regex
 - [x] Underline
 
 ### Underline
+- [x] Bold
+- [x] Italics
+- [x] Link
+- [x] Code
+- [x] Strike Through
 
 ### Link
 - [x] Bold
 - [x] Italics
+- [x] Code
+- [x] Strike Through
+- [x] Underline
 
 > ❌: not implemented yet
 >
