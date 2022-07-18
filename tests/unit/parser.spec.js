@@ -1,540 +1,460 @@
+const path = require("path")
+const { read } = require("../../lib/util/file")
+const lexer = require("../../lib/lexer")
 const parser = require("../../lib/parser")
-const TOKENS = require("../../lib/util/tokens")
+const {commonTokensList} = require("../fixtures/commTokens")
 
-describe("parser", () => {
-  it("should parse the empty line to br", () => {
-    const lexedData = [{
-      "type": "new-line",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<br>")
-  })
-  it.each([
-    {level: 1, expected: "<h1>hello</h1>"},
-    {level: 2, expected: "<h2>hello</h2>"},
-    {level: 3, expected: "<h3>hello</h3>"},
-    {level: 4, expected: "<h4>hello</h4>"},
-    {level: 5, expected: "<h5>hello</h5>"},
-    {level: 6, expected: "<h6>hello</h6>"},
-  ])("should parse headings of different levels", ({level, expected}) => {
-    const lexedData = [{
-      "indent": "",
-      "level": level,
-      "raw": "something raw",
-      "tokens": [{
-        "type": "text",
-        "value": "hello",
-      }],
-      "type": "heading",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe(expected)
-  })
+function toHtml(text) {
+  return parser(lexer(text))
+}
 
-  it.each([
-    {depth: 0, expected: "<blockquote>hello</blockquote>"},
-    {depth: 1, expected: "<blockquote><blockquote>hello</blockquote></blockquote>"},
-    {depth: 2, expected: "<blockquote><blockquote><blockquote>hello</blockquote></blockquote></blockquote>"},
-  ])("should parse quote of different depths", ({depth, expected}) => {
-    const lexedData = [{
-      "depth": depth,
-      "indent": "",
-      "raw": "something raw",
-      "tokens": [{
-        "type": "text",
-        "value": "hello",
-      }],
-      "type": "quote",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe(expected)
-  })
+describe("lexer", () => {
+  describe("newline", () => {
+    it.each([
+      [""],
+      ["\n"],
+      ["", "\n"],
 
-  it("should parse the code block inside pre (with-language)", () => {
-    const lexedData = [{
-      "language": "js",
-      "tokens": [
-        {
-          "value": "const a = 1;",
-        },
-      ],
-      "type": "code-block",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<pre><code class=\"language-js\">const a = 1;</code></pre>")
+    ])("should not include the top empty lines", (lines) => {
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it.each(["", "\n"])("should include the empty line after some content", (eLine) => {
+      const lines = [
+        "some plain text",
+        eLine,
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should combine multiple consequest new lines to a single one", () => {
+      const lines = [
+        "some plain text",
+        "\n",
+        "",
+        "some more plain text",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
   })
-
-  it("should parse the code block inside pre (without-language)", () => {
-    const lexedData = [{
-      "language": null,
-      "tokens": [
-        {
-          "value": "const a = 1;",
-        },
-      ],
-      "type": "code-block",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<pre><code>const a = 1;</code></pre>")
+  describe("codeblock", () => {
+    it("should parse the codeblock", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "```",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should parse the codeblock without the language", () => {
+      const lines = [
+        "```",
+        "const a = 1",
+        "```",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should parse the codeblock with multiple lines", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "const b = 2",
+        "```",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should parse the codeblock with multiple lines and a newline", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "const b = 2",
+        "",
+        "const c = 3",
+        "```",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should parse multiple consequetive codeblocks", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "```",
+        "```js",
+        "const b = 2",
+        "```",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should cope with multiple items", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "```",
+        "some people are funny",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
   })
-
-  it("should parse unordered list", () => {
-    const lexedData = [{
-      "checkList": false,
-      "indent": 0,
-      "items":  [
-        {
-          "countText": "-",
-          "raw": "- list item 1",
-          "tokens":  [
-            {
-              "type": "text",
-              "value": "list item 1",
-            },
-          ],
-          "type": "count-item",
-        },
-        {
-          "countText": "-",
-          "raw": "- list item 2",
-          "tokens":  [
-            {
-              "type": "text",
-              "value": "list item 2",
-            },
-          ],
-          "type": "count-item",
-        },
-      ],
-      "ordered": false,
-      "type": "list",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ul><li>list item 1</li><li>list item 2</li></ul>")
+  describe("common tokens", () => {
+    it.each(commonTokensList)("should parse the common tokens", (line) => {
+      const lines = [line]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it.each(commonTokensList)("should parse the common tokens with some space before", (line) => {
+      const indent = "  "
+      const lines = [indent + line]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
   })
-
-  it("should parse ordered list", () => {
-    const lexedData = [{
-      "checkList": false,
-      "indent": 0,
-      "items":  [
-        {
-          "countText": "-",
-          "raw": "- list item 1",
-          "tokens":  [
-            {
-              "type": "text",
-              "value": "list item 1",
-            },
-          ],
-          "type": "count-item",
-        },
-        {
-          "countText": "-",
-          "raw": "- list item 2",
-          "tokens":  [
-            {
-              "type": "text",
-              "value": "list item 2",
-            },
-          ],
-          "type": "count-item",
-        },
-      ],
-      "ordered": true,
-      "type": "list",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ol><li>list item 1</li><li>list item 2</li></ol>")
+  describe("quote", () => {
+    it.each([
+      "> quote 1",
+      "> > quote 2",
+      "> > > quote 3",
+      "> > > > quote 4",
+      "> > > > > quote 5",
+    ])("should detect the quote depth", (quote) => {
+      const html = toHtml([quote])
+      expect(html).toMatchSnapshot()
+    })
+    it.each([
+      "> quote **one** with *two*",
+      "  > quote `four` with ~~five~~",
+      "> quote [link-title](link-url) with *two*",
+    ])("should deep tokenize quote with zero depth", (line) => {
+      const html = toHtml([line])
+      expect(html).toMatchSnapshot()
+    })
+    it.each([
+      "> > quote **one** with *two*",
+      "  > > > quote `four` with ~~five~~",
+      "> > > > quote [link-title](link-url) with *two*",
+    ])("should deep tokenize quote with multiple depth", (line) => {
+      const html = toHtml([line])
+      expect(html).toMatchSnapshot()
+    })
   })
-
-  it("should parse the checkbox list", () => {
-    const lexedData = [
-      {
-        "checkList": true,
-        "indent": 0,
-        "items":  [
-          {
-            "checked": false,
-            "countText": "-",
-            "raw": "- [ ] checkbox empty",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "checkbox empty",
-              },
-            ],
-            "type": "check-item",
-          },
-          {
-            "checked": true,
-            "countText": "-",
-            "raw": "- [x] checkbox checked",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "checkbox checked",
-              },
-            ],
-            "type": "check-item",
-          },
-        ],
-        "ordered": false,
-        "type": "list",
-      }
-    ]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<ul><li><input type=\"checkbox\">checkbox empty</li><li><input type=\"checkbox\" checked>checkbox checked</li></ul>")
+  describe("list", () => {
+    it("should tokenize a valid ordered list", () => {
+      const lines = [
+        "1. item **1**",
+        "1. item [link](link-url)",
+        "1. item 3 `code item`",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should tokenize a valid un-ordered list", () => {
+      const lines = [
+        "- item **1**",
+        "- item [link](link-url)",
+        "- item 3 `code item`",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should detech list indent", () => {
+      const lines = [
+        "  - item **1**",
+        "  - item [link](link-url)",
+        "  - item 3 `code item`",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("indent should break the list", () => {
+      const lines = [
+        "  - item **1**",
+        "  - item [link](link-url)",
+        "- item 3 `code item`",
+        "- item 4",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should tokenize list combination", () => {
+      const lines = [
+        "- one",
+        "- two",
+        "1. one",
+        "2. two",
+        "- [ ] c empty",
+        "- [x] c checked",
+        "1. [ ] c empty",
+        "1. [x] c checked"
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
   })
-
-  it("should parse the combination of list", () => {
-    const lexedData =  [
-      {
-        "checkList": false,
-        "indent": 0,
-        "items":  [
-          {
-            "countText": "-",
-            "raw": "- one",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "one",
-              },
-            ],
-            "type": "count-item",
-          },
-          {
-            "countText": "-",
-            "raw": "- two",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "two",
-              },
-            ],
-            "type": "count-item",
-          },
-        ],
-        "ordered": false,
-        "type": "list",
-      },
-      {
-        "checkList": false,
-        "indent": 0,
-        "items":  [
-          {
-            "countText": "1.",
-            "raw": "1. one",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "one",
-              },
-            ],
-            "type": "count-item",
-          },
-          {
-            "countText": "2.",
-            "raw": "2. two",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "two",
-              },
-            ],
-            "type": "count-item",
-          },
-        ],
-        "ordered": true,
-        "type": "list",
-      },
-      {
-        "checkList": true,
-        "indent": 0,
-        "items":  [
-          {
-            "checked": false,
-            "countText": "-",
-            "raw": "- [ ] c empty",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "c empty",
-              },
-            ],
-            "type": "check-item",
-          },
-          {
-            "checked": true,
-            "countText": "-",
-            "raw": "- [x] c checked",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "c checked",
-              },
-            ],
-            "type": "check-item",
-          },
-        ],
-        "ordered": false,
-        "type": "list",
-      },
-      {
-        "checkList": true,
-        "indent": 0,
-        "items":  [
-          {
-            "checked": false,
-            "countText": "1.",
-            "raw": "1. [ ] c empty",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "c empty",
-              },
-            ],
-            "type": "check-item",
-          },
-          {
-            "checked": true,
-            "countText": "1.",
-            "raw": "1. [x] c checked",
-            "tokens":  [
-              {
-                "type": "text",
-                "value": "c checked",
-              },
-            ],
-            "type": "check-item",
-          },
-        ],
-        "ordered": true,
-        "type": "list",
-      },
-    ]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toMatchSnapshot()
-  })
-
-  it("should parse the image", () => {
-    const lexedData = [{
-      "indent": "",
-      "raw": "![Kiran Parajuli](https://avatars.githubusercontent.com/u/39373750?v=4)",
-      "tokens": {
-        "alt": "Kiran Parajuli",
-        "url": "https://avatars.githubusercontent.com/u/39373750?v=4",
-      },
-      "type": "image",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<img src=\"https://avatars.githubusercontent.com/u/39373750?v=4\" alt=\"Kiran Parajuli\">")
-  })
-
-  it("should parse a paragraph", () => {
-    const lexedData = [{
-      "indent": "",
-      "raw": "paragraph",
-      "tokens": [
-        {
-          "type": "text",
-          "value": "paragraph",
-        },
-      ],
-      "type": "paragraph",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<p>paragraph</p>")
-  })
-  it("should parse paragraph with underline", () => {
-    const lexedData = [{
-      "indent": "",
-      "raw": "paragraph",
-      "tokens": [
-        {
-          "type": "text",
-          "value": "paragraph <u>underlined</u> here again",
-        },
-      ],
-      "type": "paragraph",
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<p>paragraph <u>underlined</u> here again</p>")
-  })
-  it("should parse paragraph with magic", () => {
-    const lexedData = [{
-      "raw": "a paragraph of words `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
-      "tokens": [
-        {
-          "type": "text",
-          "value": "a paragraph of words ",
-        },
-        {
-          "type": "code",
-          "value": "first code",
-        },
-        {
-          "type": "text",
-          "value": " normal text here ",
-        },
-        {
-          "type": "code",
-          "value": "code body",
-        },
-        {
-          "type": "text",
-          "value": " ",
-        },
-        {
-          "type": "italic",
-          "value": "first italics",
-        },
-        {
-          "type": "text",
-          "value": " here me crying ",
-        },
-        {
-          "type": "italic",
-          "value": "italic body",
-        },
-        {
-          "type": "text",
-          "value": " here me crying ",
-        },
-        {
-          "type": "bold",
-          "value": "first bolds",
-        },
-        {
-          "type": "text",
-          "value": " some normal again ",
-        },
-        {
-          "type": "bold",
-          "value": "bold body",
-        },
-        {
-          "type": "text",
-          "value": " ",
-        },
-        {
-          "href": "https://kiranparajuli.com.np",
-          "type": "link",
-          "title": "Kiran Parajuli",
-        },
-        {
-          "type": "text",
-          "value": " ",
-        },
-        {
-          "type": "strike-through",
-          "value": "strikes body",
-        },
-        {
-          "type": "text",
-          "value": " here some normal again at the last",
-        },
-      ],
-      "type": "paragraph",
-    }]
-
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<p>a paragraph of words <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href=\"https://kiranparajuli.com.np\">Kiran Parajuli</a> <s>strikes body</s> here some normal again at the last</p>")
-  })
-  it("should avoid the comment", () => {
-    const lexedData = [
-      {
-        "indent": "",
-        "raw": "<!-- comment item text -->",
-        "tokens": {
-          "value": "comment item text",
-        },
-        "type": "comment",
-      }
-    ]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("")
-  })
-  it("should parse the hr line", () => {
-    const lexedData = [{
-      type: TOKENS.HR_LINE
-    }]
-    const parsedData = parser(lexedData)
-    expect(parsedData).toBe("<hr>")
+  describe("hr line", () => {
+    it("should parse the hr line", () => {
+      const lines = [
+        "---",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
+    it("should not allow multiple consecutive hr lines", () => {
+      const lines = [
+        "---",
+        "---",
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
   })
   describe("table", () => {
-    it("should parse the table lexer", () => {
-      const lexedData = [
-        {
-          "indent": 0,
-          "rows":  [
-            [
-              {
-                "raw": " column 1 ",
-                "tokens":  [
-                  {
-                    "type": "text",
-                    "value": "column 1",
-                  },
-                ],
-              },
-              {
-                "raw": " column 2 ",
-                "tokens":  [
-                  {
-                    "type": "text",
-                    "value": "column 2",
-                  },
-                ],
-              },
-            ],
-            [
-              {
-                "raw": " row 1 c1 ",
-                "tokens":  [
-                  {
-                    "type": "text",
-                    "value": "row 1 c1",
-                  },
-                ],
-              },
-              {
-                "raw": " row 1 c2 ",
-                "tokens":  [
-                  {
-                    "type": "text",
-                    "value": "row 1 c2",
-                  },
-                ],
-              },
-            ],
-            [
-              {
-                "raw": " row 2 c1 ",
-                "tokens":  [
-                  {
-                    "type": "text",
-                    "value": "row 2 c1",
-                  },
-                ],
-              },
-              {
-                "raw": " row 2 c2 ",
-                "tokens":  [
-                  {
-                    "type": "text",
-                    "value": "row 2 c2",
-                  },
-                ],
-              },
-            ],
-          ],
-          "type": "table",
-        },
-      ]
-      const parsedData = parser(lexedData)
-      expect(parsedData).toMatchSnapshot()
+    describe("is not a table", () => {
+      it("only header", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("only header and separator", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "|---|---|",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("false separator", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "| --- | --- |",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("not consistent cell count", () => {
+        const lines = [
+          "| column 1 | column 2 |",
+          "| --- |",
+          "| row 1 c1 | row 1 c2 |",
+        ]
+        const html = toHtml(lines)
+        expect(html).toMatchSnapshot()
+      })
+      it("other tokens in between 1", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("other tokens in between 2", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("other tokens in between 3", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+          "",
+          "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
     })
+    describe("table indent", () => {
+      it("different indent header -> separator", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "  |---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+
+      it("different indent header, separator -> body row", () => {
+        const html = toHtml([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+
+      it("the indented table", () => {
+        const html = toHtml([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "  | row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+
+      it("indent should break the table 1", () => {
+        const html = toHtml([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "  | row 1 c1 | row 1 c2 |",
+          "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("indent should break the table 2", () => {
+        const html = toHtml([
+          "  | column 1 | column 2 |",
+          "  |---|---|",
+          "  | row 1 c1 | row 1 c2 |",
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+    })
+
+    describe("table cell count", () => {
+      it("cell count should break the table 1", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+          "| row 2 c1 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+      it("cell count should break the table 2", () => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          "|---|---|",
+          "| row 1 c1 | row 1 c2 |",
+          "| column 1 |",
+          "|---|",
+          "| row 1 c1 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+    })
+    describe("table heading-body separator", () => {
+      it.each([
+        "|-------|-------|",
+        "|:-------:|:---------:|",
+      ])("should parse a table", (line) => {
+        const html = toHtml([
+          "| column 1 | column 2 |",
+          line,
+          "| row 1 c1 | row 1 c2 |",
+          "| row 2 c1 | row 2 c2 |",
+        ])
+        expect(html).toMatchSnapshot()
+      })
+    })
+  })
+  describe("paragraph", () => {
+    it.each([
+      "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby `baby```[[[[[[[[[[[[[[[l]]]]int](href)[link](href)``````````",
+      "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
+      "now with ++underlined text++ within some +++underl+ined text+++",
+    ])("should be deep tokenized", (line) => {
+      const lines = [line]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  describe("bold", () => {
+    it("should match the consecutive occurrences", () => {
+      const lines = [
+        "**first bold** **second bold** **third bold**"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be deep tokenized", () => {
+      const lines = [
+        "**bold with `code` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  describe("italics", () => {
+    it("should match the consecutive occurrences", () => {
+      const lines = [
+        "*first italics* *second italics* *third italics*"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be deep tokenized", () => {
+      const lines = [
+        "*italics with `code` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  describe("strikes", () => {
+    it("should match the consecutive occurrences", () => {
+      const lines = [
+        "~~first strikes~~ ~~second strikes~~ ~~third strikes~~"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be deep tokenized", () => {
+      const lines = [
+        "~~strikes with ~ gem and `code` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  describe("code", () => {
+    it("should match the consecutive occurrences", () => {
+      const lines = [
+        "`first code` `second code` `third code`"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should not be deep tokenized", () => {
+      const lines = [
+        "`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)`"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  describe("link", () => {
+    it("should match the consecutive occurrences", () => {
+      const lines = [
+        "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should deep tokenized the link title", () => {
+      const lines = [
+        "[*italic* with **bold** and `code`](https://kiranparajuli.com.np)"
+      ]
+      const lexerData = toHtml(lines)
+      expect(lexerData).toMatchSnapshot()
+    })
+  })
+  it("should tokenize a markdown content", () => {
+    // eslint-disable-next-line no-undef
+    const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
+    expect(toHtml(fileContent)).toMatchSnapshot()
   })
 })
