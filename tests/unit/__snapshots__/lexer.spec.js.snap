@@ -544,18 +544,25 @@ Array [
         "tDeep": Array [
           Object {
             "type": "text",
-            "value": "link](https://kiranparajuli.com.np) ",
+            "value": "link",
           },
-          Object {
-            "type": "text",
-            "value": "[",
-          },
+        ],
+        "title": "link",
+        "type": "link",
+      },
+      Object {
+        "type": "text",
+        "value": " ",
+      },
+      Object {
+        "href": "https://kiranparajuli.com.np",
+        "tDeep": Array [
           Object {
             "type": "text",
             "value": "link",
           },
         ],
-        "title": "link](https://kiranparajuli.com.np) [link",
+        "title": "link",
         "type": "link",
       },
     ],
@@ -939,11 +946,7 @@ Array [
         "deep": Array [
           Object {
             "type": "text",
-            "value": "bold with ",
-          },
-          Object {
-            "type": "text",
-            "value": " gem",
+            "value": "bold with * gem",
           },
         ],
         "type": "bold",
@@ -996,16 +999,28 @@ Array [
         "value": " wooo lala what about blazing ",
       },
       Object {
-        "type": "text",
-        "value": "*********",
+        "deep": Array [
+          Object {
+            "type": "bold",
+            "value": "*",
+          },
+        ],
+        "type": "bold",
+        "value": "*****",
       },
       Object {
         "type": "text",
         "value": "here baby ",
       },
       Object {
-        "type": "text",
-        "value": "~~~~~~~~~",
+        "deep": Array [
+          Object {
+            "type": "strike-through",
+            "value": "~",
+          },
+        ],
+        "type": "strike-through",
+        "value": "~~~~~",
       },
       Object {
         "type": "text",
@@ -1013,15 +1028,11 @@ Array [
       },
       Object {
         "type": "code",
-        "value": "baby",
+        "value": "baby\`\`",
       },
       Object {
         "type": "text",
-        "value": "\`\`[[[[[[[[[[[[[[[",
-      },
-      Object {
-        "type": "text",
-        "value": "l]]]]int](href)",
+        "value": "[[[[[[[[[[[[[[[l]]]]int](href)",
       },
       Object {
         "href": "href",
@@ -1035,8 +1046,8 @@ Array [
         "type": "link",
       },
       Object {
-        "type": "text",
-        "value": "\`\`\`\`\`\`\`\`\`\`",
+        "type": "code",
+        "value": "\`\`\`\`\`\`\`\`",
       },
     ],
     "type": "paragraph",
@@ -2264,15 +2275,7 @@ Array [
         "deep": Array [
           Object {
             "type": "text",
-            "value": "strikes with ",
-          },
-          Object {
-            "type": "text",
-            "value": "~",
-          },
-          Object {
-            "type": "text",
-            "value": " gem and ",
+            "value": "strikes with ~ gem and ",
           },
           Object {
             "type": "code",
