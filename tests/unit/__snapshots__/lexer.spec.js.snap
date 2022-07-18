@@ -5,48 +5,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
-    "tokens": Array [
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "bold with ",
-          },
-          Object {
-            "type": "code",
-            "value": "code",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "italic",
-            "value": "italics",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "strike-through",
-            "value": "strikes",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "href": "https://kiranparajuli.com.np",
-            "title": "link",
-            "type": "link",
-          },
-        ],
-        "type": "bold",
-        "value": "bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)",
-      },
-    ],
     "type": "paragraph",
+    "value": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
   },
 ]
 `;
@@ -56,47 +16,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "**first bold** **second bold** **third bold**",
-    "tokens": Array [
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first bold",
-          },
-        ],
-        "type": "bold",
-        "value": "first bold",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "second bold",
-          },
-        ],
-        "type": "bold",
-        "value": "second bold",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "third bold",
-          },
-        ],
-        "type": "bold",
-        "value": "third bold",
-      },
-    ],
     "type": "paragraph",
+    "value": "**first bold** **second bold** **third bold**",
   },
 ]
 `;
@@ -106,29 +27,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "\`first code\` \`second code\` \`third code\`",
-    "tokens": Array [
-      Object {
-        "type": "code",
-        "value": "first code",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "type": "code",
-        "value": "second code",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "type": "code",
-        "value": "third code",
-      },
-    ],
     "type": "paragraph",
+    "value": "\`first code\` \`second code\` \`third code\`",
   },
 ]
 `;
@@ -138,13 +38,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
-    "tokens": Array [
-      Object {
-        "type": "code",
-        "value": "code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)",
-      },
-    ],
     "type": "paragraph",
+    "value": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
   },
 ]
 `;
@@ -154,23 +49,14 @@ Array [
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const a = 1",
-      },
-    ],
     "type": "code-block",
+    "value": "const a = 1",
   },
   Object {
     "indent": 0,
     "raw": "some people are funny",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some people are funny",
-      },
-    ],
     "type": "paragraph",
+    "value": "some people are funny",
   },
 ]
 `;
@@ -180,22 +66,14 @@ Array [
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const a = 1",
-      },
-    ],
     "type": "code-block",
+    "value": "const a = 1",
   },
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const b = 2",
-      },
-    ],
     "type": "code-block",
+    "value": "const b = 2",
   },
 ]
 `;
@@ -205,12 +83,8 @@ Array [
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const a = 1",
-      },
-    ],
     "type": "code-block",
+    "value": "const a = 1",
   },
 ]
 `;
@@ -220,13 +94,9 @@ Array [
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const a = 1
-const b = 2",
-      },
-    ],
     "type": "code-block",
+    "value": "const a = 1
+const b = 2",
   },
 ]
 `;
@@ -236,15 +106,11 @@ Array [
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const a = 1
+    "type": "code-block",
+    "value": "const a = 1
 const b = 2
 
 const c = 3",
-      },
-    ],
-    "type": "code-block",
   },
 ]
 `;
@@ -254,12 +120,8 @@ Array [
   Object {
     "indent": 0,
     "language": null,
-    "tokens": Array [
-      Object {
-        "value": "const a = 1",
-      },
-    ],
     "type": "code-block",
+    "value": "const a = 1",
   },
 ]
 `;
@@ -270,13 +132,11 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# Heading One Text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading One Text",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading One Text",
+    },
     "type": "heading",
+    "value": "Heading One Text",
   },
 ]
 `;
@@ -287,13 +147,11 @@ Array [
     "indent": 0,
     "level": 2,
     "raw": "## Heading Two Text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Two Text",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Two Text",
+    },
     "type": "heading",
+    "value": "Heading Two Text",
   },
 ]
 `;
@@ -304,13 +162,11 @@ Array [
     "indent": 0,
     "level": 3,
     "raw": "### Heading Three Text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Three Text",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Three Text",
+    },
     "type": "heading",
+    "value": "Heading Three Text",
   },
 ]
 `;
@@ -321,13 +177,11 @@ Array [
     "indent": 0,
     "level": 4,
     "raw": "#### Heading Four Text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Four Text",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Four Text",
+    },
     "type": "heading",
+    "value": "Heading Four Text",
   },
 ]
 `;
@@ -338,13 +192,11 @@ Array [
     "indent": 0,
     "level": 5,
     "raw": "##### Heading Five Text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Five Text",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Five Text",
+    },
     "type": "heading",
+    "value": "Heading Five Text",
   },
 ]
 `;
@@ -355,13 +207,11 @@ Array [
     "indent": 0,
     "level": 6,
     "raw": "###### Heading Six Text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Six Text",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Six Text",
+    },
     "type": "heading",
+    "value": "Heading Six Text",
   },
 ]
 `;
@@ -406,40 +256,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
-    "tokens": Array [
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "italics with ",
-          },
-          Object {
-            "type": "code",
-            "value": "code",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "strike-through",
-            "value": "strikes",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "href": "https://kiranparajuli.com.np",
-            "title": "link",
-            "type": "link",
-          },
-        ],
-        "type": "italic",
-        "value": "italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)",
-      },
-    ],
     "type": "paragraph",
+    "value": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
   },
 ]
 `;
@@ -449,47 +267,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "*first italics* *second italics* *third italics*",
-    "tokens": Array [
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first italics",
-          },
-        ],
-        "type": "italic",
-        "value": "first italics",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "second italics",
-          },
-        ],
-        "type": "italic",
-        "value": "second italics",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "third italics",
-          },
-        ],
-        "type": "italic",
-        "value": "third italics",
-      },
-    ],
     "type": "paragraph",
+    "value": "*first italics* *second italics* *third italics*",
   },
 ]
 `;
@@ -499,36 +278,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
-    "tokens": Array [
-      Object {
-        "href": "https://kiranparajuli.com.np",
-        "tDeep": Array [
-          Object {
-            "type": "italic",
-            "value": "italic",
-          },
-          Object {
-            "type": "text",
-            "value": " with ",
-          },
-          Object {
-            "type": "bold",
-            "value": "bold",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "code",
-            "value": "code",
-          },
-        ],
-        "title": "*italic* with **bold** and \`code\`",
-        "type": "link",
-      },
-    ],
     "type": "paragraph",
+    "value": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
   },
 ]
 `;
@@ -538,35 +289,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
-    "tokens": Array [
-      Object {
-        "href": "https://kiranparajuli.com.np",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "link",
-          },
-        ],
-        "title": "link",
-        "type": "link",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "href": "https://kiranparajuli.com.np",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "link",
-          },
-        ],
-        "title": "link",
-        "type": "link",
-      },
-    ],
     "type": "paragraph",
+    "value": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
   },
 ]
 `;
@@ -580,45 +304,14 @@ Array [
       Object {
         "countText": "-",
         "raw": "  - item **1**",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item ",
-          },
-          Object {
-            "deep": Array [
-              Object {
-                "type": "text",
-                "value": "1",
-              },
-            ],
-            "type": "bold",
-            "value": "1",
-          },
-        ],
         "type": "count-item",
+        "value": "item **1**",
       },
       Object {
         "countText": "-",
         "raw": "  - item [link](link-url)",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item ",
-          },
-          Object {
-            "href": "link-url",
-            "tDeep": Array [
-              Object {
-                "type": "text",
-                "value": "link",
-              },
-            ],
-            "title": "link",
-            "type": "link",
-          },
-        ],
         "type": "count-item",
+        "value": "item [link](link-url)",
       },
     ],
     "ordered": false,
@@ -631,28 +324,14 @@ Array [
       Object {
         "countText": "-",
         "raw": "- item 3 \`code item\`",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item 3 ",
-          },
-          Object {
-            "type": "code",
-            "value": "code item",
-          },
-        ],
         "type": "count-item",
+        "value": "item 3 \`code item\`",
       },
       Object {
         "countText": "-",
         "raw": "- item 4",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item 4",
-          },
-        ],
         "type": "count-item",
+        "value": "item 4",
       },
     ],
     "ordered": false,
@@ -670,60 +349,20 @@ Array [
       Object {
         "countText": "1.",
         "raw": "1. item **1**",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item ",
-          },
-          Object {
-            "deep": Array [
-              Object {
-                "type": "text",
-                "value": "1",
-              },
-            ],
-            "type": "bold",
-            "value": "1",
-          },
-        ],
         "type": "count-item",
+        "value": "item **1**",
       },
       Object {
         "countText": "1.",
         "raw": "1. item [link](link-url)",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item ",
-          },
-          Object {
-            "href": "link-url",
-            "tDeep": Array [
-              Object {
-                "type": "text",
-                "value": "link",
-              },
-            ],
-            "title": "link",
-            "type": "link",
-          },
-        ],
         "type": "count-item",
+        "value": "item [link](link-url)",
       },
       Object {
         "countText": "1.",
         "raw": "1. item 3 \`code item\`",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item 3 ",
-          },
-          Object {
-            "type": "code",
-            "value": "code item",
-          },
-        ],
         "type": "count-item",
+        "value": "item 3 \`code item\`",
       },
     ],
     "ordered": true,
@@ -741,60 +380,20 @@ Array [
       Object {
         "countText": "-",
         "raw": "- item **1**",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item ",
-          },
-          Object {
-            "deep": Array [
-              Object {
-                "type": "text",
-                "value": "1",
-              },
-            ],
-            "type": "bold",
-            "value": "1",
-          },
-        ],
         "type": "count-item",
+        "value": "item **1**",
       },
       Object {
         "countText": "-",
         "raw": "- item [link](link-url)",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item ",
-          },
-          Object {
-            "href": "link-url",
-            "tDeep": Array [
-              Object {
-                "type": "text",
-                "value": "link",
-              },
-            ],
-            "title": "link",
-            "type": "link",
-          },
-        ],
         "type": "count-item",
+        "value": "item [link](link-url)",
       },
       Object {
         "countText": "-",
         "raw": "- item 3 \`code item\`",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "item 3 ",
-          },
-          Object {
-            "type": "code",
-            "value": "code item",
-          },
-        ],
         "type": "count-item",
+        "value": "item 3 \`code item\`",
       },
     ],
     "ordered": false,
@@ -812,24 +411,14 @@ Array [
       Object {
         "countText": "-",
         "raw": "- one",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "one",
-          },
-        ],
         "type": "count-item",
+        "value": "one",
       },
       Object {
         "countText": "-",
         "raw": "- two",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
         "type": "count-item",
+        "value": "two",
       },
     ],
     "ordered": false,
@@ -842,24 +431,14 @@ Array [
       Object {
         "countText": "1.",
         "raw": "1. one",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "one",
-          },
-        ],
         "type": "count-item",
+        "value": "one",
       },
       Object {
         "countText": "2.",
         "raw": "2. two",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
         "type": "count-item",
+        "value": "two",
       },
     ],
     "ordered": true,
@@ -873,25 +452,15 @@ Array [
         "checked": false,
         "countText": "-",
         "raw": "- [ ] c empty",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c empty",
-          },
-        ],
         "type": "check-item",
+        "value": "c empty",
       },
       Object {
         "checked": true,
         "countText": "-",
         "raw": "- [x] c checked",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c checked",
-          },
-        ],
         "type": "check-item",
+        "value": "c checked",
       },
     ],
     "ordered": false,
@@ -905,25 +474,15 @@ Array [
         "checked": false,
         "countText": "1.",
         "raw": "1. [ ] c empty",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c empty",
-          },
-        ],
         "type": "check-item",
+        "value": "c empty",
       },
       Object {
         "checked": true,
         "countText": "1.",
         "raw": "1. [x] c checked",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "c checked",
-          },
-        ],
         "type": "check-item",
+        "value": "c checked",
       },
     ],
     "ordered": true,
@@ -937,127 +496,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`[[[[[[[[[[[[[[[l]]]]int](href)[link](href)\`\`\`\`\`\`\`\`\`\`",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some normal and ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "bold with * gem",
-          },
-        ],
-        "type": "bold",
-        "value": "bold with * gem",
-      },
-      Object {
-        "type": "text",
-        "value": " but pure ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "italics",
-          },
-        ],
-        "type": "italic",
-        "value": "italics",
-      },
-      Object {
-        "type": "text",
-        "value": " is alos there baby now ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "coming",
-          },
-        ],
-        "type": "strike-through",
-        "value": "coming",
-      },
-      Object {
-        "type": "text",
-        "value": "hola amigons",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "strike",
-          },
-        ],
-        "type": "strike-through",
-        "value": "strike",
-      },
-      Object {
-        "type": "text",
-        "value": " wooo lala what about blazing ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "bold",
-            "value": "*",
-          },
-        ],
-        "type": "bold",
-        "value": "*****",
-      },
-      Object {
-        "type": "text",
-        "value": "here baby ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "strike-through",
-            "value": "~",
-          },
-        ],
-        "type": "strike-through",
-        "value": "~~~~~",
-      },
-      Object {
-        "type": "text",
-        "value": "baby ",
-      },
-      Object {
-        "type": "code",
-        "value": "baby\`\`",
-      },
-      Object {
-        "href": "href",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "[[[[[[[[[[[[[[l]]]]int",
-          },
-        ],
-        "title": "[[[[[[[[[[[[[[l]]]]int",
-        "type": "link",
-      },
-      Object {
-        "href": "href",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "link",
-          },
-        ],
-        "title": "link",
-        "type": "link",
-      },
-      Object {
-        "type": "code",
-        "value": "\`\`\`\`\`\`\`\`",
-      },
-    ],
     "type": "paragraph",
+    "value": "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`[[[[[[[[[[[[[[[l]]]]int](href)[link](href)\`\`\`\`\`\`\`\`\`\`",
   },
 ]
 `;
@@ -1067,114 +507,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "a paragraph of <u>words</u> ",
-      },
-      Object {
-        "type": "code",
-        "value": "first code",
-      },
-      Object {
-        "type": "text",
-        "value": " normal text here ",
-      },
-      Object {
-        "type": "code",
-        "value": "code body",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first italics",
-          },
-        ],
-        "type": "italic",
-        "value": "first italics",
-      },
-      Object {
-        "type": "text",
-        "value": " here me crying ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "italic body",
-          },
-        ],
-        "type": "italic",
-        "value": "italic body",
-      },
-      Object {
-        "type": "text",
-        "value": " here me crying ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first bolds",
-          },
-        ],
-        "type": "bold",
-        "value": "first bolds",
-      },
-      Object {
-        "type": "text",
-        "value": " some normal again ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "bold body",
-          },
-        ],
-        "type": "bold",
-        "value": "bold body",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "href": "https://kiranparajuli.com.np",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "Kiran Parajuli",
-          },
-        ],
-        "title": "Kiran Parajuli",
-        "type": "link",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "strikes body",
-          },
-        ],
-        "type": "strike-through",
-        "value": "strikes body",
-      },
-      Object {
-        "type": "text",
-        "value": " here some",
-      },
-    ],
     "type": "paragraph",
+    "value": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
   },
 ]
 `;
@@ -1183,38 +517,9 @@ exports[`lexer paragraph should be deep tokenized 3`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "now with ++underlined text++ within some +++underl+ined text+++",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "now with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "underlined text",
-          },
-        ],
-        "type": "underline",
-        "value": "underlined text",
-      },
-      Object {
-        "type": "text",
-        "value": " within some ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "+underl+ined text+",
-          },
-        ],
-        "type": "underline",
-        "value": "+underl+ined text+",
-      },
-    ],
+    "raw": "now with __underlined text__ within some ___underl_ined_text___",
     "type": "paragraph",
+    "value": "now with __underlined text__ within some ___underl_ined_text___",
   },
 ]
 `;
@@ -1225,37 +530,8 @@ Array [
     "depth": 1,
     "indent": 0,
     "raw": "> > quote **one** with *two*",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "one",
-          },
-        ],
-        "type": "bold",
-        "value": "one",
-      },
-      Object {
-        "type": "text",
-        "value": " with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
-        "type": "italic",
-        "value": "two",
-      },
-    ],
     "type": "quote",
+    "value": "quote **one** with *two*",
   },
 ]
 `;
@@ -1266,31 +542,8 @@ Array [
     "depth": 2,
     "indent": 2,
     "raw": "  > > > quote \`four\` with ~~five~~",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote ",
-      },
-      Object {
-        "type": "code",
-        "value": "four",
-      },
-      Object {
-        "type": "text",
-        "value": " with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "five",
-          },
-        ],
-        "type": "strike-through",
-        "value": "five",
-      },
-    ],
     "type": "quote",
+    "value": "quote \`four\` with ~~five~~",
   },
 ]
 `;
@@ -1301,38 +554,8 @@ Array [
     "depth": 3,
     "indent": 0,
     "raw": "> > > > quote [link-title](link-url) with *two*",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote ",
-      },
-      Object {
-        "href": "link-url",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "link-title",
-          },
-        ],
-        "title": "link-title",
-        "type": "link",
-      },
-      Object {
-        "type": "text",
-        "value": " with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
-        "type": "italic",
-        "value": "two",
-      },
-    ],
     "type": "quote",
+    "value": "quote [link-title](link-url) with *two*",
   },
 ]
 `;
@@ -1343,37 +566,8 @@ Array [
     "depth": 0,
     "indent": 0,
     "raw": "> quote **one** with *two*",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "one",
-          },
-        ],
-        "type": "bold",
-        "value": "one",
-      },
-      Object {
-        "type": "text",
-        "value": " with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
-        "type": "italic",
-        "value": "two",
-      },
-    ],
     "type": "quote",
+    "value": "quote **one** with *two*",
   },
 ]
 `;
@@ -1384,31 +578,8 @@ Array [
     "depth": 0,
     "indent": 2,
     "raw": "  > quote \`four\` with ~~five~~",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote ",
-      },
-      Object {
-        "type": "code",
-        "value": "four",
-      },
-      Object {
-        "type": "text",
-        "value": " with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "five",
-          },
-        ],
-        "type": "strike-through",
-        "value": "five",
-      },
-    ],
     "type": "quote",
+    "value": "quote \`four\` with ~~five~~",
   },
 ]
 `;
@@ -1419,38 +590,8 @@ Array [
     "depth": 0,
     "indent": 0,
     "raw": "> quote [link-title](link-url) with *two*",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote ",
-      },
-      Object {
-        "href": "link-url",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "link-title",
-          },
-        ],
-        "title": "link-title",
-        "type": "link",
-      },
-      Object {
-        "type": "text",
-        "value": " with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "two",
-          },
-        ],
-        "type": "italic",
-        "value": "two",
-      },
-    ],
     "type": "quote",
+    "value": "quote [link-title](link-url) with *two*",
   },
 ]
 `;
@@ -1472,73 +613,61 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# Heading One",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading One",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading One",
+    },
     "type": "heading",
+    "value": "Heading One",
   },
   Object {
     "indent": 0,
     "level": 2,
     "raw": "## Heading Two",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Two",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Two",
+    },
     "type": "heading",
+    "value": "Heading Two",
   },
   Object {
     "indent": 0,
     "level": 3,
     "raw": "### Heading Three",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Three",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Three",
+    },
     "type": "heading",
+    "value": "Heading Three",
   },
   Object {
     "indent": 0,
     "level": 4,
     "raw": "#### Heading Four",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Four",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Four",
+    },
     "type": "heading",
+    "value": "Heading Four",
   },
   Object {
     "indent": 0,
     "level": 5,
     "raw": "##### Heading Five",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Five",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Five",
+    },
     "type": "heading",
+    "value": "Heading Five",
   },
   Object {
     "indent": 0,
     "level": 6,
     "raw": "###### Heading Six",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "Heading Six",
-      },
-    ],
+    "tokens": Object {
+      "value": "Heading Six",
+    },
     "type": "heading",
+    "value": "Heading Six",
   },
   Object {
     "type": "new-line",
@@ -1546,114 +675,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "a paragraph of words ",
-      },
-      Object {
-        "type": "code",
-        "value": "first code",
-      },
-      Object {
-        "type": "text",
-        "value": " normal text here ",
-      },
-      Object {
-        "type": "code",
-        "value": "code body",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first italics",
-          },
-        ],
-        "type": "italic",
-        "value": "first italics",
-      },
-      Object {
-        "type": "text",
-        "value": " here me crying ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "italic body",
-          },
-        ],
-        "type": "italic",
-        "value": "italic body",
-      },
-      Object {
-        "type": "text",
-        "value": " here me crying ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first bolds",
-          },
-        ],
-        "type": "bold",
-        "value": "first bolds",
-      },
-      Object {
-        "type": "text",
-        "value": " some normal again ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "bold body",
-          },
-        ],
-        "type": "bold",
-        "value": "bold body",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "href": "https://kiranparajuli.com.np",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "Kiran Parajuli",
-          },
-        ],
-        "title": "Kiran Parajuli",
-        "type": "link",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "strikes body",
-          },
-        ],
-        "type": "strike-through",
-        "value": "strikes body",
-      },
-      Object {
-        "type": "text",
-        "value": " here some normal again at the last",
-      },
-    ],
     "type": "paragraph",
+    "value": "a paragraph of words \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some normal again at the last",
   },
   Object {
     "type": "new-line",
@@ -1662,13 +685,8 @@ Array [
     "depth": 0,
     "indent": 0,
     "raw": "> some quote with <u>Underline</u>",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some quote with <u>Underline</u>",
-      },
-    ],
     "type": "quote",
+    "value": "some quote with <u>Underline</u>",
   },
   Object {
     "type": "new-line",
@@ -1680,24 +698,14 @@ Array [
       Object {
         "countText": "-",
         "raw": "- list item 1",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "list item 1",
-          },
-        ],
         "type": "count-item",
+        "value": "list item 1",
       },
       Object {
         "countText": "-",
         "raw": "- list item 2",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "list item 2",
-          },
-        ],
         "type": "count-item",
+        "value": "list item 2",
       },
     ],
     "ordered": false,
@@ -1711,25 +719,15 @@ Array [
         "checked": false,
         "countText": "-",
         "raw": "- [ ] checkbox empty",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "checkbox empty",
-          },
-        ],
         "type": "check-item",
+        "value": "checkbox empty",
       },
       Object {
         "checked": true,
         "countText": "-",
         "raw": "- [x] checkbox checked",
-        "tokens": Array [
-          Object {
-            "type": "text",
-            "value": "checkbox checked",
-          },
-        ],
         "type": "check-item",
+        "value": "checkbox checked",
       },
     ],
     "ordered": false,
@@ -1738,13 +736,8 @@ Array [
   Object {
     "indent": 4,
     "raw": "    paragraph just below hmm, but with some indentation",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "paragraph just below hmm, but with some indentation",
-      },
-    ],
     "type": "paragraph",
+    "value": "paragraph just below hmm, but with some indentation",
   },
   Object {
     "type": "new-line",
@@ -1753,72 +746,22 @@ Array [
     "depth": 0,
     "indent": 0,
     "raw": "> quote 1",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "quote 1",
-      },
-    ],
     "type": "quote",
+    "value": "quote 1",
   },
   Object {
     "depth": 1,
     "indent": 0,
     "raw": "> > nested quote 2 [quote-link](quote-link-url)",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "nested quote 2 ",
-      },
-      Object {
-        "href": "quote-link-url",
-        "tDeep": Array [
-          Object {
-            "type": "text",
-            "value": "quote-link",
-          },
-        ],
-        "title": "quote-link",
-        "type": "link",
-      },
-    ],
     "type": "quote",
+    "value": "nested quote 2 [quote-link](quote-link-url)",
   },
   Object {
     "depth": 2,
     "indent": 0,
     "raw": "> > > nested quote 3 with *italics* and **bolds**",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "nested quote 3 with ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "italics",
-          },
-        ],
-        "type": "italic",
-        "value": "italics",
-      },
-      Object {
-        "type": "text",
-        "value": " and ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "bolds",
-          },
-        ],
-        "type": "bold",
-        "value": "bolds",
-      },
-    ],
     "type": "quote",
+    "value": "nested quote 3 with *italics* and **bolds**",
   },
   Object {
     "type": "new-line",
@@ -1826,9 +769,8 @@ Array [
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "const a = 1;
+    "type": "code-block",
+    "value": "const a = 1;
 const b = 1;
 const c = a + b;
 
@@ -1837,20 +779,12 @@ if (c === 2) {
 } else {
   console.log('failure');
 }",
-      },
-    ],
-    "type": "code-block",
   },
   Object {
     "indent": 2,
     "raw": "  some line with small space ahead",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some line with small space ahead",
-      },
-    ],
     "type": "paragraph",
+    "value": "some line with small space ahead",
   },
   Object {
     "type": "new-line",
@@ -1858,12 +792,8 @@ if (c === 2) {
   Object {
     "indent": 0,
     "language": "js",
-    "tokens": Array [
-      Object {
-        "value": "",
-      },
-    ],
     "type": "code-block",
+    "value": "",
   },
   Object {
     "type": "new-line",
@@ -1871,13 +801,8 @@ if (c === 2) {
   Object {
     "indent": 0,
     "raw": "some piece of normal paragraph with <u>underlined text</u>",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some piece of normal paragraph with <u>underlined text</u>",
-      },
-    ],
     "type": "paragraph",
+    "value": "some piece of normal paragraph with <u>underlined text</u>",
   },
   Object {
     "type": "new-line",
@@ -1885,12 +810,8 @@ if (c === 2) {
   Object {
     "indent": 0,
     "language": null,
-    "tokens": Array [
-      Object {
-        "value": "another code block is here",
-      },
-    ],
     "type": "code-block",
+    "value": "another code block is here",
   },
   Object {
     "type": "new-line",
@@ -1910,13 +831,8 @@ if (c === 2) {
   Object {
     "indent": 0,
     "raw": "some random text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some random text",
-      },
-    ],
     "type": "paragraph",
+    "value": "some random text",
   },
   Object {
     "type": "new-line",
@@ -1927,175 +843,85 @@ if (c === 2) {
       Array [
         Object {
           "raw": " column 1   ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2          ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
         Object {
           "raw": " column 3   ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 3",
-            },
-          ],
+          "value": "column 3",
         },
       ],
       Array [
         Object {
           "raw": " r1 text c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r1 text c1",
-            },
-          ],
+          "value": "r1 text c1",
         },
         Object {
           "raw": " r1 <u>text</u> c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r1 <u>text</u> c2",
-            },
-          ],
+          "value": "r1 <u>text</u> c2",
         },
         Object {
           "raw": " r1 text c3 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r1 text c3",
-            },
-          ],
+          "value": "r1 text c3",
         },
       ],
       Array [
         Object {
           "raw": " r2 text c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r2 text c1",
-            },
-          ],
+          "value": "r2 text c1",
         },
         Object {
-          "raw": " r2 text c2        ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r2 text c2",
-            },
-          ],
+          "raw": " r2 __text__ c2    ",
+          "value": "r2 __text__ c2",
         },
         Object {
           "raw": " r2 text c3 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r2 text c3",
-            },
-          ],
+          "value": "r2 text c3",
         },
       ],
       Array [
         Object {
           "raw": " r3 text c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r3 text c1",
-            },
-          ],
+          "value": "r3 text c1",
         },
         Object {
-          "raw": " r3 text c2        ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r3 text c2",
-            },
-          ],
+          "raw": " r3 **text** c2    ",
+          "value": "r3 **text** c2",
         },
         Object {
           "raw": " r3 text c3 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r3 text c3",
-            },
-          ],
+          "value": "r3 text c3",
         },
       ],
       Array [
         Object {
           "raw": " r4 text c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r4 text c1",
-            },
-          ],
+          "value": "r4 text c1",
         },
         Object {
-          "raw": " r4 text c2        ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r4 text c2",
-            },
-          ],
+          "raw": " r4 *text* c2      ",
+          "value": "r4 *text* c2",
         },
         Object {
           "raw": " r5 text c3 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r5 text c3",
-            },
-          ],
+          "value": "r5 text c3",
         },
       ],
       Array [
         Object {
           "raw": " r6 text c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r6 text c1",
-            },
-          ],
+          "value": "r6 text c1",
         },
         Object {
-          "raw": " r6 text c2        ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r6 text c2",
-            },
-          ],
+          "raw": " r6 ~text~ c2      ",
+          "value": "r6 ~text~ c2",
         },
         Object {
           "raw": " r6 text c3 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "r6 text c3",
-            },
-          ],
+          "value": "r6 text c3",
         },
       ],
     ],
@@ -2104,13 +930,8 @@ if (c === 2) {
   Object {
     "indent": 0,
     "raw": "some random text again just below table",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "some random text again just below table",
-      },
-    ],
     "type": "paragraph",
+    "value": "some random text again just below table",
   },
   Object {
     "type": "new-line",
@@ -2118,214 +939,26 @@ if (c === 2) {
   Object {
     "indent": 0,
     "raw": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "text text text ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "bold ",
-          },
-          Object {
-            "type": "italic",
-            "value": "with",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "code",
-            "value": "gems",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "href": "treasure-chest",
-            "title": "ruby",
-            "type": "link",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "strike-through",
-            "value": "please",
-          },
-        ],
-        "type": "bold",
-        "value": "bold *with* \`gems\` [ruby](treasure-chest) ~~please~~",
-      },
-      Object {
-        "type": "text",
-        "value": " text text text",
-      },
-    ],
     "type": "paragraph",
+    "value": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text text",
   },
   Object {
     "indent": 0,
     "raw": "text text text *italics \`with\` [gems](ruby) ~~please~~* text text text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "text text text ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "italics ",
-          },
-          Object {
-            "type": "code",
-            "value": "with",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "href": "ruby",
-            "title": "gems",
-            "type": "link",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "strike-through",
-            "value": "please",
-          },
-        ],
-        "type": "italic",
-        "value": "italics \`with\` [gems](ruby) ~~please~~",
-      },
-      Object {
-        "type": "text",
-        "value": " text text text",
-      },
-    ],
     "type": "paragraph",
+    "value": "text text text *italics \`with\` [gems](ruby) ~~please~~* text text text",
   },
   Object {
     "indent": 0,
     "raw": "text text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "text text text ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "strikes ",
-          },
-          Object {
-            "type": "italic",
-            "value": "with",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "code",
-            "value": "gems",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "bold",
-            "value": "ruby",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "href": "no-sparkle",
-            "title": "gold",
-            "type": "link",
-          },
-        ],
-        "type": "strike-through",
-        "value": "strikes *with* \`gems\` **ruby** [gold](no-sparkle)",
-      },
-      Object {
-        "type": "text",
-        "value": " text text text",
-      },
-    ],
     "type": "paragraph",
+    "value": "text text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text text",
   },
   Object {
     "indent": 0,
-    "raw": "text ++text **text** \`text\` *text* [te](xt) text++ text",
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "text ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "text ",
-          },
-          Object {
-            "type": "bold",
-            "value": "text",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "code",
-            "value": "text",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "type": "italic",
-            "value": "text",
-          },
-          Object {
-            "type": "text",
-            "value": " ",
-          },
-          Object {
-            "href": "xt",
-            "title": "te",
-            "type": "link",
-          },
-          Object {
-            "type": "text",
-            "value": " text",
-          },
-        ],
-        "type": "underline",
-        "value": "text **text** \`text\` *text* [te](xt) text",
-      },
-      Object {
-        "type": "text",
-        "value": " text",
-      },
-    ],
+    "raw": "text __text **text** \`text\` *text* [te](xt) text__ text",
     "type": "paragraph",
+    "value": "text __text **text** \`text\` *text* [te](xt) text__ text",
   },
   Object {
     "type": "new-line",
@@ -2333,36 +966,8 @@ if (c === 2) {
   Object {
     "indent": 0,
     "raw": "[*bold* and \`gem\`ss](ruby) and some text",
-    "tokens": Array [
-      Object {
-        "href": "ruby",
-        "tDeep": Array [
-          Object {
-            "type": "italic",
-            "value": "bold",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "code",
-            "value": "gem",
-          },
-          Object {
-            "type": "text",
-            "value": "ss",
-          },
-        ],
-        "title": "*bold* and \`gem\`ss",
-        "type": "link",
-      },
-      Object {
-        "type": "text",
-        "value": " and some text",
-      },
-    ],
     "type": "paragraph",
+    "value": "[*bold* and \`gem\`ss](ruby) and some text",
   },
   Object {
     "type": "new-line",
@@ -2375,48 +980,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
-    "tokens": Array [
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "strikes with ~ gem and ",
-          },
-          Object {
-            "type": "code",
-            "value": "code",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "bold",
-            "value": "bold",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "type": "italic",
-            "value": "italics",
-          },
-          Object {
-            "type": "text",
-            "value": " and ",
-          },
-          Object {
-            "href": "https://kiranparajuli.com.np",
-            "title": "link",
-            "type": "link",
-          },
-        ],
-        "type": "strike-through",
-        "value": "strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)",
-      },
-    ],
     "type": "paragraph",
+    "value": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
   },
 ]
 `;
@@ -2426,47 +991,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
-    "tokens": Array [
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "first strikes",
-          },
-        ],
-        "type": "strike-through",
-        "value": "first strikes",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "second strikes",
-          },
-        ],
-        "type": "strike-through",
-        "value": "second strikes",
-      },
-      Object {
-        "type": "text",
-        "value": " ",
-      },
-      Object {
-        "deep": Array [
-          Object {
-            "type": "text",
-            "value": "third strikes",
-          },
-        ],
-        "type": "strike-through",
-        "value": "third strikes",
-      },
-    ],
     "type": "paragraph",
+    "value": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
   },
 ]
 `;
@@ -2479,41 +1005,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -2526,13 +1032,9 @@ exports[`lexer table is not a table only header 1`] = `
 Array [
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2 |",
-      },
-    ],
+    "raw": "| column 1 | column 2 |",
     "type": "paragraph",
+    "value": "| column 1 | column 2 |",
   },
 ]
 `;
@@ -2541,23 +1043,15 @@ exports[`lexer table is not a table only header and separator 1`] = `
 Array [
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2 |",
-      },
-    ],
+    "raw": "| column 1 | column 2 |",
     "type": "paragraph",
+    "value": "| column 1 | column 2 |",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "|---|---|",
-      },
-    ],
+    "raw": "|---|---|",
     "type": "paragraph",
+    "value": "|---|---|",
   },
 ]
 `;
@@ -2566,36 +1060,24 @@ exports[`lexer table is not a table other tokens in between 1 1`] = `
 Array [
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2 |",
-      },
-    ],
+    "raw": "| column 1 | column 2 |",
     "type": "paragraph",
+    "value": "| column 1 | column 2 |",
   },
   Object {
     "type": "new-line",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "|---|---|",
-      },
-    ],
+    "raw": "|---|---|",
     "type": "paragraph",
+    "value": "|---|---|",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 1 c1 | row 1 c2 |",
-      },
-    ],
+    "raw": "| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
+    "value": "| row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -2604,36 +1086,24 @@ exports[`lexer table is not a table other tokens in between 2 1`] = `
 Array [
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2 |",
-      },
-    ],
+    "raw": "| column 1 | column 2 |",
     "type": "paragraph",
+    "value": "| column 1 | column 2 |",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "|---|---|",
-      },
-    ],
+    "raw": "|---|---|",
     "type": "paragraph",
+    "value": "|---|---|",
   },
   Object {
     "type": "new-line",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 1 c1 | row 1 c2 |",
-      },
-    ],
+    "raw": "| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
+    "value": "| row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -2646,41 +1116,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -2691,13 +1141,9 @@ Array [
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 2 c1 | row 2 c2 |",
-      },
-    ],
+    "raw": "| row 2 c1 | row 2 c2 |",
     "type": "paragraph",
+    "value": "| row 2 c1 | row 2 c2 |",
   },
 ]
 `;
@@ -2710,41 +1156,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -2752,13 +1178,9 @@ Array [
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 2 c1 |",
-      },
-    ],
+    "raw": "| row 2 c1 |",
     "type": "paragraph",
+    "value": "| row 2 c1 |",
   },
 ]
 `;
@@ -2771,41 +1193,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -2817,23 +1219,13 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
       ],
     ],
@@ -2850,61 +1242,31 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
       Array [
         Object {
           "raw": " row 2 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 2 c1",
-            },
-          ],
+          "value": "row 2 c1",
         },
         Object {
           "raw": " row 2 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 2 c2",
-            },
-          ],
+          "value": "row 2 c2",
         },
       ],
     ],
@@ -2921,61 +1283,31 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
       Array [
         Object {
           "raw": " row 2 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 2 c1",
-            },
-          ],
+          "value": "row 2 c1",
         },
         Object {
           "raw": " row 2 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 2 c2",
-            },
-          ],
+          "value": "row 2 c2",
         },
       ],
     ],
@@ -2988,33 +1320,21 @@ exports[`lexer table table indent different indent header -> separator 1`] = `
 Array [
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| column 1 | column 2 |",
-      },
-    ],
+    "raw": "| column 1 | column 2 |",
     "type": "paragraph",
+    "value": "| column 1 | column 2 |",
   },
   Object {
     "indent": 2,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "  |---|---|",
-      },
-    ],
+    "raw": "  |---|---|",
     "type": "paragraph",
+    "value": "|---|---|",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 1 c1 | row 1 c2 |",
-      },
-    ],
+    "raw": "| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
+    "value": "| row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -3023,33 +1343,21 @@ exports[`lexer table table indent different indent header, separator -> body row
 Array [
   Object {
     "indent": 2,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "  | column 1 | column 2 |",
-      },
-    ],
+    "raw": "  | column 1 | column 2 |",
     "type": "paragraph",
+    "value": "| column 1 | column 2 |",
   },
   Object {
     "indent": 2,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "  |---|---|",
-      },
-    ],
+    "raw": "  |---|---|",
     "type": "paragraph",
+    "value": "|---|---|",
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 1 c1 | row 1 c2 |",
-      },
-    ],
+    "raw": "| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
+    "value": "| row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -3062,41 +1370,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -3104,13 +1392,9 @@ Array [
   },
   Object {
     "indent": 0,
-    "tokens": Array [
-      Object {
-        "type": "text",
-        "value": "| row 2 c1 | row 2 c2 |",
-      },
-    ],
+    "raw": "| row 2 c1 | row 2 c2 |",
     "type": "paragraph",
+    "value": "| row 2 c1 | row 2 c2 |",
   },
 ]
 `;
@@ -3123,41 +1407,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -3169,41 +1433,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
@@ -3220,41 +1464,21 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 1",
-            },
-          ],
+          "value": "column 1",
         },
         Object {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "column 2",
-            },
-          ],
+          "value": "column 2",
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c1",
-            },
-          ],
+          "value": "row 1 c1",
         },
         Object {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
-              "type": "text",
-              "value": "row 1 c2",
-            },
-          ],
+          "value": "row 1 c2",
         },
       ],
     ],
