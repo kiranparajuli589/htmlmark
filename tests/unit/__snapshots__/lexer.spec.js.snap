@@ -1172,6 +1172,34 @@ Array [
 ]
 `;
 
+exports[`lexer paragraph should be deep tokenized 3`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "now with ++underlined text++ within some +++underl+ined text+++",
+    "tokens": Array [
+      Object {
+        "type": "text",
+        "value": "now with ",
+      },
+      Object {
+        "type": "underline",
+        "value": "underlined text",
+      },
+      Object {
+        "type": "text",
+        "value": " within some ",
+      },
+      Object {
+        "type": "underline",
+        "value": "+underl+ined text+",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`lexer quote should deep tokenize quote with multiple depth 1`] = `
 Array [
   Object {

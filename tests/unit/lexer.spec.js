@@ -2,18 +2,8 @@ const path = require("path")
 const { read } = require("../../lib/util/file")
 const lexer = require("../../lib/lexer")
 const TOKENS = require("../../lib/util/tokens")
+const {commonTokensList} = require("../fixtures/commTokens")
 
-
-const commonTokensList = [
-  "# Heading One Text",
-  "## Heading Two Text",
-  "### Heading Three Text",
-  "#### Heading Four Text",
-  "##### Heading Five Text",
-  "###### Heading Six Text",
-  "<!-- comment item text -->",
-  "![alt text](image.png)",
-]
 
 describe("lexer", () => {
   describe("newline", () => {
@@ -375,7 +365,8 @@ describe("lexer", () => {
   describe("paragraph", () => {
     it.each([
       "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby `baby```[[[[[[[[[[[[[[[l]]]]int](href)[link](href)``````````",
-      "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some"
+      "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
+      "now with ++underlined text++ within some +++underl+ined text+++",
     ])("should be deep tokenized", (line) => {
       const lines = [line]
       const lexerData = lexer(lines)
