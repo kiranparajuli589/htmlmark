@@ -1926,7 +1926,7 @@ if (c === 2) {
     "rows": Array [
       Array [
         Object {
-          "raw": " column 1 ",
+          "raw": " column 1   ",
           "tokens": Array [
             Object {
               "type": "text",
@@ -1944,7 +1944,7 @@ if (c === 2) {
           ],
         },
         Object {
-          "raw": " column 3 ",
+          "raw": " column 3   ",
           "tokens": Array [
             Object {
               "type": "text",

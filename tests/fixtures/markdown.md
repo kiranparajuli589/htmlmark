@@ -50,8 +50,8 @@ another code block is here
 
 some random text
 
-| column 1 | column 2          | column 3 |
-|----------|-------------------|----------|
+| column 1   | column 2          | column 3   |
+|------------|-------------------|------------|
 | r1 text c1 | r1 <u>text</u> c2 | r1 text c3 |
 | r2 text c1 | r2 text c2        | r2 text c3 |
 | r3 text c1 | r3 text c2        | r3 text c3 |
