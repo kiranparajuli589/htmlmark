@@ -276,43 +276,49 @@ Array [
 exports[`lexer list indent should break the list 1`] = `
 Array [
   Object {
-    "checkList": false,
     "indent": 2,
     "items": Array [
       Object {
-        "countText": "-",
         "raw": "  - item **1**",
-        "type": "count-item",
-        "value": "item **1**",
+        "tokens": Object {
+          "value": "item **1**",
+        },
       },
       Object {
-        "countText": "-",
         "raw": "  - item [link](link-url)",
-        "type": "count-item",
-        "value": "item [link](link-url)",
+        "tokens": Object {
+          "value": "item [link](link-url)",
+        },
       },
     ],
-    "ordered": false,
+    "meta": Object {
+      "identifier": "-",
+      "isCheckList": false,
+      "ordered": false,
+    },
     "type": "list",
   },
   Object {
-    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
-        "countText": "-",
         "raw": "- item 3 \`code item\`",
-        "type": "count-item",
-        "value": "item 3 \`code item\`",
+        "tokens": Object {
+          "value": "item 3 \`code item\`",
+        },
       },
       Object {
-        "countText": "-",
         "raw": "- item 4",
-        "type": "count-item",
-        "value": "item 4",
+        "tokens": Object {
+          "value": "item 4",
+        },
       },
     ],
-    "ordered": false,
+    "meta": Object {
+      "identifier": "-",
+      "isCheckList": false,
+      "ordered": false,
+    },
     "type": "list",
   },
 ]
@@ -321,29 +327,35 @@ Array [
 exports[`lexer list should tokenize a valid ordered list 1`] = `
 Array [
   Object {
-    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
-        "countText": "1.",
         "raw": "1. item **1**",
-        "type": "count-item",
-        "value": "item **1**",
+        "tokens": Object {
+          "count": "1",
+          "value": "item **1**",
+        },
       },
       Object {
-        "countText": "1.",
         "raw": "1. item [link](link-url)",
-        "type": "count-item",
-        "value": "item [link](link-url)",
+        "tokens": Object {
+          "count": "1",
+          "value": "item [link](link-url)",
+        },
       },
       Object {
-        "countText": "1.",
         "raw": "1. item 3 \`code item\`",
-        "type": "count-item",
-        "value": "item 3 \`code item\`",
+        "tokens": Object {
+          "count": "1",
+          "value": "item 3 \`code item\`",
+        },
       },
     ],
-    "ordered": true,
+    "meta": Object {
+      "identifier": null,
+      "isCheckList": false,
+      "ordered": true,
+    },
     "type": "list",
   },
 ]
@@ -352,29 +364,32 @@ Array [
 exports[`lexer list should tokenize a valid un-ordered list 1`] = `
 Array [
   Object {
-    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
-        "countText": "-",
         "raw": "- item **1**",
-        "type": "count-item",
-        "value": "item **1**",
+        "tokens": Object {
+          "value": "item **1**",
+        },
       },
       Object {
-        "countText": "-",
         "raw": "- item [link](link-url)",
-        "type": "count-item",
-        "value": "item [link](link-url)",
+        "tokens": Object {
+          "value": "item [link](link-url)",
+        },
       },
       Object {
-        "countText": "-",
         "raw": "- item 3 \`code item\`",
-        "type": "count-item",
-        "value": "item 3 \`code item\`",
+        "tokens": Object {
+          "value": "item 3 \`code item\`",
+        },
       },
     ],
-    "ordered": false,
+    "meta": Object {
+      "identifier": "-",
+      "isCheckList": false,
+      "ordered": false,
+    },
     "type": "list",
   },
 ]
@@ -383,87 +398,103 @@ Array [
 exports[`lexer list should tokenize list combination 1`] = `
 Array [
   Object {
-    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
-        "countText": "-",
         "raw": "- one",
-        "type": "count-item",
-        "value": "one",
+        "tokens": Object {
+          "value": "one",
+        },
       },
       Object {
-        "countText": "-",
         "raw": "- two",
-        "type": "count-item",
-        "value": "two",
+        "tokens": Object {
+          "value": "two",
+        },
       },
     ],
-    "ordered": false,
+    "meta": Object {
+      "identifier": "-",
+      "isCheckList": false,
+      "ordered": false,
+    },
     "type": "list",
   },
   Object {
-    "checkList": false,
     "indent": 0,
     "items": Array [
       Object {
-        "countText": "1.",
         "raw": "1. one",
-        "type": "count-item",
-        "value": "one",
+        "tokens": Object {
+          "count": "1",
+          "value": "one",
+        },
       },
       Object {
-        "countText": "2.",
         "raw": "2. two",
-        "type": "count-item",
-        "value": "two",
+        "tokens": Object {
+          "count": "2",
+          "value": "two",
+        },
       },
     ],
-    "ordered": true,
+    "meta": Object {
+      "identifier": null,
+      "isCheckList": false,
+      "ordered": true,
+    },
     "type": "list",
   },
   Object {
-    "checkList": true,
     "indent": 0,
     "items": Array [
       Object {
-        "checked": false,
-        "countText": "-",
         "raw": "- [ ] c empty",
-        "type": "check-item",
-        "value": "c empty",
+        "tokens": Object {
+          "isChecked": false,
+          "value": "c empty",
+        },
       },
       Object {
-        "checked": true,
-        "countText": "-",
         "raw": "- [x] c checked",
-        "type": "check-item",
-        "value": "c checked",
+        "tokens": Object {
+          "isChecked": true,
+          "value": "c checked",
+        },
       },
     ],
-    "ordered": false,
+    "meta": Object {
+      "identifier": "-",
+      "isCheckList": true,
+      "ordered": false,
+    },
     "type": "list",
   },
   Object {
-    "checkList": true,
     "indent": 0,
     "items": Array [
       Object {
-        "checked": false,
-        "countText": "1.",
         "raw": "1. [ ] c empty",
-        "type": "check-item",
-        "value": "c empty",
+        "tokens": Object {
+          "count": "1",
+          "isChecked": false,
+          "value": "c empty",
+        },
       },
       Object {
-        "checked": true,
-        "countText": "1.",
         "raw": "1. [x] c checked",
-        "type": "check-item",
-        "value": "c checked",
+        "tokens": Object {
+          "count": "1",
+          "isChecked": true,
+          "value": "c checked",
+        },
       },
     ],
-    "ordered": true,
+    "meta": Object {
+      "identifier": null,
+      "isCheckList": true,
+      "ordered": true,
+    },
     "type": "list",
   },
 ]

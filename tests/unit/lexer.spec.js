@@ -1,5 +1,3 @@
-const path = require("path")
-const { read } = require("../../lib/util/file")
 const lexer = require("../../lib/lexer")
 const TOKENS = require("../../lib/util/tokens")
 const {commonTokensList} = require("../fixtures/commTokens")
