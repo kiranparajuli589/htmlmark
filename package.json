@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "convert": "node index.js",
-    "test:unit": "jest --silent",
-    "test:unit:watch": "jest --watch --no-coverage",
+    "test:ci": "jest tests --silent",
+    "test:unit": "jest tests/unit --silent ",
+    "test:unit:watch": "jest tests/unit --watch --no-coverage",
+    "test:integration": "jest tests/integration --silent",
+    "test:integration:watch": "jest tests/integration --watch --no-coverage",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint **/*.js --fix"
   },

@@ -452,9 +452,4 @@ describe("lexer", () => {
       expect(lexerData).toMatchSnapshot()
     })
   })
-  it("should tokenize a markdown content", () => {
-    // eslint-disable-next-line no-undef
-    const fileContent = read(path.join(__dirname, "..", "fixtures", "markdown.md")).split("\n")
-    expect(toHtml(fileContent)).toMatchSnapshot()
-  })
 })
