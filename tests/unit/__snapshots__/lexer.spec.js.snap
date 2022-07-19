@@ -132,9 +132,6 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# Heading One Text",
-    "tokens": Object {
-      "value": "Heading One Text",
-    },
     "type": "heading",
     "value": "Heading One Text",
   },
@@ -147,9 +144,6 @@ Array [
     "indent": 0,
     "level": 2,
     "raw": "## Heading Two Text",
-    "tokens": Object {
-      "value": "Heading Two Text",
-    },
     "type": "heading",
     "value": "Heading Two Text",
   },
@@ -162,9 +156,6 @@ Array [
     "indent": 0,
     "level": 3,
     "raw": "### Heading Three Text",
-    "tokens": Object {
-      "value": "Heading Three Text",
-    },
     "type": "heading",
     "value": "Heading Three Text",
   },
@@ -177,9 +168,6 @@ Array [
     "indent": 0,
     "level": 4,
     "raw": "#### Heading Four Text",
-    "tokens": Object {
-      "value": "Heading Four Text",
-    },
     "type": "heading",
     "value": "Heading Four Text",
   },
@@ -192,9 +180,6 @@ Array [
     "indent": 0,
     "level": 5,
     "raw": "##### Heading Five Text",
-    "tokens": Object {
-      "value": "Heading Five Text",
-    },
     "type": "heading",
     "value": "Heading Five Text",
   },
@@ -207,9 +192,6 @@ Array [
     "indent": 0,
     "level": 6,
     "raw": "###### Heading Six Text",
-    "tokens": Object {
-      "value": "Heading Six Text",
-    },
     "type": "heading",
     "value": "Heading Six Text",
   },
@@ -221,10 +203,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "<!-- comment item text -->",
-    "tokens": Object {
-      "value": "comment item text",
-    },
     "type": "comment",
+    "value": "comment item text",
   },
 ]
 `;
@@ -232,13 +212,11 @@ Array [
 exports[`lexer common tokens should parse the common tokens 8`] = `
 Array [
   Object {
+    "alt": "alt text",
     "indent": 0,
     "raw": "![alt text](image.png)",
-    "tokens": Object {
-      "alt": "alt text",
-      "url": "image.png",
-    },
     "type": "image",
+    "url": "image.png",
   },
 ]
 `;
@@ -601,10 +579,8 @@ Array [
   Object {
     "indent": 0,
     "raw": "<!-- https://regex101.com/r/C6SxZH/1 -->",
-    "tokens": Object {
-      "value": "https://regex101.com/r/C6SxZH/1",
-    },
     "type": "comment",
+    "value": "https://regex101.com/r/C6SxZH/1",
   },
   Object {
     "type": "new-line",
@@ -612,20 +588,14 @@ Array [
   Object {
     "indent": 0,
     "level": 1,
-    "raw": "# Heading One",
-    "tokens": Object {
-      "value": "Heading One",
-    },
+    "raw": "# Heading One \`bold inside\`",
     "type": "heading",
-    "value": "Heading One",
+    "value": "Heading One \`bold inside\`",
   },
   Object {
     "indent": 0,
     "level": 2,
     "raw": "## Heading Two",
-    "tokens": Object {
-      "value": "Heading Two",
-    },
     "type": "heading",
     "value": "Heading Two",
   },
@@ -633,9 +603,6 @@ Array [
     "indent": 0,
     "level": 3,
     "raw": "### Heading Three",
-    "tokens": Object {
-      "value": "Heading Three",
-    },
     "type": "heading",
     "value": "Heading Three",
   },
@@ -643,9 +610,6 @@ Array [
     "indent": 0,
     "level": 4,
     "raw": "#### Heading Four",
-    "tokens": Object {
-      "value": "Heading Four",
-    },
     "type": "heading",
     "value": "Heading Four",
   },
@@ -653,9 +617,6 @@ Array [
     "indent": 0,
     "level": 5,
     "raw": "##### Heading Five",
-    "tokens": Object {
-      "value": "Heading Five",
-    },
     "type": "heading",
     "value": "Heading Five",
   },
@@ -663,9 +624,6 @@ Array [
     "indent": 0,
     "level": 6,
     "raw": "###### Heading Six",
-    "tokens": Object {
-      "value": "Heading Six",
-    },
     "type": "heading",
     "value": "Heading Six",
   },
@@ -817,13 +775,11 @@ if (c === 2) {
     "type": "new-line",
   },
   Object {
+    "alt": "Kiran Parajuli",
     "indent": 0,
     "raw": "![Kiran Parajuli](https://avatars.githubusercontent.com/u/39373750?v=4)",
-    "tokens": Object {
-      "alt": "Kiran Parajuli",
-      "url": "https://avatars.githubusercontent.com/u/39373750?v=4",
-    },
     "type": "image",
+    "url": "https://avatars.githubusercontent.com/u/39373750?v=4",
   },
   Object {
     "type": "new-line",
@@ -916,8 +872,8 @@ if (c === 2) {
           "value": "r6 text c1",
         },
         Object {
-          "raw": " r6 ~text~ c2      ",
-          "value": "r6 ~text~ c2",
+          "raw": " r6 ~~text~~ c2    ",
+          "value": "r6 ~~text~~ c2",
         },
         Object {
           "raw": " r6 text c3 ",
@@ -938,27 +894,9 @@ if (c === 2) {
   },
   Object {
     "indent": 0,
-    "raw": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text text",
+    "raw": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text texttext text text *italics \`with\` [gems](ruby) ~~please~~* text text texttext text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text texttext __text **text** \`text\` *text* [te](xt) text__ text",
     "type": "paragraph",
-    "value": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text text",
-  },
-  Object {
-    "indent": 0,
-    "raw": "text text text *italics \`with\` [gems](ruby) ~~please~~* text text text",
-    "type": "paragraph",
-    "value": "text text text *italics \`with\` [gems](ruby) ~~please~~* text text text",
-  },
-  Object {
-    "indent": 0,
-    "raw": "text text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text text",
-    "type": "paragraph",
-    "value": "text text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text text",
-  },
-  Object {
-    "indent": 0,
-    "raw": "text __text **text** \`text\` *text* [te](xt) text__ text",
-    "type": "paragraph",
-    "value": "text __text **text** \`text\` *text* [te](xt) text__ text",
+    "value": "text text text **bold *with* \`gems\` [ruby](treasure-chest) ~~please~~** text text texttext text text *italics \`with\` [gems](ruby) ~~please~~* text text texttext text text ~~strikes *with* \`gems\` **ruby** [gold](no-sparkle)~~ text text texttext __text **text** \`text\` *text* [te](xt) text__ text",
   },
   Object {
     "type": "new-line",

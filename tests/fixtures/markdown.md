@@ -1,6 +1,7 @@
+
 <!-- https://regex101.com/r/C6SxZH/1 -->
 
-# Heading One
+# Heading One `bold inside`
 ## Heading Two
 ### Heading Three
 #### Heading Four
@@ -56,7 +57,7 @@ some random text
 | r2 text c1 | r2 __text__ c2    | r2 text c3 |
 | r3 text c1 | r3 **text** c2    | r3 text c3 |
 | r4 text c1 | r4 *text* c2      | r5 text c3 |
-| r6 text c1 | r6 ~text~ c2      | r6 text c3 |
+| r6 text c1 | r6 ~~text~~ c2    | r6 text c3 |
 some random text again just below table
 
 text text text **bold *with* `gems` [ruby](treasure-chest) ~~please~~** text text text
