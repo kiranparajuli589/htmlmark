@@ -1,6 +1,7 @@
+
 <!-- https://regex101.com/r/C6SxZH/1 -->
 
-# Heading One
+# Heading One `bold inside`
 ## Heading Two
 ### Heading Three
 #### Heading Four
@@ -53,15 +54,17 @@ some random text
 | column 1   | column 2          | column 3   |
 |------------|-------------------|------------|
 | r1 text c1 | r1 <u>text</u> c2 | r1 text c3 |
-| r2 text c1 | r2 text c2        | r2 text c3 |
-| r3 text c1 | r3 text c2        | r3 text c3 |
-| r4 text c1 | r4 text c2        | r5 text c3 |
-| r6 text c1 | r6 text c2        | r6 text c3 |
+| r2 text c1 | r2 __text__ c2    | r2 text c3 |
+| r3 text c1 | r3 **text** c2    | r3 text c3 |
+| r4 text c1 | r4 *text* c2      | r5 text c3 |
+| r6 text c1 | r6 ~~text~~ c2    | r6 text c3 |
 some random text again just below table
+| abc | def |
+|---|---|
 
 text text text **bold *with* `gems` [ruby](treasure-chest) ~~please~~** text text text
 text text text *italics `with` [gems](ruby) ~~please~~* text text text
 text text text ~~strikes *with* `gems` **ruby** [gold](no-sparkle)~~ text text text
-text ++text **text** `text` *text* [te](xt) text++ text
+text __text **text** `text` *text* [te](xt) text__ text
 
 [*bold* and `gem`ss](ruby) and some text

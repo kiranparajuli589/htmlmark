@@ -17,7 +17,7 @@ A very lightweight Markdown Parser powered by Regex
     - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
-    - Must have equal indent for starting and closing backtick group (```)
+    - Must have equal indent for starting and closing backtick group (<code>```</code>)
     - Indentation: NOT IMPLEMENTED YET
 3. **List:**
     - Ordered: {any digit}. Item 1
@@ -54,7 +54,7 @@ Emphasis can be inside the content of any paragraph types. Even emphasis items c
 1. **Bold:** wrapped inside `**`
 2. **Italic:** wrapped inside `*`
 3. **Strike:** wrapped inside `~~`
-4. **Underline:** wrapped inside `++`
+4. **Underline:** wrapped inside `__`
 5. **Link:** wrapped as `[title](url)`
 6. **Code:** wrapped inside backticks
 
@@ -62,9 +62,9 @@ Emphasis can be inside the content of any paragraph types. Even emphasis items c
 
 1. Bold: cannot include `**` in the middle of the word.
 2. Italics: cannot include `*` in the middle of the word.
-3. Code: cannot include `` in the middle of the word.
+3. Code: cannot include <code>``</code> in the middle of the word.
 4. Strike Through: cannot include `~~` in the middle of the word.
-5. Underline: cannot include `++` in the middle of the word.
+5. Underline: cannot include `__` in the middle of the word.
 6. Link: cannot include `]` in the middle of the title.
 
 

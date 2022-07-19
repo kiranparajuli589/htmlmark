@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lexer bold should be deep tokenized 1`] = `"<p><strong>bold with <code>code</code> and <em>italics</em> and <s>strikes</s> and <a href=\\"https://kiranparajuli.com.np\\">link</a></strong></p>"`;
+exports[`lexer bold should be deep tokenized 1`] = `"<p><strong>bold with <code>code</code> and <em>italics</em> and <s>strikes</s> and <a href='https://kiranparajuli.com.np'>link</a></strong></p>"`;
 
 exports[`lexer bold should match the consecutive occurrences 1`] = `"<p><strong>first bold</strong> <strong>second bold</strong> <strong>third bold</strong></p>"`;
 
 exports[`lexer code should match the consecutive occurrences 1`] = `"<p><code>first code</code> <code>second code</code> <code>third code</code></p>"`;
 
-exports[`lexer code should not be deep tokenized 1`] = `"<p><code>code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)</code></p>"`;
+exports[`lexer code should not be deep tokenized 1`] = `"<p><code>code with ~ gem and <strong>bold</strong> and <em>italics</em> and <a href='https://kiranparajuli.com.np'>link</a></code></p>"`;
 
 exports[`lexer codeblock should cope with multiple items 1`] = `"<pre><code class=\\"language-js\\">const a = 1</code></pre><p>some people are funny</p>"`;
 
@@ -64,21 +64,21 @@ exports[`lexer hr line should not allow multiple consecutive hr lines 1`] = `"<h
 
 exports[`lexer hr line should parse the hr line 1`] = `"<hr>"`;
 
-exports[`lexer italics should be deep tokenized 1`] = `"<p><em>italics with <code>code</code> and <s>strikes</s> and <a href=\\"https://kiranparajuli.com.np\\">link</a></em></p>"`;
+exports[`lexer italics should be deep tokenized 1`] = `"<p><em>italics with <code>code</code> and <s>strikes</s> and <a href='https://kiranparajuli.com.np'>link</a></em></p>"`;
 
 exports[`lexer italics should match the consecutive occurrences 1`] = `"<p><em>first italics</em> <em>second italics</em> <em>third italics</em></p>"`;
 
-exports[`lexer link should deep tokenized the link title 1`] = `"<p><a href=\\"https://kiranparajuli.com.np\\"><em>italic</em> with <strong>bold</strong> and <code>code</code></a></p>"`;
+exports[`lexer link should deep tokenized the link title 1`] = `"<p><a href='https://kiranparajuli.com.np'><em>italic</em> with <strong>bold</strong> and <code>code</code></a></p>"`;
 
-exports[`lexer link should match the consecutive occurrences 1`] = `"<p><a href=\\"https://kiranparajuli.com.np\\">link</a> <a href=\\"https://kiranparajuli.com.np\\">link</a></p>"`;
+exports[`lexer link should match the consecutive occurrences 1`] = `"<p><a href='https://kiranparajuli.com.np'>link</a> <a href='https://kiranparajuli.com.np'>link</a></p>"`;
 
-exports[`lexer list indent should break the list 1`] = `"<ul><li>item <strong>1</strong></li><li>item <a href=\\"link-url\\">link</a></li></ul><ul><li>item 3 <code>code item</code></li><li>item 4</li></ul>"`;
+exports[`lexer list indent should break the list 1`] = `"<ul><li>item <strong>1</strong></li><li>item <a href='link-url'>link</a></li></ul><ul><li>item 3 <code>code item</code></li><li>item 4</li></ul>"`;
 
-exports[`lexer list should detech list indent 1`] = `"<ul><li>item <strong>1</strong></li><li>item <a href=\\"link-url\\">link</a></li><li>item 3 <code>code item</code></li></ul>"`;
+exports[`lexer list should detech list indent 1`] = `"<ul><li>item <strong>1</strong></li><li>item <a href='link-url'>link</a></li><li>item 3 <code>code item</code></li></ul>"`;
 
-exports[`lexer list should tokenize a valid ordered list 1`] = `"<ol><li>item <strong>1</strong></li><li>item <a href=\\"link-url\\">link</a></li><li>item 3 <code>code item</code></li></ol>"`;
+exports[`lexer list should tokenize a valid ordered list 1`] = `"<ol><li>item <strong>1</strong></li><li>item <a href='link-url'>link</a></li><li>item 3 <code>code item</code></li></ol>"`;
 
-exports[`lexer list should tokenize a valid un-ordered list 1`] = `"<ul><li>item <strong>1</strong></li><li>item <a href=\\"link-url\\">link</a></li><li>item 3 <code>code item</code></li></ul>"`;
+exports[`lexer list should tokenize a valid un-ordered list 1`] = `"<ul><li>item <strong>1</strong></li><li>item <a href='link-url'>link</a></li><li>item 3 <code>code item</code></li></ul>"`;
 
 exports[`lexer list should tokenize list combination 1`] = `"<ul><li>one</li><li>two</li></ul><ol><li>one</li><li>two</li></ol><ul><li><input type=\\"checkbox\\">c empty</li><li><input type=\\"checkbox\\" checked>c checked</li></ul><ol><li><input type=\\"checkbox\\">c empty</li><li><input type=\\"checkbox\\" checked>c checked</li></ol>"`;
 
@@ -94,23 +94,23 @@ exports[`lexer newline should not include the top empty lines 2`] = `""`;
 
 exports[`lexer newline should not include the top empty lines 3`] = `""`;
 
-exports[`lexer paragraph should be deep tokenized 1`] = `"<p>some normal and <strong>bold with * gem</strong> but pure <em>italics</em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong><strong>*</strong></strong>here baby <s><s>~</s></s>baby <code>baby\`\`</code><a href=\\"href\\">[[[[[[[[[[[[[[l]]]]int</a><a href=\\"href\\">link</a><code>\`\`\`\`\`\`\`\`</code></p>"`;
+exports[`lexer paragraph should be deep tokenized 1`] = `"<p>some normal and <strong>bold with <em> gem</strong> but pure </em>italics<em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong>****</em></strong>here baby <s>~~~~~</s>baby <code>baby\`\`</code><a href='href'>[[[[[[[[[[[[[[l]]]]int</a><a href='href'>link</a><code>\`\`\`\`\`\`\`\`</code></p>"`;
 
-exports[`lexer paragraph should be deep tokenized 2`] = `"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> <s>strikes body</s> here some</p>"`;
+exports[`lexer paragraph should be deep tokenized 2`] = `"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href='https://kiranparajuli.com.np'>Kiran Parajuli</a> <s>strikes body</s> here some</p>"`;
 
-exports[`lexer paragraph should be deep tokenized 3`] = `"<p>now with <u>underlined text</u> within some <u>+underl+ined text+</u></p>"`;
+exports[`lexer paragraph should be deep tokenized 3`] = `"<p>now with <u>underlined text</u> within some <u>_underl_ined_text_</u></p>"`;
 
 exports[`lexer quote should deep tokenize quote with multiple depth 1`] = `"<blockquote><blockquote>quote <strong>one</strong> with <em>two</em></blockquote></blockquote>"`;
 
 exports[`lexer quote should deep tokenize quote with multiple depth 2`] = `"<blockquote><blockquote><blockquote>quote <code>four</code> with <s>five</s></blockquote></blockquote></blockquote>"`;
 
-exports[`lexer quote should deep tokenize quote with multiple depth 3`] = `"<blockquote><blockquote><blockquote><blockquote>quote <a href=\\"link-url\\">link-title</a> with <em>two</em></blockquote></blockquote></blockquote></blockquote>"`;
+exports[`lexer quote should deep tokenize quote with multiple depth 3`] = `"<blockquote><blockquote><blockquote><blockquote>quote <a href='link-url'>link-title</a> with <em>two</em></blockquote></blockquote></blockquote></blockquote>"`;
 
 exports[`lexer quote should deep tokenize quote with zero depth 1`] = `"<blockquote>quote <strong>one</strong> with <em>two</em></blockquote>"`;
 
 exports[`lexer quote should deep tokenize quote with zero depth 2`] = `"<blockquote>quote <code>four</code> with <s>five</s></blockquote>"`;
 
-exports[`lexer quote should deep tokenize quote with zero depth 3`] = `"<blockquote>quote <a href=\\"link-url\\">link-title</a> with <em>two</em></blockquote>"`;
+exports[`lexer quote should deep tokenize quote with zero depth 3`] = `"<blockquote>quote <a href='link-url'>link-title</a> with <em>two</em></blockquote>"`;
 
 exports[`lexer quote should detect the quote depth 1`] = `"<blockquote>quote 1</blockquote>"`;
 
@@ -122,26 +122,7 @@ exports[`lexer quote should detect the quote depth 4`] = `"<blockquote><blockquo
 
 exports[`lexer quote should detect the quote depth 5`] = `"<blockquote><blockquote><blockquote><blockquote><blockquote>quote 5</blockquote></blockquote></blockquote></blockquote></blockquote>"`;
 
-exports[`lexer should tokenize a markdown content 1`] = `
-"<br><h1>Heading One</h1><h2>Heading Two</h2><h3>Heading Three</h3><h4>Heading Four</h4><h5>Heading Five</h5><h6>Heading Six</h6><br><p>a paragraph of words <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> <s>strikes body</s> here some normal again at the last</p><br><blockquote>some quote with <u>Underline</u></blockquote><br><ul><li>list item 1</li><li>list item 2</li></ul><ul><li><input type=\\"checkbox\\">checkbox empty</li><li><input type=\\"checkbox\\" checked>checkbox checked</li></ul><p>paragraph just below hmm, but with some indentation</p><br><blockquote>quote 1</blockquote><blockquote><blockquote>nested quote 2 <a href=\\"quote-link-url\\">quote-link</a></blockquote></blockquote><blockquote><blockquote><blockquote>nested quote 3 with <em>italics</em> and <strong>bolds</strong></blockquote></blockquote></blockquote><br><pre><code class=\\"language-js\\">const a = 1;
-const b = 1;
-const c = a + b;
-
-if (c === 2) {
-  console.log('success');
-} else {
-  console.log('failure');
-}</code></pre><p>some line with small space ahead</p><br><pre><code class=\\"language-js\\"></code></pre><br><p>some piece of normal paragraph with <u>underlined text</u></p><br><pre><code>another code block is here</code></pre><br><img src=\\"https://avatars.githubusercontent.com/u/39373750?v=4\\" alt=\\"Kiran Parajuli\\"><br><p>some random text</p><br><table>
-  <thead>
-    <tr><th>column 1</th><th>column 2</th><th>column 3</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>r1 text c1</td><td>r1 <u>text</u> c2</td><td>r1 text c3</td></tr><tr><td>r2 text c1</td><td>r2 text c2</td><td>r2 text c3</td></tr><tr><td>r3 text c1</td><td>r3 text c2</td><td>r3 text c3</td></tr><tr><td>r4 text c1</td><td>r4 text c2</td><td>r5 text c3</td></tr><tr><td>r6 text c1</td><td>r6 text c2</td><td>r6 text c3</td></tr>
-  </tbody>
-</table><p>some random text again just below table</p><br><p>text text text <strong>bold <em>with</em> <code>gems</code> <a href=\\"treasure-chest\\">ruby</a> <s>please</s></strong> text text text</p><p>text text text <em>italics <code>with</code> <a href=\\"ruby\\">gems</a> <s>please</s></em> text text text</p><p>text text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href=\\"no-sparkle\\">gold</a></s> text text text</p><p>text <u>text <strong>text</strong> <code>text</code> <em>text</em> <a href=\\"xt\\">te</a> text</u> text</p><br><p><a href=\\"ruby\\"><em>bold</em> and <code>gem</code>ss</a> and some text</p><br>"
-`;
-
-exports[`lexer strikes should be deep tokenized 1`] = `"<p><s>strikes with ~ gem and <code>code</code> and <strong>bold</strong> and <em>italics</em> and <a href=\\"https://kiranparajuli.com.np\\">link</a></s></p>"`;
+exports[`lexer strikes should be deep tokenized 1`] = `"<p><s>strikes with ~ gem and <code>code</code> and <strong>bold</strong> and <em>italics</em> and <a href='https://kiranparajuli.com.np'>link</a></s></p>"`;
 
 exports[`lexer strikes should match the consecutive occurrences 1`] = `"<p><s>first strikes</s> <s>second strikes</s> <s>third strikes</s></p>"`;
 
@@ -156,15 +137,15 @@ exports[`lexer table is not a table false separator 1`] = `
 </table>"
 `;
 
-exports[`lexer table is not a table not consistent cell count 1`] = `"<p>| column 1 | column 2 |</p><p>| --- |</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table is not a table not consistent cell count 1`] = `"<p>| column 1 | column 2 || --- || row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table is not a table only header 1`] = `"<p>| column 1 | column 2 |</p>"`;
 
-exports[`lexer table is not a table only header and separator 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---|</p>"`;
+exports[`lexer table is not a table only header and separator 1`] = `"<p>| column 1 | column 2 ||---|---|</p>"`;
 
-exports[`lexer table is not a table other tokens in between 1 1`] = `"<p>| column 1 | column 2 |</p><br><p>|---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table is not a table other tokens in between 1 1`] = `"<p>| column 1 | column 2 |</p><br><p>|---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`lexer table is not a table other tokens in between 2 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---|</p><br><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table is not a table other tokens in between 2 1`] = `"<p>| column 1 | column 2 ||---|---|</p><br><p>| row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table is not a table other tokens in between 3 1`] = `
 "<table>
@@ -228,9 +209,9 @@ exports[`lexer table table heading-body separator should parse a table 2`] = `
 </table>"
 `;
 
-exports[`lexer table table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 |</p><p>  |---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`lexer table table indent different indent header, separator -> body row 1`] = `"<p>  | column 1 | column 2 |</p><p>  |---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table table indent different indent header, separator -> body row 1`] = `"<p>| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table table indent indent should break the table 1 1`] = `
 "<table>
