@@ -138,7 +138,7 @@ if (c === 2) {
   <tbody>
     <tr><td>r1 text c1</td><td>r1 <u>text</u> c2</td><td>r1 text c3</td></tr><tr><td>r2 text c1</td><td>r2 <u>text</u> c2</td><td>r2 text c3</td></tr><tr><td>r3 text c1</td><td>r3 <strong>text</strong> c2</td><td>r3 text c3</td></tr><tr><td>r4 text c1</td><td>r4 <em>text</em> c2</td><td>r5 text c3</td></tr><tr><td>r6 text c1</td><td>r6 <s>text</s> c2</td><td>r6 text c3</td></tr>
   </tbody>
-</table><p>some random text again just below table</p><br><p>text text text <strong>bold <em>with</em> <code>gems</code> <a href='treasure-chest'>ruby</a> <s>please</s></strong> text text texttext text text <em>italics <code>with</code> <a href='ruby'>gems</a> <s>please</s></em> text text texttext text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href='no-sparkle'>gold</a></s> text text texttext <u>text <strong>text</strong> <code>text</code> <em>text</em> <a href='xt'>te</a> text</u> text</p><br><p><a href='ruby'><em>bold</em> and <code>gem</code>ss</a> and some text</p><br>"
+</table><p>some random text again just below table| abc | def ||---|---|</p><br><p>text text text <strong>bold <em>with</em> <code>gems</code> <a href='treasure-chest'>ruby</a> <s>please</s></strong> text text texttext text text <em>italics <code>with</code> <a href='ruby'>gems</a> <s>please</s></em> text text texttext text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href='no-sparkle'>gold</a></s> text text texttext <u>text <strong>text</strong> <code>text</code> <em>text</em> <a href='xt'>te</a> text</u> text</p><br><p><a href='ruby'><em>bold</em> and <code>gem</code>ss</a> and some text</p><br>"
 `;
 
 exports[`lexer strikes should be deep tokenized 1`] = `"<p><s>strikes with ~ gem and <code>code</code> and <strong>bold</strong> and <em>italics</em> and <a href='https://kiranparajuli.com.np'>link</a></s></p>"`;
@@ -156,15 +156,15 @@ exports[`lexer table is not a table false separator 1`] = `
 </table>"
 `;
 
-exports[`lexer table is not a table not consistent cell count 1`] = `"<p>| column 1 | column 2 |</p><p>| --- |</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table is not a table not consistent cell count 1`] = `"<p>| column 1 | column 2 || --- || row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table is not a table only header 1`] = `"<p>| column 1 | column 2 |</p>"`;
 
-exports[`lexer table is not a table only header and separator 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---|</p>"`;
+exports[`lexer table is not a table only header and separator 1`] = `"<p>| column 1 | column 2 ||---|---|</p>"`;
 
-exports[`lexer table is not a table other tokens in between 1 1`] = `"<p>| column 1 | column 2 |</p><br><p>|---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table is not a table other tokens in between 1 1`] = `"<p>| column 1 | column 2 |</p><br><p>|---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`lexer table is not a table other tokens in between 2 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---|</p><br><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table is not a table other tokens in between 2 1`] = `"<p>| column 1 | column 2 ||---|---|</p><br><p>| row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table is not a table other tokens in between 3 1`] = `
 "<table>
@@ -228,9 +228,9 @@ exports[`lexer table table heading-body separator should parse a table 2`] = `
 </table>"
 `;
 
-exports[`lexer table table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`lexer table table indent different indent header, separator -> body row 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table table indent different indent header, separator -> body row 1`] = `"<p>| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table table indent indent should break the table 1 1`] = `
 "<table>

@@ -885,9 +885,9 @@ if (c === 2) {
   },
   Object {
     "indent": 0,
-    "raw": "some random text again just below table",
+    "raw": "some random text again just below table| abc | def ||---|---|",
     "type": "paragraph",
-    "value": "some random text again just below table",
+    "value": "some random text again just below table| abc | def ||---|---|",
   },
   Object {
     "type": "new-line",
@@ -981,15 +981,9 @@ exports[`lexer table is not a table only header and separator 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "| column 1 | column 2 |",
+    "raw": "| column 1 | column 2 ||---|---|",
     "type": "paragraph",
-    "value": "| column 1 | column 2 |",
-  },
-  Object {
-    "indent": 0,
-    "raw": "|---|---|",
-    "type": "paragraph",
-    "value": "|---|---|",
+    "value": "| column 1 | column 2 ||---|---|",
   },
 ]
 `;
@@ -1007,15 +1001,9 @@ Array [
   },
   Object {
     "indent": 0,
-    "raw": "|---|---|",
+    "raw": "|---|---|| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
-    "value": "|---|---|",
-  },
-  Object {
-    "indent": 0,
-    "raw": "| row 1 c1 | row 1 c2 |",
-    "type": "paragraph",
-    "value": "| row 1 c1 | row 1 c2 |",
+    "value": "|---|---|| row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -1024,15 +1012,9 @@ exports[`lexer table is not a table other tokens in between 2 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "| column 1 | column 2 |",
+    "raw": "| column 1 | column 2 ||---|---|",
     "type": "paragraph",
-    "value": "| column 1 | column 2 |",
-  },
-  Object {
-    "indent": 0,
-    "raw": "|---|---|",
-    "type": "paragraph",
-    "value": "|---|---|",
+    "value": "| column 1 | column 2 ||---|---|",
   },
   Object {
     "type": "new-line",
@@ -1258,21 +1240,9 @@ exports[`lexer table table indent different indent header -> separator 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "| column 1 | column 2 |",
+    "raw": "| column 1 | column 2 |  |---|---|| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
-    "value": "| column 1 | column 2 |",
-  },
-  Object {
-    "indent": 2,
-    "raw": "  |---|---|",
-    "type": "paragraph",
-    "value": "|---|---|",
-  },
-  Object {
-    "indent": 0,
-    "raw": "| row 1 c1 | row 1 c2 |",
-    "type": "paragraph",
-    "value": "| row 1 c1 | row 1 c2 |",
+    "value": "| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -1281,21 +1251,9 @@ exports[`lexer table table indent different indent header, separator -> body row
 Array [
   Object {
     "indent": 2,
-    "raw": "  | column 1 | column 2 |",
+    "raw": "  | column 1 | column 2 |  |---|---|| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
-    "value": "| column 1 | column 2 |",
-  },
-  Object {
-    "indent": 2,
-    "raw": "  |---|---|",
-    "type": "paragraph",
-    "value": "|---|---|",
-  },
-  Object {
-    "indent": 0,
-    "raw": "| row 1 c1 | row 1 c2 |",
-    "type": "paragraph",
-    "value": "| row 1 c1 | row 1 c2 |",
+    "value": "| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |",
   },
 ]
 `;

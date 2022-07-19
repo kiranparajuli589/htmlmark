@@ -244,7 +244,8 @@ describe("lexer", () => {
           "| row 1 c1 | row 1 c2 |",
         ]
         const tokens = lexer(lines)
-        expect(tokens.length).toBe(3)
+        expect(tokens.length).toBe(1)
+        expect(tokens[0].type).toBe(TOKENS.PARAGRAPH)
       })
       it("other tokens in between 1", () => {
         const tokens = lexer([
