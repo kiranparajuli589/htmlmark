@@ -14,9 +14,21 @@ a paragraph of words `first code` normal text here `code body` *first italics* h
 
 - list item 1
 - list item 2
+* list item 3
+* list item 4
++ list item 5
++ list item 6
 - [ ] checkbox empty
 - [x] checkbox checked
-    paragraph just below hmm, but with some indentation
+* [ ] checkbox empty
+* [x] checkbox checked
++ [ ] checkbox empty
++ [x] checkbox checked
+1. numbered list item 1
+2. numbered list item 2
+3. [ ] numbered checkbox empty
+4. [x] numbered checkbox checked
+paragraph just below hmm, but with some fun :)
 
 > quote 1
 > > nested quote 2 [quote-link](quote-link-url)
