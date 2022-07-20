@@ -98,6 +98,48 @@ describe("lexer", () => {
       const tokens = lexer(lines)
       expect(tokens).toMatchSnapshot()
     })
+    it("should set incomplete codeblock as a code block", () => {
+      const lines = [
+        "some line",
+        "  ```js",
+        "  const a = 1",
+        "",
+        "here again", // broken indentation
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should detect mis-indented closing codeblock", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "const b = 2",
+        "const c = 3",
+        "    ```",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should detect acceptable indent for closing codeblock", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "const b = 2",
+        "const c = 3",
+        "   ```",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should be broken with wrong indent", () => {
+      const lines = [
+        "      ```",
+        "  abcd",
+        "      ```"
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
   })
   describe("common tokens", () => {
     it.each(commonTokensList)("should parse the common tokens", (line) => {
@@ -112,7 +154,19 @@ describe("lexer", () => {
       expect(tokens[0].indent).toBe(2)
     })
   })
-  describe("quote", () => {
+  describe.skip("quote", () => {
+    it("should parse multiline quote with the same depth and indent", () => {
+      const lines = [
+        "> one",
+        "> two",
+        "> > three",
+        "> four",
+        "> > five",
+        "> > six",
+      ]
+      const tokens = lexer(lines)
+      expect(tokens).toMatchSnapshot()
+    })
     it.each([
       {quote: "> quote 1", expectedDepth: 0},
       {quote: "> > quote 2", expectedDepth: 1},

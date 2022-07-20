@@ -44,6 +44,17 @@ Array [
 ]
 `;
 
+exports[`lexer codeblock should be broken with wrong indent 1`] = `
+Array [
+  Object {
+    "indent": 6,
+    "raw": "      \`\`\`  abcd      \`\`\`",
+    "type": "paragraph",
+    "value": "      \`\`\`abcd\`\`\`",
+  },
+]
+`;
+
 exports[`lexer codeblock should cope with multiple items 1`] = `
 Array [
   Object {
@@ -57,6 +68,33 @@ Array [
     "raw": "some people are funny",
     "type": "paragraph",
     "value": "some people are funny",
+  },
+]
+`;
+
+exports[`lexer codeblock should detect acceptable indent for closing codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2
+const c = 3",
+  },
+]
+`;
+
+exports[`lexer codeblock should detect mis-indented closing codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2
+const c = 3
+    \`\`\`",
   },
 ]
 `;
@@ -122,6 +160,24 @@ Array [
     "language": null,
     "type": "code-block",
     "value": "const a = 1",
+  },
+]
+`;
+
+exports[`lexer codeblock should set incomplete codeblock as a code block 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "some line",
+    "type": "paragraph",
+    "value": "some line",
+  },
+  Object {
+    "indent": 2,
+    "language": "js",
+    "type": "code-block",
+    "value": "const a = 1
+",
   },
 ]
 `;
@@ -605,6 +661,24 @@ Array [
 ]
 `;
 
+exports[`lexer quote should parse multiline quote with the same depth and indent 1`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": 0,
+    "tokens": Array [
+      "one",
+      "two",
+      "> three",
+      "four",
+      "> five",
+      "> six",
+    ],
+    "type": "quote",
+  },
+]
+`;
+
 exports[`lexer strikes should be deep tokenized 1`] = `
 Array [
   Object {
@@ -945,7 +1019,7 @@ Array [
     "indent": 2,
     "raw": "  | column 1 | column 2 |  |---|---|| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
-    "value": "| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |",
+    "value": "  | column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |",
   },
 ]
 `;

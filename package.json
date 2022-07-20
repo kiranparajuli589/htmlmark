@@ -7,9 +7,8 @@
     "convert": "node index.js",
     "test:ci": "jest tests --silent",
     "test:unit": "jest tests/unit --silent ",
-    "test:unit:watch": "jest tests/unit --watch --no-coverage",
     "test:integration": "jest tests/integration --silent",
-    "test:integration:watch": "jest tests/integration --watch --no-coverage",
+    "jest:watch": "jest --watch --no-coverage",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint **/*.js --fix"
   },

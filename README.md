@@ -28,6 +28,7 @@ A very lightweight Markdown Parser powered by Regex
 4. **Quote:**
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
+    - Allows other _paragraph items_ inside content
     - Indentation: NOT IMPLEMENTED YET
 5. **Image:**
     - Link: Required
@@ -81,3 +82,17 @@ SHOULD THIS BE IMPLEMENTED?
 
 ### 👻 HTML Sanitization
 **A BIG TODO**
+
+> one
+two
+
+> > three
+> four
+> > five
+> > six
+
+
+    ```
+abcd
+    ```
+
