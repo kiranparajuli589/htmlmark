@@ -1,10 +1,12 @@
-const lexer = require("../../lib/lexer")
+const Lexer = require("../../lib/lexer")
 const parser = require("../../lib/parser")
 const { commonTokensList } = require("../fixtures/commTokens")
 
 
-function toHtml(text) {
-  return parser(lexer(text))
+function toHtml(lines) {
+  const lexer = new Lexer(lines)
+
+  return parser(lexer.run())
 }
 
 describe("lexer", () => {

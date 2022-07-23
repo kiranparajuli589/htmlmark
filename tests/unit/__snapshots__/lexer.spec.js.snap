@@ -99,7 +99,7 @@ const c = 3
 ]
 `;
 
-exports[`lexer codeblock should parse multiple consequetive codeblocks 1`] = `
+exports[`lexer codeblock should parse multiple consecutive codeblocks 1`] = `
 Array [
   Object {
     "indent": 0,
@@ -177,7 +177,7 @@ Array [
     "language": "js",
     "type": "code-block",
     "value": "const a = 1
-",
+const b = 2",
   },
 ]
 `;

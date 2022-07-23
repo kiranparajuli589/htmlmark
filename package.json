@@ -6,6 +6,7 @@
   "scripts": {
     "convert": "node index.js",
     "jest": "jest --silent ",
+    "jest:nocov": "jest --no-coverage",
     "jest:watch": "jest --watch --no-coverage",
     "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
     "lint:fix": "pnpm lint --fix"
