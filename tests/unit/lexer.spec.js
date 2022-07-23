@@ -1,6 +1,6 @@
 const lexer = require("../../lib/lexer")
 const TOKENS = require("../../lib/util/tokens")
-const {commonTokensList} = require("../fixtures/commTokens")
+const { commonTokensList } = require("../fixtures/commTokens")
 
 
 describe("lexer", () => {
@@ -168,12 +168,12 @@ describe("lexer", () => {
       expect(tokens).toMatchSnapshot()
     })
     it.each([
-      {quote: "> quote 1", expectedDepth: 0},
-      {quote: "> > quote 2", expectedDepth: 1},
-      {quote: "> > > quote 3", expectedDepth: 2},
-      {quote: "> > > > quote 4", expectedDepth: 3},
-      {quote: "> > > > > quote 5", expectedDepth: 4},
-    ])("should detect the quote depth", ({quote, expectedDepth}) => {
+      { quote: "> quote 1", expectedDepth: 0 },
+      { quote: "> > quote 2", expectedDepth: 1 },
+      { quote: "> > > quote 3", expectedDepth: 2 },
+      { quote: "> > > > quote 4", expectedDepth: 3 },
+      { quote: "> > > > > quote 5", expectedDepth: 4 },
+    ])("should detect the quote depth", ({ quote, expectedDepth }) => {
       const tokenizedContent = lexer([quote])
       expect(tokenizedContent[0].depth).toEqual(expectedDepth)
     })

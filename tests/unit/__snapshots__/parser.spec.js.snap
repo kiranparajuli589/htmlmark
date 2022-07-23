@@ -211,7 +211,7 @@ exports[`lexer table table heading-body separator should parse a table 2`] = `
 
 exports[`lexer table table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`lexer table table indent different indent header, separator -> body row 1`] = `"<p>| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
+exports[`lexer table table indent different indent header, separator -> body row 1`] = `"<p>  | column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`lexer table table indent indent should break the table 1 1`] = `
 "<table>

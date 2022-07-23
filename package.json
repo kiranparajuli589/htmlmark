@@ -6,11 +6,10 @@
   "scripts": {
     "convert": "node index.js",
     "test:ci": "jest tests --silent",
-    "test:unit": "jest tests/unit --silent ",
-    "test:integration": "jest tests/integration --silent",
+    "test:unit": "jest --silent ",
     "jest:watch": "jest --watch --no-coverage",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint **/*.js --fix"
+    "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
+    "lint:fix": "pnpm lint --fix"
   },
   "keywords": [
     "nodejs",
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "eslint": "^8.19.0",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.2"
   }
 }

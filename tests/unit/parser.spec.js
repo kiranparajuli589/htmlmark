@@ -1,8 +1,7 @@
-const path = require("path")
-const { read } = require("../../lib/util/file")
 const lexer = require("../../lib/lexer")
 const parser = require("../../lib/parser")
-const {commonTokensList} = require("../fixtures/commTokens")
+const { commonTokensList } = require("../fixtures/commTokens")
+
 
 function toHtml(text) {
   return parser(lexer(text))
@@ -115,7 +114,7 @@ describe("lexer", () => {
       expect(html).toMatchSnapshot()
     })
   })
-  describe("quote", () => {
+  describe.skip("quote", () => {
     it.each([
       "> quote 1",
       "> > quote 2",

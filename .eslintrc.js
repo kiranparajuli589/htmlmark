@@ -4,35 +4,28 @@ module.exports = {
     "commonjs": true,
     "es2021": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/recommended",
+  ],
   "parserOptions": {
     "ecmaVersion": "latest"
   },
   "overrides": [{
-    "files": [
-      "**/*.spec.js",
-    ],
+    "files": ["**/*.spec.js"],
     "env": {
       "jest": true
     }
   }],
   "rules": {
-    "no-console": ["error", { "allow": ["debug", "info", "error"] }],
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ]
+    "no-var": "error",
+    "indent": ["error", 2],
+    "no-multi-spaces": "error",
+    "semi": ["error", "never"],
+    "quotes": ["error", "double"],
+    "linebreak-style": ["error", "unix" ],
+    "object-curly-spacing": ["error", "always"],
+    "import/newline-after-import": ["error", { "count": 2 }],
+    "no-console": ["error", { "allow": ["debug", "info", "error"] }]
   }
 }
