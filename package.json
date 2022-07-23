@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "convert": "node index.js",
-    "test:ci": "jest tests --silent",
-    "test:unit": "jest --silent ",
+    "jest": "jest --silent ",
     "jest:watch": "jest --watch --no-coverage",
     "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
     "lint:fix": "pnpm lint --fix"

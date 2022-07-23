@@ -34,7 +34,7 @@ jobs:
         run: pnpm lint
 
       - name: Unit & Integration tests
-        run: pnpm test:ci
+        run: pnpm jest
 
       - name: JS Code Coverage Summary Report
         if: ${{ github.event_name == 'pull_request' }}
