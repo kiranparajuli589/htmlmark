@@ -11,13 +11,14 @@
     "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
     "lint:fix": "pnpm lint --fix"
   },
-  "keywords": [
-    "nodejs",
-    "markdown",
-    "parser"
-  ],
+  "keywords": ["nodejs", "markdown", "parser"],
   "author": "Kiran Parajuli",
   "license": "GPL-3.0",
+  "repository": "https://github.com/kiranparajuli589/markdown-parser",
+  "bugs": {
+    "email": "kiranparajuli589@gmail.com",
+    "url": "https://github.com/kiranparajuli589/markdown-parser/issues"
+  },
   "engines": {
     "node": ">=14.0.0",
     "pnpm": ">=3.0.0"
