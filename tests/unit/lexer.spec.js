@@ -1,6 +1,6 @@
-const Lexer = require("../../lib/lexer")
-const TOKENS = require("../../lib/util/tokens")
-const { commonTokensList } = require("../fixtures/commTokens")
+import { TOKENS } from "../../lib/util/tokens.js"
+import { commonTokensList } from "../fixtures/commTokens.js"
+import Lexer from "../../lib/lexer/index.js"
 
 
 describe("lexer", () => {
@@ -25,7 +25,7 @@ describe("lexer", () => {
       expect(tokens.length).toBe(2)
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
-    it("should combine multiple consequest new lines to a single one", () => {
+    it("should combine multiple consequent new lines to a single one", () => {
       const lines = [
         "some plain text",
         "\n",
@@ -234,7 +234,7 @@ describe("lexer", () => {
       const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
-    it("should detech list indent", () => {
+    it("should detect the list indent", () => {
       const lines = [
         "  - item **1**",
         "  - item [link](link-url)",

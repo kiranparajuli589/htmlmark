@@ -1,7 +1,12 @@
-// eslint-disable-next-line
-const rootDir = __dirname
+import { dirname } from "path"
+import { fileURLToPath } from "url"
 
-module.exports = {
+
+const __filename = fileURLToPath(import.meta.url)
+// eslint-disable-next-line
+const rootDir = dirname(__filename)
+
+const config = {
   testMatch: ["**/tests/**/*.spec.{js,ts}"],
   collectCoverage: true,
   coverageProvider: "v8",
@@ -11,3 +16,5 @@ module.exports = {
   ],
   coverageDirectory: "<rootDir>/outputs/coverage",
 }
+
+export default config

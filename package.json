@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Lightweight markdown parser",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "convert": "node index.js",
     "jest": "jest --silent ",
@@ -11,7 +12,11 @@
     "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
     "lint:fix": "pnpm lint --fix"
   },
-  "keywords": ["nodejs", "markdown", "parser"],
+  "keywords": [
+    "nodejs",
+    "markdown",
+    "parser"
+  ],
   "author": "Kiran Parajuli",
   "license": "GPL-3.0",
   "repository": "https://github.com/kiranparajuli589/markdown-parser",
@@ -24,6 +29,8 @@
     "pnpm": ">=3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "eslint": "^8.19.0",
     "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.2"

@@ -1,49 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lexer bold should be deep tokenized 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
-    "type": "paragraph",
-    "value": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
-  },
-]
-`;
-
-exports[`lexer bold should match the consecutive occurrences 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "**first bold** **second bold** **third bold**",
-    "type": "paragraph",
-    "value": "**first bold** **second bold** **third bold**",
-  },
-]
-`;
-
-exports[`lexer code should match the consecutive occurrences 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "\`first code\` \`second code\` \`third code\`",
-    "type": "paragraph",
-    "value": "\`first code\` \`second code\` \`third code\`",
-  },
-]
-`;
-
-exports[`lexer code should not be deep tokenized 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
-    "type": "paragraph",
-    "value": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
-  },
-]
-`;
-
 exports[`lexer codeblock should be broken with wrong indent 1`] = `
 Array [
   Object {
@@ -285,50 +241,6 @@ Array [
     "raw": "![alt text](image.png)",
     "type": "image",
     "url": "image.png",
-  },
-]
-`;
-
-exports[`lexer italics should be deep tokenized 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
-    "type": "paragraph",
-    "value": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
-  },
-]
-`;
-
-exports[`lexer italics should match the consecutive occurrences 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "*first italics* *second italics* *third italics*",
-    "type": "paragraph",
-    "value": "*first italics* *second italics* *third italics*",
-  },
-]
-`;
-
-exports[`lexer link should deep tokenized the link title 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
-    "type": "paragraph",
-    "value": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
-  },
-]
-`;
-
-exports[`lexer link should match the consecutive occurrences 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
-    "type": "paragraph",
-    "value": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
   },
 ]
 `;
@@ -674,33 +586,11 @@ Array [
       "one",
       "two",
       "> three",
-      "four",
-      "> five",
-      "> six",
+      "> four",
+      "five",
+      "> > six",
     ],
     "type": "quote",
-  },
-]
-`;
-
-exports[`lexer strikes should be deep tokenized 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
-    "type": "paragraph",
-    "value": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
-  },
-]
-`;
-
-exports[`lexer strikes should match the consecutive occurrences 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
-    "type": "paragraph",
-    "value": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
   },
 ]
 `;
