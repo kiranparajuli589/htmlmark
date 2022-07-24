@@ -4,7 +4,7 @@ const { commonTokensList } = require("../fixtures/commTokens")
 
 
 describe("lexer", () => {
-  describe.only("newline", () => {
+  describe("newline", () => {
     it.each([
       [""],
       ["\n"],
@@ -38,7 +38,7 @@ describe("lexer", () => {
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
   })
-  describe.only("codeblock", () => {
+  describe("codeblock", () => {
     it("should parse the codeblock", () => {
       const lines = [
         "```js",
@@ -154,7 +154,7 @@ describe("lexer", () => {
       expect(tokens).toMatchSnapshot()
     })
   })
-  describe.only("common tokens", () => {
+  describe("common tokens", () => {
     it.each(commonTokensList)("should parse the common tokens", (line) => {
       const lines = [line]
       const lexer = new Lexer(lines)
@@ -213,7 +213,7 @@ describe("lexer", () => {
       expect(tokenizedContent).toMatchSnapshot()
     })
   })
-  describe.only("list", () => {
+  describe("list", () => {
     it("should tokenize a valid ordered list", () => {
       const lines = [
         "1. item **1**",
@@ -255,7 +255,7 @@ describe("lexer", () => {
       const tokenizedContent = lexer.run()
       expect(tokenizedContent).toMatchSnapshot()
     })
-    it.only("should tokenize list combination", () => {
+    it("should tokenize list combination", () => {
       const lines = [
         "- one",
         "- two",
@@ -311,7 +311,7 @@ describe("lexer", () => {
       it("false separator", () => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
-          "| --- | --- |",
+          "| --- |--|",
           "| row 1 c1 | row 1 c2 |",
         ])
         const tokens = lexer.run()
@@ -357,7 +357,7 @@ describe("lexer", () => {
         expect(lexer.run()).toMatchSnapshot()
       })
     })
-    describe("table indent", () => {
+    describe("indentation", () => {
       it("different indent header -> separator", () => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
@@ -406,8 +406,7 @@ describe("lexer", () => {
         expect(lexer.run()).toMatchSnapshot()
       })
     })
-
-    describe("table cell count", () => {
+    describe("cell count", () => {
       it("cell count should break the table 1", () => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
@@ -429,10 +428,12 @@ describe("lexer", () => {
         expect(lexer.run()).toMatchSnapshot()
       })
     })
-    describe("table heading-body separator", () => {
+    describe("heading body separator", () => {
       it.each([
         "|-------|-------|",
         "|:-------:|:---------:|",
+        "| :-------: | :---------: |",
+        "| ------- | --------- |",
       ])("should parse a table", (line) => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
@@ -441,6 +442,25 @@ describe("lexer", () => {
           "| row 2 c1 | row 2 c2 |",
         ])
         expect(lexer.run()).toMatchSnapshot()
+      })
+      it.each([
+        "|-|-|",
+        "|:|:|",
+        "| :|: |",
+        "|-| |",
+        "|-|:|",
+        "|-|: |",
+        "|:|-|",
+        "| :|-|",
+      ])("should not parse as table with invalid separator:- %s", (line) => {
+        const lexer = new Lexer([
+          "| column 1 | column 2 |",
+          line,
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        const lexed = lexer.run()
+        expect(lexed.length).toBe(1)
+        expect(lexed.at(0).type).toBe(TOKENS.PARAGRAPH)
       })
     })
   })
