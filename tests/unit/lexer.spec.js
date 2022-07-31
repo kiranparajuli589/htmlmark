@@ -1,6 +1,6 @@
+import { Lexer } from "../../lib/lexer/index.js"
 import { TOKENS } from "../../lib/util/tokens.js"
 import { commonTokensList } from "../fixtures/commTokens.js"
-import Lexer from "../../lib/lexer/index.js"
 
 
 describe("lexer", () => {
@@ -38,7 +38,7 @@ describe("lexer", () => {
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
   })
-  describe("codeblock", () => {
+  describe.only("codeblock", () => {
     it("should parse the codeblock", () => {
       const lines = [
         "```js",
@@ -148,6 +148,15 @@ describe("lexer", () => {
         "      ```",
         "  abcd",
         "      ```"
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
+    it.only("should cope with empty body", () => {
+      const lines = [
+        "```js",
+        "```",
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()

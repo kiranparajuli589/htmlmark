@@ -23,6 +23,17 @@ Array [
 ]
 `;
 
+exports[`lexer codeblock should cope with empty body 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "type": "code-block",
+    "value": "",
+  },
+]
+`;
+
 exports[`lexer codeblock should cope with multiple items 1`] = `
 Array [
   Object {
@@ -735,7 +746,7 @@ Array [
 ]
 `;
 
-exports[`lexer quote should parse multiline quote with the same depth and indent 1`] = `
+exports[`lexer quote should lexify multiline quote with the same depth and indent 1`] = `
 Array [
   Object {
     "depth": 1,

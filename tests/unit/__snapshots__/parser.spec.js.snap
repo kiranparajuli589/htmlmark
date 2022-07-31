@@ -22,52 +22,38 @@ exports[`Parser code should not be deep tokenized 1`] = `
 
 exports[`Parser codeblock should cope with multiple items 1`] = `
 "
-<pre>
-  <code class='language-js'>const a = 1</code>
-</pre>
+<pre><code class='language-js'>const a = 1</code></pre>
 <p>some people are funny</p>"
 `;
 
 exports[`Parser codeblock should parse multiple consequetive codeblocks 1`] = `
 "
-<pre>
-  <code class='language-js'>const a = 1</code>
-</pre>
-<pre>
-  <code class='language-js'>const b = 2</code>
-</pre>"
+<pre><code class='language-js'>const a = 1</code></pre>
+<pre><code class='language-js'>const b = 2</code></pre>"
 `;
 
 exports[`Parser codeblock should parse the codeblock 1`] = `
 "
-<pre>
-  <code class='language-js'>const a = 1</code>
-</pre>"
+<pre><code class='language-js'>const a = 1</code></pre>"
 `;
 
 exports[`Parser codeblock should parse the codeblock with multiple lines 1`] = `
 "
-<pre>
-  <code class='language-js'>const a = 1
-const b = 2</code>
-</pre>"
+<pre><code class='language-js'>const a = 1
+const b = 2</code></pre>"
 `;
 
 exports[`Parser codeblock should parse the codeblock with multiple lines and a newline 1`] = `
 "
-<pre>
-  <code class='language-js'>const a = 1
+<pre><code class='language-js'>const a = 1
 const b = 2
 
-const c = 3</code>
-</pre>"
+const c = 3</code></pre>"
 `;
 
 exports[`Parser codeblock should parse the codeblock without the language 1`] = `
 "
-<pre>
-  <code>const a = 1</code>
-</pre>"
+<pre><code>const a = 1</code></pre>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 1`] = `

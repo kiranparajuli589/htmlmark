@@ -1,5 +1,5 @@
-import Lexer from "../../lib/lexer"
-import Parser from "../../lib/parser"
+import { Lexer } from "../../lib/lexer"
+import { Parser } from "../../lib/parser"
 import { commonTokensList } from "../fixtures/commTokens.js"
 
 
