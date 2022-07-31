@@ -74,10 +74,10 @@ if (c === 2) {
     <tr><th>column 1</th><th>column 2</th><th>column 3</th></tr>
   </thead>
   <tbody>
-    <tr><td>r1 text c1</td><td>r1 <u>text</u> c2</td><td>r1 text c3</td></tr><tr><td>r2 text c1</td><td>r2 <u>text</u> c2</td><td>r2 text c3</td></tr><tr><td>r3 text c1</td><td>r3 <strong>text</strong> c2</td><td>r3 text c3</td></tr>
+    <tr><td>r1 text c1</td><td>r1 <u>text</u> c2</td><td>r1 text c3</td></tr><tr><td>r2 text c1</td><td>r2 <u>text</u> c2</td><td>r2 text c3</td></tr><tr><td>r3 text c1</td><td>r3 <strong>text</strong> c2</td><td>r3 text c3</td></tr><tr><td>r4 text c1</td><td>r4 <em>text</em> c2</td><td>r5 text c3</td></tr><tr><td>r6 text c1</td><td>r6 <s>text</s> c2</td><td>r6 text c3</td></tr>
   </tbody>
 </table>
-<p>| r4 text c1 | r4 <em>text</em> c2      | r5 text c3 | | r6 text c1 | r6 <s>text</s> c2    | r6 text c3 | some random text again just below table | abc | def | |---|---|</p>
+<p>some random text again just below table | abc | def | |---|---|</p>
 <br>
 <p>text text text <strong>bold <em>with</em> <code>gems</code> <a href='treasure-chest'>ruby</a> <s>please</s></strong> text text text text text text <em>italics <code>with</code> <a href='ruby'>gems</a> <s>please</s></em> text text text text text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href='no-sparkle'>gold</a></s> text text text text <u>text <strong>text</strong> <code>text</code> <em>text</em> <a href='xt'>te</a> text</u> text</p>
 <br>
