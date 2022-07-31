@@ -154,8 +154,8 @@ describe("lexer", () => {
       expect(tokens).toMatchSnapshot()
     })
   })
-  describe.only("common tokens", () => {
-    it.each(commonTokensList)("should parse the common tokens", (line) => {
+  describe("common tokens", () => {
+    it.each(commonTokensList)("should parse the common tokens: '%s'", (line) => {
       const lines = [line]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -169,28 +169,32 @@ describe("lexer", () => {
       expect(tokens[0].indent).toBe(2)
     })
   })
-  describe.only("quote", () => {
-    it.only("should parse multiline quote with the same depth and indent", () => {
+  describe("quote", () => {
+    it("should parse multiline quote with the same depth and indent", () => {
       const lines = [
+        "> > > zero f",
+        "> > one f",
+        ">>>",
         "> one",
-        "> two",
+        "> # two",
         "> > three",
         "> > > four",
         "> > > > d-five",
-        "> > five",
-        "> > six",
+        "> > # five",
+        "> > ## six",
         "> > > > seven",
+        "simple para"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
     it.each([
-      { quote: "> quote 1", expectedDepth: 0 },
-      { quote: "> > quote 2", expectedDepth: 1 },
-      { quote: "> > > quote 3", expectedDepth: 2 },
-      { quote: "> > > > quote 4", expectedDepth: 3 },
-      { quote: "> > > > > quote 5", expectedDepth: 4 },
+      { quote: "> quote 1", expectedDepth: 1 },
+      { quote: "> > quote 2", expectedDepth: 2 },
+      { quote: "> > > quote 3", expectedDepth: 3 },
+      { quote: "> > > > quote 4", expectedDepth: 4 },
+      { quote: "> > > > > quote 5", expectedDepth: 5 },
     ])("should detect the quote depth", ({ quote, expectedDepth }) => {
       const lexer = new Lexer([quote])
       const tokenizedContent = lexer.run()
@@ -200,18 +204,12 @@ describe("lexer", () => {
       "> quote **one** with *two*",
       "  > quote `four` with ~~five~~",
       "> quote [link-title](link-url) with *two*",
-    ])("should deep tokenize quote with zero depth", (line) => {
-      const lexer = new Lexer([line])
-      const tokenizedContent = lexer.run()
-      expect(tokenizedContent).toMatchSnapshot()
-    })
-    it.each([
       "> > quote **one** with *two*",
       "  > > > quote `four` with ~~five~~",
       "> > > > quote [link-title](link-url) with *two*",
-    ])("should deep tokenize quote with multiple depth", (line) => {
+    ])("should deep tokenize quote '%s'", (line) => {
       const lexer = new Lexer([line])
-      const tokenizedContent = lexer.run([line])
+      const tokenizedContent = lexer.run()
       expect(tokenizedContent).toMatchSnapshot()
     })
   })
@@ -436,7 +434,7 @@ describe("lexer", () => {
         "|:-------:|:---------:|",
         "| :-------: | :---------: |",
         "| ------- | --------- |",
-      ])("should parse a table", (line) => {
+      ])("should parse a table with separator: '%s'", (line) => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           line,
@@ -454,7 +452,7 @@ describe("lexer", () => {
         "|-|: |",
         "|:|-|",
         "| :|-|",
-      ])("should not parse as table with invalid separator:- %s", (line) => {
+      ])("should not parse as table with invalid separator :- %s", (line) => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           line,
