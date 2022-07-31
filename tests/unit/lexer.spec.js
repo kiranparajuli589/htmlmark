@@ -175,9 +175,11 @@ describe("lexer", () => {
         "> one",
         "> two",
         "> > three",
-        "> > four",
-        "> five",
-        "> > > six",
+        "> > > four",
+        "> > > > d-five",
+        "> > five",
+        "> > six",
+        "> > > > seven",
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
