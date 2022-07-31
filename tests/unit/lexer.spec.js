@@ -38,7 +38,7 @@ describe("lexer", () => {
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
   })
-  describe.only("codeblock", () => {
+  describe("codeblock", () => {
     it("should parse the codeblock", () => {
       const lines = [
         "```js",
@@ -153,7 +153,7 @@ describe("lexer", () => {
       const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
-    it.only("should cope with empty body", () => {
+    it("should cope with empty body", () => {
       const lines = [
         "```js",
         "```",
