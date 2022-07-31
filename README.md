@@ -23,11 +23,13 @@ A very lightweight Markdown Parser powered by Regex
     - Ordered: {any digit}. Item 1
     - Unordered: - Item 1
     - Checklist: - [ ] Item 1
-    - Lines must have the same intent to be included in the same list
+    - Items must have the same intent to be included in the same list
+    - Allows other _paragraph items_ inside content
     - Indentation: NOT IMPLEMENTED YET
 4. **Quote:**
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
+    - Allows other _paragraph items_ inside content
     - Indentation: NOT IMPLEMENTED YET
 5. **Image:**
     - Link: Required
@@ -42,9 +44,14 @@ A very lightweight Markdown Parser powered by Regex
 7. **Line:**
     - Defined as: `---`
     - Consecutive lines are merged into one
-8. **Newline:**
-    - Consecutive newlines are merged into one
-10. **Paragraph:**
+8. **Table:**
+    - Equal number of cell counts
+    - Equal number of indentations
+    - Cell content should allow emphasis
+    - Indentation: `NOT IMPLEMENTED YET`
+10. **Newline:**
+     - Consecutive newlines are merged into one
+11. **Paragraph:**
     - Anything else
     - Indentation: NOT IMPLEMENTED YET
 
@@ -81,3 +88,14 @@ SHOULD THIS BE IMPLEMENTED?
 
 ### 👻 HTML Sanitization
 **A BIG TODO**
+
+> > three
+> >  >
+> one
+> two
+> > three
+> > > four
+> > > > d-five
+> > five
+> > six
+> > > >  >seven

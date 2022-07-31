@@ -1,0 +1,22 @@
+pre {
+  background: antiquewhite;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+blockquote {
+  border-left: 2px solid grey !important;
+  background: burlywood;
+  padding: .5rem;
+  border: 2px solid goldenrod;
+}
+
+table tbody td {
+  background: #edbc7c;
+  padding: .5rem;
+}
+
+table thead th {
+  padding: .5rem;
+  background: orange;
+}

@@ -1,6 +1,6 @@
-const lexer = require("../../lib/lexer")
-const TOKENS = require("../../lib/util/tokens")
-const {commonTokensList} = require("../fixtures/commTokens")
+import { Lexer } from "../../lib/lexer/index.js"
+import { TOKENS } from "../../lib/util/tokens.js"
+import { commonTokensList } from "../fixtures/commTokens.js"
 
 
 describe("lexer", () => {
@@ -11,7 +11,8 @@ describe("lexer", () => {
       ["", "\n"],
 
     ])("should not include the top empty lines", (lines) => {
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toEqual([])
     })
     it.each(["", "\n"])("should include the empty line after some content", (eLine) => {
@@ -19,18 +20,20 @@ describe("lexer", () => {
         "some plain text",
         eLine,
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens.length).toBe(2)
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
-    it("should combine multiple consequest new lines to a single one", () => {
+    it("should combine multiple consequent new lines to a single one", () => {
       const lines = [
         "some plain text",
         "\n",
         "",
         "some more plain text",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens.length).toBe(3)
       expect(tokens[1].type).toBe(TOKENS.NEW_LINE)
     })
@@ -42,7 +45,8 @@ describe("lexer", () => {
         "const a = 1",
         "```",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
     it("should parse the codeblock without the language", () => {
@@ -51,7 +55,8 @@ describe("lexer", () => {
         "const a = 1",
         "```",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
     it("should parse the codeblock with multiple lines", () => {
@@ -61,7 +66,8 @@ describe("lexer", () => {
         "const b = 2",
         "```",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
     it("should parse the codeblock with multiple lines and a newline", () => {
@@ -73,10 +79,11 @@ describe("lexer", () => {
         "const c = 3",
         "```",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
-    it("should parse multiple consequetive codeblocks", () => {
+    it("should parse multiple consecutive codeblocks", () => {
       const lines = [
         "```js",
         "const a = 1",
@@ -85,7 +92,8 @@ describe("lexer", () => {
         "const b = 2",
         "```",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
     it("should cope with multiple items", () => {
@@ -95,48 +103,122 @@ describe("lexer", () => {
         "```",
         "some people are funny",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should set incomplete codeblock as a code block", () => {
+      const lines = [
+        "some line",
+        "  ```js",
+        "  const a = 1",
+        "  const b = 2",
+        "here again", // broken indentation
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should detect mis-indented closing codeblock", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "const b = 2",
+        "const c = 3",
+        "    ```",
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should detect acceptable indent for closing codeblock", () => {
+      const lines = [
+        "```js",
+        "const a = 1",
+        "const b = 2",
+        "const c = 3",
+        "   ```",
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should be broken with wrong indent", () => {
+      const lines = [
+        "      ```",
+        "  abcd",
+        "      ```"
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
+    it("should cope with empty body", () => {
+      const lines = [
+        "```js",
+        "```",
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
   })
   describe("common tokens", () => {
-    it.each(commonTokensList)("should parse the common tokens", (line) => {
+    it.each(commonTokensList)("should parse the common tokens: '%s'", (line) => {
       const lines = [line]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
     it.each(commonTokensList)("should parse the common tokens with some space before", (line) => {
       const indent = "  "
       const lines = [indent + line]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens[0].indent).toBe(2)
     })
   })
   describe("quote", () => {
+    it("should lexify multiline quote with the same depth and indent", () => {
+      const lines = [
+        "> > > zero f",
+        "> > one f",
+        ">>>",
+        "> one",
+        "> # two",
+        "> > three",
+        "> > > four",
+        "> > > > d-five",
+        "> > # five",
+        "> > ## six",
+        "> > > > seven",
+        "simple para"
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
     it.each([
-      {quote: "> quote 1", expectedDepth: 0},
-      {quote: "> > quote 2", expectedDepth: 1},
-      {quote: "> > > quote 3", expectedDepth: 2},
-      {quote: "> > > > quote 4", expectedDepth: 3},
-      {quote: "> > > > > quote 5", expectedDepth: 4},
-    ])("should detect the quote depth", ({quote, expectedDepth}) => {
-      const tokenizedContent = lexer([quote])
+      { quote: "> quote 1", expectedDepth: 1 },
+      { quote: "> > quote 2", expectedDepth: 2 },
+      { quote: "> > > quote 3", expectedDepth: 3 },
+      { quote: "> > > > quote 4", expectedDepth: 4 },
+      { quote: "> > > > > quote 5", expectedDepth: 5 },
+    ])("should detect the quote depth", ({ quote, expectedDepth }) => {
+      const lexer = new Lexer([quote])
+      const tokenizedContent = lexer.run()
       expect(tokenizedContent[0].depth).toEqual(expectedDepth)
     })
     it.each([
       "> quote **one** with *two*",
       "  > quote `four` with ~~five~~",
       "> quote [link-title](link-url) with *two*",
-    ])("should deep tokenize quote with zero depth", (line) => {
-      const tokenizedContent = lexer([line])
-      expect(tokenizedContent).toMatchSnapshot()
-    })
-    it.each([
       "> > quote **one** with *two*",
       "  > > > quote `four` with ~~five~~",
       "> > > > quote [link-title](link-url) with *two*",
-    ])("should deep tokenize quote with multiple depth", (line) => {
-      const tokenizedContent = lexer([line])
+    ])("should deep tokenize quote '%s'", (line) => {
+      const lexer = new Lexer([line])
+      const tokenizedContent = lexer.run()
       expect(tokenizedContent).toMatchSnapshot()
     })
   })
@@ -147,8 +229,9 @@ describe("lexer", () => {
         "1. item [link](link-url)",
         "1. item 3 `code item`",
       ]
-      const tokenizedContent = lexer(lines)
-      expect(tokenizedContent).toMatchSnapshot()
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
     })
     it("should tokenize a valid un-ordered list", () => {
       const lines = [
@@ -156,16 +239,18 @@ describe("lexer", () => {
         "- item [link](link-url)",
         "- item 3 `code item`",
       ]
-      const tokenizedContent = lexer(lines)
-      expect(tokenizedContent).toMatchSnapshot()
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
     })
-    it("should detech list indent", () => {
+    it("should detect the list indent", () => {
       const lines = [
         "  - item **1**",
         "  - item [link](link-url)",
         "  - item 3 `code item`",
       ]
-      const tokenizedContent = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokenizedContent = lexer.run()
       expect(tokenizedContent[0].indent).toEqual(2)
     })
     it("indent should break the list", () => {
@@ -175,7 +260,8 @@ describe("lexer", () => {
         "- item 3 `code item`",
         "- item 4",
       ]
-      const tokenizedContent = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokenizedContent = lexer.run()
       expect(tokenizedContent).toMatchSnapshot()
     })
     it("should tokenize list combination", () => {
@@ -189,7 +275,8 @@ describe("lexer", () => {
         "1. [ ] c empty",
         "1. [x] c checked"
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
   })
@@ -198,8 +285,8 @@ describe("lexer", () => {
       const lines = [
         "---",
       ]
-      const tokens = lexer(lines)
-      expect(tokens).toMatchSnapshot()
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens[0].type).toBe(TOKENS.HR_LINE)
     })
     it("should not allow multiple consecutive hr lines", () => {
@@ -207,7 +294,8 @@ describe("lexer", () => {
         "---",
         "---",
       ]
-      const tokens = lexer(lines)
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
       expect(tokens.length).toBe(1)
       expect(tokens[0].type).toBe(TOKENS.HR_LINE)
     })
@@ -215,24 +303,27 @@ describe("lexer", () => {
   describe("table", () => {
     describe("is not a table", () => {
       it("only header", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
         ])
+        const tokens = lexer.run()
         expect(tokens).toMatchSnapshot()
       })
       it("only header and separator", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "|---|---|",
         ])
+        const tokens = lexer.run()
         expect(tokens).toMatchSnapshot()
       })
       it("false separator", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
-          "| --- | --- |",
+          "| --- |--|",
           "| row 1 c1 | row 1 c2 |",
         ])
+        const tokens = lexer.run()
         expect(tokens).toMatchSnapshot()
       })
       it("not consistent cell count", () => {
@@ -241,78 +332,79 @@ describe("lexer", () => {
           "| --- |",
           "| row 1 c1 | row 1 c2 |",
         ]
-        const tokens = lexer(lines)
+        const lexer = new Lexer(lines)
+        const tokens = lexer.run()
         expect(tokens.length).toBe(1)
         expect(tokens[0].type).toBe(TOKENS.PARAGRAPH)
       })
       it("other tokens in between 1", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
       it("other tokens in between 2", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "|---|---|",
           "",
           "| row 1 c1 | row 1 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
       it("other tokens in between 3", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
           "",
           "| row 2 c1 | row 2 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
     })
-    describe("table indent", () => {
+    describe("indentation", () => {
       it("different indent header -> separator", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "  |---|---|",
           "| row 1 c1 | row 1 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
 
       it("different indent header, separator -> body row", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "  | column 1 | column 2 |",
           "  |---|---|",
           "| row 1 c1 | row 1 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
 
       it("the indented table", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "  | column 1 | column 2 |",
           "  |---|---|",
           "  | row 1 c1 | row 1 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
 
       it("indent should break the table 1", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "  | column 1 | column 2 |",
           "  |---|---|",
           "  | row 1 c1 | row 1 c2 |",
           "| row 2 c1 | row 2 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
       it("indent should break the table 2", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "  | column 1 | column 2 |",
           "  |---|---|",
           "  | row 1 c1 | row 1 c2 |",
@@ -320,22 +412,21 @@ describe("lexer", () => {
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
     })
-
-    describe("table cell count", () => {
+    describe("cell count", () => {
       it("cell count should break the table 1", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
           "| row 2 c1 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
       it("cell count should break the table 2", () => {
-        const tokens = lexer([
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
@@ -343,21 +434,42 @@ describe("lexer", () => {
           "|---|",
           "| row 1 c1 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
       })
     })
-    describe("table heading-body separator", () => {
+    describe("heading body separator", () => {
       it.each([
         "|-------|-------|",
         "|:-------:|:---------:|",
-      ])("should parse a table", (line) => {
-        const tokens = lexer([
+        "| :-------: | :---------: |",
+        "| ------- | --------- |",
+      ])("should parse a table with separator: '%s'", (line) => {
+        const lexer = new Lexer([
           "| column 1 | column 2 |",
           line,
           "| row 1 c1 | row 1 c2 |",
           "| row 2 c1 | row 2 c2 |",
         ])
-        expect(tokens).toMatchSnapshot()
+        expect(lexer.run()).toMatchSnapshot()
+      })
+      it.each([
+        "|-|-|",
+        "|:|:|",
+        "| :|: |",
+        "|-| |",
+        "|-|:|",
+        "|-|: |",
+        "|:|-|",
+        "| :|-|",
+      ])("should not parse as table with invalid separator :- %s", (line) => {
+        const lexer = new Lexer([
+          "| column 1 | column 2 |",
+          line,
+          "| row 1 c1 | row 1 c2 |",
+        ])
+        const lexed = lexer.run()
+        expect(lexed.length).toBe(1)
+        expect(lexed.at(0).type).toBe(TOKENS.PARAGRAPH)
       })
     })
   })
@@ -368,88 +480,101 @@ describe("lexer", () => {
       "now with __underlined text__ within some ___underl_ined_text___",
     ])("should be deep tokenized", (line) => {
       const lines = [line]
-      const lexerData = lexer(lines)
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
       expect(lexerData).toMatchSnapshot()
     })
   })
-  describe("bold", () => {
-    it("should match the consecutive occurrences", () => {
-      const lines = [
-        "**first bold** **second bold** **third bold**"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
+  describe("emphasis", () => {
+    describe("bold", () => {
+      it("should match the consecutive occurrences", () => {
+        const lines = [
+          "**first bold** **second bold** **third bold**"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
+      it("should be deep tokenized", () => {
+        const lines = [
+          "**bold with `code` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
     })
-    it("should be deep tokenized", () => {
-      const lines = [
-        "**bold with `code` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
+    describe("italics", () => {
+      it("should match the consecutive occurrences", () => {
+        const lines = [
+          "*first italics* *second italics* *third italics*"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
+      it("should be deep tokenized", () => {
+        const lines = [
+          "*italics with `code` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
     })
-  })
-  describe("italics", () => {
-    it("should match the consecutive occurrences", () => {
-      const lines = [
-        "*first italics* *second italics* *third italics*"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
+    describe("strikes", () => {
+      it("should match the consecutive occurrences", () => {
+        const lines = [
+          "~~first strikes~~ ~~second strikes~~ ~~third strikes~~"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
+      it("should be deep tokenized", () => {
+        const lines = [
+          "~~strikes with ~ gem and `code` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
     })
-    it("should be deep tokenized", () => {
-      const lines = [
-        "*italics with `code` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
+    describe("code", () => {
+      it("should match the consecutive occurrences", () => {
+        const lines = [
+          "`first code` `second code` `third code`"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
+      it("should not be deep tokenized", () => {
+        const lines = [
+          "`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)`"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
     })
-  })
-  describe("strikes", () => {
-    it("should match the consecutive occurrences", () => {
-      const lines = [
-        "~~first strikes~~ ~~second strikes~~ ~~third strikes~~"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
-    })
-    it("should be deep tokenized", () => {
-      const lines = [
-        "~~strikes with ~ gem and `code` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
-    })
-  })
-  describe("code", () => {
-    it("should match the consecutive occurrences", () => {
-      const lines = [
-        "`first code` `second code` `third code`"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
-    })
-    it("should not be deep tokenized", () => {
-      const lines = [
-        "`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)`"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
-    })
-  })
-  describe("link", () => {
-    it("should match the consecutive occurrences", () => {
-      const lines = [
-        "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
-    })
-    it("should deep tokenized the link title", () => {
-      const lines = [
-        "[*italic* with **bold** and `code`](https://kiranparajuli.com.np)"
-      ]
-      const lexerData = lexer(lines)
-      expect(lexerData).toMatchSnapshot()
+    describe("link", () => {
+      it("should match the consecutive occurrences", () => {
+        const lines = [
+          "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
+      it("should deep tokenized the link title", () => {
+        const lines = [
+          "[*italic* with **bold** and `code`](https://kiranparajuli.com.np)"
+        ]
+        const lexer = new Lexer(lines)
+        const lexerData = lexer.run()
+        expect(lexerData).toMatchSnapshot()
+      })
     })
   })
 })

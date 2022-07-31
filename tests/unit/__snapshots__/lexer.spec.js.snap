@@ -1,45 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lexer bold should be deep tokenized 1`] = `
+exports[`lexer codeblock should be broken with wrong indent 1`] = `
 Array [
   Object {
-    "indent": 0,
-    "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
+    "indent": 6,
+    "raw": "      \`\`\`",
     "type": "paragraph",
-    "value": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
+    "value": "      \`\`\`",
+  },
+  Object {
+    "indent": 2,
+    "raw": "  abcd",
+    "type": "paragraph",
+    "value": "  abcd",
+  },
+  Object {
+    "indent": 6,
+    "raw": "      \`\`\`",
+    "type": "paragraph",
+    "value": "      \`\`\`",
   },
 ]
 `;
 
-exports[`lexer bold should match the consecutive occurrences 1`] = `
+exports[`lexer codeblock should cope with empty body 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "**first bold** **second bold** **third bold**",
-    "type": "paragraph",
-    "value": "**first bold** **second bold** **third bold**",
-  },
-]
-`;
-
-exports[`lexer code should match the consecutive occurrences 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "\`first code\` \`second code\` \`third code\`",
-    "type": "paragraph",
-    "value": "\`first code\` \`second code\` \`third code\`",
-  },
-]
-`;
-
-exports[`lexer code should not be deep tokenized 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
-    "type": "paragraph",
-    "value": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
+    "language": "js",
+    "type": "code-block",
+    "value": "",
   },
 ]
 `;
@@ -61,7 +51,34 @@ Array [
 ]
 `;
 
-exports[`lexer codeblock should parse multiple consequetive codeblocks 1`] = `
+exports[`lexer codeblock should detect acceptable indent for closing codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2
+const c = 3",
+  },
+]
+`;
+
+exports[`lexer codeblock should detect mis-indented closing codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2
+const c = 3
+    \`\`\`",
+  },
+]
+`;
+
+exports[`lexer codeblock should parse multiple consecutive codeblocks 1`] = `
 Array [
   Object {
     "indent": 0,
@@ -126,90 +143,25 @@ Array [
 ]
 `;
 
-exports[`lexer common tokens should parse the common tokens 1`] = `
+exports[`lexer codeblock should set incomplete codeblock as a code block 1`] = `
 Array [
   Object {
     "indent": 0,
-    "level": 1,
-    "raw": "# Heading One Text",
-    "type": "heading",
-    "value": "Heading One Text",
+    "raw": "some line",
+    "type": "paragraph",
+    "value": "some line",
+  },
+  Object {
+    "indent": 2,
+    "language": "js",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2",
   },
 ]
 `;
 
-exports[`lexer common tokens should parse the common tokens 2`] = `
-Array [
-  Object {
-    "indent": 0,
-    "level": 2,
-    "raw": "## Heading Two Text",
-    "type": "heading",
-    "value": "Heading Two Text",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 3`] = `
-Array [
-  Object {
-    "indent": 0,
-    "level": 3,
-    "raw": "### Heading Three Text",
-    "type": "heading",
-    "value": "Heading Three Text",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 4`] = `
-Array [
-  Object {
-    "indent": 0,
-    "level": 4,
-    "raw": "#### Heading Four Text",
-    "type": "heading",
-    "value": "Heading Four Text",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 5`] = `
-Array [
-  Object {
-    "indent": 0,
-    "level": 5,
-    "raw": "##### Heading Five Text",
-    "type": "heading",
-    "value": "Heading Five Text",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 6`] = `
-Array [
-  Object {
-    "indent": 0,
-    "level": 6,
-    "raw": "###### Heading Six Text",
-    "type": "heading",
-    "value": "Heading Six Text",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 7`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "<!-- comment item text -->",
-    "type": "comment",
-    "value": "comment item text",
-  },
-]
-`;
-
-exports[`lexer common tokens should parse the common tokens 8`] = `
+exports[`lexer common tokens should parse the common tokens: '![alt text](image.png)' 1`] = `
 Array [
   Object {
     "alt": "alt text",
@@ -221,15 +173,134 @@ Array [
 ]
 `;
 
-exports[`lexer hr line should parse the hr line 1`] = `
+exports[`lexer common tokens should parse the common tokens: '# Heading One Text' 1`] = `
 Array [
   Object {
-    "type": "hr-line",
+    "indent": 0,
+    "level": 1,
+    "raw": "# Heading One Text",
+    "type": "heading",
+    "value": "Heading One Text",
   },
 ]
 `;
 
-exports[`lexer italics should be deep tokenized 1`] = `
+exports[`lexer common tokens should parse the common tokens: '## Heading Two Text' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "level": 2,
+    "raw": "## Heading Two Text",
+    "type": "heading",
+    "value": "Heading Two Text",
+  },
+]
+`;
+
+exports[`lexer common tokens should parse the common tokens: '### Heading Three Text' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "level": 3,
+    "raw": "### Heading Three Text",
+    "type": "heading",
+    "value": "Heading Three Text",
+  },
+]
+`;
+
+exports[`lexer common tokens should parse the common tokens: '#### Heading Four Text' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "level": 4,
+    "raw": "#### Heading Four Text",
+    "type": "heading",
+    "value": "Heading Four Text",
+  },
+]
+`;
+
+exports[`lexer common tokens should parse the common tokens: '##### Heading Five Text' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "level": 5,
+    "raw": "##### Heading Five Text",
+    "type": "heading",
+    "value": "Heading Five Text",
+  },
+]
+`;
+
+exports[`lexer common tokens should parse the common tokens: '###### Heading Six Text' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "level": 6,
+    "raw": "###### Heading Six Text",
+    "type": "heading",
+    "value": "Heading Six Text",
+  },
+]
+`;
+
+exports[`lexer common tokens should parse the common tokens: '<!-- comment item text -->' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "<!-- comment item text -->",
+    "type": "comment",
+    "value": "comment item text",
+  },
+]
+`;
+
+exports[`lexer emphasis bold should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
+    "type": "paragraph",
+    "value": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
+  },
+]
+`;
+
+exports[`lexer emphasis bold should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "**first bold** **second bold** **third bold**",
+    "type": "paragraph",
+    "value": "**first bold** **second bold** **third bold**",
+  },
+]
+`;
+
+exports[`lexer emphasis code should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "\`first code\` \`second code\` \`third code\`",
+    "type": "paragraph",
+    "value": "\`first code\` \`second code\` \`third code\`",
+  },
+]
+`;
+
+exports[`lexer emphasis code should not be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
+    "type": "paragraph",
+    "value": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
+  },
+]
+`;
+
+exports[`lexer emphasis italics should be deep tokenized 1`] = `
 Array [
   Object {
     "indent": 0,
@@ -240,7 +311,7 @@ Array [
 ]
 `;
 
-exports[`lexer italics should match the consecutive occurrences 1`] = `
+exports[`lexer emphasis italics should match the consecutive occurrences 1`] = `
 Array [
   Object {
     "indent": 0,
@@ -251,7 +322,7 @@ Array [
 ]
 `;
 
-exports[`lexer link should deep tokenized the link title 1`] = `
+exports[`lexer emphasis link should deep tokenized the link title 1`] = `
 Array [
   Object {
     "indent": 0,
@@ -262,13 +333,35 @@ Array [
 ]
 `;
 
-exports[`lexer link should match the consecutive occurrences 1`] = `
+exports[`lexer emphasis link should match the consecutive occurrences 1`] = `
 Array [
   Object {
     "indent": 0,
     "raw": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
     "type": "paragraph",
     "value": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
+  },
+]
+`;
+
+exports[`lexer emphasis strikes should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
+    "type": "paragraph",
+    "value": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
+  },
+]
+`;
+
+exports[`lexer emphasis strikes should match the consecutive occurrences 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
+    "type": "paragraph",
+    "value": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
   },
 ]
 `;
@@ -533,102 +626,587 @@ Array [
 ]
 `;
 
-exports[`lexer quote should deep tokenize quote with multiple depth 1`] = `
+exports[`lexer quote should deep tokenize quote '  > > > quote \`four\` with ~~five~~' 1`] = `
+Array [
+  Object {
+    "depth": 3,
+    "indent": 2,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " quote \`four\` with ~~five~~",
+          "type": "paragraph",
+          "value": " quote \`four\` with ~~five~~",
+        },
+      ],
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`lexer quote should deep tokenize quote '  > quote \`four\` with ~~five~~' 1`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": 2,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " quote \`four\` with ~~five~~",
+          "type": "paragraph",
+          "value": " quote \`four\` with ~~five~~",
+        },
+      ],
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`lexer quote should deep tokenize quote '> > > > quote [link-title](link-url) with *two*' 1`] = `
+Array [
+  Object {
+    "depth": 4,
+    "indent": 0,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " quote [link-title](link-url) with *two*",
+          "type": "paragraph",
+          "value": " quote [link-title](link-url) with *two*",
+        },
+      ],
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`lexer quote should deep tokenize quote '> > quote **one** with *two*' 1`] = `
+Array [
+  Object {
+    "depth": 2,
+    "indent": 0,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " quote **one** with *two*",
+          "type": "paragraph",
+          "value": " quote **one** with *two*",
+        },
+      ],
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`lexer quote should deep tokenize quote '> quote **one** with *two*' 1`] = `
 Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "> > quote **one** with *two*",
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " quote **one** with *two*",
+          "type": "paragraph",
+          "value": " quote **one** with *two*",
+        },
+      ],
+    ],
     "type": "quote",
-    "value": "quote **one** with *two*",
   },
 ]
 `;
 
-exports[`lexer quote should deep tokenize quote with multiple depth 2`] = `
+exports[`lexer quote should deep tokenize quote '> quote [link-title](link-url) with *two*' 1`] = `
 Array [
   Object {
-    "depth": 2,
-    "indent": 2,
-    "raw": "  > > > quote \`four\` with ~~five~~",
-    "type": "quote",
-    "value": "quote \`four\` with ~~five~~",
-  },
-]
-`;
-
-exports[`lexer quote should deep tokenize quote with multiple depth 3`] = `
-Array [
-  Object {
-    "depth": 3,
+    "depth": 1,
     "indent": 0,
-    "raw": "> > > > quote [link-title](link-url) with *two*",
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " quote [link-title](link-url) with *two*",
+          "type": "paragraph",
+          "value": " quote [link-title](link-url) with *two*",
+        },
+      ],
+    ],
     "type": "quote",
-    "value": "quote [link-title](link-url) with *two*",
   },
 ]
 `;
 
-exports[`lexer quote should deep tokenize quote with zero depth 1`] = `
+exports[`lexer quote should lexify multiline quote with the same depth and indent 1`] = `
 Array [
   Object {
-    "depth": 0,
+    "depth": 1,
     "indent": 0,
-    "raw": "> quote **one** with *two*",
+    "tokens": Array [
+      Object {
+        "depth": 2,
+        "type": "quote",
+        "value": Array [
+          Object {
+            "indent": 1,
+            "raw": " zero f
+ one f",
+            "type": "paragraph",
+            "value": " zero f one f",
+          },
+          Object {
+            "type": "new-line",
+          },
+        ],
+      },
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " one",
+          "type": "paragraph",
+          "value": " one",
+        },
+        Object {
+          "indent": 1,
+          "level": 1,
+          "raw": " # two",
+          "type": "heading",
+          "value": "two",
+        },
+      ],
+      Object {
+        "depth": 1,
+        "type": "quote",
+        "value": Array [
+          Object {
+            "indent": 1,
+            "raw": " three",
+            "type": "paragraph",
+            "value": " three",
+          },
+        ],
+      },
+      Object {
+        "depth": 2,
+        "type": "quote",
+        "value": Array [
+          Object {
+            "indent": 1,
+            "raw": " four",
+            "type": "paragraph",
+            "value": " four",
+          },
+        ],
+      },
+      Object {
+        "depth": 3,
+        "type": "quote",
+        "value": Array [
+          Object {
+            "indent": 1,
+            "raw": " d-five",
+            "type": "paragraph",
+            "value": " d-five",
+          },
+          Object {
+            "indent": 1,
+            "level": 1,
+            "raw": " # five",
+            "type": "heading",
+            "value": "five",
+          },
+          Object {
+            "indent": 1,
+            "level": 2,
+            "raw": " ## six",
+            "type": "heading",
+            "value": "six",
+          },
+          Object {
+            "indent": 1,
+            "raw": " seven",
+            "type": "paragraph",
+            "value": " seven",
+          },
+        ],
+      },
+    ],
     "type": "quote",
-    "value": "quote **one** with *two*",
   },
-]
-`;
-
-exports[`lexer quote should deep tokenize quote with zero depth 2`] = `
-Array [
   Object {
-    "depth": 0,
-    "indent": 2,
-    "raw": "  > quote \`four\` with ~~five~~",
-    "type": "quote",
-    "value": "quote \`four\` with ~~five~~",
-  },
-]
-`;
-
-exports[`lexer quote should deep tokenize quote with zero depth 3`] = `
-Array [
-  Object {
-    "depth": 0,
     "indent": 0,
-    "raw": "> quote [link-title](link-url) with *two*",
-    "type": "quote",
-    "value": "quote [link-title](link-url) with *two*",
-  },
-]
-`;
-
-exports[`lexer strikes should be deep tokenized 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
+    "raw": "simple para",
     "type": "paragraph",
-    "value": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
+    "value": "simple para",
   },
 ]
 `;
 
-exports[`lexer strikes should match the consecutive occurrences 1`] = `
+exports[`lexer table cell count cell count should break the table 1 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+  Object {
+    "indent": 0,
+    "raw": "| row 2 c1 |",
     "type": "paragraph",
-    "value": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
+    "value": "| row 2 c1 |",
   },
 ]
 `;
 
-exports[`lexer table is not a table false separator 1`] = `
+exports[`lexer table cell count cell count should break the table 2 1`] = `
 Array [
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table heading body separator should parse a table with separator: '| :-------: | :---------: |' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 2 c1 ",
+          "value": "row 2 c1",
+        },
+        Object {
+          "raw": " row 2 c2 ",
+          "value": "row 2 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table heading body separator should parse a table with separator: '| ------- | --------- |' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 2 c1 ",
+          "value": "row 2 c1",
+        },
+        Object {
+          "raw": " row 2 c2 ",
+          "value": "row 2 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table heading body separator should parse a table with separator: '|:-------:|:---------:|' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 2 c1 ",
+          "value": "row 2 c1",
+        },
+        Object {
+          "raw": " row 2 c2 ",
+          "value": "row 2 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table heading body separator should parse a table with separator: '|-------|-------|' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 2 c1 ",
+          "value": "row 2 c1",
+        },
+        Object {
+          "raw": " row 2 c2 ",
+          "value": "row 2 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table indentation different indent header -> separator 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "| column 1 | column 2 |",
+    "type": "paragraph",
+    "value": "| column 1 | column 2 |",
+  },
+  Object {
+    "indent": 2,
+    "raw": "  |---|---|",
+    "type": "paragraph",
+    "value": "  |---|---|",
+  },
+  Object {
+    "indent": 0,
+    "raw": "| row 1 c1 | row 1 c2 |",
+    "type": "paragraph",
+    "value": "| row 1 c1 | row 1 c2 |",
+  },
+]
+`;
+
+exports[`lexer table indentation different indent header, separator -> body row 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "raw": "  | column 1 | column 2 |
+  |---|---|",
+    "type": "paragraph",
+    "value": "  | column 1 | column 2 | |---|---|",
+  },
+  Object {
+    "indent": 0,
+    "raw": "| row 1 c1 | row 1 c2 |",
+    "type": "paragraph",
+    "value": "| row 1 c1 | row 1 c2 |",
+  },
+]
+`;
+
+exports[`lexer table indentation indent should break the table 1 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+  Object {
+    "indent": 0,
+    "raw": "| row 2 c1 | row 2 c2 |",
+    "type": "paragraph",
+    "value": "| row 2 c1 | row 2 c2 |",
+  },
+]
+`;
+
+exports[`lexer table indentation indent should break the table 2 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
   Object {
     "indent": 0,
     "rows": Array [
@@ -658,6 +1236,50 @@ Array [
 ]
 `;
 
+exports[`lexer table indentation the indented table 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "value": "column 1",
+        },
+        Object {
+          "raw": " column 2 ",
+          "value": "column 2",
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "value": "row 1 c1",
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "value": "row 1 c2",
+        },
+      ],
+    ],
+    "type": "table",
+  },
+]
+`;
+
+exports[`lexer table is not a table false separator 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "| column 1 | column 2 |
+| --- |--|
+| row 1 c1 | row 1 c2 |",
+    "type": "paragraph",
+    "value": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
+  },
+]
+`;
+
 exports[`lexer table is not a table only header 1`] = `
 Array [
   Object {
@@ -673,9 +1295,10 @@ exports[`lexer table is not a table only header and separator 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "| column 1 | column 2 ||---|---|",
+    "raw": "| column 1 | column 2 |
+|---|---|",
     "type": "paragraph",
-    "value": "| column 1 | column 2 ||---|---|",
+    "value": "| column 1 | column 2 | |---|---|",
   },
 ]
 `;
@@ -693,9 +1316,10 @@ Array [
   },
   Object {
     "indent": 0,
-    "raw": "|---|---|| row 1 c1 | row 1 c2 |",
+    "raw": "|---|---|
+| row 1 c1 | row 1 c2 |",
     "type": "paragraph",
-    "value": "|---|---|| row 1 c1 | row 1 c2 |",
+    "value": "|---|---| | row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -704,9 +1328,10 @@ exports[`lexer table is not a table other tokens in between 2 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "| column 1 | column 2 ||---|---|",
+    "raw": "| column 1 | column 2 |
+|---|---|",
     "type": "paragraph",
-    "value": "| column 1 | column 2 ||---|---|",
+    "value": "| column 1 | column 2 | |---|---|",
   },
   Object {
     "type": "new-line",
@@ -756,321 +1381,6 @@ Array [
     "raw": "| row 2 c1 | row 2 c2 |",
     "type": "paragraph",
     "value": "| row 2 c1 | row 2 c2 |",
-  },
-]
-`;
-
-exports[`lexer table table cell count cell count should break the table 1 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-  Object {
-    "indent": 0,
-    "raw": "| row 2 c1 |",
-    "type": "paragraph",
-    "value": "| row 2 c1 |",
-  },
-]
-`;
-
-exports[`lexer table table cell count cell count should break the table 2 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-  Object {
-    "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-]
-`;
-
-exports[`lexer table table heading-body separator should parse a table 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 2 c1 ",
-          "value": "row 2 c1",
-        },
-        Object {
-          "raw": " row 2 c2 ",
-          "value": "row 2 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-]
-`;
-
-exports[`lexer table table heading-body separator should parse a table 2`] = `
-Array [
-  Object {
-    "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 2 c1 ",
-          "value": "row 2 c1",
-        },
-        Object {
-          "raw": " row 2 c2 ",
-          "value": "row 2 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-]
-`;
-
-exports[`lexer table table indent different indent header -> separator 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "| column 1 | column 2 |  |---|---|| row 1 c1 | row 1 c2 |",
-    "type": "paragraph",
-    "value": "| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |",
-  },
-]
-`;
-
-exports[`lexer table table indent different indent header, separator -> body row 1`] = `
-Array [
-  Object {
-    "indent": 2,
-    "raw": "  | column 1 | column 2 |  |---|---|| row 1 c1 | row 1 c2 |",
-    "type": "paragraph",
-    "value": "| column 1 | column 2 ||---|---|| row 1 c1 | row 1 c2 |",
-  },
-]
-`;
-
-exports[`lexer table table indent indent should break the table 1 1`] = `
-Array [
-  Object {
-    "indent": 2,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-  Object {
-    "indent": 0,
-    "raw": "| row 2 c1 | row 2 c2 |",
-    "type": "paragraph",
-    "value": "| row 2 c1 | row 2 c2 |",
-  },
-]
-`;
-
-exports[`lexer table table indent indent should break the table 2 1`] = `
-Array [
-  Object {
-    "indent": 2,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-  Object {
-    "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-    ],
-    "type": "table",
-  },
-]
-`;
-
-exports[`lexer table table indent the indented table 1`] = `
-Array [
-  Object {
-    "indent": 2,
-    "rows": Array [
-      Array [
-        Object {
-          "raw": " column 1 ",
-          "value": "column 1",
-        },
-        Object {
-          "raw": " column 2 ",
-          "value": "column 2",
-        },
-      ],
-      Array [
-        Object {
-          "raw": " row 1 c1 ",
-          "value": "row 1 c1",
-        },
-        Object {
-          "raw": " row 1 c2 ",
-          "value": "row 1 c2",
-        },
-      ],
-    ],
-    "type": "table",
   },
 ]
 `;

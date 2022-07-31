@@ -3,15 +3,14 @@
   "version": "0.0.1",
   "description": "Lightweight markdown parser",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "convert": "node index.js",
-    "test:ci": "jest tests --silent",
-    "test:unit": "jest tests/unit --silent ",
-    "test:unit:watch": "jest tests/unit --watch --no-coverage",
-    "test:integration": "jest tests/integration --silent",
-    "test:integration:watch": "jest tests/integration --watch --no-coverage",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint **/*.js --fix"
+    "jest": "jest --silent ",
+    "jest:nocov": "jest --no-coverage",
+    "jest:watch": "jest --watch --no-coverage",
+    "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
+    "lint:fix": "pnpm lint --fix"
   },
   "keywords": [
     "nodejs",
@@ -20,12 +19,20 @@
   ],
   "author": "Kiran Parajuli",
   "license": "GPL-3.0",
+  "repository": "https://github.com/kiranparajuli589/markdown-parser",
+  "bugs": {
+    "email": "kiranparajuli589@gmail.com",
+    "url": "https://github.com/kiranparajuli589/markdown-parser/issues"
+  },
   "engines": {
     "node": ">=14.0.0",
     "pnpm": ">=3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "eslint": "^8.19.0",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.2"
   }
 }

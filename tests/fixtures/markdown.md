@@ -1,7 +1,7 @@
 
 <!-- https://regex101.com/r/C6SxZH/1 -->
 
-# Heading One `bold inside`
+# Heading One `CODE INSIDE`
 ## Heading Two
 ### Heading Three
 #### Heading Four
