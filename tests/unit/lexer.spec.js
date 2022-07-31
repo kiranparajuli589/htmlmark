@@ -170,7 +170,7 @@ describe("lexer", () => {
     })
   })
   describe("quote", () => {
-    it("should parse multiline quote with the same depth and indent", () => {
+    it("should lexify multiline quote with the same depth and indent", () => {
       const lines = [
         "> > > zero f",
         "> > one f",

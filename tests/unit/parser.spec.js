@@ -1,15 +1,16 @@
-const Lexer = require("../../lib/lexer")
-const parser = require("../../lib/parser")
-const { commonTokensList } = require("../fixtures/commTokens")
+import Lexer from "../../lib/lexer"
+import Parser from "../../lib/parser"
+import { commonTokensList } from "../fixtures/commTokens.js"
 
 
 function toHtml(lines) {
   const lexer = new Lexer(lines)
-
-  return parser(lexer.run())
+  const lexified = lexer.run()
+  const parser = new Parser(lexified)
+  return parser.run()
 }
 
-describe("lexer", () => {
+describe("Parser", () => {
   describe("newline", () => {
     it.each([
       [""],
@@ -116,7 +117,25 @@ describe("lexer", () => {
       expect(html).toMatchSnapshot()
     })
   })
-  describe.skip("quote", () => {
+  describe("quote", () => {
+    it("should parse multiline quote with the same depth and indent", () => {
+      const lines = [
+        "> > > zero f",
+        "> > one f",
+        ">>>",
+        "> one",
+        "> # two",
+        "> > three",
+        "> > > four",
+        "> > > > d-five",
+        "> > # five",
+        "> > ## six",
+        "> > > > seven",
+        "simple para"
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
     it.each([
       "> quote 1",
       "> > quote 2",
