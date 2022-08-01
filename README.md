@@ -9,9 +9,9 @@ A very lightweight Markdown Parser powered by Regex
 - lexer: to produce markdown tokens
 - parser: to produce the HTML code
 
-## 🚵 Roadmap
+## 🛣️ Roadmap
 
-### Paragraphs
+### 🪕 Paragraphs
 1. **Heading:**
     - Levels: #{1, 6} Heading text
     - Indentation: NOT IMPLEMENTED YET
@@ -55,7 +55,7 @@ A very lightweight Markdown Parser powered by Regex
     - Anything else
     - Indentation: NOT IMPLEMENTED YET
 
-### Emphasis
+### 🎺 Emphasis
 Emphasis can be inside the content of any paragraph types. Even emphasis items can have emphasis inside 🤩.
 
 1. **Bold:** wrapped inside `**`
@@ -89,13 +89,3 @@ SHOULD THIS BE IMPLEMENTED?
 ### 👻 HTML Sanitization
 **A BIG TODO**
 
-> > three
-> >  >
-> one
-> two
-> > three
-> > > four
-> > > > d-five
-> > five
-> > six
-> > > >  >seven
