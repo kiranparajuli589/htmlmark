@@ -182,7 +182,7 @@ describe("Parser", () => {
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
     })
-    it("should detech list indent", () => {
+    it("should detect list indent", () => {
       const lines = [
         "  - item **1**",
         "  - item [link](link-url)",

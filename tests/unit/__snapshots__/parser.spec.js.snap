@@ -177,6 +177,13 @@ exports[`Parser list should detech list indent 1`] = `
 </ul>"
 `;
 
+exports[`Parser list should detect list indent 1`] = `
+"
+<ul>
+  <li>item <strong>1</strong></li><li>item <a href='link-url'>link</a></li><li>item 3 <code>code item</code></li>
+</ul>"
+`;
+
 exports[`Parser list should tokenize a valid ordered list 1`] = `
 "
 <ol>
@@ -327,10 +334,9 @@ exports[`Parser quote should parse multiline quote with the same depth and inden
 <p> d-five</p>
 <h1>five</h1>
 <h2>six</h2>
-<p> seven</p>
+<p> seven simple para</p>
 </blockquote></blockquote></blockquote>
-</blockquote>
-<p>simple para</p>"
+</blockquote>"
 `;
 
 exports[`Parser strikes should be deep tokenized 1`] = `

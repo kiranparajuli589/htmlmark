@@ -6,7 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:import/recommended",
+    "plugin:import/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest"
@@ -20,6 +20,7 @@
   "rules": {
     "no-var": "error",
     "indent": ["error", 2],
+    "comma-dangle": "error",
     "no-multi-spaces": "error",
     "semi": ["error", "never"],
     "quotes": ["error", "double"],
@@ -27,6 +28,5 @@
     "object-curly-spacing": ["error", "always"],
     "import/newline-after-import": ["error", { "count": 2 }],
     "no-console": ["error", { "allow": ["debug", "info", "error"] }],
-    "comma-dangle": "error"
   }
 }
