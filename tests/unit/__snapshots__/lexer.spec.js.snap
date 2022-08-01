@@ -374,13 +374,27 @@ Array [
       Object {
         "raw": "  - item **1**",
         "tokens": Object {
-          "value": "item **1**",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item **1**",
+              "type": "paragraph",
+              "value": "item **1**",
+            },
+          ],
         },
       },
       Object {
         "raw": "  - item [link](link-url)",
         "tokens": Object {
-          "value": "item [link](link-url)",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item [link](link-url)",
+              "type": "paragraph",
+              "value": "item [link](link-url)",
+            },
+          ],
         },
       },
     ],
@@ -397,19 +411,64 @@ Array [
       Object {
         "raw": "- item 3 \`code item\`",
         "tokens": Object {
-          "value": "item 3 \`code item\`",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item 3 \`code item\`",
+              "type": "paragraph",
+              "value": "item 3 \`code item\`",
+            },
+          ],
         },
       },
       Object {
         "raw": "- item 4",
         "tokens": Object {
-          "value": "item 4",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item 4",
+              "type": "paragraph",
+              "value": "item 4",
+            },
+          ],
         },
       },
     ],
     "meta": Object {
       "identifier": "-",
       "isCheckList": false,
+      "ordered": false,
+    },
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer list should allow lazy lexing 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "raw": "- [x] list *item* one",
+        "tokens": Object {
+          "isChecked": true,
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "list *item* one
+omg this is merged with the above line",
+              "type": "paragraph",
+              "value": "list *item* one omg this is merged with the above line",
+            },
+          ],
+        },
+      },
+    ],
+    "meta": Object {
+      "identifier": "-",
+      "isCheckList": true,
       "ordered": false,
     },
     "type": "list",
@@ -426,21 +485,42 @@ Array [
         "raw": "1. item **1**",
         "tokens": Object {
           "count": "1",
-          "value": "item **1**",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item **1**",
+              "type": "paragraph",
+              "value": "item **1**",
+            },
+          ],
         },
       },
       Object {
         "raw": "1. item [link](link-url)",
         "tokens": Object {
           "count": "1",
-          "value": "item [link](link-url)",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item [link](link-url)",
+              "type": "paragraph",
+              "value": "item [link](link-url)",
+            },
+          ],
         },
       },
       Object {
         "raw": "1. item 3 \`code item\`",
         "tokens": Object {
           "count": "1",
-          "value": "item 3 \`code item\`",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item 3 \`code item\`",
+              "type": "paragraph",
+              "value": "item 3 \`code item\`",
+            },
+          ],
         },
       },
     ],
@@ -462,19 +542,40 @@ Array [
       Object {
         "raw": "- item **1**",
         "tokens": Object {
-          "value": "item **1**",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item **1**",
+              "type": "paragraph",
+              "value": "item **1**",
+            },
+          ],
         },
       },
       Object {
         "raw": "- item [link](link-url)",
         "tokens": Object {
-          "value": "item [link](link-url)",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item [link](link-url)",
+              "type": "paragraph",
+              "value": "item [link](link-url)",
+            },
+          ],
         },
       },
       Object {
         "raw": "- item 3 \`code item\`",
         "tokens": Object {
-          "value": "item 3 \`code item\`",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "item 3 \`code item\`",
+              "type": "paragraph",
+              "value": "item 3 \`code item\`",
+            },
+          ],
         },
       },
     ],
@@ -496,13 +597,27 @@ Array [
       Object {
         "raw": "- one",
         "tokens": Object {
-          "value": "one",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "one",
+              "type": "paragraph",
+              "value": "one",
+            },
+          ],
         },
       },
       Object {
         "raw": "- two",
         "tokens": Object {
-          "value": "two",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "two",
+              "type": "paragraph",
+              "value": "two",
+            },
+          ],
         },
       },
     ],
@@ -520,14 +635,28 @@ Array [
         "raw": "1. one",
         "tokens": Object {
           "count": "1",
-          "value": "one",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "one",
+              "type": "paragraph",
+              "value": "one",
+            },
+          ],
         },
       },
       Object {
         "raw": "2. two",
         "tokens": Object {
           "count": "2",
-          "value": "two",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "two",
+              "type": "paragraph",
+              "value": "two",
+            },
+          ],
         },
       },
     ],
@@ -545,14 +674,28 @@ Array [
         "raw": "- [ ] c empty",
         "tokens": Object {
           "isChecked": false,
-          "value": "c empty",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "c empty",
+              "type": "paragraph",
+              "value": "c empty",
+            },
+          ],
         },
       },
       Object {
         "raw": "- [x] c checked",
         "tokens": Object {
           "isChecked": true,
-          "value": "c checked",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "c checked",
+              "type": "paragraph",
+              "value": "c checked",
+            },
+          ],
         },
       },
     ],
@@ -571,7 +714,14 @@ Array [
         "tokens": Object {
           "count": "1",
           "isChecked": false,
-          "value": "c empty",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "c empty",
+              "type": "paragraph",
+              "value": "c empty",
+            },
+          ],
         },
       },
       Object {
@@ -579,7 +729,14 @@ Array [
         "tokens": Object {
           "count": "1",
           "isChecked": true,
-          "value": "c checked",
+          "value": Array [
+            Object {
+              "indent": 0,
+              "raw": "c checked",
+              "type": "paragraph",
+              "value": "c checked",
+            },
+          ],
         },
       },
     ],
@@ -622,6 +779,144 @@ Array [
     "raw": "now with __underlined text__ within some ___underl_ined_text___",
     "type": "paragraph",
     "value": "now with __underlined text__ within some ___underl_ined_text___",
+  },
+]
+`;
+
+exports[`lexer paragraph should be separated with different indent 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "raw": "  abc
+  def",
+    "type": "paragraph",
+    "value": "  abc def",
+  },
+  Object {
+    "indent": 4,
+    "raw": "    ghi
+    jkl",
+    "type": "paragraph",
+    "value": "    ghi jkl",
+  },
+]
+`;
+
+exports[`lexer paragraph should be separated with other tokens 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "abc",
+    "type": "paragraph",
+    "value": "abc",
+  },
+  Object {
+    "indent": 0,
+    "level": 1,
+    "raw": "# one",
+    "type": "heading",
+    "value": "one",
+  },
+  Object {
+    "indent": 0,
+    "raw": "def",
+    "type": "paragraph",
+    "value": "def",
+  },
+]
+`;
+
+exports[`lexer paragraph should merge consecutive paragraph not separated by other tokens 1`] = `
+Array [
+  Object {
+    "indent": 2,
+    "raw": "  abc
+  def",
+    "type": "paragraph",
+    "value": "  abc def",
+  },
+]
+`;
+
+exports[`lexer quote other tokens should break laziness 1`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": 0,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " one quote",
+          "type": "paragraph",
+          "value": " one quote",
+        },
+        Object {
+          "indent": 1,
+          "level": 1,
+          "raw": " # two quote",
+          "type": "heading",
+          "value": "two quote",
+        },
+      ],
+    ],
+    "type": "quote",
+  },
+  Object {
+    "indent": 0,
+    "raw": "three quote",
+    "type": "paragraph",
+    "value": "three quote",
+  },
+]
+`;
+
+exports[`lexer quote other tokens should break laziness 2`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": 0,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " one quote
+ two quote",
+          "type": "paragraph",
+          "value": " one quote two quote",
+        },
+      ],
+    ],
+    "type": "quote",
+  },
+  Object {
+    "indent": 0,
+    "level": 1,
+    "raw": "# three quote",
+    "type": "heading",
+    "value": "three quote",
+  },
+]
+`;
+
+exports[`lexer quote should allow laziness for plain paragraph 1`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": 0,
+    "tokens": Array [
+      Array [
+        Object {
+          "indent": 1,
+          "raw": " one quote
+ two quote
+three quote",
+          "type": "paragraph",
+          "value": " one quote two quote three quote",
+        },
+      ],
+    ],
+    "type": "quote",
   },
 ]
 `;
@@ -833,20 +1128,15 @@ Array [
           },
           Object {
             "indent": 1,
-            "raw": " seven",
+            "raw": " seven
+simple para",
             "type": "paragraph",
-            "value": " seven",
+            "value": " seven simple para",
           },
         ],
       },
     ],
     "type": "quote",
-  },
-  Object {
-    "indent": 0,
-    "raw": "simple para",
-    "type": "paragraph",
-    "value": "simple para",
   },
 ]
 `;

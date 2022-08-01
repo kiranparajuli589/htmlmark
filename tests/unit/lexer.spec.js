@@ -178,8 +178,8 @@ describe("lexer", () => {
       expect(tokens[0].indent).toBe(2)
     })
   })
-  describe("quote", () => {
-    it.only("should find nested depth", () => {
+  describe.only("quote", () => {
+    it("should find nested depth", () => {
       const lines = [
         "> one",
         "> > two",
@@ -188,9 +188,8 @@ describe("lexer", () => {
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
-      console.log(tokens)
+      console.debug(tokens)
     })
-
     it("should lexify multiline quote with the same depth and indent", () => {
       const lines = [
         "> > > zero f",
@@ -230,6 +229,32 @@ describe("lexer", () => {
       "> > > > quote [link-title](link-url) with *two*",
     ])("should deep tokenize quote '%s'", (line) => {
       const lexer = new Lexer([line])
+      const tokenizedContent = lexer.run()
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it("should allow laziness for plain paragraph", () => {
+      const lines = [
+        "> one quote",
+        "> two quote",
+        "three quote"
+      ]
+      const lexer = new Lexer(lines)
+      const tokenizedContent = lexer.run()
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it.each([
+      { v: [
+        "> one quote",
+        "> # two quote",
+        "three quote"
+      ] },
+      { v: [
+        "> one quote",
+        "> two quote",
+        "# three quote"
+      ] },
+    ])("other tokens should break laziness", ({ v }) => {
+      const lexer = new Lexer(v)
       const tokenizedContent = lexer.run()
       expect(tokenizedContent).toMatchSnapshot()
     })
@@ -291,6 +316,15 @@ describe("lexer", () => {
       const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
+    it("should allow lazy lexing", () => {
+      const lines = [
+        "- [x] list *item* one",
+        "omg this is merged with the above line"
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
   })
   describe("hr line", () => {
     it("should parse the hr line", () => {
@@ -301,7 +335,7 @@ describe("lexer", () => {
       const tokens = lexer.run()
       expect(tokens[0].type).toBe(TOKENS.HR_LINE)
     })
-    it("should not allow multiple consecutive hr lines", () => {
+    it("should merge multiple consecutive hr lines into one", () => {
       const lines = [
         "---",
         "---",
@@ -473,7 +507,7 @@ describe("lexer", () => {
         "|-|: |",
         "|:|-|",
         "| :|-|",
-      ])("should not parse as table with invalid separator :- %s", (line) => {
+      ])("should not parse as table with invalid separator: '%s'", (line) => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           line,
@@ -492,6 +526,36 @@ describe("lexer", () => {
       "now with __underlined text__ within some ___underl_ined_text___",
     ])("should be deep tokenized", (line) => {
       const lines = [line]
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should merge consecutive paragraph not separated by other tokens", () => {
+      const lines = [
+        "  abc",
+        "  def"
+      ]
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be separated with different indent", () => {
+      const lines = [
+        "  abc",
+        "  def",
+        "    ghi",
+        "    jkl",
+      ]
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be separated with other tokens", () => {
+      const lines = [
+        "abc",
+        "# one",
+        "def",
+      ]
       const lexer = new Lexer(lines)
       const lexerData = lexer.run()
       expect(lexerData).toMatchSnapshot()
