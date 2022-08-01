@@ -118,6 +118,16 @@ describe("Parser", () => {
     })
   })
   describe("quote", () => {
+    it("should find nested depth", () => {
+      const lines = [
+        "> one",
+        "> > two",
+        "> > > three",
+        "> > > > four"
+      ]
+      const html = toHtml(lines)
+      expect(html).toMatchSnapshot()
+    })
     it("should parse multiline quote with the same depth and indent", () => {
       const lines = [
         "> > > zero f",

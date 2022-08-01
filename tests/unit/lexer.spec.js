@@ -178,7 +178,7 @@ describe("lexer", () => {
       expect(tokens[0].indent).toBe(2)
     })
   })
-  describe.only("quote", () => {
+  describe("quote", () => {
     it("should find nested depth", () => {
       const lines = [
         "> one",
@@ -188,7 +188,7 @@ describe("lexer", () => {
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
-      console.debug(tokens)
+      expect(tokens).toMatchSnapshot()
     })
     it("should lexify multiline quote with the same depth and indent", () => {
       const lines = [
