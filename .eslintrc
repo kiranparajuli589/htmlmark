@@ -26,6 +26,7 @@
     "linebreak-style": ["error", "unix" ],
     "object-curly-spacing": ["error", "always"],
     "import/newline-after-import": ["error", { "count": 2 }],
-    "no-console": ["error", { "allow": ["debug", "info", "error"] }]
+    "no-console": ["error", { "allow": ["debug", "info", "error"] }],
+    "comma-dangle": "error"
   }
 }

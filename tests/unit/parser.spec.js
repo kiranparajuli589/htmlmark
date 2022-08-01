@@ -15,7 +15,7 @@ describe("Parser", () => {
     it.each([
       [""],
       ["\n"],
-      ["", "\n"],
+      ["", "\n"]
 
     ])("should not include the top empty lines", (lines) => {
       const html = toHtml(lines)
@@ -24,7 +24,7 @@ describe("Parser", () => {
     it.each(["", "\n"])("should include the empty line after some content", (eLine) => {
       const lines = [
         "some plain text",
-        eLine,
+        eLine
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -34,7 +34,7 @@ describe("Parser", () => {
         "some plain text",
         "\n",
         "",
-        "some more plain text",
+        "some more plain text"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -45,7 +45,7 @@ describe("Parser", () => {
       const lines = [
         "```js",
         "const a = 1",
-        "```",
+        "```"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -54,7 +54,7 @@ describe("Parser", () => {
       const lines = [
         "```",
         "const a = 1",
-        "```",
+        "```"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -64,7 +64,7 @@ describe("Parser", () => {
         "```js",
         "const a = 1",
         "const b = 2",
-        "```",
+        "```"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -76,7 +76,7 @@ describe("Parser", () => {
         "const b = 2",
         "",
         "const c = 3",
-        "```",
+        "```"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -88,7 +88,7 @@ describe("Parser", () => {
         "```",
         "```js",
         "const b = 2",
-        "```",
+        "```"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -98,7 +98,7 @@ describe("Parser", () => {
         "```js",
         "const a = 1",
         "```",
-        "some people are funny",
+        "some people are funny"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -141,7 +141,7 @@ describe("Parser", () => {
       "> > quote 2",
       "> > > quote 3",
       "> > > > quote 4",
-      "> > > > > quote 5",
+      "> > > > > quote 5"
     ])("should detect the quote depth", (quote) => {
       const html = toHtml([quote])
       expect(html).toMatchSnapshot()
@@ -149,7 +149,7 @@ describe("Parser", () => {
     it.each([
       "> quote **one** with *two*",
       "  > quote `four` with ~~five~~",
-      "> quote [link-title](link-url) with *two*",
+      "> quote [link-title](link-url) with *two*"
     ])("should deep tokenize quote with zero depth", (line) => {
       const html = toHtml([line])
       expect(html).toMatchSnapshot()
@@ -157,7 +157,7 @@ describe("Parser", () => {
     it.each([
       "> > quote **one** with *two*",
       "  > > > quote `four` with ~~five~~",
-      "> > > > quote [link-title](link-url) with *two*",
+      "> > > > quote [link-title](link-url) with *two*"
     ])("should deep tokenize quote with multiple depth", (line) => {
       const html = toHtml([line])
       expect(html).toMatchSnapshot()
@@ -168,7 +168,7 @@ describe("Parser", () => {
       const lines = [
         "1. item **1**",
         "1. item [link](link-url)",
-        "1. item 3 `code item`",
+        "1. item 3 `code item`"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -177,7 +177,7 @@ describe("Parser", () => {
       const lines = [
         "- item **1**",
         "- item [link](link-url)",
-        "- item 3 `code item`",
+        "- item 3 `code item`"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -186,7 +186,7 @@ describe("Parser", () => {
       const lines = [
         "  - item **1**",
         "  - item [link](link-url)",
-        "  - item 3 `code item`",
+        "  - item 3 `code item`"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -196,7 +196,7 @@ describe("Parser", () => {
         "  - item **1**",
         "  - item [link](link-url)",
         "- item 3 `code item`",
-        "- item 4",
+        "- item 4"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -219,7 +219,7 @@ describe("Parser", () => {
   describe("hr line", () => {
     it("should parse the hr line", () => {
       const lines = [
-        "---",
+        "---"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -227,7 +227,7 @@ describe("Parser", () => {
     it("should not allow multiple consecutive hr lines", () => {
       const lines = [
         "---",
-        "---",
+        "---"
       ]
       const html = toHtml(lines)
       expect(html).toMatchSnapshot()
@@ -237,14 +237,14 @@ describe("Parser", () => {
     describe("is not a table", () => {
       it("only header", () => {
         const html = toHtml([
-          "| column 1 | column 2 |",
+          "| column 1 | column 2 |"
         ])
         expect(html).toMatchSnapshot()
       })
       it("only header and separator", () => {
         const html = toHtml([
           "| column 1 | column 2 |",
-          "|---|---|",
+          "|---|---|"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -252,7 +252,7 @@ describe("Parser", () => {
         const html = toHtml([
           "| column 1 | column 2 |",
           "| --- | --- |",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -260,7 +260,7 @@ describe("Parser", () => {
         const lines = [
           "| column 1 | column 2 |",
           "| --- |",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ]
         const html = toHtml(lines)
         expect(html).toMatchSnapshot()
@@ -270,7 +270,7 @@ describe("Parser", () => {
           "| column 1 | column 2 |",
           "",
           "|---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -279,7 +279,7 @@ describe("Parser", () => {
           "| column 1 | column 2 |",
           "|---|---|",
           "",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -289,7 +289,7 @@ describe("Parser", () => {
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
           "",
-          "| row 2 c1 | row 2 c2 |",
+          "| row 2 c1 | row 2 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -299,7 +299,7 @@ describe("Parser", () => {
         const html = toHtml([
           "| column 1 | column 2 |",
           "  |---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -308,7 +308,7 @@ describe("Parser", () => {
         const html = toHtml([
           "  | column 1 | column 2 |",
           "  |---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -317,7 +317,7 @@ describe("Parser", () => {
         const html = toHtml([
           "  | column 1 | column 2 |",
           "  |---|---|",
-          "  | row 1 c1 | row 1 c2 |",
+          "  | row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -327,7 +327,7 @@ describe("Parser", () => {
           "  | column 1 | column 2 |",
           "  |---|---|",
           "  | row 1 c1 | row 1 c2 |",
-          "| row 2 c1 | row 2 c2 |",
+          "| row 2 c1 | row 2 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -338,7 +338,7 @@ describe("Parser", () => {
           "  | row 1 c1 | row 1 c2 |",
           "| column 1 | column 2 |",
           "|---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -350,7 +350,7 @@ describe("Parser", () => {
           "| column 1 | column 2 |",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
-          "| row 2 c1 |",
+          "| row 2 c1 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -361,7 +361,7 @@ describe("Parser", () => {
           "| row 1 c1 | row 1 c2 |",
           "| column 1 |",
           "|---|",
-          "| row 1 c1 |",
+          "| row 1 c1 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -369,13 +369,13 @@ describe("Parser", () => {
     describe("table heading-body separator", () => {
       it.each([
         "|-------|-------|",
-        "|:-------:|:---------:|",
+        "|:-------:|:---------:|"
       ])("should parse a table", (line) => {
         const html = toHtml([
           "| column 1 | column 2 |",
           line,
           "| row 1 c1 | row 1 c2 |",
-          "| row 2 c1 | row 2 c2 |",
+          "| row 2 c1 | row 2 c2 |"
         ])
         expect(html).toMatchSnapshot()
       })
@@ -385,7 +385,7 @@ describe("Parser", () => {
     it.each([
       "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby `baby```[[[[[[[[[[[[[[[l]]]]int](href)[link](href)``````````",
       "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
-      "now with __underlined text__ within some ___underl_ined_text___",
+      "now with __underlined text__ within some ___underl_ined_text___"
     ])("should be deep tokenized", (line) => {
       const lines = [line]
       const lexerData = toHtml(lines)
