@@ -23,6 +23,7 @@ A very lightweight Markdown Parser powered by Regex
     - Ordered: `{any digit}. Item 1`
     - Unordered: `-|+|* Item 1`
     - Checklist: `-|+|*|{digit}. [ ] Item 1` (Can be _ordered_ or _unordered_)
+    - Can be Lazy
     - Items must have the same intent to be included in the same list
     - Allows other _paragraph items_ inside content
     - Indentation: NOT IMPLEMENTED YET
@@ -30,6 +31,7 @@ A very lightweight Markdown Parser powered by Regex
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
     - Allows other _paragraph items_ inside content
+    - Can be Lazy
     - Indentation: NOT IMPLEMENTED YET
 5. **Image:**
     - Link: Required
