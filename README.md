@@ -13,16 +13,16 @@ A very lightweight Markdown Parser powered by Regex
 
 ### 🪕 Paragraphs
 1. **Heading:**
-    - Levels: #{1, 6} Heading text
+    - Levels: `#{1, 6} Heading text`
     - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
     - Must have equal indent for starting and closing backtick group (<code>```</code>)
     - Indentation: NOT IMPLEMENTED YET
 3. **List:**
-    - Ordered: {any digit}. Item 1
-    - Unordered: - Item 1
-    - Checklist: - [ ] Item 1
+    - Ordered: `{any digit}. Item 1`
+    - Unordered: `-|+|* Item 1`
+    - Checklist: `-|+|*|{digit}. [ ] Item 1` (Can be _ordered_ or _unordered_)
     - Items must have the same intent to be included in the same list
     - Allows other _paragraph items_ inside content
     - Indentation: NOT IMPLEMENTED YET

@@ -179,6 +179,18 @@ describe("lexer", () => {
     })
   })
   describe("quote", () => {
+    it.only("should find nested depth", () => {
+      const lines = [
+        "> one",
+        "> > two",
+        "> > > three",
+        "> > > > four"
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      console.log(tokens)
+    })
+
     it("should lexify multiline quote with the same depth and indent", () => {
       const lines = [
         "> > > zero f",
