@@ -6,5 +6,5 @@ export const commonTokensList= [
   "##### Heading Five Text",
   "###### Heading Six Text",
   "<!-- comment item text -->",
-  "![alt text](image.png)",
+  "![alt text](image.png)"
 ]

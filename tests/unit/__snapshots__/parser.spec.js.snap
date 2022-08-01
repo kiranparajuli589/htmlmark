@@ -170,7 +170,7 @@ exports[`Parser list indent should break the list 1`] = `
 </ul>"
 `;
 
-exports[`Parser list should detech list indent 1`] = `
+exports[`Parser list should detect list indent 1`] = `
 "
 <ul>
   <li>item <strong>1</strong></li><li>item <a href='link-url'>link</a></li><li>item 3 <code>code item</code></li>
@@ -313,6 +313,18 @@ exports[`Parser quote should detect the quote depth 5`] = `
 </blockquote></blockquote></blockquote></blockquote></blockquote>"
 `;
 
+exports[`Parser quote should find nested depth 1`] = `
+"<blockquote>
+<p> one</p><blockquote>
+<p> two</p>
+</blockquote><blockquote><blockquote>
+<p> three</p>
+</blockquote></blockquote><blockquote><blockquote><blockquote>
+<p> four</p>
+</blockquote></blockquote></blockquote>
+</blockquote>"
+`;
+
 exports[`Parser quote should parse multiline quote with the same depth and indent 1`] = `
 "<blockquote><blockquote><blockquote>
 <p> zero f one f</p>
@@ -327,10 +339,9 @@ exports[`Parser quote should parse multiline quote with the same depth and inden
 <p> d-five</p>
 <h1>five</h1>
 <h2>six</h2>
-<p> seven</p>
+<p> seven simple para</p>
 </blockquote></blockquote></blockquote>
-</blockquote>
-<p>simple para</p>"
+</blockquote>"
 `;
 
 exports[`Parser strikes should be deep tokenized 1`] = `

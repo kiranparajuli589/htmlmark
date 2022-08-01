@@ -8,7 +8,7 @@ describe("lexer", () => {
     it.each([
       [""],
       ["\n"],
-      ["", "\n"],
+      ["", "\n"]
 
     ])("should not include the top empty lines", (lines) => {
       const lexer = new Lexer(lines)
@@ -18,7 +18,7 @@ describe("lexer", () => {
     it.each(["", "\n"])("should include the empty line after some content", (eLine) => {
       const lines = [
         "some plain text",
-        eLine,
+        eLine
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -30,7 +30,7 @@ describe("lexer", () => {
         "some plain text",
         "\n",
         "",
-        "some more plain text",
+        "some more plain text"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -43,7 +43,7 @@ describe("lexer", () => {
       const lines = [
         "```js",
         "const a = 1",
-        "```",
+        "```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -53,7 +53,7 @@ describe("lexer", () => {
       const lines = [
         "```",
         "const a = 1",
-        "```",
+        "```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -64,7 +64,7 @@ describe("lexer", () => {
         "```js",
         "const a = 1",
         "const b = 2",
-        "```",
+        "```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -77,7 +77,7 @@ describe("lexer", () => {
         "const b = 2",
         "",
         "const c = 3",
-        "```",
+        "```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -90,7 +90,7 @@ describe("lexer", () => {
         "```",
         "```js",
         "const b = 2",
-        "```",
+        "```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -101,7 +101,7 @@ describe("lexer", () => {
         "```js",
         "const a = 1",
         "```",
-        "some people are funny",
+        "some people are funny"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -113,7 +113,7 @@ describe("lexer", () => {
         "  ```js",
         "  const a = 1",
         "  const b = 2",
-        "here again", // broken indentation
+        "here again" // broken indentation
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -125,7 +125,7 @@ describe("lexer", () => {
         "const a = 1",
         "const b = 2",
         "const c = 3",
-        "    ```",
+        "    ```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -137,7 +137,7 @@ describe("lexer", () => {
         "const a = 1",
         "const b = 2",
         "const c = 3",
-        "   ```",
+        "   ```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -156,7 +156,7 @@ describe("lexer", () => {
     it("should cope with empty body", () => {
       const lines = [
         "```js",
-        "```",
+        "```"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -179,7 +179,7 @@ describe("lexer", () => {
     })
   })
   describe("quote", () => {
-    it.only("should find nested depth", () => {
+    it("should find nested depth", () => {
       const lines = [
         "> one",
         "> > two",
@@ -188,9 +188,8 @@ describe("lexer", () => {
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
-      console.log(tokens)
+      expect(tokens).toMatchSnapshot()
     })
-
     it("should lexify multiline quote with the same depth and indent", () => {
       const lines = [
         "> > > zero f",
@@ -215,7 +214,7 @@ describe("lexer", () => {
       { quote: "> > quote 2", expectedDepth: 2 },
       { quote: "> > > quote 3", expectedDepth: 3 },
       { quote: "> > > > quote 4", expectedDepth: 4 },
-      { quote: "> > > > > quote 5", expectedDepth: 5 },
+      { quote: "> > > > > quote 5", expectedDepth: 5 }
     ])("should detect the quote depth", ({ quote, expectedDepth }) => {
       const lexer = new Lexer([quote])
       const tokenizedContent = lexer.run()
@@ -227,9 +226,35 @@ describe("lexer", () => {
       "> quote [link-title](link-url) with *two*",
       "> > quote **one** with *two*",
       "  > > > quote `four` with ~~five~~",
-      "> > > > quote [link-title](link-url) with *two*",
+      "> > > > quote [link-title](link-url) with *two*"
     ])("should deep tokenize quote '%s'", (line) => {
       const lexer = new Lexer([line])
+      const tokenizedContent = lexer.run()
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it("should allow laziness for plain paragraph", () => {
+      const lines = [
+        "> one quote",
+        "> two quote",
+        "three quote"
+      ]
+      const lexer = new Lexer(lines)
+      const tokenizedContent = lexer.run()
+      expect(tokenizedContent).toMatchSnapshot()
+    })
+    it.each([
+      { v: [
+        "> one quote",
+        "> # two quote",
+        "three quote"
+      ] },
+      { v: [
+        "> one quote",
+        "> two quote",
+        "# three quote"
+      ] }
+    ])("other tokens should break laziness", ({ v }) => {
+      const lexer = new Lexer(v)
       const tokenizedContent = lexer.run()
       expect(tokenizedContent).toMatchSnapshot()
     })
@@ -239,7 +264,7 @@ describe("lexer", () => {
       const lines = [
         "1. item **1**",
         "1. item [link](link-url)",
-        "1. item 3 `code item`",
+        "1. item 3 `code item`"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -249,7 +274,7 @@ describe("lexer", () => {
       const lines = [
         "- item **1**",
         "- item [link](link-url)",
-        "- item 3 `code item`",
+        "- item 3 `code item`"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -259,7 +284,7 @@ describe("lexer", () => {
       const lines = [
         "  - item **1**",
         "  - item [link](link-url)",
-        "  - item 3 `code item`",
+        "  - item 3 `code item`"
       ]
       const lexer = new Lexer(lines)
       const tokenizedContent = lexer.run()
@@ -270,7 +295,7 @@ describe("lexer", () => {
         "  - item **1**",
         "  - item [link](link-url)",
         "- item 3 `code item`",
-        "- item 4",
+        "- item 4"
       ]
       const lexer = new Lexer(lines)
       const tokenizedContent = lexer.run()
@@ -291,20 +316,29 @@ describe("lexer", () => {
       const tokens = lexer.run()
       expect(tokens).toMatchSnapshot()
     })
+    it("should allow lazy lexing", () => {
+      const lines = [
+        "- [x] list *item* one",
+        "omg this is merged with the above line"
+      ]
+      const lexer = new Lexer(lines)
+      const tokens = lexer.run()
+      expect(tokens).toMatchSnapshot()
+    })
   })
   describe("hr line", () => {
     it("should parse the hr line", () => {
       const lines = [
-        "---",
+        "---"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
       expect(tokens[0].type).toBe(TOKENS.HR_LINE)
     })
-    it("should not allow multiple consecutive hr lines", () => {
+    it("should merge multiple consecutive hr lines into one", () => {
       const lines = [
         "---",
-        "---",
+        "---"
       ]
       const lexer = new Lexer(lines)
       const tokens = lexer.run()
@@ -316,7 +350,7 @@ describe("lexer", () => {
     describe("is not a table", () => {
       it("only header", () => {
         const lexer = new Lexer([
-          "| column 1 | column 2 |",
+          "| column 1 | column 2 |"
         ])
         const tokens = lexer.run()
         expect(tokens).toMatchSnapshot()
@@ -324,7 +358,7 @@ describe("lexer", () => {
       it("only header and separator", () => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
-          "|---|---|",
+          "|---|---|"
         ])
         const tokens = lexer.run()
         expect(tokens).toMatchSnapshot()
@@ -333,7 +367,7 @@ describe("lexer", () => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           "| --- |--|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         const tokens = lexer.run()
         expect(tokens).toMatchSnapshot()
@@ -342,7 +376,7 @@ describe("lexer", () => {
         const lines = [
           "| column 1 | column 2 |",
           "| --- |",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ]
         const lexer = new Lexer(lines)
         const tokens = lexer.run()
@@ -354,7 +388,7 @@ describe("lexer", () => {
           "| column 1 | column 2 |",
           "",
           "|---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -363,7 +397,7 @@ describe("lexer", () => {
           "| column 1 | column 2 |",
           "|---|---|",
           "",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -373,7 +407,7 @@ describe("lexer", () => {
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
           "",
-          "| row 2 c1 | row 2 c2 |",
+          "| row 2 c1 | row 2 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -383,7 +417,7 @@ describe("lexer", () => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           "  |---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -392,7 +426,7 @@ describe("lexer", () => {
         const lexer = new Lexer([
           "  | column 1 | column 2 |",
           "  |---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -401,7 +435,7 @@ describe("lexer", () => {
         const lexer = new Lexer([
           "  | column 1 | column 2 |",
           "  |---|---|",
-          "  | row 1 c1 | row 1 c2 |",
+          "  | row 1 c1 | row 1 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -411,7 +445,7 @@ describe("lexer", () => {
           "  | column 1 | column 2 |",
           "  |---|---|",
           "  | row 1 c1 | row 1 c2 |",
-          "| row 2 c1 | row 2 c2 |",
+          "| row 2 c1 | row 2 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -422,7 +456,7 @@ describe("lexer", () => {
           "  | row 1 c1 | row 1 c2 |",
           "| column 1 | column 2 |",
           "|---|---|",
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -433,7 +467,7 @@ describe("lexer", () => {
           "| column 1 | column 2 |",
           "|---|---|",
           "| row 1 c1 | row 1 c2 |",
-          "| row 2 c1 |",
+          "| row 2 c1 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -444,7 +478,7 @@ describe("lexer", () => {
           "| row 1 c1 | row 1 c2 |",
           "| column 1 |",
           "|---|",
-          "| row 1 c1 |",
+          "| row 1 c1 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -454,13 +488,13 @@ describe("lexer", () => {
         "|-------|-------|",
         "|:-------:|:---------:|",
         "| :-------: | :---------: |",
-        "| ------- | --------- |",
+        "| ------- | --------- |"
       ])("should parse a table with separator: '%s'", (line) => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           line,
           "| row 1 c1 | row 1 c2 |",
-          "| row 2 c1 | row 2 c2 |",
+          "| row 2 c1 | row 2 c2 |"
         ])
         expect(lexer.run()).toMatchSnapshot()
       })
@@ -472,12 +506,12 @@ describe("lexer", () => {
         "|-|:|",
         "|-|: |",
         "|:|-|",
-        "| :|-|",
-      ])("should not parse as table with invalid separator :- %s", (line) => {
+        "| :|-|"
+      ])("should not parse as table with invalid separator: '%s'", (line) => {
         const lexer = new Lexer([
           "| column 1 | column 2 |",
           line,
-          "| row 1 c1 | row 1 c2 |",
+          "| row 1 c1 | row 1 c2 |"
         ])
         const lexed = lexer.run()
         expect(lexed.length).toBe(1)
@@ -489,9 +523,39 @@ describe("lexer", () => {
     it.each([
       "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby `baby```[[[[[[[[[[[[[[[l]]]]int](href)[link](href)``````````",
       "a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
-      "now with __underlined text__ within some ___underl_ined_text___",
+      "now with __underlined text__ within some ___underl_ined_text___"
     ])("should be deep tokenized", (line) => {
       const lines = [line]
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should merge consecutive paragraph not separated by other tokens", () => {
+      const lines = [
+        "  abc",
+        "  def"
+      ]
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be separated with different indent", () => {
+      const lines = [
+        "  abc",
+        "  def",
+        "    ghi",
+        "    jkl"
+      ]
+      const lexer = new Lexer(lines)
+      const lexerData = lexer.run()
+      expect(lexerData).toMatchSnapshot()
+    })
+    it("should be separated with other tokens", () => {
+      const lines = [
+        "abc",
+        "# one",
+        "def"
+      ]
       const lexer = new Lexer(lines)
       const lexerData = lexer.run()
       expect(lexerData).toMatchSnapshot()
