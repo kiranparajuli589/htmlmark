@@ -1,8 +1,13 @@
 # Markdown Parser
+A very lightweight Markdown Parser powered by Regex
 
 ## 🚧 Under HIGH DEVELOPMENT 🚧
 
-A very lightweight Markdown Parser powered by Regex
+As of right now, this repository is still in its infancy.
+Open source is something I'm passionate about, so I want to share what I'm doing early.
+The readme will be updated once it is safe for use with more detailed documentation.
+In the meantime, please feel free to share your thoughts, contact [me](https://kiranparajuli.com.np) or create a **PR** if you would like to contribute.
+
 
 ## 🔑 Key points
 - no use of external dependencies
