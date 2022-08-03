@@ -19,7 +19,7 @@
   }],
   "rules": {
     "no-var": "error",
-    "indent": ["error", 2],
+    "indent": ["error", "tab"],
     "comma-dangle": "error",
     "no-multi-spaces": "error",
     "semi": ["error", "never"],

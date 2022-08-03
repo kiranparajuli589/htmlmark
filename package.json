@@ -9,7 +9,7 @@
     "jest": "jest --silent ",
     "jest:nocov": "jest --no-coverage",
     "jest:watch": "jest --watch --no-coverage",
-    "lint": "eslint lib/**/*.js tests/**/*.js **/*.js",
+    "lint": "eslint . --ext .js",
     "lint:fix": "pnpm lint --fix"
   },
   "keywords": [
@@ -25,7 +25,7 @@
     "url": "https://github.com/kiranparajuli589/markdown-parser/issues"
   },
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=16.0.0",
     "pnpm": ">=7.0.0"
   },
   "devDependencies": {
