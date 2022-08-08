@@ -1,0 +1,59 @@
+[
+	{
+		"type": "quote",
+		"depth": 3,
+		"value": [
+			" three"
+		],
+		"raw": [
+			"> > > three"
+		]
+	},
+	{
+		"type": "quote",
+		"depth": 1,
+		"value": [
+			" one",
+			{
+				"type": "quote",
+				"depth": 2,
+				"value": [
+					" two",
+					" # h-two",
+					{
+						"type": "quote",
+						"depth": 3,
+						"value": [
+							" three",
+							{
+								"type": "quote",
+								"depth": 4,
+								"value": [
+									" four"
+								],
+								"raw": [
+									"> > > > four"
+								],
+								"relativeDepth": 1
+							}
+						],
+						"raw": [
+							"> > > three",
+							"> > > > four"
+						],
+						"relativeDepth": 1
+					}
+				],
+				"raw": [
+					"> > two",
+					"> > # h-two",
+					"> > > three"
+				],
+				"relativeDepth": 1
+			}
+		],
+		"raw": [
+			"> one"
+		]
+	}
+]

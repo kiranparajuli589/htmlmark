@@ -179,10 +179,13 @@ describe("lexer", () => {
 		})
 	})
 	describe("quote", () => {
-		it("should find nested depth", () => {
+		it.only("should find nested depth", () => {
 			const lines = [
+				"> > > three",
+				"> >",
 				"> one",
 				"> > two",
+				"> > # h-two",
 				"> > > three",
 				"> > > > four"
 			]
@@ -225,7 +228,8 @@ describe("lexer", () => {
 			"  > quote `four` with ~~five~~",
 			"> quote [link-title](link-url) with *two*",
 			"> > quote **one** with *two*",
-			"  > > > quote `four` with ~~five~~",
+			"" +
+			" > > > quote `four` with ~~five~~",
 			"> > > > quote [link-title](link-url) with *two*"
 		])("should deep tokenize quote '%s'", (line) => {
 			const lexer = new Lexer([line])

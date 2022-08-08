@@ -1046,52 +1046,7 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "tokens": Array [
-      Array [
-        Object {
-          "indent": 1,
-          "raw": " one",
-          "type": "paragraph",
-          "value": " one",
-        },
-      ],
-      Object {
-        "depth": 1,
-        "type": "quote",
-        "value": Array [
-          Object {
-            "indent": 1,
-            "raw": " two",
-            "type": "paragraph",
-            "value": " two",
-          },
-        ],
-      },
-      Object {
-        "depth": 2,
-        "type": "quote",
-        "value": Array [
-          Object {
-            "indent": 1,
-            "raw": " three",
-            "type": "paragraph",
-            "value": " three",
-          },
-        ],
-      },
-      Object {
-        "depth": 3,
-        "type": "quote",
-        "value": Array [
-          Object {
-            "indent": 1,
-            "raw": " four",
-            "type": "paragraph",
-            "value": " four",
-          },
-        ],
-      },
-    ],
+    "tokens": Array [],
     "type": "quote",
   },
 ]
