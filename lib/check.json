@@ -1,19 +1,23 @@
 [
 	{
 		"type": "quote",
-		"depth": 3,
-		"value": [
-			" three"
-		],
-		"raw": [
-			"> > > three"
-		]
-	},
-	{
-		"type": "quote",
 		"depth": 1,
+		"raw": "> > > three\n> one\n> > two\n> > # h-two",
 		"value": [
-			" one",
+			{
+				"type": "quote",
+				"depth": 3,
+				"value": [
+					" three",
+					""
+				],
+				"raw": "> > > three\n> >",
+				"relativeDepth": 2,
+				"hit": true
+			},
+			[
+				" one"
+			],
 			{
 				"type": "quote",
 				"depth": 2,
@@ -31,29 +35,17 @@
 								"value": [
 									" four"
 								],
-								"raw": [
-									"> > > > four"
-								],
+								"raw": "> > > > four",
 								"relativeDepth": 1
 							}
 						],
-						"raw": [
-							"> > > three",
-							"> > > > four"
-						],
+						"raw": "> > > three\n> > > > four",
 						"relativeDepth": 1
 					}
 				],
-				"raw": [
-					"> > two",
-					"> > # h-two",
-					"> > > three"
-				],
+				"raw": "> > two\n> > # h-two\n> > > three",
 				"relativeDepth": 1
 			}
-		],
-		"raw": [
-			"> one"
 		]
 	}
 ]
