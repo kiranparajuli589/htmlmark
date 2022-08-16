@@ -96,10 +96,6 @@ SHOULD THIS BE IMPLEMENTED?
 ### 👻 HTML Sanitization
 **A BIG TODO**
 
-> > > three
-> >
-> one
-> > two
-> > # h-two
-> > > three
-> > > > four
+> - one
+> - two
+
