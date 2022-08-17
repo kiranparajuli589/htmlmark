@@ -184,7 +184,7 @@ describe("lexer", () => {
 				"> > > three hit",
 				"> > two hit",
 				">",
-				"> one",
+				">",
 				"> > two",
 				"> > # h-two",
 				"> > > three",
@@ -194,7 +194,7 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it.only("should lexify multiline quote with the same depth and indent", () => {
+		it.only("should lex multiline quote with the same depth and indent", () => {
 			const lines = [
 				"> > > zero f",
 				"> > one f",
@@ -313,10 +313,31 @@ describe("lexer", () => {
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
 		})
-		describe("list inside", () => {
+		describe.skip("list inside", () => {
 			it("should identify list inside the quote", () => {
 				const lines = [
 					"> - one",
+					"> - two"
+				]
+				const lexer = new Lexer(lines)
+				const tokenizedContent = lexer.run()
+				expect(tokenizedContent).toMatchSnapshot()
+			})
+			it("should identify list inside with single separator in between", () => {
+				const lines = [
+					"> - one",
+					">",
+					"> - two"
+				]
+				const lexer = new Lexer(lines)
+				const tokenizedContent = lexer.run()
+				expect(tokenizedContent).toMatchSnapshot()
+			})
+			it("should identify list inside with multiple separator in between", () => {
+				const lines = [
+					"> - one",
+					">",
+					">",
 					"> - two"
 				]
 				const lexer = new Lexer(lines)

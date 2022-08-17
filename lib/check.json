@@ -1,104 +1,121 @@
-[
-	{
-		"type": "quote",
-		"indent": 0,
-		"depth": 1,
-		"tokens": [
-			{
-				"type": "quote",
-				"depth": 2,
-				"tokens": [
-					{
-						"type": "paragraph",
-						"indent": 1,
-						"value": " zero f one f",
-						"raw": " zero f\n one f"
-					},
-					{
-						"type": "new-line"
-					}
-				],
-				"raw": "> > > zero f\n> > one f\n>>>"
-			},
-			{
-				"type": "paragraph",
-				"indent": 1,
-				"value": " one",
-				"raw": " one"
-			},
-			{
-				"type": "heading",
-				"level": 1,
-				"value": "two",
-				"indent": 1,
-				"raw": " # two"
-			},
-			{
-				"type": "quote",
-				"depth": 1,
-				"tokens": [
-					{
-						"type": "paragraph",
-						"indent": 1,
-						"value": " three",
-						"raw": " three"
-					},
-					{
-						"type": "quote",
-						"depth": 1,
-						"tokens": [
-							{
-								"type": "paragraph",
-								"indent": 1,
-								"value": " four",
-								"raw": " four"
-							},
-							{
-								"type": "quote",
-								"depth": 1,
-								"tokens": [
-									{
-										"type": "paragraph",
-										"indent": 1,
-										"value": " d-five",
-										"raw": " d-five"
-									},
-									{
-										"type": "heading",
-										"level": 1,
-										"value": "five",
-										"indent": 1,
-										"raw": " # five"
-									},
-									{
-										"type": "heading",
-										"level": 2,
-										"value": "six",
-										"indent": 1,
-										"raw": " ## six"
-									},
-									{
-										"type": "paragraph",
-										"indent": 1,
-										"value": " seven",
-										"raw": " seven"
-									},
-									{
-										"type": "paragraph",
-										"indent": 0,
-										"value": "simple para",
-										"raw": "simple para"
-									}
-								],
-								"raw": "> > > > d-five\n> > # five\n> > ## six\n> > > > seven\nsimple para"
-							}
-						],
-						"raw": "> > > four\n> > > > d-five\n> > # five\n> > ## six\n> > > > seven\nsimple para"
-					}
-				],
-				"raw": "> > three\n> > > four"
-			}
-		],
-		"raw": "\n> > > zero f\n> > one f\n>>>\n> one\n> # two\n> > three\n> > > four\n> > > > d-five\n> > # five\n> > ## six\n> > > > seven\nsimple para"
-	}
-]
+{
+	"type": "quote",
+	"tokens": [
+		{
+			"type": "quote",
+			"depth": 2,
+			"tokens": [
+				{
+					"type": "paragraph",
+					"indent": 1,
+					"value": " zero f one f",
+					"raw": " zero f\n one f"
+				},
+				{
+					"type": "new-line"
+				}
+			],
+			"raw": "> > > zero f\n> > one f\n>>>"
+		},
+		{
+			"type": "paragraph",
+			"indent": 1,
+			"value": " one",
+			"raw": " one"
+		},
+		{
+			"type": "heading",
+			"level": 1,
+			"value": "two",
+			"indent": 1,
+			"raw": " # two"
+		},
+		{
+			"type": "quote",
+			"depth": 1,
+			"tokens": [
+				{
+					"type": "paragraph",
+					"indent": 1,
+					"value": " three",
+					"raw": " three"
+				},
+				{
+					"type": "quote",
+					"depth": 1,
+					"tokens": [
+						{
+							"type": "paragraph",
+							"indent": 1,
+							"value": " four",
+							"raw": " four"
+						},
+						{
+							"type": "quote",
+							"depth": 1,
+							"tokens": [
+								{
+									"type": "paragraph",
+									"indent": 1,
+									"value": " d-five",
+									"raw": " d-five"
+								}
+							],
+							"raw": "> > > > d-five"
+						}
+					],
+					"raw": "> > > four\n> > > > d-five"
+				}
+			],
+			"raw": "> > three\n> > > four"
+		},
+		{
+			"type": "quote",
+			"depth": 1,
+			"tokens": [
+				{
+					"type": "heading",
+					"level": 1,
+					"value": "five",
+					"indent": 1,
+					"raw": " # five"
+				}
+			],
+			"raw": "> > # five"
+		},
+		{
+			"type": "quote",
+			"depth": 1,
+			"tokens": [
+				{
+					"type": "heading",
+					"level": 2,
+					"value": "six",
+					"indent": 1,
+					"raw": " ## six"
+				},
+				{
+					"type": "quote",
+					"depth": 2,
+					"tokens": [
+						{
+							"type": "paragraph",
+							"indent": 1,
+							"value": " seven",
+							"raw": " seven"
+						},
+						{
+							"type": "paragraph",
+							"indent": 0,
+							"value": "simple para",
+							"raw": "simple para"
+						}
+					],
+					"raw": "> > > > seven\nsimple para"
+				}
+			],
+			"raw": "> > ## six\n> > > > seven\nsimple para"
+		}
+	],
+	"raw": "\n> > > zero f\n> > one f\n>>>\n> one\n> # two\n> > three\n> > > four\n> > > > d-five\n> > # five\n> > ## six\n> > > > seven\nsimple para"
+}
