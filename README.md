@@ -102,13 +102,22 @@ SHOULD THIS BE IMPLEMENTED?
 > > > zero f
 > > one f
 >>>
+>>>
+>>
+>
 > one
 > # two
 > > three
 > > > four
 > > > > d-five
-> > # five
-> > ## six
+> >
+> > five
+> > > ## six
 > > > > seven
-simple para
+> > > > > eight
+> > > >
+> > > > simple
+> > > >
+> > > para
+graph
 
