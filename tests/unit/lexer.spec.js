@@ -178,8 +178,8 @@ describe("lexer", () => {
 			expect(tokens[0].indent).toBe(2)
 		})
 	})
-	describe.only("quote", () => {
-		it("should find nested depth", () => {
+	describe("quote", () => {
+		it("should chill with big quote head", () => {
 			const lines = [
 				"> > > three hit",
 				"> > two hit",
@@ -188,35 +188,25 @@ describe("lexer", () => {
 				"> > two",
 				"> > # h-two",
 				"> > > three",
-				"> > > > four"
+				"> > > > four",
+				"some"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it.only("should lex multiline quote with the same depth and indent", () => {
+		it("should lex multiline quote with the circular depth", () => {
 			const lines = [
-				"> > > zero f",
-				"> > one f",
-				">>>",
-				">>>",
-				">>",
-				">",
 				"> one",
-				"> # two",
-				"> > three",
-				"> > > four",
-				"> > > > d-five",
+				"> > two",
+				"> > > three",
+				"> > > > four",
+				"> > >",
+				">>> r_three",
 				"> >",
-				"> > five",
-				"> > > ## six",
-				"> > > > seven",
-				"> > > > > eight",
-				"> > > >",
-				"> > > > simple",
-				"> > > >",
-				"> > > para",
-				"graph"
+				"> > r_two",
+				">",
+				"> r_one"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
@@ -277,22 +267,6 @@ describe("lexer", () => {
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
 		})
-		it.each([
-			{ v: [
-				"> one quote",
-				"> # two quote",
-				"three quote"
-			] },
-			{ v: [
-				"> one quote",
-				"> two quote",
-				"# three quote"
-			] }
-		])("other tokens should break laziness", ({ v }) => {
-			const lexer = new Lexer(v)
-			const tokenizedContent = lexer.run()
-			expect(tokenizedContent).toMatchSnapshot()
-		})
 		it("should leave separators", () => {
 			const lines = [
 				"> one",
@@ -322,7 +296,7 @@ describe("lexer", () => {
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
 		})
-		describe.skip("list inside", () => {
+		describe("list inside", () => {
 			it("should identify list inside the quote", () => {
 				const lines = [
 					"> - one",

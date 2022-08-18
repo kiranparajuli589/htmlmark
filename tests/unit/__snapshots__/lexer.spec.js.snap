@@ -843,15 +843,14 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> - one
+    "raw": "> - one
 > - two",
     "tokens": Array [
       Object {
-        "indent": 1,
+        "indent": 0,
         "items": Array [
           Object {
-            "raw": " - one",
+            "raw": "- one",
             "tokens": Object {
               "value": Array [
                 Object {
@@ -864,7 +863,7 @@ Array [
             },
           },
           Object {
-            "raw": " - two",
+            "raw": "- two",
             "tokens": Object {
               "value": Array [
                 Object {
@@ -895,16 +894,16 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> - one
-
+    "raw": "> - one
+>
+>
 > - two",
     "tokens": Array [
       Object {
-        "indent": 1,
+        "indent": 0,
         "items": Array [
           Object {
-            "raw": " - one",
+            "raw": "- one",
             "tokens": Object {
               "value": Array [
                 Object {
@@ -928,10 +927,10 @@ Array [
         "type": "new-line",
       },
       Object {
-        "indent": 1,
+        "indent": 0,
         "items": Array [
           Object {
-            "raw": " - two",
+            "raw": "- two",
             "tokens": Object {
               "value": Array [
                 Object {
@@ -962,15 +961,15 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> - one
+    "raw": "> - one
+>
 > - two",
     "tokens": Array [
       Object {
-        "indent": 1,
+        "indent": 0,
         "items": Array [
           Object {
-            "raw": " - one",
+            "raw": "- one",
             "tokens": Object {
               "value": Array [
                 Object {
@@ -982,8 +981,22 @@ Array [
               ],
             },
           },
+        ],
+        "meta": Object {
+          "identifier": "-",
+          "isCheckList": false,
+          "ordered": false,
+        },
+        "type": "list",
+      },
+      Object {
+        "type": "new-line",
+      },
+      Object {
+        "indent": 0,
+        "items": Array [
           Object {
-            "raw": " - two",
+            "raw": "- two",
             "tokens": Object {
               "value": Array [
                 Object {
@@ -1009,92 +1022,111 @@ Array [
 ]
 `;
 
-exports[`lexer quote other tokens should break laziness 1`] = `
-Array [
-  Object {
-    "depth": 1,
-    "indent": 0,
-    "raw": "
-> one quote
-> # two quote
-three quote",
-    "tokens": Array [
-      Object {
-        "indent": 1,
-        "raw": " one quote",
-        "type": "paragraph",
-        "value": " one quote",
-      },
-      Object {
-        "indent": 1,
-        "level": 1,
-        "raw": " # two quote",
-        "type": "heading",
-        "value": "two quote",
-      },
-      Object {
-        "indent": 0,
-        "raw": "three quote",
-        "type": "paragraph",
-        "value": "three quote",
-      },
-    ],
-    "type": "quote",
-  },
-]
-`;
-
-exports[`lexer quote other tokens should break laziness 2`] = `
-Array [
-  Object {
-    "depth": 1,
-    "indent": 0,
-    "raw": "
-> one quote
-> two quote",
-    "tokens": Array [
-      Object {
-        "indent": 1,
-        "raw": " one quote
- two quote",
-        "type": "paragraph",
-        "value": " one quote two quote",
-      },
-    ],
-    "type": "quote",
-  },
-  Object {
-    "indent": 0,
-    "level": 1,
-    "raw": "# three quote",
-    "type": "heading",
-    "value": "three quote",
-  },
-]
-`;
-
 exports[`lexer quote should allow laziness for plain paragraph 1`] = `
 Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> one quote
+    "raw": "> one quote
 > two quote
 three quote",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " one quote
- two quote",
+        "indent": 0,
+        "raw": "one quote two quote three quote",
         "type": "paragraph",
-        "value": " one quote two quote",
+        "value": "one quote two quote three quote",
+      },
+    ],
+    "type": "quote",
+  },
+]
+`;
+
+exports[`lexer quote should chill with big quote head 1`] = `
+Array [
+  Object {
+    "depth": 1,
+    "indent": 0,
+    "raw": "> > > three hit
+> > two hit
+>
+>
+> > two
+> > # h-two
+> > > three
+> > > > four
+some",
+    "tokens": Array [
+      Object {
+        "depth": 2,
+        "indent": 0,
+        "raw": "> > three hit two hit",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "three hit two hit",
+            "type": "paragraph",
+            "value": "three hit two hit",
+          },
+        ],
+        "type": "quote",
       },
       Object {
+        "type": "new-line",
+      },
+      Object {
+        "depth": 1,
         "indent": 0,
-        "raw": "three quote",
-        "type": "paragraph",
-        "value": "three quote",
+        "raw": "> two
+> # h-two
+> > three
+> > > four some",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "two",
+            "type": "paragraph",
+            "value": "two",
+          },
+          Object {
+            "indent": 0,
+            "level": 1,
+            "raw": "# h-two",
+            "type": "heading",
+            "value": "h-two",
+          },
+          Object {
+            "depth": 1,
+            "indent": 0,
+            "raw": "> three
+> > four some",
+            "tokens": Array [
+              Object {
+                "indent": 0,
+                "raw": "three",
+                "type": "paragraph",
+                "value": "three",
+              },
+              Object {
+                "depth": 1,
+                "indent": 0,
+                "raw": "> four some",
+                "tokens": Array [
+                  Object {
+                    "indent": 0,
+                    "raw": "four some",
+                    "type": "paragraph",
+                    "value": "four some",
+                  },
+                ],
+                "type": "quote",
+              },
+            ],
+            "type": "quote",
+          },
+        ],
+        "type": "quote",
       },
     ],
     "type": "quote",
@@ -1107,14 +1139,13 @@ Array [
   Object {
     "depth": 1,
     "indent": 2,
-    "raw": "
-  > quote \`four\` with ~~five~~",
+    "raw": "  > quote \`four\` with ~~five~~",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " quote \`four\` with ~~five~~",
+        "indent": 0,
+        "raw": "quote \`four\` with ~~five~~",
         "type": "paragraph",
-        "value": " quote \`four\` with ~~five~~",
+        "value": "quote \`four\` with ~~five~~",
       },
     ],
     "type": "quote",
@@ -1127,14 +1158,13 @@ Array [
   Object {
     "depth": 3,
     "indent": 1,
-    "raw": "
- > > > quote \`four\` with ~~five~~",
+    "raw": " > > > quote \`four\` with ~~five~~",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " quote \`four\` with ~~five~~",
+        "indent": 0,
+        "raw": "quote \`four\` with ~~five~~",
         "type": "paragraph",
-        "value": " quote \`four\` with ~~five~~",
+        "value": "quote \`four\` with ~~five~~",
       },
     ],
     "type": "quote",
@@ -1149,14 +1179,13 @@ Array [
   Object {
     "depth": 4,
     "indent": 0,
-    "raw": "
-> > > > quote [link-title](link-url) with *two*",
+    "raw": "> > > > quote [link-title](link-url) with *two*",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " quote [link-title](link-url) with *two*",
+        "indent": 0,
+        "raw": "quote [link-title](link-url) with *two*",
         "type": "paragraph",
-        "value": " quote [link-title](link-url) with *two*",
+        "value": "quote [link-title](link-url) with *two*",
       },
     ],
     "type": "quote",
@@ -1169,14 +1198,13 @@ Array [
   Object {
     "depth": 2,
     "indent": 0,
-    "raw": "
-> > quote **one** with *two*",
+    "raw": "> > quote **one** with *two*",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " quote **one** with *two*",
+        "indent": 0,
+        "raw": "quote **one** with *two*",
         "type": "paragraph",
-        "value": " quote **one** with *two*",
+        "value": "quote **one** with *two*",
       },
     ],
     "type": "quote",
@@ -1189,14 +1217,13 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> quote **one** with *two*",
+    "raw": "> quote **one** with *two*",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " quote **one** with *two*",
+        "indent": 0,
+        "raw": "quote **one** with *two*",
         "type": "paragraph",
-        "value": " quote **one** with *two*",
+        "value": "quote **one** with *two*",
       },
     ],
     "type": "quote",
@@ -1209,99 +1236,13 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> quote [link-title](link-url) with *two*",
+    "raw": "> quote [link-title](link-url) with *two*",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " quote [link-title](link-url) with *two*",
+        "indent": 0,
+        "raw": "quote [link-title](link-url) with *two*",
         "type": "paragraph",
-        "value": " quote [link-title](link-url) with *two*",
-      },
-    ],
-    "type": "quote",
-  },
-]
-`;
-
-exports[`lexer quote should find nested depth 1`] = `
-Array [
-  Object {
-    "depth": 1,
-    "indent": 0,
-    "raw": "
-> > > three hit
-> > two hit
->
->
-> > two
-> > # h-two
-> > > three
-> > > > four",
-    "tokens": Array [
-      Object {
-        "depth": 2,
-        "raw": "> > > three hit
-> > two hit",
-        "tokens": Array [
-          Object {
-            "indent": 1,
-            "raw": " three hit
- two hit",
-            "type": "paragraph",
-            "value": " three hit two hit",
-          },
-        ],
-        "type": "quote",
-      },
-      Object {
-        "depth": 1,
-        "raw": "> > two
-> > # h-two
-> > > three",
-        "tokens": Array [
-          Object {
-            "indent": 1,
-            "raw": " two",
-            "type": "paragraph",
-            "value": " two",
-          },
-          Object {
-            "indent": 1,
-            "level": 1,
-            "raw": " # h-two",
-            "type": "heading",
-            "value": "h-two",
-          },
-          Object {
-            "depth": 1,
-            "raw": "> > > three
-> > > > four",
-            "tokens": Array [
-              Object {
-                "indent": 1,
-                "raw": " three",
-                "type": "paragraph",
-                "value": " three",
-              },
-              Object {
-                "depth": 1,
-                "raw": "> > > > four",
-                "tokens": Array [
-                  Object {
-                    "indent": 1,
-                    "raw": " four",
-                    "type": "paragraph",
-                    "value": " four",
-                  },
-                ],
-                "type": "quote",
-              },
-            ],
-            "type": "quote",
-          },
-        ],
-        "type": "quote",
+        "value": "quote [link-title](link-url) with *two*",
       },
     ],
     "type": "quote",
@@ -1314,22 +1255,23 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> one
+    "raw": "> one
 > # two
-
+>
+>
+>
 > three",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " one",
+        "indent": 0,
+        "raw": "one",
         "type": "paragraph",
-        "value": " one",
+        "value": "one",
       },
       Object {
-        "indent": 1,
+        "indent": 0,
         "level": 1,
-        "raw": " # two",
+        "raw": "# two",
         "type": "heading",
         "value": "two",
       },
@@ -1337,10 +1279,10 @@ Array [
         "type": "new-line",
       },
       Object {
-        "indent": 1,
-        "raw": " three",
+        "indent": 0,
+        "raw": "three",
         "type": "paragraph",
-        "value": " three",
+        "value": "three",
       },
     ],
     "type": "quote",
@@ -1348,147 +1290,105 @@ Array [
 ]
 `;
 
-exports[`lexer quote should lex multiline quote with the same depth and indent 1`] = `
+exports[`lexer quote should lex multiline quote with the circular depth 1`] = `
 Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> > > zero f
-> > one f
->>>
-> one
-> # two
-> > three
-> > > four
-> > > > d-five
-> > # five
-> > ## six
-> > > > seven
-simple para",
+    "raw": "> one
+> > two
+> > > three
+> > > > four
+> > >
+>>> r_three
+> >
+> > r_two
+>
+> r_one",
     "tokens": Array [
       Object {
-        "depth": 2,
-        "raw": "> > > zero f
-> > one f
->>>",
-        "tokens": Array [
-          Object {
-            "indent": 1,
-            "raw": " zero f
- one f",
-            "type": "paragraph",
-            "value": " zero f one f",
-          },
-          Object {
-            "type": "new-line",
-          },
-        ],
-        "type": "quote",
-      },
-      Object {
-        "indent": 1,
-        "raw": " one",
+        "indent": 0,
+        "raw": "one",
         "type": "paragraph",
-        "value": " one",
-      },
-      Object {
-        "indent": 1,
-        "level": 1,
-        "raw": " # two",
-        "type": "heading",
-        "value": "two",
+        "value": "one",
       },
       Object {
         "depth": 1,
-        "raw": "> > three
-> > > four",
+        "indent": 0,
+        "raw": "> two
+> > three
+> > > four
+> >
+>> r_three
+>
+> r_two",
         "tokens": Array [
           Object {
-            "indent": 1,
-            "raw": " three",
+            "indent": 0,
+            "raw": "two",
             "type": "paragraph",
-            "value": " three",
+            "value": "two",
           },
           Object {
             "depth": 1,
-            "raw": "> > > four
-> > > > d-five",
+            "indent": 0,
+            "raw": "> three
+> > four
+>
+> r_three",
             "tokens": Array [
               Object {
-                "indent": 1,
-                "raw": " four",
+                "indent": 0,
+                "raw": "three",
                 "type": "paragraph",
-                "value": " four",
+                "value": "three",
               },
               Object {
                 "depth": 1,
-                "raw": "> > > > d-five",
+                "indent": 0,
+                "raw": "> four",
                 "tokens": Array [
                   Object {
-                    "indent": 1,
-                    "raw": " d-five",
+                    "indent": 0,
+                    "raw": "four",
                     "type": "paragraph",
-                    "value": " d-five",
+                    "value": "four",
                   },
                 ],
                 "type": "quote",
               },
-            ],
-            "type": "quote",
-          },
-        ],
-        "type": "quote",
-      },
-      Object {
-        "depth": 1,
-        "raw": "> > # five",
-        "tokens": Array [
-          Object {
-            "indent": 1,
-            "level": 1,
-            "raw": " # five",
-            "type": "heading",
-            "value": "five",
-          },
-        ],
-        "type": "quote",
-      },
-      Object {
-        "depth": 1,
-        "raw": "> > ## six
-> > > > seven
-simple para",
-        "tokens": Array [
-          Object {
-            "indent": 1,
-            "level": 2,
-            "raw": " ## six",
-            "type": "heading",
-            "value": "six",
-          },
-          Object {
-            "depth": 2,
-            "raw": "> > > > seven
-simple para",
-            "tokens": Array [
               Object {
-                "indent": 1,
-                "raw": " seven",
-                "type": "paragraph",
-                "value": " seven",
+                "type": "new-line",
               },
               Object {
                 "indent": 0,
-                "raw": "simple para",
+                "raw": "r_three",
                 "type": "paragraph",
-                "value": "simple para",
+                "value": "r_three",
               },
             ],
             "type": "quote",
           },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 0,
+            "raw": "r_two",
+            "type": "paragraph",
+            "value": "r_two",
+          },
         ],
         "type": "quote",
+      },
+      Object {
+        "type": "new-line",
+      },
+      Object {
+        "indent": 0,
+        "raw": "r_one",
+        "type": "paragraph",
+        "value": "r_one",
       },
     ],
     "type": "quote",
@@ -1501,29 +1401,28 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> one
+    "raw": "> one
 > # two
 > three",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " one",
+        "indent": 0,
+        "raw": "one",
         "type": "paragraph",
-        "value": " one",
+        "value": "one",
       },
       Object {
-        "indent": 1,
+        "indent": 0,
         "level": 1,
-        "raw": " # two",
+        "raw": "# two",
         "type": "heading",
         "value": "two",
       },
       Object {
-        "indent": 1,
-        "raw": " three",
+        "indent": 0,
+        "raw": "three",
         "type": "paragraph",
-        "value": " three",
+        "value": "three",
       },
     ],
     "type": "quote",
@@ -1536,24 +1435,22 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> # one
+    "raw": "> # one
 > two
 > three",
     "tokens": Array [
       Object {
-        "indent": 1,
+        "indent": 0,
         "level": 1,
-        "raw": " # one",
+        "raw": "# one",
         "type": "heading",
         "value": "one",
       },
       Object {
-        "indent": 1,
-        "raw": " two
- three",
+        "indent": 0,
+        "raw": "two three",
         "type": "paragraph",
-        "value": " two three",
+        "value": "two three",
       },
     ],
     "type": "quote",
@@ -1566,16 +1463,14 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> one quote
+    "raw": "> one quote
 > two quote",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " one quote
- two quote",
+        "indent": 0,
+        "raw": "one quote two quote",
         "type": "paragraph",
-        "value": " one quote two quote",
+        "value": "one quote two quote",
       },
     ],
     "type": "quote",
@@ -1595,14 +1490,13 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> one quote",
+    "raw": "> one quote",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " one quote",
+        "indent": 0,
+        "raw": "one quote",
         "type": "paragraph",
-        "value": " one quote",
+        "value": "one quote",
       },
     ],
     "type": "quote",
@@ -1613,21 +1507,14 @@ Array [
   Object {
     "depth": 1,
     "indent": 0,
-    "raw": "
-> two quote
+    "raw": "> two quote
 three quote",
     "tokens": Array [
       Object {
-        "indent": 1,
-        "raw": " two quote",
-        "type": "paragraph",
-        "value": " two quote",
-      },
-      Object {
         "indent": 0,
-        "raw": "three quote",
+        "raw": "two quote three quote",
         "type": "paragraph",
-        "value": "three quote",
+        "value": "two quote three quote",
       },
     ],
     "type": "quote",

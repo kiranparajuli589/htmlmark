@@ -12,3 +12,6 @@ outputs
 
 # env
 .env
+
+# checks
+lib/check.js*
