@@ -483,6 +483,16 @@ describe("Parser", () => {
 			const lexerData = toHtml(lines)
 			expect(lexerData).toMatchSnapshot()
 		})
+		it("should not panic with angles inside", () => {
+			const lines = [
+				"Pre-formatted code blocks are used for writing about programming or " +
+				"markup source code. Rather than forming normal paragraphs, the lines " +
+				"of a code block are interpreted literally. Markdown wraps a code block " +
+				"in both `<pre>` and `<code>` tags."
+			]
+			const lexerData = toHtml(lines)
+			expect(lexerData).toMatchSnapshot()
+		})
 	})
 	describe("link", () => {
 		it("should match the consecutive occurrences", () => {

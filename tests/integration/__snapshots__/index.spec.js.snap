@@ -117,9 +117,9 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line -- a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
 <br>
-<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code><br /></code> tag.</p>
+<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <br>
-<p>When you <em>do</em> want to insert a <code><br /></code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
 <br>
 <h3>Headers</h3>
 <br>
@@ -129,14 +129,14 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <h3>Blockquotes</h3>
 <br>
-<p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 <br>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
@@ -144,7 +144,7 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
 <br><blockquote>
 <p>This is the first level of quoting.</p>
 <br><blockquote>
@@ -268,7 +268,7 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <li>  Another item in the same list.</li>
 </ul>
 <br>
-<p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
+<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
 <br>
 <ul>
 <li>  A list item with a blockquote:</li>
@@ -287,7 +287,7 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <h3>Code Blocks</h3>
 <br>
-<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code><pre></code> and <code><code></code> tags.</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br>
@@ -303,7 +303,7 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br>
-<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code><</code> and <code>></code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
 <p>    <div class=\\"footer\\"></p>
 <p>        &copy; 2004 Foo Corporation</p>
@@ -331,7 +331,7 @@ end tell</code></pre>
 <br>
 <h3>Emphasis</h3>
 <br>
-<p>Markdown treats asterisks (<code><em></code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code></em></code> or <code>_</code> will be wrapped with an HTML <code><em></code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code><strong></code> tag. E.g., this input:</p>
+<p>Markdown treats asterisks (<code>&lt;em&gt;</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>&lt;/em&gt;</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
 <br>
 <p><em>single asterisks</em></p>
 <br>
@@ -367,9 +367,9 @@ end tell</code></pre>
 <br>
 <p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line -- a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
 <br>
-<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code><br /></code> tag.</p>
+<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <br>
-<p>When you <em>do</em> want to insert a <code><br /></code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
 <br>
 <h3>Headers</h3>
 <br>
@@ -379,14 +379,14 @@ end tell</code></pre>
 <br>
 <h3>Blockquotes</h3>
 <br>
-<p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 <br>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
@@ -394,7 +394,7 @@ end tell</code></pre>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
 <br><blockquote>
 <p>This is the first level of quoting.</p>
 <br><blockquote>
@@ -518,7 +518,7 @@ end tell</code></pre>
 <li>  Another item in the same list.</li>
 </ul>
 <br>
-<p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
+<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
 <br>
 <ul>
 <li>  A list item with a blockquote:</li>
@@ -537,7 +537,7 @@ end tell</code></pre>
 <br>
 <h3>Code Blocks</h3>
 <br>
-<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code><pre></code> and <code><code></code> tags.</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br>
@@ -553,7 +553,7 @@ end tell</code></pre>
 <br>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br>
-<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code><</code> and <code>></code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
 <p>    <div class=\\"footer\\"></p>
 <p>        &copy; 2004 Foo Corporation</p>
@@ -581,7 +581,7 @@ end tell</code></pre>
 <br>
 <h3>Emphasis</h3>
 <br>
-<p>Markdown treats asterisks (<code><em></code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code></em></code> or <code>_</code> will be wrapped with an HTML <code><em></code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code><strong></code> tag. E.g., this input:</p>
+<p>Markdown treats asterisks (<code>&lt;em&gt;</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>&lt;/em&gt;</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
 <br>
 <p><em>single asterisks</em></p>
 <br>
@@ -617,9 +617,9 @@ end tell</code></pre>
 <br>
 <p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line -- a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
 <br>
-<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code><br /></code> tag.</p>
+<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <br>
-<p>When you <em>do</em> want to insert a <code><br /></code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
 <br>
 <h3>Headers</h3>
 <br>
@@ -629,14 +629,14 @@ end tell</code></pre>
 <br>
 <h3>Blockquotes</h3>
 <br>
-<p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 <br>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
@@ -644,7 +644,7 @@ end tell</code></pre>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
 <br><blockquote>
 <p>This is the first level of quoting.</p>
 <br><blockquote>
@@ -768,7 +768,7 @@ end tell</code></pre>
 <li>  Another item in the same list.</li>
 </ul>
 <br>
-<p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
+<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
 <br>
 <ul>
 <li>  A list item with a blockquote:</li>
@@ -787,7 +787,7 @@ end tell</code></pre>
 <br>
 <h3>Code Blocks</h3>
 <br>
-<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code><pre></code> and <code><code></code> tags.</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br>
@@ -803,7 +803,7 @@ end tell</code></pre>
 <br>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br>
-<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code><</code> and <code>></code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
 <p>    <div class=\\"footer\\"></p>
 <p>        &copy; 2004 Foo Corporation</p>
@@ -831,7 +831,7 @@ end tell</code></pre>
 <br>
 <h3>Emphasis</h3>
 <br>
-<p>Markdown treats asterisks (<code><em></code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code></em></code> or <code>_</code> will be wrapped with an HTML <code><em></code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code><strong></code> tag. E.g., this input:</p>
+<p>Markdown treats asterisks (<code>&lt;em&gt;</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>&lt;/em&gt;</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
 <br>
 <p><em>single asterisks</em></p>
 <br>
@@ -867,9 +867,9 @@ end tell</code></pre>
 <br>
 <p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line -- a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
 <br>
-<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code><br /></code> tag.</p>
+<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <br>
-<p>When you <em>do</em> want to insert a <code><br /></code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
 <br>
 <h3>Headers</h3>
 <br>
@@ -879,14 +879,14 @@ end tell</code></pre>
 <br>
 <h3>Blockquotes</h3>
 <br>
-<p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 <br>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
@@ -894,7 +894,7 @@ end tell</code></pre>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
 <br><blockquote>
 <p>This is the first level of quoting.</p>
 <br><blockquote>
@@ -1018,7 +1018,7 @@ end tell</code></pre>
 <li>  Another item in the same list.</li>
 </ul>
 <br>
-<p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
+<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
 <br>
 <ul>
 <li>  A list item with a blockquote:</li>
@@ -1037,7 +1037,7 @@ end tell</code></pre>
 <br>
 <h3>Code Blocks</h3>
 <br>
-<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code><pre></code> and <code><code></code> tags.</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br>
@@ -1053,7 +1053,7 @@ end tell</code></pre>
 <br>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br>
-<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code><</code> and <code>></code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
 <p>    <div class=\\"footer\\"></p>
 <p>        &copy; 2004 Foo Corporation</p>
@@ -1081,7 +1081,7 @@ end tell</code></pre>
 <br>
 <h3>Emphasis</h3>
 <br>
-<p>Markdown treats asterisks (<code><em></code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code></em></code> or <code>_</code> will be wrapped with an HTML <code><em></code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code><strong></code> tag. E.g., this input:</p>
+<p>Markdown treats asterisks (<code>&lt;em&gt;</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>&lt;/em&gt;</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
 <br>
 <p><em>single asterisks</em></p>
 <br>
@@ -1115,9 +1115,9 @@ end tell</code></pre>
 <br>
 <p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line -- a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
 <br>
-<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code><br /></code> tag.</p>
+<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <br>
-<p>When you <em>do</em> want to insert a <code><br /></code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
 <br>
 <h3>Headers</h3>
 <br>
@@ -1127,14 +1127,14 @@ end tell</code></pre>
 <br>
 <h3>Blockquotes</h3>
 <br>
-<p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 <br>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
@@ -1142,7 +1142,7 @@ end tell</code></pre>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
 <br><blockquote>
 <p>This is the first level of quoting.</p>
 <br><blockquote>
@@ -1266,7 +1266,7 @@ end tell</code></pre>
 <li>  Another item in the same list.</li>
 </ul>
 <br>
-<p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
+<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
 <br>
 <ul>
 <li>  A list item with a blockquote:</li>
@@ -1285,7 +1285,7 @@ end tell</code></pre>
 <br>
 <h3>Code Blocks</h3>
 <br>
-<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code><pre></code> and <code><code></code> tags.</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br>
@@ -1301,7 +1301,7 @@ end tell</code></pre>
 <br>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br>
-<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code><</code> and <code>></code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
 <p>    <div class=\\"footer\\"></p>
 <p>        &copy; 2004 Foo Corporation</p>
@@ -1329,7 +1329,7 @@ end tell</code></pre>
 <br>
 <h3>Emphasis</h3>
 <br>
-<p>Markdown treats asterisks (<code><em></code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code></em></code> or <code>_</code> will be wrapped with an HTML <code><em></code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code><strong></code> tag. E.g., this input:</p>
+<p>Markdown treats asterisks (<code>&lt;em&gt;</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>&lt;/em&gt;</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
 <br>
 <p><em>single asterisks</em></p>
 <br>
@@ -1363,9 +1363,9 @@ end tell</code></pre>
 <br>
 <p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line -- a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
 <br>
-<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code><br /></code> tag.</p>
+<p>The implication of the \\"one or more consecutive lines of text\\" rule is that Markdown supports \\"hard-wrapped\\" text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type's \\"Convert Line Breaks\\" option) which translate every line break character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <br>
-<p>When you <em>do</em> want to insert a <code><br /></code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line with two or more spaces, then type return.</p>
 <br>
 <h3>Headers</h3>
 <br>
@@ -1375,14 +1375,14 @@ end tell</code></pre>
 <br>
 <h3>Blockquotes</h3>
 <br>
-<p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 <br>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
 <p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
@@ -1390,7 +1390,7 @@ end tell</code></pre>
 <p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
-<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
 <br><blockquote>
 <p>This is the first level of quoting.</p>
 <br><blockquote>
@@ -1514,7 +1514,7 @@ end tell</code></pre>
 <li>  Another item in the same list.</li>
 </ul>
 <br>
-<p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
+<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
 <br>
 <ul>
 <li>  A list item with a blockquote:</li>
@@ -1533,7 +1533,7 @@ end tell</code></pre>
 <br>
 <h3>Code Blocks</h3>
 <br>
-<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code><pre></code> and <code><code></code> tags.</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br>
@@ -1549,7 +1549,7 @@ end tell</code></pre>
 <br>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br>
-<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code><</code> and <code>></code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
 <p>    <div class=\\"footer\\"></p>
 <p>        &copy; 2004 Foo Corporation</p>
@@ -1577,7 +1577,7 @@ end tell</code></pre>
 <br>
 <h3>Emphasis</h3>
 <br>
-<p>Markdown treats asterisks (<code><em></code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code></em></code> or <code>_</code> will be wrapped with an HTML <code><em></code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code><strong></code> tag. E.g., this input:</p>
+<p>Markdown treats asterisks (<code>&lt;em&gt;</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>&lt;/em&gt;</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
 <br>
 <p><em>single asterisks</em></p>
 <br>
