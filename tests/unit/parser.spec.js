@@ -5,8 +5,8 @@ import { commonTokensList } from "../fixtures/commTokens.js"
 
 function toHtml(lines) {
 	const lexer = new Lexer(lines)
-	const lexified = lexer.run()
-	const parser = new Parser(lexified)
+	const lex = lexer.run()
+	const parser = new Parser(lex)
 	return parser.run()
 }
 
@@ -35,6 +35,17 @@ describe("Parser", () => {
 				"\n",
 				"",
 				"some more plain text"
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
+	})
+	describe("comment", () => {
+		it("should add a comment", () => {
+			const lines = [
+				"one",
+				"<!-- comment -->",
+				"three"
 			]
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
@@ -118,16 +129,6 @@ describe("Parser", () => {
 		})
 	})
 	describe("quote", () => {
-		it("should find nested depth", () => {
-			const lines = [
-				"> one",
-				"> > two",
-				"> > > three",
-				"> > > > four"
-			]
-			const html = toHtml(lines)
-			expect(html).toMatchSnapshot()
-		})
 		it("should parse multiline quote with the same depth and indent", () => {
 			const lines = [
 				"> > > zero f",
@@ -146,14 +147,23 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
-		it.each([
-			"> quote 1",
-			"> > quote 2",
-			"> > > quote 3",
-			"> > > > quote 4",
-			"> > > > > quote 5"
-		])("should detect the quote depth", (quote) => {
-			const html = toHtml([quote])
+		it("should detect the circular quote", () => {
+			const lines = [
+				"> one",
+				"> > two",
+				"> > > three",
+				"> > > > four",
+				"> > > > > five",
+				"> >>>",
+				"> >>> four",
+				"> >>",
+				"> >> three",
+				"> >",
+				"> > two",
+				">",
+				"> one"
+			]
+			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it.each([
@@ -170,6 +180,14 @@ describe("Parser", () => {
 			"> > > > quote [link-title](link-url) with *two*"
 		])("should deep tokenize quote with multiple depth", (line) => {
 			const html = toHtml([line])
+			expect(html).toMatchSnapshot()
+		})
+		it("should parse the quote with list inside", () => {
+			const lines = [
+				"> - one",
+				"> - two"
+			]
+			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
 	})

@@ -179,31 +179,34 @@ describe("lexer", () => {
 		})
 	})
 	describe("quote", () => {
-		it("should find nested depth", () => {
+		it("should chill with big quote head", () => {
 			const lines = [
-				"> one",
+				"> > > three hit",
+				"> > two hit",
+				">",
+				">",
 				"> > two",
+				"> > # h-two",
 				"> > > three",
-				"> > > > four"
+				"> > > > four",
+				"some"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it("should lexify multiline quote with the same depth and indent", () => {
+		it("should lex multiline quote with the circular depth", () => {
 			const lines = [
-				"> > > zero f",
-				"> > one f",
-				">>>",
 				"> one",
-				"> # two",
-				"> > three",
-				"> > > four",
-				"> > > > d-five",
-				"> > # five",
-				"> > ## six",
-				"> > > > seven",
-				"simple para"
+				"> > two",
+				"> > > three",
+				"> > > > four",
+				"> > >",
+				">>> r_three",
+				"> >",
+				"> > r_two",
+				">",
+				"> r_one"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
@@ -225,7 +228,8 @@ describe("lexer", () => {
 			"  > quote `four` with ~~five~~",
 			"> quote [link-title](link-url) with *two*",
 			"> > quote **one** with *two*",
-			"  > > > quote `four` with ~~five~~",
+			"",
+			" > > > quote `four` with ~~five~~",
 			"> > > > quote [link-title](link-url) with *two*"
 		])("should deep tokenize quote '%s'", (line) => {
 			const lexer = new Lexer([line])
@@ -242,21 +246,87 @@ describe("lexer", () => {
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
 		})
-		it.each([
-			{ v: [
+		it("should split with new lines in between", () => {
+			const lines = [
 				"> one quote",
-				"> # two quote",
+				"",
+				"> two quote",
 				"three quote"
-			] },
-			{ v: [
+			]
+			const lexer = new Lexer(lines)
+			const tokenizedContent = lexer.run()
+			expect(tokenizedContent).toMatchSnapshot()
+		})
+		it("should split with heading in between", () => {
+			const lines = [
 				"> one quote",
 				"> two quote",
 				"# three quote"
-			] }
-		])("other tokens should break laziness", ({ v }) => {
-			const lexer = new Lexer(v)
+			]
+			const lexer = new Lexer(lines)
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
+		})
+		it("should leave separators", () => {
+			const lines = [
+				"> one",
+				"> # two",
+				">",
+				">",
+				">",
+				"> three"
+			]
+			const lexer = new Lexer(lines)
+			const tokenizedContent = lexer.run()
+			expect(tokenizedContent).toMatchSnapshot()
+		})
+		it.each([
+			{ lines: [
+				"> one",
+				"> # two",
+				"> three"
+			] },
+			{ lines: [
+				"> # one",
+				"> two",
+				"> three"
+			] }
+		])("should not be lazy with heading", ({ lines }) => {
+			const lexer = new Lexer(lines)
+			const tokenizedContent = lexer.run()
+			expect(tokenizedContent).toMatchSnapshot()
+		})
+		describe("list inside", () => {
+			it("should identify list inside the quote", () => {
+				const lines = [
+					"> - one",
+					"> - two"
+				]
+				const lexer = new Lexer(lines)
+				const tokenizedContent = lexer.run()
+				expect(tokenizedContent).toMatchSnapshot()
+			})
+			it("should identify list inside with single separator in between", () => {
+				const lines = [
+					"> - one",
+					">",
+					"> - two"
+				]
+				const lexer = new Lexer(lines)
+				const tokenizedContent = lexer.run()
+				expect(tokenizedContent).toMatchSnapshot()
+			})
+			it("should identify list inside with multiple separator in between", () => {
+				const lines = [
+					"> - one",
+					">",
+					">",
+					"> - two"
+				]
+				const lexer = new Lexer(lines)
+				const tokenizedContent = lexer.run()
+				expect(tokenizedContent).toMatchSnapshot()
+			})
 		})
 	})
 	describe("list", () => {

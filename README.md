@@ -35,7 +35,7 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
 4. **Quote:**
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
-    - Allows other _paragraph items_ inside content
+    - Allows other _paragraph items_ inside content (recursive lex and parsing)
     - Can be Lazy
     - Indentation: NOT IMPLEMENTED YET
 5. **Image:**
@@ -46,7 +46,7 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Indentation: NOT IMPLEMENTED YET
 6. **Comment:**
     - Lexer contains it
-    - Parser ignores it
+    - Parser also contains it
     - Example: `<!-- This is a comment -->`
 7. **Line:**
     - Defined as: `---`
