@@ -17,7 +17,12 @@ exports[`Parser code should match the consecutive occurrences 1`] = `
 
 exports[`Parser code should not be deep tokenized 1`] = `
 "
-<p><code>code with ~ gem and <strong>bold</strong> and <em>italics</em> and <a href='https://kiranparajuli.com.np'>link</a></code></p>"
+<p><code>code with ~ gem and &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italics&lt;/em&gt; and <a href='https://kiranparajuli.com.np'>link</a></code></p>"
+`;
+
+exports[`Parser code should not panic with angles inside 1`] = `
+"
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>"
 `;
 
 exports[`Parser codeblock should cope with multiple items 1`] = `
