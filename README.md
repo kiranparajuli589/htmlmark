@@ -35,7 +35,7 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
 4. **Quote:**
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
-    - Allows other _paragraph items_ inside content
+    - Allows other _paragraph items_ inside content (recursive lex and parsing)
     - Can be Lazy
     - Indentation: NOT IMPLEMENTED YET
 5. **Image:**

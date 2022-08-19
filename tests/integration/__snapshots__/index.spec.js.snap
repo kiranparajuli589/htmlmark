@@ -2,6 +2,7 @@
 
 exports[`To HTML should parse the markdown file content to html 1`] = `
 "
+<!-- https://regex101.com/r/C6SxZH/1-->
 <br>
 <h1>Heading One <code>CODE INSIDE</code></h1>
 <h2>Heading Two</h2>
@@ -12,39 +13,47 @@ exports[`To HTML should parse the markdown file content to html 1`] = `
 <br>
 <p>a paragraph of words <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href='https://kiranparajuli.com.np'>Kiran Parajuli</a> <s>strikes body</s> here some normal again at the last</p>
 <br><blockquote>
-<p> some quote with <u>Underline</u></p>
+<p>some quote with <u>Underline</u></p>
 </blockquote>
 <br>
 <ul>
-  <li>list item 1</li><li>list item 2</li>
+<li>list item 1</li>
+<li>list item 2</li>
 </ul>
 <ul>
-  <li>list item 3</li><li>list item 4</li>
+<li>list item 3</li>
+<li>list item 4</li>
 </ul>
 <ul>
-  <li>list item 5</li><li>list item 6</li>
+<li>list item 5</li>
+<li>list item 6</li>
 </ul>
 <ul>
-  <li><input type=\\"checkbox\\">checkbox empty</li><li><input type=\\"checkbox\\" checked>checkbox checked</li>
+<li><input type='checkbox'>checkbox empty</li>
+<li><input type='checkbox' checked>checkbox checked</li>
 </ul>
 <ul>
-  <li><input type=\\"checkbox\\">checkbox empty</li><li><input type=\\"checkbox\\" checked>checkbox checked</li>
+<li><input type='checkbox'>checkbox empty</li>
+<li><input type='checkbox' checked>checkbox checked</li>
 </ul>
 <ul>
-  <li>checkbox empty</li><li>checkbox checked</li>
+<li>checkbox empty</li>
+<li>checkbox checked</li>
 </ul>
 <ol>
-  <li>numbered list item 1</li><li>numbered list item 2</li>
+<li>numbered list item 1</li>
+<li>numbered list item 2</li>
 </ol>
 <ol>
-  <li><input type=\\"checkbox\\">numbered checkbox empty</li><li><input type=\\"checkbox\\" checked>numbered checkbox checked paragraph just below hmm, but with some fun :)</li>
+<li><input type='checkbox'>numbered checkbox empty</li>
+<li><input type='checkbox' checked>numbered checkbox checked paragraph just below hmm, but with some fun :)</li>
 </ol>
 <br><blockquote>
-<p> quote 1</p><blockquote>
-<p> nested quote 2 <a href='quote-link-url'>quote-link</a></p>
-</blockquote><blockquote><blockquote>
-<p> nested quote 3 with <em>italics</em> and <strong>bolds</strong></p>
-</blockquote></blockquote>
+<p>quote 1</p><blockquote>
+<p>nested quote 2 <a href='quote-link-url'>quote-link</a></p><blockquote>
+<p>nested quote 3 with <em>italics</em> and <strong>bolds</strong></p>
+</blockquote>
+</blockquote>
 </blockquote>
 <br>
 <pre><code class='language-js'>const a = 1;
@@ -122,41 +131,41 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. ></p>
-</blockquote><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<br>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
 <br><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
 <br><blockquote>
-<p> This is the first level of quoting. ></p>
-</blockquote><blockquote><blockquote>
-<p> This is nested blockquote. ></p>
-</blockquote></blockquote><blockquote>
-<p> Back to the first level.</p>
+<p>This is the first level of quoting.</p>
+<br><blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<br>
+<p>Back to the first level.</p>
 </blockquote>
 <br>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
 <br><blockquote>
 <h2>This is a header.</h2>
-</blockquote>
-<p>></p><blockquote>
+<br>
 <ol>
-  <li>  This is the first list item.</li><li>  This is the second list item.</li>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
 </ol>
-</blockquote>
-<p>></p><blockquote>
-<p> Here's some example code: ></p>
-</blockquote><blockquote>
-<p>     return shell_exec(\\"echo $input | $markdown_script\\");</p>
+<br>
+<p>Here's some example code:</p>
+<br>
+<p>return shell_exec(\\"echo $input | $markdown_script\\");</p>
 </blockquote>
 <br>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -168,25 +177,33 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>is equivalent to:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>and:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>Ordered lists use numbers followed by periods:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
@@ -194,13 +211,17 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <p>If you instead wrote the list in Markdown like this:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>or even:</p>
 <br>
 <ol>
-  <li>Bird</li><li>McHale</li><li>Parish</li>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
 </ol>
 <br>
 <p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
@@ -208,58 +229,58 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>But if you want to be lazy, you don't have to:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <br>
 <ol>
-  <li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
+<li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
 </ol>
 <br>
 <p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
 <br>
 <ol>
-  <li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ol>
 <br>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <br>
 <ul>
-  <li>  This is a list item with two paragraphs.</li>
+<li>  This is a list item with two paragraphs.</li>
 </ul>
 <br>
 <p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 <br>
 <ul>
-  <li>  Another item in the same list.</li>
+<li>  Another item in the same list.</li>
 </ul>
 <br>
 <p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
 <br>
 <ul>
-  <li>  A list item with a blockquote:</li>
+<li>  A list item with a blockquote:</li>
 </ul>
 <br><blockquote>
-<p> This is a blockquote inside a list item.</p>
+<p>This is a blockquote inside a list item.</p>
 </blockquote>
 <br>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <br>
 <ul>
-  <li>  A list item with a code block:</li>
+<li>  A list item with a code block:</li>
 </ul>
 <br>
 <p>        <code goes here></p>
@@ -360,41 +381,41 @@ end tell</code></pre>
 <br>
 <p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. ></p>
-</blockquote><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<br>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
 <br><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
 <br><blockquote>
-<p> This is the first level of quoting. ></p>
-</blockquote><blockquote><blockquote>
-<p> This is nested blockquote. ></p>
-</blockquote></blockquote><blockquote>
-<p> Back to the first level.</p>
+<p>This is the first level of quoting.</p>
+<br><blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<br>
+<p>Back to the first level.</p>
 </blockquote>
 <br>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
 <br><blockquote>
 <h2>This is a header.</h2>
-</blockquote>
-<p>></p><blockquote>
+<br>
 <ol>
-  <li>  This is the first list item.</li><li>  This is the second list item.</li>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
 </ol>
-</blockquote>
-<p>></p><blockquote>
-<p> Here's some example code: ></p>
-</blockquote><blockquote>
-<p>     return shell_exec(\\"echo $input | $markdown_script\\");</p>
+<br>
+<p>Here's some example code:</p>
+<br>
+<p>return shell_exec(\\"echo $input | $markdown_script\\");</p>
 </blockquote>
 <br>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -406,25 +427,33 @@ end tell</code></pre>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>is equivalent to:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>and:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>Ordered lists use numbers followed by periods:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
@@ -432,13 +461,17 @@ end tell</code></pre>
 <p>If you instead wrote the list in Markdown like this:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>or even:</p>
 <br>
 <ol>
-  <li>Bird</li><li>McHale</li><li>Parish</li>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
 </ol>
 <br>
 <p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
@@ -446,58 +479,58 @@ end tell</code></pre>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>But if you want to be lazy, you don't have to:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <br>
 <ol>
-  <li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
+<li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
 </ol>
 <br>
 <p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
 <br>
 <ol>
-  <li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ol>
 <br>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <br>
 <ul>
-  <li>  This is a list item with two paragraphs.</li>
+<li>  This is a list item with two paragraphs.</li>
 </ul>
 <br>
 <p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 <br>
 <ul>
-  <li>  Another item in the same list.</li>
+<li>  Another item in the same list.</li>
 </ul>
 <br>
 <p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
 <br>
 <ul>
-  <li>  A list item with a blockquote:</li>
+<li>  A list item with a blockquote:</li>
 </ul>
 <br><blockquote>
-<p> This is a blockquote inside a list item.</p>
+<p>This is a blockquote inside a list item.</p>
 </blockquote>
 <br>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <br>
 <ul>
-  <li>  A list item with a code block:</li>
+<li>  A list item with a code block:</li>
 </ul>
 <br>
 <p>        <code goes here></p>
@@ -598,41 +631,41 @@ end tell</code></pre>
 <br>
 <p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. ></p>
-</blockquote><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<br>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
 <br><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
 <br><blockquote>
-<p> This is the first level of quoting. ></p>
-</blockquote><blockquote><blockquote>
-<p> This is nested blockquote. ></p>
-</blockquote></blockquote><blockquote>
-<p> Back to the first level.</p>
+<p>This is the first level of quoting.</p>
+<br><blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<br>
+<p>Back to the first level.</p>
 </blockquote>
 <br>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
 <br><blockquote>
 <h2>This is a header.</h2>
-</blockquote>
-<p>></p><blockquote>
+<br>
 <ol>
-  <li>  This is the first list item.</li><li>  This is the second list item.</li>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
 </ol>
-</blockquote>
-<p>></p><blockquote>
-<p> Here's some example code: ></p>
-</blockquote><blockquote>
-<p>     return shell_exec(\\"echo $input | $markdown_script\\");</p>
+<br>
+<p>Here's some example code:</p>
+<br>
+<p>return shell_exec(\\"echo $input | $markdown_script\\");</p>
 </blockquote>
 <br>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -644,25 +677,33 @@ end tell</code></pre>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>is equivalent to:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>and:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>Ordered lists use numbers followed by periods:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
@@ -670,13 +711,17 @@ end tell</code></pre>
 <p>If you instead wrote the list in Markdown like this:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>or even:</p>
 <br>
 <ol>
-  <li>Bird</li><li>McHale</li><li>Parish</li>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
 </ol>
 <br>
 <p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
@@ -684,58 +729,58 @@ end tell</code></pre>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>But if you want to be lazy, you don't have to:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <br>
 <ol>
-  <li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
+<li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
 </ol>
 <br>
 <p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
 <br>
 <ol>
-  <li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ol>
 <br>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <br>
 <ul>
-  <li>  This is a list item with two paragraphs.</li>
+<li>  This is a list item with two paragraphs.</li>
 </ul>
 <br>
 <p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 <br>
 <ul>
-  <li>  Another item in the same list.</li>
+<li>  Another item in the same list.</li>
 </ul>
 <br>
 <p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
 <br>
 <ul>
-  <li>  A list item with a blockquote:</li>
+<li>  A list item with a blockquote:</li>
 </ul>
 <br><blockquote>
-<p> This is a blockquote inside a list item.</p>
+<p>This is a blockquote inside a list item.</p>
 </blockquote>
 <br>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <br>
 <ul>
-  <li>  A list item with a code block:</li>
+<li>  A list item with a code block:</li>
 </ul>
 <br>
 <p>        <code goes here></p>
@@ -836,41 +881,41 @@ end tell</code></pre>
 <br>
 <p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. ></p>
-</blockquote><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<br>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
 <br><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
 <br><blockquote>
-<p> This is the first level of quoting. ></p>
-</blockquote><blockquote><blockquote>
-<p> This is nested blockquote. ></p>
-</blockquote></blockquote><blockquote>
-<p> Back to the first level.</p>
+<p>This is the first level of quoting.</p>
+<br><blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<br>
+<p>Back to the first level.</p>
 </blockquote>
 <br>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
 <br><blockquote>
 <h2>This is a header.</h2>
-</blockquote>
-<p>></p><blockquote>
+<br>
 <ol>
-  <li>  This is the first list item.</li><li>  This is the second list item.</li>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
 </ol>
-</blockquote>
-<p>></p><blockquote>
-<p> Here's some example code: ></p>
-</blockquote><blockquote>
-<p>     return shell_exec(\\"echo $input | $markdown_script\\");</p>
+<br>
+<p>Here's some example code:</p>
+<br>
+<p>return shell_exec(\\"echo $input | $markdown_script\\");</p>
 </blockquote>
 <br>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -882,25 +927,33 @@ end tell</code></pre>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>is equivalent to:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>and:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>Ordered lists use numbers followed by periods:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
@@ -908,13 +961,17 @@ end tell</code></pre>
 <p>If you instead wrote the list in Markdown like this:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>or even:</p>
 <br>
 <ol>
-  <li>Bird</li><li>McHale</li><li>Parish</li>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
 </ol>
 <br>
 <p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
@@ -922,58 +979,58 @@ end tell</code></pre>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>But if you want to be lazy, you don't have to:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <br>
 <ol>
-  <li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
+<li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
 </ol>
 <br>
 <p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
 <br>
 <ol>
-  <li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ol>
 <br>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <br>
 <ul>
-  <li>  This is a list item with two paragraphs.</li>
+<li>  This is a list item with two paragraphs.</li>
 </ul>
 <br>
 <p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 <br>
 <ul>
-  <li>  Another item in the same list.</li>
+<li>  Another item in the same list.</li>
 </ul>
 <br>
 <p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
 <br>
 <ul>
-  <li>  A list item with a blockquote:</li>
+<li>  A list item with a blockquote:</li>
 </ul>
 <br><blockquote>
-<p> This is a blockquote inside a list item.</p>
+<p>This is a blockquote inside a list item.</p>
 </blockquote>
 <br>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <br>
 <ul>
-  <li>  A list item with a code block:</li>
+<li>  A list item with a code block:</li>
 </ul>
 <br>
 <p>        <code goes here></p>
@@ -1072,41 +1129,41 @@ end tell</code></pre>
 <br>
 <p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. ></p>
-</blockquote><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<br>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
 <br><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
 <br><blockquote>
-<p> This is the first level of quoting. ></p>
-</blockquote><blockquote><blockquote>
-<p> This is nested blockquote. ></p>
-</blockquote></blockquote><blockquote>
-<p> Back to the first level.</p>
+<p>This is the first level of quoting.</p>
+<br><blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<br>
+<p>Back to the first level.</p>
 </blockquote>
 <br>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
 <br><blockquote>
 <h2>This is a header.</h2>
-</blockquote>
-<p>></p><blockquote>
+<br>
 <ol>
-  <li>  This is the first list item.</li><li>  This is the second list item.</li>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
 </ol>
-</blockquote>
-<p>></p><blockquote>
-<p> Here's some example code: ></p>
-</blockquote><blockquote>
-<p>     return shell_exec(\\"echo $input | $markdown_script\\");</p>
+<br>
+<p>Here's some example code:</p>
+<br>
+<p>return shell_exec(\\"echo $input | $markdown_script\\");</p>
 </blockquote>
 <br>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -1118,25 +1175,33 @@ end tell</code></pre>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>is equivalent to:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>and:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>Ordered lists use numbers followed by periods:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
@@ -1144,13 +1209,17 @@ end tell</code></pre>
 <p>If you instead wrote the list in Markdown like this:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>or even:</p>
 <br>
 <ol>
-  <li>Bird</li><li>McHale</li><li>Parish</li>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
 </ol>
 <br>
 <p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
@@ -1158,58 +1227,58 @@ end tell</code></pre>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>But if you want to be lazy, you don't have to:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <br>
 <ol>
-  <li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
+<li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
 </ol>
 <br>
 <p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
 <br>
 <ol>
-  <li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ol>
 <br>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <br>
 <ul>
-  <li>  This is a list item with two paragraphs.</li>
+<li>  This is a list item with two paragraphs.</li>
 </ul>
 <br>
 <p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 <br>
 <ul>
-  <li>  Another item in the same list.</li>
+<li>  Another item in the same list.</li>
 </ul>
 <br>
 <p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
 <br>
 <ul>
-  <li>  A list item with a blockquote:</li>
+<li>  A list item with a blockquote:</li>
 </ul>
 <br><blockquote>
-<p> This is a blockquote inside a list item.</p>
+<p>This is a blockquote inside a list item.</p>
 </blockquote>
 <br>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <br>
 <ul>
-  <li>  A list item with a code block:</li>
+<li>  A list item with a code block:</li>
 </ul>
 <br>
 <p>        <code goes here></p>
@@ -1308,41 +1377,41 @@ end tell</code></pre>
 <br>
 <p>Markdown uses email-style <code>></code> characters for blockquoting. If you're familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>></code> before every line:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. ></p>
-</blockquote><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<br>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Markdown allows you to be lazy and only put the <code>></code> before the first line of a hard-wrapped paragraph:</p>
 <br><blockquote>
-<p> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
 </blockquote>
 <br><blockquote>
-<p> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
 </blockquote>
 <br>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>></code>:</p>
 <br><blockquote>
-<p> This is the first level of quoting. ></p>
-</blockquote><blockquote><blockquote>
-<p> This is nested blockquote. ></p>
-</blockquote></blockquote><blockquote>
-<p> Back to the first level.</p>
+<p>This is the first level of quoting.</p>
+<br><blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<br>
+<p>Back to the first level.</p>
 </blockquote>
 <br>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
 <br><blockquote>
 <h2>This is a header.</h2>
-</blockquote>
-<p>></p><blockquote>
+<br>
 <ol>
-  <li>  This is the first list item.</li><li>  This is the second list item.</li>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
 </ol>
-</blockquote>
-<p>></p><blockquote>
-<p> Here's some example code: ></p>
-</blockquote><blockquote>
-<p>     return shell_exec(\\"echo $input | $markdown_script\\");</p>
+<br>
+<p>Here's some example code:</p>
+<br>
+<p>return shell_exec(\\"echo $input | $markdown_script\\");</p>
 </blockquote>
 <br>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -1354,25 +1423,33 @@ end tell</code></pre>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>is equivalent to:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>and:</p>
 <br>
 <ul>
-  <li>  Red</li><li>  Green</li><li>  Blue</li>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
 </ul>
 <br>
 <p>Ordered lists use numbers followed by periods:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
@@ -1380,13 +1457,17 @@ end tell</code></pre>
 <p>If you instead wrote the list in Markdown like this:</p>
 <br>
 <ol>
-  <li> Bird</li><li> McHale</li><li> Parish</li>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
 </ol>
 <br>
 <p>or even:</p>
 <br>
 <ol>
-  <li>Bird</li><li>McHale</li><li>Parish</li>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
 </ol>
 <br>
 <p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
@@ -1394,58 +1475,58 @@ end tell</code></pre>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>But if you want to be lazy, you don't have to:</p>
 <br>
 <ul>
-  <li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</li>
 </ul>
 <ul>
-  <li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ul>
 <br>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <br>
 <ol>
-  <li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
+<li> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</li>
 </ol>
 <br>
 <p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
 <br>
 <ol>
-  <li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+<li> Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 </ol>
 <br>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <br>
 <ul>
-  <li>  This is a list item with two paragraphs.</li>
+<li>  This is a list item with two paragraphs.</li>
 </ul>
 <br>
 <p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 <br>
 <ul>
-  <li>  Another item in the same list.</li>
+<li>  Another item in the same list.</li>
 </ul>
 <br>
 <p>To put a blockquote within a list item, the blockquote's <code>></code> delimiters need to be indented:</p>
 <br>
 <ul>
-  <li>  A list item with a blockquote:</li>
+<li>  A list item with a blockquote:</li>
 </ul>
 <br><blockquote>
-<p> This is a blockquote inside a list item.</p>
+<p>This is a blockquote inside a list item.</p>
 </blockquote>
 <br>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <br>
 <ul>
-  <li>  A list item with a code block:</li>
+<li>  A list item with a code block:</li>
 </ul>
 <br>
 <p>        <code goes here></p>
