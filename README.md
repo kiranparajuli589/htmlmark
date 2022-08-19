@@ -46,7 +46,7 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Indentation: NOT IMPLEMENTED YET
 6. **Comment:**
     - Lexer contains it
-    - Parser ignores it
+    - Parser also contains it
     - Example: `<!-- This is a comment -->`
 7. **Line:**
     - Defined as: `---`
