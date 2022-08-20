@@ -114,6 +114,24 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it("should parse indent codeblock", () => {
+			const lines = [
+				"This is a normal paragraph:",
+				"",
+				"    This is a code block.",
+				"",
+				"Here is an example of AppleScript:",
+				"",
+				"    tell application \"Foo\"",
+				"    beep",
+				"    end tell",
+				"",
+				"A code block continues until it reaches a line that is not indented",
+				"(or the end of the article)."
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("common tokens", () => {
 		it.each(commonTokensList)("should parse the common tokens", (line) => {

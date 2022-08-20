@@ -16,6 +16,20 @@ exports[`Parser codeblock should cope with multiple items 1`] = `
 <p>some people are funny</p>"
 `;
 
+exports[`Parser codeblock should parse indent codeblock 1`] = `
+"<p>This is a normal paragraph:</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
+<br><p>Here is an example of AppleScript:</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+beep
+end tell</code></pre>
+
+<br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>"
+`;
+
 exports[`Parser codeblock should parse multiple consequetive codeblocks 1`] = `
 "
 <pre><code class='language-js'>const a = 1</code></pre>
@@ -94,7 +108,7 @@ exports[`Parser common tokens should parse the common tokens 7`] = `
 
 exports[`Parser common tokens should parse the common tokens 8`] = `
 "
-<img src=\\"image.png\\" alt=\\"alt text\\">"
+<img src='image.png' alt='alt text'>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 1`] = `
@@ -134,7 +148,7 @@ exports[`Parser common tokens should parse the common tokens with some space bef
 
 exports[`Parser common tokens should parse the common tokens with some space before 8`] = `
 "
-<img src=\\"image.png\\" alt=\\"alt text\\">"
+<img src='image.png' alt='alt text'>"
 `;
 
 exports[`Parser hr line should not allow multiple consecutive hr lines 1`] = `

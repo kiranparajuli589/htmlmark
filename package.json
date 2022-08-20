@@ -8,7 +8,7 @@
     "convert": "node index.js",
     "jest": "jest --silent ",
     "jest:nocov": "jest --no-coverage",
-    "jest:watch": "jest --watch --no-coverage tests/unit/parser.spec.js",
+    "jest:watch": "jest --watch --no-coverage",
     "lint": "eslint . --ext .js",
     "lint:fix": "pnpm lint --fix"
   },
