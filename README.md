@@ -22,7 +22,7 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
-    - Can be inside a backtick block like <pre>```</pre>
+    - Can be inside a backtick block like <code>```</code>
     - Or an indent of 4 can make the block a code
     - Indentation
 3. **List:**
