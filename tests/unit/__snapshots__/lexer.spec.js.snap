@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lexer codeblock should be set just with indentation bigger or equals to 4 at top 1`] = `
+Array [
+  Object {
+    "indent": 4,
+    "language": null,
+    "raw": "    one
+          two
+    three",
+    "type": "code-block",
+    "value": "one
+      two
+three",
+  },
+  Object {
+    "indent": 0,
+    "raw": "four",
+    "type": "paragraph",
+    "value": "four",
+  },
+]
+`;
+
 exports[`lexer codeblock should be set just with indentation bigger or equals to 4 below newline 1`] = `
 Array [
   Object {
@@ -568,18 +590,15 @@ three",
             "type": "new-line",
           },
           Object {
-            "indent": 0,
+            "indent": 4,
             "language": null,
-            "raw": "	 \`\`\`
-	 here
-	 four
-	 \`\`\`",
+            "raw": "	   \`\`\`
+	   here
+	   four
+	   \`\`\`",
             "type": "code-block",
             "value": "here
 four",
-          },
-          Object {
-            "type": "new-line",
           },
         ],
         "type": "list-item",
@@ -1130,9 +1149,6 @@ Array [
                 "type": "paragraph",
                 "value": "one",
               },
-              Object {
-                "type": "new-line",
-              },
             ],
             "type": "list-item",
           },
@@ -1184,9 +1200,6 @@ Array [
                 "raw": "one",
                 "type": "paragraph",
                 "value": "one",
-              },
-              Object {
-                "type": "new-line",
               },
             ],
             "type": "list-item",

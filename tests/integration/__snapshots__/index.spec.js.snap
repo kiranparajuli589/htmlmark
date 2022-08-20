@@ -43,7 +43,8 @@ exports[`To HTML should parse the markdown file content to html 1`] = `
 <li><p>numbered list item 1</p></li>
 <li><p>numbered list item 2</p></li>
 <li><p>numbered checkbox empty</p></li>
-<li><p>numbered checkbox checked paragraph just below hmm, but with some fun :)</p>
+<li><p>numbered checkbox checked paragraph just below hmm, but with some fun :)</p></li>
+</ol>
 <br>
 <blockquote><p>quote 1</p>
 <blockquote><p>nested quote 2 <a href='quote-link-url'>quote-link</a></p>
@@ -85,8 +86,7 @@ if (c === 2) {
 </table><p>some random text again just below table | abc | def | |---|---|</p>
 <br><p>text text text <strong>bold <em>with</em> <code>gems</code> <a href='treasure-chest'>ruby</a> <s>please</s></strong> text text text text text text <em>italics <code>with</code> <a href='ruby'>gems</a> <s>please</s></em> text text text text text text <s>strikes <em>with</em> <code>gems</code> <strong>ruby</strong> <a href='no-sparkle'>gold</a></s> text text text text <u>text <strong>text</strong> <code>text</code> <em>text</em> <a href='xt'>te</a> text</u> text</p>
 <br><p><a href='ruby'><em>bold</em> and <code>gem</code>ss</a> and some text</p>
-<br></li>
-</ol>"
+<br>"
 `;
 
 exports[`To HTML should parse the markdown file content to html 2`] = `
@@ -142,10 +142,12 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <ol>
 <li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p>
-<br><p>Here's some example code:</p>
-<br><p>return shell_exec(\\"echo $input | $markdown_script\\");</p></li>
+<li><p>  This is the second list item.</p></li>
 </ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <br>
@@ -156,87 +158,106 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>is equivalent to:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>and:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
-<br><p>Ordered lists use numbers followed by periods:</p>
-<br></li>
+<li><p>  Blue</p></li>
 </ul>
+<br><p>Ordered lists use numbers followed by periods:</p>
+<br>
 <ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <br><p>If you instead wrote the list in Markdown like this:</p>
-<br></li>
+<br>
+<ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>or even:</p>
-<br></li>
+<br>
+<ol>
 <li><p>Bird</p></li>
 <li><p>McHale</p></li>
-<li><p>Parish</p>
+<li><p>Parish</p></li>
+</ol>
 <br><p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
 <br><p>To make lists look nice, you can wrap items with hanging indents:</p>
-<br></li>
-</ol>
+<br>
 <ul>
 <li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>But if you want to be lazy, you don't have to:</p>
-<br></li>
-<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<br></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ul>
+<br><p>But if you want to be lazy, you don't have to:</p>
+<br>
+<ul>
+<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
+</ul>
+<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<br>
 <ol>
 <li><p> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
-<br></li>
-<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
-<br></li>
+<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p></li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ol>
+<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
+<br>
 <ul>
 <li><p>  This is a list item with two paragraphs.</p>
-<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-<br></li>
-<li><p>  Another item in the same list.</p>
+<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>  Another item in the same list.</p></li>
+</ul>
 <br><p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a blockquote:</p>
 <br>
 <blockquote><p>This is a blockquote inside a list item.</p>
-</blockquote>
+</blockquote></li>
+</ul>
 <br><p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p>
+<br><p>        <code goes here></p></li>
+</ul>
 <br>
 <h3>Code Blocks</h3>
 <br><p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br><p>This is a normal paragraph:</p>
-<br><p>    This is a code block.</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
 <br><p>Here is an example of AppleScript:</p>
-<br><p>    tell application \\"Foo\\" beep end tell</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+    beep
+end tell</code></pre>
+
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<br><p>    <div class=\\"footer\\"> &copy; 2004 Foo Corporation </div></p>
+<br>
+<pre><code><div class=\\"footer\\">
+    &copy; 2004 Foo Corporation
+</div></code></pre>
+
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
 <pre><code>tell application \\"Foo\\"
@@ -314,100 +335,122 @@ end tell</code></pre>
 <br>
 <ol>
 <li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p>
-<br><p>Here's some example code:</p>
-<br><p>return shell_exec(\\"echo $input | $markdown_script\\");</p></li>
+<li><p>  This is the second list item.</p></li>
 </ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <br>
 <h3>Lists</h3>
 <br><p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <br><p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>is equivalent to:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>and:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
-<br><p>Ordered lists use numbers followed by periods:</p>
-<br></li>
+<li><p>  Blue</p></li>
 </ul>
+<br><p>Ordered lists use numbers followed by periods:</p>
+<br>
 <ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <br><p>If you instead wrote the list in Markdown like this:</p>
-<br></li>
+<br>
+<ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>or even:</p>
-<br></li>
+<br>
+<ol>
 <li><p>Bird</p></li>
 <li><p>McHale</p></li>
-<li><p>Parish</p>
+<li><p>Parish</p></li>
+</ol>
 <br><p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
 <br><p>To make lists look nice, you can wrap items with hanging indents:</p>
-<br></li>
-</ol>
+<br>
 <ul>
 <li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>But if you want to be lazy, you don't have to:</p>
-<br></li>
-<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<br></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ul>
+<br><p>But if you want to be lazy, you don't have to:</p>
+<br>
+<ul>
+<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
+</ul>
+<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<br>
 <ol>
 <li><p> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
-<br></li>
-<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
-<br></li>
+<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p></li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ol>
+<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
+<br>
 <ul>
 <li><p>  This is a list item with two paragraphs.</p>
-<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-<br></li>
-<li><p>  Another item in the same list.</p>
+<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>  Another item in the same list.</p></li>
+</ul>
 <br><p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a blockquote:</p>
 <br>
 <blockquote><p>This is a blockquote inside a list item.</p>
-</blockquote>
+</blockquote></li>
+</ul>
 <br><p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p>
+<br><p>        <code goes here></p></li>
+</ul>
 <br>
 <h3>Code Blocks</h3>
 <br><p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br><p>This is a normal paragraph:</p>
-<br><p>    This is a code block.</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
 <br><p>Here is an example of AppleScript:</p>
-<br><p>    tell application \\"Foo\\" beep end tell</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+    beep
+end tell</code></pre>
+
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<br><p>    <div class=\\"footer\\"> &copy; 2004 Foo Corporation </div></p>
+<br>
+<pre><code><div class=\\"footer\\">
+    &copy; 2004 Foo Corporation
+</div></code></pre>
+
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
 <pre><code>tell application \\"Foo\\"
@@ -485,100 +528,122 @@ end tell</code></pre>
 <br>
 <ol>
 <li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p>
-<br><p>Here's some example code:</p>
-<br><p>return shell_exec(\\"echo $input | $markdown_script\\");</p></li>
+<li><p>  This is the second list item.</p></li>
 </ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <br>
 <h3>Lists</h3>
 <br><p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <br><p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>is equivalent to:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>and:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
-<br><p>Ordered lists use numbers followed by periods:</p>
-<br></li>
+<li><p>  Blue</p></li>
 </ul>
+<br><p>Ordered lists use numbers followed by periods:</p>
+<br>
 <ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <br><p>If you instead wrote the list in Markdown like this:</p>
-<br></li>
+<br>
+<ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>or even:</p>
-<br></li>
+<br>
+<ol>
 <li><p>Bird</p></li>
 <li><p>McHale</p></li>
-<li><p>Parish</p>
+<li><p>Parish</p></li>
+</ol>
 <br><p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
 <br><p>To make lists look nice, you can wrap items with hanging indents:</p>
-<br></li>
-</ol>
+<br>
 <ul>
 <li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>But if you want to be lazy, you don't have to:</p>
-<br></li>
-<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<br></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ul>
+<br><p>But if you want to be lazy, you don't have to:</p>
+<br>
+<ul>
+<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
+</ul>
+<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<br>
 <ol>
 <li><p> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
-<br></li>
-<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
-<br></li>
+<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p></li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ol>
+<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
+<br>
 <ul>
 <li><p>  This is a list item with two paragraphs.</p>
-<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-<br></li>
-<li><p>  Another item in the same list.</p>
+<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>  Another item in the same list.</p></li>
+</ul>
 <br><p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a blockquote:</p>
 <br>
 <blockquote><p>This is a blockquote inside a list item.</p>
-</blockquote>
+</blockquote></li>
+</ul>
 <br><p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p>
+<br><p>        <code goes here></p></li>
+</ul>
 <br>
 <h3>Code Blocks</h3>
 <br><p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br><p>This is a normal paragraph:</p>
-<br><p>    This is a code block.</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
 <br><p>Here is an example of AppleScript:</p>
-<br><p>    tell application \\"Foo\\" beep end tell</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+    beep
+end tell</code></pre>
+
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<br><p>    <div class=\\"footer\\"> &copy; 2004 Foo Corporation </div></p>
+<br>
+<pre><code><div class=\\"footer\\">
+    &copy; 2004 Foo Corporation
+</div></code></pre>
+
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
 <pre><code>tell application \\"Foo\\"
@@ -656,100 +721,122 @@ end tell</code></pre>
 <br>
 <ol>
 <li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p>
-<br><p>Here's some example code:</p>
-<br><p>return shell_exec(\\"echo $input | $markdown_script\\");</p></li>
+<li><p>  This is the second list item.</p></li>
 </ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <br>
 <h3>Lists</h3>
 <br><p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <br><p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>is equivalent to:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>and:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
-<br><p>Ordered lists use numbers followed by periods:</p>
-<br></li>
+<li><p>  Blue</p></li>
 </ul>
+<br><p>Ordered lists use numbers followed by periods:</p>
+<br>
 <ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <br><p>If you instead wrote the list in Markdown like this:</p>
-<br></li>
+<br>
+<ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>or even:</p>
-<br></li>
+<br>
+<ol>
 <li><p>Bird</p></li>
 <li><p>McHale</p></li>
-<li><p>Parish</p>
+<li><p>Parish</p></li>
+</ol>
 <br><p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
 <br><p>To make lists look nice, you can wrap items with hanging indents:</p>
-<br></li>
-</ol>
+<br>
 <ul>
 <li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>But if you want to be lazy, you don't have to:</p>
-<br></li>
-<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<br></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ul>
+<br><p>But if you want to be lazy, you don't have to:</p>
+<br>
+<ul>
+<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
+</ul>
+<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<br>
 <ol>
 <li><p> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
-<br></li>
-<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
-<br></li>
+<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p></li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ol>
+<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
+<br>
 <ul>
 <li><p>  This is a list item with two paragraphs.</p>
-<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-<br></li>
-<li><p>  Another item in the same list.</p>
+<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>  Another item in the same list.</p></li>
+</ul>
 <br><p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a blockquote:</p>
 <br>
 <blockquote><p>This is a blockquote inside a list item.</p>
-</blockquote>
+</blockquote></li>
+</ul>
 <br><p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p>
+<br><p>        <code goes here></p></li>
+</ul>
 <br>
 <h3>Code Blocks</h3>
 <br><p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br><p>This is a normal paragraph:</p>
-<br><p>    This is a code block.</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
 <br><p>Here is an example of AppleScript:</p>
-<br><p>    tell application \\"Foo\\" beep end tell</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+    beep
+end tell</code></pre>
+
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<br><p>    <div class=\\"footer\\"> &copy; 2004 Foo Corporation </div></p>
+<br>
+<pre><code><div class=\\"footer\\">
+    &copy; 2004 Foo Corporation
+</div></code></pre>
+
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
 <pre><code>tell application \\"Foo\\"
@@ -825,100 +912,122 @@ end tell</code></pre>
 <br>
 <ol>
 <li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p>
-<br><p>Here's some example code:</p>
-<br><p>return shell_exec(\\"echo $input | $markdown_script\\");</p></li>
+<li><p>  This is the second list item.</p></li>
 </ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <br>
 <h3>Lists</h3>
 <br><p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <br><p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>is equivalent to:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>and:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
-<br><p>Ordered lists use numbers followed by periods:</p>
-<br></li>
+<li><p>  Blue</p></li>
 </ul>
+<br><p>Ordered lists use numbers followed by periods:</p>
+<br>
 <ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <br><p>If you instead wrote the list in Markdown like this:</p>
-<br></li>
+<br>
+<ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>or even:</p>
-<br></li>
+<br>
+<ol>
 <li><p>Bird</p></li>
 <li><p>McHale</p></li>
-<li><p>Parish</p>
+<li><p>Parish</p></li>
+</ol>
 <br><p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
 <br><p>To make lists look nice, you can wrap items with hanging indents:</p>
-<br></li>
-</ol>
+<br>
 <ul>
 <li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>But if you want to be lazy, you don't have to:</p>
-<br></li>
-<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<br></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ul>
+<br><p>But if you want to be lazy, you don't have to:</p>
+<br>
+<ul>
+<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
+</ul>
+<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<br>
 <ol>
 <li><p> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
-<br></li>
-<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
-<br></li>
+<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p></li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ol>
+<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
+<br>
 <ul>
 <li><p>  This is a list item with two paragraphs.</p>
-<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-<br></li>
-<li><p>  Another item in the same list.</p>
+<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>  Another item in the same list.</p></li>
+</ul>
 <br><p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a blockquote:</p>
 <br>
 <blockquote><p>This is a blockquote inside a list item.</p>
-</blockquote>
+</blockquote></li>
+</ul>
 <br><p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p>
+<br><p>        <code goes here></p></li>
+</ul>
 <br>
 <h3>Code Blocks</h3>
 <br><p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br><p>This is a normal paragraph:</p>
-<br><p>    This is a code block.</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
 <br><p>Here is an example of AppleScript:</p>
-<br><p>    tell application \\"Foo\\" beep end tell</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+    beep
+end tell</code></pre>
+
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<br><p>    <div class=\\"footer\\"> &copy; 2004 Foo Corporation </div></p>
+<br>
+<pre><code><div class=\\"footer\\">
+    &copy; 2004 Foo Corporation
+</div></code></pre>
+
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
 <pre><code>tell application \\"Foo\\"
@@ -994,100 +1103,122 @@ end tell</code></pre>
 <br>
 <ol>
 <li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p>
-<br><p>Here's some example code:</p>
-<br><p>return shell_exec(\\"echo $input | $markdown_script\\");</p></li>
+<li><p>  This is the second list item.</p></li>
 </ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <br>
 <h3>Lists</h3>
 <br><p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <br><p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>is equivalent to:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
+<li><p>  Blue</p></li>
+</ul>
 <br><p>and:</p>
-<br></li>
-</ul>
+<br>
 <ul>
 <li><p>  Red</p></li>
 <li><p>  Green</p></li>
-<li><p>  Blue</p>
-<br><p>Ordered lists use numbers followed by periods:</p>
-<br></li>
+<li><p>  Blue</p></li>
 </ul>
+<br><p>Ordered lists use numbers followed by periods:</p>
+<br>
 <ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>It's important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <br><p>If you instead wrote the list in Markdown like this:</p>
-<br></li>
+<br>
+<ol>
 <li><p> Bird</p></li>
 <li><p> McHale</p></li>
-<li><p> Parish</p>
+<li><p> Parish</p></li>
+</ol>
 <br><p>or even:</p>
-<br></li>
+<br>
+<ol>
 <li><p>Bird</p></li>
 <li><p>McHale</p></li>
-<li><p>Parish</p>
+<li><p>Parish</p></li>
+</ol>
 <br><p>you'd get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don't have to.</p>
 <br><p>To make lists look nice, you can wrap items with hanging indents:</p>
-<br></li>
-</ol>
+<br>
 <ul>
 <li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>But if you want to be lazy, you don't have to:</p>
-<br></li>
-<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
-<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<br></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ul>
+<br><p>But if you want to be lazy, you don't have to:</p>
+<br>
+<ul>
+<li><p>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></li>
+<li><p>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
+</ul>
+<br><p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<br>
 <ol>
 <li><p> This is a list item with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p>
-<br></li>
-<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
-<br></li>
+<br><p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</p></li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
 </ol>
+<br><p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
+<br>
 <ul>
 <li><p>  This is a list item with two paragraphs.</p>
-<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-<br></li>
-<li><p>  Another item in the same list.</p>
+<br><p>    This is the second paragraph in the list item. You're only required to indent the first line. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>  Another item in the same list.</p></li>
+</ul>
 <br><p>To put a blockquote within a list item, the blockquote's <code>&gt;</code> delimiters need to be indented:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a blockquote:</p>
 <br>
 <blockquote><p>This is a blockquote inside a list item.</p>
-</blockquote>
+</blockquote></li>
+</ul>
 <br><p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<br></li>
+<br>
+<ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p>
+<br><p>        <code goes here></p></li>
+</ul>
 <br>
 <h3>Code Blocks</h3>
 <br><p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <br><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <br><p>This is a normal paragraph:</p>
-<br><p>    This is a code block.</p>
+<br>
+<pre><code>This is a code block.</code></pre>
+
 <br><p>Here is an example of AppleScript:</p>
-<br><p>    tell application \\"Foo\\" beep end tell</p>
+<br>
+<pre><code>tell application \\"Foo\\"
+    beep
+end tell</code></pre>
+
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<br><p>    <div class=\\"footer\\"> &copy; 2004 Foo Corporation </div></p>
+<br>
+<pre><code><div class=\\"footer\\">
+    &copy; 2004 Foo Corporation
+</div></code></pre>
+
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
 <pre><code>tell application \\"Foo\\"
@@ -1114,6 +1245,5 @@ end tell</code></pre>
 <h3>Code</h3>
 <br><p>To indicate a span of code, wrap it with backtick quotes (<code>\` </code> \`\`). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <br><p>Use the <code>printf()</code> function.</p>
-<br></li>
-</ul>"
+<br>"
 `;

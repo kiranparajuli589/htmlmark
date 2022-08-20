@@ -208,6 +208,20 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it("should find the list and codeblock inside", () => {
+			const lines = [
+				"> ## This is a header.",
+				">",
+				"> 1.   This is the first list item.",
+				"> 2.   This is the second list item.",
+				">",
+				"> Here's some example code:",
+				">",
+				">     return shell_exec(\"echo $input | $markdown_script\");"
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("list", () => {
 		it("should tokenize a valid ordered list", () => {

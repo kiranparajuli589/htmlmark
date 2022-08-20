@@ -325,6 +325,22 @@ exports[`Parser quote should detect the circular quote 1`] = `
 </blockquote>"
 `;
 
+exports[`Parser quote should find the list and codeblock inside 1`] = `
+"
+<blockquote>
+<h2>This is a header.</h2>
+<br>
+<ol>
+<li><p>  This is the first list item.</p></li>
+<li><p>  This is the second list item.</p></li>
+</ol>
+<br><p>Here's some example code:</p>
+<br>
+<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+
+</blockquote>"
+`;
+
 exports[`Parser quote should parse multiline quote with the same depth and indent 1`] = `
 "
 <blockquote>

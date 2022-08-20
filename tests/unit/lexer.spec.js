@@ -173,7 +173,7 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it.only("should be set just with indentation bigger or equals to 4 below newline", () => {
+		it("should be set just with indentation bigger or equals to 4 below newline", () => {
 			const lines = [
 				"zero one two",
 				"",
@@ -186,7 +186,7 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it.only("should be set just with indentation bigger or equals to 4 but consecutive with other tokens", () => {
+		it("should be set just with indentation bigger or equals to 4 but consecutive with other tokens", () => {
 			const lines = [
 				"zero one two",
 				"    one",
@@ -450,10 +450,10 @@ describe("lexer", () => {
 				"            two",
 				"three",
 				"",
-				"	 ```",
-				"	 here",
-				"	 four",
-				"	 ```",
+				"	   ```",
+				"	   here",
+				"	   four",
+				"	   ```",
 				"",
 				"- two",
 				"- three"
