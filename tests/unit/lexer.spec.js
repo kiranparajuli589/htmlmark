@@ -74,7 +74,7 @@ describe("lexer", () => {
 			const lines = [
 				"```js",
 				"const a = 1",
-				"const b = 2",
+				"  const b = 2",
 				"",
 				"const c = 3",
 				"```"
@@ -110,9 +110,9 @@ describe("lexer", () => {
 		it("should set incomplete codeblock as a code block", () => {
 			const lines = [
 				"some line",
-				"  ```js",
-				"  const a = 1",
-				"  const b = 2",
+				"    ```js",
+				"    const a = 1",
+				"    const b = 2",
 				"here again" // broken indentation
 			]
 			const lexer = new Lexer(lines)
@@ -143,11 +143,11 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it("should be broken with wrong indent", () => {
+		it("should not be broken with acceptable wrong indent", () => {
 			const lines = [
-				"      ```",
-				"  abcd",
-				"      ```"
+				"   ```",
+				"abcd",
+				"   ```"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
@@ -162,6 +162,17 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
+		it("should be set just with indentation bigger or equals to 4", () => {
+			const lines = [
+				"    one",
+				"          two",
+				"    three",
+				"four"
+			]
+			const lexer = new Lexer(lines)
+			const tokens = lexer.run()
+			expect(tokens).toMatchSnapshot()
+		})
 	})
 	describe("common tokens", () => {
 		it.each(commonTokensList)("should parse the common tokens: '%s'", (line) => {
@@ -170,12 +181,12 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it.each(commonTokensList)("should parse the common tokens with some space before", (line) => {
-			const indent = "  "
+		it.each(commonTokensList)("should parse the common tokens with indentation", (line) => {
+			const indent = " ".repeat(4)
 			const lines = [indent + line]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
-			expect(tokens[0].indent).toBe(2)
+			expect(tokens[0].indent).toBe(4)
 		})
 	})
 	describe("quote", () => {
@@ -350,7 +361,7 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
-		it("should detect the list indent", () => {
+		it("should manage the list indent", () => {
 			const lines = [
 				"  - item **1**",
 				"  - item [link](link-url)",
@@ -358,15 +369,28 @@ describe("lexer", () => {
 			]
 			const lexer = new Lexer(lines)
 			const tokenizedContent = lexer.run()
-			expect(tokenizedContent[0].indent).toEqual(2)
+			expect(tokenizedContent[0].indent).toEqual(0)
 		})
-		it("indent should break the list", () => {
+		it("less than 4 indent should not break the list", () => {
 			const lines = [
 				"  - item **1**",
 				"  - item [link](link-url)",
 				"- item 3 `code item`",
 				"- item 4"
 			]
+			const lexer = new Lexer(lines)
+			const tokenizedContent = lexer.run()
+			expect(tokenizedContent).toMatchSnapshot()
+		})
+		it("should tokenize the nested list", () => {
+			const lines = [
+				"- item **1**",
+				"- item [link](link-url)",
+				"    - item 3 `code item`",
+				"        - item 4",
+				"    - item 5 ~~strike~~"
+			]
+
 			const lexer = new Lexer(lines)
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
@@ -390,6 +414,24 @@ describe("lexer", () => {
 			const lines = [
 				"- [x] list *item* one",
 				"omg this is merged with the above line"
+			]
+			const lexer = new Lexer(lines)
+			const tokens = lexer.run()
+			expect(tokens).toMatchSnapshot()
+		})
+		it("should allow lazy unless there is two line separator", () => {
+			const lines = [
+				"- one",
+				"            two",
+				"three",
+				"",
+				"	 ```",
+				"	 here",
+				"	 four",
+				"	 ```",
+				"",
+				"- two",
+				"- three"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
@@ -486,7 +528,7 @@ describe("lexer", () => {
 			it("different indent header -> separator", () => {
 				const lexer = new Lexer([
 					"| column 1 | column 2 |",
-					"  |---|---|",
+					"    |---|---|",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(lexer.run()).toMatchSnapshot()
@@ -494,8 +536,8 @@ describe("lexer", () => {
 
 			it("different indent header, separator -> body row", () => {
 				const lexer = new Lexer([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
+					"    | column 1 | column 2 |",
+					"    |---|---|",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(lexer.run()).toMatchSnapshot()
@@ -512,21 +554,21 @@ describe("lexer", () => {
 
 			it("indent should break the table 1", () => {
 				const lexer = new Lexer([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
-					"  | row 1 c1 | row 1 c2 |",
-					"| row 2 c1 | row 2 c2 |"
+					"| column 1 | column 2 |",
+					"|---|---|",
+					"| row 1 c1 | row 1 c2 |",
+					"    | row 2 c1 | row 2 c2 |"
 				])
 				expect(lexer.run()).toMatchSnapshot()
 			})
 			it("indent should break the table 2", () => {
 				const lexer = new Lexer([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
-					"  | row 1 c1 | row 1 c2 |",
 					"| column 1 | column 2 |",
 					"|---|---|",
-					"| row 1 c1 | row 1 c2 |"
+					"| row 1 c1 | row 1 c2 |",
+					"    | column 1 | column 2 |",
+					"    |---|---|",
+					"    | row 1 c1 | row 1 c2 |"
 				])
 				expect(lexer.run()).toMatchSnapshot()
 			})
@@ -604,17 +646,6 @@ describe("lexer", () => {
 			const lines = [
 				"  abc",
 				"  def"
-			]
-			const lexer = new Lexer(lines)
-			const lexerData = lexer.run()
-			expect(lexerData).toMatchSnapshot()
-		})
-		it("should be separated with different indent", () => {
-			const lines = [
-				"  abc",
-				"  def",
-				"    ghi",
-				"    jkl"
 			]
 			const lexer = new Lexer(lines)
 			const lexerData = lexer.run()
