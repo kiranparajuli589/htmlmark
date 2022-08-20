@@ -221,10 +221,11 @@ describe("Parser", () => {
 		})
 		it("indent should break the list", () => {
 			const lines = [
-				"  - item **1**",
-				"  - item [link](link-url)",
-				"- item 3 `code item`",
-				"- item 4"
+				"- item **1**",
+				"- item [link](link-url)",
+				"    - item 3 `code item`",
+				"        - item 4",
+				"    - item 3 `code item`"
 			]
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
@@ -245,9 +246,13 @@ describe("Parser", () => {
 		})
 	})
 	describe("hr line", () => {
-		it("should parse the hr line", () => {
+		it.each([
+			"---",
+			"--",
+			"-----"
+		])("should parse the hr line", (line) => {
 			const lines = [
-				"---"
+				line
 			]
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
@@ -279,7 +284,7 @@ describe("Parser", () => {
 			it("false separator", () => {
 				const html = toHtml([
 					"| column 1 | column 2 |",
-					"| --- | --- |",
+					"| - | - |",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
@@ -326,7 +331,7 @@ describe("Parser", () => {
 			it("different indent header -> separator", () => {
 				const html = toHtml([
 					"| column 1 | column 2 |",
-					"  |---|---|",
+					"    |---|---|",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
@@ -334,8 +339,8 @@ describe("Parser", () => {
 
 			it("different indent header, separator -> body row", () => {
 				const html = toHtml([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
+					"    | column 1 | column 2 |",
+					"    |---|---|",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
@@ -350,7 +355,7 @@ describe("Parser", () => {
 				expect(html).toMatchSnapshot()
 			})
 
-			it("indent should break the table 1", () => {
+			it("acceptable indent should not break the table 1", () => {
 				const html = toHtml([
 					"  | column 1 | column 2 |",
 					"  |---|---|",
@@ -361,12 +366,12 @@ describe("Parser", () => {
 			})
 			it("indent should break the table 2", () => {
 				const html = toHtml([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
-					"  | row 1 c1 | row 1 c2 |",
 					"| column 1 | column 2 |",
 					"|---|---|",
-					"| row 1 c1 | row 1 c2 |"
+					"| row 1 c1 | row 1 c2 |",
+					"    | column 1 | column 2 |",
+					"    |---|---|",
+					"    | row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
 			})
