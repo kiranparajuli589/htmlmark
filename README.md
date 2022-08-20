@@ -22,22 +22,23 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
-    - Must have equal indent for starting and closing backtick group (<code>```</code>)
-    - Indentation: NOT IMPLEMENTED YET
+    - Can be inside a backtick block like <pre>```</pre>
+    - Or an indent of 4 can make the block a code
+    - Indentation
 3. **List:**
     - Ordered: `{any digit}. Item 1`
     - Unordered: `-|+|* Item 1`
     - Checklist: `-|+|*|{digit}. [ ] Item 1` (Can be _ordered_ or _unordered_)
     - Can be Lazy
     - Items must have the same intent to be included in the same list
-    - Allows other _paragraph items_ inside content
-    - Indentation: NOT IMPLEMENTED YET
+    - Allows other _paragraph items_ inside content (recursive lex and parsing)
+    - Indentation
 4. **Quote:**
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
     - Allows other _paragraph items_ inside content (recursive lex and parsing)
     - Can be Lazy
-    - Indentation: NOT IMPLEMENTED YET
+    - Indentation
 5. **Image:**
     - Link: Required
     - Alt text: Optional
@@ -95,22 +96,3 @@ SHOULD THIS BE IMPLEMENTED?
 
 ### 👻 HTML Sanitization
 **A BIG TODO**
-
-1. this is a list item
-   one
-two
-three
-
-
-
-
-
-
-
-
-
-
-
-
-
-2. somho
