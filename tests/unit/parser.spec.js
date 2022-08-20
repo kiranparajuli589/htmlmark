@@ -114,6 +114,24 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it("should parse indent codeblock", () => {
+			const lines = [
+				"This is a normal paragraph:",
+				"",
+				"    This is a code block.",
+				"",
+				"Here is an example of AppleScript:",
+				"",
+				"    tell application \"Foo\"",
+				"    beep",
+				"    end tell",
+				"",
+				"A code block continues until it reaches a line that is not indented",
+				"(or the end of the article)."
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("common tokens", () => {
 		it.each(commonTokensList)("should parse the common tokens", (line) => {
@@ -190,6 +208,20 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it("should find the list and codeblock inside", () => {
+			const lines = [
+				"> ## This is a header.",
+				">",
+				"> 1.   This is the first list item.",
+				"> 2.   This is the second list item.",
+				">",
+				"> Here's some example code:",
+				">",
+				">     return shell_exec(\"echo $input | $markdown_script\");"
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("list", () => {
 		it("should tokenize a valid ordered list", () => {
@@ -221,10 +253,11 @@ describe("Parser", () => {
 		})
 		it("indent should break the list", () => {
 			const lines = [
-				"  - item **1**",
-				"  - item [link](link-url)",
-				"- item 3 `code item`",
-				"- item 4"
+				"- item **1**",
+				"- item [link](link-url)",
+				"    - item 3 `code item`",
+				"        - item 4",
+				"    - item 3 `code item`"
 			]
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
@@ -245,9 +278,13 @@ describe("Parser", () => {
 		})
 	})
 	describe("hr line", () => {
-		it("should parse the hr line", () => {
+		it.each([
+			"---",
+			"--",
+			"-----"
+		])("should parse the hr line", (line) => {
 			const lines = [
-				"---"
+				line
 			]
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
@@ -279,7 +316,7 @@ describe("Parser", () => {
 			it("false separator", () => {
 				const html = toHtml([
 					"| column 1 | column 2 |",
-					"| --- | --- |",
+					"| - | - |",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
@@ -326,7 +363,7 @@ describe("Parser", () => {
 			it("different indent header -> separator", () => {
 				const html = toHtml([
 					"| column 1 | column 2 |",
-					"  |---|---|",
+					"    |---|---|",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
@@ -334,8 +371,8 @@ describe("Parser", () => {
 
 			it("different indent header, separator -> body row", () => {
 				const html = toHtml([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
+					"    | column 1 | column 2 |",
+					"    |---|---|",
 					"| row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
@@ -350,7 +387,7 @@ describe("Parser", () => {
 				expect(html).toMatchSnapshot()
 			})
 
-			it("indent should break the table 1", () => {
+			it("acceptable indent should not break the table 1", () => {
 				const html = toHtml([
 					"  | column 1 | column 2 |",
 					"  |---|---|",
@@ -361,12 +398,12 @@ describe("Parser", () => {
 			})
 			it("indent should break the table 2", () => {
 				const html = toHtml([
-					"  | column 1 | column 2 |",
-					"  |---|---|",
-					"  | row 1 c1 | row 1 c2 |",
 					"| column 1 | column 2 |",
 					"|---|---|",
-					"| row 1 c1 | row 1 c2 |"
+					"| row 1 c1 | row 1 c2 |",
+					"    | column 1 | column 2 |",
+					"    |---|---|",
+					"    | row 1 c1 | row 1 c2 |"
 				])
 				expect(html).toMatchSnapshot()
 			})
