@@ -203,7 +203,7 @@ exports[`Parser list should detect list indent 1`] = `
 exports[`Parser list should parse the indented codeblock inside 1`] = `
 "<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>  A list item with a code block:</p>
+<li><p>A list item with a code block:</p>
 <br>
 <pre><code>&lt;code goes here&gt;
 &lt;code goes here&gt;
@@ -345,8 +345,8 @@ exports[`Parser quote should find the list and codeblock inside 1`] = `
 <h2>This is a header.</h2>
 <br>
 <ol>
-<li><p>  This is the first list item.</p></li>
-<li><p>  This is the second list item.</p></li>
+<li><p>This is the first list item.</p></li>
+<li><p>This is the second list item.</p></li>
 </ol>
 <br><p>Here's some example code:</p>
 <br>
@@ -361,7 +361,8 @@ exports[`Parser quote should parse multiline quote with the same depth and inden
 <blockquote>
 <blockquote><p>zero f one f</p>
 <br>
-</blockquote></blockquote><p>one</p>
+</blockquote>
+</blockquote><p>one</p>
 <h1>two</h1>
 <blockquote><p>three</p>
 <blockquote><p>four</p>
