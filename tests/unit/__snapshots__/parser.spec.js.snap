@@ -23,7 +23,7 @@ exports[`Parser codeblock should parse indent codeblock 1`] = `
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
 beep
 end tell</code></pre>
 
@@ -200,6 +200,20 @@ exports[`Parser list should detect list indent 1`] = `
 </ul>"
 `;
 
+exports[`Parser list should parse the indented codeblock inside 1`] = `
+"<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
+<ul>
+<li><p>  A list item with a code block:</p>
+<br>
+<pre><code>&lt;code goes here&gt;
+&lt;code goes here&gt;
+&lt;code goes here&gt;</code></pre>
+</li>
+</ul>
+<br>
+<h3>Code Blocks</h3>"
+`;
+
 exports[`Parser list should tokenize a valid ordered list 1`] = `
 "
 <ol>
@@ -336,7 +350,7 @@ exports[`Parser quote should find the list and codeblock inside 1`] = `
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>"
 `;

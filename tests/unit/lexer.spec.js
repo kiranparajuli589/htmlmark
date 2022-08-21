@@ -462,6 +462,20 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
+		it("Should allow indented codeblock inside", () => {
+			const lines = [
+				"To put a code block within a list item, the code block needs",
+				"to be indented *twice* -- 8 spaces or two tabs:",
+				"*   A list item with a code block:",
+				"",
+				"        <code goes here>",
+				"",
+				"### Code Blocks"
+			]
+			const lexer = new Lexer(lines)
+			const tokens = lexer.run()
+			expect(tokens).toMatchSnapshot()
+		})
 	})
 	describe("hr line", () => {
 		it("should parse the hr line", () => {
