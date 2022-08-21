@@ -495,7 +495,7 @@ to be indented *twice* -- 8 spaces or two tabs:
 
 *   A list item with a code block:
 
-        <code goes here>
+         <code goes here>
 
 ### Code Blocks
 

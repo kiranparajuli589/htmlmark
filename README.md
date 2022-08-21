@@ -22,9 +22,12 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
-    - Can be inside a backtick block like <code>```</code>
-    - Or an indent of 4 can make the block a code
-    - Indentation
+    - Types:
+        1. Can be inside a backtick block like <code>```</code>
+        2. An indent of 4 can make the block a code
+
+           For a codeblock inside a list
+           it should be indented at least twice.
 3. **List:**
     - Ordered: `{any digit}. Item 1`
     - Unordered: `-|+|* Item 1`

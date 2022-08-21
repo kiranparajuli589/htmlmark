@@ -363,6 +363,18 @@ describe("lexer", () => {
 				const tokenizedContent = lexer.run()
 				expect(tokenizedContent).toMatchSnapshot()
 			})
+			it("should include a braced codeblock inside", () => {
+				const lines = [
+					"> normal text",
+					"> ```",
+					"> code goes here",
+					"> ```",
+					"> normal text again"
+				]
+				const lexer = new Lexer(lines)
+				const tokenizedContent = lexer.run()
+				expect(tokenizedContent).toMatchSnapshot()
+			})
 		})
 	})
 	describe("list", () => {
