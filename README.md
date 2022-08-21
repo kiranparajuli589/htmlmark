@@ -23,15 +23,16 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
      - Underlined:
 
         For Heading 1, the underline of `=`
+
         For Heading 2, the underline of `-`
 
      - Hashed
 
-		   Number of hashes determines the level of the heading.
+        Number of hashes determines the level of the heading.
 
-       Can be in between of 1 to 6.
+        Can be in between of 1 to 6.
 
-       Otherwise, it will be treated as a paragraph.
+        Otherwise, it will be treated as a paragraph.
 
    - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
