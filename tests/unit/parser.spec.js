@@ -145,6 +145,17 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it("should parse underlined heading", () => {
+			const lines = [
+				"Heading 1",
+				"======",
+				"Heading 2",
+				"------",
+				"Normal text"
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("quote", () => {
 		it("should parse multiline quote with the same depth and indent", () => {
@@ -465,7 +476,8 @@ describe("Parser", () => {
 		it.each([
 			"some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby `baby```[[[[[[[[[[[[[[[l]]]]int](href)[link](href)``````````",
 			"a paragraph of <u>words</u> `first code` normal text here `code body` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
-			"now with __underlined text__ within some ___underl_ined_text___"
+			"now with __underlined text__ within some ___underl_ined_text___",
+			"should include html tags inside for <code>code</code> <u>underline</u> <bold>bold</bold> <em>em</em>"
 		])("should be deep tokenized", (line) => {
 			const lines = [line]
 			const lexerData = toHtml(lines)

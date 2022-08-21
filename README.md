@@ -18,8 +18,22 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
 
 ### 🪕 Paragraphs
 1. **Heading:**
-    - Levels: `#{1, 6} Heading text`
-    - Indentation: NOT IMPLEMENTED YET
+   - Levels: 1 to 6
+   - Type
+     - Underlined:
+
+        For Heading 1, the underline of `=`
+        For Heading 2, the underline of `-`
+
+     - Hashed
+
+		   Number of hashes determines the level of the heading.
+
+       Can be in between of 1 to 6.
+
+       Otherwise, it will be treated as a paragraph.
+
+   - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
     - Types:
@@ -60,9 +74,9 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Equal number of indentations
     - Cell content should allow emphasis
     - Indentation: `NOT IMPLEMENTED YET`
-10. **Newline:**
-     - Consecutive newlines are merged into one
-11. **Paragraph:**
+9. **Newline:**
+    - Consecutive newlines are merged into one
+10. **Paragraph:**
     - Anything else
     - Indentation: NOT IMPLEMENTED YET
 
