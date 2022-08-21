@@ -11,49 +11,41 @@ exports[`Parser code should not be deep tokenized 1`] = `"<p><code>code with ~ g
 exports[`Parser code should not panic with angles inside 1`] = `"<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>"`;
 
 exports[`Parser codeblock should cope with multiple items 1`] = `
-"
-<pre><code class='language-js'>const a = 1</code></pre>
+"<pre><code class='language-js'>const a = 1</code></pre>
 <p>some people are funny</p>"
 `;
 
 exports[`Parser codeblock should parse indent codeblock 1`] = `
-"<p>This is a normal paragraph:</p>
-<br>
+"<p>This is a normal paragraph:</p><br>
 <pre><code>This is a code block.</code></pre>
-
-<br><p>Here is an example of AppleScript:</p>
 <br>
+<p>Here is an example of AppleScript:</p><br>
 <pre><code>tell application &quot;Foo&quot;
 beep
 end tell</code></pre>
-
-<br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>"
+<br>
+<p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>"
 `;
 
 exports[`Parser codeblock should parse multiple consequetive codeblocks 1`] = `
-"
-<pre><code class='language-js'>const a = 1</code></pre>
-
+"<pre><code class='language-js'>const a = 1</code></pre>
 <pre><code class='language-js'>const b = 2</code></pre>
 "
 `;
 
 exports[`Parser codeblock should parse the codeblock 1`] = `
-"
-<pre><code class='language-js'>const a = 1</code></pre>
+"<pre><code class='language-js'>const a = 1</code></pre>
 "
 `;
 
 exports[`Parser codeblock should parse the codeblock with multiple lines 1`] = `
-"
-<pre><code class='language-js'>const a = 1
+"<pre><code class='language-js'>const a = 1
 const b = 2</code></pre>
 "
 `;
 
 exports[`Parser codeblock should parse the codeblock with multiple lines and a newline 1`] = `
-"
-<pre><code class='language-js'>const a = 1
+"<pre><code class='language-js'>const a = 1
 const b = 2
 
 const c = 3</code></pre>
@@ -61,111 +53,110 @@ const c = 3</code></pre>
 `;
 
 exports[`Parser codeblock should parse the codeblock without the language 1`] = `
-"
-<pre><code>const a = 1</code></pre>
+"<pre><code>const a = 1</code></pre>
 "
 `;
 
 exports[`Parser comment should add a comment 1`] = `
-"<p>one</p>
-<!-- comment--><p>three</p>"
+"<p>one</p><!-- comment-->
+<p>three</p>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 1`] = `
+"<h1>Heading One Text</h1>
 "
-<h1>Heading One Text</h1>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 2`] = `
+"<h2>Heading Two Text</h2>
 "
-<h2>Heading Two Text</h2>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 3`] = `
+"<h3>Heading Three Text</h3>
 "
-<h3>Heading Three Text</h3>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 4`] = `
+"<h4>Heading Four Text</h4>
 "
-<h4>Heading Four Text</h4>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 5`] = `
+"<h5>Heading Five Text</h5>
 "
-<h5>Heading Five Text</h5>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 6`] = `
+"<h6>Heading Six Text</h6>
 "
-<h6>Heading Six Text</h6>"
 `;
 
 exports[`Parser common tokens should parse the common tokens 7`] = `
+"<!-- comment item text-->
 "
-<!-- comment item text-->"
 `;
 
-exports[`Parser common tokens should parse the common tokens 8`] = `
-"
-<img src='image.png' alt='alt text'>"
-`;
+exports[`Parser common tokens should parse the common tokens 8`] = `"<img src='image.png' alt='alt text'>"`;
 
 exports[`Parser common tokens should parse the common tokens with some space before 1`] = `
+"<h1>Heading One Text</h1>
 "
-<h1>Heading One Text</h1>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 2`] = `
+"<h2>Heading Two Text</h2>
 "
-<h2>Heading Two Text</h2>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 3`] = `
+"<h3>Heading Three Text</h3>
 "
-<h3>Heading Three Text</h3>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 4`] = `
+"<h4>Heading Four Text</h4>
 "
-<h4>Heading Four Text</h4>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 5`] = `
+"<h5>Heading Five Text</h5>
 "
-<h5>Heading Five Text</h5>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 6`] = `
+"<h6>Heading Six Text</h6>
 "
-<h6>Heading Six Text</h6>"
 `;
 
 exports[`Parser common tokens should parse the common tokens with some space before 7`] = `
+"<!-- comment item text-->
 "
-<!-- comment item text-->"
 `;
 
-exports[`Parser common tokens should parse the common tokens with some space before 8`] = `
-"
-<img src='image.png' alt='alt text'>"
+exports[`Parser common tokens should parse the common tokens with some space before 8`] = `"<img src='image.png' alt='alt text'>"`;
+
+exports[`Parser common tokens should parse underlined heading 1`] = `
+"<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<p>Normal text</p>"
 `;
 
 exports[`Parser hr line should not allow multiple consecutive hr lines 1`] = `
+"<hr>
 "
-<hr>"
 `;
 
 exports[`Parser hr line should parse the hr line 1`] = `
+"<hr>
 "
-<hr>"
 `;
 
 exports[`Parser hr line should parse the hr line 2`] = `"<p>--</p>"`;
 
 exports[`Parser hr line should parse the hr line 3`] = `
+"<hr>
 "
-<hr>"
 `;
 
 exports[`Parser italics should be deep tokenized 1`] = `"<p><em>italics with <code>code</code> and <s>strikes</s> and <a href='https://kiranparajuli.com.np'>link</a></em></p>"`;
@@ -177,64 +168,62 @@ exports[`Parser link should deep tokenized the link title 1`] = `"<p><a href='ht
 exports[`Parser link should match the consecutive occurrences 1`] = `"<p><a href='https://kiranparajuli.com.np'>link</a> <a href='https://kiranparajuli.com.np'>link</a></p>"`;
 
 exports[`Parser list indent should break the list 1`] = `
-"
-<ul>
+"<ul>
 <li><p>item <strong>1</strong></p></li>
-<li><p>item <a href='link-url'>link</a></p>
-<ul>
-<li><p>item 3 <code>code item</code></p>
-<ul>
+<li><p>item <a href='link-url'>link</a></p><ul>
+<li><p>item 3 <code>code item</code></p><ul>
 <li><p>item 4</p></li>
-</ul></li>
+</ul>
+</li>
 <li><p>item 3 <code>code item</code></p></li>
-</ul></li>
-</ul>"
+</ul>
+</li>
+</ul>
+"
 `;
 
 exports[`Parser list should detect list indent 1`] = `
-"
-<ul>
+"<ul>
 <li><p>item <strong>1</strong></p></li>
 <li><p>item <a href='link-url'>link</a></p></li>
 <li><p>item 3 <code>code item</code></p></li>
-</ul>"
+</ul>
+"
 `;
 
 exports[`Parser list should parse the indented codeblock inside 1`] = `
-"<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
-<ul>
-<li><p>A list item with a code block:</p>
-<br>
+"<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p><ul>
+<li><p>A list item with a code block:</p><br>
 <pre><code>&lt;code goes here&gt;
 &lt;code goes here&gt;
 &lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <br>
-<h3>Code Blocks</h3>"
+<h3>Code Blocks</h3>
+"
 `;
 
 exports[`Parser list should tokenize a valid ordered list 1`] = `
-"
-<ol>
+"<ol>
 <li><p>item <strong>1</strong></p></li>
 <li><p>item <a href='link-url'>link</a></p></li>
 <li><p>item 3 <code>code item</code></p></li>
-</ol>"
+</ol>
+"
 `;
 
 exports[`Parser list should tokenize a valid un-ordered list 1`] = `
-"
-<ul>
+"<ul>
 <li><p>item <strong>1</strong></p></li>
 <li><p>item <a href='link-url'>link</a></p></li>
 <li><p>item 3 <code>code item</code></p></li>
-</ul>"
+</ul>
+"
 `;
 
 exports[`Parser list should tokenize list combination 1`] = `
-"
-<ul>
+"<ul>
 <li><p>one</p></li>
 <li><p>two</p></li>
 </ul>
@@ -249,22 +238,23 @@ exports[`Parser list should tokenize list combination 1`] = `
 <ol>
 <li><input type='checkbox'><p>c empty</p></li>
 <li><input type='checkbox'><p>c checked</p></li>
-</ol>"
+</ol>
+"
 `;
 
 exports[`Parser newline should combine multiple consequest new lines to a single one 1`] = `
-"<p>some plain text</p>
-<br><p>some more plain text</p>"
+"<p>some plain text</p><br>
+<p>some more plain text</p>"
 `;
 
 exports[`Parser newline should include the empty line after some content 1`] = `
-"<p>some plain text</p>
-<br>"
+"<p>some plain text</p><br>
+"
 `;
 
 exports[`Parser newline should include the empty line after some content 2`] = `
-"<p>some plain text</p>
-<br>"
+"<p>some plain text</p><br>
+"
 `;
 
 exports[`Parser newline should not include the top empty lines 1`] = `""`;
@@ -282,112 +272,138 @@ exports[`Parser paragraph should be deep tokenized 3`] = `"<p>now with <u>underl
 exports[`Parser paragraph should be deep tokenized 4`] = `"<p>should include html tags inside for <code>code</code> <u>underline</u> <bold>bold</bold> <em>em</em></p>"`;
 
 exports[`Parser quote should deep tokenize quote with multiple depth 1`] = `
-"
+"<blockquote>
 <blockquote>
-<blockquote><p>quote <strong>one</strong> with <em>two</em></p>
-</blockquote></blockquote>"
+<p>quote <strong>one</strong> with <em>two</em></p>
+</blockquote>
+</blockquote>
+"
 `;
 
 exports[`Parser quote should deep tokenize quote with multiple depth 2`] = `
+"<blockquote>
+<blockquote>
+<blockquote>
+<p>quote <code>four</code> with <s>five</s></p>
+</blockquote>
+</blockquote>
+</blockquote>
 "
-<blockquote>
-<blockquote>
-<blockquote><p>quote <code>four</code> with <s>five</s></p>
-</blockquote></blockquote></blockquote>"
 `;
 
 exports[`Parser quote should deep tokenize quote with multiple depth 3`] = `
+"<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>quote <a href='link-url'>link-title</a> with <em>two</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 "
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote><p>quote <a href='link-url'>link-title</a> with <em>two</em></p>
-</blockquote></blockquote></blockquote></blockquote>"
 `;
 
 exports[`Parser quote should deep tokenize quote with zero depth 1`] = `
+"<blockquote>
+<p>quote <strong>one</strong> with <em>two</em></p>
+</blockquote>
 "
-<blockquote><p>quote <strong>one</strong> with <em>two</em></p>
-</blockquote>"
 `;
 
 exports[`Parser quote should deep tokenize quote with zero depth 2`] = `
+"<blockquote>
+<p>quote <code>four</code> with <s>five</s></p>
+</blockquote>
 "
-<blockquote><p>quote <code>four</code> with <s>five</s></p>
-</blockquote>"
 `;
 
 exports[`Parser quote should deep tokenize quote with zero depth 3`] = `
+"<blockquote>
+<p>quote <a href='link-url'>link-title</a> with <em>two</em></p>
+</blockquote>
 "
-<blockquote><p>quote <a href='link-url'>link-title</a> with <em>two</em></p>
-</blockquote>"
 `;
 
 exports[`Parser quote should detect the circular quote 1`] = `
+"<blockquote>
+<p>one</p><blockquote>
+<p>two</p><blockquote>
+<p>three</p><blockquote>
+<p>four</p><blockquote>
+<p>five</p>
+</blockquote>
+<br>
+<p>four</p>
+</blockquote>
+<br>
+<p>three</p>
+</blockquote>
+<br>
+<p>two</p>
+</blockquote>
+<br>
+<p>one</p>
+</blockquote>
 "
-<blockquote><p>one</p>
-<blockquote><p>two</p>
-<blockquote><p>three</p>
-<blockquote><p>four</p>
-<blockquote><p>five</p>
-</blockquote>
-<br><p>four</p>
-</blockquote>
-<br><p>three</p>
-</blockquote>
-<br><p>two</p>
-</blockquote>
-<br><p>one</p>
-</blockquote>"
 `;
 
 exports[`Parser quote should find the list and codeblock inside 1`] = `
-"
-<blockquote>
+"<blockquote>
 <h2>This is a header.</h2>
 <br>
 <ol>
 <li><p>This is the first list item.</p></li>
 <li><p>This is the second list item.</p></li>
 </ol>
-<br><p>Here's some example code:</p>
 <br>
+<p>Here's some example code:</p><br>
 <pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
-</blockquote>"
+</blockquote>
+"
 `;
 
 exports[`Parser quote should parse multiline quote with the same depth and indent 1`] = `
-"
+"<blockquote>
 <blockquote>
 <blockquote>
-<blockquote><p>zero f one f</p>
-<br>
+<p>zero f one f</p><br>
+
 </blockquote>
-</blockquote><p>one</p>
-<h1>two</h1>
-<blockquote><p>three</p>
-<blockquote><p>four</p>
-<blockquote><p>d-five</p>
+
 </blockquote>
+<p>one</p><h1>two</h1>
+<blockquote>
+<p>three</p><blockquote>
+<p>four</p><blockquote>
+<p>d-five</p>
+</blockquote>
+
 </blockquote>
 <h1>five</h1>
 <h2>six</h2>
 <blockquote>
-<blockquote><p>seven simple para</p>
-</blockquote></blockquote>
+<blockquote>
+<p>seven simple para</p>
 </blockquote>
-</blockquote>"
+</blockquote>
+
+</blockquote>
+
+</blockquote>
+"
 `;
 
 exports[`Parser quote should parse the quote with list inside 1`] = `
-"
-<blockquote>
+"<blockquote>
 <ul>
 <li><p>one</p></li>
 <li><p>two</p></li>
 </ul>
-</blockquote>"
+
+</blockquote>
+"
 `;
 
 exports[`Parser strikes should be deep tokenized 1`] = `"<p><s>strikes with ~ gem and <code>code</code> and <strong>bold</strong> and <em>italics</em> and <a href='https://kiranparajuli.com.np'>link</a></s></p>"`;
@@ -403,18 +419,17 @@ exports[`Parser table is not a table only header 1`] = `"<p>| column 1 | column 
 exports[`Parser table is not a table only header and separator 1`] = `"<p>| column 1 | column 2 | |---|---|</p>"`;
 
 exports[`Parser table is not a table other tokens in between 1 1`] = `
-"<p>| column 1 | column 2 |</p>
-<br><p>|---|---| | row 1 c1 | row 1 c2 |</p>"
+"<p>| column 1 | column 2 |</p><br>
+<p>|---|---| | row 1 c1 | row 1 c2 |</p>"
 `;
 
 exports[`Parser table is not a table other tokens in between 2 1`] = `
-"<p>| column 1 | column 2 | |---|---|</p>
-<br><p>| row 1 c1 | row 1 c2 |</p>"
+"<p>| column 1 | column 2 | |---|---|</p><br>
+<p>| row 1 c1 | row 1 c2 |</p>"
 `;
 
 exports[`Parser table is not a table other tokens in between 3 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -424,12 +439,12 @@ exports[`Parser table is not a table other tokens in between 3 1`] = `
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
 </table>
-<br><p>| row 2 c1 | row 2 c2 |</p>"
+<br>
+<p>| row 2 c1 | row 2 c2 |</p>"
 `;
 
 exports[`Parser table table cell count cell count should break the table 1 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -438,12 +453,12 @@ exports[`Parser table table cell count cell count should break the table 1 1`] =
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table><p>| row 2 c1 |</p>"
+</table>
+<p>| row 2 c1 |</p>"
 `;
 
 exports[`Parser table table cell count cell count should break the table 2 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -462,12 +477,12 @@ exports[`Parser table table cell count cell count should break the table 2 1`] =
   <tbody>
     <tr><td>row 1 c1</td></tr>
   </tbody>
-</table>"
+</table>
+"
 `;
 
 exports[`Parser table table heading-body separator should parse a table 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -476,12 +491,12 @@ exports[`Parser table table heading-body separator should parse a table 1`] = `
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
-</table>"
+</table>
+"
 `;
 
 exports[`Parser table table heading-body separator should parse a table 2`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -490,12 +505,12 @@ exports[`Parser table table heading-body separator should parse a table 2`] = `
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
-</table>"
+</table>
+"
 `;
 
 exports[`Parser table table indent acceptable indent should not break the table 1 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -504,21 +519,20 @@ exports[`Parser table table indent acceptable indent should not break the table 
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
-</table>"
+</table>
+"
 `;
 
 exports[`Parser table table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 | |---|---| | row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`Parser table table indent different indent header, separator -> body row 1`] = `
-"
-<pre><code>| column 1 | column 2 |
+"<pre><code>| column 1 | column 2 |
 |---|---|</code></pre>
 <p>| row 1 c1 | row 1 c2 |</p>"
 `;
 
 exports[`Parser table table indent indent should break the table 2 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -537,12 +551,12 @@ exports[`Parser table table indent indent should break the table 2 1`] = `
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>"
+</table>
+"
 `;
 
 exports[`Parser table table indent the indented table 1`] = `
-"
-<table>
+"<table>
   <thead>
     <tr>
     	<th>column 1</th><th>column 2</th>
@@ -551,5 +565,6 @@ exports[`Parser table table indent the indented table 1`] = `
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>"
+</table>
+"
 `;

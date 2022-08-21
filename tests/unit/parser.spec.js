@@ -145,6 +145,17 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it("should parse underlined heading", () => {
+			const lines = [
+				"Heading 1",
+				"======",
+				"Heading 2",
+				"------",
+				"Normal text"
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("quote", () => {
 		it("should parse multiline quote with the same depth and indent", () => {

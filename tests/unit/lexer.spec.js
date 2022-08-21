@@ -213,6 +213,18 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens[0].indent).toBe(4)
 		})
+		it("should allow underlined heading", () => {
+			const lines = [
+				"Heading 1",
+				"======",
+				"Heading 2",
+				"------",
+				"Normal text"
+			]
+			const lexer = new Lexer(lines)
+			const tokens = lexer.run()
+			expect(tokens).toMatchSnapshot()
+		})
 	})
 	describe("quote", () => {
 		it("should chill with big quote head", () => {
