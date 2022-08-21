@@ -58,9 +58,9 @@ const b = 1;
 const c = a + b;
 
 if (c === 2) {
-  console.log('success');
+  console.log(&#39;success&#39;);
 } else {
-  console.log('failure');
+  console.log(&#39;failure&#39;);
 }</code></pre>
 <p>  some line with small space ahead</p>
 <br>
@@ -146,7 +146,7 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -235,7 +235,9 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 <br>
 <ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p></li>
+<br>
+<pre><code>&lt;code goes here&gt;</code></pre>
+</li>
 </ul>
 <br>
 <h3>Code Blocks</h3>
@@ -247,20 +249,20 @@ exports[`To HTML should parse the markdown file content to html 2`] = `
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
-<pre><code><div class=\\"footer\\">
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &copy; 2004 Foo Corporation
-</div></code></pre>
+&lt;/div&gt;</code></pre>
 
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
@@ -339,7 +341,7 @@ end tell</code></pre>
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -428,7 +430,9 @@ end tell</code></pre>
 <br>
 <ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p></li>
+<br>
+<pre><code>&lt;code goes here&gt;</code></pre>
+</li>
 </ul>
 <br>
 <h3>Code Blocks</h3>
@@ -440,20 +444,20 @@ end tell</code></pre>
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
-<pre><code><div class=\\"footer\\">
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &copy; 2004 Foo Corporation
-</div></code></pre>
+&lt;/div&gt;</code></pre>
 
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
@@ -532,7 +536,7 @@ end tell</code></pre>
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -621,7 +625,9 @@ end tell</code></pre>
 <br>
 <ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p></li>
+<br>
+<pre><code>&lt;code goes here&gt;</code></pre>
+</li>
 </ul>
 <br>
 <h3>Code Blocks</h3>
@@ -633,20 +639,20 @@ end tell</code></pre>
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
-<pre><code><div class=\\"footer\\">
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &copy; 2004 Foo Corporation
-</div></code></pre>
+&lt;/div&gt;</code></pre>
 
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
@@ -725,7 +731,7 @@ end tell</code></pre>
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -814,7 +820,9 @@ end tell</code></pre>
 <br>
 <ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p></li>
+<br>
+<pre><code>&lt;code goes here&gt;</code></pre>
+</li>
 </ul>
 <br>
 <h3>Code Blocks</h3>
@@ -826,20 +834,20 @@ end tell</code></pre>
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
-<pre><code><div class=\\"footer\\">
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &copy; 2004 Foo Corporation
-</div></code></pre>
+&lt;/div&gt;</code></pre>
 
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
@@ -916,7 +924,7 @@ end tell</code></pre>
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -1005,7 +1013,9 @@ end tell</code></pre>
 <br>
 <ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p></li>
+<br>
+<pre><code>&lt;code goes here&gt;</code></pre>
+</li>
 </ul>
 <br>
 <h3>Code Blocks</h3>
@@ -1017,20 +1027,20 @@ end tell</code></pre>
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
-<pre><code><div class=\\"footer\\">
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &copy; 2004 Foo Corporation
-</div></code></pre>
+&lt;/div&gt;</code></pre>
 
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
@@ -1107,7 +1117,7 @@ end tell</code></pre>
 </ol>
 <br><p>Here's some example code:</p>
 <br>
-<pre><code>return shell_exec(\\"echo $input | $markdown_script\\");</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>
 <br><p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
@@ -1196,7 +1206,9 @@ end tell</code></pre>
 <br>
 <ul>
 <li><p>  A list item with a code block:</p>
-<br><p>        <code goes here></p></li>
+<br>
+<pre><code>&lt;code goes here&gt;</code></pre>
+</li>
 </ul>
 <br>
 <h3>Code Blocks</h3>
@@ -1208,20 +1220,20 @@ end tell</code></pre>
 
 <br><p>Here is an example of AppleScript:</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 
 <br><p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <br><p>Within a code block, ampersands (<code>&</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
 <br>
-<pre><code><div class=\\"footer\\">
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &copy; 2004 Foo Corporation
-</div></code></pre>
+&lt;/div&gt;</code></pre>
 
 <br><p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <br>
-<pre><code>tell application \\"Foo\\"
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell</code></pre>
 

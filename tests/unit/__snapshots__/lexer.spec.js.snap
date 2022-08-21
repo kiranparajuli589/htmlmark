@@ -471,6 +471,62 @@ Array [
 ]
 `;
 
+exports[`lexer list Should allow indented codeblock inside 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "To put a code block within a list item, the code block needs
+to be indented *twice* -- 8 spaces or two tabs:",
+    "type": "paragraph",
+    "value": "To put a code block within a list item, the code block needs to be indented *twice* -- 8 spaces or two tabs:",
+  },
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": null,
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "  A list item with a code block:",
+            "type": "paragraph",
+            "value": "  A list item with a code block:",
+          },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 8,
+            "language": null,
+            "raw": "        <code goes here>",
+            "type": "code-block",
+            "value": "<code goes here>",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "check": false,
+      "identifier": "*",
+      "ordered": false,
+    },
+    "type": "list",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "level": 3,
+    "raw": "### Code Blocks",
+    "type": "heading",
+    "value": "Code Blocks",
+  },
+]
+`;
+
 exports[`lexer list less than 4 indent should not break the list 1`] = `
 Array [
   Object {
