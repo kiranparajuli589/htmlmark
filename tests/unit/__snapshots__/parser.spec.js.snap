@@ -279,6 +279,8 @@ exports[`Parser paragraph should be deep tokenized 2`] = `"<p>a paragraph of <u>
 
 exports[`Parser paragraph should be deep tokenized 3`] = `"<p>now with <u>underlined text</u> within some <u>_underl_ined_text_</u></p>"`;
 
+exports[`Parser paragraph should be deep tokenized 4`] = `"<p>should include html tags inside for <code>code</code> <u>underline</u> <bold>bold</bold> <em>em</em></p>"`;
+
 exports[`Parser quote should deep tokenize quote with multiple depth 1`] = `
 "
 <blockquote>
