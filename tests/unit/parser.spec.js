@@ -302,6 +302,15 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it.only("should allow empty list item", () => {
+			const lines = [
+				"- one",
+				"-",
+				"- two"
+			]
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("hr line", () => {
 		it.each([

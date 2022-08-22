@@ -500,6 +500,27 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens).toMatchSnapshot()
 		})
+		it.each([
+			{ l: [
+				"- one",
+				"-",
+				"- two"
+			] },
+			{ l: [
+				"-",
+				"- one",
+				"- two"
+			] },
+			{ l: [
+				"- one",
+				"- two",
+				"-"
+			] }
+		])("should tokenize an empty list item", ({ l }) => {
+			const lexer = new Lexer(l)
+			const tokens = lexer.run()
+			expect(tokens).toMatchSnapshot()
+		})
 	})
 	describe("hr line", () => {
 		it("should parse the hr line", () => {
