@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paragraph should be deep tokenized 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`[[[[[[[[[[[[[[[l]]]]int](href)[link](href)\`\`\`\`\`\`\`\`\`\`",
+    "type": "paragraph",
+    "value": "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigons~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`[[[[[[[[[[[[[[[l]]]]int](href)[link](href)\`\`\`\`\`\`\`\`\`\`",
+  },
+]
+`;
+
+exports[`paragraph should be deep tokenized 2`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
+    "type": "paragraph",
+    "value": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
+  },
+]
+`;
+
+exports[`paragraph should be deep tokenized 3`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "now with __underlined text__ within some ___underl_ined_text___",
+    "type": "paragraph",
+    "value": "now with __underlined text__ within some ___underl_ined_text___",
+  },
+]
+`;
+
+exports[`paragraph should be separated with other tokens 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "abc",
+    "type": "paragraph",
+    "value": "abc",
+  },
+  Object {
+    "indent": 0,
+    "level": 1,
+    "raw": "# one",
+    "type": "heading",
+    "value": "one",
+  },
+  Object {
+    "indent": 0,
+    "raw": "def",
+    "type": "paragraph",
+    "value": "def",
+  },
+]
+`;
+
+exports[`paragraph should merge consecutive paragraph not separated by other tokens 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "  abc
+  def",
+    "type": "paragraph",
+    "value": "abc def",
+  },
+]
+`;
