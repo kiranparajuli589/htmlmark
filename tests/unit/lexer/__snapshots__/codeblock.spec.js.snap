@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`codeblock should be set just with indentation bigger or equals to 4 at top 1`] = `
+Array [
+  Object {
+    "indent": 4,
+    "language": null,
+    "raw": "    one
+          two
+    three",
+    "type": "code-block",
+    "value": "one
+      two
+three",
+  },
+  Object {
+    "indent": 0,
+    "raw": "four",
+    "type": "paragraph",
+    "value": "four",
+  },
+]
+`;
+
+exports[`codeblock should be set just with indentation bigger or equals to 4 below newline 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "zero one two",
+    "type": "paragraph",
+    "value": "zero one two",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 4,
+    "language": null,
+    "raw": "    one
+          two
+    three",
+    "type": "code-block",
+    "value": "one
+      two
+three",
+  },
+  Object {
+    "indent": 0,
+    "raw": "four",
+    "type": "paragraph",
+    "value": "four",
+  },
+]
+`;
+
+exports[`codeblock should be set just with indentation bigger or equals to 4 but consecutive with other tokens 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "zero one two
+    one
+          two
+    three
+four",
+    "type": "paragraph",
+    "value": "zero one two one two three four",
+  },
+]
+`;
+
+exports[`codeblock should cope with empty body 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+\`\`\`",
+    "type": "code-block",
+    "value": "",
+  },
+]
+`;
+
+exports[`codeblock should cope with multiple items 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+\`\`\`",
+    "type": "code-block",
+    "value": "const a = 1",
+  },
+  Object {
+    "indent": 0,
+    "raw": "some people are funny",
+    "type": "paragraph",
+    "value": "some people are funny",
+  },
+]
+`;
+
+exports[`codeblock should detect acceptable indent for closing codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+const b = 2
+const c = 3
+   \`\`\`",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2
+const c = 3",
+  },
+]
+`;
+
+exports[`codeblock should detect mis-indented closing codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+const b = 2
+const c = 3
+    \`\`\`",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2
+const c = 3
+    \`\`\`",
+  },
+]
+`;
+
+exports[`codeblock should not be broken with acceptable wrong indent 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": null,
+    "raw": "   \`\`\`
+abcd
+   \`\`\`",
+    "type": "code-block",
+    "value": "abcd",
+  },
+]
+`;
+
+exports[`codeblock should parse multiple consecutive codeblocks 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+\`\`\`",
+    "type": "code-block",
+    "value": "const a = 1",
+  },
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const b = 2
+\`\`\`",
+    "type": "code-block",
+    "value": "const b = 2",
+  },
+]
+`;
+
+exports[`codeblock should parse the codeblock 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+\`\`\`",
+    "type": "code-block",
+    "value": "const a = 1",
+  },
+]
+`;
+
+exports[`codeblock should parse the codeblock with multiple lines 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+const b = 2
+\`\`\`",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2",
+  },
+]
+`;
+
+exports[`codeblock should parse the codeblock with multiple lines and a newline 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "js",
+    "raw": "\`\`\`js
+const a = 1
+  const b = 2
+
+const c = 3
+\`\`\`",
+    "type": "code-block",
+    "value": "const a = 1
+  const b = 2
+
+const c = 3",
+  },
+]
+`;
+
+exports[`codeblock should parse the codeblock without the language 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": null,
+    "raw": "\`\`\`
+const a = 1
+\`\`\`",
+    "type": "code-block",
+    "value": "const a = 1",
+  },
+]
+`;
+
+exports[`codeblock should set incomplete codeblock as a code block 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "some line",
+    "type": "paragraph",
+    "value": "some line",
+  },
+  Object {
+    "indent": 4,
+    "language": "js",
+    "raw": "    \`\`\`js
+    const a = 1
+    const b = 2",
+    "type": "code-block",
+    "value": "const a = 1
+const b = 2",
+  },
+  Object {
+    "indent": 0,
+    "raw": "here again",
+    "type": "paragraph",
+    "value": "here again",
+  },
+]
+`;

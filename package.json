@@ -9,7 +9,6 @@
     "jest": "jest --silent ",
     "jest:nocov": "jest --no-coverage",
     "jest:watch": "jest --watch --no-coverage",
-		"jest:lexer:watch": "pnpm jest:watch tests/unit/lexer.spec.js",
 		"jest:parser:watch": "pnpm jest:watch tests/unit/parser.spec.js",
 		"jest:integration:watch": "pnpm jest:watch tests/integration/index.spec.js",
     "lint": "eslint . --ext .js",
