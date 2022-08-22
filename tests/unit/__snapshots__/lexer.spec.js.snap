@@ -513,10 +513,13 @@ to be indented *twice* -- 8 spaces or two tabs:",
       Object {
         "checked": null,
         "count": null,
+        "raw": "*   A list item with a code block:
+
+        <code goes here>",
         "tokens": Array [
           Object {
             "indent": 0,
-            "raw": "  A list item with a code block:",
+            "raw": "A list item with a code block:",
             "type": "paragraph",
             "value": "A list item with a code block:",
           },
@@ -539,6 +542,9 @@ to be indented *twice* -- 8 spaces or two tabs:",
       "identifier": "*",
       "ordered": false,
     },
+    "raw": "*   A list item with a code block:
+
+        <code goes here>",
     "type": "list",
   },
   Object {
@@ -562,6 +568,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "  - item **1**",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -575,6 +582,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "  - item [link](link-url)",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -588,6 +596,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item 3 \`code item\`",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -601,6 +610,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item 4",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -617,6 +627,10 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "  - item **1**
+  - item [link](link-url)
+- item 3 \`code item\`
+- item 4",
     "type": "list",
   },
 ]
@@ -630,6 +644,8 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- [x] list *item* one
+omg this is merged with the above line",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -647,6 +663,8 @@ omg this is merged with the above line",
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "- [x] list *item* one
+omg this is merged with the above line",
     "type": "list",
   },
 ]
@@ -660,6 +678,14 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- one
+            two
+three
+
+	   \`\`\`
+	   here
+	   four
+	   \`\`\`",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -689,6 +715,7 @@ four",
       Object {
         "checked": null,
         "count": null,
+        "raw": "- two",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -702,6 +729,7 @@ four",
       Object {
         "checked": null,
         "count": null,
+        "raw": "- three",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -718,6 +746,16 @@ four",
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "- one
+            two
+three
+
+	   \`\`\`
+	   here
+	   four
+	   \`\`\`
+- two
+- three",
     "type": "list",
   },
 ]
@@ -731,6 +769,7 @@ Array [
       Object {
         "checked": null,
         "count": "1",
+        "raw": "1. item **1**",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -744,6 +783,7 @@ Array [
       Object {
         "checked": null,
         "count": "1",
+        "raw": "1. item [link](link-url)",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -757,6 +797,7 @@ Array [
       Object {
         "checked": null,
         "count": "1",
+        "raw": "1. item 3 \`code item\`",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -773,6 +814,9 @@ Array [
       "identifier": null,
       "ordered": true,
     },
+    "raw": "1. item **1**
+1. item [link](link-url)
+1. item 3 \`code item\`",
     "type": "list",
   },
 ]
@@ -786,6 +830,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item **1**",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -799,6 +844,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item [link](link-url)",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -812,6 +858,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item 3 \`code item\`",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -828,6 +875,171 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "- item **1**
+- item [link](link-url)
+- item 3 \`code item\`",
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer list should tokenize an empty list item 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- one",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "one",
+            "type": "paragraph",
+            "value": "one",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "-",
+        "tokens": Array [],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- two",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "two",
+            "type": "paragraph",
+            "value": "two",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "check": false,
+      "identifier": "-",
+      "ordered": false,
+    },
+    "raw": "- one
+-
+- two",
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer list should tokenize an empty list item 2`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "-",
+        "tokens": Array [],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- one",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "one",
+            "type": "paragraph",
+            "value": "one",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- two",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "two",
+            "type": "paragraph",
+            "value": "two",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "check": false,
+      "identifier": "-",
+      "ordered": false,
+    },
+    "raw": "-
+- one
+- two",
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer list should tokenize an empty list item 3`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- one",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "one",
+            "type": "paragraph",
+            "value": "one",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- two",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "two",
+            "type": "paragraph",
+            "value": "two",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "-",
+        "tokens": Array [],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "check": false,
+      "identifier": "-",
+      "ordered": false,
+    },
+    "raw": "- one
+- two
+-",
     "type": "list",
   },
 ]
@@ -841,6 +1053,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- one",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -854,6 +1067,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- two",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -870,6 +1084,8 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "- one
+- two",
     "type": "list",
   },
   Object {
@@ -878,6 +1094,7 @@ Array [
       Object {
         "checked": null,
         "count": "1",
+        "raw": "1. one",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -891,6 +1108,7 @@ Array [
       Object {
         "checked": null,
         "count": "2",
+        "raw": "2. two",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -907,6 +1125,8 @@ Array [
       "identifier": null,
       "ordered": true,
     },
+    "raw": "1. one
+2. two",
     "type": "list",
   },
   Object {
@@ -915,6 +1135,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- [ ] c empty",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -928,6 +1149,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- [x] c checked",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -944,6 +1166,8 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "- [ ] c empty
+- [x] c checked",
     "type": "list",
   },
   Object {
@@ -952,6 +1176,7 @@ Array [
       Object {
         "checked": null,
         "count": "1",
+        "raw": "1. [ ] c empty",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -965,6 +1190,7 @@ Array [
       Object {
         "checked": null,
         "count": "1",
+        "raw": "1. [x] c checked",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -981,6 +1207,8 @@ Array [
       "identifier": null,
       "ordered": true,
     },
+    "raw": "1. [ ] c empty
+1. [x] c checked",
     "type": "list",
   },
 ]
@@ -994,6 +1222,7 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item **1**",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -1007,6 +1236,10 @@ Array [
       Object {
         "checked": null,
         "count": null,
+        "raw": "- item [link](link-url)
+    - item 3 \`code item\`
+        - item 4
+    - item 5 ~~strike~~",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -1020,6 +1253,8 @@ Array [
               Object {
                 "checked": null,
                 "count": null,
+                "raw": "    - item 3 \`code item\`
+        - item 4",
                 "tokens": Array [
                   Object {
                     "indent": 0,
@@ -1033,6 +1268,7 @@ Array [
                       Object {
                         "checked": null,
                         "count": null,
+                        "raw": "        - item 4",
                         "tokens": Array [
                           Object {
                             "indent": 0,
@@ -1049,6 +1285,7 @@ Array [
                       "identifier": "-",
                       "ordered": false,
                     },
+                    "raw": "        - item 4",
                     "type": "list",
                   },
                 ],
@@ -1057,6 +1294,7 @@ Array [
               Object {
                 "checked": null,
                 "count": null,
+                "raw": "    - item 5 ~~strike~~",
                 "tokens": Array [
                   Object {
                     "indent": 0,
@@ -1073,6 +1311,9 @@ Array [
               "identifier": "-",
               "ordered": false,
             },
+            "raw": "    - item 3 \`code item\`
+        - item 4
+    - item 5 ~~strike~~",
             "type": "list",
           },
         ],
@@ -1084,6 +1325,11 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
+    "raw": "- item **1**
+- item [link](link-url)
+    - item 3 \`code item\`
+        - item 4
+    - item 5 ~~strike~~",
     "type": "list",
   },
 ]
@@ -1172,6 +1418,7 @@ Array [
           Object {
             "checked": null,
             "count": null,
+            "raw": " - one",
             "tokens": Array [
               Object {
                 "indent": 0,
@@ -1185,6 +1432,7 @@ Array [
           Object {
             "checked": null,
             "count": null,
+            "raw": " - two",
             "tokens": Array [
               Object {
                 "indent": 0,
@@ -1201,6 +1449,8 @@ Array [
           "identifier": "-",
           "ordered": false,
         },
+        "raw": " - one
+ - two",
         "type": "list",
       },
     ],
@@ -1225,6 +1475,7 @@ Array [
           Object {
             "checked": null,
             "count": null,
+            "raw": " - one",
             "tokens": Array [
               Object {
                 "indent": 0,
@@ -1238,6 +1489,7 @@ Array [
           Object {
             "checked": null,
             "count": null,
+            "raw": " - two",
             "tokens": Array [
               Object {
                 "indent": 0,
@@ -1254,6 +1506,8 @@ Array [
           "identifier": "-",
           "ordered": false,
         },
+        "raw": " - one
+ - two",
         "type": "list",
       },
     ],
@@ -1277,6 +1531,7 @@ Array [
           Object {
             "checked": null,
             "count": null,
+            "raw": " - one",
             "tokens": Array [
               Object {
                 "indent": 0,
@@ -1290,6 +1545,7 @@ Array [
           Object {
             "checked": null,
             "count": null,
+            "raw": " - two",
             "tokens": Array [
               Object {
                 "indent": 0,
@@ -1306,6 +1562,8 @@ Array [
           "identifier": "-",
           "ordered": false,
         },
+        "raw": " - one
+ - two",
         "type": "list",
       },
     ],
