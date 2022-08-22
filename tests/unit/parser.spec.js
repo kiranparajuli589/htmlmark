@@ -311,6 +311,26 @@ describe("Parser", () => {
 			const html = toHtml(lines)
 			expect(html).toMatchSnapshot()
 		})
+		it.only.each([
+			{ lines: [
+				"- one",
+				"-",
+				"- two"
+			] },
+			{ lines: [
+				"-",
+				"- one",
+				"- two"
+			] },
+			{ lines: [
+				"- one",
+				"- two",
+				"-"
+			] }
+		])("should parse a list with an empty list item", ({ lines }) => {
+			const html = toHtml(lines)
+			expect(html).toMatchSnapshot()
+		})
 	})
 	describe("hr line", () => {
 		it.each([
