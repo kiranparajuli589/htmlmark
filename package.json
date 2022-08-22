@@ -10,7 +10,7 @@
     "jest:nocov": "jest --no-coverage",
     "jest:watch": "jest --watch --no-coverage",
 		"jest:parser:watch": "pnpm jest:watch tests/unit/parser.spec.js",
-		"jest:integration:watch": "pnpm jest:watch tests/integration/index.spec.js",
+		"jest:integration:watch": "pnpm jest:watch tests/integration/small.spec.js",
     "lint": "eslint . --ext .js",
     "lint:fix": "pnpm lint --fix"
   },

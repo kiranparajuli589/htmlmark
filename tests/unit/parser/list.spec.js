@@ -1,0 +1,101 @@
+import { MDP } from "../../../lib/index.js"
+
+
+describe("List Parsing", () => {
+	it("should tokenize a valid ordered list", () => {
+		const lines = [
+			"1. item **1**",
+			"1. item [link](link-url)",
+			"1. item 3 `code item`"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("should tokenize a valid un-ordered list", () => {
+		const lines = [
+			"- item **1**",
+			"- item [link](link-url)",
+			"- item 3 `code item`"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("should detect list indent", () => {
+		const lines = [
+			"  - item **1**",
+			"  - item [link](link-url)",
+			"  - item 3 `code item`"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("indent should break the list", () => {
+		const lines = [
+			"- item **1**",
+			"- item [link](link-url)",
+			"    - item 3 `code item`",
+			"        - item 4",
+			"    - item 3 `code item`"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("should tokenize list combination", () => {
+		const lines = [
+			"- one",
+			"- two",
+			"1. one",
+			"2. two",
+			"- [ ] c empty",
+			"- [x] c checked",
+			"1. [ ] c empty",
+			"1. [x] c checked"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("should parse the indented codeblock inside", () => {
+		const lines = [
+			"To put a code block within a list item, the code block needs",
+			"to be indented *twice* -- 8 spaces or two tabs:",
+			"*   A list item with a code block:",
+			"",
+			"        <code goes here>",
+			"        <code goes here>",
+			"        <code goes here>",
+			"",
+			"### Code Blocks"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("should allow empty list item", () => {
+		const lines = [
+			"- one",
+			"-",
+			"- two"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it.each([
+		{ lines: [
+			"- one",
+			"-",
+			"- two"
+		] },
+		{ lines: [
+			"-",
+			"- one",
+			"- two"
+		] },
+		{ lines: [
+			"- one",
+			"- two",
+			"-"
+		] }
+	])("should parse a list with an empty list item", ({ lines }) => {
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+})
