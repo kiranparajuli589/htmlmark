@@ -1,9 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paragraph Parsing should be deep tokenized 1`] = `"<p>some normal and <strong>bold with <em> gem</strong> but pure </em>italics<em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong>****</em></strong>here baby <s>~~~~~</s>baby <code>baby\`\`</code><a href='href'>[[[[[[[[[[[[[[l]]]]int</a><a href='href'>link</a><code>\`\`\`\`\`\`\`\`</code></p>"`;
+exports[`Paragraph Parsing should be deep tokenized 1`] = `
+"<p>some normal and <strong>bold with <em> gem</strong> but pure </em>italics<em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong>****</em></strong>here baby <s>~~~~~</s>baby <code>baby\`\`</code><a href='href'>[[[[[[[[[[[[[[l]]]]int</a><a href='href'>link</a><code>\`\`\`\`\`\`\`\`</code></p>
+"
+`;
 
-exports[`Paragraph Parsing should be deep tokenized 2`] = `"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href='https://kiranparajuli.com.np'>Kiran Parajuli</a> <s>strikes body</s> here some</p>"`;
+exports[`Paragraph Parsing should be deep tokenized 2`] = `
+"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href='https://kiranparajuli.com.np'>Kiran Parajuli</a> <s>strikes body</s> here some</p>
+"
+`;
 
-exports[`Paragraph Parsing should be deep tokenized 3`] = `"<p>now with <u>underlined text</u> within some <u>_underl_ined_text_</u></p>"`;
+exports[`Paragraph Parsing should be deep tokenized 3`] = `
+"<p>now with <u>underlined text</u> within some <u>_underl_ined_text_</u></p>
+"
+`;
 
-exports[`Paragraph Parsing should be deep tokenized 4`] = `"<p>should include html tags inside for <code>code</code> <u>underline</u> <bold>bold</bold> <em>em</em></p>"`;
+exports[`Paragraph Parsing should be deep tokenized 4`] = `
+"<p>should include html tags inside for <code>code</code> <u>underline</u> <bold>bold</bold> <em>em</em></p>
+"
+`;
+
+exports[`Paragraph Parsing should have greedy newlines 1`] = `
+"<p>This is the first level of quoting.</p>
+<p>This is nested blockquote.</p>
+<p>Back to the first level.</p>
+"
+`;

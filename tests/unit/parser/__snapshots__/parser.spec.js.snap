@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Parser Commons comment should add a comment 1`] = `
-"<p>one</p><!-- comment-->
-<p>three</p>"
+"<p>one</p>
+<!-- comment-->
+<p>three</p>
+"
 `;
 
 exports[`Parser Commons common tokens should parse the common tokens 1`] = `
@@ -82,7 +84,8 @@ exports[`Parser Commons common tokens should parse the common tokens with some s
 exports[`Parser Commons common tokens should parse underlined heading 1`] = `
 "<h1>Heading 1</h1>
 <h2>Heading 2</h2>
-<p>Normal text</p>"
+<p>Normal text</p>
+"
 `;
 
 exports[`Parser Commons hr line should not allow multiple consecutive hr lines 1`] = `
@@ -95,7 +98,10 @@ exports[`Parser Commons hr line should parse the hr line 1`] = `
 "
 `;
 
-exports[`Parser Commons hr line should parse the hr line 2`] = `"<p>--</p>"`;
+exports[`Parser Commons hr line should parse the hr line 2`] = `
+"<p>--</p>
+"
+`;
 
 exports[`Parser Commons hr line should parse the hr line 3`] = `
 "<hr>
@@ -103,17 +109,18 @@ exports[`Parser Commons hr line should parse the hr line 3`] = `
 `;
 
 exports[`Parser Commons newline should combine multiple consequent new lines to a single one 1`] = `
-"<p>some plain text</p><br>
-<p>some more plain text</p>"
+"<p>some plain text</p>
+<p>some more plain text</p>
+"
 `;
 
 exports[`Parser Commons newline should include the empty line after some content 1`] = `
-"<p>some plain text</p><br>
+"<p>some plain text</p>
 "
 `;
 
 exports[`Parser Commons newline should include the empty line after some content 2`] = `
-"<p>some plain text</p><br>
+"<p>some plain text</p>
 "
 `;
 
