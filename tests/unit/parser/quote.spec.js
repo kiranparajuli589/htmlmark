@@ -77,4 +77,27 @@ describe("Quote Parsing", () => {
 		const html = MDP.h(lines)
 		expect(html).toMatchSnapshot()
 	})
+	it("greedy newline", () => {
+		const lines = [
+			">> one",
+			">>",
+			">>",
+			">> here"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
+	it("greedy newline in nested form", () => {
+		const lines = [
+			"",
+			"> This is the first level of quoting.",
+			">",
+			"> > This is nested blockquote.",
+			">",
+			"> Back to the first level.",
+			""
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
 })

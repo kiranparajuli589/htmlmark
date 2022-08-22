@@ -2,19 +2,19 @@
 
 exports[`CodeBlock Parsing should cope with multiple items 1`] = `
 "<pre><code class='language-js'>const a = 1</code></pre>
-<p>some people are funny</p>"
+<p>some people are funny</p>
+"
 `;
 
 exports[`CodeBlock Parsing should parse indent codeblock 1`] = `
-"<p>This is a normal paragraph:</p><br>
+"<p>This is a normal paragraph:</p>
 <pre><code>This is a code block.</code></pre>
-<br>
-<p>Here is an example of AppleScript:</p><br>
+<p>Here is an example of AppleScript:</p>
 <pre><code>tell application &quot;Foo&quot;
 beep
 end tell</code></pre>
-<br>
-<p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>"
+<p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
+"
 `;
 
 exports[`CodeBlock Parsing should parse multiple consequetive codeblocks 1`] = `

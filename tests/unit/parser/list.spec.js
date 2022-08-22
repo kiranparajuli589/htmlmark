@@ -98,4 +98,16 @@ describe("List Parsing", () => {
 		const html = MDP.h(lines)
 		expect(html).toMatchSnapshot()
 	})
+	it("should parse a spaced list", () => {
+		const lines = [
+			"",
+			"- here we go with a list item",
+			"",
+			"- another list item is here",
+			"",
+			"- next list item is on the fly"
+		]
+		const html = MDP.h(lines)
+		expect(html).toMatchSnapshot()
+	})
 })

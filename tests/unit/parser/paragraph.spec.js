@@ -12,4 +12,16 @@ describe("Paragraph Parsing", () => {
 		const lexerData = MDP.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
+	it("should have greedy newlines", () => {
+		const lines = [
+			"",
+			"This is the first level of quoting.",
+			"",
+			"This is nested blockquote.",
+			"",
+			"Back to the first level."
+		]
+		const lexerData = MDP.h(lines)
+		expect(lexerData).toMatchSnapshot()
+	})
 })
