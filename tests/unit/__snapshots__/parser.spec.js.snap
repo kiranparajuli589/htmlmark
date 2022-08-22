@@ -184,7 +184,8 @@ exports[`Parser list indent should break the list 1`] = `
 
 exports[`Parser list should allow empty list item 1`] = `
 "<ul>
-<li><p>one -</p></li>
+<li><p>one</p></li>
+<li></li>
 <li><p>two</p></li>
 </ul>
 "
@@ -195,6 +196,33 @@ exports[`Parser list should detect list indent 1`] = `
 <li><p>item <strong>1</strong></p></li>
 <li><p>item <a href='link-url'>link</a></p></li>
 <li><p>item 3 <code>code item</code></p></li>
+</ul>
+"
+`;
+
+exports[`Parser list should parse a list with an empty list item 1`] = `
+"<ul>
+<li><p>one</p></li>
+<li></li>
+<li><p>two</p></li>
+</ul>
+"
+`;
+
+exports[`Parser list should parse a list with an empty list item 2`] = `
+"<ul>
+<li></li>
+<li><p>one</p></li>
+<li><p>two</p></li>
+</ul>
+"
+`;
+
+exports[`Parser list should parse a list with an empty list item 3`] = `
+"<ul>
+<li><p>one</p></li>
+<li><p>two</p></li>
+<li></li>
 </ul>
 "
 `;
