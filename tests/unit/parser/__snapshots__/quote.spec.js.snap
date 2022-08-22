@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote Parsing should deep tokenize quote with multiple depth 1`] = `
+"<blockquote>
+<blockquote>
+<p>quote <strong>one</strong> with <em>two</em></p>
+</blockquote>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should deep tokenize quote with multiple depth 2`] = `
+"<blockquote>
+<blockquote>
+<blockquote>
+<p>quote <code>four</code> with <s>five</s></p>
+</blockquote>
+</blockquote>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should deep tokenize quote with multiple depth 3`] = `
+"<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>quote <a href='link-url'>link-title</a> with <em>two</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should deep tokenize quote with zero depth 1`] = `
+"<blockquote>
+<p>quote <strong>one</strong> with <em>two</em></p>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should deep tokenize quote with zero depth 2`] = `
+"<blockquote>
+<p>quote <code>four</code> with <s>five</s></p>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should deep tokenize quote with zero depth 3`] = `
+"<blockquote>
+<p>quote <a href='link-url'>link-title</a> with <em>two</em></p>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should detect the circular quote 1`] = `
+"<blockquote>
+<p>one</p><blockquote>
+<p>two</p><blockquote>
+<p>three</p><blockquote>
+<p>four</p><blockquote>
+<p>five</p>
+</blockquote>
+<br>
+<p>four</p>
+</blockquote>
+<br>
+<p>three</p>
+</blockquote>
+<br>
+<p>two</p>
+</blockquote>
+<br>
+<p>one</p>
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should find the list and codeblock inside 1`] = `
+"<blockquote>
+<h2>This is a header.</h2>
+<br>
+<ol>
+<li><p>This is the first list item.</p></li>
+<li><p>This is the second list item.</p></li>
+</ol>
+<br>
+<p>Here's some example code:</p><br>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
+
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should parse multiline quote with the same depth and indent 1`] = `
+"<blockquote>
+<blockquote>
+<blockquote>
+<p>zero f one f</p><br>
+
+</blockquote>
+
+</blockquote>
+<p>one</p><h1>two</h1>
+<blockquote>
+<p>three</p><blockquote>
+<p>four</p><blockquote>
+<p>d-five</p>
+</blockquote>
+
+</blockquote>
+<h1>five</h1>
+<h2>six</h2>
+<blockquote>
+<blockquote>
+<p>seven simple para</p>
+</blockquote>
+</blockquote>
+
+</blockquote>
+
+</blockquote>
+"
+`;
+
+exports[`Quote Parsing should parse the quote with list inside 1`] = `
+"<blockquote>
+<ul>
+<li><p>one</p></li>
+<li><p>two</p></li>
+</ul>
+
+</blockquote>
+"
+`;

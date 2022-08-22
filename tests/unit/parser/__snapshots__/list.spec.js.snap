@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Parsing indent should break the list 1`] = `
+"<ul>
+<li><p>item <strong>1</strong></p></li>
+<li><p>item <a href='link-url'>link</a></p><ul>
+<li><p>item 3 <code>code item</code></p><ul>
+<li><p>item 4</p></li>
+</ul>
+</li>
+<li><p>item 3 <code>code item</code></p></li>
+</ul>
+</li>
+</ul>
+"
+`;
+
+exports[`List Parsing should allow empty list item 1`] = `
+"<ul>
+<li><p>one</p></li>
+<li></li>
+<li><p>two</p></li>
+</ul>
+"
+`;
+
+exports[`List Parsing should detect list indent 1`] = `
+"<ul>
+<li><p>item <strong>1</strong></p></li>
+<li><p>item <a href='link-url'>link</a></p></li>
+<li><p>item 3 <code>code item</code></p></li>
+</ul>
+"
+`;
+
+exports[`List Parsing should parse a list with an empty list item 1`] = `
+"<ul>
+<li><p>one</p></li>
+<li></li>
+<li><p>two</p></li>
+</ul>
+"
+`;
+
+exports[`List Parsing should parse a list with an empty list item 2`] = `
+"<ul>
+<li></li>
+<li><p>one</p></li>
+<li><p>two</p></li>
+</ul>
+"
+`;
+
+exports[`List Parsing should parse a list with an empty list item 3`] = `
+"<ul>
+<li><p>one</p></li>
+<li><p>two</p></li>
+<li></li>
+</ul>
+"
+`;
+
+exports[`List Parsing should parse the indented codeblock inside 1`] = `
+"<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p><ul>
+<li><p>A list item with a code block:</p><br>
+<pre><code>&lt;code goes here&gt;
+&lt;code goes here&gt;
+&lt;code goes here&gt;</code></pre>
+</li>
+</ul>
+<br>
+<h3>Code Blocks</h3>
+"
+`;
+
+exports[`List Parsing should tokenize a valid ordered list 1`] = `
+"<ol>
+<li><p>item <strong>1</strong></p></li>
+<li><p>item <a href='link-url'>link</a></p></li>
+<li><p>item 3 <code>code item</code></p></li>
+</ol>
+"
+`;
+
+exports[`List Parsing should tokenize a valid un-ordered list 1`] = `
+"<ul>
+<li><p>item <strong>1</strong></p></li>
+<li><p>item <a href='link-url'>link</a></p></li>
+<li><p>item 3 <code>code item</code></p></li>
+</ul>
+"
+`;
+
+exports[`List Parsing should tokenize list combination 1`] = `
+"<ul>
+<li><p>one</p></li>
+<li><p>two</p></li>
+</ul>
+<ol>
+<li><p>one</p></li>
+<li><p>two</p></li>
+</ol>
+<ul>
+<li><input type='checkbox'><p>c empty</p></li>
+<li><input type='checkbox'><p>c checked</p></li>
+</ul>
+<ol>
+<li><input type='checkbox'><p>c empty</p></li>
+<li><input type='checkbox'><p>c checked</p></li>
+</ol>
+"
+`;
