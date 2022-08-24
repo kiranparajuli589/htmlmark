@@ -66,7 +66,6 @@ describe("lexer", () => {
 			expect(tokens).toMatchSnapshot()
 		})
 		it("should escape everything excepts tags for other tokens", () => {
-			// TODO: fix list lexing
 			const lines = [
 				"# &Ampersand",
 				"- 'SomeQuote'",
