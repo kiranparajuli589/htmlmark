@@ -121,3 +121,93 @@ Array [
   },
 ]
 `;
+
+exports[`lexer escaping should escape everything excepts tags for other tokens 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "level": 1,
+    "raw": "# &Ampersand",
+    "type": "heading",
+    "value": "&amp;Ampersand",
+  },
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": null,
+        "raw": "- 'SomeQuote'
+> Some \\" comment
+<bold>bold</bold>",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "'SomeQuote'",
+            "type": "paragraph",
+            "value": "&#39;SomeQuote&#39;",
+          },
+          Object {
+            "depth": 1,
+            "indent": 0,
+            "raw": "> Some \\" comment
+<bold>bold</bold>",
+            "tokens": Array [
+              Object {
+                "indent": 0,
+                "raw": " Some \\" comment
+<bold>bold</bold>",
+                "type": "paragraph",
+                "value": "Some &quot; comment <bold>bold</bold>",
+              },
+            ],
+            "type": "quote",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "check": false,
+      "identifier": "-",
+      "ordered": false,
+    },
+    "raw": "- 'SomeQuote'
+> Some \\" comment
+<bold>bold</bold>",
+    "type": "list",
+  },
+]
+`;
+
+exports[`lexer escaping should escape everything inside a code block 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": null,
+    "raw": "\`\`\`
+<div>
+</div>
+ab<cd
+efg>
+efg<
+>>>
+<<<<
+& ampersand
+'single quotes'
+\\"double quotes\\"
+\`\`\`",
+    "type": "code-block",
+    "value": "&lt;div&gt;
+&lt;/div&gt;
+ab&lt;cd
+efg&gt;
+efg&lt;
+&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;
+&amp; ampersand
+&#39;single quotes&#39;
+&quot;double quotes&quot;",
+  },
+]
+`;

@@ -8,3 +8,16 @@ export const commonTokensList= [
 	"<!-- comment item text -->",
 	"![alt text](image.png)"
 ]
+
+export const LinesToEscape = [
+	"<div>",
+	"</div>",
+	"ab<cd",
+	"efg>",
+	"efg<",
+	">>>",
+	"<<<<",
+	"& ampersand",
+	"'single quotes'",
+	"\"double quotes\""
+]
