@@ -121,7 +121,7 @@ exports[`Quote Parsing should find the list and codeblock inside 1`] = `
 <li><p>This is the second list item.</p>
 </li>
 </ol>
-<p>Here's some example code:</p>
+<p>Here&#39;s some example code:</p>
 <pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 
 </blockquote>

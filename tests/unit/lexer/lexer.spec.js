@@ -5,9 +5,12 @@ import { commonTokensList } from "../../fixtures/commTokens.js"
 
 describe("lexer", () => {
 	describe("hr line", () => {
-		it("should parse the hr line", () => {
+		it.each([
+			"---",
+			"***"
+		])("should parse the hr line: %s", (line) => {
 			const lines = [
-				"---"
+				line
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()

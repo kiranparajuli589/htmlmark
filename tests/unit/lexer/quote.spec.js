@@ -162,5 +162,19 @@ describe("quote", () => {
 			const tokenizedContent = lexer.run()
 			expect(tokenizedContent).toMatchSnapshot()
 		})
+
+
+		it("should allow the link variables", () => {
+			const lines = [
+				"[google]: https://www.google.com/",
+				"",
+				"If you want to search for something on the web, [google] is a nice place.",
+				"",
+				"You can also use [google] to host some stuff and make a great app!"
+			]
+			const lexer = new Lexer(lines)
+			const tokenizedContent = lexer.run()
+			expect(tokenizedContent).toMatchSnapshot()
+		})
 	})
 })
