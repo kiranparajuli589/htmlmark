@@ -111,10 +111,9 @@ Markdown should allow inline HTML. So, hey what about using actual html tags for
 ### 🤔 Custom emphasis identifiers
 SHOULD THIS BE IMPLEMENTED?
 
+### 🛹 Escaping
+
+Ref: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
 
 ### 👻 HTML Sanitization
 **A BIG TODO**
-
-
-
-*****
