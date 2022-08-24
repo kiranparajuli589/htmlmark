@@ -88,6 +88,38 @@ exports[`Parser Commons common tokens should parse underlined heading 1`] = `
 "
 `;
 
+exports[`Parser Commons escaping should escape everything excepts tags for other tokens 1`] = `
+"<h1>&amp;Ampersand</h1>
+<ul>
+<li><p>&#39;SomeQuote&#39;</p>
+<blockquote>
+<p>Some &quot; comment <bold>bold</bold></p>
+
+</blockquote>
+</li>
+</ul>
+"
+`;
+
+exports[`Parser Commons escaping should escape everything inside a code 1`] = `
+"<p><code>&lt;/em&gt; &amp; &#39;quo&quot;</code></p>
+"
+`;
+
+exports[`Parser Commons escaping should escape everything inside a code block 1`] = `
+"<pre><code>&lt;div&gt;
+&lt;/div&gt;
+ab&lt;cd
+efg&gt;
+efg&lt;
+&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;
+&amp; ampersand
+&#39;single quotes&#39;
+&quot;double quotes&quot;</code></pre>
+"
+`;
+
 exports[`Parser Commons hr line should not allow multiple consecutive hr lines 1`] = `
 "<hr>
 "

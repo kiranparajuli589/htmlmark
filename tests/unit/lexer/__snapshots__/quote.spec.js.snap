@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`quote list inside should allow the link variables 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "[google]: https://www.google.com/",
+    "type": "paragraph",
+    "value": "[google]: https://www.google.com/",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "If you want to search for something on the web, [google] is a nice place.",
+    "type": "paragraph",
+    "value": "If you want to search for something on the web, [google] is a nice place.",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "You can also use [google] to host some stuff and make a great app!",
+    "type": "paragraph",
+    "value": "You can also use [google] to host some stuff and make a great app!",
+  },
+]
+`;
+
 exports[`quote list inside should identify list inside the quote 1`] = `
 Array [
   Object {

@@ -1,4 +1,4 @@
-import { commonTokensList } from "../../fixtures/commTokens.js"
+import { commonTokensList, LinesToEscape } from "../../fixtures/commTokens.js"
 import { MDP } from "../../../lib/index.js"
 
 
@@ -82,6 +82,34 @@ describe("Parser Commons", () => {
 			const lines = [
 				"---",
 				"---"
+			]
+			const html = MDP.h(lines)
+			expect(html).toMatchSnapshot()
+		})
+	})
+	describe("escaping", () => {
+		it("should escape everything inside a code block", () => {
+			const lines = [
+				"```",
+				...LinesToEscape,
+				"```"
+			]
+			const html = MDP.h(lines)
+			expect(html).toMatchSnapshot()
+		})
+		it("should escape everything inside a code", () => {
+			const lines = [
+				"`</em> & 'quo\"`"
+			]
+			const html = MDP.h(lines)
+			expect(html).toMatchSnapshot()
+		})
+		it("should escape everything excepts tags for other tokens", () => {
+			const lines = [
+				"# &Ampersand",
+				"- 'SomeQuote'",
+				"> Some \" comment",
+				"<bold>bold</bold>"
 			]
 			const html = MDP.h(lines)
 			expect(html).toMatchSnapshot()
