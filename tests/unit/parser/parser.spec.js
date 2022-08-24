@@ -1,6 +1,5 @@
 import { commonTokensList, LinesToEscape } from "../../fixtures/commTokens.js"
 import { MDP } from "../../../lib/index.js"
-import { Lexer } from "../../../lib/lexer/index.js"
 
 
 describe("Parser Commons", () => {
