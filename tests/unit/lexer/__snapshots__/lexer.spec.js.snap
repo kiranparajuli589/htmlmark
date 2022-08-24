@@ -137,31 +137,13 @@ Array [
       Object {
         "checked": null,
         "count": null,
-        "raw": "- 'SomeQuote'
-> Some \\" comment
-<bold>bold</bold>",
+        "raw": "- 'SomeQuote'",
         "tokens": Array [
           Object {
             "indent": 0,
             "raw": "'SomeQuote'",
             "type": "paragraph",
             "value": "&#39;SomeQuote&#39;",
-          },
-          Object {
-            "depth": 1,
-            "indent": 0,
-            "raw": "> Some \\" comment
-<bold>bold</bold>",
-            "tokens": Array [
-              Object {
-                "indent": 0,
-                "raw": " Some \\" comment
-<bold>bold</bold>",
-                "type": "paragraph",
-                "value": "Some &quot; comment <bold>bold</bold>",
-              },
-            ],
-            "type": "quote",
           },
         ],
         "type": "list-item",
@@ -172,10 +154,24 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
-    "raw": "- 'SomeQuote'
-> Some \\" comment
-<bold>bold</bold>",
+    "raw": "- 'SomeQuote'",
     "type": "list",
+  },
+  Object {
+    "depth": 1,
+    "indent": 0,
+    "raw": "> Some \\" comment
+<bold>bold</bold>",
+    "tokens": Array [
+      Object {
+        "indent": 0,
+        "raw": " Some \\" comment
+<bold>bold</bold>",
+        "type": "paragraph",
+        "value": "Some &quot; comment <bold>bold</bold>",
+      },
+    ],
+    "type": "quote",
   },
 ]
 `;
