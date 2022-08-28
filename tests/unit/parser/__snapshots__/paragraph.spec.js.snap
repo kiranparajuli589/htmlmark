@@ -1,22 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paragraph Parsing should be deep tokenized 1`] = `
-"<p>some normal and <strong>bold with <em> gem</strong> but pure </em>italics<em> is alos there baby now <s>coming</s>hola amigons<s>strike</s> wooo lala what about blazing <strong>****</em></strong>here baby <s>~~~~~</s>baby <code>baby\`\`</code><a href='href'>[[[[[[[[[[[[[[l]]]]int</a><a href='href'>link</a><code>\`\`\`\`\`\`\`\`</code></p>
+exports[`Paragraph Parsing a valid link reference 1`] = `
+"<p>this is <a href=\\"https://google.com\\">google</a> link</p>
 "
 `;
 
-exports[`Paragraph Parsing should be deep tokenized 2`] = `
-"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href='https://kiranparajuli.com.np'>Kiran Parajuli</a> <s>strikes body</s> here some</p>
+exports[`Paragraph Parsing a valid link reference with text 1`] = `
+"<p>this is <a href=\\"https://google.com\\">toggle</a> link</p>
 "
 `;
 
-exports[`Paragraph Parsing should be deep tokenized 3`] = `
-"<p>now with <u>underlined text</u> within some <u>_underl_ined_text_</u></p>
+exports[`Paragraph Parsing escape should escape inside code 1`] = `
+"<p>one <code>two<</code> three</p>
 "
 `;
 
-exports[`Paragraph Parsing should be deep tokenized 4`] = `
-"<p>should include html tags inside for <code>code</code> <u>underline</u> <bold>bold</bold> <em>em</em></p>
+exports[`Paragraph Parsing should be deep tokenized: a ****bold**** text 1`] = `
+"<p>a <strong>bold</strong> text</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: a **bold and *italics* text** 1`] = `
+"<p>a <strong>bold and <em>italics</em> text</strong></p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: a **bold** text 1`] = `
+"<p>a <strong>bold</strong> text</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: a ~~~~strike~~~~~~~ here 1`] = `
+"<p>a <s>strike</s>~~~ here</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: a clean [link](http://localhost 'tooltip') is here 1`] = `
+"<p>a clean <a href=\\"http://localhost\\" title=\\"tooltip\\">link</a> is here</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: a link [with **bold** text](https://seeme) lets see 1`] = `
+"<p>a link <a href=\\"https://seeme\\">with <strong>bold</strong> text</a> lets see</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some 1`] = `
+"<p>a paragraph of <u>words</u> <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> <s>strikes body</s> here some</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: an ***italics*** text 1`] = `
+"<p>an <em>italics</em> text</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: an *italics and **bold** text* here 1`] = `
+"<p>an <em>italics and <strong>bold</strong> text</em> here</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: an *italics with\\* asterisk* inside 1`] = `
+"<p>an <em>italics with* asterisk</em> inside</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: an *italics* text 1`] = `
+"<p>an <em>italics</em> text</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: an empty [link] reference is here 1`] = `
+"<p>an empty [link] reference is here</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: beautiful ![image](link 'one' 50 60) is here now. 1`] = `
+"<p>beautiful <img src=\\"link\\" alt=\\"image\\" title=\\"one\\" width=\\"50\\" height=\\"60\\"> is here now.</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: beautiful ![image](link 'one' 50) is here now. 1`] = `
+"<p>beautiful <img src=\\"link\\" alt=\\"image\\" title=\\"one\\" width=\\"50\\"> is here now.</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: beautiful ![image](link 'one') is here now. 1`] = `
+"<p>beautiful <img src=\\"link\\" alt=\\"image\\" title=\\"one\\"> is here now.</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: beautiful ![image](link) is here now. 1`] = `
+"<p>beautiful <img src=\\"link\\" alt=\\"image\\"> is here now.</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: but a link [kiran](https://kiran.me 'hero') with tooltip is very amazing 1`] = `
+"<p>but a link <a href=\\"https://kiran.me\\" title=\\"hero\\">kiran</a> with tooltip is very amazing</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: but will it \`find a **bold *and* italics** inside\` the code 1`] = `
+"<p>but will it <code>find a <strong>bold <em>and</em> italics</strong> inside</code> the code</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: checkout this _cool italics_ here 1`] = `
+"<p>checkout this <em>cool italics</em> here</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: how are ~~~strikes _in_ the~~~ _wonderland_ 1`] = `
+"<p>how are ~<s>strikes <em>in</em> the</s>~ <em>wonderland</em></p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: i ~~~am now~~~ unhappy 1`] = `
+"<p>i ~<s>am now</s>~ unhappy</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: lets check for \`a code\` inside and code \`\`with multiple\`\` ticks 1`] = `
+"<p>lets check for <code>a code</code> inside and code <code>with multiple</code> ticks</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: new ~~~strike~~ with beauty 1`] = `
+"<p>new ~<s>strike</s> with beauty</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: no \\* mans \\* land 1`] = `
+"<p>no * mans * land</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: now **stars _in_ the** wonderland 1`] = `
+"<p>now <strong>stars <em>in</em> the</strong> wonderland</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: now with __underlined text__ within some ___underlined_text___ 1`] = `
+"<p>now with <strong>underlined text</strong> within some <em>underlined_text</em></p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: pool of a ~~~~~~~~strike~~~~~~~ 1`] = `
+"<p>pool of a ~~<s>strike</s>~</p>
+"
+`;
+
+exports[`Paragraph Parsing should be deep tokenized: some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigos~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\` 1`] = `
+"<p>some normal and <strong>bold with * gem</strong> but pure <em>italics</em> is alos there baby now <s>coming</s>hola amigos<s>strike</s> wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`</p>
+"
+`;
+
+exports[`Paragraph Parsing should be separated with other tokens 1`] = `
+"<p>abc</p>
+<h1>one <code>two</code> three</h1>
+<p>def</p>
 "
 `;
 
@@ -24,5 +166,16 @@ exports[`Paragraph Parsing should have greedy newlines 1`] = `
 "<p>This is the first level of quoting.</p>
 <p>This is nested blockquote.</p>
 <p>Back to the first level.</p>
+"
+`;
+
+exports[`Paragraph Parsing should ignore the escaped special characters 1`] = `
+"<p>this is [google] link</p>
+<p>this is a normal * asterisk * here again</p>
+"
+`;
+
+exports[`Paragraph Parsing should merge consecutive paragraph not separated by other tokens 1`] = `
+"<p>abc <code>def</code> <em>ghi jkl</em> mno <strong>pqr</strong>* stu</p>
 "
 `;

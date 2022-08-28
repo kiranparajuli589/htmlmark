@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`link should parse a link 1`] = `
+"<p><a href=&quot;https://kiranparajuli.com.np&quot; >Kiran Parajuli</a></p>
+"
+`;
+
+exports[`link should parse a link with text 1`] = `
+"<p><a href=&quot;https://kiranparajuli.com.np&quot; >Kiran Parajuli</a> is a good</p>
+"
+`;
+
+exports[`link should parse a link with title 1`] = `
+"<p><a href=&quot;https://kiranparajuli.com.np&quot; title=&quot;Kiran Parajuli&quot;>Kiran Parajuli</a></p>
+"
+`;
