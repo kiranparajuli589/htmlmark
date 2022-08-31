@@ -101,7 +101,7 @@ exports[`Paragraph Parsing should be deep tokenized: but a link [kiran](https://
 `;
 
 exports[`Paragraph Parsing should be deep tokenized: but will it \`find a **bold *and* italics** inside\` the code 1`] = `
-"<p>but will it <code>find a <strong>bold <em>and</em> italics</strong> inside</code> the code</p>
+"<p>but will it <code>find a **bold *and* italics** inside</code> the code</p>
 "
 `;
 
