@@ -58,10 +58,11 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
     - Can be Lazy
     - Indentation
 5. **Image:**
-    - Link: Required
-    - Alt text: Optional
-    - Size: NOT IMPLEMENTED YET
-    - Align: NOT IMPLEMENTED YET
+    - Link: String (Required)
+    - Alt text: String (Required)
+    - Title: String (Optional)
+    - Width: Number (Optional)
+    - Height: Number (Optional)
     - Indentation: NOT IMPLEMENTED YET
 6. **Comment:**
     - Lexer contains it
@@ -84,36 +85,28 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
 ### 🎺 Emphasis
 Emphasis can be inside the content of any paragraph types. Even emphasis items can have emphasis inside 🤩.
 
-1. **Bold:** wrapped inside `**`
-2. **Italic:** wrapped inside `*`
-3. **Strike:** wrapped inside `~~`
-4. **Underline:** wrapped inside `__`
-5. **Link:** wrapped as `[title](url)`
-6. **Code:** wrapped inside backticks
-
-### 😤 Limitations of the emphasis identifiers
-
-1. Bold: cannot include `**` in the middle of the word.
-2. Italics: cannot include `*` in the middle of the word.
-3. Code: cannot include <code>``</code> in the middle of the word.
-4. Strike Through: cannot include `~~` in the middle of the word.
-5. Underline: cannot include `__` in the middle of the word.
-6. Link: cannot include `]` in the middle of the title.
-
-
-### 🪄 How to avoid such limitations?
-Markdown should allow inline HTML. So, hey what about using actual html tags for such emphasis requirements.
-
-**PROS:**
-- Tags are less likely to come in between the content
-- Fast plus Accurate parsing
+1. **Bold:** wrapped inside `**` | `__` | odd number of `*` | `_`
+2. **Italic:** wrapped inside `*` | `_` | even number of `*` | `_`
+3. **Code:** wrapped inside backticks
+4. **Strike:** wrapped inside `~~` | even number of `~`
+5. **Underline:** wrapped inside `++` | even number of `+`
+6. **Link:** wrapped as `[title](url 'title')` where `title` is optional
+7. **Image:** wrapped as `![alt text](url 'title' width height)` where `title`, `width` & `height` are optional
 
 ### 🤔 Custom emphasis identifiers
 SHOULD THIS BE IMPLEMENTED?
 
 ### 🛹 Escaping
+1. So far `<`, `>`, `&`, `"` & `'` are escaped.
+2. Everything is escaped inside of `code` and `codeblock`
+3. Non HTML characters are escaped inside of other tokens
 
 Ref: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+
+### 🤡 Unescaping
+
+Escaped characters (`*`,`_`,`[`,`]`,`(`,`)`,`!`,`~`,`+`) are replaced with their unescaped counterparts.
+
 
 ### 👻 HTML Sanitization
 **A BIG TODO**
