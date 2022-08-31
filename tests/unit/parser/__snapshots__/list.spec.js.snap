@@ -4,7 +4,7 @@ exports[`List Parsing indent should break the list 1`] = `
 "<ul>
 <li><p>item <strong>1</strong></p>
 </li>
-<li><p>item <a href='link-url'>link</a></p>
+<li><p>item <a href=\\"link-url\\">link</a></p>
 <ul>
 <li><p>item 3 <code>code item</code></p>
 <ul>
@@ -35,7 +35,7 @@ exports[`List Parsing should detect list indent 1`] = `
 "<ul>
 <li><p>item <strong>1</strong></p>
 </li>
-<li><p>item <a href='link-url'>link</a></p>
+<li><p>item <a href=\\"link-url\\">link</a></p>
 </li>
 <li><p>item 3 <code>code item</code></p>
 </li>
@@ -105,7 +105,7 @@ exports[`List Parsing should tokenize a valid ordered list 1`] = `
 "<ol>
 <li><p>item <strong>1</strong></p>
 </li>
-<li><p>item <a href='link-url'>link</a></p>
+<li><p>item <a href=\\"link-url\\">link</a></p>
 </li>
 <li><p>item 3 <code>code item</code></p>
 </li>
@@ -117,7 +117,7 @@ exports[`List Parsing should tokenize a valid un-ordered list 1`] = `
 "<ul>
 <li><p>item <strong>1</strong></p>
 </li>
-<li><p>item <a href='link-url'>link</a></p>
+<li><p>item <a href=\\"link-url\\">link</a></p>
 </li>
 <li><p>item 3 <code>code item</code></p>
 </li>

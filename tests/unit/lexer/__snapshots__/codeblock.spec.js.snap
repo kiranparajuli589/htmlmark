@@ -16,6 +16,13 @@ three",
   Object {
     "indent": 0,
     "raw": "four",
+    "tokens": Array [
+      Object {
+        "raw": "four",
+        "type": "text",
+        "value": "four",
+      },
+    ],
     "type": "paragraph",
     "value": "four",
   },
@@ -27,6 +34,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "zero one two",
+    "tokens": Array [
+      Object {
+        "raw": "zero one two",
+        "type": "text",
+        "value": "zero one two",
+      },
+    ],
     "type": "paragraph",
     "value": "zero one two",
   },
@@ -47,6 +61,13 @@ three",
   Object {
     "indent": 0,
     "raw": "four",
+    "tokens": Array [
+      Object {
+        "raw": "four",
+        "type": "text",
+        "value": "four",
+      },
+    ],
     "type": "paragraph",
     "value": "four",
   },
@@ -62,8 +83,15 @@ Array [
           two
     three
 four",
+    "tokens": Array [
+      Object {
+        "raw": "zero one two     one           two     three four",
+        "type": "text",
+        "value": "zero one two     one           two     three four",
+      },
+    ],
     "type": "paragraph",
-    "value": "zero one two one two three four",
+    "value": "zero one two     one           two     three four",
   },
 ]
 `;
@@ -95,6 +123,13 @@ const a = 1
   Object {
     "indent": 0,
     "raw": "some people are funny",
+    "tokens": Array [
+      Object {
+        "raw": "some people are funny",
+        "type": "text",
+        "value": "some people are funny",
+      },
+    ],
     "type": "paragraph",
     "value": "some people are funny",
   },
@@ -244,6 +279,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "some line",
+    "tokens": Array [
+      Object {
+        "raw": "some line",
+        "type": "text",
+        "value": "some line",
+      },
+    ],
     "type": "paragraph",
     "value": "some line",
   },
@@ -260,6 +302,13 @@ const b = 2",
   Object {
     "indent": 0,
     "raw": "here again",
+    "tokens": Array [
+      Object {
+        "raw": "here again",
+        "type": "text",
+        "value": "here again",
+      },
+    ],
     "type": "paragraph",
     "value": "here again",
   },

@@ -129,7 +129,7 @@ exports[`Table Parsing table indent acceptable indent should not break the table
 `;
 
 exports[`Table Parsing table indent different indent header -> separator 1`] = `
-"<p>| column 1 | column 2 | |---|---| | row 1 c1 | row 1 c2 |</p>
+"<p>| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |</p>
 "
 `;
 

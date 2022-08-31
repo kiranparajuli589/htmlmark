@@ -6,6 +6,29 @@ Array [
     "indent": 0,
     "raw": "To put a code block within a list item, the code block needs
 to be indented *twice* -- 8 spaces or two tabs:",
+    "tokens": Array [
+      Object {
+        "raw": "To put a code block within a list item, the code block needs to be indented ",
+        "type": "text",
+        "value": "To put a code block within a list item, the code block needs to be indented ",
+      },
+      Object {
+        "raw": "*twice*",
+        "tokens": Array [
+          Object {
+            "raw": "twice",
+            "type": "text",
+            "value": "twice",
+          },
+        ],
+        "type": "italic",
+      },
+      Object {
+        "raw": " -- 8 spaces or two tabs:",
+        "type": "text",
+        "value": " -- 8 spaces or two tabs:",
+      },
+    ],
     "type": "paragraph",
     "value": "To put a code block within a list item, the code block needs to be indented *twice* -- 8 spaces or two tabs:",
   },
@@ -22,6 +45,13 @@ to be indented *twice* -- 8 spaces or two tabs:",
           Object {
             "indent": 0,
             "raw": "A list item with a code block:",
+            "tokens": Array [
+              Object {
+                "raw": "A list item with a code block:",
+                "type": "text",
+                "value": "A list item with a code block:",
+              },
+            ],
             "type": "paragraph",
             "value": "A list item with a code block:",
           },
@@ -56,6 +86,13 @@ to be indented *twice* -- 8 spaces or two tabs:",
     "indent": 0,
     "level": 3,
     "raw": "### Code Blocks",
+    "tokens": Array [
+      Object {
+        "raw": "Code Blocks",
+        "type": "text",
+        "value": "Code Blocks",
+      },
+    ],
     "type": "heading",
     "value": "Code Blocks",
   },
@@ -75,6 +112,24 @@ Array [
           Object {
             "indent": 0,
             "raw": "item **1**",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "**1**",
+                "tokens": Array [
+                  Object {
+                    "raw": "1",
+                    "type": "text",
+                    "value": "1",
+                  },
+                ],
+                "type": "bold",
+              },
+            ],
             "type": "paragraph",
             "value": "item **1**",
           },
@@ -89,6 +144,31 @@ Array [
           Object {
             "indent": 0,
             "raw": "item [link](link-url)",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "[link](link-url)",
+                "tokens": Object {
+                  "href": "link-url",
+                  "title": Object {
+                    "raw": "link",
+                    "tokens": Array [
+                      Object {
+                        "raw": "link",
+                        "type": "text",
+                        "value": "link",
+                      },
+                    ],
+                  },
+                  "tooltip": undefined,
+                },
+                "type": "link",
+              },
+            ],
             "type": "paragraph",
             "value": "item [link](link-url)",
           },
@@ -103,6 +183,18 @@ Array [
           Object {
             "indent": 0,
             "raw": "item 3 \`code item\`",
+            "tokens": Array [
+              Object {
+                "raw": "item 3 ",
+                "type": "text",
+                "value": "item 3 ",
+              },
+              Object {
+                "raw": "\`code item\`",
+                "type": "code",
+                "value": "code item",
+              },
+            ],
             "type": "paragraph",
             "value": "item 3 \`code item\`",
           },
@@ -117,6 +209,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "item 4",
+            "tokens": Array [
+              Object {
+                "raw": "item 4",
+                "type": "text",
+                "value": "item 4",
+              },
+            ],
             "type": "paragraph",
             "value": "item 4",
           },
@@ -153,6 +252,29 @@ omg this is merged with the above line",
             "indent": 0,
             "raw": "list *item* one
 omg this is merged with the above line",
+            "tokens": Array [
+              Object {
+                "raw": "list ",
+                "type": "text",
+                "value": "list ",
+              },
+              Object {
+                "raw": "*item*",
+                "tokens": Array [
+                  Object {
+                    "raw": "item",
+                    "type": "text",
+                    "value": "item",
+                  },
+                ],
+                "type": "italic",
+              },
+              Object {
+                "raw": " one omg this is merged with the above line",
+                "type": "text",
+                "value": " one omg this is merged with the above line",
+              },
+            ],
             "type": "paragraph",
             "value": "list *item* one omg this is merged with the above line",
           },
@@ -194,8 +316,15 @@ three
             "raw": "one
             two
 three",
+            "tokens": Array [
+              Object {
+                "raw": "one             two three",
+                "type": "text",
+                "value": "one             two three",
+              },
+            ],
             "type": "paragraph",
-            "value": "one two three",
+            "value": "one             two three",
           },
           Object {
             "type": "new-line",
@@ -222,6 +351,13 @@ four",
           Object {
             "indent": 0,
             "raw": "two",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
             "type": "paragraph",
             "value": "two",
           },
@@ -236,6 +372,13 @@ four",
           Object {
             "indent": 0,
             "raw": "three",
+            "tokens": Array [
+              Object {
+                "raw": "three",
+                "type": "text",
+                "value": "three",
+              },
+            ],
             "type": "paragraph",
             "value": "three",
           },
@@ -276,6 +419,24 @@ Array [
           Object {
             "indent": 0,
             "raw": "item **1**",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "**1**",
+                "tokens": Array [
+                  Object {
+                    "raw": "1",
+                    "type": "text",
+                    "value": "1",
+                  },
+                ],
+                "type": "bold",
+              },
+            ],
             "type": "paragraph",
             "value": "item **1**",
           },
@@ -290,6 +451,31 @@ Array [
           Object {
             "indent": 0,
             "raw": "item [link](link-url)",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "[link](link-url)",
+                "tokens": Object {
+                  "href": "link-url",
+                  "title": Object {
+                    "raw": "link",
+                    "tokens": Array [
+                      Object {
+                        "raw": "link",
+                        "type": "text",
+                        "value": "link",
+                      },
+                    ],
+                  },
+                  "tooltip": undefined,
+                },
+                "type": "link",
+              },
+            ],
             "type": "paragraph",
             "value": "item [link](link-url)",
           },
@@ -304,6 +490,18 @@ Array [
           Object {
             "indent": 0,
             "raw": "item 3 \`code item\`",
+            "tokens": Array [
+              Object {
+                "raw": "item 3 ",
+                "type": "text",
+                "value": "item 3 ",
+              },
+              Object {
+                "raw": "\`code item\`",
+                "type": "code",
+                "value": "code item",
+              },
+            ],
             "type": "paragraph",
             "value": "item 3 \`code item\`",
           },
@@ -337,6 +535,24 @@ Array [
           Object {
             "indent": 0,
             "raw": "item **1**",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "**1**",
+                "tokens": Array [
+                  Object {
+                    "raw": "1",
+                    "type": "text",
+                    "value": "1",
+                  },
+                ],
+                "type": "bold",
+              },
+            ],
             "type": "paragraph",
             "value": "item **1**",
           },
@@ -351,6 +567,31 @@ Array [
           Object {
             "indent": 0,
             "raw": "item [link](link-url)",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "[link](link-url)",
+                "tokens": Object {
+                  "href": "link-url",
+                  "title": Object {
+                    "raw": "link",
+                    "tokens": Array [
+                      Object {
+                        "raw": "link",
+                        "type": "text",
+                        "value": "link",
+                      },
+                    ],
+                  },
+                  "tooltip": undefined,
+                },
+                "type": "link",
+              },
+            ],
             "type": "paragraph",
             "value": "item [link](link-url)",
           },
@@ -365,6 +606,18 @@ Array [
           Object {
             "indent": 0,
             "raw": "item 3 \`code item\`",
+            "tokens": Array [
+              Object {
+                "raw": "item 3 ",
+                "type": "text",
+                "value": "item 3 ",
+              },
+              Object {
+                "raw": "\`code item\`",
+                "type": "code",
+                "value": "code item",
+              },
+            ],
             "type": "paragraph",
             "value": "item 3 \`code item\`",
           },
@@ -398,6 +651,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "one",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
             "type": "paragraph",
             "value": "one",
           },
@@ -419,6 +679,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "two",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
             "type": "paragraph",
             "value": "two",
           },
@@ -459,6 +726,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "one",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
             "type": "paragraph",
             "value": "one",
           },
@@ -473,6 +747,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "two",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
             "type": "paragraph",
             "value": "two",
           },
@@ -506,6 +787,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "one",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
             "type": "paragraph",
             "value": "one",
           },
@@ -520,6 +808,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "two",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
             "type": "paragraph",
             "value": "two",
           },
@@ -560,6 +855,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "one",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
             "type": "paragraph",
             "value": "one",
           },
@@ -574,6 +876,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "two",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
             "type": "paragraph",
             "value": "two",
           },
@@ -601,6 +910,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "one",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
             "type": "paragraph",
             "value": "one",
           },
@@ -615,6 +931,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "two",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
             "type": "paragraph",
             "value": "two",
           },
@@ -642,6 +965,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "c empty",
+            "tokens": Array [
+              Object {
+                "raw": "c empty",
+                "type": "text",
+                "value": "c empty",
+              },
+            ],
             "type": "paragraph",
             "value": "c empty",
           },
@@ -656,6 +986,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "c checked",
+            "tokens": Array [
+              Object {
+                "raw": "c checked",
+                "type": "text",
+                "value": "c checked",
+              },
+            ],
             "type": "paragraph",
             "value": "c checked",
           },
@@ -683,6 +1020,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "c empty",
+            "tokens": Array [
+              Object {
+                "raw": "c empty",
+                "type": "text",
+                "value": "c empty",
+              },
+            ],
             "type": "paragraph",
             "value": "c empty",
           },
@@ -697,6 +1041,13 @@ Array [
           Object {
             "indent": 0,
             "raw": "c checked",
+            "tokens": Array [
+              Object {
+                "raw": "c checked",
+                "type": "text",
+                "value": "c checked",
+              },
+            ],
             "type": "paragraph",
             "value": "c checked",
           },
@@ -729,6 +1080,24 @@ Array [
           Object {
             "indent": 0,
             "raw": "item **1**",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "**1**",
+                "tokens": Array [
+                  Object {
+                    "raw": "1",
+                    "type": "text",
+                    "value": "1",
+                  },
+                ],
+                "type": "bold",
+              },
+            ],
             "type": "paragraph",
             "value": "item **1**",
           },
@@ -746,6 +1115,31 @@ Array [
           Object {
             "indent": 0,
             "raw": "item [link](link-url)",
+            "tokens": Array [
+              Object {
+                "raw": "item ",
+                "type": "text",
+                "value": "item ",
+              },
+              Object {
+                "raw": "[link](link-url)",
+                "tokens": Object {
+                  "href": "link-url",
+                  "title": Object {
+                    "raw": "link",
+                    "tokens": Array [
+                      Object {
+                        "raw": "link",
+                        "type": "text",
+                        "value": "link",
+                      },
+                    ],
+                  },
+                  "tooltip": undefined,
+                },
+                "type": "link",
+              },
+            ],
             "type": "paragraph",
             "value": "item [link](link-url)",
           },
@@ -761,6 +1155,18 @@ Array [
                   Object {
                     "indent": 0,
                     "raw": "item 3 \`code item\`",
+                    "tokens": Array [
+                      Object {
+                        "raw": "item 3 ",
+                        "type": "text",
+                        "value": "item 3 ",
+                      },
+                      Object {
+                        "raw": "\`code item\`",
+                        "type": "code",
+                        "value": "code item",
+                      },
+                    ],
                     "type": "paragraph",
                     "value": "item 3 \`code item\`",
                   },
@@ -775,6 +1181,13 @@ Array [
                           Object {
                             "indent": 0,
                             "raw": "item 4",
+                            "tokens": Array [
+                              Object {
+                                "raw": "item 4",
+                                "type": "text",
+                                "value": "item 4",
+                              },
+                            ],
                             "type": "paragraph",
                             "value": "item 4",
                           },
@@ -801,6 +1214,24 @@ Array [
                   Object {
                     "indent": 0,
                     "raw": "item 5 ~~strike~~",
+                    "tokens": Array [
+                      Object {
+                        "raw": "item 5 ",
+                        "type": "text",
+                        "value": "item 5 ",
+                      },
+                      Object {
+                        "raw": "~~strike~~",
+                        "tokens": Array [
+                          Object {
+                            "raw": "strike",
+                            "type": "text",
+                            "value": "strike",
+                          },
+                        ],
+                        "type": "strike-through",
+                      },
+                    ],
                     "type": "paragraph",
                     "value": "item 5 ~~strike~~",
                   },

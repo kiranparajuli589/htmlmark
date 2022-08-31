@@ -11,6 +11,7 @@ exports[`link should parse a link with text 1`] = `
 `;
 
 exports[`link should parse a link with title 1`] = `
-"<p>here <em>is a <strong>beautiful</strong> piece of</em> art</p>
+"<p>test <strong>bold <em>and</em> bold</strong> with <em>italics</em> and a <a href=\\"https://kiranparajuli.com.np\\" title=\\"K Pictures\\">Kiran Parajuli</a></p>
+<p>here <em>is a <strong>beautiful</strong> piece of</em> art</p>
 "
 `;

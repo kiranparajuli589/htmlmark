@@ -89,13 +89,13 @@ exports[`Parser Commons common tokens should parse underlined heading 1`] = `
 `;
 
 exports[`Parser Commons escaping should escape everything excepts tags for other tokens 1`] = `
-"<h1>&amp;Ampersand</h1>
+"<h1>&amp;amp;Ampersand</h1>
 <ul>
 <li><p>&#39;SomeQuote&#39;</p>
 </li>
 </ul>
 <blockquote>
-<p>Some &quot; comment <bold>bold</bold></p>
+<p> Some &quot; comment <bold>bold</bold></p>
 
 </blockquote>
 "
