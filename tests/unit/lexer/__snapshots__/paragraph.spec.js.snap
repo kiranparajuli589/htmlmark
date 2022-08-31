@@ -340,14 +340,8 @@ Array [
       },
       Object {
         "raw": "\`first code\`",
-        "tokens": Array [
-          Object {
-            "raw": "first code",
-            "type": "text",
-            "value": "first code",
-          },
-        ],
         "type": "code",
+        "value": "first code",
       },
       Object {
         "raw": " normal text here ",
@@ -356,14 +350,8 @@ Array [
       },
       Object {
         "raw": "\`code body\`",
-        "tokens": Array [
-          Object {
-            "raw": "code body",
-            "type": "text",
-            "value": "code body",
-          },
-        ],
         "type": "code",
+        "value": "code body",
       },
       Object {
         "raw": " ",
@@ -840,46 +828,8 @@ Array [
       },
       Object {
         "raw": "\`find a **bold *and* italics** inside\`",
-        "tokens": Array [
-          Object {
-            "raw": "find a ",
-            "type": "text",
-            "value": "find a ",
-          },
-          Object {
-            "raw": "**bold *and* italics**",
-            "tokens": Array [
-              Object {
-                "raw": "bold ",
-                "type": "text",
-                "value": "bold ",
-              },
-              Object {
-                "raw": "*and*",
-                "tokens": Array [
-                  Object {
-                    "raw": "and",
-                    "type": "text",
-                    "value": "and",
-                  },
-                ],
-                "type": "italic",
-              },
-              Object {
-                "raw": " italics",
-                "type": "text",
-                "value": " italics",
-              },
-            ],
-            "type": "bold",
-          },
-          Object {
-            "raw": " inside",
-            "type": "text",
-            "value": " inside",
-          },
-        ],
         "type": "code",
+        "value": "find a **bold *and* italics** inside",
       },
       Object {
         "raw": " the code",
@@ -1035,14 +985,8 @@ Array [
       },
       Object {
         "raw": "\`a code\`",
-        "tokens": Array [
-          Object {
-            "raw": "a code",
-            "type": "text",
-            "value": "a code",
-          },
-        ],
         "type": "code",
+        "value": "a code",
       },
       Object {
         "raw": " inside and code ",
@@ -1051,14 +995,8 @@ Array [
       },
       Object {
         "raw": "\`\`with multiple\`\`",
-        "tokens": Array [
-          Object {
-            "raw": "with multiple",
-            "type": "text",
-            "value": "with multiple",
-          },
-        ],
         "type": "code",
+        "value": "with multiple",
       },
       Object {
         "raw": " ticks",
@@ -1354,6 +1292,13 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# one",
+    "tokens": Array [
+      Object {
+        "raw": "one",
+        "type": "text",
+        "value": "one",
+      },
+    ],
     "type": "heading",
     "value": "one",
   },
@@ -1421,14 +1366,8 @@ jkl* mno **pqr*** stu",
       },
       Object {
         "raw": "\`def\`",
-        "tokens": Array [
-          Object {
-            "raw": "def",
-            "type": "text",
-            "value": "def",
-          },
-        ],
         "type": "code",
+        "value": "def",
       },
       Object {
         "raw": " ",
@@ -1470,56 +1409,6 @@ jkl* mno **pqr*** stu",
     ],
     "type": "paragraph",
     "value": "abc \`def\` *ghi jkl* mno **pqr*** stu",
-  },
-]
-`;
-
-exports[`paragraph what is going on? 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "abc \`def\` ghi jkl mno **pqr*** stu",
-    "tokens": Array [
-      Object {
-        "raw": "abc ",
-        "type": "text",
-        "value": "abc ",
-      },
-      Object {
-        "raw": "\`def\`",
-        "tokens": Array [
-          Object {
-            "raw": "def",
-            "type": "text",
-            "value": "def",
-          },
-        ],
-        "type": "code",
-      },
-      Object {
-        "raw": " ghi jkl mno ",
-        "type": "text",
-        "value": " ghi jkl mno ",
-      },
-      Object {
-        "raw": "**pqr**",
-        "tokens": Array [
-          Object {
-            "raw": "pqr",
-            "type": "text",
-            "value": "pqr",
-          },
-        ],
-        "type": "bold",
-      },
-      Object {
-        "raw": "* stu",
-        "type": "text",
-        "value": "* stu",
-      },
-    ],
-    "type": "paragraph",
-    "value": "abc \`def\` ghi jkl mno **pqr*** stu",
   },
 ]
 `;

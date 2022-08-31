@@ -117,11 +117,3 @@ Ref: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_referen
 
 ### 👻 HTML Sanitization
 **A BIG TODO**
-
-
-
-a bold in **separated line
-hmm kabad** computers are not very good
-
-abc `def` ghi jkl mno **pqr*** stu
-
