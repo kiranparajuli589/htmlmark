@@ -1,34 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`quote list inside should allow the link variables 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "[google]: https://www.google.com/",
-    "type": "paragraph",
-    "value": "[google]: https://www.google.com/",
-  },
-  Object {
-    "type": "new-line",
-  },
-  Object {
-    "indent": 0,
-    "raw": "If you want to search for something on the web, [google] is a nice place.",
-    "type": "paragraph",
-    "value": "If you want to search for something on the web, [google] is a nice place.",
-  },
-  Object {
-    "type": "new-line",
-  },
-  Object {
-    "indent": 0,
-    "raw": "You can also use [google] to host some stuff and make a great app!",
-    "type": "paragraph",
-    "value": "You can also use [google] to host some stuff and make a great app!",
-  },
-]
-`;
-
 exports[`quote list inside should identify list inside the quote 1`] = `
 Array [
   Object {
@@ -48,6 +19,13 @@ Array [
               Object {
                 "indent": 0,
                 "raw": "one",
+                "tokens": Array [
+                  Object {
+                    "raw": "one",
+                    "type": "text",
+                    "value": "one",
+                  },
+                ],
                 "type": "paragraph",
                 "value": "one",
               },
@@ -62,6 +40,13 @@ Array [
               Object {
                 "indent": 0,
                 "raw": "two",
+                "tokens": Array [
+                  Object {
+                    "raw": "two",
+                    "type": "text",
+                    "value": "two",
+                  },
+                ],
                 "type": "paragraph",
                 "value": "two",
               },
@@ -105,6 +90,13 @@ Array [
               Object {
                 "indent": 0,
                 "raw": "one",
+                "tokens": Array [
+                  Object {
+                    "raw": "one",
+                    "type": "text",
+                    "value": "one",
+                  },
+                ],
                 "type": "paragraph",
                 "value": "one",
               },
@@ -119,6 +111,13 @@ Array [
               Object {
                 "indent": 0,
                 "raw": "two",
+                "tokens": Array [
+                  Object {
+                    "raw": "two",
+                    "type": "text",
+                    "value": "two",
+                  },
+                ],
                 "type": "paragraph",
                 "value": "two",
               },
@@ -161,6 +160,13 @@ Array [
               Object {
                 "indent": 0,
                 "raw": "one",
+                "tokens": Array [
+                  Object {
+                    "raw": "one",
+                    "type": "text",
+                    "value": "one",
+                  },
+                ],
                 "type": "paragraph",
                 "value": "one",
               },
@@ -175,6 +181,13 @@ Array [
               Object {
                 "indent": 0,
                 "raw": "two",
+                "tokens": Array [
+                  Object {
+                    "raw": "two",
+                    "type": "text",
+                    "value": "two",
+                  },
+                ],
                 "type": "paragraph",
                 "value": "two",
               },
@@ -211,8 +224,15 @@ Array [
       Object {
         "indent": 0,
         "raw": " normal text",
+        "tokens": Array [
+          Object {
+            "raw": " normal text",
+            "type": "text",
+            "value": " normal text",
+          },
+        ],
         "type": "paragraph",
-        "value": "normal text",
+        "value": " normal text",
       },
       Object {
         "indent": 0,
@@ -226,8 +246,15 @@ Array [
       Object {
         "indent": 0,
         "raw": " normal text again",
+        "tokens": Array [
+          Object {
+            "raw": " normal text again",
+            "type": "text",
+            "value": " normal text again",
+          },
+        ],
         "type": "paragraph",
-        "value": "normal text again",
+        "value": " normal text again",
       },
     ],
     "type": "quote",
@@ -249,8 +276,15 @@ three quote",
         "raw": " one quote
  two quote
 three quote",
+        "tokens": Array [
+          Object {
+            "raw": " one quote  two quote three quote",
+            "type": "text",
+            "value": " one quote  two quote three quote",
+          },
+        ],
         "type": "paragraph",
-        "value": "one quote two quote three quote",
+        "value": " one quote  two quote three quote",
       },
     ],
     "type": "quote",
@@ -289,8 +323,15 @@ some",
                 "indent": 0,
                 "raw": " three hit
  two hit",
+                "tokens": Array [
+                  Object {
+                    "raw": " three hit  two hit",
+                    "type": "text",
+                    "value": " three hit  two hit",
+                  },
+                ],
                 "type": "paragraph",
-                "value": "three hit two hit",
+                "value": " three hit  two hit",
               },
             ],
             "type": "quote",
@@ -313,13 +354,27 @@ some",
           Object {
             "indent": 0,
             "raw": " two",
+            "tokens": Array [
+              Object {
+                "raw": " two",
+                "type": "text",
+                "value": " two",
+              },
+            ],
             "type": "paragraph",
-            "value": "two",
+            "value": " two",
           },
           Object {
             "indent": 0,
             "level": 1,
             "raw": " # h-two",
+            "tokens": Array [
+              Object {
+                "raw": "h-two",
+                "type": "text",
+                "value": "h-two",
+              },
+            ],
             "type": "heading",
             "value": "h-two",
           },
@@ -333,8 +388,15 @@ some",
               Object {
                 "indent": 0,
                 "raw": " three",
+                "tokens": Array [
+                  Object {
+                    "raw": " three",
+                    "type": "text",
+                    "value": " three",
+                  },
+                ],
                 "type": "paragraph",
-                "value": "three",
+                "value": " three",
               },
               Object {
                 "depth": 1,
@@ -346,8 +408,15 @@ some",
                     "indent": 0,
                     "raw": " four
 some",
+                    "tokens": Array [
+                      Object {
+                        "raw": " four some",
+                        "type": "text",
+                        "value": " four some",
+                      },
+                    ],
                     "type": "paragraph",
-                    "value": "four some",
+                    "value": " four some",
                   },
                 ],
                 "type": "quote",
@@ -374,8 +443,36 @@ Array [
       Object {
         "indent": 0,
         "raw": " quote \`four\` with ~~five~~",
+        "tokens": Array [
+          Object {
+            "raw": " quote ",
+            "type": "text",
+            "value": " quote ",
+          },
+          Object {
+            "raw": "\`four\`",
+            "type": "code",
+            "value": "four",
+          },
+          Object {
+            "raw": " with ",
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "raw": "~~five~~",
+            "tokens": Array [
+              Object {
+                "raw": "five",
+                "type": "text",
+                "value": "five",
+              },
+            ],
+            "type": "strike-through",
+          },
+        ],
         "type": "paragraph",
-        "value": "quote \`four\` with ~~five~~",
+        "value": " quote \`four\` with ~~five~~",
       },
     ],
     "type": "quote",
@@ -393,8 +490,36 @@ Array [
       Object {
         "indent": 0,
         "raw": " quote \`four\` with ~~five~~",
+        "tokens": Array [
+          Object {
+            "raw": " quote ",
+            "type": "text",
+            "value": " quote ",
+          },
+          Object {
+            "raw": "\`four\`",
+            "type": "code",
+            "value": "four",
+          },
+          Object {
+            "raw": " with ",
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "raw": "~~five~~",
+            "tokens": Array [
+              Object {
+                "raw": "five",
+                "type": "text",
+                "value": "five",
+              },
+            ],
+            "type": "strike-through",
+          },
+        ],
         "type": "paragraph",
-        "value": "quote \`four\` with ~~five~~",
+        "value": " quote \`four\` with ~~five~~",
       },
     ],
     "type": "quote",
@@ -414,8 +539,49 @@ Array [
       Object {
         "indent": 0,
         "raw": " quote [link-title](link-url) with *two*",
+        "tokens": Array [
+          Object {
+            "raw": " quote ",
+            "type": "text",
+            "value": " quote ",
+          },
+          Object {
+            "raw": "[link-title](link-url)",
+            "tokens": Object {
+              "href": "link-url",
+              "title": Object {
+                "raw": "link-title",
+                "tokens": Array [
+                  Object {
+                    "raw": "link-title",
+                    "type": "text",
+                    "value": "link-title",
+                  },
+                ],
+              },
+              "tooltip": undefined,
+            },
+            "type": "link",
+          },
+          Object {
+            "raw": " with ",
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "raw": "*two*",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
+            "type": "italic",
+          },
+        ],
         "type": "paragraph",
-        "value": "quote [link-title](link-url) with *two*",
+        "value": " quote [link-title](link-url) with *two*",
       },
     ],
     "type": "quote",
@@ -433,8 +599,42 @@ Array [
       Object {
         "indent": 0,
         "raw": " quote **one** with *two*",
+        "tokens": Array [
+          Object {
+            "raw": " quote ",
+            "type": "text",
+            "value": " quote ",
+          },
+          Object {
+            "raw": "**one**",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
+            "type": "bold",
+          },
+          Object {
+            "raw": " with ",
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "raw": "*two*",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
+            "type": "italic",
+          },
+        ],
         "type": "paragraph",
-        "value": "quote **one** with *two*",
+        "value": " quote **one** with *two*",
       },
     ],
     "type": "quote",
@@ -452,8 +652,42 @@ Array [
       Object {
         "indent": 0,
         "raw": " quote **one** with *two*",
+        "tokens": Array [
+          Object {
+            "raw": " quote ",
+            "type": "text",
+            "value": " quote ",
+          },
+          Object {
+            "raw": "**one**",
+            "tokens": Array [
+              Object {
+                "raw": "one",
+                "type": "text",
+                "value": "one",
+              },
+            ],
+            "type": "bold",
+          },
+          Object {
+            "raw": " with ",
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "raw": "*two*",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
+            "type": "italic",
+          },
+        ],
         "type": "paragraph",
-        "value": "quote **one** with *two*",
+        "value": " quote **one** with *two*",
       },
     ],
     "type": "quote",
@@ -471,8 +705,49 @@ Array [
       Object {
         "indent": 0,
         "raw": " quote [link-title](link-url) with *two*",
+        "tokens": Array [
+          Object {
+            "raw": " quote ",
+            "type": "text",
+            "value": " quote ",
+          },
+          Object {
+            "raw": "[link-title](link-url)",
+            "tokens": Object {
+              "href": "link-url",
+              "title": Object {
+                "raw": "link-title",
+                "tokens": Array [
+                  Object {
+                    "raw": "link-title",
+                    "type": "text",
+                    "value": "link-title",
+                  },
+                ],
+              },
+              "tooltip": undefined,
+            },
+            "type": "link",
+          },
+          Object {
+            "raw": " with ",
+            "type": "text",
+            "value": " with ",
+          },
+          Object {
+            "raw": "*two*",
+            "tokens": Array [
+              Object {
+                "raw": "two",
+                "type": "text",
+                "value": "two",
+              },
+            ],
+            "type": "italic",
+          },
+        ],
         "type": "paragraph",
-        "value": "quote [link-title](link-url) with *two*",
+        "value": " quote [link-title](link-url) with *two*",
       },
     ],
     "type": "quote",
@@ -495,13 +770,27 @@ Array [
       Object {
         "indent": 0,
         "raw": " one",
+        "tokens": Array [
+          Object {
+            "raw": " one",
+            "type": "text",
+            "value": " one",
+          },
+        ],
         "type": "paragraph",
-        "value": "one",
+        "value": " one",
       },
       Object {
         "indent": 0,
         "level": 1,
         "raw": " # two",
+        "tokens": Array [
+          Object {
+            "raw": "two",
+            "type": "text",
+            "value": "two",
+          },
+        ],
         "type": "heading",
         "value": "two",
       },
@@ -511,8 +800,15 @@ Array [
       Object {
         "indent": 0,
         "raw": " three",
+        "tokens": Array [
+          Object {
+            "raw": " three",
+            "type": "text",
+            "value": " three",
+          },
+        ],
         "type": "paragraph",
-        "value": "three",
+        "value": " three",
       },
     ],
     "type": "quote",
@@ -539,8 +835,15 @@ Array [
       Object {
         "indent": 0,
         "raw": " one",
+        "tokens": Array [
+          Object {
+            "raw": " one",
+            "type": "text",
+            "value": " one",
+          },
+        ],
         "type": "paragraph",
-        "value": "one",
+        "value": " one",
       },
       Object {
         "depth": 1,
@@ -556,8 +859,15 @@ Array [
           Object {
             "indent": 0,
             "raw": " two",
+            "tokens": Array [
+              Object {
+                "raw": " two",
+                "type": "text",
+                "value": " two",
+              },
+            ],
             "type": "paragraph",
-            "value": "two",
+            "value": " two",
           },
           Object {
             "depth": 1,
@@ -570,8 +880,15 @@ Array [
               Object {
                 "indent": 0,
                 "raw": " three",
+                "tokens": Array [
+                  Object {
+                    "raw": " three",
+                    "type": "text",
+                    "value": " three",
+                  },
+                ],
                 "type": "paragraph",
-                "value": "three",
+                "value": " three",
               },
               Object {
                 "depth": 1,
@@ -581,8 +898,15 @@ Array [
                   Object {
                     "indent": 0,
                     "raw": " four",
+                    "tokens": Array [
+                      Object {
+                        "raw": " four",
+                        "type": "text",
+                        "value": " four",
+                      },
+                    ],
                     "type": "paragraph",
-                    "value": "four",
+                    "value": " four",
                   },
                 ],
                 "type": "quote",
@@ -593,8 +917,15 @@ Array [
               Object {
                 "indent": 0,
                 "raw": " r_three",
+                "tokens": Array [
+                  Object {
+                    "raw": " r_three",
+                    "type": "text",
+                    "value": " r_three",
+                  },
+                ],
                 "type": "paragraph",
-                "value": "r_three",
+                "value": " r_three",
               },
             ],
             "type": "quote",
@@ -605,8 +936,15 @@ Array [
           Object {
             "indent": 0,
             "raw": " r_two",
+            "tokens": Array [
+              Object {
+                "raw": " r_two",
+                "type": "text",
+                "value": " r_two",
+              },
+            ],
             "type": "paragraph",
-            "value": "r_two",
+            "value": " r_two",
           },
         ],
         "type": "quote",
@@ -617,8 +955,15 @@ Array [
       Object {
         "indent": 0,
         "raw": " r_one",
+        "tokens": Array [
+          Object {
+            "raw": " r_one",
+            "type": "text",
+            "value": " r_one",
+          },
+        ],
         "type": "paragraph",
-        "value": "r_one",
+        "value": " r_one",
       },
     ],
     "type": "quote",
@@ -638,21 +983,42 @@ Array [
       Object {
         "indent": 0,
         "raw": " one",
+        "tokens": Array [
+          Object {
+            "raw": " one",
+            "type": "text",
+            "value": " one",
+          },
+        ],
         "type": "paragraph",
-        "value": "one",
+        "value": " one",
       },
       Object {
         "indent": 0,
         "level": 1,
         "raw": " # two",
+        "tokens": Array [
+          Object {
+            "raw": "two",
+            "type": "text",
+            "value": "two",
+          },
+        ],
         "type": "heading",
         "value": "two",
       },
       Object {
         "indent": 0,
         "raw": " three",
+        "tokens": Array [
+          Object {
+            "raw": " three",
+            "type": "text",
+            "value": " three",
+          },
+        ],
         "type": "paragraph",
-        "value": "three",
+        "value": " three",
       },
     ],
     "type": "quote",
@@ -673,6 +1039,13 @@ Array [
         "indent": 0,
         "level": 1,
         "raw": " # one",
+        "tokens": Array [
+          Object {
+            "raw": "one",
+            "type": "text",
+            "value": "one",
+          },
+        ],
         "type": "heading",
         "value": "one",
       },
@@ -680,8 +1053,15 @@ Array [
         "indent": 0,
         "raw": " two
  three",
+        "tokens": Array [
+          Object {
+            "raw": " two  three",
+            "type": "text",
+            "value": " two  three",
+          },
+        ],
         "type": "paragraph",
-        "value": "two three",
+        "value": " two  three",
       },
     ],
     "type": "quote",
@@ -701,8 +1081,15 @@ Array [
         "indent": 0,
         "raw": " one quote
  two quote",
+        "tokens": Array [
+          Object {
+            "raw": " one quote  two quote",
+            "type": "text",
+            "value": " one quote  two quote",
+          },
+        ],
         "type": "paragraph",
-        "value": "one quote two quote",
+        "value": " one quote  two quote",
       },
     ],
     "type": "quote",
@@ -711,6 +1098,13 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# three quote",
+    "tokens": Array [
+      Object {
+        "raw": "three quote",
+        "type": "text",
+        "value": "three quote",
+      },
+    ],
     "type": "heading",
     "value": "three quote",
   },
@@ -727,8 +1121,15 @@ Array [
       Object {
         "indent": 0,
         "raw": " one quote",
+        "tokens": Array [
+          Object {
+            "raw": " one quote",
+            "type": "text",
+            "value": " one quote",
+          },
+        ],
         "type": "paragraph",
-        "value": "one quote",
+        "value": " one quote",
       },
     ],
     "type": "quote",
@@ -746,8 +1147,15 @@ three quote",
         "indent": 0,
         "raw": " two quote
 three quote",
+        "tokens": Array [
+          Object {
+            "raw": " two quote three quote",
+            "type": "text",
+            "value": " two quote three quote",
+          },
+        ],
         "type": "paragraph",
-        "value": "two quote three quote",
+        "value": " two quote three quote",
       },
     ],
     "type": "quote",

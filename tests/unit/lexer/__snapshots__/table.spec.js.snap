@@ -8,21 +8,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -31,6 +55,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "| row 2 c1 |",
+    "tokens": Array [
+      Object {
+        "raw": "| row 2 c1 |",
+        "type": "text",
+        "value": "| row 2 c1 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| row 2 c1 |",
   },
@@ -45,21 +76,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -71,13 +126,25 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
       ],
     ],
@@ -94,31 +161,67 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 2 c1 ",
-          "value": "row 2 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c1",
+              "type": "text",
+              "value": "row 2 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 2 c2 ",
-          "value": "row 2 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c2",
+              "type": "text",
+              "value": "row 2 c2",
+            },
+          ],
         },
       ],
     ],
@@ -135,31 +238,67 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 2 c1 ",
-          "value": "row 2 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c1",
+              "type": "text",
+              "value": "row 2 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 2 c2 ",
-          "value": "row 2 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c2",
+              "type": "text",
+              "value": "row 2 c2",
+            },
+          ],
         },
       ],
     ],
@@ -176,31 +315,67 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 2 c1 ",
-          "value": "row 2 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c1",
+              "type": "text",
+              "value": "row 2 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 2 c2 ",
-          "value": "row 2 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c2",
+              "type": "text",
+              "value": "row 2 c2",
+            },
+          ],
         },
       ],
     ],
@@ -217,31 +392,67 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 2 c1 ",
-          "value": "row 2 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c1",
+              "type": "text",
+              "value": "row 2 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 2 c2 ",
-          "value": "row 2 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 2 c2",
+              "type": "text",
+              "value": "row 2 c2",
+            },
+          ],
         },
       ],
     ],
@@ -257,8 +468,15 @@ Array [
     "raw": "| column 1 | column 2 |
     |---|---|
 | row 1 c1 | row 1 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |",
+        "type": "text",
+        "value": "| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |",
+      },
+    ],
     "type": "paragraph",
-    "value": "| column 1 | column 2 | |---|---| | row 1 c1 | row 1 c2 |",
+    "value": "| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |",
   },
 ]
 `;
@@ -277,6 +495,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "| row 1 c1 | row 1 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| row 1 c1 | row 1 c2 |",
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| row 1 c1 | row 1 c2 |",
   },
@@ -291,21 +516,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -314,8 +563,15 @@ Array [
   Object {
     "indent": 4,
     "raw": "    | row 2 c1 | row 2 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "    | row 2 c1 | row 2 c2 |",
+        "type": "text",
+        "value": "    | row 2 c1 | row 2 c2 |",
+      },
+    ],
     "type": "paragraph",
-    "value": "| row 2 c1 | row 2 c2 |",
+    "value": "    | row 2 c1 | row 2 c2 |",
   },
 ]
 `;
@@ -328,21 +584,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -354,21 +634,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -385,21 +689,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -415,6 +743,13 @@ Array [
     "raw": "| column 1 | column 2 |
 | --- |--|
 | row 1 c1 | row 1 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
+        "type": "text",
+        "value": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
   },
@@ -426,6 +761,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "| column 1 | column 2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| column 1 | column 2 |",
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| column 1 | column 2 |",
   },
@@ -438,6 +780,13 @@ Array [
     "indent": 0,
     "raw": "| column 1 | column 2 |
 |---|---|",
+    "tokens": Array [
+      Object {
+        "raw": "| column 1 | column 2 | |---|---|",
+        "type": "text",
+        "value": "| column 1 | column 2 | |---|---|",
+      },
+    ],
     "type": "paragraph",
     "value": "| column 1 | column 2 | |---|---|",
   },
@@ -449,6 +798,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "| column 1 | column 2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| column 1 | column 2 |",
+        "type": "text",
+        "value": "| column 1 | column 2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| column 1 | column 2 |",
   },
@@ -459,6 +815,13 @@ Array [
     "indent": 0,
     "raw": "|---|---|
 | row 1 c1 | row 1 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "|---|---| | row 1 c1 | row 1 c2 |",
+        "type": "text",
+        "value": "|---|---| | row 1 c1 | row 1 c2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "|---|---| | row 1 c1 | row 1 c2 |",
   },
@@ -471,6 +834,13 @@ Array [
     "indent": 0,
     "raw": "| column 1 | column 2 |
 |---|---|",
+    "tokens": Array [
+      Object {
+        "raw": "| column 1 | column 2 | |---|---|",
+        "type": "text",
+        "value": "| column 1 | column 2 | |---|---|",
+      },
+    ],
     "type": "paragraph",
     "value": "| column 1 | column 2 | |---|---|",
   },
@@ -480,6 +850,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "| row 1 c1 | row 1 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| row 1 c1 | row 1 c2 |",
+        "type": "text",
+        "value": "| row 1 c1 | row 1 c2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| row 1 c1 | row 1 c2 |",
   },
@@ -494,21 +871,45 @@ Array [
       Array [
         Object {
           "raw": " column 1 ",
-          "value": "column 1",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
         },
         Object {
           "raw": " column 2 ",
-          "value": "column 2",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
         },
       ],
       Array [
         Object {
           "raw": " row 1 c1 ",
-          "value": "row 1 c1",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
         },
         Object {
           "raw": " row 1 c2 ",
-          "value": "row 1 c2",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
         },
       ],
     ],
@@ -520,6 +921,13 @@ Array [
   Object {
     "indent": 0,
     "raw": "| row 2 c1 | row 2 c2 |",
+    "tokens": Array [
+      Object {
+        "raw": "| row 2 c1 | row 2 c2 |",
+        "type": "text",
+        "value": "| row 2 c1 | row 2 c2 |",
+      },
+    ],
     "type": "paragraph",
     "value": "| row 2 c1 | row 2 c2 |",
   },
