@@ -11,7 +11,7 @@ exports[`Paragraph Parsing a valid link reference with text 1`] = `
 `;
 
 exports[`Paragraph Parsing escape should escape inside code 1`] = `
-"<p>one <code>two<</code> three</p>
+"<p>one <code>two&lt;</code> three</p>
 "
 `;
 
