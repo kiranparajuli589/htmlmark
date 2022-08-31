@@ -18,7 +18,8 @@ describe("link", () => {
 	})
 	it("should parse a link with title", () => {
 		const lines = [
-			// "test **bold *and* bold** with *italics* and a [Kiran Parajuli](https://kiranparajuli.com.np 'K Pictures')"
+			"test **bold *and* bold** with *italics* and a [Kiran Parajuli](https://kiranparajuli.com.np 'K Pictures')",
+			"",
 			"here *is a **beautiful** piece of* art"
 		]
 		const html = MDP.h(lines)

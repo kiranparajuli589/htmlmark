@@ -1318,6 +1318,111 @@ Array [
 ]
 `;
 
+exports[`paragraph should escape the special characters 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "a **normal < text** needs escaping > here",
+    "tokens": Array [
+      Object {
+        "raw": "a ",
+        "type": "text",
+        "value": "a ",
+      },
+      Object {
+        "raw": "**normal < text**",
+        "tokens": Array [
+          Object {
+            "raw": "normal < text",
+            "type": "text",
+            "value": "normal &lt; text",
+          },
+        ],
+        "type": "bold",
+      },
+      Object {
+        "raw": " needs escaping > here",
+        "type": "text",
+        "value": " needs escaping &gt; here",
+      },
+    ],
+    "type": "paragraph",
+    "value": "a **normal < text** needs escaping > here",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "an *italics < > & ' \\" and end* of the text",
+    "tokens": Array [
+      Object {
+        "raw": "an ",
+        "type": "text",
+        "value": "an ",
+      },
+      Object {
+        "raw": "*italics < > & ' \\" and end*",
+        "tokens": Array [
+          Object {
+            "raw": "italics < > & ' \\" and end",
+            "type": "text",
+            "value": "italics &lt; &gt; &amp; &#39; &quot; and end",
+          },
+        ],
+        "type": "italic",
+      },
+      Object {
+        "raw": " of the text",
+        "type": "text",
+        "value": " of the text",
+      },
+    ],
+    "type": "paragraph",
+    "value": "an *italics < > & ' \\" and end* of the text",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "a [link < > & ' \\" and end](href) of the text",
+    "tokens": Array [
+      Object {
+        "raw": "a ",
+        "type": "text",
+        "value": "a ",
+      },
+      Object {
+        "raw": "[link < > & ' \\" and end](href)",
+        "tokens": Object {
+          "href": "href",
+          "title": Object {
+            "raw": "link < > & ' \\" and end",
+            "tokens": Array [
+              Object {
+                "raw": "link < > & ' \\" and end",
+                "type": "text",
+                "value": "link &lt; &gt; &amp; &#39; &quot; and end",
+              },
+            ],
+          },
+          "tooltip": undefined,
+        },
+        "type": "link",
+      },
+      Object {
+        "raw": " of the text",
+        "type": "text",
+        "value": " of the text",
+      },
+    ],
+    "type": "paragraph",
+    "value": "a [link < > & ' \\" and end](href) of the text",
+  },
+]
+`;
+
 exports[`paragraph should ignore the escaped special characters 1`] = `
 Array [
   Object {
