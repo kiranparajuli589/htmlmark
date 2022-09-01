@@ -1,5 +1,5 @@
+import { CLI } from "../../lib/cli"
 import { File } from "../../lib/util/file.js"
-import { MDP } from "../../lib/index.js"
 
 
 describe("Small MD To HTML", () => {
@@ -7,7 +7,7 @@ describe("Small MD To HTML", () => {
 		// eslint-disable-next-line no-undef
 		File.pathJoin(__dirname, "..", "fixtures/markdown.md")
 	])("should parse the small markdown file content to html", (path) => {
-		const html = MDP.hF(path)
+		const html = CLI.hF(path)
 		expect(html).toMatchSnapshot()
 	})
 })

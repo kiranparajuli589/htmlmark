@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-weight: normal;
+}
+
+body {
+	min-height: 100vh;
+	font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+	Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-size: 15px;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background-color: #ffc1073b;
+	#brand {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #000;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.give-a-star {
+		text-decoration: none;
+		color: dodgerblue;
+		&::before {
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			animation: width 1s ease-in-out;
+		}
+	}
+	.give-a-star:hover {
+		&::before {
+			width: 100%;
+			height: 1px;
+			background-color: dodgerblue;
+			bottom: -1px;
+			left: 0;
+		}
+	}
+}
+
+main {
+	padding: 1rem;
+	min-height: calc(100vh - 5rem);
+	#converter {
+		padding-inline: .5rem;
+		display: flex;
+		gap: 2rem;
+		.markdown, .o-html {
+			flex: 50%;
+			width: 100%;
+			height: 80vh;
+		}
+		.markdown {
+			#md-input {
+				width: 100%;
+				height: 100%;
+				padding: .5rem;
+			}
+		}
+		.o-html {
+			.preview {
+				outline: 1px solid rgb(118,118,118);
+				padding: .5rem;
+				border-radius: 2px;
+
+				&:hover {
+					outline: 2px solid #000;
+				}
+				height: 100%;
+
+				p {
+					font-size: 1rem;
+					line-height: 1.2rem;
+				}
+
+				h1,h2,h3,h4,h5,h6,p,ul,ol,table,pre {
+					margin-bottom: 1rem;
+				}
+
+				ul {
+					li {
+						//padding: 2rem;
+						margin-inline: 1rem;
+					}
+				}
+				strong {
+					font-weight: bold;
+				}
+				code {
+					background-color: #f5f5f5;
+					padding: 0.2rem;
+					border-radius: 2px;
+					outline: 1px solid #000;
+					margin: 0.2rem;
+					line-height: calc(1rem + .4rem);
+				}
+			}
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	padding: 0.5rem 1rem;
+	background-color: #9b9b9b;
+	border-top: 1px solid #e6e6e6;
+}
