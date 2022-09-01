@@ -62,6 +62,14 @@ main {
 		padding-inline: .5rem;
 		display: flex;
 		gap: 2rem;
+
+		@media only screen and (max-width: 768px) {
+			flex-direction: column;
+			.markdown, .o-html {
+				flex: 100%;
+			}
+		}
+
 		.markdown, .o-html {
 			flex: 50%;
 			.head {
@@ -69,12 +77,13 @@ main {
 				display: flex;
 				align-items: center;
 				gap: .5rem;
+				flex-wrap: wrap;
 			}
 		}
 		.markdown {
 			#md-input {
 				width: 100%;
-				min-height: 72vh;
+				min-height: 65vh;
 				padding: .5rem;
 			}
 			.clear {
@@ -97,18 +106,23 @@ main {
 				outline: 1px solid rgb(118,118,118);
 				padding: .5rem;
 				border-radius: 2px;
-				max-height: 72vh;
-				max-width: 45vw;
+				min-height: 65vh;
+				max-height: 65vh;
 				overflow-y: auto;
 				overflow-x: auto;
+
+				@media only screen and (min-width: 769px) {
+					max-width: 47vw;
+				}
 
 				&:hover {
 					outline: 2px solid #000;
 				}
-				height: 100%;
 				p {
 					font-size: 1rem;
 					line-height: 1.2rem;
+				}
+				p,h1,h2,h3,h4,h5,h6,th,td {
 					inline-size: 100%;
 					overflow-wrap: break-word;
 				}
@@ -132,14 +146,14 @@ main {
 				}
 				code {
 					background-color: #f5f5f5;
-					padding: 0.2rem;
+					padding: 0 0.4rem;
 					border-radius: 2px;
-					outline: 1px solid #000;
-					margin: 0.2rem;
+					border: 1px solid #000;
 					line-height: calc(1rem + .4rem);
 				}
 				table {
 					border-collapse: collapse;
+					table-layout: fixed;
 					width: 100%;
 					&:hover {
 						outline: 2px solid #000;
@@ -153,7 +167,7 @@ main {
 					}
 				}
 				pre > code {
-					outline: none;
+					border: none;
 					background: transparent;
 					margin: 0;
 					padding: 0;
@@ -167,6 +181,8 @@ main {
 					overflow-x: auto;
 				}
 				blockquote {
+					border-top-right-radius: 4px;
+					border-bottom-right-radius: 4px;
 					border-left: 4px solid #607D8B;
 					border-top: 1px solid #607D8B;
 					border-bottom: 1px solid #607D8B;
@@ -186,27 +202,27 @@ main {
 				}
 				h1 {
 					font-size: 3.2rem;
-					line-height: 3.6rem;
+					line-height: 4rem;
 					font-weight: 700;
 				}
 				h2 {
 					font-size: 2.8rem;
-					line-height: 3.2rem;
+					line-height: 3.5rem;
 					font-weight: 600;
 				}
 				h3 {
 					font-size: 2.4rem;
-					line-height: 2.8rem;
+					line-height: 3rem;
 					font-weight: 500;
 				}
 				h4 {
 					font-size: 2rem;
-					line-height: 2.4rem;
+					line-height: 2.6rem;
 					font-weight: 500;
 				}
 				h5 {
 					font-size: 1.6rem;
-					line-height: 2rem;
+					line-height: 2.2rem;
 					font-weight: 500;
 				}
 				h6 {
