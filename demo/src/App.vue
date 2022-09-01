@@ -17,7 +17,7 @@
 			<div id="converter">
 				<div class="markdown">
 					<div class="head">
-						<h2 class="section-title">Markdown Input:</h2>
+						<div class="section-title">Markdown Input:</div>
 						<button class="clear" title="Clear Input"
 							@click="clearInput"
 						>
@@ -28,7 +28,7 @@
 				</div>
 				<div class="o-html">
 					<div class="head">
-						<h2 class="section-title">Output:</h2>
+						<div class="section-title">Output:</div>
 
 						<select v-model="choice" id="output-choice"
 							title="Choose Output Format"

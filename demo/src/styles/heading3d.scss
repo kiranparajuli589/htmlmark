@@ -49,13 +49,13 @@ $primaryColor: rgb(230,190,190);
 #brand {
 	margin: 0;
 	color: #FFF;
-	font-size: 2.8rem;
-	line-height: 3rem;
+	font-size: 2rem;
+	line-height: 2rem;
 	font-family: "Kanit", serif;
 
 	@include text3d(
 			adjust-color($primaryColor, $lightness: -8%),
-		$depth: 8,
+		$depth: 5,
 		$primaryShadowColor: adjust-color(
 				$primaryColor,
 			$lightness: -10%,

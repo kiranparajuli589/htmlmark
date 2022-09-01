@@ -22,10 +22,10 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.5rem 1rem;
+	padding: 0.2rem .5rem;
 	background-color: #ffc1073b;
 	.logo {
-		width: 7rem;
+		width: 5rem;
 		height: auto;
 	}
 	.give-a-star {
@@ -72,12 +72,16 @@ main {
 				align-items: center;
 				gap: .5rem;
 				flex-wrap: wrap;
+				.section-title {
+					font-size: 1rem;
+					font-weight: bold;
+				}
 			}
 		}
 		.markdown {
 			#md-input {
 				width: 100%;
-				min-height: 65vh;
+				min-height: 69.9vh;
 				padding: .5rem;
 				resize: none;
 			}
@@ -85,13 +89,11 @@ main {
 				position: absolute;
 				right: 0;
 				padding: .2rem;
+				font-size: .5rem;
 			}
 		}
 		.o-html {
 			.head {
-				select {
-					height: 1.6rem;
-				}
 				.time-taken {
 					font-size: 1rem;
 					color: green;
@@ -101,8 +103,8 @@ main {
 				outline: 1px solid rgb(118,118,118);
 				padding: .5rem;
 				border-radius: 2px;
-				min-height: 65vh;
-				max-height: 65vh;
+				min-height: 69.9vh;
+				max-height: 69.9vh;
 				overflow-y: auto;
 				overflow-x: auto;
 
@@ -231,12 +233,16 @@ main {
 }
 
 footer {
+	position: fixed;
+	bottom: 0;left: 0;
+	width: 100%;
+	padding-bottom: .2rem;
 	text-align: center;
-	padding: 0.5rem 1rem;
 	background-color: #c0bfbf;
 	border-top: 1px solid #e6e6e6;
 	.heart {
 		color: #b42424;
+		font-size: 1.2rem;
 	}
 }
 
