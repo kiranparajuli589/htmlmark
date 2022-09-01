@@ -1,0 +1,20 @@
+footer {
+	position: fixed;
+	bottom: 0;left: 0;
+	width: 100%;
+	padding-bottom: .2rem;
+	text-align: center;
+	background-color: #c0bfbf;
+	border-top: 1px solid #e6e6e6;
+	.heart {
+		color: #b42424;
+		font-size: 1.2rem;
+	}
+}
+
+body[dark] {
+	footer {
+		background-color: #000;
+		color: #fff;
+	}
+}

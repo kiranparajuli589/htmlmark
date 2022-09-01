@@ -64,3 +64,19 @@ $primaryColor: rgb(230,190,190);
 		$shadowOpacity: .3
 	);
 }
+
+body[dark] {
+	#brand {
+		color: #a8a8a8;
+		@include text3d(
+				adjust-color(grey, $lightness: -8%),
+			$depth: 5,
+			$primaryShadowColor: adjust-color(
+					grey,
+				$lightness: -10%,
+				$saturation: +20%
+			),
+			$shadowOpacity: .3
+		);
+	}
+}
