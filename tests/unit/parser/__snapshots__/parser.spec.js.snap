@@ -82,8 +82,8 @@ exports[`Parser Commons common tokens should parse the common tokens with some s
 exports[`Parser Commons common tokens should parse the common tokens with some space before 8`] = `"<img src='image.png' alt='alt text'>"`;
 
 exports[`Parser Commons common tokens should parse underlined heading 1`] = `
-"<h1>Heading 1</h1>
-<h2>Heading 2</h2>
+"<h2>Heading 1</h2>
+<h1>Heading 2</h1>
 <p>Normal text</p>
 "
 `;

@@ -35,9 +35,11 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
 
      - Hashed
 
-        Number of hashes determines the level of the heading.
+        Number of the leading hashes determines the level of the heading.
 
         Can be in between of 1 to 6.
+
+        Can be fenced with hashes.
 
         Otherwise, it will be treated as a paragraph.
 
