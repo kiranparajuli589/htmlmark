@@ -1,6 +1,7 @@
 <template>
 	<div id="mdp">
 		<nav>
+			<img class="logo" :src="logo" alt="Logo">
 			<div id="brand">MD Parser</div>
 			<a href="https://github.com/kiranparajuli589/md-parser"
 				 target="_blank" title="GitHub Repository" class="give-a-star"
@@ -64,6 +65,8 @@ const output = ref("")
 const timeTaken = ref(0)
 const lexerData = ref({})
 const choice = ref("preview")
+
+const logo = new URL("./assets/logo.png", import.meta.url).href
 
 const handleChange = (e) => {
 	// debounce for 100 ms

@@ -1,4 +1,7 @@
 # Markdown Parser
+
+![logo](/home/kiran/dev/md-parser/logo.png)
+
 A very lightweight Markdown Parser powered by Regex
 
 ## 🚧 Under HIGH DEVELOPMENT 🚧

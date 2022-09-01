@@ -24,14 +24,15 @@ nav {
 	align-items: center;
 	padding: 0.5rem 1rem;
 	background-color: #ffc1073b;
+	.logo {
+		width: 7rem;
+		height: auto;
+	}
 	#brand {
 		font-size: 1.5rem;
-		font-weight: bold;
+		font-weight: 400;
 		color: #000;
 		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 	.give-a-star {
 		text-decoration: none;
