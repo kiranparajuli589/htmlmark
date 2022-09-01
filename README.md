@@ -42,8 +42,6 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
         Can be fenced with hashes.
 
         Otherwise, it will be treated as a paragraph.
-
-   - Indentation: NOT IMPLEMENTED YET
 2. **Code block:**
     - Language: Optional
     - Types:
@@ -59,13 +57,11 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
     - Can be Lazy
     - Items must have the same intent to be included in the same list
     - Allows other _paragraph items_ inside content (recursive lex and parsing)
-    - Indentation
 4. **Quote:**
     - Levels: 0 to infinity
     - Lines must be the same indent to be included within the same quote
     - Allows other _paragraph items_ inside content (recursive lex and parsing)
     - Can be Lazy
-    - Indentation
 5. **Image:**
     - Link: String (Required)
     - Alt text: String (Required)
@@ -84,12 +80,14 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
     - Equal number of cell counts
     - Equal number of indentations
     - Cell content should allow emphasis
-    - Indentation: `NOT IMPLEMENTED YET`
 9. **Newline:**
     - Consecutive newlines are merged into one
 10. **Paragraph:**
     - Anything else
-    - Indentation: NOT IMPLEMENTED YET
+    - Line Breaks:
+
+       1. If a line ends with 2 or more than 2 spaces, then, a line break is inserted.
+       2. Otherwise, the lines are merged into one.
 
 ### 🎺 Emphasis
 Emphasis can be inside the content of any paragraph types. Even emphasis items can have emphasis inside 🤩.
