@@ -15,6 +15,16 @@ exports[`Paragraph Parsing escape should escape inside code 1`] = `
 "
 `;
 
+exports[`Paragraph Parsing line breaks should break the line if end with two or spaces 1`] = `
+"<p>one two three<br> four five six</p>
+"
+`;
+
+exports[`Paragraph Parsing line breaks should not break the line if end with less than two spaces 1`] = `
+"<p>one two three  four five six</p>
+"
+`;
+
 exports[`Paragraph Parsing should be deep tokenized: a ****bold**** text 1`] = `
 "<p>a <strong>bold</strong> text</p>
 "

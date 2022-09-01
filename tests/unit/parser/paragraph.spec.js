@@ -100,4 +100,22 @@ describe("Paragraph Parsing", () => {
 			expect(lexerData).toMatchSnapshot()
 		})
 	})
+	describe("line breaks", () => {
+		it("should break the line if end with two or spaces", () => {
+			const lines = [
+				"one two three   ",
+				"four five six"
+			]
+			const lexerData = MDP.h(lines)
+			expect(lexerData).toMatchSnapshot()
+		})
+		it("should not break the line if end with less than two spaces", () => {
+			const lines = [
+				"one two three ",
+				"four five six"
+			]
+			const lexerData = MDP.h(lines)
+			expect(lexerData).toMatchSnapshot()
+		})
+	})
 })
