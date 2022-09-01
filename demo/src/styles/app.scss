@@ -79,25 +79,31 @@ main {
 				outline: 1px solid rgb(118,118,118);
 				padding: .5rem;
 				border-radius: 2px;
+				overflow-y: auto;
 
 				&:hover {
 					outline: 2px solid #000;
 				}
 				height: 100%;
-
 				p {
 					font-size: 1rem;
 					line-height: 1.2rem;
 				}
-
-				h1,h2,h3,h4,h5,h6,p,ul,ol,table,pre {
+				h1,h2,h3,h4,h5,h6,p,ul,ol,table,pre,blockquote {
 					margin-bottom: 1rem;
 				}
-
-				ul {
+				ul,ol {
 					li {
-						//padding: 2rem;
 						margin-inline: 1rem;
+						//display: flex;
+						//align-items: center;
+						gap: .5rem;
+						*:only-child {
+							margin-bottom: 0;
+						}
+						*:last-child {
+							margin-bottom: 0;
+						}
 					}
 				}
 				strong {
@@ -110,6 +116,79 @@ main {
 					outline: 1px solid #000;
 					margin: 0.2rem;
 					line-height: calc(1rem + .4rem);
+				}
+				table {
+					border-collapse: collapse;
+					width: 100%;
+					&:hover {
+						outline: 2px solid #000;
+					}
+					th, td {
+						border: 1px solid #000;
+						padding: 0.5rem;
+					}
+					th {
+						font-weight: bold;
+					}
+				}
+				pre > code {
+					outline: none;
+					background: transparent;
+					margin: 0;
+					padding: 0;
+				}
+				pre {
+					background-color: #dcdbdb;
+					padding: 0.5rem;
+					border-radius: 2px;
+					outline: 1px solid #000;
+					line-height: calc(1rem + .4rem);
+					overflow-x: auto;
+				}
+				blockquote {
+					border-left: 4px solid #607D8B;
+					border-top: 1px solid #607D8B;
+					border-bottom: 1px solid #607D8B;
+					border-right: 1px solid #607D8B;
+					padding: .5rem;
+					color: #6a6a6a;
+					background: #d0d2d9;
+					*:only-child {
+						margin: 0;
+					}
+					*:last-child {
+						margin-bottom: 0;
+					}
+				}
+				h1 {
+					font-size: 3.2rem;
+					line-height: 3.6rem;
+					font-weight: 700;
+				}
+				h2 {
+					font-size: 2.8rem;
+					line-height: 3.2rem;
+					font-weight: 600;
+				}
+				h3 {
+					font-size: 2.4rem;
+					line-height: 2.8rem;
+					font-weight: 500;
+				}
+				h4 {
+					font-size: 2rem;
+					line-height: 2.4rem;
+					font-weight: 500;
+				}
+				h5 {
+					font-size: 1.6rem;
+					line-height: 2rem;
+					font-weight: 500;
+				}
+				h6 {
+					font-size: 1.2rem;
+					line-height: 1.6rem;
+					font-weight: 500;
 				}
 			}
 		}
