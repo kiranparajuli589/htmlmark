@@ -28,12 +28,12 @@ nav {
 		width: 7rem;
 		height: auto;
 	}
-	#brand {
-		font-size: 1.5rem;
-		font-weight: 400;
-		color: #000;
-		text-decoration: none;
-	}
+	//#brand {
+	//	font-size: 1.5rem;
+	//	font-weight: 400;
+	//	color: #000;
+	//	text-decoration: none;
+	//}
 	.give-a-star {
 		text-decoration: none;
 		color: dodgerblue;
@@ -243,4 +243,44 @@ footer {
 	.heart {
 		color: #b42424;
 	}
+}
+
+:root {
+	--3DshadowA3: 0 0 1px rgba(0, 0, 0, .7), -1px 0 1px rgba(0, 0, 0, .4), 1px -1px 1px, 0 -1px 1px, -1px -1px 1px, 1px -1px 1px rgba(0, 0, 0, .5), -2px -1px 1px rgba(0, 0, 0, .5), 0 -2px 1px, -1px -2px 1px, -2px -2px 1px, 0 -2px 1px rgba(0, 0, 0, .5), -3px -2px 1px rgba(0, 0, 0, .5), -1px -3px 1px, -2px -3px 1px, -3px -3px 1px, -1px -3px 1px rgba(0, 0, 0, .5), -4px -3px 1px rgba(0, 0, 0, .5), -2px -4px 1px, -3px -4px 1px, -4px -4px 1px, -2px -4px 1px rgba(0, 0, 0, .5), -5px -4px 1px rgba(0, 0, 0, .5), -3px -5px 1px, -4px -5px 1px, -5px -5px 1px, -3px -5px 1px rgba(0, 0, 0, .5), -5px -5px 1px rgba(0, 0, 0, .7);
+}
+
+#brand {
+	position: relative;
+	font-style: italic;
+	font-size: 1.4rem;
+	text-align: center;
+	transform-origin: bottom left;
+	transform: skewY(-7deg)translate3d(0, 0, 0);
+	margin-top: .8em;
+	color: #fff;
+	text-shadow: var(--3DshadowA3);
+	filter: brightness(.9)contrast(2)
+}
+
+#brand:before,
+#brand:after {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	content: attr(data-text)
+}
+
+#brand:before {
+	color: transparent;
+	text-shadow: 0 0 5px #000, 0 0 10px rgba(0, 0, 0, .8), 0 0 20px rgba(0, 0, 0, .6), 0 0 40px rgba(0, 0, 0, .4);
+	opacity: .4;
+	transform-origin: bottom left;
+	transform: skewX(60deg);
+	z-index: -1
+}
+
+#brand:after {
+	color: #fff;
+	text-shadow: 0 0 .7px, 0 0 1.1px, 0 0 1.1px
 }
