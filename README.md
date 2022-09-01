@@ -14,6 +14,10 @@ In the meantime, please feel free to share your thoughts, contact [me](https://k
 - lexer: to produce markdown tokens
 - parser: to produce the HTML code
 
+## 🌐 Demo
+
+Checkout the features of the parser from this [Live Demo](https://kiranparajuli589.github.io/md-parser/ 'Live Demo').
+
 ## 🛣️ Roadmap
 
 ### 🪕 Paragraphs
