@@ -1,0 +1,11 @@
+node_modules/
+demo/
+outputs/
+.gitignore
+.editorconfig
+.eslintrc
+.github
+.idea
+index.js
+inspector-style.css
+

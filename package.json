@@ -1,12 +1,13 @@
 {
-  "name": "markdown-parser",
+  "name": "@kiran/md-parser",
   "version": "0.0.1",
   "description": "Lightweight markdown parser",
-  "main": "index.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "convert": "node index.js",
     "jest": "jest --silent ",
+		"test": "jest --silent --coverage",
     "jest:nocov": "jest --no-coverage",
     "jest:watch": "jest --watch --no-coverage",
 		"jest:parser:watch": "pnpm jest:watch tests/unit/parser.spec.js",
@@ -21,7 +22,10 @@
   ],
   "author": "Kiran Parajuli",
   "license": "GPL-3.0",
-  "repository": "https://github.com/kiranparajuli589/markdown-parser",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/kiranparajuli589/markdown-parser"
+	},
   "bugs": {
     "email": "kiranparajuli589@gmail.com",
     "url": "https://github.com/kiranparajuli589/markdown-parser/issues"
