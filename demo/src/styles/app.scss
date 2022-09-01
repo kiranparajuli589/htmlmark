@@ -57,29 +57,49 @@ nav {
 
 main {
 	padding: 1rem;
-	min-height: calc(100vh - 5rem);
 	#converter {
 		padding-inline: .5rem;
 		display: flex;
 		gap: 2rem;
 		.markdown, .o-html {
 			flex: 50%;
-			width: 100%;
-			height: 80vh;
+			.head {
+				margin-bottom: .5rem;
+				display: flex;
+				align-items: center;
+				gap: .5rem;
+			}
 		}
 		.markdown {
 			#md-input {
 				width: 100%;
-				height: 100%;
+				min-height: 72vh;
 				padding: .5rem;
+			}
+			.clear {
+				position: absolute;
+				right: 0;
+				padding: .2rem;
 			}
 		}
 		.o-html {
-			.preview {
+			.head {
+				select {
+					height: 1.6rem;
+				}
+				.time-taken {
+					font-size: 1rem;
+					color: green;
+				}
+			}
+			.preview-pane {
 				outline: 1px solid rgb(118,118,118);
 				padding: .5rem;
 				border-radius: 2px;
+				max-height: 72vh;
+				max-width: 45vw;
 				overflow-y: auto;
+				overflow-x: auto;
 
 				&:hover {
 					outline: 2px solid #000;
@@ -88,6 +108,8 @@ main {
 				p {
 					font-size: 1rem;
 					line-height: 1.2rem;
+					inline-size: 100%;
+					overflow-wrap: break-word;
 				}
 				h1,h2,h3,h4,h5,h6,p,ul,ol,table,pre,blockquote {
 					margin-bottom: 1rem;
@@ -95,8 +117,6 @@ main {
 				ul,ol {
 					li {
 						margin-inline: 1rem;
-						//display: flex;
-						//align-items: center;
 						gap: .5rem;
 						*:only-child {
 							margin-bottom: 0;
@@ -159,6 +179,9 @@ main {
 					*:last-child {
 						margin-bottom: 0;
 					}
+					ul, ol {
+						margin-left: 1rem;
+					}
 				}
 				h1 {
 					font-size: 3.2rem;
@@ -198,6 +221,9 @@ main {
 footer {
 	text-align: center;
 	padding: 0.5rem 1rem;
-	background-color: #9b9b9b;
+	background-color: #c0bfbf;
 	border-top: 1px solid #e6e6e6;
+	.heart {
+		color: #b42424;
+	}
 }
