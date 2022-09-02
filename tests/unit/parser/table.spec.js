@@ -148,4 +148,15 @@ describe("Table Parsing", () => {
 			expect(html).toMatchSnapshot()
 		})
 	})
+	describe("pipe escaping", () => {
+		it("should escape the pipe char inside table heading and or cell", () => {
+			const lines = [
+				"| one | two\\|three |",
+				"| -- | -- |",
+				"| one | two\\|five |"
+			]
+			const html = MDP.h(lines)
+			expect(html).toMatchSnapshot()
+		})
+	})
 })

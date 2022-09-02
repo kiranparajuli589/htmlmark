@@ -47,6 +47,20 @@ exports[`Table Parsing is not a table other tokens in between 3 1`] = `
 "
 `;
 
+exports[`Table Parsing pipe escaping should escape the pipe char inside table heading and or cell 1`] = `
+"<table>
+  <thead>
+    <tr>
+      <th>one</th><th>two|three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>one</td><td>two|five</td></tr>
+  </tbody>
+</table>
+"
+`;
+
 exports[`Table Parsing table cell count cell count should break the table 1 1`] = `
 "<table>
   <thead>
