@@ -1,14 +1,16 @@
 <template>
 	<nav>
 		<img class="logo" :src="logo" alt="Logo">
-		<div id="brand">MD Parser</div>
+		<h1>MD Parser</h1>
 		<div class="nav-actions">
 			<a href="https://github.com/kiranparajuli589/md-parser"
 				 target="_blank" title="GitHub Repository" class="give-a-star"
 			>
 				Give a 🌟
 			</a>
-			<button class="theme" @click="toggleTheme">
+			<button class="theme" @click="toggleTheme"
+				title="Toggle Theme"
+			>
 				<span v-if="dark">🌞</span>
 				<span v-else>🌙</span>
 			</button>
