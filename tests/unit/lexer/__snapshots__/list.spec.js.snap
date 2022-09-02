@@ -70,7 +70,7 @@ to be indented *twice* -- 8 spaces or two tabs:",
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "*",
       "ordered": false,
     },
@@ -224,7 +224,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -243,7 +243,7 @@ Array [
     "indent": 0,
     "items": Array [
       Object {
-        "checked": null,
+        "checked": true,
         "count": null,
         "raw": "- [x] list *item* one
 omg this is merged with the above line",
@@ -283,7 +283,7 @@ omg this is merged with the above line",
       },
     ],
     "meta": Object {
-      "check": true,
+      "checklist": true,
       "identifier": "-",
       "ordered": false,
     },
@@ -387,7 +387,7 @@ four",
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -510,7 +510,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": null,
       "ordered": true,
     },
@@ -626,7 +626,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -694,7 +694,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -762,7 +762,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -830,7 +830,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -891,7 +891,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
@@ -946,7 +946,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": null,
       "ordered": true,
     },
@@ -958,7 +958,7 @@ Array [
     "indent": 0,
     "items": Array [
       Object {
-        "checked": null,
+        "checked": false,
         "count": null,
         "raw": "- [ ] c empty",
         "tokens": Array [
@@ -979,7 +979,7 @@ Array [
         "type": "list-item",
       },
       Object {
-        "checked": null,
+        "checked": true,
         "count": null,
         "raw": "- [x] c checked",
         "tokens": Array [
@@ -1001,7 +1001,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": true,
+      "checklist": true,
       "identifier": "-",
       "ordered": false,
     },
@@ -1013,7 +1013,7 @@ Array [
     "indent": 0,
     "items": Array [
       Object {
-        "checked": null,
+        "checked": false,
         "count": "1",
         "raw": "1. [ ] c empty",
         "tokens": Array [
@@ -1034,7 +1034,7 @@ Array [
         "type": "list-item",
       },
       Object {
-        "checked": null,
+        "checked": true,
         "count": "1",
         "raw": "1. [x] c checked",
         "tokens": Array [
@@ -1056,7 +1056,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": true,
+      "checklist": true,
       "identifier": null,
       "ordered": true,
     },
@@ -1196,7 +1196,7 @@ Array [
                       },
                     ],
                     "meta": Object {
-                      "check": false,
+                      "checklist": false,
                       "identifier": "-",
                       "ordered": false,
                     },
@@ -1240,7 +1240,7 @@ Array [
               },
             ],
             "meta": Object {
-              "check": false,
+              "checklist": false,
               "identifier": "-",
               "ordered": false,
             },
@@ -1254,7 +1254,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },

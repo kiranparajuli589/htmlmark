@@ -141,13 +141,13 @@ exports[`List Parsing should tokenize list combination 1`] = `
 <ul>
 <li><input type='checkbox'><p>c empty</p>
 </li>
-<li><input type='checkbox'><p>c checked</p>
+<li><input type='checkbox' checked><p>c checked</p>
 </li>
 </ul>
 <ol>
 <li><input type='checkbox'><p>c empty</p>
 </li>
-<li><input type='checkbox'><p>c checked</p>
+<li><input type='checkbox' checked><p>c checked</p>
 </li>
 </ol>
 "

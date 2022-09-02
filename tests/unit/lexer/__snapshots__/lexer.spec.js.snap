@@ -227,7 +227,7 @@ Array [
       },
     ],
     "meta": Object {
-      "check": false,
+      "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
