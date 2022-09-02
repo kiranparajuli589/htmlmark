@@ -32,7 +32,7 @@ main {
 		.markdown {
 			#md-input {
 				width: 100%;
-				min-height: 69.9vh;
+				min-height: 72vh;
 				padding: .5rem;
 				resize: none;
 				font-size: 1rem;
@@ -57,8 +57,8 @@ main {
 			.preview-pane {
 				outline: 1px solid rgb(118,118,118);
 				padding: .5rem;
-				min-height: 69.9vh;
-				max-height: 69.9vh;
+				min-height: 72vh;
+				max-height: 72vh;
 				overflow-y: auto;
 				overflow-x: auto;
 
