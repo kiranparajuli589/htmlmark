@@ -4,9 +4,10 @@ exports[`lexer common tokens should allow underlined heading 1`] = `
 Array [
   Object {
     "indent": 0,
-    "level": 2,
+    "level": 1,
     "raw": "Heading 1
 ======",
+    "setext": true,
     "tokens": Array [
       Object {
         "raw": "Heading 1",
@@ -19,9 +20,10 @@ Array [
   },
   Object {
     "indent": 0,
-    "level": 1,
+    "level": 2,
     "raw": "Heading 2
 ------",
+    "setext": true,
     "tokens": Array [
       Object {
         "raw": "Heading 2",
@@ -66,6 +68,7 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# Heading One Text",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Heading One Text",
@@ -85,6 +88,7 @@ Array [
     "indent": 0,
     "level": 2,
     "raw": "## Heading Two Text",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Heading Two Text",
@@ -104,6 +108,7 @@ Array [
     "indent": 0,
     "level": 3,
     "raw": "### Heading Three Text",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Heading Three Text",
@@ -123,6 +128,7 @@ Array [
     "indent": 0,
     "level": 4,
     "raw": "#### Heading Four Text",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Heading Four Text",
@@ -142,6 +148,7 @@ Array [
     "indent": 0,
     "level": 5,
     "raw": "##### Heading Five Text",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Heading Five Text",
@@ -161,6 +168,7 @@ Array [
     "indent": 0,
     "level": 6,
     "raw": "###### Heading Six Text",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Heading Six Text",
@@ -191,6 +199,7 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# &Ampersand",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "&amp;Ampersand",

@@ -368,6 +368,7 @@ some",
             "indent": 0,
             "level": 1,
             "raw": " # h-two",
+            "setext": false,
             "tokens": Array [
               Object {
                 "raw": "h-two",
@@ -784,6 +785,7 @@ Array [
         "indent": 0,
         "level": 1,
         "raw": " # two",
+        "setext": false,
         "tokens": Array [
           Object {
             "raw": "two",
@@ -997,6 +999,7 @@ Array [
         "indent": 0,
         "level": 1,
         "raw": " # two",
+        "setext": false,
         "tokens": Array [
           Object {
             "raw": "two",
@@ -1039,6 +1042,7 @@ Array [
         "indent": 0,
         "level": 1,
         "raw": " # one",
+        "setext": false,
         "tokens": Array [
           Object {
             "raw": "one",
@@ -1098,6 +1102,7 @@ Array [
     "indent": 0,
     "level": 1,
     "raw": "# three quote",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "three quote",

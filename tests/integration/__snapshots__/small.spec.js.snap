@@ -14,49 +14,51 @@ exports[`Small MD To HTML should parse the small markdown file content to html 1
 
 </blockquote>
 <ul>
-<li><p>list item 1</p>
+<li>list item 1
 </li>
-<li><p>list item 2</p>
-</li>
-</ul>
-<ul>
-<li><p>list item 3</p>
-</li>
-<li><p>list item 4</p>
+<li>list item 2
 </li>
 </ul>
 <ul>
-<li><p>list item 5</p>
+<li>list item 3
 </li>
-<li><p>list item 6</p>
-</li>
-</ul>
-<ul>
-<li><input type='checkbox'><p>checkbox empty</p>
-</li>
-<li><input type='checkbox' checked><p>checkbox checked</p>
+<li>list item 4
 </li>
 </ul>
 <ul>
-<li><input type='checkbox'><p>checkbox empty</p>
+<li>list item 5
 </li>
-<li><input type='checkbox' checked><p>checkbox checked</p>
+<li>list item 6
 </li>
 </ul>
 <ul>
-<li><input type='checkbox'><p>checkbox empty</p>
+<li><input type='checkbox'>checkbox empty
 </li>
-<li><input type='checkbox' checked><p>checkbox checked</p>
+<li><input type='checkbox' checked>checkbox checked
+</li>
+</ul>
+<ul>
+<li><input type='checkbox'>checkbox empty
+</li>
+<li><input type='checkbox' checked>checkbox checked
+</li>
+</ul>
+<ul>
+<li><input type='checkbox'>checkbox empty
+</li>
+<li><input type='checkbox' checked>checkbox checked
 </li>
 </ul>
 <ol>
-<li><p>numbered list item 1</p>
+<li>numbered list item 1
 </li>
-<li><p>numbered list item 2</p>
+<li>numbered list item 2
 </li>
-<li><p>numbered checkbox empty</p>
+</ol>
+<ol>
+<li><input type='checkbox'>numbered checkbox empty
 </li>
-<li><p>numbered checkbox checked paragraph just below hmm, but with some fun :)</p>
+<li><input type='checkbox' checked>numbered checkbox checked paragraph just below hmm, but with some fun :)
 </li>
 </ol>
 <blockquote>

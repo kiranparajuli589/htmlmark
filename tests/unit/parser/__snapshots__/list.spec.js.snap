@@ -2,17 +2,17 @@
 
 exports[`List Parsing indent should break the list 1`] = `
 "<ul>
-<li><p>item <strong>1</strong></p>
+<li>item <strong>1</strong>
 </li>
-<li><p>item <a href=\\"link-url\\">link</a></p>
+<li>item <a href=\\"link-url\\">link</a>
 <ul>
-<li><p>item 3 <code>code item</code></p>
+<li>item 3 <code>code item</code>
 <ul>
-<li><p>item 4</p>
+<li>item 4
 </li>
 </ul>
 </li>
-<li><p>item 3 <code>code item</code></p>
+<li>item 3 <code>code item</code>
 </li>
 </ul>
 </li>
@@ -22,10 +22,10 @@ exports[`List Parsing indent should break the list 1`] = `
 
 exports[`List Parsing should allow empty list item 1`] = `
 "<ul>
-<li><p>one</p>
+<li>one
 </li>
 <li></li>
-<li><p>two</p>
+<li>two
 </li>
 </ul>
 "
@@ -33,11 +33,11 @@ exports[`List Parsing should allow empty list item 1`] = `
 
 exports[`List Parsing should detect list indent 1`] = `
 "<ul>
-<li><p>item <strong>1</strong></p>
+<li>item <strong>1</strong>
 </li>
-<li><p>item <a href=\\"link-url\\">link</a></p>
+<li>item <a href=\\"link-url\\">link</a>
 </li>
-<li><p>item 3 <code>code item</code></p>
+<li>item 3 <code>code item</code>
 </li>
 </ul>
 "
@@ -45,10 +45,10 @@ exports[`List Parsing should detect list indent 1`] = `
 
 exports[`List Parsing should parse a list with an empty list item 1`] = `
 "<ul>
-<li><p>one</p>
+<li>one
 </li>
 <li></li>
-<li><p>two</p>
+<li>two
 </li>
 </ul>
 "
@@ -57,9 +57,9 @@ exports[`List Parsing should parse a list with an empty list item 1`] = `
 exports[`List Parsing should parse a list with an empty list item 2`] = `
 "<ul>
 <li></li>
-<li><p>one</p>
+<li>one
 </li>
-<li><p>two</p>
+<li>two
 </li>
 </ul>
 "
@@ -67,9 +67,9 @@ exports[`List Parsing should parse a list with an empty list item 2`] = `
 
 exports[`List Parsing should parse a list with an empty list item 3`] = `
 "<ul>
-<li><p>one</p>
+<li>one
 </li>
-<li><p>two</p>
+<li>two
 </li>
 <li></li>
 </ul>
@@ -78,11 +78,11 @@ exports[`List Parsing should parse a list with an empty list item 3`] = `
 
 exports[`List Parsing should parse a spaced list 1`] = `
 "<ul>
-<li><p>here we go with a list item</p>
+<li>here we go with a list item
 </li>
-<li><p>another list item is here</p>
+<li>another list item is here
 </li>
-<li><p>next list item is on the fly</p>
+<li>next list item is on the fly
 </li>
 </ul>
 "
@@ -91,7 +91,7 @@ exports[`List Parsing should parse a spaced list 1`] = `
 exports[`List Parsing should parse the indented codeblock inside 1`] = `
 "<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;
 &lt;code goes here&gt;
 &lt;code goes here&gt;</code></pre>
@@ -103,11 +103,11 @@ exports[`List Parsing should parse the indented codeblock inside 1`] = `
 
 exports[`List Parsing should tokenize a valid ordered list 1`] = `
 "<ol>
-<li><p>item <strong>1</strong></p>
+<li>item <strong>1</strong>
 </li>
-<li><p>item <a href=\\"link-url\\">link</a></p>
+<li>item <a href=\\"link-url\\">link</a>
 </li>
-<li><p>item 3 <code>code item</code></p>
+<li>item 3 <code>code item</code>
 </li>
 </ol>
 "
@@ -115,11 +115,11 @@ exports[`List Parsing should tokenize a valid ordered list 1`] = `
 
 exports[`List Parsing should tokenize a valid un-ordered list 1`] = `
 "<ul>
-<li><p>item <strong>1</strong></p>
+<li>item <strong>1</strong>
 </li>
-<li><p>item <a href=\\"link-url\\">link</a></p>
+<li>item <a href=\\"link-url\\">link</a>
 </li>
-<li><p>item 3 <code>code item</code></p>
+<li>item 3 <code>code item</code>
 </li>
 </ul>
 "
@@ -127,27 +127,27 @@ exports[`List Parsing should tokenize a valid un-ordered list 1`] = `
 
 exports[`List Parsing should tokenize list combination 1`] = `
 "<ul>
-<li><p>one</p>
+<li>one
 </li>
-<li><p>two</p>
+<li>two
 </li>
 </ul>
 <ol>
-<li><p>one</p>
+<li>one
 </li>
-<li><p>two</p>
+<li>two
 </li>
 </ol>
 <ul>
-<li><input type='checkbox'><p>c empty</p>
+<li><input type='checkbox'>c empty
 </li>
-<li><input type='checkbox' checked><p>c checked</p>
+<li><input type='checkbox' checked>c checked
 </li>
 </ul>
 <ol>
-<li><input type='checkbox'><p>c empty</p>
+<li><input type='checkbox'>c empty
 </li>
-<li><input type='checkbox' checked><p>c checked</p>
+<li><input type='checkbox' checked>c checked
 </li>
 </ol>
 "

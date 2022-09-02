@@ -83,6 +83,7 @@ main {
 				ul,ol {
 					li {
 						margin-inline: 1rem;
+						margin-bottom: .3rem;
 						gap: .5rem;
 						*:only-child {
 							margin-bottom: 0;
@@ -90,6 +91,10 @@ main {
 						*:last-child {
 							margin-bottom: 0;
 						}
+					}
+					input {
+						margin-right: .5rem;
+						scale: 1.2;
 					}
 				}
 				strong {

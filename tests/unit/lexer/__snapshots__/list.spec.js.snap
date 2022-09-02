@@ -86,6 +86,7 @@ to be indented *twice* -- 8 spaces or two tabs:",
     "indent": 0,
     "level": 3,
     "raw": "### Code Blocks",
+    "setext": false,
     "tokens": Array [
       Object {
         "raw": "Code Blocks",

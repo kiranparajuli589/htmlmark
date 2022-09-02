@@ -47,9 +47,9 @@ exports[`Large MD To HTML should parse the large markdown file content to html 1
 <blockquote>
 <h2>This is a header.</h2>
 <ol>
-<li><p>This is the first list item.</p>
+<li>This is the first list item.
 </li>
-<li><p>This is the second list item.</p>
+<li>This is the second list item.
 </li>
 </ol>
 <p> Here&#39;s some example code:</p>
@@ -61,93 +61,93 @@ exports[`Large MD To HTML should parse the large markdown file content to html 1
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>is equivalent to:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>and:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>It&#39;s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>or even:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>you&#39;d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don&#39;t have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>But if you want to be lazy, you don&#39;t have to:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.</p>
-<p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.</p>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.
 </li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ol>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<p>    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.</p>
+<li>This is a list item with two paragraphs.
+    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.
 </li>
-<li><p>Another item in the same list.</p>
+<li>Another item in the same list.
 </li>
 </ul>
 <p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code> delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
+<li>A list item with a blockquote:
 <blockquote>
 <p> This is a blockquote  inside a list item.</p>
 
@@ -156,7 +156,7 @@ exports[`Large MD To HTML should parse the large markdown file content to html 1
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
@@ -239,9 +239,9 @@ end tell</code></pre>
 <blockquote>
 <h2>This is a header.</h2>
 <ol>
-<li><p>This is the first list item.</p>
+<li>This is the first list item.
 </li>
-<li><p>This is the second list item.</p>
+<li>This is the second list item.
 </li>
 </ol>
 <p> Here&#39;s some example code:</p>
@@ -253,93 +253,93 @@ end tell</code></pre>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>is equivalent to:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>and:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>It&#39;s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>or even:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>you&#39;d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don&#39;t have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>But if you want to be lazy, you don&#39;t have to:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.</p>
-<p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.</p>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.
 </li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ol>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<p>    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.</p>
+<li>This is a list item with two paragraphs.
+    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.
 </li>
-<li><p>Another item in the same list.</p>
+<li>Another item in the same list.
 </li>
 </ul>
 <p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code> delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
+<li>A list item with a blockquote:
 <blockquote>
 <p> This is a blockquote  inside a list item.</p>
 
@@ -348,7 +348,7 @@ end tell</code></pre>
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
@@ -431,9 +431,9 @@ end tell</code></pre>
 <blockquote>
 <h2>This is a header.</h2>
 <ol>
-<li><p>This is the first list item.</p>
+<li>This is the first list item.
 </li>
-<li><p>This is the second list item.</p>
+<li>This is the second list item.
 </li>
 </ol>
 <p> Here&#39;s some example code:</p>
@@ -445,93 +445,93 @@ end tell</code></pre>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>is equivalent to:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>and:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>It&#39;s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>or even:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>you&#39;d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don&#39;t have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>But if you want to be lazy, you don&#39;t have to:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.</p>
-<p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.</p>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.
 </li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ol>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<p>    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.</p>
+<li>This is a list item with two paragraphs.
+    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.
 </li>
-<li><p>Another item in the same list.</p>
+<li>Another item in the same list.
 </li>
 </ul>
 <p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code> delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
+<li>A list item with a blockquote:
 <blockquote>
 <p> This is a blockquote  inside a list item.</p>
 
@@ -540,7 +540,7 @@ end tell</code></pre>
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
@@ -623,9 +623,9 @@ end tell</code></pre>
 <blockquote>
 <h2>This is a header.</h2>
 <ol>
-<li><p>This is the first list item.</p>
+<li>This is the first list item.
 </li>
-<li><p>This is the second list item.</p>
+<li>This is the second list item.
 </li>
 </ol>
 <p> Here&#39;s some example code:</p>
@@ -637,93 +637,93 @@ end tell</code></pre>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>is equivalent to:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>and:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>It&#39;s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>or even:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>you&#39;d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don&#39;t have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>But if you want to be lazy, you don&#39;t have to:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.</p>
-<p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.</p>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.
 </li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ol>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<p>    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.</p>
+<li>This is a list item with two paragraphs.
+    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.
 </li>
-<li><p>Another item in the same list.</p>
+<li>Another item in the same list.
 </li>
 </ul>
 <p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code> delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
+<li>A list item with a blockquote:
 <blockquote>
 <p> This is a blockquote  inside a list item.</p>
 
@@ -732,7 +732,7 @@ end tell</code></pre>
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
@@ -814,9 +814,9 @@ end tell</code></pre>
 <blockquote>
 <h2>This is a header.</h2>
 <ol>
-<li><p>This is the first list item.</p>
+<li>This is the first list item.
 </li>
-<li><p>This is the second list item.</p>
+<li>This is the second list item.
 </li>
 </ol>
 <p> Here&#39;s some example code:</p>
@@ -828,93 +828,93 @@ end tell</code></pre>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>is equivalent to:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>and:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>It&#39;s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>or even:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>you&#39;d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don&#39;t have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>But if you want to be lazy, you don&#39;t have to:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.</p>
-<p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.</p>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.
 </li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ol>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<p>    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.</p>
+<li>This is a list item with two paragraphs.
+    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.
 </li>
-<li><p>Another item in the same list.</p>
+<li>Another item in the same list.
 </li>
 </ul>
 <p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code> delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
+<li>A list item with a blockquote:
 <blockquote>
 <p> This is a blockquote  inside a list item.</p>
 
@@ -923,7 +923,7 @@ end tell</code></pre>
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
@@ -1005,9 +1005,9 @@ end tell</code></pre>
 <blockquote>
 <h2>This is a header.</h2>
 <ol>
-<li><p>This is the first list item.</p>
+<li>This is the first list item.
 </li>
-<li><p>This is the second list item.</p>
+<li>This is the second list item.
 </li>
 </ol>
 <p> Here&#39;s some example code:</p>
@@ -1019,93 +1019,93 @@ end tell</code></pre>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably -- as list markers:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>is equivalent to:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>and:</p>
 <ul>
-<li><p>Red</p>
+<li>Red
 </li>
-<li><p>Green</p>
+<li>Green
 </li>
-<li><p>Blue</p>
+<li>Blue
 </li>
 </ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>It&#39;s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. The HTML Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>or even:</p>
 <ol>
-<li><p>Bird</p>
+<li>Bird
 </li>
-<li><p>McHale</p>
+<li>McHale
 </li>
-<li><p>Parish</p>
+<li>Parish
 </li>
 </ol>
 <p>you&#39;d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don&#39;t have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>But if you want to be lazy, you don&#39;t have to:</p>
 <ul>
-<li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.</p>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,     viverra nec, fringilla in, laoreet vitae, risus.
 </li>
-<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.     Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ul>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.</p>
-<p>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.</p>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit. Aliquam hendrerit     mi posuere lectus.
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet     vitae, risus. Donec sit amet nisl. Aliquam semper ipsum     sit amet velit.
 </li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.
 </li>
 </ol>
 <p>It looks nice if you indent every line of the subsequent paragraphs, but here again, Markdown will allow you to be lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<p>    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.</p>
+<li>This is a list item with two paragraphs.
+    This is the second paragraph in the list item. You&#39;re     only required to indent the first line. Lorem ipsum dolor     sit amet, consectetuer adipiscing elit.
 </li>
-<li><p>Another item in the same list.</p>
+<li>Another item in the same list.
 </li>
 </ul>
 <p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code> delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
+<li>A list item with a blockquote:
 <blockquote>
 <p> This is a blockquote  inside a list item.</p>
 
@@ -1114,7 +1114,7 @@ end tell</code></pre>
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li><p>A list item with a code block:</p>
+<li>A list item with a code block:
 <pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
