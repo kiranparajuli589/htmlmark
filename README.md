@@ -1,8 +1,8 @@
-# Markdown Parser
-
-![logo](/home/kiran/dev/md-parser/logo.png)
-
-A very lightweight Markdown Parser powered by Regex
+<div style="display: flex; justify-content: center; flex-direction: column; text-align: center">
+	<h1>Markdown Parser</h1>
+	<p><img src="https://raw.githubusercontent.com/kiranparajuli589/md-parser/main/logo.png" style="height: auto; width: 200px;"></p>
+	<p>A very lightweight Markdown Parser powered by Regex</p>
+</div>
 
 ## 🚧 Under HIGH DEVELOPMENT 🚧
 
