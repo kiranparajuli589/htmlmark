@@ -1,5 +1,4 @@
 import { MDP } from "../../../lib/index.js"
-import {Lexer} from "../../../lib/lexer/index.js";
 
 
 describe("Paragraph Parsing", () => {
