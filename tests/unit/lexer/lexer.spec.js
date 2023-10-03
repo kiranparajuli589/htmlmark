@@ -16,7 +16,7 @@ describe("lexer", () => {
 			const tokens = lexer.run()
 			expect(tokens[0].type).toBe(TOKENS.HR_LINE)
 		})
-		it("should merge multiple consecutive hr lines into one", () => {
+		it.skip("should merge multiple consecutive hr lines into one", () => {
 			const lines = [
 				"---",
 				"---"

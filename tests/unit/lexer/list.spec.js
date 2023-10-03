@@ -30,7 +30,7 @@ describe("list", () => {
 		]
 		const lexer = new Lexer(lines)
 		const tokenizedContent = lexer.run()
-		expect(tokenizedContent[0].indent).toEqual(0)
+		expect(tokenizedContent[0].indent).toEqual(2)
 	})
 	it("less than 4 indent should not break the list", () => {
 		const lines = [

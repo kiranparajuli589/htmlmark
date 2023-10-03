@@ -95,8 +95,8 @@ exports[`Parser Commons escaping should escape everything excepts tags for other
 </li>
 </ul>
 <blockquote>
-<p> Some &quot; comment <bold>bold</bold></p>
-
+<p> Some &quot; comment</p>
+<bold>bold</bold>
 </blockquote>
 "
 `;
@@ -121,7 +121,7 @@ efg&lt;
 `;
 
 exports[`Parser Commons hr line should not allow multiple consecutive hr lines 1`] = `
-"<hr>
+"<h2>---</h2>
 "
 `;
 

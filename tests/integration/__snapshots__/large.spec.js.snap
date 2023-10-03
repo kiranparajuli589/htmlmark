@@ -171,9 +171,8 @@ exports[`Large MD To HTML should parse the large markdown file content to html 1
 end tell</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;</code></pre>
+    <div class=\\"footer\\"><p>        &amp;copy; 2004 Foo Corporation</p>
+<p>    </div></p>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
 <pre><code>tell application &quot;Foo&quot;
     beep
@@ -363,9 +362,8 @@ end tell</code></pre>
 end tell</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;</code></pre>
+    <div class=\\"footer\\"><p>        &amp;copy; 2004 Foo Corporation</p>
+<p>    </div></p>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
 <pre><code>tell application &quot;Foo&quot;
     beep
@@ -555,9 +553,8 @@ end tell</code></pre>
 end tell</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;</code></pre>
+    <div class=\\"footer\\"><p>        &amp;copy; 2004 Foo Corporation</p>
+<p>    </div></p>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
 <pre><code>tell application &quot;Foo&quot;
     beep
@@ -747,9 +744,8 @@ end tell</code></pre>
 end tell</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;</code></pre>
+    <div class=\\"footer\\"><p>        &amp;copy; 2004 Foo Corporation</p>
+<p>    </div></p>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
 <pre><code>tell application &quot;Foo&quot;
     beep
@@ -938,9 +934,8 @@ end tell</code></pre>
 end tell</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;</code></pre>
+    <div class=\\"footer\\"><p>        &amp;copy; 2004 Foo Corporation</p>
+<p>    </div></p>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
 <pre><code>tell application &quot;Foo&quot;
     beep
@@ -1129,9 +1124,8 @@ end tell</code></pre>
 end tell</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;</code></pre>
+    <div class=\\"footer\\"><p>        &amp;copy; 2004 Foo Corporation</p>
+<p>    </div></p>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
 <pre><code>tell application &quot;Foo&quot;
     beep

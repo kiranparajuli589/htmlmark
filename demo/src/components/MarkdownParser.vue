@@ -6,6 +6,12 @@
 			<div class="markdown">
 				<div class="head">
 					<div class="section-title">Markdown Input:</div>
+					<div class="options">
+						<label for="code-highlighter">
+							<input type="checkbox" id="code-highlighter" v-model="useCodeHighlighter" />
+							Enable Code Highlighter
+						</label>
+					</div>
 					<button class="clear" title="Clear Input"
 									@click="clearInput"
 					>
@@ -33,7 +39,7 @@
 				<div class="preview-pane" >
 					<div v-if="choice === 'preview'" class="preview" v-html="output" />
 					<div v-else-if="choice === 'lex'" class="preview">
-						{{ lexerData }}
+						<pre><code>{{ JSON.stringify(lexerData, null, 2).trim() }}</code></pre>
 					</div>
 					<div v-else class="html-source">
 						{{ output }}
@@ -44,20 +50,34 @@
 	</main>
 </template>
 <script setup>
-
 import { ref } from "vue"
+import hljs from "highlight.js"
 import { MDP } from "../../../lib"
+
+const useCodeHighlighter = ref(false)
 
 const output = ref("")
 const timeTaken = ref(0)
 const lexerData = ref({})
 const choice = ref("preview")
 
+/**
+ * Code highlighter
+ * @param {string} code Code to highlight
+ * @param {string} language Language of the code
+ * @returns {string}
+ */
+const codeHighlighter = (code) => {
+	return hljs.highlightAuto(code).value
+}
+
 
 const handleChange = (e) => {
 	// debounce for 100 ms
 	setTimeout(() => {
-		const {elapsedTime, lex, html} = MDP.hP(e.target.value)
+		const {elapsedTime, lex, html} = useCodeHighlighter.value
+			? MDP.hP(e.target.value, codeHighlighter)
+			: MDP.hP(e.target.value)
 		timeTaken.value = elapsedTime
 		lexerData.value = lex
 		output.value = html

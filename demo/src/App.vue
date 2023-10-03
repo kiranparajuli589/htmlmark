@@ -2,6 +2,7 @@
 	<div id="mdp">
 		<TheAppBar />
 		<MarkdownParser />
+		<div class="py-6" />
 		<TheFooter />
 	</div>
 </template>
@@ -19,3 +20,10 @@ onMounted(() => {
 	document.body.toggleAttribute("dark", dark.value)
 })
 </script>
+<style lang="scss" scoped>
+#mdp {
+	.py-6 {
+		padding-block: 1rem;
+	}
+}
+</style>

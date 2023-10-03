@@ -334,9 +334,39 @@ Array [
     "raw": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
     "tokens": Array [
       Object {
-        "raw": "a paragraph of <u>words</u> ",
+        "raw": "a paragraph of ",
         "type": "text",
-        "value": "a paragraph of <u>words</u> ",
+        "value": "a paragraph of ",
+      },
+      Object {
+        "raw": "<u>",
+        "tokens": Object {
+          "attributes": undefined,
+          "endTag": undefined,
+          "tag": "u",
+        },
+        "type": "html",
+        "value": "<u>",
+      },
+      Object {
+        "raw": "words",
+        "type": "text",
+        "value": "words",
+      },
+      Object {
+        "raw": "</u>",
+        "tokens": Object {
+          "attributes": undefined,
+          "endTag": "u",
+          "tag": undefined,
+        },
+        "type": "html",
+        "value": "</u>",
+      },
+      Object {
+        "raw": " ",
+        "type": "text",
+        "value": " ",
       },
       Object {
         "raw": "\`first code\`",
@@ -1315,6 +1345,103 @@ Array [
     ],
     "type": "paragraph",
     "value": "def",
+  },
+]
+`;
+
+exports[`paragraph should detect html in the paragraph 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "this is a link <a href='https://google.com'>google</a> here",
+    "tokens": Array [
+      Object {
+        "raw": "this is a link ",
+        "type": "text",
+        "value": "this is a link ",
+      },
+      Object {
+        "raw": "<a href='https://google.com'>",
+        "tokens": Object {
+          "attributes": "href='https://google.com'",
+          "endTag": undefined,
+          "tag": "a",
+        },
+        "type": "html",
+        "value": "<a href='https://google.com'>",
+      },
+      Object {
+        "raw": "google",
+        "type": "text",
+        "value": "google",
+      },
+      Object {
+        "raw": "</a>",
+        "tokens": Object {
+          "attributes": undefined,
+          "endTag": "a",
+          "tag": undefined,
+        },
+        "type": "html",
+        "value": "</a>",
+      },
+      Object {
+        "raw": " here",
+        "type": "text",
+        "value": " here",
+      },
+    ],
+    "type": "paragraph",
+    "value": "this is a link <a href='https://google.com'>google</a> here",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "this is a <u>underlined</u> text here",
+    "tokens": Array [
+      Object {
+        "raw": "this is a ",
+        "type": "text",
+        "value": "this is a ",
+      },
+      Object {
+        "raw": "<u>",
+        "tokens": Object {
+          "attributes": undefined,
+          "endTag": undefined,
+          "tag": "u",
+        },
+        "type": "html",
+        "value": "<u>",
+      },
+      Object {
+        "raw": "underlined",
+        "type": "text",
+        "value": "underlined",
+      },
+      Object {
+        "raw": "</u>",
+        "tokens": Object {
+          "attributes": undefined,
+          "endTag": "u",
+          "tag": undefined,
+        },
+        "type": "html",
+        "value": "</u>",
+      },
+      Object {
+        "raw": " text here",
+        "type": "text",
+        "value": " text here",
+      },
+    ],
+    "type": "paragraph",
+    "value": "this is a <u>underlined</u> text here",
+  },
+  Object {
+    "type": "new-line",
   },
 ]
 `;

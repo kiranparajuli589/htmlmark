@@ -1,44 +1,44 @@
 {
-  "name": "@kiran/md-parser",
-  "version": "0.0.1",
-  "description": "Lightweight markdown parser",
-  "main": "lib/index.js",
-  "type": "module",
-  "scripts": {
-    "convert": "node index.js",
-    "jest": "jest --silent ",
+	"name": "@kiran/md-parser",
+	"version": "0.0.1",
+	"description": "Lightweight markdown parser",
+	"main": "lib/index.js",
+	"type": "module",
+	"scripts": {
+		"convert": "node index.js",
+		"jest": "jest --silent ",
 		"test": "jest --silent --coverage",
-    "jest:nocov": "jest --no-coverage",
-    "jest:watch": "jest --watch --no-coverage",
+		"jest:nocov": "jest --no-coverage",
+		"jest:watch": "jest --watch --no-coverage",
 		"jest:parser:watch": "pnpm jest:watch tests/unit/parser.spec.js",
 		"jest:integration:watch": "pnpm jest:watch tests/integration/small.spec.js",
-    "lint": "eslint . --ext .js",
-    "lint:fix": "pnpm lint --fix"
-  },
-  "keywords": [
-    "nodejs",
-    "markdown",
-    "parser"
-  ],
-  "author": "Kiran Parajuli",
-  "license": "GPL-3.0",
-  "repository": {
+		"lint": "eslint . --ext .js",
+		"lint:fix": "pnpm lint --fix"
+	},
+	"keywords": [
+		"nodejs",
+		"markdown",
+		"parser"
+	],
+	"author": "Kiran Parajuli",
+	"license": "GPL-3.0",
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/kiranparajuli589/markdown-parser"
 	},
-  "bugs": {
-    "email": "kiranparajuli589@gmail.com",
-    "url": "https://github.com/kiranparajuli589/markdown-parser/issues"
-  },
-  "engines": {
-    "node": ">=16.0.0",
-    "pnpm": ">=7.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
-    "eslint": "^8.21.0",
-    "eslint-plugin-import": "^2.26.0",
-    "jest": "^28.1.3"
-  }
+	"bugs": {
+		"email": "kiranparajuli589@gmail.com",
+		"url": "https://github.com/kiranparajuli589/markdown-parser/issues"
+	},
+	"engines": {
+		"node": ">=16.0.0",
+		"pnpm": ">=7.0.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.10",
+		"@babel/plugin-transform-modules-commonjs": "^7.18.6",
+		"eslint": "^8.21.0",
+		"eslint-plugin-import": "^2.26.0",
+		"jest": "^28.1.3"
+	}
 }

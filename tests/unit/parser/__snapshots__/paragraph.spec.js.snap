@@ -15,6 +15,18 @@ exports[`Paragraph Parsing escape should escape inside code 1`] = `
 "
 `;
 
+exports[`Paragraph Parsing html should detect html in the paragraph 1`] = `
+"<p><a href=\\"def\\">abc</a>  this is a link <a href='https://google.com'>google</a> here</p>
+<p>this is a <u>underlined</u> text here</p>
+"
+`;
+
+exports[`Paragraph Parsing html should detect html with attributes 1`] = `
+"<h1>Markdown: Syntax</h1>
+<ul id=\\"ProjectSubmenu\\">    <li><a href=\\"/projects/markdown/\\" title=\\"Markdown Project Page\\">Main</a></li>    <li><a href=\\"/projects/markdown/basics\\" title=\\"Markdown Basics\\">Basics</a></li>    <li><a class=\\"selected\\" title=\\"Markdown Syntax Documentation\\">Syntax</a></li>    <li><a href=\\"/projects/markdown/license\\" title=\\"Pricing and License Information\\">License</a></li>    <li><a href=\\"/projects/markdown/dingus\\" title=\\"Online Markdown Web Form\\">Dingus</a></li><p></ul></p>
+"
+`;
+
 exports[`Paragraph Parsing line breaks should break the line if end with two or spaces 1`] = `
 "<p>one two three<br> four five six</p>
 "

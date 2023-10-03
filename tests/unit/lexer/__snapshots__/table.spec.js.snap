@@ -684,7 +684,7 @@ Array [
 exports[`table indentation the indented table 1`] = `
 Array [
   Object {
-    "indent": 0,
+    "indent": 2,
     "rows": Array [
       Array [
         Object {

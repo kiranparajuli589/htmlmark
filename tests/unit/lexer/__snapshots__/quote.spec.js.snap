@@ -438,7 +438,7 @@ exports[`quote should deep tokenize quote '  > quote \`four\` with ~~five~~' 1`]
 Array [
   Object {
     "depth": 1,
-    "indent": 0,
+    "indent": 2,
     "raw": "  > quote \`four\` with ~~five~~",
     "tokens": Array [
       Object {

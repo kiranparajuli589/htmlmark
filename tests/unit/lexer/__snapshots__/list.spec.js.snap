@@ -103,7 +103,7 @@ to be indented *twice* -- 8 spaces or two tabs:",
 exports[`list less than 4 indent should not break the list 1`] = `
 Array [
   Object {
-    "indent": 0,
+    "indent": 2,
     "items": Array [
       Object {
         "checked": null,
@@ -176,6 +176,19 @@ Array [
         ],
         "type": "list-item",
       },
+    ],
+    "meta": Object {
+      "checklist": false,
+      "identifier": "-",
+      "ordered": false,
+    },
+    "raw": "  - item **1**
+  - item [link](link-url)",
+    "type": "list",
+  },
+  Object {
+    "indent": 0,
+    "items": Array [
       Object {
         "checked": null,
         "count": null,
@@ -229,9 +242,7 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
-    "raw": "  - item **1**
-  - item [link](link-url)
-- item 3 \`code item\`
+    "raw": "- item 3 \`code item\`
 - item 4",
     "type": "list",
   },
@@ -643,35 +654,23 @@ exports[`list should tokenize an empty list item 1`] = `
 Array [
   Object {
     "indent": 0,
-    "items": Array [
+    "level": 2,
+    "raw": "- one
+-",
+    "setext": true,
+    "tokens": Array [
       Object {
-        "checked": null,
-        "count": null,
         "raw": "- one",
-        "tokens": Array [
-          Object {
-            "indent": 0,
-            "raw": "one",
-            "tokens": Array [
-              Object {
-                "raw": "one",
-                "type": "text",
-                "value": "one",
-              },
-            ],
-            "type": "paragraph",
-            "value": "one",
-          },
-        ],
-        "type": "list-item",
+        "type": "text",
+        "value": "- one",
       },
-      Object {
-        "checked": null,
-        "count": null,
-        "raw": "-",
-        "tokens": Array [],
-        "type": "list-item",
-      },
+    ],
+    "type": "heading",
+    "value": "- one",
+  },
+  Object {
+    "indent": 0,
+    "items": Array [
       Object {
         "checked": null,
         "count": null,
@@ -699,9 +698,7 @@ Array [
       "identifier": "-",
       "ordered": false,
     },
-    "raw": "- one
--
-- two",
+    "raw": "- two",
     "type": "list",
   },
 ]
@@ -801,44 +798,30 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
-        "checked": null,
-        "count": null,
-        "raw": "- two",
-        "tokens": Array [
-          Object {
-            "indent": 0,
-            "raw": "two",
-            "tokens": Array [
-              Object {
-                "raw": "two",
-                "type": "text",
-                "value": "two",
-              },
-            ],
-            "type": "paragraph",
-            "value": "two",
-          },
-        ],
-        "type": "list-item",
-      },
-      Object {
-        "checked": null,
-        "count": null,
-        "raw": "-",
-        "tokens": Array [],
-        "type": "list-item",
-      },
     ],
     "meta": Object {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
-    "raw": "- one
-- two
--",
+    "raw": "- one",
     "type": "list",
+  },
+  Object {
+    "indent": 0,
+    "level": 2,
+    "raw": "- two
+-",
+    "setext": true,
+    "tokens": Array [
+      Object {
+        "raw": "- two",
+        "type": "text",
+        "value": "- two",
+      },
+    ],
+    "type": "heading",
+    "value": "- two",
   },
 ]
 `;

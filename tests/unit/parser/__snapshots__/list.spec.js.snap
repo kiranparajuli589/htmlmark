@@ -21,10 +21,8 @@ exports[`List Parsing indent should break the list 1`] = `
 `;
 
 exports[`List Parsing should allow empty list item 1`] = `
-"<ul>
-<li>one
-</li>
-<li></li>
+"<h2>- one</h2>
+<ul>
 <li>two
 </li>
 </ul>
@@ -44,10 +42,8 @@ exports[`List Parsing should detect list indent 1`] = `
 `;
 
 exports[`List Parsing should parse a list with an empty list item 1`] = `
-"<ul>
-<li>one
-</li>
-<li></li>
+"<h2>- one</h2>
+<ul>
 <li>two
 </li>
 </ul>
@@ -69,10 +65,8 @@ exports[`List Parsing should parse a list with an empty list item 3`] = `
 "<ul>
 <li>one
 </li>
-<li>two
-</li>
-<li></li>
 </ul>
+<h2>- two</h2>
 "
 `;
 

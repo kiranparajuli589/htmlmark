@@ -251,17 +251,24 @@ Array [
     "tokens": Array [
       Object {
         "indent": 0,
-        "raw": " Some \\" comment
-<bold>bold</bold>",
+        "raw": " Some \\" comment",
         "tokens": Array [
           Object {
-            "raw": " Some \\" comment <bold>bold</bold>",
+            "raw": " Some \\" comment",
             "type": "text",
-            "value": " Some &quot; comment <bold>bold</bold>",
+            "value": " Some &quot; comment",
           },
         ],
         "type": "paragraph",
-        "value": " Some \\" comment <bold>bold</bold>",
+        "value": " Some \\" comment",
+      },
+      Object {
+        "attrs": undefined,
+        "content": "b",
+        "indent": 0,
+        "raw": "<bold>bold</bold>",
+        "tag": "bold",
+        "type": "html",
       },
     ],
     "type": "quote",

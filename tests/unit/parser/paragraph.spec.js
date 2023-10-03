@@ -1,4 +1,5 @@
 import { MDP } from "../../../lib/index.js"
+import {Lexer} from "../../../lib/lexer/index.js";
 
 
 describe("Paragraph Parsing", () => {
@@ -115,6 +116,35 @@ describe("Paragraph Parsing", () => {
 				"four five six"
 			]
 			const lexerData = MDP.h(lines)
+			expect(lexerData).toMatchSnapshot()
+		})
+	})
+	describe("html", () => {
+		it("should detect html in the paragraph", () => {
+			const lines = [
+				"[abc](def) ",
+				"this is a link <a href='https://google.com'>google</a> here",
+				"",
+				"this is a <u>underlined</u> text here",
+				""
+			]
+			const lexerData = MDP.h(lines)
+			expect(lexerData).toMatchSnapshot()
+		})
+		it("should detect html with attributes", () => {
+			const lines = `
+Markdown: Syntax
+================
+
+<ul id="ProjectSubmenu">
+    <li><a href="/projects/markdown/" title="Markdown Project Page">Main</a></li>
+    <li><a href="/projects/markdown/basics" title="Markdown Basics">Basics</a></li>
+    <li><a class="selected" title="Markdown Syntax Documentation">Syntax</a></li>
+    <li><a href="/projects/markdown/license" title="Pricing and License Information">License</a></li>
+    <li><a href="/projects/markdown/dingus" title="Online Markdown Web Form">Dingus</a></li>
+</ul>
+			`
+			const lexerData = MDP.h(lines.split("\n"))
 			expect(lexerData).toMatchSnapshot()
 		})
 	})

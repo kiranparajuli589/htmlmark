@@ -97,4 +97,15 @@ describe("paragraph", () => {
 		const lexerData = lexer.run()
 		expect(lexerData).toMatchSnapshot()
 	})
+	it("should detect html in the paragraph", () => {
+		const lines = [
+			"this is a link <a href='https://google.com'>google</a> here",
+			"",
+			"this is a <u>underlined</u> text here",
+			""
+		]
+		const lexer = new Lexer(lines)
+		const lexerData = lexer.run()
+		expect(lexerData).toMatchSnapshot()
+	})
 })

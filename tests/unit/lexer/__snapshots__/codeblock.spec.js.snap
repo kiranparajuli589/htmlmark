@@ -149,7 +149,8 @@ const c = 3
     "type": "code-block",
     "value": "const a = 1
 const b = 2
-const c = 3",
+const c = 3
+   \`\`\`",
   },
 ]
 `;
@@ -176,13 +177,31 @@ const c = 3
 exports[`codeblock should not be broken with acceptable wrong indent 1`] = `
 Array [
   Object {
-    "indent": 0,
+    "indent": 2,
     "language": null,
-    "raw": "   \`\`\`
-abcd
-   \`\`\`",
+    "raw": "   \`\`\`",
     "type": "code-block",
+    "value": "",
+  },
+  Object {
+    "indent": 0,
+    "raw": "abcd",
+    "tokens": Array [
+      Object {
+        "raw": "abcd",
+        "type": "text",
+        "value": "abcd",
+      },
+    ],
+    "type": "paragraph",
     "value": "abcd",
+  },
+  Object {
+    "indent": 2,
+    "language": null,
+    "raw": "   \`\`\`",
+    "type": "code-block",
+    "value": "",
   },
 ]
 `;
