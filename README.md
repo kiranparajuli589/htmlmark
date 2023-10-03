@@ -88,6 +88,12 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
 
        1. If a line ends with 2 or more than 2 spaces, then, a line break is inserted.
        2. Otherwise, the lines are merged into one.
+11. **HTML:**
+    - Lexer contains it
+    - Parser also contains it
+    - No escaping for HTML tags
+    - Parsed as it is
+
 
 ### 🎺 Emphasis
 Emphasis can be inside the content of any paragraph types. Even emphasis items can have emphasis inside 🤩.
