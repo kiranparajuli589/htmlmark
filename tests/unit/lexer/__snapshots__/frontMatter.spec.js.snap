@@ -9,12 +9,9 @@ exports[`FrontMatter should tokenize front matter 1`] = `
 Array [
   Object {
     "type": "front-matter",
-    "value": Array [
-      Object {
-        "key": "title",
-        "keyValue": "Hello World",
-      },
-    ],
+    "value": Object {
+      "title": "Hello World",
+    },
   },
   Object {
     "indent": 0,
@@ -41,24 +38,23 @@ exports[`FrontMatter should tokenize front matter with array, number and object 
 Array [
   Object {
     "type": "front-matter",
-    "value": Array [
-      Object {
-        "key": "title",
-        "keyValue": "Hello World",
+    "value": Object {
+      "array": Array [
+        1,
+        2,
+        3,
+      ],
+      "object": Object {
+        "a": 1,
+        "b": 2,
       },
-      Object {
-        "key": "array",
-        "keyValue": Array [
-          1,
-          2,
-          3,
-        ],
-      },
-      Object {
-        "key": "object",
-        "keyValue": "{a: 1, b: 2}",
-      },
-    ],
+      "stringArray": Array [
+        "a",
+        "b",
+        "c",
+      ],
+      "title": "Hello World",
+    },
   },
   Object {
     "indent": 0,
@@ -79,4 +75,19 @@ Array [
     "type": "new-line",
   },
 ]
+`;
+
+exports[`FrontMatter should tokenize more real fixture 1`] = `
+Object {
+  "date": "2023-10-12 12:00:00",
+  "tags": Array [
+    "django",
+    "vue",
+    "docker",
+    "docker-compose",
+    "gunicorn",
+    "vite",
+  ],
+  "title": "Steps to dockerize your django vue application",
+}
 `;

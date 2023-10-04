@@ -96,7 +96,9 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
 12. **Front Matter:**
     - Only lexer contains it
     - Starts and Ends with `---` (it can be surrounded by whitespaces, but should have exactly 3 dashes without spaces in between)
-    -
+    - If array or object are provided in exact JSON literal format, then they are parsed as JS objects and arrays
+    - Otherwise, they are parsed as strings
+    - Example: `---\ntags: ["a", "b", "c"]\n---` is parsed as `{tags: ["a", "b", "c"]}`
 
 
 ### 🎺 Emphasis
