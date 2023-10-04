@@ -4,7 +4,7 @@ import fs from "fs"
 
 const version = process.env.SEMANTIC_RELEASE_NEXT_VERSION || JSON.parse(fs.readFileSync("./package.json")).version
 
-console.log("building version:", version)
+console.info("building version:", version)
 
 const banner = `/**
  * MDParser v${version} - a markdown parser
@@ -20,15 +20,12 @@ const banner = `/**
 
 export default defineConfig([{
 	input: "lib/index.js", output: [{
-		file: "dist/mdp.esm.js", format: "esm", sourcemap: true, banner
+		file: "dist/htmlmark.esm.js", format: "esm", sourcemap: true, banner
 	}, {
-		file: "dist/mdp.min.js", format: "umd", name: "mdp", sourcemap: false, banner
+		file: "dist/htmlmark.min.js", format: "umd", name: "htmlmark", sourcemap: false, banner
 	}, {
-		file: "dist/mdp.cjs", format: "cjs", name: "marked", sourcemap: true, banner
-	}]
-}, {
-	input: "lib/mdp.js",
-	output: [{
-		file: "dist/mdp.umd.js", format: "umd", name: "mdp", sourcemap: true, banner
+		file: "dist/htmlmark.cjs", format: "cjs", sourcemap: true, name: "htmlmark", banner
+	}, {
+		file: "dist/htmlmark.umd.js", format: "umd", name: "htmlmark", sourcemap: true, banner
 	}]
 }])

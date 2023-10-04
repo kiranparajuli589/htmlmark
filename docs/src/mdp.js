@@ -1,5 +1,5 @@
-import { Lexer } from "./lexer/index.js"
-import { Parser } from "./parser/index.js"
+import { Lexer } from "../../lib/lexer"
+import { Parser } from "../../lib/parser"
 
 /**
  * Markdown Parser for Javascript Application

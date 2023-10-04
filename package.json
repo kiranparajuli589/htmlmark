@@ -1,6 +1,6 @@
 {
 	"name": "htmlmark",
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"description": "Lightweight markdown parser",
 	"main": "dist/mdp.cjs",
 	"module": "dist/mdp.esm.js",
@@ -10,16 +10,15 @@
 		"htmlmark": "./lib/cli/index.js"
 	},
 	"files": [
-		"lib"
+		"dist"
 	],
 	"exports": {
 		".": {
-			"default": "./dist/mdp.esm.js",
-			"import": "./dist/mdp.esm.js",
-			"require": "./dist/mdp.umd.js"
+			"default": "./dist/htmlmark.esm.js",
+			"import": "./dist/htmlmark.esm.js",
+			"require": "./dist/htmlmark.umd.js"
 		},
-		"./bin/htmlmark": "./lib/cli/index.js",
-		"./package.json": "./package.json"
+		"./bin/htmlmark": "./lib/cli/index.js"
 	},
 	"keywords": [
 		"nodejs",

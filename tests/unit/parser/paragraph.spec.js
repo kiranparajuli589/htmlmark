@@ -1,4 +1,4 @@
-import { MDP } from "../../../lib/mdp.js"
+import {MDP} from "../../mdp.js"
 
 
 const mdp = new MDP()

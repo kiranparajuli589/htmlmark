@@ -1,5 +1,5 @@
 import { commonTokensList, LinesToEscape } from "../../fixtures/commTokens.js"
-import { MDP } from "../../../lib/mdp.js"
+import {MDP} from "../../mdp.js"
 
 
 const mdp = new MDP()

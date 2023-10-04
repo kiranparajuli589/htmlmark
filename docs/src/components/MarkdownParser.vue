@@ -52,7 +52,7 @@
 <script setup>
 import { ref } from "vue"
 import hljs from "highlight.js"
-import { MDP } from "../../../lib/mdp.js"
+import { MDP } from "../mdp.js"
 
 const useCodeHighlighter = ref(false)
 
