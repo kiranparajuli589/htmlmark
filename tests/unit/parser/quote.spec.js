@@ -1,4 +1,6 @@
-import { MDP } from "../../../lib/index.js"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("Quote Parsing", () => {
@@ -17,7 +19,7 @@ describe("Quote Parsing", () => {
 			"> > > > seven",
 			"simple para"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should detect the circular quote", () => {
@@ -36,7 +38,7 @@ describe("Quote Parsing", () => {
 			">",
 			"> one"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it.each([
@@ -44,7 +46,7 @@ describe("Quote Parsing", () => {
 		"  > quote `four` with ~~five~~",
 		"> quote [link-title](link-url) with *two*"
 	])("should deep tokenize quote with zero depth", (line) => {
-		const html = MDP.h([line])
+		const html = mdp.h([line])
 		expect(html).toMatchSnapshot()
 	})
 	it.each([
@@ -52,7 +54,7 @@ describe("Quote Parsing", () => {
 		"  > > > quote `four` with ~~five~~",
 		"> > > > quote [link-title](link-url) with *two*"
 	])("should deep tokenize quote with multiple depth", (line) => {
-		const html = MDP.h([line])
+		const html = mdp.h([line])
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse the quote with list inside", () => {
@@ -60,7 +62,7 @@ describe("Quote Parsing", () => {
 			"> - one",
 			"> - two"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should find the list and codeblock inside", () => {
@@ -74,7 +76,7 @@ describe("Quote Parsing", () => {
 			">",
 			">    return shell_exec(\"echo $input | $markdown_script\");"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("greedy newline", () => {
@@ -84,7 +86,7 @@ describe("Quote Parsing", () => {
 			">>",
 			">> here"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("greedy newline in nested form", () => {
@@ -97,7 +99,7 @@ describe("Quote Parsing", () => {
 			"> Back to the first level.",
 			""
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 })

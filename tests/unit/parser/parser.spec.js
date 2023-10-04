@@ -1,5 +1,7 @@
 import { commonTokensList, LinesToEscape } from "../../fixtures/commTokens.js"
-import { MDP } from "../../../lib/index.js"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("Parser Commons", () => {
@@ -9,7 +11,7 @@ describe("Parser Commons", () => {
 			{ lines: ["\n"] },
 			{ lines: ["", "\n"] }
 		])("should not include the top empty lines", ({ lines }) => {
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it.each(["", "\n"])("should include the empty line after some content", (eLine) => {
@@ -17,7 +19,7 @@ describe("Parser Commons", () => {
 				"some plain text",
 				eLine
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it("should combine multiple consequent new lines to a single one", () => {
@@ -27,7 +29,7 @@ describe("Parser Commons", () => {
 				"",
 				"some more plain text"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 	})
@@ -38,20 +40,20 @@ describe("Parser Commons", () => {
 				"<!-- comment -->",
 				"three"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 	})
 	describe("common tokens", () => {
 		it.each(commonTokensList)("should parse the common tokens", (line) => {
 			const lines = [line]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it.each(commonTokensList)("should parse the common tokens with some space before", (line) => {
 			const indent = "  "
 			const lines = [indent + line]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it("should parse underlined heading", () => {
@@ -62,7 +64,7 @@ describe("Parser Commons", () => {
 				"------",
 				"Normal text"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 	})
@@ -75,7 +77,7 @@ describe("Parser Commons", () => {
 			const lines = [
 				line
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it.skip("should not allow multiple consecutive hr lines", () => {
@@ -83,7 +85,7 @@ describe("Parser Commons", () => {
 				"---",
 				"---"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 	})
@@ -94,14 +96,14 @@ describe("Parser Commons", () => {
 				...LinesToEscape,
 				"```"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it("should escape everything inside a code", () => {
 			const lines = [
 				"`</em> & 'quo\"`"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 		it("should escape everything excepts tags for other tokens", () => {
@@ -111,7 +113,7 @@ describe("Parser Commons", () => {
 				"> Some \" comment",
 				"<bold>bold</bold>"
 			]
-			const html = MDP.h(lines)
+			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
 	})

@@ -1,4 +1,6 @@
-import { MDP } from "../../../lib/index.js"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("link", () => {
@@ -6,14 +8,14 @@ describe("link", () => {
 		const lines = [
 			"[Kiran Parajuli](https://kiranparajuli.com.np)"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse a link with text", () => {
 		const lines = [
 			"[Kiran Parajuli](https://kiranparajuli.com.np) is a good"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse a link with title", () => {
@@ -22,7 +24,7 @@ describe("link", () => {
 			"",
 			"here *is a **beautiful** piece of* art"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 })

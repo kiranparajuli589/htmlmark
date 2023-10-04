@@ -1,4 +1,6 @@
-import { MDP } from "../../../lib/index.js"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("CodeBlock Parsing", () => {
@@ -8,7 +10,7 @@ describe("CodeBlock Parsing", () => {
 			"const a = 1",
 			"```"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse the codeblock without the language", () => {
@@ -17,7 +19,7 @@ describe("CodeBlock Parsing", () => {
 			"const a = 1",
 			"```"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse the codeblock with multiple lines", () => {
@@ -27,7 +29,7 @@ describe("CodeBlock Parsing", () => {
 			"const b = 2",
 			"```"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse the codeblock with multiple lines and a newline", () => {
@@ -39,7 +41,7 @@ describe("CodeBlock Parsing", () => {
 			"const c = 3",
 			"```"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse multiple consequetive codeblocks", () => {
@@ -51,7 +53,7 @@ describe("CodeBlock Parsing", () => {
 			"const b = 2",
 			"```"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should cope with multiple items", () => {
@@ -61,7 +63,7 @@ describe("CodeBlock Parsing", () => {
 			"```",
 			"some people are funny"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse indent codeblock", () => {
@@ -79,7 +81,7 @@ describe("CodeBlock Parsing", () => {
 			"A code block continues until it reaches a line that is not indented",
 			"(or the end of the article)."
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 })

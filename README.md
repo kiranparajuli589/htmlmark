@@ -93,6 +93,10 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
     - Parser also contains it
     - No escaping for HTML tags
     - Parsed as it is
+12. **Front Matter:**
+    - Only lexer contains it
+    - Starts and Ends with `---` (it can be surrounded by whitespaces, but should have exactly 3 dashes without spaces in between)
+    -
 
 
 ### 🎺 Emphasis

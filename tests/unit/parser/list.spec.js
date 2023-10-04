@@ -1,4 +1,6 @@
-import { MDP } from "../../../lib/index.js"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("List Parsing", () => {
@@ -8,7 +10,7 @@ describe("List Parsing", () => {
 			"1. item [link](link-url)",
 			"1. item 3 `code item`"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should tokenize a valid un-ordered list", () => {
@@ -17,7 +19,7 @@ describe("List Parsing", () => {
 			"- item [link](link-url)",
 			"- item 3 `code item`"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should detect list indent", () => {
@@ -26,7 +28,7 @@ describe("List Parsing", () => {
 			"  - item [link](link-url)",
 			"  - item 3 `code item`"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("indent should break the list", () => {
@@ -37,7 +39,7 @@ describe("List Parsing", () => {
 			"        - item 4",
 			"    - item 3 `code item`"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should tokenize list combination", () => {
@@ -51,7 +53,7 @@ describe("List Parsing", () => {
 			"1. [ ] c empty",
 			"1. [x] c checked"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse the indented codeblock inside", () => {
@@ -66,7 +68,7 @@ describe("List Parsing", () => {
 			"",
 			"### Code Blocks"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should allow empty list item", () => {
@@ -75,7 +77,7 @@ describe("List Parsing", () => {
 			"-",
 			"- two"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it.each([
@@ -95,7 +97,7 @@ describe("List Parsing", () => {
 			"-"
 		] }
 	])("should parse a list with an empty list item", ({ lines }) => {
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 	it("should parse a spaced list", () => {
@@ -107,7 +109,7 @@ describe("List Parsing", () => {
 			"",
 			"- next list item is on the fly"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 })

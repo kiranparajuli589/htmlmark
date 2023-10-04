@@ -1,4 +1,6 @@
-import { MDP } from "../../../lib/index.js"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("Paragraph Parsing", () => {
@@ -33,7 +35,7 @@ describe("Paragraph Parsing", () => {
 		"but a link [kiran](https://kiran.me 'hero') with tooltip is very amazing"
 	])("should be deep tokenized: %s", (line) => {
 		const lines = [line]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	it("should have greedy newlines", () => {
@@ -45,7 +47,7 @@ describe("Paragraph Parsing", () => {
 			"",
 			"Back to the first level."
 		]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	it("should merge consecutive paragraph not separated by other tokens", () => {
@@ -53,7 +55,7 @@ describe("Paragraph Parsing", () => {
 			"abc `def` *ghi",
 			"jkl* mno **pqr*** stu"
 		]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	it("should be separated with other tokens", () => {
@@ -62,7 +64,7 @@ describe("Paragraph Parsing", () => {
 			"# one `two` three",
 			"def"
 		]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	it("a valid link reference", () => {
@@ -70,7 +72,7 @@ describe("Paragraph Parsing", () => {
 			"this is [google] link",
 			"[google]: https://google.com"
 		]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	it("a valid link reference with text", () => {
@@ -78,7 +80,7 @@ describe("Paragraph Parsing", () => {
 			"this is [toggle][google] link",
 			"[google]: https://google.com"
 		]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	it("should ignore the escaped special characters", () => {
@@ -88,7 +90,7 @@ describe("Paragraph Parsing", () => {
 			// eslint-disable-next-line no-useless-escape
 			"this is a normal \\* asterisk \\* here again"
 		]
-		const lexerData = MDP.h(lines)
+		const lexerData = mdp.h(lines)
 		expect(lexerData).toMatchSnapshot()
 	})
 	describe("escape", () => {
@@ -96,7 +98,7 @@ describe("Paragraph Parsing", () => {
 			const lines = [
 				"one `two<` three"
 			]
-			const lexerData = MDP.h(lines)
+			const lexerData = mdp.h(lines)
 			expect(lexerData).toMatchSnapshot()
 		})
 	})
@@ -106,7 +108,7 @@ describe("Paragraph Parsing", () => {
 				"one two three   ",
 				"four five six"
 			]
-			const lexerData = MDP.h(lines)
+			const lexerData = mdp.h(lines)
 			expect(lexerData).toMatchSnapshot()
 		})
 		it("should not break the line if end with less than two spaces", () => {
@@ -114,7 +116,7 @@ describe("Paragraph Parsing", () => {
 				"one two three ",
 				"four five six"
 			]
-			const lexerData = MDP.h(lines)
+			const lexerData = mdp.h(lines)
 			expect(lexerData).toMatchSnapshot()
 		})
 	})
@@ -127,7 +129,7 @@ describe("Paragraph Parsing", () => {
 				"this is a <u>underlined</u> text here",
 				""
 			]
-			const lexerData = MDP.h(lines)
+			const lexerData = mdp.h(lines)
 			expect(lexerData).toMatchSnapshot()
 		})
 		it("should detect html with attributes", () => {
@@ -143,7 +145,7 @@ Markdown: Syntax
     <li><a href="/projects/markdown/dingus" title="Online Markdown Web Form">Dingus</a></li>
 </ul>
 			`
-			const lexerData = MDP.h(lines.split("\n"))
+			const lexerData = mdp.h(lines.split("\n"))
 			expect(lexerData).toMatchSnapshot()
 		})
 	})

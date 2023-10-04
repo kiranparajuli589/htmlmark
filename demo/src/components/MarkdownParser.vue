@@ -52,7 +52,7 @@
 <script setup>
 import { ref } from "vue"
 import hljs from "highlight.js"
-import { MDP } from "../../../lib"
+import { MDP } from "../../../lib/mdp.js"
 
 const useCodeHighlighter = ref(false)
 
@@ -71,13 +71,20 @@ const codeHighlighter = (code) => {
 	return hljs.highlightAuto(code).value
 }
 
+const mdp = new MDP({
+	indent: 2,
+})
+const mdpWithCodeHighlighter = new MDP({
+	indent: 2,
+	codeHighlighter,
+})
 
 const handleChange = (e) => {
 	// debounce for 100 ms
 	setTimeout(() => {
 		const {elapsedTime, lex, html} = useCodeHighlighter.value
-			? MDP.hP(e.target.value, codeHighlighter)
-			: MDP.hP(e.target.value)
+			? mdpWithCodeHighlighter.hP(e.target.value)
+			: mdp.hP(e.target.value)
 		timeTaken.value = elapsedTime
 		lexerData.value = lex
 		output.value = html

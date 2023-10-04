@@ -1,4 +1,6 @@
-import { MDP } from "../../../lib"
+import { MDP } from "../../../lib/mdp.js"
+
+const mdp = new MDP()
 
 
 describe("Heading Parsing", () => {
@@ -7,7 +9,7 @@ describe("Heading Parsing", () => {
 			"# Heading #####",
 			"# Heading###"
 		]
-		const html = MDP.h(lines)
+		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
 })
