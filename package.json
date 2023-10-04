@@ -1,10 +1,10 @@
 {
-	"name": "@kiran/md-parser",
-	"version": "0.0.1",
+	"name": "htmlmark",
+	"version": "0.0.2",
 	"description": "Lightweight markdown parser",
-	"main": "./dist/mdp.cjs",
-	"module": "./dist/mdp.esm.js",
-	"browser": "./dist/mdp.umd.js",
+	"main": "dist/mdp.cjs",
+	"module": "dist/mdp.esm.js",
+	"browser": "dist/mdp.umd.js",
 	"type": "module",
 	"bin": {
 		"md-parser": "./lib/cli/index.js"
@@ -12,6 +12,15 @@
 	"files": [
 		"lib"
 	],
+	"exports": {
+		".": {
+			"default": "./dist/mdp.esm.js",
+			"import": "./dist/mdp.esm.js",
+			"require": "./dist/mdp.cjs"
+		},
+		"./bin/md-parser": "./lib/cli/index.js",
+		"./package.json": "./package.json"
+	},
 	"keywords": [
 		"nodejs",
 		"markdown",

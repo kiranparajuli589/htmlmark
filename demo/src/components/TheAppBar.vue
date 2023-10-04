@@ -1,7 +1,7 @@
 <template>
 	<nav>
 		<img class="logo" :src="logo" alt="Logo">
-		<h1>MD Parser</h1>
+		<h1>HtmlMark</h1>
 		<div class="nav-actions">
 			<a href="https://github.com/kiranparajuli589/md-parser"
 				 target="_blank" title="GitHub Repository" class="give-a-star"
