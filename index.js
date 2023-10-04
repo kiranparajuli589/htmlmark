@@ -1,6 +1,7 @@
 import { File } from "./lib/util/file.js"
 import { fileURLToPath } from "url"
-import {MarkdownParser} from "./lib/index.js";
+import { MarkdownParser } from "./lib/index.js"
+
 
 const mdp = new MarkdownParser()
 
