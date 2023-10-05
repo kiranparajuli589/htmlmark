@@ -30,20 +30,16 @@ This is a step-wise guide to dockerize your django + vue application.`
 const mdp = new MarkdownParser({ frontMatter: true })
 
 describe("FrontMatter", function () {
-	it("should parse front matter", function () {
-		const parsed = mdp.parse(mdWithFrontMatter)
-		expect(parsed).toMatchSnapshot()
-	})
-	it("should tokenize front matter", function () {
-		const parsed = mdp.tokenize(mdWithFrontMatter)
-		expect(parsed).toMatchSnapshot()
+	it("should get front matter from input", function () {
+		const frontMatter = mdp.getFrontMatter(mdWithFrontMatter)
+		expect(frontMatter).toMatchSnapshot()
 	})
 	it("should tokenize front matter with array, number and object", function () {
-		const parsed = mdp.tokenize(mdWithArrayNumberAndObjectInFrontMatter)
-		expect(parsed).toMatchSnapshot()
+		const frontMatter = mdp.getFrontMatter(mdWithArrayNumberAndObjectInFrontMatter)
+		expect(frontMatter).toMatchSnapshot()
 	})
 	it("should tokenize more real fixture", function () {
-		const parsed = mdp.getFrontMatter(moreRealFixture)
-		expect(parsed).toMatchSnapshot()
+		const frontMatter = mdp.getFrontMatter(moreRealFixture)
+		expect(frontMatter).toMatchSnapshot()
 	})
 })
