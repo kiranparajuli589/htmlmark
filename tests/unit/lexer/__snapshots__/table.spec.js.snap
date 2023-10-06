@@ -51,6 +51,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
   Object {
     "indent": 0,
@@ -119,6 +120,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
   Object {
     "indent": 0,
@@ -149,6 +151,85 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
+  },
+]
+`;
+
+exports[`table heading body separator should not parse as table with invalid separator: '|-|-|' 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": "-",
+          "tokens": Array [
+            Object {
+              "raw": "-",
+              "type": "text",
+              "value": "-",
+            },
+          ],
+        },
+        Object {
+          "raw": "-",
+          "tokens": Array [
+            Object {
+              "raw": "-",
+              "type": "text",
+              "value": "-",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
+    ],
+    "type": "table",
+    "withHeading": false,
   },
 ]
 `;
@@ -226,6 +307,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
 ]
 `;
@@ -303,6 +385,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
 ]
 `;
@@ -380,6 +463,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
 ]
 `;
@@ -457,6 +541,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
 ]
 `;
@@ -559,6 +644,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
   Object {
     "indent": 4,
@@ -627,6 +713,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
   Object {
     "indent": 4,
@@ -677,6 +764,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
 ]
 `;
@@ -732,6 +820,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
 ]
 `;
@@ -740,18 +829,76 @@ exports[`table is not a table false separator 1`] = `
 Array [
   Object {
     "indent": 0,
-    "raw": "| column 1 | column 2 |
-| --- |--|
-| row 1 c1 | row 1 c2 |",
-    "tokens": Array [
-      Object {
-        "raw": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
-        "type": "text",
-        "value": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
-      },
+    "rows": Array [
+      Array [
+        Object {
+          "raw": " column 1 ",
+          "tokens": Array [
+            Object {
+              "raw": "column 1",
+              "type": "text",
+              "value": "column 1",
+            },
+          ],
+        },
+        Object {
+          "raw": " column 2 ",
+          "tokens": Array [
+            Object {
+              "raw": "column 2",
+              "type": "text",
+              "value": "column 2",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " --- ",
+          "tokens": Array [
+            Object {
+              "raw": "---",
+              "type": "text",
+              "value": "---",
+            },
+          ],
+        },
+        Object {
+          "raw": "--",
+          "tokens": Array [
+            Object {
+              "raw": "--",
+              "type": "text",
+              "value": "--",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "raw": " row 1 c1 ",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c1",
+              "type": "text",
+              "value": "row 1 c1",
+            },
+          ],
+        },
+        Object {
+          "raw": " row 1 c2 ",
+          "tokens": Array [
+            Object {
+              "raw": "row 1 c2",
+              "type": "text",
+              "value": "row 1 c2",
+            },
+          ],
+        },
+      ],
     ],
-    "type": "paragraph",
-    "value": "| column 1 | column 2 | | --- |--| | row 1 c1 | row 1 c2 |",
+    "type": "table",
+    "withHeading": false,
   },
 ]
 `;
@@ -914,6 +1061,7 @@ Array [
       ],
     ],
     "type": "table",
+    "withHeading": true,
   },
   Object {
     "type": "new-line",

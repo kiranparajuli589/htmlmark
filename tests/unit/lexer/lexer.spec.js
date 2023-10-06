@@ -1,6 +1,6 @@
 import { Lexer } from "../../../lib/lexer/index.js"
 import { TOKENS } from "../../../lib/util/tokens.js"
-import { commonTokensList, LinesToEscape } from "../../fixtures/commTokens.js"
+import { commonTokensList } from "../../fixtures/commTokens.js"
 
 
 describe("lexer", () => {
@@ -14,16 +14,6 @@ describe("lexer", () => {
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()
-			expect(tokens[0].type).toBe(TOKENS.HR_LINE)
-		})
-		it.skip("should merge multiple consecutive hr lines into one", () => {
-			const lines = [
-				"---",
-				"---"
-			]
-			const lexer = new Lexer(lines)
-			const tokens = lexer.run()
-			expect(tokens.length).toBe(1)
 			expect(tokens[0].type).toBe(TOKENS.HR_LINE)
 		})
 	})
@@ -48,29 +38,6 @@ describe("lexer", () => {
 				"Heading 2",
 				"------",
 				"Normal text"
-			]
-			const lexer = new Lexer(lines)
-			const tokens = lexer.run()
-			expect(tokens).toMatchSnapshot()
-		})
-	})
-	describe("escaping", () => {
-		it("should escape everything inside a code block", () => {
-			const lines = [
-				"```",
-				...LinesToEscape,
-				"```"
-			]
-			const lexer = new Lexer(lines)
-			const tokens = lexer.run()
-			expect(tokens).toMatchSnapshot()
-		})
-		it("should escape everything excepts tags for other tokens", () => {
-			const lines = [
-				"# &Ampersand",
-				"- 'SomeQuote'",
-				"> Some \" comment",
-				"<bold>bold</bold>"
 			]
 			const lexer = new Lexer(lines)
 			const tokens = lexer.run()

@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table Parsing is not a table false separator 1`] = `
-"<p>| column 1 | column 2 | | - | - | | row 1 c1 | row 1 c2 |</p>
+"<table>
+  <tbody>
+    <tr><td>column 1</td><td>column 2</td></tr><tr><td>-</td><td>-</td></tr><tr><td>row 1 c1</td><td>row 1 c2</td></tr>
+  </tbody>
+</table>
 "
 `;
 
@@ -34,11 +38,9 @@ exports[`Table Parsing is not a table other tokens in between 2 1`] = `
 
 exports[`Table Parsing is not a table other tokens in between 3 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
@@ -49,11 +51,9 @@ exports[`Table Parsing is not a table other tokens in between 3 1`] = `
 
 exports[`Table Parsing pipe escaping should escape the pipe char inside table heading and or cell 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>one</th><th>two|three</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>one</th><th>two|three</th>
+  </tr></thead>
   <tbody>
     <tr><td>one</td><td>two|five</td></tr>
   </tbody>
@@ -63,11 +63,9 @@ exports[`Table Parsing pipe escaping should escape the pipe char inside table he
 
 exports[`Table Parsing table cell count cell count should break the table 1 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
@@ -78,21 +76,17 @@ exports[`Table Parsing table cell count cell count should break the table 1 1`] 
 
 exports[`Table Parsing table cell count cell count should break the table 2 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
 </table>
 <table>
-  <thead>
-    <tr>
-      <th>column 1</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td></tr>
   </tbody>
@@ -102,27 +96,8 @@ exports[`Table Parsing table cell count cell count should break the table 2 1`] 
 
 exports[`Table Parsing table heading-body separator should parse a table 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
   <tbody>
-    <tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
-  </tbody>
-</table>
-"
-`;
-
-exports[`Table Parsing table heading-body separator should parse a table 2`] = `
-"<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
+    <tr><td>column 1</td><td>column 2</td></tr><tr><td></td><td></td></tr><tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
 </table>
 "
@@ -130,11 +105,9 @@ exports[`Table Parsing table heading-body separator should parse a table 2`] = `
 
 exports[`Table Parsing table indent acceptable indent should not break the table 1 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
@@ -157,21 +130,17 @@ exports[`Table Parsing table indent different indent header, separator -> body r
 
 exports[`Table Parsing table indent indent should break the table 2 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
 </table>
 <table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
@@ -181,13 +150,20 @@ exports[`Table Parsing table indent indent should break the table 2 1`] = `
 
 exports[`Table Parsing table indent the indented table 1`] = `
 "<table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th>
+  </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
+  </tbody>
+</table>
+"
+`;
+
+exports[`Table Parsing without heading should parse a table 1`] = `
+"<table>
+  <tbody>
+    <tr><td>column 1</td><td>column 2</td></tr><tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
 </table>
 "

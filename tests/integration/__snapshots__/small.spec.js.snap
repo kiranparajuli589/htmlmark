@@ -88,11 +88,9 @@ if (c === 2) {
 <pre><code>another code block is here</code></pre>
 <img src='https://avatars.githubusercontent.com/u/39373750?v=4' alt='Kiran Parajuli'><p>some random text</p>
 <table>
-  <thead>
-    <tr>
-      <th>column 1</th><th>column 2</th><th>column 3</th>
-    </tr>
-  </thead>
+  <thead><tr>
+    <th>column 1</th><th>column 2</th><th>column 3</th>
+  </tr></thead>
   <tbody>
     <tr><td>r1 text c1</td><td>r1 <u>text</u> c2</td><td>r1 text c3</td></tr><tr><td>r2 text c1</td><td>r2 <strong>text</strong> c2</td><td>r2 text c3</td></tr><tr><td>r3 text c1</td><td>r3 <strong>text</strong> c2</td><td>r3 text c3</td></tr><tr><td>r4 text c1</td><td>r4 <em>text</em> c2</td><td>r5 text c3</td></tr><tr><td>r6 text c1</td><td>r6 <s>text</s> c2</td><td>r6 text c3</td></tr>
   </tbody>

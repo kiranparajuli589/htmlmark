@@ -4,13 +4,6 @@
 	<p>A very lightweight Markdown Parser powered by Regex</p>
 </div>
 
-## 🚧 Under HIGH DEVELOPMENT 🚧
-
-As of right now, this repository is still in its infancy.
-Open source is something I'm passionate about, so I want to share what I'm doing early.
-The readme will be updated once it is safe for use with more detailed documentation.
-In the meantime, please feel free to share your thoughts, contact [me](https://kiranparajuli.com.np) or create a **PR** if you would like to contribute.
-
 
 ## 🔑 Key points
 - no use of external dependencies
@@ -80,6 +73,8 @@ Checkout the features of the parser from this [Live Demo](https://kiranparajuli5
     - Equal number of cell counts
     - Equal number of indentations
     - Cell content should allow emphasis
+    - Table heading is optional
+    - Table heading is separated by `|---|,|:--:|`
 9. **Newline:**
     - Consecutive newlines are merged into one
 10. **Paragraph:**
@@ -112,20 +107,16 @@ Emphasis can be inside the content of any paragraph types. Even emphasis items c
 6. **Link:** wrapped as `[title](url 'title')` where `title` is optional
 7. **Image:** wrapped as `![alt text](url 'title' width height)` where `title`, `width` & `height` are optional
 
-### 🤔 Custom emphasis identifiers
-SHOULD THIS BE IMPLEMENTED?
-
 ### 🛹 Escaping
-1. So far `<`, `>`, `&`, `"` & `'` are escaped.
-2. Everything is escaped inside of `code` and `codeblock`
-3. Non HTML characters are escaped inside of other tokens
+1. Escaping is done by using `\` before the character to be escaped.
+2. If you need text like `# text` but don't want it to be treated as a heading, then you can escape it as `\# text
+3. Escaping is done for the following characters:
+   - `*`, `_`, `[`, `]`, `(`, `)`, `!`, `~`, `+`, `<`, `>`, `&`, `"`, `'`
+4. Nothing is escaped in the lexer (content wise)
+5. Everything is escaped inside of `code` and `codeblock`
+6. Non HTML characters are escaped inside of other tokens
 
 Ref: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
-
-### 🤡 Unescaping
-
-Escaped characters (`*`,`_`,`[`,`]`,`(`,`)`,`!`,`~`,`+`) are replaced with their unescaped counterparts.
-
 
 ### 👻 HTML Sanitization
 **A BIG TODO**

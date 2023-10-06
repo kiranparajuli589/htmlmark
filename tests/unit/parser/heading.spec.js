@@ -8,7 +8,8 @@ describe("Heading Parsing", () => {
 	it("should parse a fenced Heading", () => {
 		const lines = [
 			"# Heading #####",
-			"# Heading###"
+			"# Heading###",
+			"### You've made it!"
 		]
 		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()

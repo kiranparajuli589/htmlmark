@@ -81,14 +81,6 @@ describe("Parser Commons", () => {
 			const html = mdp.h(lines)
 			expect(html).toMatchSnapshot()
 		})
-		it.skip("should not allow multiple consecutive hr lines", () => {
-			const lines = [
-				"---",
-				"---"
-			]
-			const html = mdp.h(lines)
-			expect(html).toMatchSnapshot()
-		})
 	})
 	describe("escaping", () => {
 		it("should escape everything inside a code block", () => {

@@ -85,18 +85,6 @@ describe("paragraph", () => {
 		const lexerData = lexer.run()
 		expect(lexerData).toMatchSnapshot()
 	})
-	it("should escape the special characters", () => {
-		const lines = [
-			"a **normal < text** needs escaping > here",
-			"",
-			"an *italics < > & ' \" and end* of the text",
-			"",
-			"a [link < > & ' \" and end](href) of the text"
-		]
-		const lexer = new Lexer(lines)
-		const lexerData = lexer.run()
-		expect(lexerData).toMatchSnapshot()
-	})
 	it("should detect html in the paragraph", () => {
 		const lines = [
 			"this is a link <a href='https://google.com'>google</a> here",

@@ -89,7 +89,7 @@ exports[`Parser Commons common tokens should parse underlined heading 1`] = `
 `;
 
 exports[`Parser Commons escaping should escape everything excepts tags for other tokens 1`] = `
-"<h1>&amp;amp;Ampersand</h1>
+"<h1>&amp;Ampersand</h1>
 <ul>
 <li>&#39;SomeQuote&#39;
 </li>
@@ -117,11 +117,6 @@ efg&lt;
 &amp; ampersand
 &#39;single quotes&#39;
 &quot;double quotes&quot;</code></pre>
-"
-`;
-
-exports[`Parser Commons hr line should not allow multiple consecutive hr lines 1`] = `
-"<h2>---</h2>
 "
 `;
 

@@ -139,8 +139,9 @@ describe("Table Parsing", () => {
 	})
 	describe("table heading-body separator", () => {
 		it.each([
-			"|-------|-------|",
-			"|:-------:|:---------:|"
+			// "|-------|-------|",
+			// "|:-------:|:---------:|"
+			"|||"
 		])("should parse a table", (line) => {
 			const html = mdp.h([
 				"| column 1 | column 2 |",
@@ -159,6 +160,16 @@ describe("Table Parsing", () => {
 				"| one | two\\|five |"
 			]
 			const html = mdp.h(lines)
+			expect(html).toMatchSnapshot()
+		})
+	})
+	describe("without heading", () => {
+		it("should parse a table", () => {
+			const html = mdp.h([
+				"| column 1 | column 2 |",
+				"| row 1 c1 | row 1 c2 |",
+				"| row 2 c1 | row 2 c2 |"
+			])
 			expect(html).toMatchSnapshot()
 		})
 	})

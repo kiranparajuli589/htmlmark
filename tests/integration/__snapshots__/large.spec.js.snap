@@ -191,7 +191,7 @@ end tell</code></pre>
 <p><strong>double asterisks</strong></p>
 <p><strong>double underscores</strong></p>
 <h3>Code</h3>
-<p>To indicate a span of code, wrap it with backtick quotes (<code> \` </code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
+<p>To indicate a span of code, wrap it with backtick quotes (<code>\`</code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
 <h1>Markdown: Syntax</h1>
 <p><strong>Note:</strong> This document is itself written using Markdown; you can <a href=\\"/projects/markdown/syntax.text\\">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
@@ -382,7 +382,7 @@ end tell</code></pre>
 <p><strong>double asterisks</strong></p>
 <p><strong>double underscores</strong></p>
 <h3>Code</h3>
-<p>To indicate a span of code, wrap it with backtick quotes (<code> \` </code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
+<p>To indicate a span of code, wrap it with backtick quotes (<code>\`</code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
 <h1>Markdown: Syntax</h1>
 <p><strong>Note:</strong> This document is itself written using Markdown; you can <a href=\\"/projects/markdown/syntax.text\\">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
@@ -573,7 +573,7 @@ end tell</code></pre>
 <p><strong>double asterisks</strong></p>
 <p><strong>double underscores</strong></p>
 <h3>Code</h3>
-<p>To indicate a span of code, wrap it with backtick quotes (<code> \` </code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
+<p>To indicate a span of code, wrap it with backtick quotes (<code>\`</code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
 <h1>Markdown: Syntax</h1>
 <p><strong>Note:</strong> This document is itself written using Markdown; you can <a href=\\"/projects/markdown/syntax.text\\">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
@@ -764,7 +764,7 @@ end tell</code></pre>
 <p><strong>double asterisks</strong></p>
 <p><strong>double underscores</strong></p>
 <h3>Code</h3>
-<p>To indicate a span of code, wrap it with backtick quotes (<code> \` </code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
+<p>To indicate a span of code, wrap it with backtick quotes (<code>\`</code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
 <p><strong>Note:</strong> This document is itself written using Markdown; you can <a href=\\"/projects/markdown/syntax.text\\">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
 <hr>
@@ -954,7 +954,7 @@ end tell</code></pre>
 <p><strong>double asterisks</strong></p>
 <p><strong>double underscores</strong></p>
 <h3>Code</h3>
-<p>To indicate a span of code, wrap it with backtick quotes (<code> \` </code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
+<p>To indicate a span of code, wrap it with backtick quotes (<code>\`</code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
 <p><strong>Note:</strong> This document is itself written using Markdown; you can <a href=\\"/projects/markdown/syntax.text\\">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
 <hr>
@@ -1144,7 +1144,7 @@ end tell</code></pre>
 <p><strong>double asterisks</strong></p>
 <p><strong>double underscores</strong></p>
 <h3>Code</h3>
-<p>To indicate a span of code, wrap it with backtick quotes (<code> \` </code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
+<p>To indicate a span of code, wrap it with backtick quotes (<code>\`</code>). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
 "
 `;
