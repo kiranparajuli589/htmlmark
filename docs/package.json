@@ -19,6 +19,6 @@
 		"eslint-plugin-vue": "^9.3.0",
 		"postcss-html": "^1.5.0",
 		"sass": "^1.54.7",
-		"vite": "^3.0.4"
+		"vite": "^3.2.7"
 	}
 }
