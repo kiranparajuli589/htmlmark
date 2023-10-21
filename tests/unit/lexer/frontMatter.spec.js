@@ -42,4 +42,12 @@ describe("FrontMatter", function () {
 		const frontMatter = mdp.getFrontMatter(moreRealFixture)
 		expect(frontMatter).toMatchSnapshot()
 	})
+	it("should skip the frontmatter while tokenizing", function () {
+		const tokens = mdp.tokenize(mdWithFrontMatter)
+		expect(tokens).toMatchSnapshot()
+	})
+	it("should skip the frontmatter while parsing", function () {
+		const ast = mdp.parse(mdWithFrontMatter)
+		expect(ast).toMatchSnapshot()
+	})
 })
