@@ -1,6 +1,6 @@
 <div style="display: flex; justify-content: center; flex-direction: column; text-align: center">
 	<h1>HtmlMark</h1>
-	<p><img src="https://raw.githubusercontent.com/kiranparajuli589/md-parser/main/logo.png" style="height: auto; width: 200px;"></p>
+	<p><img src="https://raw.githubusercontent.com/kiranparajuli589/htmlmark/main/logo.png" style="height: auto; width: 200px;"></p>
 	<p>A very lightweight Markdown Parser powered by Regex</p>
 </div>
 
@@ -12,7 +12,7 @@
 
 ## 🌐 Demo
 
-Checkout the features of the parser from this [Live Demo](https://kiranparajuli589.github.io/md-parser/ 'Live Demo').
+Checkout the features of the parser from this [Live Demo](https://kiranparajuli589.github.io/htmlmark/ 'Live Demo').
 
 ## 🛣️ Roadmap
 

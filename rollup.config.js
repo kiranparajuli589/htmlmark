@@ -9,7 +9,7 @@ console.info("building version:", version)
 const banner = `/**
  * MDParser v${version} - a markdown parser
  * Copyright (c) 2020-${new Date().getFullYear()}, Kiran Parajuli. (GNU Licensed)
- * https://github.com/kiranparajuli589/md-parser
+ * https://github.com/kiranparajuli589/htmlmark
  */
 
 /**

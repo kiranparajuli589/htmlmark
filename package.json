@@ -1,6 +1,6 @@
 {
 	"name": "htmlmark",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Lightweight markdown parser",
 	"main": "dist/mdp.cjs",
 	"module": "dist/mdp.esm.js",
@@ -49,7 +49,7 @@
 		"jest:integration:watch": "pnpm jest:watch tests/integration/small.spec.js",
 		"lint": "eslint lib tests --ext .js",
 		"lint:fix": "pnpm lint --fix",
-		"rollup": "rollup -c rollup.config.js"
+		"build": "rollup -c rollup.config.js"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.23.2",

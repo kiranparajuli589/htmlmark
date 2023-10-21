@@ -6,4 +6,4 @@ This is a simple VueJS implementation to show the capabilities of the [markdown-
 
 [Live Demo](https://tbd)
 
-[markdown-parser]: https://github.com/kiranparajuli/md-parser 'Markdown Parser'
+[markdown-parser]: https://github.com/kiranparajuli/htmlmark 'Markdown Parser'

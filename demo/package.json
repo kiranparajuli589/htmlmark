@@ -1,6 +1,6 @@
 {
-	"name": "markdown-demo",
-	"version": "0.0.0",
+	"name": "htmlmark-demo",
+	"version": "0.0.1",
 	"scripts": {
 		"dev": "DEV=true vite",
 		"build": "vite build",

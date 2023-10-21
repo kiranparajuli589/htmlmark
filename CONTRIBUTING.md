@@ -55,14 +55,14 @@ Please read the Code of Conduct. This document offers some guidance to ensure Ne
 ## Submitting Issues
 
 We use GitHub issues to track public bugs.
-Report a bug by [opening a new issue](https://github.com/kiranparajuli589/md-parser/issues/new); it's that easy!
+Report a bug by [opening a new issue](https://github.com/kiranparajuli589/htmlmark/issues/new); it's that easy!
 
 ### Short version
 
-The [issue templates can be found here](https://github.com/kiranparajuli589/md-parser/tree/main/.github/ISSUE_TEMPLATE). Please always use the template when reporting issues.
+The [issue templates can be found here](https://github.com/kiranparajuli589/htmlmark/tree/main/.github/ISSUE_TEMPLATE). Please always use the template when reporting issues.
 
 ### Guidelines
-- **Research:** Please search the [existing issues](https://github.com/kiranparajuli589/md-parser/issues) first, it's likely that your issue was already reported or even fixed.
+- **Research:** Please search the [existing issues](https://github.com/kiranparajuli589/htmlmark/issues) first, it's likely that your issue was already reported or even fixed.
 - **Description:** A quick summary and/or background
 - **Steps to reproduce:**
   - Be specific!

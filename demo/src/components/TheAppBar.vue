@@ -3,7 +3,7 @@
 		<img class="logo" :src="logo" alt="Logo">
 		<h1>HtmlMark</h1>
 		<div class="nav-actions">
-			<a href="https://github.com/kiranparajuli589/md-parser"
+			<a href="https://github.com/kiranparajuli589/htmlmark"
 				 target="_blank" title="GitHub Repository" class="give-a-star"
 			>
 				Give a 🌟
