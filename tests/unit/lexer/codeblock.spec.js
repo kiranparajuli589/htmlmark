@@ -161,4 +161,22 @@ describe("codeblock", () => {
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})
+	it("should be work just fine within a list item", () => {
+		const testString = `
+4.  What is the exact rule for determining when list items get
+\twrapped in \`<p>\` tags?  Can a list be partially "loose" and partially
+\t"tight"?  What should we do with a list like this?
+
+\t\t\`\`\` markdown
+\t\t1. one
+
+\t\t2. two
+\t\t3. three
+\t\t\`\`\`
+`
+		const lines = testString.split("\n")
+		const lexer = new Lexer(lines)
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
 })

@@ -96,4 +96,12 @@ describe("paragraph", () => {
 		const lexerData = lexer.run()
 		expect(lexerData).toMatchSnapshot()
 	})
+	it("should allow escaped escape character", () => {
+		const lines = [
+			"this is `go\\ogle` link"
+		]
+		const lexer = new Lexer(lines)
+		const lexerData = lexer.run()
+		expect(lexerData).toMatchSnapshot()
+	})
 })
