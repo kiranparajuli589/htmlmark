@@ -96,6 +96,155 @@ four",
 ]
 `;
 
+exports[`codeblock should be work just fine within a list item 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": "4",
+        "raw": "4.  What is the exact rule for determining when list items get
+	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
+	\\"tight\\"?  What should we do with a list like this?
+
+		\`\`\` markdown
+		1. one
+
+		2. two
+		3. three
+		\`\`\`",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "What is the exact rule for determining when list items get
+	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
+	\\"tight\\"?  What should we do with a list like this?",
+            "tokens": Array [
+              Object {
+                "raw": "What is the exact rule for determining when list items get 	wrapped in ",
+                "type": "text",
+                "value": "What is the exact rule for determining when list items get 	wrapped in ",
+              },
+              Object {
+                "raw": "\`<p>\`",
+                "type": "code",
+                "value": "<p>",
+              },
+              Object {
+                "raw": " tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
+                "type": "text",
+                "value": " tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
+              },
+            ],
+            "type": "paragraph",
+            "value": "What is the exact rule for determining when list items get 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
+          },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 2,
+            "language": "markdown",
+            "raw": "		\`\`\` markdown
+		1. one",
+            "type": "code-block",
+            "value": "1. one",
+          },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 2,
+            "items": Array [
+              Object {
+                "checked": null,
+                "count": "2",
+                "raw": "		2. two",
+                "tokens": Array [
+                  Object {
+                    "indent": 0,
+                    "raw": "two",
+                    "tokens": Array [
+                      Object {
+                        "raw": "two",
+                        "type": "text",
+                        "value": "two",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "two",
+                  },
+                ],
+                "type": "list-item",
+              },
+              Object {
+                "checked": null,
+                "count": "3",
+                "raw": "		3. three
+		\`\`\`",
+                "tokens": Array [
+                  Object {
+                    "indent": 0,
+                    "raw": "three",
+                    "tokens": Array [
+                      Object {
+                        "raw": "three",
+                        "type": "text",
+                        "value": "three",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "three",
+                  },
+                  Object {
+                    "indent": 2,
+                    "language": null,
+                    "raw": "		\`\`\`",
+                    "type": "code-block",
+                    "value": "",
+                  },
+                ],
+                "type": "list-item",
+              },
+            ],
+            "meta": Object {
+              "checklist": false,
+              "identifier": null,
+              "ordered": true,
+            },
+            "raw": "		2. two
+		3. three
+		\`\`\`",
+            "type": "list",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "checklist": false,
+      "identifier": null,
+      "ordered": true,
+    },
+    "raw": "4.  What is the exact rule for determining when list items get
+	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
+	\\"tight\\"?  What should we do with a list like this?
+
+		\`\`\` markdown
+		1. one
+
+		2. two
+		3. three
+		\`\`\`",
+    "type": "list",
+  },
+  Object {
+    "type": "new-line",
+  },
+]
+`;
+
 exports[`codeblock should cope with empty body 1`] = `
 Array [
   Object {

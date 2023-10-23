@@ -82,6 +82,34 @@ Array [
 ]
 `;
 
+exports[`paragraph should allow escaped escape character 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "raw": "this is \`go\\\\ogle\` link",
+    "tokens": Array [
+      Object {
+        "raw": "this is ",
+        "type": "text",
+        "value": "this is ",
+      },
+      Object {
+        "raw": "\`go\\\\ogle\`",
+        "type": "code",
+        "value": "go\\\\ogle",
+      },
+      Object {
+        "raw": " link",
+        "type": "text",
+        "value": " link",
+      },
+    ],
+    "type": "paragraph",
+    "value": "this is \`go\\\\ogle\` link",
+  },
+]
+`;
+
 exports[`paragraph should be deep tokenized: a ****bold**** text 1`] = `
 Array [
   Object {
