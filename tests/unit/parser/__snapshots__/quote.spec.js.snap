@@ -59,10 +59,7 @@ exports[`Quote Parsing should detect the circular quote 1`] = `
 
 exports[`Quote Parsing should find the list and codeblock inside 1`] = `
 "<blockquote>
-<h2>This is a header.</h2><ol>
-<li>This is the first list item.</li>
-<li>This is the second list item.</li>
-</ol><p> Here&#39;s some example code:</p><pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre></blockquote>"
+<h2>This is a header.</h2><ol><li>This is the first list item.</li><li>This is the second list item.</li></ol><p> Here&#39;s some example code:</p><pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre></blockquote>"
 `;
 
 exports[`Quote Parsing should parse multiline quote with the same depth and indent 1`] = `
@@ -79,8 +76,5 @@ exports[`Quote Parsing should parse multiline quote with the same depth and inde
 
 exports[`Quote Parsing should parse the quote with list inside 1`] = `
 "<blockquote>
-<ul>
-<li>one</li>
-<li>two</li>
-</ul></blockquote>"
+<ul><li>one</li><li>two</li></ul></blockquote>"
 `;

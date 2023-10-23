@@ -147,76 +147,16 @@ Array [
             "indent": 2,
             "language": "markdown",
             "raw": "		\`\`\` markdown
-		1. one",
-            "type": "code-block",
-            "value": "1. one",
-          },
-          Object {
-            "type": "new-line",
-          },
-          Object {
-            "indent": 2,
-            "items": Array [
-              Object {
-                "checked": null,
-                "count": "2",
-                "raw": "		2. two",
-                "tokens": Array [
-                  Object {
-                    "indent": 0,
-                    "raw": "two",
-                    "tokens": Array [
-                      Object {
-                        "raw": "two",
-                        "type": "text",
-                        "value": "two",
-                      },
-                    ],
-                    "type": "paragraph",
-                    "value": "two",
-                  },
-                ],
-                "type": "list-item",
-              },
-              Object {
-                "checked": null,
-                "count": "3",
-                "raw": "		3. three
-		\`\`\`",
-                "tokens": Array [
-                  Object {
-                    "indent": 0,
-                    "raw": "three",
-                    "tokens": Array [
-                      Object {
-                        "raw": "three",
-                        "type": "text",
-                        "value": "three",
-                      },
-                    ],
-                    "type": "paragraph",
-                    "value": "three",
-                  },
-                  Object {
-                    "indent": 2,
-                    "language": null,
-                    "raw": "		\`\`\`",
-                    "type": "code-block",
-                    "value": "",
-                  },
-                ],
-                "type": "list-item",
-              },
-            ],
-            "meta": Object {
-              "checklist": false,
-              "identifier": null,
-              "ordered": true,
-            },
-            "raw": "		2. two
+		1. one
+
+		2. two
 		3. three
 		\`\`\`",
-            "type": "list",
+            "type": "code-block",
+            "value": "1. one
+
+2. two
+3. three",
           },
         ],
         "type": "list-item",
