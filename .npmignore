@@ -6,6 +6,5 @@ outputs/
 .eslintrc
 .github
 .idea
-index.js
 inspector-style.css
 

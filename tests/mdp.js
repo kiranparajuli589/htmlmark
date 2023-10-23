@@ -3,11 +3,10 @@ import { Parser } from "../lib/parser"
 
 
 export class MDP {
-	indent
-	codeHighlightFn
+	config = {}
 	constructor(config = {}) {
-		this.indent = config.indent || 4
-		this.codeHighlightFn = config.codeHighlightFn || null
+		this.config.indent = config.indent || 4
+		this.config.codeHighlightFn = config.codeHighlightFn || null
 	}
 
 	t(lines) {
@@ -17,7 +16,7 @@ export class MDP {
 
 	h(lines) {
 		const lexer = new Lexer(lines)
-		const parser = new Parser(lexer.run(), null, this.codeHighlightFn)
+		const parser = new Parser(lexer.run(), { config: this.config })
 		return parser.run()
 	}
 }

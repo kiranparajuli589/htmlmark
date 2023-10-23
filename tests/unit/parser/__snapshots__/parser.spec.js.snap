@@ -1,110 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Parser Commons comment should add a comment 1`] = `
-"<p>one</p>
-<!-- comment-->
-<p>three</p>
-"
-`;
+exports[`Parser Commons comment should add a comment 1`] = `"<p>one</p><!-- comment--><p>three</p>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 1`] = `
-"<h1>Heading One Text</h1>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 1`] = `"<h1>Heading One Text</h1>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 2`] = `
-"<h2>Heading Two Text</h2>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 2`] = `"<h2>Heading Two Text</h2>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 3`] = `
-"<h3>Heading Three Text</h3>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 3`] = `"<h3>Heading Three Text</h3>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 4`] = `
-"<h4>Heading Four Text</h4>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 4`] = `"<h4>Heading Four Text</h4>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 5`] = `
-"<h5>Heading Five Text</h5>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 5`] = `"<h5>Heading Five Text</h5>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 6`] = `
-"<h6>Heading Six Text</h6>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 6`] = `"<h6>Heading Six Text</h6>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens 7`] = `
-"<!-- comment item text-->
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens 7`] = `"<!-- comment item text-->"`;
 
 exports[`Parser Commons common tokens should parse the common tokens 8`] = `"<img src='image.png' alt='alt text'>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 1`] = `
-"<h1>Heading One Text</h1>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 1`] = `"<h1>Heading One Text</h1>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 2`] = `
-"<h2>Heading Two Text</h2>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 2`] = `"<h2>Heading Two Text</h2>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 3`] = `
-"<h3>Heading Three Text</h3>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 3`] = `"<h3>Heading Three Text</h3>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 4`] = `
-"<h4>Heading Four Text</h4>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 4`] = `"<h4>Heading Four Text</h4>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 5`] = `
-"<h5>Heading Five Text</h5>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 5`] = `"<h5>Heading Five Text</h5>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 6`] = `
-"<h6>Heading Six Text</h6>
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 6`] = `"<h6>Heading Six Text</h6>"`;
 
-exports[`Parser Commons common tokens should parse the common tokens with some space before 7`] = `
-"<!-- comment item text-->
-"
-`;
+exports[`Parser Commons common tokens should parse the common tokens with some space before 7`] = `"<!-- comment item text-->"`;
 
 exports[`Parser Commons common tokens should parse the common tokens with some space before 8`] = `"<img src='image.png' alt='alt text'>"`;
 
-exports[`Parser Commons common tokens should parse underlined heading 1`] = `
-"<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<p>Normal text</p>
-"
-`;
+exports[`Parser Commons common tokens should parse underlined heading 1`] = `"<h1>Heading 1</h1><h2>Heading 2</h2><p>Normal text</p>"`;
 
 exports[`Parser Commons escaping should escape everything excepts tags for other tokens 1`] = `
-"<h1>&amp;Ampersand</h1>
-<ul>
-<li>&#39;SomeQuote&#39;
-</li>
-</ul>
-<blockquote>
-<p> Some &quot; comment</p>
-<bold>bold</bold>
-</blockquote>
-"
+"<h1>&amp;Ampersand</h1><ul>
+<li>&#39;SomeQuote&#39;</li>
+</ul><blockquote>
+<p> Some &quot; comment</p><bold>bold</bold></blockquote>"
 `;
 
-exports[`Parser Commons escaping should escape everything inside a code 1`] = `
-"<p><code>&lt;/em&gt; &amp; &#39;quo&quot;</code></p>
-"
-`;
+exports[`Parser Commons escaping should escape everything inside a code 1`] = `"<p><code>&lt;/em&gt; &amp; &#39;quo&quot;</code></p>"`;
 
 exports[`Parser Commons escaping should escape everything inside a code block 1`] = `
 "<pre><code>&lt;div&gt;
@@ -116,40 +55,20 @@ efg&lt;
 &lt;&lt;&lt;&lt;
 &amp; ampersand
 &#39;single quotes&#39;
-&quot;double quotes&quot;</code></pre>
-"
+&quot;double quotes&quot;</code></pre>"
 `;
 
-exports[`Parser Commons hr line should parse the hr line 1`] = `
-"<hr>
-"
-`;
+exports[`Parser Commons hr line should parse the hr line 1`] = `"<hr>"`;
 
-exports[`Parser Commons hr line should parse the hr line 2`] = `
-"<p>--</p>
-"
-`;
+exports[`Parser Commons hr line should parse the hr line 2`] = `"<p>--</p>"`;
 
-exports[`Parser Commons hr line should parse the hr line 3`] = `
-"<hr>
-"
-`;
+exports[`Parser Commons hr line should parse the hr line 3`] = `"<hr>"`;
 
-exports[`Parser Commons newline should combine multiple consequent new lines to a single one 1`] = `
-"<p>some plain text</p>
-<p>some more plain text</p>
-"
-`;
+exports[`Parser Commons newline should combine multiple consequent new lines to a single one 1`] = `"<p>some plain text</p><p>some more plain text</p>"`;
 
-exports[`Parser Commons newline should include the empty line after some content 1`] = `
-"<p>some plain text</p>
-"
-`;
+exports[`Parser Commons newline should include the empty line after some content 1`] = `"<p>some plain text</p>"`;
 
-exports[`Parser Commons newline should include the empty line after some content 2`] = `
-"<p>some plain text</p>
-"
-`;
+exports[`Parser Commons newline should include the empty line after some content 2`] = `"<p>some plain text</p>"`;
 
 exports[`Parser Commons newline should not include the top empty lines 1`] = `""`;
 

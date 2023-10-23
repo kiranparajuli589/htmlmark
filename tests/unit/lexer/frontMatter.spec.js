@@ -1,4 +1,4 @@
-import { MarkdownParser } from "../../../lib/index.js"
+import { HtmlMark } from "../../../lib/index.js"
 
 
 const mdWithFrontMatter = `---
@@ -27,7 +27,7 @@ tags: ["django", "vue", "docker", "docker-compose", "gunicorn", "vite"]
 # Steps to dockerize your django vue application
 This is a step-wise guide to dockerize your django + vue application.`
 
-const mdp = new MarkdownParser({ frontMatter: true })
+const mdp = new HtmlMark()
 
 describe("FrontMatter", function () {
 	it("should get front matter from input", function () {

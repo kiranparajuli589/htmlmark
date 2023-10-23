@@ -1,17 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`link should parse a link 1`] = `
-"<p><a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a></p>
-"
-`;
+exports[`link should parse a link 1`] = `"<p><a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a></p>"`;
 
-exports[`link should parse a link with text 1`] = `
-"<p><a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> is a good</p>
-"
-`;
+exports[`link should parse a link with text 1`] = `"<p><a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> is a good</p>"`;
 
-exports[`link should parse a link with title 1`] = `
-"<p>test <strong>bold <em>and</em> bold</strong> with <em>italics</em> and a <a href=\\"https://kiranparajuli.com.np\\" title=\\"K Pictures\\">Kiran Parajuli</a></p>
-<p>here <em>is a <strong>beautiful</strong> piece of</em> art</p>
-"
-`;
+exports[`link should parse a link with title 1`] = `"<p>test <strong>bold <em>and</em> bold</strong> with <em>italics</em> and a <a href=\\"https://kiranparajuli.com.np\\" title=\\"K Pictures\\">Kiran Parajuli</a></p><p>here <em>is a <strong>beautiful</strong> piece of</em> art</p>"`;

@@ -5,11 +5,10 @@ import { Parser } from "../../lib/parser"
  * Markdown Parser for Javascript Application
  */
 export class MDP {
-	indent
-	codeHighlightFn
+	config = {}
 	constructor(config = {}) {
-		this.indent = config.indent || 4
-		this.codeHighlightFn = config.codeHighlightFn || null
+		this.config.indent = config.indent || 4
+		this.config.highlightFn = config.highlightFn || null
 	}
 	/**
 	 * Runs the HTML parsing for the given lines of text
@@ -20,7 +19,7 @@ export class MDP {
 	 */
 	h(lines) {
 		const lexer = new Lexer(lines)
-		const parser = new Parser(lexer.run(), null, this.codeHighlightFn)
+		const parser = new Parser(lexer.run(), {config: this.config})
 		return parser.run()
 	}
 
@@ -43,16 +42,15 @@ export class MDP {
 	 * For demo preview
 	 *
 	 * @param {String} str - The string to parse
-	 * @param {Function|null} codeHighlightFn - A function to highlight code blocks
 	 *
 	 * @returns {{ elapsedTime: number, html: string, lex: Object}}
 	 */
-	hP(str, codeHighlightFn = null) {
+	hP(str) {
 		const lines = str.split("\n")
 		const start = Date.now()
 		const lexer = new Lexer(lines)
 		const lex = lexer.run()
-		const parser = new Parser(lex, null, codeHighlightFn)
+		const parser = new Parser(lex, {config: this.config})
 		const html = parser.run()
 		const end = Date.now()
 		return {

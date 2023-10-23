@@ -67,8 +67,12 @@ const choice = ref("preview")
  * @param {string} language Language of the code
  * @returns {string}
  */
-const codeHighlighter = (code) => {
-	return hljs.highlightAuto(code).value
+const highlightFn = (code, lang) => {
+	if (lang && hljs.getLanguage(lang)) {
+		return hljs.highlight(code, { language: lang }).value
+	} else {
+		return hljs.highlightAuto(code).value
+	}
 }
 
 const mdp = new MDP({
@@ -76,7 +80,7 @@ const mdp = new MDP({
 })
 const mdpWithCodeHighlighter = new MDP({
 	indent: 2,
-	codeHighlighter,
+	highlightFn,
 })
 
 const handleChange = (e) => {

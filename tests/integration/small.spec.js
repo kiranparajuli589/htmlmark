@@ -1,8 +1,8 @@
 import { File } from "../../lib/util/file.js"
-import { MarkdownParser } from "../../lib/index.js"
+import { HtmlMark } from "../../lib/index.js"
 
 
-const mdp = new MarkdownParser()
+const mdp = new HtmlMark()
 
 describe("Small MD To HTML", () => {
 	it.each([

@@ -5,93 +5,63 @@ exports[`Table Parsing is not a table false separator 1`] = `
   <tbody>
     <tr><td>column 1</td><td>column 2</td></tr><tr><td>-</td><td>-</td></tr><tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
 
-exports[`Table Parsing is not a table not consistent cell count 1`] = `
-"<p>| column 1 | column 2 | | --- | | row 1 c1 | row 1 c2 |</p>
-"
-`;
+exports[`Table Parsing is not a table not consistent cell count 1`] = `"<p>| column 1 | column 2 | | --- | | row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`Table Parsing is not a table only header 1`] = `
-"<p>| column 1 | column 2 |</p>
-"
-`;
+exports[`Table Parsing is not a table only header 1`] = `"<p>| column 1 | column 2 |</p>"`;
 
-exports[`Table Parsing is not a table only header and separator 1`] = `
-"<p>| column 1 | column 2 | |---|---|</p>
-"
-`;
+exports[`Table Parsing is not a table only header and separator 1`] = `"<p>| column 1 | column 2 | |---|---|</p>"`;
 
-exports[`Table Parsing is not a table other tokens in between 1 1`] = `
-"<p>| column 1 | column 2 |</p>
-<p>|---|---| | row 1 c1 | row 1 c2 |</p>
-"
-`;
+exports[`Table Parsing is not a table other tokens in between 1 1`] = `"<p>| column 1 | column 2 |</p><p>|---|---| | row 1 c1 | row 1 c2 |</p>"`;
 
-exports[`Table Parsing is not a table other tokens in between 2 1`] = `
-"<p>| column 1 | column 2 | |---|---|</p>
-<p>| row 1 c1 | row 1 c2 |</p>
-"
-`;
+exports[`Table Parsing is not a table other tokens in between 2 1`] = `"<p>| column 1 | column 2 | |---|---|</p><p>| row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`Table Parsing is not a table other tokens in between 3 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-<p>| row 2 c1 | row 2 c2 |</p>
-"
+</table><p>| row 2 c1 | row 2 c2 |</p>"
 `;
 
 exports[`Table Parsing pipe escaping should escape the pipe char inside table heading and or cell 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>one</th><th>two|three</th>
   </tr></thead>
   <tbody>
     <tr><td>one</td><td>two|five</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
 
 exports[`Table Parsing table cell count cell count should break the table 1 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-<p>| row 2 c1 |</p>
-"
+</table><p>| row 2 c1 |</p>"
 `;
 
 exports[`Table Parsing table cell count cell count should break the table 2 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-<table>
-  <thead><tr>
+</table><table><thead><tr>
     <th>column 1</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
 
 exports[`Table Parsing table heading-body separator should parse a table 1`] = `
@@ -99,65 +69,50 @@ exports[`Table Parsing table heading-body separator should parse a table 1`] = `
   <tbody>
     <tr><td>column 1</td><td>column 2</td></tr><tr><td></td><td></td></tr><tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
 
 exports[`Table Parsing table indent acceptable indent should not break the table 1 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-<p>| row 2 c1 | row 2 c2 |</p>
-"
+</table><p>| row 2 c1 | row 2 c2 |</p>"
 `;
 
-exports[`Table Parsing table indent different indent header -> separator 1`] = `
-"<p>| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |</p>
-"
-`;
+exports[`Table Parsing table indent different indent header -> separator 1`] = `"<p>| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |</p>"`;
 
 exports[`Table Parsing table indent different indent header, separator -> body row 1`] = `
 "<pre><code>| column 1 | column 2 |
-|---|---|</code></pre>
-<p>| row 1 c1 | row 1 c2 |</p>
-"
+|---|---|</code></pre><p>| row 1 c1 | row 1 c2 |</p>"
 `;
 
 exports[`Table Parsing table indent indent should break the table 2 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-<table>
-  <thead><tr>
+</table><table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
 
 exports[`Table Parsing table indent the indented table 1`] = `
-"<table>
-  <thead><tr>
+"<table><thead><tr>
     <th>column 1</th><th>column 2</th>
   </tr></thead>
   <tbody>
     <tr><td>row 1 c1</td><td>row 1 c2</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
 
 exports[`Table Parsing without heading should parse a table 1`] = `
@@ -165,6 +120,5 @@ exports[`Table Parsing without heading should parse a table 1`] = `
   <tbody>
     <tr><td>column 1</td><td>column 2</td></tr><tr><td>row 1 c1</td><td>row 1 c2</td></tr><tr><td>row 2 c1</td><td>row 2 c2</td></tr>
   </tbody>
-</table>
-"
+</table>"
 `;
