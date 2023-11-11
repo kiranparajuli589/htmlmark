@@ -1,0 +1,34 @@
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'lib/**'
+      - 'demo/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          all_but_latest: true
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x.x'
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 'latest'
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Build
+        run: bash -x build_docs.sh
+
+
