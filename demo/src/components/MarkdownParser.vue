@@ -8,8 +8,23 @@
 					<div class="section-title">Markdown Input:</div>
 					<div class="options">
 						<label for="code-highlighter">
-							<input type="checkbox" id="code-highlighter" v-model="useCodeHighlighter" />
+							<input type="checkbox"
+								id="code-highlighter"
+								v-model="useCodeHighlighter"
+								@change="prepareParser"
+							/>
 							Enable Code Highlighter
+						</label>
+
+						<label for="indent-select">
+							<select id="indent-select" v-model="indentSize"
+								@change="prepareParser"
+							>
+								<option value="2">2</option>
+								<option value="4">4</option>
+								<option value="8">8</option>
+							</select>
+							Indent Size
 						</label>
 					</div>
 					<button class="clear" title="Clear Input"
@@ -50,21 +65,22 @@
 	</main>
 </template>
 <script setup>
-import { ref } from "vue"
+import {ref, onMounted} from "vue"
 import hljs from "highlight.js"
 import { MDP } from "../mdp.js"
-
-const useCodeHighlighter = ref(false)
 
 const output = ref("")
 const timeTaken = ref(0)
 const lexerData = ref({})
 const choice = ref("preview")
+const indentSize = ref(4)
+const useCodeHighlighter = ref(false)
+const mdp = ref(null)
 
 /**
  * Code highlighter
  * @param {string} code Code to highlight
- * @param {string} language Language of the code
+ * @param {string} lang Language of the code
  * @returns {string}
  */
 const highlightFn = (code, lang) => {
@@ -75,20 +91,10 @@ const highlightFn = (code, lang) => {
 	}
 }
 
-const mdp = new MDP({
-	indent: 2,
-})
-const mdpWithCodeHighlighter = new MDP({
-	indent: 2,
-	highlightFn,
-})
-
 const handleChange = (e) => {
 	// debounce for 100 ms
 	setTimeout(() => {
-		const {elapsedTime, lex, html} = useCodeHighlighter.value
-			? mdpWithCodeHighlighter.hP(e.target.value)
-			: mdp.hP(e.target.value)
+		const {elapsedTime, lex, html} = mdp.value.hP(e.target.value)
 		timeTaken.value = elapsedTime
 		lexerData.value = lex
 		output.value = html
@@ -101,4 +107,19 @@ const clearInput = () => {
 	lexerData.value = {}
 	document.getElementById("md-input").focus()
 }
+
+const prepareParser = () => {
+	mdp.value = new MDP({
+		indent: indentSize.value,
+		highlightFn: useCodeHighlighter.value ? highlightFn : null,
+	})
+	const inputValue = document.getElementById("md-input").value
+	if (inputValue) {
+		handleChange({target: {value: inputValue}})
+	}
+}
+
+onMounted(() => {
+	prepareParser()
+})
 </script>

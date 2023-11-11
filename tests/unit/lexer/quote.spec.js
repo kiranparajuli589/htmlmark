@@ -55,7 +55,7 @@ describe("quote", () => {
 		" > > > quote `four` with ~~five~~",
 		"> > > > quote [link-title](link-url) with *two*"
 	])("should deep tokenize quote '%s'", (line) => {
-		const lexer = new Lexer([line])
+		const lexer = new Lexer([line], { config: { indent: 2 } })
 		const tokenizedContent = lexer.run()
 		expect(tokenizedContent).toMatchSnapshot()
 	})

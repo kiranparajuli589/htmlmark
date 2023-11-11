@@ -92,7 +92,11 @@ describe("table", () => {
 				"  | column 1 | column 2 |",
 				"  |---|---|",
 				"  | row 1 c1 | row 1 c2 |"
-			])
+			], {
+				config: {
+					indent: 2
+				}
+			})
 			expect(lexer.run()).toMatchSnapshot()
 		})
 
