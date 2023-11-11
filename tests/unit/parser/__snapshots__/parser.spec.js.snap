@@ -94,9 +94,7 @@ exports[`Parser Commons escaping should escape everything excepts tags for other
   <li>&#39;SomeQuote&#39;</li>
 </ul>
 <blockquote>
-  <p> Some &quot; comment</p>
-<bold>bold</bold>
-
+  <p> Some &quot; comment <bold>bold</bold></p>
 </blockquote>
 "
 `;

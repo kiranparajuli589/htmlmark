@@ -11,7 +11,6 @@ exports[`Small MD To HTML should parse the small markdown file content to html 1
 <p>a paragraph of words <code>first code</code> normal text here <code>code body</code> <em>first italics</em> here me crying <em>italic body</em> here me crying <strong>first bolds</strong> some normal again <strong>bold body</strong> <a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> <s>strikes body</s> here some normal again at the last</p>
 <blockquote>
   <p> some quote with <u>Underline</u></p>
-
 </blockquote>
 <ul>
   <li>list item 1</li>
@@ -51,11 +50,8 @@ exports[`Small MD To HTML should parse the small markdown file content to html 1
   <p> nested quote 2 <a href=\\"quote-link-url\\">quote-link</a></p>
 <blockquote>
   <p> nested quote 3 with <em>italics</em> and <strong>bolds</strong></p>
-
 </blockquote>
-
 </blockquote>
-
 </blockquote>
 <pre><code class='language-js'>
   const a = 1;
