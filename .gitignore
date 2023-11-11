@@ -1,15 +1,31 @@
 # pnpm
 .pnpm-debug.log
 node_modules
-
 # editors
 .DS_Store
 .vscode
 .idea
-
 # coverage
 outputs
-
 # env
 .env
 dist
+# code
+lib
+demo
+tests
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc
+.npmignore
+build_docs.sh
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+jest.config.js
+LICENSE
+package.json
+pnpm-lock.yaml
+README.md
+rollup.config.js
+README.md
