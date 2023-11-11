@@ -1,5 +1,5 @@
-import { File } from "../../lib/util/file.js"
-import { HtmlMark } from "../../lib/index.js"
+import File from "../../lib/util/file.js"
+import HtmlMark from "../../lib/index.js"
 
 
 const mdp = new HtmlMark({

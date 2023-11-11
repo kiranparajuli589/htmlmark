@@ -1,6 +1,6 @@
 {
 	"name": "htmlmark",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Lightweight markdown parser",
 	"main": "dist/mdp.cjs",
 	"module": "dist/mdp.esm.js",
@@ -42,7 +42,7 @@
 	"scripts": {
 		"jest": "jest --silent ",
 		"test": "jest --silent --coverage",
-		"jest:nocov": "jest --no-coverage",
+		"jest:no:coverage": "jest --no-coverage",
 		"jest:watch": "jest --watch --no-coverage",
 		"jest:parser:watch": "pnpm jest:watch tests/unit/parser.spec.js",
 		"jest:integration:watch": "pnpm jest:watch tests/integration/small.spec.js",

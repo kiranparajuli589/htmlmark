@@ -1,4 +1,4 @@
-import { HtmlMark } from "../../lib/index.js"
+import HtmlMark from "../../lib/index.js"
 import hljs from "highlight.js"
 
 

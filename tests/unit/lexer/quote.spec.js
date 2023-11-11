@@ -1,4 +1,4 @@
-import { Lexer } from "../../../lib/lexer/index.js"
+import Lexer from "../../../lib/lexer/index.js"
 
 
 describe("quote", () => {
