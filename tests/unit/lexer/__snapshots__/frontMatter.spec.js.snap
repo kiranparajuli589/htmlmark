@@ -6,7 +6,10 @@ Object {
 }
 `;
 
-exports[`FrontMatter should skip the frontmatter while parsing 1`] = `"<h1>Hello World</h1>"`;
+exports[`FrontMatter should skip the frontmatter while parsing 1`] = `
+"<h1>Hello World</h1>
+"
+`;
 
 exports[`FrontMatter should skip the frontmatter while tokenizing 1`] = `
 Array [

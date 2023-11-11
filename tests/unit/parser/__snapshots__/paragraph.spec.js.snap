@@ -1,25 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paragraph Parsing a valid link reference 1`] = `"<p>this is <a href=\\"https://google.com\\">google</a> link</p>"`;
+exports[`Paragraph Parsing a valid link reference 1`] = `
+"<p>this is <a href=\\"https://google.com\\">google</a> link</p>
+"
+`;
 
-exports[`Paragraph Parsing a valid link reference with text 1`] = `"<p>this is <a href=\\"https://google.com\\">toggle</a> link</p>"`;
+exports[`Paragraph Parsing a valid link reference with text 1`] = `
+"<p>this is <a href=\\"https://google.com\\">toggle</a> link</p>
+"
+`;
 
-exports[`Paragraph Parsing escape should escape inside code 1`] = `"<p>one <code>two&lt;</code> three</p>"`;
+exports[`Paragraph Parsing escape should escape inside code 1`] = `
+"<p>one <code>two&lt;</code> three</p>
+"
+`;
 
-exports[`Paragraph Parsing html should detect html in the paragraph 1`] = `"<p><a href=\\"def\\">abc</a>  this is a link <a href='https://google.com'>google</a> here</p><p>this is a <u>underlined</u> text here</p>"`;
+exports[`Paragraph Parsing html should detect html in the paragraph 1`] = `
+"<p><a href=\\"def\\">abc</a>  this is a link <a href='https://google.com'>google</a> here</p>
+<p>this is a <u>underlined</u> text here</p>
+"
+`;
 
-exports[`Paragraph Parsing html should detect html with attributes 1`] = `"<h1>Markdown: Syntax</h1><ul id=\\"ProjectSubmenu\\">    <li><a href=\\"/projects/markdown/\\" title=\\"Markdown Project Page\\">Main</a></li>    <li><a href=\\"/projects/markdown/basics\\" title=\\"Markdown Basics\\">Basics</a></li>    <li><a class=\\"selected\\" title=\\"Markdown Syntax Documentation\\">Syntax</a></li>    <li><a href=\\"/projects/markdown/license\\" title=\\"Pricing and License Information\\">License</a></li>    <li><a href=\\"/projects/markdown/dingus\\" title=\\"Online Markdown Web Form\\">Dingus</a></li><p></ul></p>"`;
+exports[`Paragraph Parsing html should detect html with attributes 1`] = `
+"<h1>Markdown: Syntax</h1>
+<ul id=\\"ProjectSubmenu\\">
+    <li><a href=\\"/projects/markdown/\\" title=\\"Markdown Project Page\\">Main</a></li>
+    <li><a href=\\"/projects/markdown/basics\\" title=\\"Markdown Basics\\">Basics</a></li>
+    <li><a class=\\"selected\\" title=\\"Markdown Syntax Documentation\\">Syntax</a></li>
+    <li><a href=\\"/projects/markdown/license\\" title=\\"Pricing and License Information\\">License</a></li>
+    <li><a href=\\"/projects/markdown/dingus\\" title=\\"Online Markdown Web Form\\">Dingus</a></li>
+<p></ul></p>
+"
+`;
 
-exports[`Paragraph Parsing line breaks should break the line if end with two or spaces 1`] = `"<p>one two three<br> four five six</p>"`;
+exports[`Paragraph Parsing line breaks should break the line if end with two or spaces 1`] = `
+"<p>one two three<br> four five six</p>
+"
+`;
 
-exports[`Paragraph Parsing line breaks should not break the line if end with less than two spaces 1`] = `"<p>one two three  four five six</p>"`;
+exports[`Paragraph Parsing line breaks should not break the line if end with less than two spaces 1`] = `
+"<p>one two three  four five six</p>
+"
+`;
 
-exports[`Paragraph Parsing should be deep tokenized: how are ~~~strikes _in_ the~~~ _wonderland_ 1`] = `"<p>how are ~<s>strikes <em>in</em> the</s>~ <em>wonderland</em></p>"`;
+exports[`Paragraph Parsing should be deep tokenized: how are ~~~strikes _in_ the~~~ _wonderland_ 1`] = `
+"<p>how are ~<s>strikes <em>in</em> the</s>~ <em>wonderland</em></p>
+"
+`;
 
-exports[`Paragraph Parsing should be separated with other tokens 1`] = `"<p>abc</p><h1>one <code>two</code> three</h1><p>def</p>"`;
+exports[`Paragraph Parsing should be separated with other tokens 1`] = `
+"<p>abc</p>
+<h1>one <code>two</code> three</h1>
+<p>def</p>
+"
+`;
 
-exports[`Paragraph Parsing should have greedy newlines 1`] = `"<p>This is the first level of quoting.</p><p>This is nested blockquote.</p><p>Back to the first level.</p>"`;
+exports[`Paragraph Parsing should have greedy newlines 1`] = `
+"<p>This is the first level of quoting.</p>
+<p>This is nested blockquote.</p>
+<p>Back to the first level.</p>
+"
+`;
 
-exports[`Paragraph Parsing should ignore the escaped special characters 1`] = `"<p>this is [google] link</p><p>this is a normal * asterisk * here again</p>"`;
+exports[`Paragraph Parsing should ignore the escaped special characters 1`] = `
+"<p>this is [google] link</p>
+<p>this is a normal * asterisk * here again</p>
+"
+`;
 
-exports[`Paragraph Parsing should merge consecutive paragraph not separated by other tokens 1`] = `"<p>abc <code>def</code> <em>ghi jkl</em> mno <strong>pqr</strong>* stu</p>"`;
+exports[`Paragraph Parsing should merge consecutive paragraph not separated by other tokens 1`] = `
+"<p>abc <code>def</code> <em>ghi jkl</em> mno <strong>pqr</strong>* stu</p>
+"
+`;
