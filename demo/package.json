@@ -1,6 +1,5 @@
 {
-	"name": "htmlmark-demo",
-	"version": "0.0.1",
+	"name": "htmlmark-documentation",
 	"scripts": {
 		"dev": "DEV=true vite",
 		"build": "vite build",

@@ -23,9 +23,11 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 'latest'
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
+          run_install: false
+      - name: Install
+        run: |
+          cd demo
+          pnpm install --frozen-lockfile --strict-peer-dependencies
       - name: Build
         run: bash -x build_docs.sh
 
