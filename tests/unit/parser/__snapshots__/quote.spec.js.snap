@@ -5,9 +5,7 @@ exports[`Quote Parsing greedy newline 1`] = `
   <blockquote>
   <p> one</p>
 <p> here</p>
-
 </blockquote>
-
 </blockquote>
 "
 `;
@@ -17,10 +15,8 @@ exports[`Quote Parsing greedy newline in nested form 1`] = `
   <p> This is the first level of quoting.</p>
 <blockquote>
   <p> This is nested blockquote.</p>
-
 </blockquote>
 <p> Back to the first level.</p>
-
 </blockquote>
 "
 `;
@@ -29,9 +25,7 @@ exports[`Quote Parsing should deep tokenize quote with multiple depth 1`] = `
 "<blockquote>
   <blockquote>
   <p> quote <strong>one</strong> with <em>two</em></p>
-
 </blockquote>
-
 </blockquote>
 "
 `;
@@ -41,11 +35,8 @@ exports[`Quote Parsing should deep tokenize quote with multiple depth 2`] = `
   <blockquote>
   <blockquote>
   <p> quote <code>four</code> with <s>five</s></p>
-
 </blockquote>
-
 </blockquote>
-
 </blockquote>
 "
 `;
@@ -56,13 +47,9 @@ exports[`Quote Parsing should deep tokenize quote with multiple depth 3`] = `
   <blockquote>
   <blockquote>
   <p> quote <a href=\\"link-url\\">link-title</a> with <em>two</em></p>
-
 </blockquote>
-
 </blockquote>
-
 </blockquote>
-
 </blockquote>
 "
 `;
@@ -70,7 +57,6 @@ exports[`Quote Parsing should deep tokenize quote with multiple depth 3`] = `
 exports[`Quote Parsing should deep tokenize quote with zero depth 1`] = `
 "<blockquote>
   <p> quote <strong>one</strong> with <em>two</em></p>
-
 </blockquote>
 "
 `;
@@ -78,7 +64,6 @@ exports[`Quote Parsing should deep tokenize quote with zero depth 1`] = `
 exports[`Quote Parsing should deep tokenize quote with zero depth 2`] = `
 "<blockquote>
   <p> quote <code>four</code> with <s>five</s></p>
-
 </blockquote>
 "
 `;
@@ -86,7 +71,6 @@ exports[`Quote Parsing should deep tokenize quote with zero depth 2`] = `
 exports[`Quote Parsing should deep tokenize quote with zero depth 3`] = `
 "<blockquote>
   <p> quote <a href=\\"link-url\\">link-title</a> with <em>two</em></p>
-
 </blockquote>
 "
 `;
@@ -102,19 +86,14 @@ exports[`Quote Parsing should detect the circular quote 1`] = `
   <p> four</p>
 <blockquote>
   <p> five</p>
-
 </blockquote>
 <p> four</p>
-
 </blockquote>
 <p> three</p>
-
 </blockquote>
 <p> two</p>
-
 </blockquote>
 <p> one</p>
-
 </blockquote>
 "
 `;
@@ -130,7 +109,6 @@ exports[`Quote Parsing should find the list and codeblock inside 1`] = `
 <pre><code>
   return shell_exec(&quot;echo $input | $markdown_script&quot;);
 </code></pre>
-
 </blockquote>
 "
 `;
@@ -140,9 +118,7 @@ exports[`Quote Parsing should parse multiline quote with the same depth and inde
   <blockquote>
   <blockquote>
   <p> zero f  one f</p>
-
 </blockquote>
-
 </blockquote>
 <p> one</p>
 <h1>two</h1>
@@ -152,22 +128,16 @@ exports[`Quote Parsing should parse multiline quote with the same depth and inde
   <p> four</p>
 <blockquote>
   <p> d-five</p>
-
 </blockquote>
-
 </blockquote>
 <h1>five</h1>
 <h2>six</h2>
 <blockquote>
   <blockquote>
   <p> seven simple para</p>
-
 </blockquote>
-
 </blockquote>
-
 </blockquote>
-
 </blockquote>
 "
 `;
@@ -178,7 +148,6 @@ exports[`Quote Parsing should parse the quote with list inside 1`] = `
   <li>one</li>
   <li>two</li>
 </ul>
-
 </blockquote>
 "
 `;
