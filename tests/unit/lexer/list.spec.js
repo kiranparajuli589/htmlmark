@@ -30,7 +30,7 @@ describe("list", () => {
 		]
 		const lexer = new Lexer(lines)
 		const tokenizedContent = lexer.run()
-		expect(tokenizedContent[0].indent).toEqual(2)
+		expect(tokenizedContent[0].indent).toEqual(0)
 	})
 	it("less than 4 indent should not break the list", () => {
 		const lines = [
@@ -130,6 +130,17 @@ describe("list", () => {
 		] }
 	])("should tokenize an empty list item", ({ l }) => {
 		const lexer = new Lexer(l)
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
+	it("should tokenize a list with variable spaces beforehand", () => {
+		const lines = `
+  - item **1**
+  - one
+- two
+- three
+`
+		const lexer = new Lexer(lines.split("\n"))
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})

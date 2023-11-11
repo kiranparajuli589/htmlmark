@@ -30,5 +30,3 @@ jobs:
           pnpm install --frozen-lockfile --strict-peer-dependencies
       - name: Build
         run: bash -x build_docs.sh
-
-

@@ -106,14 +106,7 @@ Array [
         "count": "4",
         "raw": "4.  What is the exact rule for determining when list items get
 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?
-
-		\`\`\` markdown
-		1. one
-
-		2. two
-		3. three
-		\`\`\`",
+	\\"tight\\"?  What should we do with a list like this?",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -140,24 +133,6 @@ Array [
             "type": "paragraph",
             "value": "What is the exact rule for determining when list items get 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
           },
-          Object {
-            "type": "new-line",
-          },
-          Object {
-            "indent": 2,
-            "language": "markdown",
-            "raw": "		\`\`\` markdown
-		1. one
-
-		2. two
-		3. three
-		\`\`\`",
-            "type": "code-block",
-            "value": "1. one
-
-2. two
-3. three",
-          },
         ],
         "type": "list-item",
       },
@@ -169,15 +144,26 @@ Array [
     },
     "raw": "4.  What is the exact rule for determining when list items get
 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?
-
-		\`\`\` markdown
+	\\"tight\\"?  What should we do with a list like this?",
+    "type": "list",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "language": "markdown",
+    "raw": "		\`\`\` markdown
 		1. one
 
 		2. two
 		3. three
 		\`\`\`",
-    "type": "list",
+    "type": "code-block",
+    "value": "1. one
+
+2. two
+3. three",
   },
   Object {
     "type": "new-line",
@@ -238,8 +224,7 @@ const c = 3
     "type": "code-block",
     "value": "const a = 1
 const b = 2
-const c = 3
-   \`\`\`",
+const c = 3",
   },
 ]
 `;
@@ -266,31 +251,13 @@ const c = 3
 exports[`codeblock should not be broken with acceptable wrong indent 1`] = `
 Array [
   Object {
-    "indent": 2,
-    "language": null,
-    "raw": "   \`\`\`",
-    "type": "code-block",
-    "value": "",
-  },
-  Object {
     "indent": 0,
-    "raw": "abcd",
-    "tokens": Array [
-      Object {
-        "raw": "abcd",
-        "type": "text",
-        "value": "abcd",
-      },
-    ],
-    "type": "paragraph",
-    "value": "abcd",
-  },
-  Object {
-    "indent": 2,
     "language": null,
-    "raw": "   \`\`\`",
+    "raw": "   \`\`\`
+abcd
+   \`\`\`",
     "type": "code-block",
-    "value": "",
+    "value": "abcd",
   },
 ]
 `;

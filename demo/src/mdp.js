@@ -18,7 +18,7 @@ export class MDP {
 	 * @returns {string} - The parsed HTML
 	 */
 	h(lines) {
-		const lexer = new Lexer(lines)
+		const lexer = new Lexer(lines, {config: this.config})
 		const parser = new Parser(lexer.run(), {config: this.config})
 		return parser.run()
 	}
@@ -48,7 +48,7 @@ export class MDP {
 	hP(str) {
 		const lines = str.split("\n")
 		const start = Date.now()
-		const lexer = new Lexer(lines)
+		const lexer = new Lexer(lines, {config: this.config})
 		const lex = lexer.run()
 		const parser = new Parser(lex, {config: this.config})
 		const html = parser.run()
