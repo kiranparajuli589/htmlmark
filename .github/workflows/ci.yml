@@ -2,18 +2,22 @@ on:
   push:
     branches:
       - 'main'
+    paths:
+      - 'lib/**'
+      - 'tests/**'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
+      - 'jest.config.js'
+      - '.eslintrc'
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
-      - name: Cancel previous runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          all_but_latest: true
-          access_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Checkout
         uses: actions/checkout@v3
 
