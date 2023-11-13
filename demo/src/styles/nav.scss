@@ -4,6 +4,14 @@ nav {
 	align-items: center;
 	padding: 0.2rem .5rem;
 	background-color: #ffc1073b;
+	.nav-brand {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		h2 > a {
+			text-decoration: none;
+		}
+	}
 	.logo {
 		width: 5rem;
 		height: auto;
@@ -23,19 +31,16 @@ nav {
 			background: #fff;
 			cursor: pointer;
 		}
-		.give-a-star {
+		.nav-link {
 			text-decoration: none;
 			color: #000;
 			outline: 1px solid #000;
 			padding: .3rem;
 			border-radius: 2px;
 			background: #fff;
-			&::before {
-				position: absolute;
-				content: "";
-				width: 0;
-				height: 0;
-				animation: width 1s ease-in-out;
+			&:hover {
+				background: #000;
+				color: #fff;
 			}
 		}
 	}
@@ -50,10 +55,16 @@ body[dark] {
 			filter: invert(1);
 		}
 
-		.theme, .give-a-star {
+		.theme, .nav-link {
 			background: #1a1a1a;
 			border-color: whitesmoke;
 			color: white;
+		}
+		.nav-link {
+			&:hover {
+				background: #fff;
+				color: #000;
+			}
 		}
 	}
 }

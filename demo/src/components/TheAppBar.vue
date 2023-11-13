@@ -1,10 +1,17 @@
 <template>
 	<nav>
-		<img class="logo" :src="logo" alt="Logo">
-		<h1>HtmlMark</h1>
+		<div class="nav-brand">
+			<img class="logo" :src="logo" alt="Logo">
+			<h2>
+				<router-link to="/">HtmlMark</router-link>
+			</h2>
+		</div>
 		<div class="nav-actions">
+			<router-link class="nav-link" to="/">Home</router-link>
+			<router-link class="nav-link" to="/demo">Demo</router-link>
+			<router-link class="nav-link" to="/about">About</router-link>
 			<a href="https://github.com/kiranparajuli589/htmlmark"
-				 target="_blank" title="GitHub Repository" class="give-a-star"
+				 target="_blank" title="GitHub Repository" class="nav-link"
 			>
 				Give a 🌟
 			</a>

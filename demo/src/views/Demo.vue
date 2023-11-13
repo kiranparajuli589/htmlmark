@@ -2,31 +2,51 @@
 	<main>
 		<p class="subtitle">A very lightweight markdown parser.</p>
 		<br>
+		<div class="options">
+			<div class="title">Configuration Options</div>
+			<label for="code-highlighter">
+				<input type="checkbox"
+							 id="code-highlighter"
+							 v-model="useCodeHighlighter"
+							 @change="prepareParser"
+				/>
+				Enable Code Highlighter
+			</label>
+
+			<label for="use-link-refs">
+				<input type="checkbox"
+							 id="use-link-refs"
+							 v-model="useLinkRefs"
+							 @change="prepareParser"
+				/>
+				Use Link References
+			</label>
+
+			<label for="indent-select">
+				<select id="indent-select" v-model="indentSize"
+								@change="prepareParser"
+				>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="8">8</option>
+				</select>
+				Indent Size
+			</label>
+			<label for="tab-select">
+				<select id="tab-select" v-model="tabSize"
+								@change="prepareParser"
+				>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="8">8</option>
+				</select>
+				Indent Size
+			</label>
+		</div>
 		<div id="converter">
 			<div class="markdown">
 				<div class="head">
 					<div class="section-title">Markdown Input:</div>
-					<div class="options">
-						<label for="code-highlighter">
-							<input type="checkbox"
-								id="code-highlighter"
-								v-model="useCodeHighlighter"
-								@change="prepareParser"
-							/>
-							Enable Code Highlighter
-						</label>
-
-						<label for="indent-select">
-							<select id="indent-select" v-model="indentSize"
-								@change="prepareParser"
-							>
-								<option value="2">2</option>
-								<option value="4">4</option>
-								<option value="8">8</option>
-							</select>
-							Indent Size
-						</label>
-					</div>
 					<button class="clear" title="Clear Input"
 									@click="clearInput"
 					>
@@ -74,7 +94,9 @@ const timeTaken = ref(0)
 const lexerData = ref({})
 const choice = ref("preview")
 const indentSize = ref(4)
+const tabSize = ref(4)
 const useCodeHighlighter = ref(false)
+const useLinkRefs = ref(true)
 const mdp = ref(null)
 
 /**
@@ -112,6 +134,8 @@ const prepareParser = () => {
 	mdp.value = new MDP({
 		indent: indentSize.value,
 		highlightFn: useCodeHighlighter.value ? highlightFn : null,
+		useLinkRefs: useLinkRefs.value,
+		tabSize: tabSize.value,
 	})
 	const inputValue = document.getElementById("md-input").value
 	if (inputValue) {
