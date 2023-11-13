@@ -144,4 +144,28 @@ describe("list", () => {
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})
+	it("should cope with tabbed indentations", () => {
+		const lines = `3.  Is a blank line needed before an indented code block?
+\t\t(\`Markdown.pl\` requires it, but this is not mentioned in the
+\t\tdocumentation, and some implementations do not require it.)
+
+\t\t\`\`\` markdown
+\t\tparagraph
+\t\t\t\tcode?
+\t\t\`\`\`
+
+5.  Can list markers be indented?  Can ordered list markers be right-aligned?
+
+\t\t\`\`\` markdown
+\t\t 8. item 1
+\t\t 9. item 2
+\t\t10. item 2a
+\t\t\`\`\`
+
+This is a paragraph.
+`
+		const lexer = new Lexer(lines.split("\n"))
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
 })

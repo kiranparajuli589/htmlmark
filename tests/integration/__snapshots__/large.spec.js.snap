@@ -46,9 +46,7 @@ exports[`Large MD To HTML should parse the large markdown file content to html 1
   <li>This is the second list item.</li>
 </ol>
 <p> Here&#39;s some example code:</p>
-<pre><code>
-  return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 </blockquote>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <h3>Lists</h3>
@@ -120,40 +118,30 @@ exports[`Large MD To HTML should parse the large markdown file content to html 1
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
-</code></pre>
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <p>This is a normal paragraph:</p>
-<pre><code>
-  This is a code block.
-
+<pre><code>This is a code block.
 </code></pre>
 <p>Here is an example of AppleScript:</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell
-
 </code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>
-  &lt;div class=&quot;footer&quot;&gt;
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
-
 </code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
-end tell
-</code></pre>
+end tell</code></pre>
 <h2>Span Elements</h2>
 <h3>Links</h3>
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
@@ -214,9 +202,7 @@ end tell
   <li>This is the second list item.</li>
 </ol>
 <p> Here&#39;s some example code:</p>
-<pre><code>
-  return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 </blockquote>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <h3>Lists</h3>
@@ -288,40 +274,30 @@ end tell
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
-</code></pre>
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <p>This is a normal paragraph:</p>
-<pre><code>
-  This is a code block.
-
+<pre><code>This is a code block.
 </code></pre>
 <p>Here is an example of AppleScript:</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell
-
 </code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>
-  &lt;div class=&quot;footer&quot;&gt;
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
-
 </code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
-end tell
-</code></pre>
+end tell</code></pre>
 <h2>Span Elements</h2>
 <h3>Links</h3>
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
@@ -382,9 +358,7 @@ end tell
   <li>This is the second list item.</li>
 </ol>
 <p> Here&#39;s some example code:</p>
-<pre><code>
-  return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 </blockquote>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <h3>Lists</h3>
@@ -456,40 +430,30 @@ end tell
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
-</code></pre>
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <p>This is a normal paragraph:</p>
-<pre><code>
-  This is a code block.
-
+<pre><code>This is a code block.
 </code></pre>
 <p>Here is an example of AppleScript:</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell
-
 </code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>
-  &lt;div class=&quot;footer&quot;&gt;
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
-
 </code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
-end tell
-</code></pre>
+end tell</code></pre>
 <h2>Span Elements</h2>
 <h3>Links</h3>
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
@@ -550,9 +514,7 @@ end tell
   <li>This is the second list item.</li>
 </ol>
 <p> Here&#39;s some example code:</p>
-<pre><code>
-  return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 </blockquote>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <h3>Lists</h3>
@@ -624,40 +586,30 @@ end tell
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
-</code></pre>
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <p>This is a normal paragraph:</p>
-<pre><code>
-  This is a code block.
-
+<pre><code>This is a code block.
 </code></pre>
 <p>Here is an example of AppleScript:</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell
-
 </code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>
-  &lt;div class=&quot;footer&quot;&gt;
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
-
 </code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
-end tell
-</code></pre>
+end tell</code></pre>
 <h2>Span Elements</h2>
 <h3>Links</h3>
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
@@ -717,9 +669,7 @@ end tell
   <li>This is the second list item.</li>
 </ol>
 <p> Here&#39;s some example code:</p>
-<pre><code>
-  return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 </blockquote>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <h3>Lists</h3>
@@ -791,40 +741,30 @@ end tell
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
-</code></pre>
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <p>This is a normal paragraph:</p>
-<pre><code>
-  This is a code block.
-
+<pre><code>This is a code block.
 </code></pre>
 <p>Here is an example of AppleScript:</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell
-
 </code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>
-  &lt;div class=&quot;footer&quot;&gt;
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
-
 </code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
-end tell
-</code></pre>
+end tell</code></pre>
 <h2>Span Elements</h2>
 <h3>Links</h3>
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
@@ -884,9 +824,7 @@ end tell
   <li>This is the second list item.</li>
 </ol>
 <p> Here&#39;s some example code:</p>
-<pre><code>
-  return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre>
 </blockquote>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 <h3>Lists</h3>
@@ -958,40 +896,30 @@ end tell
 </ul>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
-</code></pre>
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.</p>
 <p>This is a normal paragraph:</p>
-<pre><code>
-  This is a code block.
-
+<pre><code>This is a code block.
 </code></pre>
 <p>Here is an example of AppleScript:</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
 end tell
-
 </code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown -- just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<pre><code>
-  &lt;div class=&quot;footer&quot;&gt;
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
-
 </code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
-<pre><code>
-  tell application &quot;Foo&quot;
+<pre><code>tell application &quot;Foo&quot;
     beep
-end tell
-</code></pre>
+end tell</code></pre>
 <h2>Span Elements</h2>
 <h3>Links</h3>
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>

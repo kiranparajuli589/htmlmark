@@ -24,6 +24,17 @@ exports[`List Parsing should allow empty list item 1`] = `
 "
 `;
 
+exports[`List Parsing should allow lazy unless there is two line separator 1`] = `
+"<ul>
+  <li>one             two three<pre><code>here
+four</code></pre>
+</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
+"
+`;
+
 exports[`List Parsing should detect list indent 1`] = `
 "<ul>
   <li>item <strong>1</strong></li>
@@ -72,11 +83,9 @@ exports[`List Parsing should parse a spaced list 1`] = `
 exports[`List Parsing should parse the indented codeblock inside 1`] = `
 "<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-  <li>A list item with a code block:<pre><code>
-  &lt;code goes here&gt;
+  <li>A list item with a code block:<pre><code>&lt;code goes here&gt;
 &lt;code goes here&gt;
-&lt;code goes here&gt;
-</code></pre>
+&lt;code goes here&gt;</code></pre>
 </li>
 </ul>
 <h3>Code Blocks</h3>

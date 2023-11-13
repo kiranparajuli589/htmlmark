@@ -113,4 +113,21 @@ describe("List Parsing", () => {
 		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
+	it("should allow lazy unless there is two line separator", () => {
+		const lines = [
+			"- one",
+			"            two",
+			"three",
+			"",
+			"	   ```",
+			"	   here",
+			"	   four",
+			"	   ```",
+			"",
+			"- two",
+			"- three"
+		]
+		const html = mdp.h(lines)
+		expect(html).toMatchSnapshot()
+	})
 })

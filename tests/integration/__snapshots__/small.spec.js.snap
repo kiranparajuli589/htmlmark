@@ -53,8 +53,7 @@ exports[`Small MD To HTML should parse the small markdown file content to html 1
 </blockquote>
 </blockquote>
 </blockquote>
-<pre><code class='language-js'>
-  const a = 1;
+<pre><code class='language-js'>const a = 1;
 const b = 1;
 const c = a + b;
 
@@ -62,16 +61,11 @@ if (c === 2) {
   console.log(&#39;success&#39;);
 } else {
   console.log(&#39;failure&#39;);
-}
-</code></pre>
+}</code></pre>
 <p>  some line with small space ahead</p>
-<pre><code class='language-js'>
-  
-</code></pre>
+<pre><code class='language-js'></code></pre>
 <p>some piece of normal paragraph with <u>underlined text</u></p>
-<pre><code>
-  another code block is here
-</code></pre>
+<pre><code>another code block is here</code></pre>
 <img src='https://avatars.githubusercontent.com/u/39373750?v=4' alt='Kiran Parajuli'><p>some random text</p>
 <table>
   <thead>

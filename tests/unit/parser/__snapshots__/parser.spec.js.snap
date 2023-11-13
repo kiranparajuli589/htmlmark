@@ -105,8 +105,7 @@ exports[`Parser Commons escaping should escape everything inside a code 1`] = `
 `;
 
 exports[`Parser Commons escaping should escape everything inside a code block 1`] = `
-"<pre><code>
-  &lt;div&gt;
+"<pre><code>&lt;div&gt;
 &lt;/div&gt;
 ab&lt;cd
 efg&gt;
@@ -115,8 +114,7 @@ efg&lt;
 &lt;&lt;&lt;&lt;
 &amp; ampersand
 &#39;single quotes&#39;
-&quot;double quotes&quot;
-</code></pre>
+&quot;double quotes&quot;</code></pre>
 "
 `;
 

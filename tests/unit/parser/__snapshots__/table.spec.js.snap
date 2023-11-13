@@ -127,10 +127,8 @@ exports[`Table Parsing table indent different indent header -> separator 1`] = `
 `;
 
 exports[`Table Parsing table indent different indent header, separator -> body row 1`] = `
-"<pre><code>
-  | column 1 | column 2 |
-|---|---|
-</code></pre>
+"<pre><code>| column 1 | column 2 |
+|---|---|</code></pre>
 <p>| row 1 c1 | row 1 c2 |</p>
 "
 `;
