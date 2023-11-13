@@ -1,122 +1,110 @@
 <div style="display: flex; justify-content: center; flex-direction: column; text-align: center">
 	<h1>HtmlMark</h1>
-	<p><img src="https://github.com/kiranparajuli589/htmlmark/blob/main/demo/src/assets/logo.png?raw=true" style="height: auto; width: 200px;"></p>
+	<p><img src="https://github.com/kiranparajuli589/htmlmark/blob/main/demo/src/assets/logo.png?raw=true" style="height: auto; width: 200px;" alt="HtmlMark Logo"></p>
 	<p>A very lightweight Markdown Parser powered by Regex</p>
 </div>
 
 
-## 🔑 Key points
+## 🔑 Why HtmlMark?
 - no use of external dependencies
 - lexer: to produce markdown tokens
-- parser: to produce the HTML code
+- parser: to produce the HTML code from the lexer
+- code highlighting support
+- support for front matter
 
 ## 🌐 Demo
 
 Checkout the features of the parser from this [Live Demo](https://kiranparajuli589.github.io/htmlmark/ 'Live Demo').
 
-## 🛣️ Roadmap
+## 🎠 Installation
 
-### 🪕 Paragraphs
-1. **Heading:**
-   - Levels: 1 to 6
-   - Type
-     - Underlined:
+```bash
+npm i htmlmark
+```
 
-        For Heading 1, the underline of `=`
+## 💠 Usage
 
-        For Heading 2, the underline of `-`
+```js
+import HtmlMark from 'htmlmark';
 
-     - Hashed
+const opts = {
+	indent: 4,
+	highlightFn: (code, lang) => {
+		// return the highlighted code
+	},
+	useLinkRefs: true
+};
 
-        Number of the leading hashes determines the level of the heading.
+const htmlmark = new HtmlMark(opts);
 
-        Can be in between of 1 to 6.
+htmlmark.tokenize("## Hello World"); // returns the tokens
+htmlmark.parse("## Hello World"); // returns the HTML code
+```
 
-        Can be fenced with hashes.
+## 🎡 Options
 
-        Otherwise, it will be treated as a paragraph.
-2. **Code block:**
-    - Language: Optional
-    - Types:
-        1. Can be inside a backtick block like <code>```</code>
-        2. An indent of 4 can make the block a code
-
-           For a codeblock inside a list
-           it should be indented at least twice.
-3. **List:**
-    - Ordered: `{any digit}. Item 1`
-    - Unordered: `-|+|* Item 1`
-    - Checklist: `-|+|*|{digit}. [ ] Item 1` (Can be _ordered_ or _unordered_)
-    - Can be Lazy
-    - Items must have the same intent to be included in the same list
-    - Allows other _paragraph items_ inside content (recursive lex and parsing)
-4. **Quote:**
-    - Levels: 0 to infinity
-    - Lines must be the same indent to be included within the same quote
-    - Allows other _paragraph items_ inside content (recursive lex and parsing)
-    - Can be Lazy
-5. **Image:**
-    - Link: String (Required)
-    - Alt text: String (Required)
-    - Title: String (Optional)
-    - Width: Number (Optional)
-    - Height: Number (Optional)
-    - Indentation: NOT IMPLEMENTED YET
-6. **Comment:**
-    - Lexer contains it
-    - Parser also contains it
-    - Example: `<!-- This is a comment -->`
-7. **Line:**
-    - Defined as: `---`
-    - Consecutive lines are merged into one
-8. **Table:**
-    - Equal number of cell counts
-    - Equal number of indentations
-    - Cell content should allow emphasis
-    - Table heading is optional
-    - Table heading is separated by `|---|,|:--:|`
-9. **Newline:**
-    - Consecutive newlines are merged into one
-10. **Paragraph:**
-    - Anything else
-    - Line Breaks:
-
-       1. If a line ends with 2 or more than 2 spaces, then, a line break is inserted.
-       2. Otherwise, the lines are merged into one.
-11. **HTML:**
-    - Lexer contains it
-    - Parser also contains it
-    - No escaping for HTML tags
-    - Parsed as it is
-12. **Front Matter:**
-    - Only lexer contains it
-    - Starts and Ends with `---` (it can be surrounded by whitespaces, but should have exactly 3 dashes without spaces in between)
-    - If array or object are provided in exact JSON literal format, then they are parsed as JS objects and arrays
-    - Otherwise, they are parsed as strings
-    - Example: `---\ntags: ["a", "b", "c"]\n---` is parsed as `{tags: ["a", "b", "c"]}`
+| Option      | Type       | Default     | Description                                       |
+|-------------|------------|-------------|---------------------------------------------------|
+| indent      | `number`   | `4`         | Number of spaces (or tabs) to use for indentation |
+| highlightFn | `function` | `undefined` | Function to highlight the code                    |
+| useLinkRefs | `boolean`  | `true`      | Whether to use link references or not             |
 
 
-### 🎺 Emphasis
-Emphasis can be inside the content of any paragraph types. Even emphasis items can have emphasis inside 🤩.
+## 🎢 APIs
+- `tokenize(markdown: string): Token[]`:
+  Returns the lexer from the markdown string
+- `parse(markdown: string): string`:
+  Returns the HTML code from the markdown string
+- `getFrontMatter(markdown: string): FrontMatter{}`:
+  Returns the front matter from the markdown string
 
-1. **Bold:** wrapped inside `**` | `__` | odd number of `*` | `_`
-2. **Italic:** wrapped inside `*` | `_` | even number of `*` | `_`
-3. **Code:** wrapped inside backticks
-4. **Strike:** wrapped inside `~~` | even number of `~`
-5. **Underline:** wrapped inside `++` | even number of `+`
-6. **Link:** wrapped as `[title](url 'title')` where `title` is optional
-7. **Image:** wrapped as `![alt text](url 'title' width height)` where `title`, `width` & `height` are optional
+### Lexer
+The provided markdown string is scanned line by line and checked against various regex patterns to produce the accurate markdown tokens. A general token structure is as:
 
-### 🛹 Escaping
-1. Escaping is done by using `\` before the character to be escaped.
-2. If you need text like `# text` but don't want it to be treated as a heading, then you can escape it as `\# text
-3. Escaping is done for the following characters:
-   - `*`, `_`, `[`, `]`, `(`, `)`, `!`, `~`, `+`, `<`, `>`, `&`, `"`, `'`
-4. Nothing is escaped in the lexer (content wise)
-5. Everything is escaped inside of `code` and `codeblock`
-6. Non HTML characters are escaped inside of other tokens
+```json
+{
+	"indent": 0,
+	"level": 1,
+	"raw": "# Heading One Text",
+	"setext": false,
+	"type": "heading",
+	"value": "Heading One Text",
+	"tokens": [{
+		"raw": "Heading One Text",
+		"type": "text",
+		"value": "Heading One Text"
+	}]
+}
+```
 
-Ref: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+### Front Matter
+The front matter is the metadata of the markdown file. It is written in the YAML format and is separated from the markdown content by a line containing three hyphens `---`. It must be placed at the top of the markdown file.
 
-### 👻 HTML Sanitization
-**A BIG TODO**
+#### Example:
+
+```md
+---
+title: Hello World
+date: 2021-01-01
+author: John Doe
+---
+
+## Hello World
+Lorem ipsum dollar sit amet
+```
+
+The above markdown file will produce the following front matter:
+
+```json
+{
+	"title": "Hello World",
+	"date": "2021-01-01",
+	"author": "John Doe"
+}
+```
+
+## 💁 Contributing to HtmlMark
+Contributions are always welcome, no matter how large or small. Before contributing, please read the [code of conduct](https://github.com/kiranparajuli589/htmlmark/blob/main/CODE_OF_CONDUCT.md 'code of conduct'). You can also find the development guide [here](https://github.com/kiranparajuli589/htmlmark/blob/main/CONTRIBUTING.md 'here').
+
+## 📝 License
+GNU GENERAL PUBLIC LICENSE v3.0 © [Kiran Parajuli](https://kiranparajuli.com.np 'Kiran Parajuli')
