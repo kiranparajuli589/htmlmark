@@ -46,6 +46,7 @@ htmlmark.parse("## Hello World"); // returns the HTML code
 | Option      | Type       | Default     | Description                                       |
 |-------------|------------|-------------|---------------------------------------------------|
 | indent      | `number`   | `4`         | Number of spaces (or tabs) to use for indentation |
+| tabSize     | `number`   | `4`         | Equivalent spaces for a single tab used           |
 | highlightFn | `function` | `undefined` | Function to highlight the code                    |
 | useLinkRefs | `boolean`  | `true`      | Whether to use link references or not             |
 

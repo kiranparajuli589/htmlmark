@@ -106,7 +106,14 @@ Array [
         "count": "4",
         "raw": "4.  What is the exact rule for determining when list items get
 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?",
+	\\"tight\\"?  What should we do with a list like this?
+
+		\`\`\` markdown
+		1. one
+
+		2. two
+		3. three
+		\`\`\`",
         "tokens": Array [
           Object {
             "indent": 0,
@@ -133,6 +140,24 @@ Array [
             "type": "paragraph",
             "value": "What is the exact rule for determining when list items get 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
           },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 8,
+            "language": "markdown",
+            "raw": "		\`\`\` markdown
+		1. one
+
+		2. two
+		3. three
+		\`\`\`",
+            "type": "code-block",
+            "value": "1. one
+
+2. two
+3. three",
+          },
         ],
         "type": "list-item",
       },
@@ -144,26 +169,15 @@ Array [
     },
     "raw": "4.  What is the exact rule for determining when list items get
 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?",
-    "type": "list",
-  },
-  Object {
-    "type": "new-line",
-  },
-  Object {
-    "indent": 0,
-    "language": "markdown",
-    "raw": "		\`\`\` markdown
+	\\"tight\\"?  What should we do with a list like this?
+
+		\`\`\` markdown
 		1. one
 
 		2. two
 		3. three
 		\`\`\`",
-    "type": "code-block",
-    "value": "1. one
-
-2. two
-3. three",
+    "type": "list",
   },
   Object {
     "type": "new-line",

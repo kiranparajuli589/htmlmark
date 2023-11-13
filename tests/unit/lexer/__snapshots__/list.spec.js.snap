@@ -407,6 +407,153 @@ three
 ]
 `;
 
+exports[`list should cope with tabbed indentations 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": "3",
+        "raw": "3.  Is a blank line needed before an indented code block?
+		(\`Markdown.pl\` requires it, but this is not mentioned in the
+		documentation, and some implementations do not require it.)
+
+		\`\`\` markdown
+		paragraph
+				code?
+		\`\`\`",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "Is a blank line needed before an indented code block?
+		(\`Markdown.pl\` requires it, but this is not mentioned in the
+		documentation, and some implementations do not require it.)",
+            "tokens": Array [
+              Object {
+                "raw": "Is a blank line needed before an indented code block? 		(",
+                "type": "text",
+                "value": "Is a blank line needed before an indented code block? 		(",
+              },
+              Object {
+                "raw": "\`Markdown.pl\`",
+                "type": "code",
+                "value": "Markdown.pl",
+              },
+              Object {
+                "raw": " requires it, but this is not mentioned in the 		documentation, and some implementations do not require it.)",
+                "type": "text",
+                "value": " requires it, but this is not mentioned in the 		documentation, and some implementations do not require it.)",
+              },
+            ],
+            "type": "paragraph",
+            "value": "Is a blank line needed before an indented code block? 		(\`Markdown.pl\` requires it, but this is not mentioned in the 		documentation, and some implementations do not require it.)",
+          },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 8,
+            "language": "markdown",
+            "raw": "		\`\`\` markdown
+		paragraph
+				code?
+		\`\`\`",
+            "type": "code-block",
+            "value": "paragraph
+		code?",
+          },
+        ],
+        "type": "list-item",
+      },
+      Object {
+        "checked": null,
+        "count": "5",
+        "raw": "5.  Can list markers be indented?  Can ordered list markers be right-aligned?
+
+		\`\`\` markdown
+		 8. item 1
+		 9. item 2
+		10. item 2a
+		\`\`\`",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "Can list markers be indented?  Can ordered list markers be right-aligned?",
+            "tokens": Array [
+              Object {
+                "raw": "Can list markers be indented?  Can ordered list markers be right-aligned?",
+                "type": "text",
+                "value": "Can list markers be indented?  Can ordered list markers be right-aligned?",
+              },
+            ],
+            "type": "paragraph",
+            "value": "Can list markers be indented?  Can ordered list markers be right-aligned?",
+          },
+          Object {
+            "type": "new-line",
+          },
+          Object {
+            "indent": 8,
+            "language": "markdown",
+            "raw": "		\`\`\` markdown
+		 8. item 1
+		 9. item 2
+		10. item 2a
+		\`\`\`",
+            "type": "code-block",
+            "value": " 8. item 1
+ 9. item 2
+10. item 2a",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "checklist": false,
+      "identifier": null,
+      "ordered": true,
+    },
+    "raw": "3.  Is a blank line needed before an indented code block?
+		(\`Markdown.pl\` requires it, but this is not mentioned in the
+		documentation, and some implementations do not require it.)
+
+		\`\`\` markdown
+		paragraph
+				code?
+		\`\`\`
+5.  Can list markers be indented?  Can ordered list markers be right-aligned?
+
+		\`\`\` markdown
+		 8. item 1
+		 9. item 2
+		10. item 2a
+		\`\`\`",
+    "type": "list",
+  },
+  Object {
+    "type": "new-line",
+  },
+  Object {
+    "indent": 0,
+    "raw": "This is a paragraph.",
+    "tokens": Array [
+      Object {
+        "raw": "This is a paragraph.",
+        "type": "text",
+        "value": "This is a paragraph.",
+      },
+    ],
+    "type": "paragraph",
+    "value": "This is a paragraph.",
+  },
+  Object {
+    "type": "new-line",
+  },
+]
+`;
+
 exports[`list should tokenize a list with variable spaces beforehand 1`] = `
 Array [
   Object {
