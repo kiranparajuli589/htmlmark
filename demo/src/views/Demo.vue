@@ -131,12 +131,14 @@ const clearInput = () => {
 }
 
 const prepareParser = () => {
-	mdp.value = new MDP({
+	const opts = {
 		indent: indentSize.value,
 		highlightFn: useCodeHighlighter.value ? highlightFn : null,
-		useLinkRefs: useLinkRefs.value,
+		useLinkRefs: !!useLinkRefs.value,
 		tabSize: tabSize.value,
-	})
+	}
+	console.log(opts)
+	mdp.value = new MDP(opts)
 	const inputValue = document.getElementById("md-input").value
 	if (inputValue) {
 		handleChange({target: {value: inputValue}})

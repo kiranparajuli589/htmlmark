@@ -9,6 +9,8 @@ export class MDP {
 	constructor(config = {}) {
 		this.config.indent = config.indent || 4
 		this.config.highlightFn = config.highlightFn || null
+		this.config.useLinkRefs = config.useLinkRefs
+		this.config.tabSize = config.tabSize || 4
 	}
 	/**
 	 * Runs the HTML parsing for the given lines of text
