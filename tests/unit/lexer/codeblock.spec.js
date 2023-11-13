@@ -179,4 +179,15 @@ describe("codeblock", () => {
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})
+	it("should remove the link refs inside codeblock but do not change the usage", () => {
+		const lines = `\`\`\` markdown
+[foo]: /url1
+[foo]: /url2
+
+[foo][]
+\`\`\``
+		const lexer = new Lexer(lines.split("\n"))
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
 })

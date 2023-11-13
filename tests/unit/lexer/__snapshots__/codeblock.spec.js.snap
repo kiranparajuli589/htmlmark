@@ -363,6 +363,22 @@ const a = 1
 ]
 `;
 
+exports[`codeblock should remove the link refs inside codeblock but do not change the usage 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "markdown",
+    "raw": "\`\`\` markdown
+
+[foo][]
+\`\`\`",
+    "type": "code-block",
+    "value": "
+[foo][]",
+  },
+]
+`;
+
 exports[`codeblock should set incomplete codeblock as a code block 1`] = `
 Array [
   Object {

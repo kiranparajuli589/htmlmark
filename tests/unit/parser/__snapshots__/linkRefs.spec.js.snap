@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Reference should not use the link references for link construction when disabled from config 1`] = `
+"<p><a href=\\"https://www.somewebsite.com\\">I&#39;m an inline-style link</a></p>
+<p><a href=\\"https://www.somewebsite.com\\" title=\\"somewebsite's Homepage\\">I&#39;m an inline-style link with title</a></p>
+<p>[I&#39;m a reference-style link][Arbitrary case-insensitive reference text]</p>
+<p><a href=\\"../blob/master/LICENSE\\">I&#39;m a relative reference to a repository file</a></p>
+<p><a href=\\"http://somewebsite.org\\" title=\\"somewebsite\\">You can use numbers for reference-style link definitions</a></p>
+<p>Or leave it empty and use the <a href=\\"http://www.somewebsite.com\\">link text itself</a></p>
+<p>Some text to show that the reference links can follow later.</p>
+"
+`;
+
+exports[`Link Reference should use the link references for link construction 1`] = `
+"<p><a href=\\"https://www.somewebsite.com\\">I&#39;m an inline-style link</a></p>
+<p><a href=\\"https://www.somewebsite.com\\" title=\\"somewebsite's Homepage\\">I&#39;m an inline-style link with title</a></p>
+<p>[I&#39;m a reference-style link][Arbitrary case-insensitive reference text]</p>
+<p><a href=\\"../blob/master/LICENSE\\">I&#39;m a relative reference to a repository file</a></p>
+<p><a href=\\"http://somewebsite.org\\" title=\\"somewebsite\\">You can use numbers for reference-style link definitions</a></p>
+<p>Or leave it empty and use the <a href=\\"http://www.somewebsite.com\\">link text itself</a></p>
+<p>Some text to show that the reference links can follow later.</p>
+"
+`;
