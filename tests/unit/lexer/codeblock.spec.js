@@ -190,4 +190,16 @@ describe("codeblock", () => {
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})
+	it("should accept long but equal ticked code blocks", () => {
+		const lines = `
+\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\` example
+===
+.
+<p>===</p>
+\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`
+`
+		const lexer = new Lexer(lines.split("\n"))
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
 })
