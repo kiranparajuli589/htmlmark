@@ -1,6 +1,6 @@
 {
 	"name": "htmlmark",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "Lightweight markdown parser",
 	"main": "dist/mdp.cjs",
 	"module": "dist/mdp.esm.js",

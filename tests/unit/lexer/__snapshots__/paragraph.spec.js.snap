@@ -110,24 +110,6 @@ Array [
 ]
 `;
 
-exports[`paragraph should allow escaped escape character but the only one 1`] = `
-Array [
-  Object {
-    "indent": 0,
-    "raw": "\`\\\\\`\`",
-    "tokens": Array [
-      Object {
-        "raw": "\`\\\\\`\`",
-        "type": "code",
-        "value": "\\\\\`",
-      },
-    ],
-    "type": "paragraph",
-    "value": "\`\\\\\`\`",
-  },
-]
-`;
-
 exports[`paragraph should be deep tokenized: a ****bold**** text 1`] = `
 Array [
   Object {

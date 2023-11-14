@@ -4,7 +4,7 @@
 		<div class="hr" />
 		<div>
 			<p><strong>Name:</strong> HtmlMark</p>
-			<p><strong>Version:</strong> 0.2.0</p>
+			<p><strong>Version:</strong> 0.2.2</p>
 			<p><strong>Description</strong> A very lightweight markdown parser.</p>
 			<p><strong>Homepage:</strong> <a href="https://kiranparajuli589.github.io/htmlmark/">https://kiranparajuli589.github.io/htmlmark/</a></p>
 			<p><strong>Github:</strong> <a href="https://github.com/kiranparajuli589/htmlmark">https://github.com/kiranparajuli589/htmlmark</a></p>

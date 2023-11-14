@@ -1,5 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`codeblock should accept long but equal ticked code blocks 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "language": "example",
+    "raw": "\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\` example
+===
+.
+<p>===</p>
+\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`",
+    "type": "code-block",
+    "value": "===
+.
+<p>===</p>",
+  },
+  Object {
+    "type": "new-line",
+  },
+]
+`;
+
 exports[`codeblock should be set just with indentation bigger or equals to 4 at top 1`] = `
 Array [
   Object {

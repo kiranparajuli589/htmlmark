@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<h1>HtmlMark <code>v0.2.1</code></h1>
+		<h1>HtmlMark <code>v0.2.2</code></h1>
 		<hr>
 		<p>
 			<strong>HtmlMark</strong> is a very lightweight markdown parser.
