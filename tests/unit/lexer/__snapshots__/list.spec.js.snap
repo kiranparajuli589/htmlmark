@@ -554,6 +554,94 @@ Array [
 ]
 `;
 
+exports[`list should find closing ends in the next lines 1`] = `
+Array [
+  Object {
+    "indent": 0,
+    "items": Array [
+      Object {
+        "checked": null,
+        "count": "2",
+        "raw": "2.  **Start condition:** line begins with the string \`<!--\`.\\\\
+**End condition:**  line contains the string \`-->\`.",
+        "tokens": Array [
+          Object {
+            "indent": 0,
+            "raw": "**Start condition:** line begins with the string \`<!--\`.\\\\
+**End condition:**  line contains the string \`-->\`.",
+            "tokens": Array [
+              Object {
+                "raw": "**Start condition:**",
+                "tokens": Array [
+                  Object {
+                    "raw": "Start condition:",
+                    "type": "text",
+                    "value": "Start condition:",
+                  },
+                ],
+                "type": "bold",
+              },
+              Object {
+                "raw": " line begins with the string ",
+                "type": "text",
+                "value": " line begins with the string ",
+              },
+              Object {
+                "raw": "\`<!--\`",
+                "type": "code",
+                "value": "<!--",
+              },
+              Object {
+                "raw": ".\\\\ ",
+                "type": "text",
+                "value": ".\\\\ ",
+              },
+              Object {
+                "raw": "**End condition:**",
+                "tokens": Array [
+                  Object {
+                    "raw": "End condition:",
+                    "type": "text",
+                    "value": "End condition:",
+                  },
+                ],
+                "type": "bold",
+              },
+              Object {
+                "raw": "  line contains the string ",
+                "type": "text",
+                "value": "  line contains the string ",
+              },
+              Object {
+                "raw": "\`-->\`",
+                "type": "code",
+                "value": "-->",
+              },
+              Object {
+                "raw": ".",
+                "type": "text",
+                "value": ".",
+              },
+            ],
+            "type": "paragraph",
+            "value": "**Start condition:** line begins with the string \`<!--\`.\\\\ **End condition:**  line contains the string \`-->\`.",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": Object {
+      "checklist": false,
+      "identifier": null,
+      "ordered": true,
+    },
+    "raw": "2.  **Start condition:** line begins with the string \`<!--\`.\\\\
+**End condition:**  line contains the string \`-->\`.",
+    "type": "list",
+  },
+]
+`;
+
 exports[`list should tokenize a list with variable spaces beforehand 1`] = `
 Array [
   Object {

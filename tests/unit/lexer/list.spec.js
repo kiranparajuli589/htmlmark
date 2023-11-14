@@ -168,4 +168,11 @@ This is a paragraph.
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})
+	it("should find closing ends in the next lines", () => {
+		const lines = `2.  **Start condition:** line begins with the string \`<!--\`.\\
+**End condition:**  line contains the string \`-->\`.`
+		const lexer = new Lexer(lines.split("\n"))
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
 })
