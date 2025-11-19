@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`codeblock should accept long but equal ticked code blocks 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "example",
     "raw": "\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\` example
@@ -15,15 +15,15 @@ Array [
 .
 <p>===</p>",
   },
-  Object {
+  {
     "type": "new-line",
   },
 ]
 `;
 
 exports[`codeblock should be set just with indentation bigger or equals to 4 at top 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 4,
     "language": null,
     "raw": "    one
@@ -34,11 +34,11 @@ Array [
       two
 three",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "four",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "four",
         "type": "text",
         "value": "four",
@@ -51,12 +51,12 @@ three",
 `;
 
 exports[`codeblock should be set just with indentation bigger or equals to 4 below newline 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "zero one two",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "zero one two",
         "type": "text",
         "value": "zero one two",
@@ -65,10 +65,10 @@ Array [
     "type": "paragraph",
     "value": "zero one two",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 4,
     "language": null,
     "raw": "    one
@@ -79,11 +79,11 @@ Array [
       two
 three",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "four",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "four",
         "type": "text",
         "value": "four",
@@ -96,16 +96,16 @@ three",
 `;
 
 exports[`codeblock should be set just with indentation bigger or equals to 4 but consecutive with other tokens 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "zero one two
     one
           two
     three
 four",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "zero one two     one           two     three four",
         "type": "text",
         "value": "zero one two     one           two     three four",
@@ -118,16 +118,16 @@ four",
 `;
 
 exports[`codeblock should be work just fine within a list item 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": "4",
         "raw": "4.  What is the exact rule for determining when list items get
-	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?
+	wrapped in \`<p>\` tags?  Can a list be partially "loose" and partially
+	"tight"?  What should we do with a list like this?
 
 		\`\`\` markdown
 		1. one
@@ -135,36 +135,36 @@ Array [
 		2. two
 		3. three
 		\`\`\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "What is the exact rule for determining when list items get
-	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?",
-            "tokens": Array [
-              Object {
+	wrapped in \`<p>\` tags?  Can a list be partially "loose" and partially
+	"tight"?  What should we do with a list like this?",
+            "tokens": [
+              {
                 "raw": "What is the exact rule for determining when list items get 	wrapped in ",
                 "type": "text",
                 "value": "What is the exact rule for determining when list items get 	wrapped in ",
               },
-              Object {
+              {
                 "raw": "\`<p>\`",
                 "type": "code",
                 "value": "<p>",
               },
-              Object {
-                "raw": " tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
+              {
+                "raw": " tags?  Can a list be partially "loose" and partially 	"tight"?  What should we do with a list like this?",
                 "type": "text",
-                "value": " tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
+                "value": " tags?  Can a list be partially "loose" and partially 	"tight"?  What should we do with a list like this?",
               },
             ],
             "type": "paragraph",
-            "value": "What is the exact rule for determining when list items get 	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially 	\\"tight\\"?  What should we do with a list like this?",
+            "value": "What is the exact rule for determining when list items get 	wrapped in \`<p>\` tags?  Can a list be partially "loose" and partially 	"tight"?  What should we do with a list like this?",
           },
-          Object {
+          {
             "type": "new-line",
           },
-          Object {
+          {
             "indent": 8,
             "language": "markdown",
             "raw": "		\`\`\` markdown
@@ -183,14 +183,14 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": null,
       "ordered": true,
     },
     "raw": "4.  What is the exact rule for determining when list items get
-	wrapped in \`<p>\` tags?  Can a list be partially \\"loose\\" and partially
-	\\"tight\\"?  What should we do with a list like this?
+	wrapped in \`<p>\` tags?  Can a list be partially "loose" and partially
+	"tight"?  What should we do with a list like this?
 
 		\`\`\` markdown
 		1. one
@@ -200,15 +200,15 @@ Array [
 		\`\`\`",
     "type": "list",
   },
-  Object {
+  {
     "type": "new-line",
   },
 ]
 `;
 
 exports[`codeblock should cope with empty body 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -220,8 +220,8 @@ Array [
 `;
 
 exports[`codeblock should cope with multiple items 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -230,11 +230,11 @@ const a = 1
     "type": "code-block",
     "value": "const a = 1",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "some people are funny",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "some people are funny",
         "type": "text",
         "value": "some people are funny",
@@ -247,8 +247,8 @@ const a = 1
 `;
 
 exports[`codeblock should detect acceptable indent for closing codeblock 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -265,8 +265,8 @@ const c = 3",
 `;
 
 exports[`codeblock should detect mis-indented closing codeblock 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -284,8 +284,8 @@ const c = 3
 `;
 
 exports[`codeblock should not be broken with acceptable wrong indent 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": null,
     "raw": "   \`\`\`
@@ -298,8 +298,8 @@ abcd
 `;
 
 exports[`codeblock should parse multiple consecutive codeblocks 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -308,7 +308,7 @@ const a = 1
     "type": "code-block",
     "value": "const a = 1",
   },
-  Object {
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -321,8 +321,8 @@ const b = 2
 `;
 
 exports[`codeblock should parse the codeblock 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -335,8 +335,8 @@ const a = 1
 `;
 
 exports[`codeblock should parse the codeblock with multiple lines 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -351,8 +351,8 @@ const b = 2",
 `;
 
 exports[`codeblock should parse the codeblock with multiple lines and a newline 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "js",
     "raw": "\`\`\`js
@@ -371,8 +371,8 @@ const c = 3",
 `;
 
 exports[`codeblock should parse the codeblock without the language 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": null,
     "raw": "\`\`\`
@@ -385,8 +385,8 @@ const a = 1
 `;
 
 exports[`codeblock should remove the link refs inside codeblock but do not change the usage 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "language": "markdown",
     "raw": "\`\`\` markdown
@@ -401,12 +401,12 @@ Array [
 `;
 
 exports[`codeblock should set incomplete codeblock as a code block 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "some line",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "some line",
         "type": "text",
         "value": "some line",
@@ -415,7 +415,7 @@ Array [
     "type": "paragraph",
     "value": "some line",
   },
-  Object {
+  {
     "indent": 4,
     "language": "js",
     "raw": "    \`\`\`js
@@ -425,11 +425,11 @@ Array [
     "value": "const a = 1
 const b = 2",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "here again",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "here again",
         "type": "text",
         "value": "here again",

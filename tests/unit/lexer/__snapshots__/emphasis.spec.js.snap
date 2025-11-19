@@ -1,33 +1,33 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`emphasis bold should be deep tokenized 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "**bold with \`code\` and *italics* and ~~strikes~~ and [link](https://kiranparajuli.com.np)**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "bold with ",
             "type": "text",
             "value": "bold with ",
           },
-          Object {
+          {
             "raw": "\`code\`",
             "type": "code",
             "value": "code",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "*italics*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "italics",
                 "type": "text",
                 "value": "italics",
@@ -35,15 +35,15 @@ Array [
             ],
             "type": "italic",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "~~strikes~~",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "strikes",
                 "type": "text",
                 "value": "strikes",
@@ -51,19 +51,19 @@ Array [
             ],
             "type": "strike-through",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "[link](https://kiranparajuli.com.np)",
-            "tokens": Object {
+            "tokens": {
               "href": "https://kiranparajuli.com.np",
-              "title": Object {
+              "title": {
                 "raw": "link",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "link",
                     "type": "text",
                     "value": "link",
@@ -85,15 +85,15 @@ Array [
 `;
 
 exports[`emphasis bold should match the consecutive occurrences 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "**first bold** **second bold** **third bold**",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "**first bold**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "first bold",
             "type": "text",
             "value": "first bold",
@@ -101,15 +101,15 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "**second bold**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "second bold",
             "type": "text",
             "value": "second bold",
@@ -117,15 +117,15 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "**third bold**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "third bold",
             "type": "text",
             "value": "third bold",
@@ -141,32 +141,32 @@ Array [
 `;
 
 exports[`emphasis code should match the consecutive occurrences 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "\`first code\` \`second code\` \`third code\`",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "\`first code\`",
         "type": "code",
         "value": "first code",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "\`second code\`",
         "type": "code",
         "value": "second code",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "\`third code\`",
         "type": "code",
         "value": "third code",
@@ -179,12 +179,12 @@ Array [
 `;
 
 exports[`emphasis code should not be deep tokenized 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "\`code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)\`",
         "type": "code",
         "value": "code with ~ gem and **bold** and *italics* and [link](https://kiranparajuli.com.np)",
@@ -197,33 +197,33 @@ Array [
 `;
 
 exports[`emphasis italics should be deep tokenized 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "*italics with \`code\` and ~~strikes~~ and [link](https://kiranparajuli.com.np)*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "italics with ",
             "type": "text",
             "value": "italics with ",
           },
-          Object {
+          {
             "raw": "\`code\`",
             "type": "code",
             "value": "code",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "~~strikes~~",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "strikes",
                 "type": "text",
                 "value": "strikes",
@@ -231,19 +231,19 @@ Array [
             ],
             "type": "strike-through",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "[link](https://kiranparajuli.com.np)",
-            "tokens": Object {
+            "tokens": {
               "href": "https://kiranparajuli.com.np",
-              "title": Object {
+              "title": {
                 "raw": "link",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "link",
                     "type": "text",
                     "value": "link",
@@ -265,15 +265,15 @@ Array [
 `;
 
 exports[`emphasis italics should match the consecutive occurrences 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "*first italics* *second italics* *third italics*",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "*first italics*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "first italics",
             "type": "text",
             "value": "first italics",
@@ -281,15 +281,15 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "*second italics*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "second italics",
             "type": "text",
             "value": "second italics",
@@ -297,15 +297,15 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "*third italics*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "third italics",
             "type": "text",
             "value": "third italics",
@@ -321,22 +321,22 @@ Array [
 `;
 
 exports[`emphasis link should deep tokenized the link title 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "[*italic* with **bold** and \`code\`](https://kiranparajuli.com.np)",
-        "tokens": Object {
+        "tokens": {
           "href": "https://kiranparajuli.com.np",
-          "title": Object {
+          "title": {
             "raw": "*italic* with **bold** and \`code\`",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "*italic*",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "italic",
                     "type": "text",
                     "value": "italic",
@@ -344,15 +344,15 @@ Array [
                 ],
                 "type": "italic",
               },
-              Object {
+              {
                 "raw": " with ",
                 "type": "text",
                 "value": " with ",
               },
-              Object {
+              {
                 "raw": "**bold**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "bold",
                     "type": "text",
                     "value": "bold",
@@ -360,12 +360,12 @@ Array [
                 ],
                 "type": "bold",
               },
-              Object {
+              {
                 "raw": " and ",
                 "type": "text",
                 "value": " and ",
               },
-              Object {
+              {
                 "raw": "\`code\`",
                 "type": "code",
                 "value": "code",
@@ -384,19 +384,19 @@ Array [
 `;
 
 exports[`emphasis link should match the consecutive occurrences 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "[link](https://kiranparajuli.com.np) [link](https://kiranparajuli.com.np)",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "[link](https://kiranparajuli.com.np)",
-        "tokens": Object {
+        "tokens": {
           "href": "https://kiranparajuli.com.np",
-          "title": Object {
+          "title": {
             "raw": "link",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "link",
                 "type": "text",
                 "value": "link",
@@ -407,19 +407,19 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "[link](https://kiranparajuli.com.np)",
-        "tokens": Object {
+        "tokens": {
           "href": "https://kiranparajuli.com.np",
-          "title": Object {
+          "title": {
             "raw": "link",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "link",
                 "type": "text",
                 "value": "link",
@@ -438,33 +438,33 @@ Array [
 `;
 
 exports[`emphasis strikes should be deep tokenized 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "~~strikes with ~ gem and \`code\` and **bold** and *italics* and [link](https://kiranparajuli.com.np)~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strikes with ~ gem and ",
             "type": "text",
             "value": "strikes with ~ gem and ",
           },
-          Object {
+          {
             "raw": "\`code\`",
             "type": "code",
             "value": "code",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "**bold**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "bold",
                 "type": "text",
                 "value": "bold",
@@ -472,15 +472,15 @@ Array [
             ],
             "type": "bold",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "*italics*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "italics",
                 "type": "text",
                 "value": "italics",
@@ -488,19 +488,19 @@ Array [
             ],
             "type": "italic",
           },
-          Object {
+          {
             "raw": " and ",
             "type": "text",
             "value": " and ",
           },
-          Object {
+          {
             "raw": "[link](https://kiranparajuli.com.np)",
-            "tokens": Object {
+            "tokens": {
               "href": "https://kiranparajuli.com.np",
-              "title": Object {
+              "title": {
                 "raw": "link",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "link",
                     "type": "text",
                     "value": "link",
@@ -522,15 +522,15 @@ Array [
 `;
 
 exports[`emphasis strikes should match the consecutive occurrences 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "~~first strikes~~ ~~second strikes~~ ~~third strikes~~",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "~~first strikes~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "first strikes",
             "type": "text",
             "value": "first strikes",
@@ -538,15 +538,15 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "~~second strikes~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "second strikes",
             "type": "text",
             "value": "second strikes",
@@ -554,15 +554,15 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "~~third strikes~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "third strikes",
             "type": "text",
             "value": "third strikes",

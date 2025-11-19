@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`code highlight support should highlight code blocks 1`] = `
-"<pre><code class='language-javascript'><span class=\\"hljs-keyword\\">const</span> a = <span class=\\"hljs-number\\">1</span></code></pre>
+"<pre><code class='language-javascript'><span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span></code></pre>
 "
 `;

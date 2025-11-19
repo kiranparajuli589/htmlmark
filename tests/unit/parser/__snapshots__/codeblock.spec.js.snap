@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`CodeBlock Parsing should cope with multiple items 1`] = `
 "<pre><code class='language-js'>const a = 1</code></pre>

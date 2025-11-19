@@ -88,7 +88,6 @@ describe("Paragraph Parsing", () => {
 		const lines = [
 			"this is \\[google] link",
 			"",
-			// eslint-disable-next-line no-useless-escape
 			"this is a normal \\* asterisk \\* here again"
 		]
 		const lexerData = mdp.h(lines)

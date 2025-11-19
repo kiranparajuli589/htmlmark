@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`escape should escape >, <, &, ', " characters 1`] = `
 "<p>&gt; &lt; &amp; &#39; &quot; &lt;&gt;&amp;&#39;&quot;</p>
@@ -11,6 +11,6 @@ exports[`escape should escape inside block elements 1`] = `
 `;
 
 exports[`escape should not escape unescaped characters 1`] = `
-"<p># not a heading \\\\&gt; not a blockquote * not a list \` not code \` _ not italic_ ** not bold** ~ not strikethrough~ [some](http://example.com) not a link !<a href=\\"http://example.com\\">some</a> not an image | not a table |</p>
+"<p># not a heading \\&gt; not a blockquote * not a list \` not code \` _ not italic_ ** not bold** ~ not strikethrough~ [some](http://example.com) not a link !<a href="http://example.com">some</a> not an image | not a table |</p>
 "
 `;

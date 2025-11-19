@@ -130,4 +130,16 @@ describe("List Parsing", () => {
 		const html = mdp.h(lines)
 		expect(html).toMatchSnapshot()
 	})
+
+	it("should parse a li inside ol", () => {
+		const lines = [
+			"1. **Real-Time Chat Applications**",
+			"- Instant message delivery",
+			"- Typing indicators",
+			"- Online/offline status",
+			"- Examples: Slack, Discord, WhatsApp Web"
+		]
+		const html = mdp.h(lines)
+		expect(html).toMatchSnapshot()
+	})
 })

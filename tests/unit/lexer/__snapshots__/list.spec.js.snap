@@ -1,21 +1,21 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`list Should allow indented codeblock inside 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "To put a code block within a list item, the code block needs
 to be indented *twice* -- 8 spaces or two tabs:",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "To put a code block within a list item, the code block needs to be indented ",
         "type": "text",
         "value": "To put a code block within a list item, the code block needs to be indented ",
       },
-      Object {
+      {
         "raw": "*twice*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "twice",
             "type": "text",
             "value": "twice",
@@ -23,7 +23,7 @@ to be indented *twice* -- 8 spaces or two tabs:",
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " -- 8 spaces or two tabs:",
         "type": "text",
         "value": " -- 8 spaces or two tabs:",
@@ -32,21 +32,21 @@ to be indented *twice* -- 8 spaces or two tabs:",
     "type": "paragraph",
     "value": "To put a code block within a list item, the code block needs to be indented *twice* -- 8 spaces or two tabs:",
   },
-  Object {
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "*   A list item with a code block:
 
         <code goes here>",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "A list item with a code block:",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "A list item with a code block:",
                 "type": "text",
                 "value": "A list item with a code block:",
@@ -55,10 +55,10 @@ to be indented *twice* -- 8 spaces or two tabs:",
             "type": "paragraph",
             "value": "A list item with a code block:",
           },
-          Object {
+          {
             "type": "new-line",
           },
-          Object {
+          {
             "indent": 8,
             "language": null,
             "raw": "        <code goes here>",
@@ -69,7 +69,7 @@ to be indented *twice* -- 8 spaces or two tabs:",
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "*",
       "ordered": false,
@@ -79,16 +79,16 @@ to be indented *twice* -- 8 spaces or two tabs:",
         <code goes here>",
     "type": "list",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
     "level": 3,
     "raw": "### Code Blocks",
     "setext": false,
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "Code Blocks",
         "type": "text",
         "value": "Code Blocks",
@@ -101,28 +101,28 @@ to be indented *twice* -- 8 spaces or two tabs:",
 `;
 
 exports[`list less than 4 indent should not break the list 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "  - item **1**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item **1**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "**1**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "1",
                     "type": "text",
                     "value": "1",
@@ -137,28 +137,28 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "  - item [link](link-url)",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item [link](link-url)",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "[link](link-url)",
-                "tokens": Object {
+                "tokens": {
                   "href": "link-url",
-                  "title": Object {
+                  "title": {
                     "raw": "link",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": "link",
                         "type": "text",
                         "value": "link",
@@ -176,21 +176,21 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- item 3 \`code item\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item 3 \`code item\`",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item 3 ",
                 "type": "text",
                 "value": "item 3 ",
               },
-              Object {
+              {
                 "raw": "\`code item\`",
                 "type": "code",
                 "value": "code item",
@@ -202,16 +202,16 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- item 4",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item 4",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item 4",
                 "type": "text",
                 "value": "item 4",
@@ -224,7 +224,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -239,30 +239,30 @@ Array [
 `;
 
 exports[`list should allow lazy lexing 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": true,
         "count": null,
         "raw": "- [x] list *item* one
 omg this is merged with the above line",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "list *item* one
 omg this is merged with the above line",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "list ",
                 "type": "text",
                 "value": "list ",
               },
-              Object {
+              {
                 "raw": "*item*",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "item",
                     "type": "text",
                     "value": "item",
@@ -270,7 +270,7 @@ omg this is merged with the above line",
                 ],
                 "type": "italic",
               },
-              Object {
+              {
                 "raw": " one omg this is merged with the above line",
                 "type": "text",
                 "value": " one omg this is merged with the above line",
@@ -283,7 +283,7 @@ omg this is merged with the above line",
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": true,
       "identifier": "-",
       "ordered": false,
@@ -296,11 +296,11 @@ omg this is merged with the above line",
 `;
 
 exports[`list should allow lazy unless there is two line separator 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "- one
@@ -311,14 +311,14 @@ three
 	   here
 	   four
 	   \`\`\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "one
             two
 three",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one             two three",
                 "type": "text",
                 "value": "one             two three",
@@ -327,10 +327,10 @@ three",
             "type": "paragraph",
             "value": "one             two three",
           },
-          Object {
+          {
             "type": "new-line",
           },
-          Object {
+          {
             "indent": 4,
             "language": null,
             "raw": "	   \`\`\`
@@ -344,16 +344,16 @@ four",
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- two",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -365,16 +365,16 @@ four",
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- three",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "three",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "three",
                 "type": "text",
                 "value": "three",
@@ -387,7 +387,7 @@ four",
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -408,11 +408,11 @@ three
 `;
 
 exports[`list should cope with tabbed indentations 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": "3",
         "raw": "3.  Is a blank line needed before an indented code block?
@@ -423,24 +423,24 @@ Array [
 		paragraph
 				code?
 		\`\`\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "Is a blank line needed before an indented code block?
 		(\`Markdown.pl\` requires it, but this is not mentioned in the
 		documentation, and some implementations do not require it.)",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "Is a blank line needed before an indented code block? 		(",
                 "type": "text",
                 "value": "Is a blank line needed before an indented code block? 		(",
               },
-              Object {
+              {
                 "raw": "\`Markdown.pl\`",
                 "type": "code",
                 "value": "Markdown.pl",
               },
-              Object {
+              {
                 "raw": " requires it, but this is not mentioned in the 		documentation, and some implementations do not require it.)",
                 "type": "text",
                 "value": " requires it, but this is not mentioned in the 		documentation, and some implementations do not require it.)",
@@ -449,10 +449,10 @@ Array [
             "type": "paragraph",
             "value": "Is a blank line needed before an indented code block? 		(\`Markdown.pl\` requires it, but this is not mentioned in the 		documentation, and some implementations do not require it.)",
           },
-          Object {
+          {
             "type": "new-line",
           },
-          Object {
+          {
             "indent": 8,
             "language": "markdown",
             "raw": "		\`\`\` markdown
@@ -466,7 +466,7 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": "5",
         "raw": "5.  Can list markers be indented?  Can ordered list markers be right-aligned?
@@ -476,12 +476,12 @@ Array [
 		 9. item 2
 		10. item 2a
 		\`\`\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "Can list markers be indented?  Can ordered list markers be right-aligned?",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "Can list markers be indented?  Can ordered list markers be right-aligned?",
                 "type": "text",
                 "value": "Can list markers be indented?  Can ordered list markers be right-aligned?",
@@ -490,10 +490,10 @@ Array [
             "type": "paragraph",
             "value": "Can list markers be indented?  Can ordered list markers be right-aligned?",
           },
-          Object {
+          {
             "type": "new-line",
           },
-          Object {
+          {
             "indent": 8,
             "language": "markdown",
             "raw": "		\`\`\` markdown
@@ -510,7 +510,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": null,
       "ordered": true,
@@ -532,14 +532,14 @@ Array [
 		\`\`\`",
     "type": "list",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "This is a paragraph.",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "This is a paragraph.",
         "type": "text",
         "value": "This is a paragraph.",
@@ -548,32 +548,32 @@ Array [
     "type": "paragraph",
     "value": "This is a paragraph.",
   },
-  Object {
+  {
     "type": "new-line",
   },
 ]
 `;
 
 exports[`list should find closing ends in the next lines 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": "2",
-        "raw": "2.  **Start condition:** line begins with the string \`<!--\`.\\\\
+        "raw": "2.  **Start condition:** line begins with the string \`<!--\`.\\
 **End condition:**  line contains the string \`-->\`.",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
-            "raw": "**Start condition:** line begins with the string \`<!--\`.\\\\
+            "raw": "**Start condition:** line begins with the string \`<!--\`.\\
 **End condition:**  line contains the string \`-->\`.",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "**Start condition:**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "Start condition:",
                     "type": "text",
                     "value": "Start condition:",
@@ -581,25 +581,25 @@ Array [
                 ],
                 "type": "bold",
               },
-              Object {
+              {
                 "raw": " line begins with the string ",
                 "type": "text",
                 "value": " line begins with the string ",
               },
-              Object {
+              {
                 "raw": "\`<!--\`",
                 "type": "code",
                 "value": "<!--",
               },
-              Object {
-                "raw": ".\\\\ ",
+              {
+                "raw": ".\\ ",
                 "type": "text",
-                "value": ".\\\\ ",
+                "value": ".\\ ",
               },
-              Object {
+              {
                 "raw": "**End condition:**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "End condition:",
                     "type": "text",
                     "value": "End condition:",
@@ -607,64 +607,353 @@ Array [
                 ],
                 "type": "bold",
               },
-              Object {
+              {
                 "raw": "  line contains the string ",
                 "type": "text",
                 "value": "  line contains the string ",
               },
-              Object {
+              {
                 "raw": "\`-->\`",
                 "type": "code",
                 "value": "-->",
               },
-              Object {
+              {
                 "raw": ".",
                 "type": "text",
                 "value": ".",
               },
             ],
             "type": "paragraph",
-            "value": "**Start condition:** line begins with the string \`<!--\`.\\\\ **End condition:**  line contains the string \`-->\`.",
+            "value": "**Start condition:** line begins with the string \`<!--\`.\\ **End condition:**  line contains the string \`-->\`.",
           },
         ],
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": null,
       "ordered": true,
     },
-    "raw": "2.  **Start condition:** line begins with the string \`<!--\`.\\\\
+    "raw": "2.  **Start condition:** line begins with the string \`<!--\`.\\
 **End condition:**  line contains the string \`-->\`.",
     "type": "list",
   },
 ]
 `;
 
-exports[`list should tokenize a list with variable spaces beforehand 1`] = `
-Array [
-  Object {
+exports[`list should tokenize a li inside ol 1`] = `
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
+        "checked": null,
+        "count": "1",
+        "raw": "1. **Real-Time Chat Applications**
+	- Instant message delivery
+	- Typing indicators
+	- Online/offline status
+	- Examples: Slack, Discord, WhatsApp Web",
+        "tokens": [
+          {
+            "indent": 0,
+            "raw": "**Real-Time Chat Applications**",
+            "tokens": [
+              {
+                "raw": "**Real-Time Chat Applications**",
+                "tokens": [
+                  {
+                    "raw": "Real-Time Chat Applications",
+                    "type": "text",
+                    "value": "Real-Time Chat Applications",
+                  },
+                ],
+                "type": "bold",
+              },
+            ],
+            "type": "paragraph",
+            "value": "**Real-Time Chat Applications**",
+          },
+          {
+            "indent": 4,
+            "items": [
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Instant message delivery",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Instant message delivery",
+                    "tokens": [
+                      {
+                        "raw": "Instant message delivery",
+                        "type": "text",
+                        "value": "Instant message delivery",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Instant message delivery",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Typing indicators",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Typing indicators",
+                    "tokens": [
+                      {
+                        "raw": "Typing indicators",
+                        "type": "text",
+                        "value": "Typing indicators",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Typing indicators",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Online/offline status",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Online/offline status",
+                    "tokens": [
+                      {
+                        "raw": "Online/offline status",
+                        "type": "text",
+                        "value": "Online/offline status",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Online/offline status",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Examples: Slack, Discord, WhatsApp Web",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Examples: Slack, Discord, WhatsApp Web",
+                    "tokens": [
+                      {
+                        "raw": "Examples: Slack, Discord, WhatsApp Web",
+                        "type": "text",
+                        "value": "Examples: Slack, Discord, WhatsApp Web",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Examples: Slack, Discord, WhatsApp Web",
+                  },
+                ],
+                "type": "list-item",
+              },
+            ],
+            "meta": {
+              "checklist": false,
+              "identifier": "-",
+              "ordered": false,
+            },
+            "raw": "	- Instant message delivery
+	- Typing indicators
+	- Online/offline status
+	- Examples: Slack, Discord, WhatsApp Web",
+            "type": "list",
+          },
+        ],
+        "type": "list-item",
+      },
+      {
+        "checked": null,
+        "count": "2",
+        "raw": "2. **Live Data Feeds**
+	- Stock market tickers
+	- Sports scores
+	- News feeds
+	- Social media updates",
+        "tokens": [
+          {
+            "indent": 0,
+            "raw": "**Live Data Feeds**",
+            "tokens": [
+              {
+                "raw": "**Live Data Feeds**",
+                "tokens": [
+                  {
+                    "raw": "Live Data Feeds",
+                    "type": "text",
+                    "value": "Live Data Feeds",
+                  },
+                ],
+                "type": "bold",
+              },
+            ],
+            "type": "paragraph",
+            "value": "**Live Data Feeds**",
+          },
+          {
+            "indent": 4,
+            "items": [
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Stock market tickers",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Stock market tickers",
+                    "tokens": [
+                      {
+                        "raw": "Stock market tickers",
+                        "type": "text",
+                        "value": "Stock market tickers",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Stock market tickers",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Sports scores",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Sports scores",
+                    "tokens": [
+                      {
+                        "raw": "Sports scores",
+                        "type": "text",
+                        "value": "Sports scores",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Sports scores",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- News feeds",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "News feeds",
+                    "tokens": [
+                      {
+                        "raw": "News feeds",
+                        "type": "text",
+                        "value": "News feeds",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "News feeds",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": null,
+                "raw": "	- Social media updates",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "Social media updates",
+                    "tokens": [
+                      {
+                        "raw": "Social media updates",
+                        "type": "text",
+                        "value": "Social media updates",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "Social media updates",
+                  },
+                ],
+                "type": "list-item",
+              },
+            ],
+            "meta": {
+              "checklist": false,
+              "identifier": "-",
+              "ordered": false,
+            },
+            "raw": "	- Stock market tickers
+	- Sports scores
+	- News feeds
+	- Social media updates",
+            "type": "list",
+          },
+        ],
+        "type": "list-item",
+      },
+    ],
+    "meta": {
+      "checklist": false,
+      "identifier": null,
+      "ordered": true,
+    },
+    "raw": "1. **Real-Time Chat Applications**
+	- Instant message delivery
+	- Typing indicators
+	- Online/offline status
+	- Examples: Slack, Discord, WhatsApp Web
+2. **Live Data Feeds**
+	- Stock market tickers
+	- Sports scores
+	- News feeds
+	- Social media updates",
+    "type": "list",
+  },
+  {
+    "type": "new-line",
+  },
+]
+`;
+
+exports[`list should tokenize a list with variable spaces beforehand 1`] = `
+[
+  {
+    "indent": 0,
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "  - item **1**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item **1**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "**1**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "1",
                     "type": "text",
                     "value": "1",
@@ -679,16 +968,16 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "  - one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -700,16 +989,16 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- two",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -721,16 +1010,16 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- three",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "three",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "three",
                 "type": "text",
                 "value": "three",
@@ -743,7 +1032,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -754,35 +1043,35 @@ Array [
 - three",
     "type": "list",
   },
-  Object {
+  {
     "type": "new-line",
   },
 ]
 `;
 
 exports[`list should tokenize a valid ordered list 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": "1",
         "raw": "1. item **1**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item **1**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "**1**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "1",
                     "type": "text",
                     "value": "1",
@@ -797,28 +1086,28 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": "1",
         "raw": "1. item [link](link-url)",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item [link](link-url)",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "[link](link-url)",
-                "tokens": Object {
+                "tokens": {
                   "href": "link-url",
-                  "title": Object {
+                  "title": {
                     "raw": "link",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": "link",
                         "type": "text",
                         "value": "link",
@@ -836,21 +1125,21 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": "1",
         "raw": "1. item 3 \`code item\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item 3 \`code item\`",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item 3 ",
                 "type": "text",
                 "value": "item 3 ",
               },
-              Object {
+              {
                 "raw": "\`code item\`",
                 "type": "code",
                 "value": "code item",
@@ -863,7 +1152,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": null,
       "ordered": true,
@@ -877,28 +1166,28 @@ Array [
 `;
 
 exports[`list should tokenize a valid un-ordered list 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "- item **1**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item **1**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "**1**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "1",
                     "type": "text",
                     "value": "1",
@@ -913,28 +1202,28 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- item [link](link-url)",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item [link](link-url)",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "[link](link-url)",
-                "tokens": Object {
+                "tokens": {
                   "href": "link-url",
-                  "title": Object {
+                  "title": {
                     "raw": "link",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": "link",
                         "type": "text",
                         "value": "link",
@@ -952,21 +1241,21 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- item 3 \`code item\`",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item 3 \`code item\`",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item 3 ",
                 "type": "text",
                 "value": "item 3 ",
               },
-              Object {
+              {
                 "raw": "\`code item\`",
                 "type": "code",
                 "value": "code item",
@@ -979,7 +1268,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -993,20 +1282,20 @@ Array [
 `;
 
 exports[`list should tokenize an empty list item 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "- one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -1018,23 +1307,23 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "-",
-        "tokens": Array [],
+        "tokens": [],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- two",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -1047,7 +1336,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -1061,27 +1350,27 @@ Array [
 `;
 
 exports[`list should tokenize an empty list item 2`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "-",
-        "tokens": Array [],
+        "tokens": [],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -1093,16 +1382,16 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- two",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -1115,7 +1404,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -1129,20 +1418,20 @@ Array [
 `;
 
 exports[`list should tokenize an empty list item 3`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "- one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -1154,16 +1443,16 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- two",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -1175,15 +1464,15 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "-",
-        "tokens": Array [],
+        "tokens": [],
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
@@ -1197,20 +1486,20 @@ Array [
 `;
 
 exports[`list should tokenize list combination 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "- one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -1222,16 +1511,18 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
-        "raw": "- two",
-        "tokens": Array [
-          Object {
+        "raw": "- two
+1. one
+2. two",
+        "tokens": [
+          {
             "indent": 0,
             "raw": "two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -1240,87 +1531,89 @@ Array [
             "type": "paragraph",
             "value": "two",
           },
+          {
+            "indent": 0,
+            "items": [
+              {
+                "checked": null,
+                "count": "1",
+                "raw": "1. one",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "one",
+                    "tokens": [
+                      {
+                        "raw": "one",
+                        "type": "text",
+                        "value": "one",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "one",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": null,
+                "count": "2",
+                "raw": "2. two",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "two",
+                    "tokens": [
+                      {
+                        "raw": "two",
+                        "type": "text",
+                        "value": "two",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "two",
+                  },
+                ],
+                "type": "list-item",
+              },
+            ],
+            "meta": {
+              "checklist": false,
+              "identifier": null,
+              "ordered": true,
+            },
+            "raw": "1. one
+2. two",
+            "type": "list",
+          },
         ],
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,
     },
     "raw": "- one
-- two",
-    "type": "list",
-  },
-  Object {
-    "indent": 0,
-    "items": Array [
-      Object {
-        "checked": null,
-        "count": "1",
-        "raw": "1. one",
-        "tokens": Array [
-          Object {
-            "indent": 0,
-            "raw": "one",
-            "tokens": Array [
-              Object {
-                "raw": "one",
-                "type": "text",
-                "value": "one",
-              },
-            ],
-            "type": "paragraph",
-            "value": "one",
-          },
-        ],
-        "type": "list-item",
-      },
-      Object {
-        "checked": null,
-        "count": "2",
-        "raw": "2. two",
-        "tokens": Array [
-          Object {
-            "indent": 0,
-            "raw": "two",
-            "tokens": Array [
-              Object {
-                "raw": "two",
-                "type": "text",
-                "value": "two",
-              },
-            ],
-            "type": "paragraph",
-            "value": "two",
-          },
-        ],
-        "type": "list-item",
-      },
-    ],
-    "meta": Object {
-      "checklist": false,
-      "identifier": null,
-      "ordered": true,
-    },
-    "raw": "1. one
+- two
+1. one
 2. two",
     "type": "list",
   },
-  Object {
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": false,
         "count": null,
         "raw": "- [ ] c empty",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "c empty",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "c empty",
                 "type": "text",
                 "value": "c empty",
@@ -1332,16 +1625,18 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": true,
         "count": null,
-        "raw": "- [x] c checked",
-        "tokens": Array [
-          Object {
+        "raw": "- [x] c checked
+1. [ ] c empty
+1. [x] c checked",
+        "tokens": [
+          {
             "indent": 0,
             "raw": "c checked",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "c checked",
                 "type": "text",
                 "value": "c checked",
@@ -1350,71 +1645,73 @@ Array [
             "type": "paragraph",
             "value": "c checked",
           },
+          {
+            "indent": 0,
+            "items": [
+              {
+                "checked": false,
+                "count": "1",
+                "raw": "1. [ ] c empty",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "c empty",
+                    "tokens": [
+                      {
+                        "raw": "c empty",
+                        "type": "text",
+                        "value": "c empty",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "c empty",
+                  },
+                ],
+                "type": "list-item",
+              },
+              {
+                "checked": true,
+                "count": "1",
+                "raw": "1. [x] c checked",
+                "tokens": [
+                  {
+                    "indent": 0,
+                    "raw": "c checked",
+                    "tokens": [
+                      {
+                        "raw": "c checked",
+                        "type": "text",
+                        "value": "c checked",
+                      },
+                    ],
+                    "type": "paragraph",
+                    "value": "c checked",
+                  },
+                ],
+                "type": "list-item",
+              },
+            ],
+            "meta": {
+              "checklist": true,
+              "identifier": null,
+              "ordered": true,
+            },
+            "raw": "1. [ ] c empty
+1. [x] c checked",
+            "type": "list",
+          },
         ],
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": true,
       "identifier": "-",
       "ordered": false,
     },
     "raw": "- [ ] c empty
-- [x] c checked",
-    "type": "list",
-  },
-  Object {
-    "indent": 0,
-    "items": Array [
-      Object {
-        "checked": false,
-        "count": "1",
-        "raw": "1. [ ] c empty",
-        "tokens": Array [
-          Object {
-            "indent": 0,
-            "raw": "c empty",
-            "tokens": Array [
-              Object {
-                "raw": "c empty",
-                "type": "text",
-                "value": "c empty",
-              },
-            ],
-            "type": "paragraph",
-            "value": "c empty",
-          },
-        ],
-        "type": "list-item",
-      },
-      Object {
-        "checked": true,
-        "count": "1",
-        "raw": "1. [x] c checked",
-        "tokens": Array [
-          Object {
-            "indent": 0,
-            "raw": "c checked",
-            "tokens": Array [
-              Object {
-                "raw": "c checked",
-                "type": "text",
-                "value": "c checked",
-              },
-            ],
-            "type": "paragraph",
-            "value": "c checked",
-          },
-        ],
-        "type": "list-item",
-      },
-    ],
-    "meta": Object {
-      "checklist": true,
-      "identifier": null,
-      "ordered": true,
-    },
-    "raw": "1. [ ] c empty
+- [x] c checked
+1. [ ] c empty
 1. [x] c checked",
     "type": "list",
   },
@@ -1422,28 +1719,28 @@ Array [
 `;
 
 exports[`list should tokenize the nested list 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "items": Array [
-      Object {
+    "items": [
+      {
         "checked": null,
         "count": null,
         "raw": "- item **1**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item **1**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "**1**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "1",
                     "type": "text",
                     "value": "1",
@@ -1458,31 +1755,31 @@ Array [
         ],
         "type": "list-item",
       },
-      Object {
+      {
         "checked": null,
         "count": null,
         "raw": "- item [link](link-url)
     - item 3 \`code item\`
         - item 4
     - item 5 ~~strike~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": "item [link](link-url)",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "item ",
                 "type": "text",
                 "value": "item ",
               },
-              Object {
+              {
                 "raw": "[link](link-url)",
-                "tokens": Object {
+                "tokens": {
                   "href": "link-url",
-                  "title": Object {
+                  "title": {
                     "raw": "link",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": "link",
                         "type": "text",
                         "value": "link",
@@ -1497,25 +1794,25 @@ Array [
             "type": "paragraph",
             "value": "item [link](link-url)",
           },
-          Object {
+          {
             "indent": 4,
-            "items": Array [
-              Object {
+            "items": [
+              {
                 "checked": null,
                 "count": null,
                 "raw": "    - item 3 \`code item\`
         - item 4",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "indent": 0,
                     "raw": "item 3 \`code item\`",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": "item 3 ",
                         "type": "text",
                         "value": "item 3 ",
                       },
-                      Object {
+                      {
                         "raw": "\`code item\`",
                         "type": "code",
                         "value": "code item",
@@ -1524,19 +1821,19 @@ Array [
                     "type": "paragraph",
                     "value": "item 3 \`code item\`",
                   },
-                  Object {
+                  {
                     "indent": 8,
-                    "items": Array [
-                      Object {
+                    "items": [
+                      {
                         "checked": null,
                         "count": null,
                         "raw": "        - item 4",
-                        "tokens": Array [
-                          Object {
+                        "tokens": [
+                          {
                             "indent": 0,
                             "raw": "item 4",
-                            "tokens": Array [
-                              Object {
+                            "tokens": [
+                              {
                                 "raw": "item 4",
                                 "type": "text",
                                 "value": "item 4",
@@ -1549,7 +1846,7 @@ Array [
                         "type": "list-item",
                       },
                     ],
-                    "meta": Object {
+                    "meta": {
                       "checklist": false,
                       "identifier": "-",
                       "ordered": false,
@@ -1560,24 +1857,24 @@ Array [
                 ],
                 "type": "list-item",
               },
-              Object {
+              {
                 "checked": null,
                 "count": null,
                 "raw": "    - item 5 ~~strike~~",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "indent": 0,
                     "raw": "item 5 ~~strike~~",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": "item 5 ",
                         "type": "text",
                         "value": "item 5 ",
                       },
-                      Object {
+                      {
                         "raw": "~~strike~~",
-                        "tokens": Array [
-                          Object {
+                        "tokens": [
+                          {
                             "raw": "strike",
                             "type": "text",
                             "value": "strike",
@@ -1593,7 +1890,7 @@ Array [
                 "type": "list-item",
               },
             ],
-            "meta": Object {
+            "meta": {
               "checklist": false,
               "identifier": "-",
               "ordered": false,
@@ -1607,7 +1904,7 @@ Array [
         "type": "list-item",
       },
     ],
-    "meta": Object {
+    "meta": {
       "checklist": false,
       "identifier": "-",
       "ordered": false,

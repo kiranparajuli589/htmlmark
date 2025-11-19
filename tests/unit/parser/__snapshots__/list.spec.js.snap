@@ -1,10 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`List Parsing indent should break the list 1`] = `
 "<ul>
   <li>item <strong>1</strong></li>
-  <li>item <a href=\\"link-url\\">link</a><ul>
-  <li>item 3 <code>code item</code><ul>
+  <li><p>item <a href="link-url">link</a></p>
+<ul>
+  <li><p>item 3 <code>code item</code></p>
+<ul>
   <li>item 4</li>
 </ul>
 </li>
@@ -38,9 +40,23 @@ four</code></pre>
 exports[`List Parsing should detect list indent 1`] = `
 "<ul>
   <li>item <strong>1</strong></li>
-  <li>item <a href=\\"link-url\\">link</a></li>
+  <li>item <a href="link-url">link</a></li>
   <li>item 3 <code>code item</code></li>
 </ul>
+"
+`;
+
+exports[`List Parsing should parse a li inside ol 1`] = `
+"<ol>
+  <li><p><strong>Real-Time Chat Applications</strong></p>
+<ul>
+  <li>Instant message delivery</li>
+  <li>Typing indicators</li>
+  <li>Online/offline status</li>
+  <li>Examples: Slack, Discord, WhatsApp Web</li>
+</ul>
+</li>
+</ol>
 "
 `;
 
@@ -95,7 +111,7 @@ exports[`List Parsing should parse the indented codeblock inside 1`] = `
 exports[`List Parsing should tokenize a valid ordered list 1`] = `
 "<ol>
   <li>item <strong>1</strong></li>
-  <li>item <a href=\\"link-url\\">link</a></li>
+  <li>item <a href="link-url">link</a></li>
   <li>item 3 <code>code item</code></li>
 </ol>
 "
@@ -104,7 +120,7 @@ exports[`List Parsing should tokenize a valid ordered list 1`] = `
 exports[`List Parsing should tokenize a valid un-ordered list 1`] = `
 "<ul>
   <li>item <strong>1</strong></li>
-  <li>item <a href=\\"link-url\\">link</a></li>
+  <li>item <a href="link-url">link</a></li>
   <li>item 3 <code>code item</code></li>
 </ul>
 "
@@ -113,19 +129,21 @@ exports[`List Parsing should tokenize a valid un-ordered list 1`] = `
 exports[`List Parsing should tokenize list combination 1`] = `
 "<ul>
   <li>one</li>
-  <li>two</li>
-</ul>
+  <li><p>two</p>
 <ol>
   <li>one</li>
   <li>two</li>
 </ol>
+</li>
+</ul>
 <ul>
   <li><input type='checkbox'>c empty</li>
-  <li><input type='checkbox' checked>c checked</li>
-</ul>
+  <li><input type='checkbox' checked><p>c checked</p>
 <ol>
   <li><input type='checkbox'>c empty</li>
   <li><input type='checkbox' checked>c checked</li>
 </ol>
+</li>
+</ul>
 "
 `;

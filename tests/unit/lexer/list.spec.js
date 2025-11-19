@@ -175,4 +175,23 @@ This is a paragraph.
 		const tokens = lexer.run()
 		expect(tokens).toMatchSnapshot()
 	})
+	it("should tokenize a li inside ol", () => {
+		const para = `
+1. **Real-Time Chat Applications**
+	- Instant message delivery
+	- Typing indicators
+	- Online/offline status
+	- Examples: Slack, Discord, WhatsApp Web
+
+2. **Live Data Feeds**
+	- Stock market tickers
+	- Sports scores
+	- News feeds
+	- Social media updates
+		`
+		const lexer = new Lexer(para.split("\n"))
+		const tokens = lexer.run()
+		expect(tokens).toMatchSnapshot()
+	})
+
 })

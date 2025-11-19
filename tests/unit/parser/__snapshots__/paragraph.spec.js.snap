@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Paragraph Parsing a valid link reference 1`] = `
-"<p>this is <a href=\\"https://google.com\\">google</a> link</p>
+"<p>this is <a href="https://google.com">google</a> link</p>
 "
 `;
 
 exports[`Paragraph Parsing a valid link reference with text 1`] = `
-"<p>this is <a href=\\"https://google.com\\">toggle</a> link</p>
+"<p>this is <a href="https://google.com">toggle</a> link</p>
 "
 `;
 
@@ -16,14 +16,14 @@ exports[`Paragraph Parsing escape should escape inside code 1`] = `
 `;
 
 exports[`Paragraph Parsing html should detect html in the paragraph 1`] = `
-"<p><a href=\\"def\\">abc</a>  this is a link <a href='https://google.com'>google</a> here</p>
+"<p><a href="def">abc</a>  this is a link <a href='https://google.com'>google</a> here</p>
 <p>this is a <u>underlined</u> text here</p>
 "
 `;
 
 exports[`Paragraph Parsing html should detect html with attributes 1`] = `
 "<h1>Markdown: Syntax</h1>
-<p><ul id=\\"ProjectSubmenu\\">     <li><a href=\\"/projects/markdown/\\" title=\\"Markdown Project Page\\">Main</a></li>     <li><a href=\\"/projects/markdown/basics\\" title=\\"Markdown Basics\\">Basics</a></li>     <li><a class=\\"selected\\" title=\\"Markdown Syntax Documentation\\">Syntax</a></li>     <li><a href=\\"/projects/markdown/license\\" title=\\"Pricing and License Information\\">License</a></li>     <li><a href=\\"/projects/markdown/dingus\\" title=\\"Online Markdown Web Form\\">Dingus</a></li> </ul></p>
+<p><ul id="ProjectSubmenu">     <li><a href="/projects/markdown/" title="Markdown Project Page">Main</a></li>     <li><a href="/projects/markdown/basics" title="Markdown Basics">Basics</a></li>     <li><a class="selected" title="Markdown Syntax Documentation">Syntax</a></li>     <li><a href="/projects/markdown/license" title="Pricing and License Information">License</a></li>     <li><a href="/projects/markdown/dingus" title="Online Markdown Web Form">Dingus</a></li> </ul></p>
 "
 `;
 
