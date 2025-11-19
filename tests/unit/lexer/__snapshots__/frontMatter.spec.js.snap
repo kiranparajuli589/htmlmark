@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`FrontMatter should get front matter from input 1`] = `
-Object {
+{
   "title": "Hello World",
 }
 `;
@@ -12,14 +12,14 @@ exports[`FrontMatter should skip the frontmatter while parsing 1`] = `
 `;
 
 exports[`FrontMatter should skip the frontmatter while tokenizing 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "level": 1,
     "raw": "# Hello World",
     "setext": false,
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "Hello World",
         "type": "text",
         "value": "Hello World",
@@ -28,24 +28,24 @@ Array [
     "type": "heading",
     "value": "Hello World",
   },
-  Object {
+  {
     "type": "new-line",
   },
 ]
 `;
 
 exports[`FrontMatter should tokenize front matter with array, number and object 1`] = `
-Object {
-  "array": Array [
+{
+  "array": [
     1,
     2,
     3,
   ],
-  "object": Object {
+  "object": {
     "a": 1,
     "b": 2,
   },
-  "stringArray": Array [
+  "stringArray": [
     "a",
     "b",
     "c",
@@ -55,9 +55,9 @@ Object {
 `;
 
 exports[`FrontMatter should tokenize more real fixture 1`] = `
-Object {
+{
   "date": "2023-10-12 12:00:00",
-  "tags": Array [
+  "tags": [
     "django",
     "vue",
     "docker",

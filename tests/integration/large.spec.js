@@ -9,7 +9,6 @@ const mdp = new HtmlMark({
 
 describe("Large MD To HTML", () => {
 	it.each([
-		// eslint-disable-next-line no-undef
 		File.pathJoin(__dirname, "..", "fixtures/large_markdown.md")
 		// File.pathJoin(__dirname, "..", "fixtures/markdownit.md")
 	])("should parse the large markdown file content to html", (path) => {

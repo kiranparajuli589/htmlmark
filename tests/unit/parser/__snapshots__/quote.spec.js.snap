@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Quote Parsing greedy newline 1`] = `
 "<blockquote>
@@ -46,7 +46,7 @@ exports[`Quote Parsing should deep tokenize quote with multiple depth 3`] = `
   <blockquote>
   <blockquote>
   <blockquote>
-  <p> quote <a href=\\"link-url\\">link-title</a> with <em>two</em></p>
+  <p> quote <a href="link-url">link-title</a> with <em>two</em></p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -70,7 +70,7 @@ exports[`Quote Parsing should deep tokenize quote with zero depth 2`] = `
 
 exports[`Quote Parsing should deep tokenize quote with zero depth 3`] = `
 "<blockquote>
-  <p> quote <a href=\\"link-url\\">link-title</a> with <em>two</em></p>
+  <p> quote <a href="link-url">link-title</a> with <em>two</em></p>
 </blockquote>
 "
 `;

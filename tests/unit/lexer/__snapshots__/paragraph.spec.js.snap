@@ -1,24 +1,24 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`paragraph a valid link reference 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "this is [google] link",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "this is ",
         "type": "text",
         "value": "this is ",
       },
-      Object {
+      {
         "raw": "[google]",
-        "tokens": Object {
+        "tokens": {
           "href": "https://google.com",
-          "title": Object {
+          "title": {
             "raw": "google",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "google",
                 "type": "text",
                 "value": "google",
@@ -29,7 +29,7 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " link",
         "type": "text",
         "value": " link",
@@ -42,24 +42,24 @@ Array [
 `;
 
 exports[`paragraph a valid link reference with text 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "this is [toggle][google] link",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "this is ",
         "type": "text",
         "value": "this is ",
       },
-      Object {
+      {
         "raw": "[toggle][google]",
-        "tokens": Object {
+        "tokens": {
           "href": "https://google.com",
-          "title": Object {
+          "title": {
             "raw": "toggle",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "toggle",
                 "type": "text",
                 "value": "toggle",
@@ -70,7 +70,7 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " link",
         "type": "text",
         "value": " link",
@@ -83,48 +83,48 @@ Array [
 `;
 
 exports[`paragraph should allow escaped escape character 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "raw": "this is \`go\\\\ogle\` link",
-    "tokens": Array [
-      Object {
+    "raw": "this is \`go\\ogle\` link",
+    "tokens": [
+      {
         "raw": "this is ",
         "type": "text",
         "value": "this is ",
       },
-      Object {
-        "raw": "\`go\\\\ogle\`",
+      {
+        "raw": "\`go\\ogle\`",
         "type": "code",
-        "value": "go\\\\ogle",
+        "value": "go\\ogle",
       },
-      Object {
+      {
         "raw": " link",
         "type": "text",
         "value": " link",
       },
     ],
     "type": "paragraph",
-    "value": "this is \`go\\\\ogle\` link",
+    "value": "this is \`go\\ogle\` link",
   },
 ]
 `;
 
 exports[`paragraph should be deep tokenized: a ****bold**** text 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a ****bold**** text",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a ",
         "type": "text",
         "value": "a ",
       },
-      Object {
+      {
         "raw": "****bold****",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "bold",
             "type": "text",
             "value": "bold",
@@ -132,7 +132,7 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " text",
         "type": "text",
         "value": " text",
@@ -145,28 +145,28 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: a **bold and *italics* text** 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a **bold and *italics* text**",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a ",
         "type": "text",
         "value": "a ",
       },
-      Object {
+      {
         "raw": "**bold and *italics* text**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "bold and ",
             "type": "text",
             "value": "bold and ",
           },
-          Object {
+          {
             "raw": "*italics*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "italics",
                 "type": "text",
                 "value": "italics",
@@ -174,7 +174,7 @@ Array [
             ],
             "type": "italic",
           },
-          Object {
+          {
             "raw": " text",
             "type": "text",
             "value": " text",
@@ -190,20 +190,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: a **bold** text 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a **bold** text",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a ",
         "type": "text",
         "value": "a ",
       },
-      Object {
+      {
         "raw": "**bold**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "bold",
             "type": "text",
             "value": "bold",
@@ -211,7 +211,7 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " text",
         "type": "text",
         "value": " text",
@@ -224,20 +224,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: a ~~~~strike~~~~~~~ here 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a ~~~~strike~~~~~~~ here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a ",
         "type": "text",
         "value": "a ",
       },
-      Object {
+      {
         "raw": "~~~~strike~~~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strike",
             "type": "text",
             "value": "strike",
@@ -245,7 +245,7 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": "~~~ here",
         "type": "text",
         "value": "~~~ here",
@@ -258,24 +258,24 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: a clean [link](http://localhost 'tooltip') is here 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a clean [link](http://localhost 'tooltip') is here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a clean ",
         "type": "text",
         "value": "a clean ",
       },
-      Object {
+      {
         "raw": "[link](http://localhost 'tooltip')",
-        "tokens": Object {
+        "tokens": {
           "href": "http://localhost",
-          "title": Object {
+          "title": {
             "raw": "link",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "link",
                 "type": "text",
                 "value": "link",
@@ -286,7 +286,7 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " is here",
         "type": "text",
         "value": " is here",
@@ -299,32 +299,32 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: a link [with **bold** text](https://seeme) lets see 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a link [with **bold** text](https://seeme) lets see",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a link ",
         "type": "text",
         "value": "a link ",
       },
-      Object {
+      {
         "raw": "[with **bold** text](https://seeme)",
-        "tokens": Object {
+        "tokens": {
           "href": "https://seeme",
-          "title": Object {
+          "title": {
             "raw": "with **bold** text",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "with ",
                 "type": "text",
                 "value": "with ",
               },
-              Object {
+              {
                 "raw": "**bold**",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "bold",
                     "type": "text",
                     "value": "bold",
@@ -332,7 +332,7 @@ Array [
                 ],
                 "type": "bold",
               },
-              Object {
+              {
                 "raw": " text",
                 "type": "text",
                 "value": " text",
@@ -343,7 +343,7 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " lets see",
         "type": "text",
         "value": " lets see",
@@ -356,68 +356,68 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "a paragraph of <u>words</u> \`first code\` normal text here \`code body\` *first italics* here me crying *italic body* here me crying **first bolds** some normal again **bold body** [Kiran Parajuli](https://kiranparajuli.com.np) ~~strikes body~~ here some",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "a paragraph of ",
         "type": "text",
         "value": "a paragraph of ",
       },
-      Object {
+      {
         "raw": "<u>",
-        "tokens": Object {
+        "tokens": {
           "attributes": undefined,
           "isEndTag": false,
           "tag": "u",
         },
         "type": "html",
       },
-      Object {
+      {
         "raw": "words",
         "type": "text",
         "value": "words",
       },
-      Object {
+      {
         "raw": "</u>",
-        "tokens": Object {
+        "tokens": {
           "attributes": undefined,
           "isEndTag": true,
           "tag": "u",
         },
         "type": "html",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "\`first code\`",
         "type": "code",
         "value": "first code",
       },
-      Object {
+      {
         "raw": " normal text here ",
         "type": "text",
         "value": " normal text here ",
       },
-      Object {
+      {
         "raw": "\`code body\`",
         "type": "code",
         "value": "code body",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "*first italics*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "first italics",
             "type": "text",
             "value": "first italics",
@@ -425,15 +425,15 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " here me crying ",
         "type": "text",
         "value": " here me crying ",
       },
-      Object {
+      {
         "raw": "*italic body*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "italic body",
             "type": "text",
             "value": "italic body",
@@ -441,15 +441,15 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " here me crying ",
         "type": "text",
         "value": " here me crying ",
       },
-      Object {
+      {
         "raw": "**first bolds**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "first bolds",
             "type": "text",
             "value": "first bolds",
@@ -457,15 +457,15 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " some normal again ",
         "type": "text",
         "value": " some normal again ",
       },
-      Object {
+      {
         "raw": "**bold body**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "bold body",
             "type": "text",
             "value": "bold body",
@@ -473,19 +473,19 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "[Kiran Parajuli](https://kiranparajuli.com.np)",
-        "tokens": Object {
+        "tokens": {
           "href": "https://kiranparajuli.com.np",
-          "title": Object {
+          "title": {
             "raw": "Kiran Parajuli",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "Kiran Parajuli",
                 "type": "text",
                 "value": "Kiran Parajuli",
@@ -496,15 +496,15 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "~~strikes body~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strikes body",
             "type": "text",
             "value": "strikes body",
@@ -512,7 +512,7 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": " here some",
         "type": "text",
         "value": " here some",
@@ -525,20 +525,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: an ***italics*** text 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "an ***italics*** text",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "an ",
         "type": "text",
         "value": "an ",
       },
-      Object {
+      {
         "raw": "***italics***",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "italics",
             "type": "text",
             "value": "italics",
@@ -546,7 +546,7 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " text",
         "type": "text",
         "value": " text",
@@ -559,28 +559,28 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: an *italics and **bold** text* here 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "an *italics and **bold** text* here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "an ",
         "type": "text",
         "value": "an ",
       },
-      Object {
+      {
         "raw": "*italics and **bold** text*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "italics and ",
             "type": "text",
             "value": "italics and ",
           },
-          Object {
+          {
             "raw": "**bold**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "bold",
                 "type": "text",
                 "value": "bold",
@@ -588,7 +588,7 @@ Array [
             ],
             "type": "bold",
           },
-          Object {
+          {
             "raw": " text",
             "type": "text",
             "value": " text",
@@ -596,7 +596,7 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " here",
         "type": "text",
         "value": " here",
@@ -609,54 +609,54 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: an *italics with\\* asterisk* inside 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "raw": "an *italics with\\\\* asterisk* inside",
-    "tokens": Array [
-      Object {
+    "raw": "an *italics with\\* asterisk* inside",
+    "tokens": [
+      {
         "raw": "an ",
         "type": "text",
         "value": "an ",
       },
-      Object {
-        "raw": "*italics with\\\\* asterisk*",
-        "tokens": Array [
-          Object {
-            "raw": "italics with\\\\* asterisk",
+      {
+        "raw": "*italics with\\* asterisk*",
+        "tokens": [
+          {
+            "raw": "italics with\\* asterisk",
             "type": "text",
-            "value": "italics with\\\\* asterisk",
+            "value": "italics with\\* asterisk",
           },
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " inside",
         "type": "text",
         "value": " inside",
       },
     ],
     "type": "paragraph",
-    "value": "an *italics with\\\\* asterisk* inside",
+    "value": "an *italics with\\* asterisk* inside",
   },
 ]
 `;
 
 exports[`paragraph should be deep tokenized: an *italics* text 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "an *italics* text",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "an ",
         "type": "text",
         "value": "an ",
       },
-      Object {
+      {
         "raw": "*italics*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "italics",
             "type": "text",
             "value": "italics",
@@ -664,7 +664,7 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " text",
         "type": "text",
         "value": " text",
@@ -677,12 +677,12 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: an empty [link] reference is here 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "an empty [link] reference is here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "an empty [link] reference is here",
         "type": "text",
         "value": "an empty [link] reference is here",
@@ -695,19 +695,19 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: beautiful ![image](link 'one' 50 60) is here now. 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "beautiful ![image](link 'one' 50 60) is here now.",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "beautiful ",
         "type": "text",
         "value": "beautiful ",
       },
-      Object {
+      {
         "raw": "![image](link 'one' 50 60)",
-        "tokens": Object {
+        "tokens": {
           "alt": "image",
           "height": "60",
           "href": "link",
@@ -716,7 +716,7 @@ Array [
         },
         "type": "image",
       },
-      Object {
+      {
         "raw": " is here now.",
         "type": "text",
         "value": " is here now.",
@@ -729,19 +729,19 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: beautiful ![image](link 'one' 50) is here now. 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "beautiful ![image](link 'one' 50) is here now.",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "beautiful ",
         "type": "text",
         "value": "beautiful ",
       },
-      Object {
+      {
         "raw": "![image](link 'one' 50)",
-        "tokens": Object {
+        "tokens": {
           "alt": "image",
           "height": undefined,
           "href": "link",
@@ -750,7 +750,7 @@ Array [
         },
         "type": "image",
       },
-      Object {
+      {
         "raw": " is here now.",
         "type": "text",
         "value": " is here now.",
@@ -763,19 +763,19 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: beautiful ![image](link 'one') is here now. 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "beautiful ![image](link 'one') is here now.",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "beautiful ",
         "type": "text",
         "value": "beautiful ",
       },
-      Object {
+      {
         "raw": "![image](link 'one')",
-        "tokens": Object {
+        "tokens": {
           "alt": "image",
           "height": undefined,
           "href": "link",
@@ -784,7 +784,7 @@ Array [
         },
         "type": "image",
       },
-      Object {
+      {
         "raw": " is here now.",
         "type": "text",
         "value": " is here now.",
@@ -797,19 +797,19 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: beautiful ![image](link) is here now. 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "beautiful ![image](link) is here now.",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "beautiful ",
         "type": "text",
         "value": "beautiful ",
       },
-      Object {
+      {
         "raw": "![image](link)",
-        "tokens": Object {
+        "tokens": {
           "alt": "image",
           "height": undefined,
           "href": "link",
@@ -818,7 +818,7 @@ Array [
         },
         "type": "image",
       },
-      Object {
+      {
         "raw": " is here now.",
         "type": "text",
         "value": " is here now.",
@@ -831,24 +831,24 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: but a link [kiran](https://kiran.me 'hero') with tooltip is very amazing 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "but a link [kiran](https://kiran.me 'hero') with tooltip is very amazing",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "but a link ",
         "type": "text",
         "value": "but a link ",
       },
-      Object {
+      {
         "raw": "[kiran](https://kiran.me 'hero')",
-        "tokens": Object {
+        "tokens": {
           "href": "https://kiran.me",
-          "title": Object {
+          "title": {
             "raw": "kiran",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "kiran",
                 "type": "text",
                 "value": "kiran",
@@ -859,7 +859,7 @@ Array [
         },
         "type": "link",
       },
-      Object {
+      {
         "raw": " with tooltip is very amazing",
         "type": "text",
         "value": " with tooltip is very amazing",
@@ -872,22 +872,22 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: but will it \`find a **bold *and* italics** inside\` the code 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "but will it \`find a **bold *and* italics** inside\` the code",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "but will it ",
         "type": "text",
         "value": "but will it ",
       },
-      Object {
+      {
         "raw": "\`find a **bold *and* italics** inside\`",
         "type": "code",
         "value": "find a **bold *and* italics** inside",
       },
-      Object {
+      {
         "raw": " the code",
         "type": "text",
         "value": " the code",
@@ -900,20 +900,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: checkout this _cool italics_ here 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "checkout this _cool italics_ here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "checkout this ",
         "type": "text",
         "value": "checkout this ",
       },
-      Object {
+      {
         "raw": "_cool italics_",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "cool italics",
             "type": "text",
             "value": "cool italics",
@@ -921,7 +921,7 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " here",
         "type": "text",
         "value": " here",
@@ -934,28 +934,28 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: how are ~~~strikes _in_ the~~~ _wonderland_ 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "how are ~~~strikes _in_ the~~~ _wonderland_",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "how are ~",
         "type": "text",
         "value": "how are ~",
       },
-      Object {
+      {
         "raw": "~~strikes _in_ the~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strikes ",
             "type": "text",
             "value": "strikes ",
           },
-          Object {
+          {
             "raw": "_in_",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "in",
                 "type": "text",
                 "value": "in",
@@ -963,7 +963,7 @@ Array [
             ],
             "type": "italic",
           },
-          Object {
+          {
             "raw": " the",
             "type": "text",
             "value": " the",
@@ -971,15 +971,15 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": "~ ",
         "type": "text",
         "value": "~ ",
       },
-      Object {
+      {
         "raw": "_wonderland_",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "wonderland",
             "type": "text",
             "value": "wonderland",
@@ -995,20 +995,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: i ~~~am now~~~ unhappy 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "i ~~~am now~~~ unhappy",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "i ~",
         "type": "text",
         "value": "i ~",
       },
-      Object {
+      {
         "raw": "~~am now~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "am now",
             "type": "text",
             "value": "am now",
@@ -1016,7 +1016,7 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": "~ unhappy",
         "type": "text",
         "value": "~ unhappy",
@@ -1029,32 +1029,32 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: lets check for \`a code\` inside and code \`\`with multiple\`\` ticks 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "lets check for \`a code\` inside and code \`\`with multiple\`\` ticks",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "lets check for ",
         "type": "text",
         "value": "lets check for ",
       },
-      Object {
+      {
         "raw": "\`a code\`",
         "type": "code",
         "value": "a code",
       },
-      Object {
+      {
         "raw": " inside and code ",
         "type": "text",
         "value": " inside and code ",
       },
-      Object {
+      {
         "raw": "\`\`with multiple\`\`",
         "type": "code",
         "value": "with multiple",
       },
-      Object {
+      {
         "raw": " ticks",
         "type": "text",
         "value": " ticks",
@@ -1067,20 +1067,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: new ~~~strike~~ with beauty 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "new ~~~strike~~ with beauty",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "new ~",
         "type": "text",
         "value": "new ~",
       },
-      Object {
+      {
         "raw": "~~strike~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strike",
             "type": "text",
             "value": "strike",
@@ -1088,7 +1088,7 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": " with beauty",
         "type": "text",
         "value": " with beauty",
@@ -1101,46 +1101,46 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: no \\* mans \\* land 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "raw": "no \\\\* mans \\\\* land",
-    "tokens": Array [
-      Object {
-        "raw": "no \\\\* mans \\\\* land",
+    "raw": "no \\* mans \\* land",
+    "tokens": [
+      {
+        "raw": "no \\* mans \\* land",
         "type": "text",
-        "value": "no \\\\* mans \\\\* land",
+        "value": "no \\* mans \\* land",
       },
     ],
     "type": "paragraph",
-    "value": "no \\\\* mans \\\\* land",
+    "value": "no \\* mans \\* land",
   },
 ]
 `;
 
 exports[`paragraph should be deep tokenized: now **stars _in_ the** wonderland 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "now **stars _in_ the** wonderland",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "now ",
         "type": "text",
         "value": "now ",
       },
-      Object {
+      {
         "raw": "**stars _in_ the**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "stars ",
             "type": "text",
             "value": "stars ",
           },
-          Object {
+          {
             "raw": "_in_",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "in",
                 "type": "text",
                 "value": "in",
@@ -1148,7 +1148,7 @@ Array [
             ],
             "type": "italic",
           },
-          Object {
+          {
             "raw": " the",
             "type": "text",
             "value": " the",
@@ -1156,7 +1156,7 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " wonderland",
         "type": "text",
         "value": " wonderland",
@@ -1169,20 +1169,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: now with __underlined text__ within some ___underlined_text___ 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "now with __underlined text__ within some ___underlined_text___",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "now with ",
         "type": "text",
         "value": "now with ",
       },
-      Object {
+      {
         "raw": "__underlined text__",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "underlined text",
             "type": "text",
             "value": "underlined text",
@@ -1190,15 +1190,15 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " within some ",
         "type": "text",
         "value": " within some ",
       },
-      Object {
+      {
         "raw": "___underlined_text___",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "underlined_text",
             "type": "text",
             "value": "underlined_text",
@@ -1214,20 +1214,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: pool of a ~~~~~~~~strike~~~~~~~ 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "pool of a ~~~~~~~~strike~~~~~~~",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "pool of a ~~",
         "type": "text",
         "value": "pool of a ~~",
       },
-      Object {
+      {
         "raw": "~~~~~~strike~~~~~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strike",
             "type": "text",
             "value": "strike",
@@ -1235,7 +1235,7 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": "~",
         "type": "text",
         "value": "~",
@@ -1248,20 +1248,20 @@ Array [
 `;
 
 exports[`paragraph should be deep tokenized: some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigos~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\` 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "some normal and **bold with * gem** but pure *italics* is alos there baby now ~~coming~~hola amigos~~strike~~ wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "some normal and ",
         "type": "text",
         "value": "some normal and ",
       },
-      Object {
+      {
         "raw": "**bold with * gem**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "bold with * gem",
             "type": "text",
             "value": "bold with * gem",
@@ -1269,15 +1269,15 @@ Array [
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": " but pure ",
         "type": "text",
         "value": " but pure ",
       },
-      Object {
+      {
         "raw": "*italics*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "italics",
             "type": "text",
             "value": "italics",
@@ -1285,15 +1285,15 @@ Array [
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " is alos there baby now ",
         "type": "text",
         "value": " is alos there baby now ",
       },
-      Object {
+      {
         "raw": "~~coming~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "coming",
             "type": "text",
             "value": "coming",
@@ -1301,15 +1301,15 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": "hola amigos",
         "type": "text",
         "value": "hola amigos",
       },
-      Object {
+      {
         "raw": "~~strike~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "strike",
             "type": "text",
             "value": "strike",
@@ -1317,7 +1317,7 @@ Array [
         ],
         "type": "strike-through",
       },
-      Object {
+      {
         "raw": " wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`",
         "type": "text",
         "value": " wooo lala what about blazing *********here baby ~~~~~~~~~baby \`baby\`\`\`",
@@ -1330,12 +1330,12 @@ Array [
 `;
 
 exports[`paragraph should be separated with other tokens 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "abc",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "abc",
         "type": "text",
         "value": "abc",
@@ -1344,13 +1344,13 @@ Array [
     "type": "paragraph",
     "value": "abc",
   },
-  Object {
+  {
     "indent": 0,
     "level": 1,
     "raw": "# one",
     "setext": false,
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "one",
         "type": "text",
         "value": "one",
@@ -1359,11 +1359,11 @@ Array [
     "type": "heading",
     "value": "one",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "def",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "def",
         "type": "text",
         "value": "def",
@@ -1376,40 +1376,40 @@ Array [
 `;
 
 exports[`paragraph should detect html in the paragraph 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "this is a link <a href='https://google.com'>google</a> here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "this is a link ",
         "type": "text",
         "value": "this is a link ",
       },
-      Object {
+      {
         "raw": "<a href='https://google.com'>",
-        "tokens": Object {
+        "tokens": {
           "attributes": "href='https://google.com'",
           "isEndTag": false,
           "tag": "a",
         },
         "type": "html",
       },
-      Object {
+      {
         "raw": "google",
         "type": "text",
         "value": "google",
       },
-      Object {
+      {
         "raw": "</a>",
-        "tokens": Object {
+        "tokens": {
           "attributes": undefined,
           "isEndTag": true,
           "tag": "a",
         },
         "type": "html",
       },
-      Object {
+      {
         "raw": " here",
         "type": "text",
         "value": " here",
@@ -1418,42 +1418,42 @@ Array [
     "type": "paragraph",
     "value": "this is a link <a href='https://google.com'>google</a> here",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "this is a <u>underlined</u> text here",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "this is a ",
         "type": "text",
         "value": "this is a ",
       },
-      Object {
+      {
         "raw": "<u>",
-        "tokens": Object {
+        "tokens": {
           "attributes": undefined,
           "isEndTag": false,
           "tag": "u",
         },
         "type": "html",
       },
-      Object {
+      {
         "raw": "underlined",
         "type": "text",
         "value": "underlined",
       },
-      Object {
+      {
         "raw": "</u>",
-        "tokens": Object {
+        "tokens": {
           "attributes": undefined,
           "isEndTag": true,
           "tag": "u",
         },
         "type": "html",
       },
-      Object {
+      {
         "raw": " text here",
         "type": "text",
         "value": " text here",
@@ -1462,72 +1462,72 @@ Array [
     "type": "paragraph",
     "value": "this is a <u>underlined</u> text here",
   },
-  Object {
+  {
     "type": "new-line",
   },
 ]
 `;
 
 exports[`paragraph should ignore the escaped special characters 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "raw": "this is \\\\[google] link",
-    "tokens": Array [
-      Object {
-        "raw": "this is \\\\[google] link",
+    "raw": "this is \\[google] link",
+    "tokens": [
+      {
+        "raw": "this is \\[google] link",
         "type": "text",
-        "value": "this is \\\\[google] link",
+        "value": "this is \\[google] link",
       },
     ],
     "type": "paragraph",
-    "value": "this is \\\\[google] link",
+    "value": "this is \\[google] link",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
-    "raw": "this is a normal \\\\* asterisk \\\\* here again",
-    "tokens": Array [
-      Object {
-        "raw": "this is a normal \\\\* asterisk \\\\* here again",
+    "raw": "this is a normal \\* asterisk \\* here again",
+    "tokens": [
+      {
+        "raw": "this is a normal \\* asterisk \\* here again",
         "type": "text",
-        "value": "this is a normal \\\\* asterisk \\\\* here again",
+        "value": "this is a normal \\* asterisk \\* here again",
       },
     ],
     "type": "paragraph",
-    "value": "this is a normal \\\\* asterisk \\\\* here again",
+    "value": "this is a normal \\* asterisk \\* here again",
   },
 ]
 `;
 
 exports[`paragraph should merge consecutive paragraph not separated by other tokens 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "abc \`def\` *ghi
 jkl* mno **pqr*** stu",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "abc ",
         "type": "text",
         "value": "abc ",
       },
-      Object {
+      {
         "raw": "\`def\`",
         "type": "code",
         "value": "def",
       },
-      Object {
+      {
         "raw": " ",
         "type": "text",
         "value": " ",
       },
-      Object {
+      {
         "raw": "*ghi jkl*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "ghi jkl",
             "type": "text",
             "value": "ghi jkl",
@@ -1535,15 +1535,15 @@ jkl* mno **pqr*** stu",
         ],
         "type": "italic",
       },
-      Object {
+      {
         "raw": " mno ",
         "type": "text",
         "value": " mno ",
       },
-      Object {
+      {
         "raw": "**pqr**",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "pqr",
             "type": "text",
             "value": "pqr",
@@ -1551,7 +1551,7 @@ jkl* mno **pqr*** stu",
         ],
         "type": "bold",
       },
-      Object {
+      {
         "raw": "* stu",
         "type": "text",
         "value": "* stu",

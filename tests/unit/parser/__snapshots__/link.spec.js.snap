@@ -1,18 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`link should parse a link 1`] = `
-"<p><a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a></p>
+"<p><a href="https://kiranparajuli.com.np">Kiran Parajuli</a></p>
 "
 `;
 
 exports[`link should parse a link with text 1`] = `
-"<p><a href=\\"https://kiranparajuli.com.np\\">Kiran Parajuli</a> is a good</p>
+"<p><a href="https://kiranparajuli.com.np">Kiran Parajuli</a> is a good</p>
 "
 `;
 
 exports[`link should parse a link with title 1`] = `
-"<p>test <strong>bold <em>and</em> bold</strong> with <em>italics</em> and a <a href=\\"https://kiranparajuli.com.np\\" title=\\"K Pictures\\">Kiran Parajuli</a></p>
+"<p>test <strong>bold <em>and</em> bold</strong> with <em>italics</em> and a <a href="https://kiranparajuli.com.np" title="K Pictures">Kiran Parajuli</a></p>
 <p>here <em>is a <strong>beautiful</strong> piece of</em> art</p>
-<p><strong>Basic case.</strong>  If a string of lines <em>Ls</em> constitute a sequence of blocks <em>Bs</em>, then the result of prepending a [block quote marker] to the beginning of each line in <em>Ls</em> is a <a href=\\"#block-quotes\\">block quote</a> containing <em>Bs</em>.</p>
+<p><strong>Basic case.</strong>  If a string of lines <em>Ls</em> constitute a sequence of blocks <em>Bs</em>, then the result of prepending a [block quote marker] to the beginning of each line in <em>Ls</em> is a <a href="#block-quotes">block quote</a> containing <em>Bs</em>.</p>
 "
 `;

@@ -1,25 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`table cell count cell count should break the table 1 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -27,21 +27,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -53,11 +53,11 @@ Array [
     "type": "table",
     "withHeading": true,
   },
-  Object {
+  {
     "indent": 0,
     "raw": "| row 2 c1 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| row 2 c1 |",
         "type": "text",
         "value": "| row 2 c1 |",
@@ -70,25 +70,25 @@ Array [
 `;
 
 exports[`table cell count cell count should break the table 2 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -96,21 +96,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -122,14 +122,14 @@ Array [
     "type": "table",
     "withHeading": true,
   },
-  Object {
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
@@ -137,11 +137,11 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
@@ -157,25 +157,25 @@ Array [
 `;
 
 exports[`table heading body separator should not parse as table with invalid separator: '|-|-|' 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -183,21 +183,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": "-",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "-",
               "type": "text",
               "value": "-",
             },
           ],
         },
-        Object {
+        {
           "raw": "-",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "-",
               "type": "text",
               "value": "-",
@@ -205,21 +205,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -235,25 +235,25 @@ Array [
 `;
 
 exports[`table heading body separator should parse a table with separator: '| :-------: | :---------: |' 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -261,21 +261,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -283,21 +283,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 2 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c1",
               "type": "text",
               "value": "row 2 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 2 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c2",
               "type": "text",
               "value": "row 2 c2",
@@ -313,25 +313,25 @@ Array [
 `;
 
 exports[`table heading body separator should parse a table with separator: '| ------- | --------- |' 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -339,21 +339,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -361,21 +361,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 2 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c1",
               "type": "text",
               "value": "row 2 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 2 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c2",
               "type": "text",
               "value": "row 2 c2",
@@ -391,25 +391,25 @@ Array [
 `;
 
 exports[`table heading body separator should parse a table with separator: '|:-------:|:---------:|' 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -417,21 +417,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -439,21 +439,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 2 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c1",
               "type": "text",
               "value": "row 2 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 2 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c2",
               "type": "text",
               "value": "row 2 c2",
@@ -469,25 +469,25 @@ Array [
 `;
 
 exports[`table heading body separator should parse a table with separator: '|-------|-------|' 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -495,21 +495,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -517,21 +517,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 2 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c1",
               "type": "text",
               "value": "row 2 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 2 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 2 c2",
               "type": "text",
               "value": "row 2 c2",
@@ -547,14 +547,14 @@ Array [
 `;
 
 exports[`table indentation different indent header -> separator 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "| column 1 | column 2 |
     |---|---|
 | row 1 c1 | row 1 c2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |",
         "type": "text",
         "value": "| column 1 | column 2 |     |---|---| | row 1 c1 | row 1 c2 |",
@@ -567,8 +567,8 @@ Array [
 `;
 
 exports[`table indentation different indent header, separator -> body row 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 4,
     "language": null,
     "raw": "    | column 1 | column 2 |
@@ -577,11 +577,11 @@ Array [
     "value": "| column 1 | column 2 |
 |---|---|",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "| row 1 c1 | row 1 c2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| row 1 c1 | row 1 c2 |",
         "type": "text",
         "value": "| row 1 c1 | row 1 c2 |",
@@ -594,25 +594,25 @@ Array [
 `;
 
 exports[`table indentation indent should break the table 1 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -620,21 +620,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -646,11 +646,11 @@ Array [
     "type": "table",
     "withHeading": true,
   },
-  Object {
+  {
     "indent": 4,
     "raw": "    | row 2 c1 | row 2 c2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "    | row 2 c1 | row 2 c2 |",
         "type": "text",
         "value": "    | row 2 c1 | row 2 c2 |",
@@ -663,25 +663,25 @@ Array [
 `;
 
 exports[`table indentation indent should break the table 2 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -689,21 +689,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -715,24 +715,24 @@ Array [
     "type": "table",
     "withHeading": true,
   },
-  Object {
+  {
     "indent": 4,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -740,21 +740,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -770,25 +770,25 @@ Array [
 `;
 
 exports[`table indentation the indented table 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 2,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -796,21 +796,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -826,25 +826,25 @@ Array [
 `;
 
 exports[`table is not a table false separator 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -852,21 +852,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " --- ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "---",
               "type": "text",
               "value": "---",
             },
           ],
         },
-        Object {
+        {
           "raw": "--",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "--",
               "type": "text",
               "value": "--",
@@ -874,21 +874,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -904,12 +904,12 @@ Array [
 `;
 
 exports[`table is not a table only header 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "| column 1 | column 2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| column 1 | column 2 |",
         "type": "text",
         "value": "| column 1 | column 2 |",
@@ -922,13 +922,13 @@ Array [
 `;
 
 exports[`table is not a table only header and separator 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "| column 1 | column 2 |
 |---|---|",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| column 1 | column 2 | |---|---|",
         "type": "text",
         "value": "| column 1 | column 2 | |---|---|",
@@ -941,12 +941,12 @@ Array [
 `;
 
 exports[`table is not a table other tokens in between 1 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "| column 1 | column 2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| column 1 | column 2 |",
         "type": "text",
         "value": "| column 1 | column 2 |",
@@ -955,15 +955,15 @@ Array [
     "type": "paragraph",
     "value": "| column 1 | column 2 |",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "|---|---|
 | row 1 c1 | row 1 c2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "|---|---| | row 1 c1 | row 1 c2 |",
         "type": "text",
         "value": "|---|---| | row 1 c1 | row 1 c2 |",
@@ -976,13 +976,13 @@ Array [
 `;
 
 exports[`table is not a table other tokens in between 2 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
     "raw": "| column 1 | column 2 |
 |---|---|",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| column 1 | column 2 | |---|---|",
         "type": "text",
         "value": "| column 1 | column 2 | |---|---|",
@@ -991,14 +991,14 @@ Array [
     "type": "paragraph",
     "value": "| column 1 | column 2 | |---|---|",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "| row 1 c1 | row 1 c2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| row 1 c1 | row 1 c2 |",
         "type": "text",
         "value": "| row 1 c1 | row 1 c2 |",
@@ -1011,25 +1011,25 @@ Array [
 `;
 
 exports[`table is not a table other tokens in between 3 1`] = `
-Array [
-  Object {
+[
+  {
     "indent": 0,
-    "rows": Array [
-      Array [
-        Object {
+    "rows": [
+      [
+        {
           "raw": " column 1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 1",
               "type": "text",
               "value": "column 1",
             },
           ],
         },
-        Object {
+        {
           "raw": " column 2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "column 2",
               "type": "text",
               "value": "column 2",
@@ -1037,21 +1037,21 @@ Array [
           ],
         },
       ],
-      Array [
-        Object {
+      [
+        {
           "raw": " row 1 c1 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c1",
               "type": "text",
               "value": "row 1 c1",
             },
           ],
         },
-        Object {
+        {
           "raw": " row 1 c2 ",
-          "tokens": Array [
-            Object {
+          "tokens": [
+            {
               "raw": "row 1 c2",
               "type": "text",
               "value": "row 1 c2",
@@ -1063,14 +1063,14 @@ Array [
     "type": "table",
     "withHeading": true,
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "indent": 0,
     "raw": "| row 2 c1 | row 2 c2 |",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "| row 2 c1 | row 2 c2 |",
         "type": "text",
         "value": "| row 2 c1 | row 2 c2 |",

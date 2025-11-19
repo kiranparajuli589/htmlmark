@@ -1,26 +1,26 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`quote list inside should identify list inside the quote 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> - one
 > - two",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
-        "items": Array [
-          Object {
+        "items": [
+          {
             "checked": null,
             "count": null,
             "raw": " - one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": "one",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "one",
                     "type": "text",
                     "value": "one",
@@ -32,16 +32,16 @@ Array [
             ],
             "type": "list-item",
           },
-          Object {
+          {
             "checked": null,
             "count": null,
             "raw": " - two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": "two",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "two",
                     "type": "text",
                     "value": "two",
@@ -54,7 +54,7 @@ Array [
             "type": "list-item",
           },
         ],
-        "meta": Object {
+        "meta": {
           "checklist": false,
           "identifier": "-",
           "ordered": false,
@@ -70,28 +70,28 @@ Array [
 `;
 
 exports[`quote list inside should identify list inside with multiple separator in between 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> - one
 >
 >
 > - two",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
-        "items": Array [
-          Object {
+        "items": [
+          {
             "checked": null,
             "count": null,
             "raw": " - one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": "one",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "one",
                     "type": "text",
                     "value": "one",
@@ -103,16 +103,16 @@ Array [
             ],
             "type": "list-item",
           },
-          Object {
+          {
             "checked": null,
             "count": null,
             "raw": " - two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": "two",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "two",
                     "type": "text",
                     "value": "two",
@@ -125,7 +125,7 @@ Array [
             "type": "list-item",
           },
         ],
-        "meta": Object {
+        "meta": {
           "checklist": false,
           "identifier": "-",
           "ordered": false,
@@ -141,27 +141,27 @@ Array [
 `;
 
 exports[`quote list inside should identify list inside with single separator in between 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> - one
 >
 > - two",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
-        "items": Array [
-          Object {
+        "items": [
+          {
             "checked": null,
             "count": null,
             "raw": " - one",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": "one",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "one",
                     "type": "text",
                     "value": "one",
@@ -173,16 +173,16 @@ Array [
             ],
             "type": "list-item",
           },
-          Object {
+          {
             "checked": null,
             "count": null,
             "raw": " - two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": "two",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "two",
                     "type": "text",
                     "value": "two",
@@ -195,7 +195,7 @@ Array [
             "type": "list-item",
           },
         ],
-        "meta": Object {
+        "meta": {
           "checklist": false,
           "identifier": "-",
           "ordered": false,
@@ -211,8 +211,8 @@ Array [
 `;
 
 exports[`quote list inside should include a braced codeblock inside 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> normal text
@@ -220,12 +220,12 @@ Array [
 > code goes here
 > \`\`\`
 > normal text again",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " normal text",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " normal text",
             "type": "text",
             "value": " normal text",
@@ -234,7 +234,7 @@ Array [
         "type": "paragraph",
         "value": " normal text",
       },
-      Object {
+      {
         "indent": 0,
         "language": null,
         "raw": " \`\`\`
@@ -243,11 +243,11 @@ Array [
         "type": "code-block",
         "value": "code goes here",
       },
-      Object {
+      {
         "indent": 0,
         "raw": " normal text again",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " normal text again",
             "type": "text",
             "value": " normal text again",
@@ -263,21 +263,21 @@ Array [
 `;
 
 exports[`quote should allow laziness for plain paragraph 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> one quote
 > two quote
 three quote",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " one quote
  two quote
 three quote",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " one quote  two quote three quote",
             "type": "text",
             "value": " one quote  two quote three quote",
@@ -293,8 +293,8 @@ three quote",
 `;
 
 exports[`quote should chill with big quote head 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> > > three hit
@@ -306,25 +306,25 @@ Array [
 > > > three
 > > > > four
 some",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "depth": 1,
         "indent": 0,
         "raw": " > > three hit
  > two hit",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "depth": 1,
             "indent": 0,
             "raw": " > three hit
  two hit",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": " three hit
  two hit",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": " three hit  two hit",
                     "type": "text",
                     "value": " three hit  two hit",
@@ -339,10 +339,10 @@ some",
         ],
         "type": "quote",
       },
-      Object {
+      {
         "type": "new-line",
       },
-      Object {
+      {
         "depth": 1,
         "indent": 0,
         "raw": " > two
@@ -350,12 +350,12 @@ some",
  > > three
  > > > four
 some",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": " two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": " two",
                 "type": "text",
                 "value": " two",
@@ -364,13 +364,13 @@ some",
             "type": "paragraph",
             "value": " two",
           },
-          Object {
+          {
             "indent": 0,
             "level": 1,
             "raw": " # h-two",
             "setext": false,
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "h-two",
                 "type": "text",
                 "value": "h-two",
@@ -379,18 +379,18 @@ some",
             "type": "heading",
             "value": "h-two",
           },
-          Object {
+          {
             "depth": 1,
             "indent": 0,
             "raw": " > three
  > > four
 some",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": " three",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": " three",
                     "type": "text",
                     "value": " three",
@@ -399,18 +399,18 @@ some",
                 "type": "paragraph",
                 "value": " three",
               },
-              Object {
+              {
                 "depth": 1,
                 "indent": 0,
                 "raw": " > four
 some",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "indent": 0,
                     "raw": " four
 some",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": " four some",
                         "type": "text",
                         "value": " four some",
@@ -435,35 +435,35 @@ some",
 `;
 
 exports[`quote should deep tokenize quote '  > quote \`four\` with ~~five~~' 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 2,
     "raw": "  > quote \`four\` with ~~five~~",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " quote \`four\` with ~~five~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " quote ",
             "type": "text",
             "value": " quote ",
           },
-          Object {
+          {
             "raw": "\`four\`",
             "type": "code",
             "value": "four",
           },
-          Object {
+          {
             "raw": " with ",
             "type": "text",
             "value": " with ",
           },
-          Object {
+          {
             "raw": "~~five~~",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "five",
                 "type": "text",
                 "value": "five",
@@ -482,35 +482,35 @@ Array [
 `;
 
 exports[`quote should deep tokenize quote ' > > > quote \`four\` with ~~five~~' 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 3,
     "indent": 0,
     "raw": " > > > quote \`four\` with ~~five~~",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " quote \`four\` with ~~five~~",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " quote ",
             "type": "text",
             "value": " quote ",
           },
-          Object {
+          {
             "raw": "\`four\`",
             "type": "code",
             "value": "four",
           },
-          Object {
+          {
             "raw": " with ",
             "type": "text",
             "value": " with ",
           },
-          Object {
+          {
             "raw": "~~five~~",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "five",
                 "type": "text",
                 "value": "five",
@@ -528,32 +528,32 @@ Array [
 ]
 `;
 
-exports[`quote should deep tokenize quote '' 1`] = `Array []`;
+exports[`quote should deep tokenize quote '' 1`] = `[]`;
 
 exports[`quote should deep tokenize quote '> > > > quote [link-title](link-url) with *two*' 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 4,
     "indent": 0,
     "raw": "> > > > quote [link-title](link-url) with *two*",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " quote [link-title](link-url) with *two*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " quote ",
             "type": "text",
             "value": " quote ",
           },
-          Object {
+          {
             "raw": "[link-title](link-url)",
-            "tokens": Object {
+            "tokens": {
               "href": "link-url",
-              "title": Object {
+              "title": {
                 "raw": "link-title",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "link-title",
                     "type": "text",
                     "value": "link-title",
@@ -564,15 +564,15 @@ Array [
             },
             "type": "link",
           },
-          Object {
+          {
             "raw": " with ",
             "type": "text",
             "value": " with ",
           },
-          Object {
+          {
             "raw": "*two*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -591,25 +591,25 @@ Array [
 `;
 
 exports[`quote should deep tokenize quote '> > quote **one** with *two*' 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 2,
     "indent": 0,
     "raw": "> > quote **one** with *two*",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " quote **one** with *two*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " quote ",
             "type": "text",
             "value": " quote ",
           },
-          Object {
+          {
             "raw": "**one**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -617,15 +617,15 @@ Array [
             ],
             "type": "bold",
           },
-          Object {
+          {
             "raw": " with ",
             "type": "text",
             "value": " with ",
           },
-          Object {
+          {
             "raw": "*two*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -644,25 +644,25 @@ Array [
 `;
 
 exports[`quote should deep tokenize quote '> quote **one** with *two*' 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> quote **one** with *two*",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " quote **one** with *two*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " quote ",
             "type": "text",
             "value": " quote ",
           },
-          Object {
+          {
             "raw": "**one**",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "one",
                 "type": "text",
                 "value": "one",
@@ -670,15 +670,15 @@ Array [
             ],
             "type": "bold",
           },
-          Object {
+          {
             "raw": " with ",
             "type": "text",
             "value": " with ",
           },
-          Object {
+          {
             "raw": "*two*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -697,29 +697,29 @@ Array [
 `;
 
 exports[`quote should deep tokenize quote '> quote [link-title](link-url) with *two*' 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> quote [link-title](link-url) with *two*",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " quote [link-title](link-url) with *two*",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " quote ",
             "type": "text",
             "value": " quote ",
           },
-          Object {
+          {
             "raw": "[link-title](link-url)",
-            "tokens": Object {
+            "tokens": {
               "href": "link-url",
-              "title": Object {
+              "title": {
                 "raw": "link-title",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": "link-title",
                     "type": "text",
                     "value": "link-title",
@@ -730,15 +730,15 @@ Array [
             },
             "type": "link",
           },
-          Object {
+          {
             "raw": " with ",
             "type": "text",
             "value": " with ",
           },
-          Object {
+          {
             "raw": "*two*",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": "two",
                 "type": "text",
                 "value": "two",
@@ -757,8 +757,8 @@ Array [
 `;
 
 exports[`quote should leave separators 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> one
@@ -767,12 +767,12 @@ Array [
 >
 >
 > three",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " one",
             "type": "text",
             "value": " one",
@@ -781,13 +781,13 @@ Array [
         "type": "paragraph",
         "value": " one",
       },
-      Object {
+      {
         "indent": 0,
         "level": 1,
         "raw": " # two",
         "setext": false,
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "two",
             "type": "text",
             "value": "two",
@@ -796,14 +796,14 @@ Array [
         "type": "heading",
         "value": "two",
       },
-      Object {
+      {
         "type": "new-line",
       },
-      Object {
+      {
         "indent": 0,
         "raw": " three",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " three",
             "type": "text",
             "value": " three",
@@ -819,8 +819,8 @@ Array [
 `;
 
 exports[`quote should lex multiline quote with the circular depth 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> one
@@ -833,12 +833,12 @@ Array [
 > > r_two
 >
 > r_one",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " one",
             "type": "text",
             "value": " one",
@@ -847,7 +847,7 @@ Array [
         "type": "paragraph",
         "value": " one",
       },
-      Object {
+      {
         "depth": 1,
         "indent": 0,
         "raw": " > two
@@ -857,12 +857,12 @@ Array [
 >> r_three
  >
  > r_two",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "indent": 0,
             "raw": " two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": " two",
                 "type": "text",
                 "value": " two",
@@ -871,19 +871,19 @@ Array [
             "type": "paragraph",
             "value": " two",
           },
-          Object {
+          {
             "depth": 1,
             "indent": 0,
             "raw": " > three
  > > four
  >
 > r_three",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "indent": 0,
                 "raw": " three",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": " three",
                     "type": "text",
                     "value": " three",
@@ -892,16 +892,16 @@ Array [
                 "type": "paragraph",
                 "value": " three",
               },
-              Object {
+              {
                 "depth": 1,
                 "indent": 0,
                 "raw": " > four",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "indent": 0,
                     "raw": " four",
-                    "tokens": Array [
-                      Object {
+                    "tokens": [
+                      {
                         "raw": " four",
                         "type": "text",
                         "value": " four",
@@ -913,14 +913,14 @@ Array [
                 ],
                 "type": "quote",
               },
-              Object {
+              {
                 "type": "new-line",
               },
-              Object {
+              {
                 "indent": 0,
                 "raw": " r_three",
-                "tokens": Array [
-                  Object {
+                "tokens": [
+                  {
                     "raw": " r_three",
                     "type": "text",
                     "value": " r_three",
@@ -932,14 +932,14 @@ Array [
             ],
             "type": "quote",
           },
-          Object {
+          {
             "type": "new-line",
           },
-          Object {
+          {
             "indent": 0,
             "raw": " r_two",
-            "tokens": Array [
-              Object {
+            "tokens": [
+              {
                 "raw": " r_two",
                 "type": "text",
                 "value": " r_two",
@@ -951,14 +951,14 @@ Array [
         ],
         "type": "quote",
       },
-      Object {
+      {
         "type": "new-line",
       },
-      Object {
+      {
         "indent": 0,
         "raw": " r_one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " r_one",
             "type": "text",
             "value": " r_one",
@@ -974,19 +974,19 @@ Array [
 `;
 
 exports[`quote should not be lazy with heading 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> one
 > # two
 > three",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " one",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " one",
             "type": "text",
             "value": " one",
@@ -995,13 +995,13 @@ Array [
         "type": "paragraph",
         "value": " one",
       },
-      Object {
+      {
         "indent": 0,
         "level": 1,
         "raw": " # two",
         "setext": false,
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "two",
             "type": "text",
             "value": "two",
@@ -1010,11 +1010,11 @@ Array [
         "type": "heading",
         "value": "two",
       },
-      Object {
+      {
         "indent": 0,
         "raw": " three",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " three",
             "type": "text",
             "value": " three",
@@ -1030,21 +1030,21 @@ Array [
 `;
 
 exports[`quote should not be lazy with heading 2`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> # one
 > two
 > three",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "level": 1,
         "raw": " # one",
         "setext": false,
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": "one",
             "type": "text",
             "value": "one",
@@ -1053,12 +1053,12 @@ Array [
         "type": "heading",
         "value": "one",
       },
-      Object {
+      {
         "indent": 0,
         "raw": " two
  three",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " two  three",
             "type": "text",
             "value": " two  three",
@@ -1074,19 +1074,19 @@ Array [
 `;
 
 exports[`quote should split with heading in between 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> one quote
 > two quote",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " one quote
  two quote",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " one quote  two quote",
             "type": "text",
             "value": " one quote  two quote",
@@ -1098,13 +1098,13 @@ Array [
     ],
     "type": "quote",
   },
-  Object {
+  {
     "indent": 0,
     "level": 1,
     "raw": "# three quote",
     "setext": false,
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "raw": "three quote",
         "type": "text",
         "value": "three quote",
@@ -1117,17 +1117,17 @@ Array [
 `;
 
 exports[`quote should split with new lines in between 1`] = `
-Array [
-  Object {
+[
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> one quote",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " one quote",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " one quote",
             "type": "text",
             "value": " one quote",
@@ -1139,21 +1139,21 @@ Array [
     ],
     "type": "quote",
   },
-  Object {
+  {
     "type": "new-line",
   },
-  Object {
+  {
     "depth": 1,
     "indent": 0,
     "raw": "> two quote
 three quote",
-    "tokens": Array [
-      Object {
+    "tokens": [
+      {
         "indent": 0,
         "raw": " two quote
 three quote",
-        "tokens": Array [
-          Object {
+        "tokens": [
+          {
             "raw": " two quote three quote",
             "type": "text",
             "value": " two quote three quote",
